@@ -14,7 +14,7 @@ description: 레포의 md 문서를 팀 노션(AP-EYE 문서 허브)에 발행�
 ## 절차
 
 1. 발행할 md가 `develop`에 머지된 상태인지 확인한다. 머지 전이면 PR 링크를 사용자에게 알리고 확인받는다.
-2. 페이지 본문 첫 줄에 원본을 적는다: `> 원본: https://github.com/AP-EYE/team_hub/blob/<commit>/<경로> (이 페이지는 자동 발행 사본, 수정은 레포에서)`
+2. 페이지 본문 첫 줄에 원본을 적는다: `> 원본: https://github.com/AP-EYE/workspace/blob/<commit>/<경로> (이 페이지는 자동 발행 사본, 수정은 레포에서)`
 3. 같은 원본 경로를 가진 페이지가 문서 허브에 있으면(`notion-search`로 경로 검색) 새로 만들지 않고 본문을 갱신한다.
 4. 카테고리는 폴더로 정한다: `docs/papers`·`docs/research` -> 논문 또는 자료 조사, `review/` -> 질의응답, `discussion/` -> 회의록 또는 브리핑, `docs/plan` -> 제안.
 5. 이미지 등 상대경로 링크는 GitHub raw URL로 바꾼다. private 레포라 노션에서 이미지가 안 보일 수 있으니, 그 경우 노션에 직접 업로드한다.
