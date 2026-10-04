@@ -1,0 +1,81 @@
+{
+  "checked_date": "2026-10-04",
+  "repo": {
+    "url": "https://github.com/akto-api-security/akto",
+    "default_branch": "master",
+    "license": "MIT",
+    "stars": 1525,
+    "forks": 294,
+    "open_issues_and_prs": 350,
+    "pushed_at": "2026-10-04T07:28:28Z"
+  },
+  "latest_commit": {
+    "sha": "302dad92e1549b7a84ce73eded447ad5d18124f0",
+    "date": "2026-10-04T07:11:22Z"
+  },
+  "recent_core_releases": [
+    {
+      "tag": "v2.36.9",
+      "published_at": "2026-10-04T07:28:29Z",
+      "url": "https://github.com/akto-api-security/akto/releases/tag/v2.36.9"
+    },
+    {
+      "tag": "v2.36.8",
+      "published_at": "2026-10-04T06:54:22Z",
+      "url": "https://github.com/akto-api-security/akto/releases/tag/v2.36.8"
+    },
+    {
+      "tag": "v2.36.7",
+      "published_at": "2026-10-03T07:09:13Z",
+      "url": "https://github.com/akto-api-security/akto/releases/tag/v2.36.7"
+    },
+    {
+      "tag": "v2.36.6",
+      "published_at": "2026-10-01T11:00:01Z",
+      "url": "https://github.com/akto-api-security/akto/releases/tag/v2.36.6"
+    },
+    {
+      "tag": "v2.36.5",
+      "published_at": "2026-09-30T12:13:46Z",
+      "url": "https://github.com/akto-api-security/akto/releases/tag/v2.36.5"
+    }
+  ],
+  "related_prs": [
+    {
+      "number": 1359,
+      "title": "always upsert auth header in case of bola",
+      "url": "https://github.com/akto-api-security/akto/pull/1359",
+      "created_at": "2024-08-15T10:12:55Z",
+      "merged_at": "2024-08-15T10:14:54Z",
+      "author": "ankush-jain-akto",
+      "author_association": "CONTRIBUTOR"
+    },
+    {
+      "number": 798,
+      "title": "Support for redacting api collections and data types",
+      "url": "https://github.com/akto-api-security/akto/pull/798",
+      "created_at": "2024-01-06T11:01:22Z",
+      "merged_at": "2024-02-10T10:41:07Z",
+      "author": "aktoboy",
+      "author_association": "CONTRIBUTOR"
+    },
+    {
+      "number": 213,
+      "title": "Added discord webhook workflow (fixes #212)",
+      "url": "https://github.com/akto-api-security/akto/pull/213",
+      "created_at": "2023-03-20T08:38:44Z",
+      "merged_at": "2023-03-24T08:30:00Z",
+      "author": "paulartjomow",
+      "author_association": "CONTRIBUTOR"
+    }
+  ],
+  "contributors": {
+    "observed_accounts": 55,
+    "includes_bots": true,
+    "source": "gh api repos/akto-api-security/akto/contributors --paginate"
+  },
+  "search_notes": [
+    "BOLA text search found issues 14, 141, 166; none establishes the alleged 2023-2024 list-response false-positive defect.",
+    "Historical community response examples are not a current response-time estimate."
+  ]
+}
