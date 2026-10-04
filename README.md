@@ -28,7 +28,8 @@ AP-EYE(CCIT-2) 팀의 코드, 연구 문서, 피드백, 회의 기록을 모으�
 
 1. `git clone https://github.com/AP-EYE/team_hub && cd team_hub && git switch develop`
 2. 이 폴더에서 Claude Code나 Codex를 실행하면 팀 스킬과 `AGENTS.md`가 자동으로 적용된다.
-3. 작업 전에는 항상 `git pull`.
+3. `gh auth login`으로 GitHub CLI에 로그인한다. AI가 이슈(할 일)를 읽으려면 필요하다.
+4. 작업 전에는 항상 `git pull` 후 `gh issue list --assignee @me`로 내 할 일을 확인한다. 할 일은 [Issues](https://github.com/AP-EYE/team_hub/issues)에서 관리한다.
 
 ## 외부 링크
 

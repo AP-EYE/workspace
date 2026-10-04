@@ -13,7 +13,12 @@ Claude, Codex 등 이 레포에서 일하는 모든 AI와 사람이 따르는 �
 ## 시작 전
 
 1. `git switch develop && git pull`
-2. 작업 브랜치를 `develop`에서 만든다. 이름은 `타입/기능이름` (소문자, `-`).
+2. 내 할 일을 확인한다: `gh issue list --assignee @me --state open`
+   - 없으면 `gh issue list --state open --search "no:assignee"`에서 고르거나 사용자에게 묻는다.
+   - 할 일의 원본은 GitHub Issues다. 할 일 목록 파일을 따로 만들지 않는다.
+3. 작업 브랜치를 `develop`에서 만든다. 이름은 `타입/이슈번호-기능이름` (소문자, `-`). 예: `docs/12-akto-research`
+4. PR 본문에 `Closes #이슈번호`를 넣는다. 머지되면 이슈가 자동으로 닫힌다.
+5. 이슈에 없는 새 작업이 생기면 먼저 이슈를 만든다: `gh issue create --template 작업`
 
 ## 산출물 위치
 
