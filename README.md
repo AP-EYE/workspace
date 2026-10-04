@@ -9,7 +9,7 @@ AP-EYE(CCIT-2) 팀의 코드, 연구 문서, 피드백, 회의 기록을 모으�
 |---|---|
 | [`src/`](src/) | 팀 코드 |
 | [`docs/`](docs/) | 연구 문서, 논문, 데이터셋, akto 리서치 |
-| [`review/`](review/) | 교수·멘토 피드백 |
+| [`review/`](review/) | 교수 피드백 |
 | [`discussion/`](discussion/) | 회의록, 브리핑, 결정 기록 |
 | [`arch/`](arch/) | 아키텍처 설계와 다이어그램 |
 | `notes/<이름>/` | 개인 작업 메모 |
