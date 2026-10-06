@@ -1,0 +1,32 @@
+[
+  {
+    "path": "README.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4d56273bff1663d200db945e6ef11ac7c88e4d1b"
+  },
+  {
+    "path": "fintech_types.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1b4f88b8cc2324889e4b912a011ec44a83a204a5"
+  },
+  {
+    "path": "general.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "aab64d1677e39cc11bfe5e5e909aa9d0fc35c906"
+  },
+  {
+    "path": "private_key.pem",
+    "mode": "100644",
+    "type": "blob",
+    "object": "aa244d642c98edbacb44796924ee1dc39878e6f9"
+  },
+  {
+    "path": "public_key.pem",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5b0ebaaffa8fb58fb38ae3b2cca75516b0a5b1fd"
+  }
+]

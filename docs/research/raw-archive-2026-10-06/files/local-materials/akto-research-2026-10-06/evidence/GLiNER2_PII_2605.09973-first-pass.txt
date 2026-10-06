@@ -1,0 +1,91 @@
+=== TITLE + ABSTRACT ===
+GLiNER2-PII: A Multilingual Model for
+Personally Identifiable Information Extraction
+Urchade Zaratiana Ash Lewis George Hurn-Maloney1
+Fastino Labs
+Abstract.Reliable detection of personally identifiable information (PII) is in-
+creasingly important across modern data-processing systems, yet the task remains
+difficult: PII spans are heterogeneous, locale-dependent, context-sensitive, and often
+embedded in noisy or semi-structured documents. We present GLiNER2-PII, a
+small 0.3B-parameter model adapted from GLiNER2 and designed to recognize a
+broad taxonomy of 42 PII entity types at character-span resolution. Training such
+systems, however, is constrained by the scarcity of shareable annotated data and
+the privacy risks associated with collecting real PII at scale. To address this chal-
+lenge, we construct a multilingual synthetic corpus of 4,910 annotated texts using
+a constraint-driven generation pipeline that produces diverse, realistic examples
+across languages, domains, formats, and entity distributions. On the challenging
+SPY benchmark, GLiNER2-PII achieves the highest span-level F1 among five com-
+pared systems, including OpenAI Privacy Filter and three GLiNER-based detectors.
+We publicly release the model on Hugging Face to support further research and
+practical deployment of open PII detection systems.
+GitHub:github.com/fastino-ai/GLiNER2
+Model:hf.co/fastino/gliner2-privacy-filter-PII-multi
+
+=== INTRODUCTION ===
+
+1 Introduction
+Personally identifiable information (PII) is pervasive in modern digital systems, appearing in
+customer communications, support tickets, CRM records, financial and healthcare documents,
+system logs, and authentication data. As organisations increasingly route this text through
+automated pipelines for analytics, search, model development, and operational tooling,
+regulatory frameworks such as GDPR and CCPA make the reliable detection and removal of
+sensitive information a prerequisite rather than an optional safeguard. Deployed systems must
+therefore operate directly on unstructured, often noisy text and return precise character-level
+spans that downstream components can mask, audit, or route accordingly.
+Reliable PII detection is difficult for several reasons. Entity formats vary by locale (phone
+numbers, tax IDs, addresses, IBANs, passports), many values are ambiguous without
+surrounding context, and real documents often contain signatures, quoted replies, forms,
+logs, and multilingual fragments where PII is nested or interleaved with non-sensitive text.
+At the same time, the detection system must balance precision and recall carefully: missed
+spans create privacy and compliance risk, while overly aggressive masking degrades data
+utility for analytics, support automation, search, and model training.
+Existing approaches generally fall into two broad families. Token-classification models
+with constrained decoding (OpenAI, 2026) are efficient, but are typically designed around
+predefined label schemas that can be difficult to adapt or extend. In contrast, label-
+conditioned span extractors such as the GLiNER family (Zaratiana et al., 2024) treat target
+labels as inputs, allowing the same architecture to support a wide range of extraction tasks.
+This flexibility is particularly important for PII detection, where practical deployments often
+require distinctions between closely related entity types and support for organization- or
+jurisdiction-specific policies. For example, different categories of dates or identifiers may
+need to be retained, masked, or audited differently depending on downstream requirements.
+This report presents GLiNER2-PII, a PII detection and masking model fine-tuned from
+GLiNER2 (Zaratiana et al., 2025; 2026). Our contributions are: (i) a detector covering a fine-
+1Correspondence to George Hurn-Maloney. Email:g@fastino.ai.
+1
+arXiv:2605.09973v1  [cs.CL]  11 May 2026
+Figure 1. Span-level F1 on the SPY benchmark (Savkin et al., 2025), grouped by domain. GLiNER2-PII outperforms four
+comparison systems across both domains.
+Figure 1:Span-level F1 on the SPY benchmark(Savkin et al., 2025). GLiNER2-PII
+outperforms the three baselines across both domains.
+grained inventory of 42 entity types across seven categories: personal, contact, governmental,
+financial, digital identity, credential, and calendar date; (ii) a constraint-driven LLM synthesis
+procedure, built on the data-generation framework of Pioneer Agent (Atreja et al., 2026),
+that produces a multilingual corpus of 4,910 annotated PII examples; and (iii) an evaluation
+on the SPY benchmark (Savkin et al., 2025) on which GLiNER2-PII achieves the highest
+span-level F1 among five compared systems.
+
+=== CONCLUSION / DISCUSSION / LIMITATIONS ===
+
+6 Discussion and Limitations
+Despite being trained entirely on large frontier decoder-generated synthetic data, GLiNER2-
+PII achieves the highest F1 on both evaluation sets, which are drawn from naturally occurring
+text. This suggests that controlled synthetic generation can provide enough diversity in
+formatting, writing style, and entity composition to support transfer across domains. We also
+observe that using a fine-grained inventory of 42 labels may help the model learn stronger
+representations of broader entity categories. In particular, the largest gains over the other
+GLiNER variants appear onnameentities.
+Precision remains the main area for improvement. Error analysis shows that the model
+tends to over-predictnameentities, sometimes confusing personal names with common
+nouns, organization names, or product names. Techniques such as label-specific thresholds,
+lightweight filtering, or calibration on a small validation set could likely improve precision
+without substantially reducing recall.
+Some limitations should also be noted. The evaluation covers only legal and medical
+documents, and the training data are entirely synthetic and have not been validated by
+human annotators. At the same time, the strong performance on naturally occurring text
+suggests that the Pioneer-based synthetic generation pipeline (Atreja et al., 2026) is capable
+of producing training data that transfer effectively to real-world PII detection tasks.
+Overall, the results indicate that combining diverse synthetic training data with a broad label
+inventory can produce effective PII detectors, even for naturally occurring text from domains
+not seen during training. Future work includes human-validated fine-tuning, extending
+coverage to additional locales and languages, broader multilingual evaluation, and end-to-end
+benchmarking of redaction systems with both accuracy and efficiency metrics.

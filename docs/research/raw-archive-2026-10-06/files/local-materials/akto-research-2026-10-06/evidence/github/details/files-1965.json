@@ -1,0 +1,86 @@
+[
+  {
+    "sha": "ed0722021e0fbeb7258930ad895aaf9878accc9f",
+    "filename": ".github/workflows/prod.yml",
+    "status": "modified",
+    "additions": 2,
+    "deletions": 2,
+    "changes": 4,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/acb18b6d96a14bc8b4d87cf409f5dc6b4b4f163f/.github%2Fworkflows%2Fprod.yml",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/acb18b6d96a14bc8b4d87cf409f5dc6b4b4f163f/.github%2Fworkflows%2Fprod.yml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/.github%2Fworkflows%2Fprod.yml?ref=acb18b6d96a14bc8b4d87cf409f5dc6b4b4f163f",
+    "patch": "@@ -61,7 +61,7 @@ jobs:\n           IMAGE_TAG: latest\n           IMAGE_TAG1: testruntime\n           IMAGE_TAG2: local\n-          IMAGE_TAG3: 1.42.6_local\n+          IMAGE_TAG3: 1.42.7_local\n         run: |\n           docker buildx create --use\n           # Build a docker container and push it to DockerHub \n@@ -86,7 +86,7 @@ jobs:\n           IMAGE_TAG: latest\n           IMAGE_TAG1: testruntime\n           IMAGE_TAG2: local\n-          IMAGE_TAG3: 1.42.6_local\n+          IMAGE_TAG3: 1.42.7_local\n         run: |\n           echo $IMAGE_TAG >> $GITHUB_STEP_SUMMARY\n           docker buildx create --use"
+  },
+  {
+    "sha": "699186df98e7ed183e21be3c7cb2c3bac9393a07",
+    "filename": "apps/mini-testing/pom.xml",
+    "status": "modified",
+    "additions": 0,
+    "deletions": 11,
+    "changes": 11,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/acb18b6d96a14bc8b4d87cf409f5dc6b4b4f163f/apps%2Fmini-testing%2Fpom.xml",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/acb18b6d96a14bc8b4d87cf409f5dc6b4b4f163f/apps%2Fmini-testing%2Fpom.xml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fmini-testing%2Fpom.xml?ref=acb18b6d96a14bc8b4d87cf409f5dc6b4b4f163f",
+    "patch": "@@ -16,11 +16,6 @@\n \n \n     <dependencies>\n-        <dependency>\n-            <groupId>org.mortbay.jetty</groupId>\n-            <artifactId>jetty</artifactId>\n-            <version>6.1.26</version>\n-        </dependency>\n         <dependency>\n             <groupId>de.flapdoodle.embed</groupId>\n             <artifactId>de.flapdoodle.embed.mongo</artifactId>\n@@ -51,12 +46,6 @@\n             <artifactId>bcprov-jdk16</artifactId>\n             <version>1.46</version>\n         </dependency>\n-        <!-- https://mvnrepository.com/artifact/org.yaml/snakeyaml -->\n-        <dependency>\n-            <groupId>org.yaml</groupId>\n-            <artifactId>snakeyaml</artifactId>\n-            <version>1.33</version>\n-        </dependency>\n     </dependencies>\n \n     <build>"
+  },
+  {
+    "sha": "980c321dbf75858368b6888f2a9f7a0bb583367d",
+    "filename": "apps/mini-testing/src/main/java/com/akto/testing/TestExecutor.java",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 1,
+    "changes": 2,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/acb18b6d96a14bc8b4d87cf409f5dc6b4b4f163f/apps%2Fmini-testing%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Ftesting%2FTestExecutor.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/acb18b6d96a14bc8b4d87cf409f5dc6b4b4f163f/apps%2Fmini-testing%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Ftesting%2FTestExecutor.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fmini-testing%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Ftesting%2FTestExecutor.java?ref=acb18b6d96a14bc8b4d87cf409f5dc6b4b4f163f",
+    "patch": "@@ -41,6 +41,7 @@\n import com.akto.util.JSONUtils;\n import com.akto.util.enums.GlobalEnums.Severity;\n import com.akto.util.enums.LoginFlowEnums;\n+import com.alibaba.fastjson2.JSON;\n import com.fasterxml.jackson.databind.ObjectMapper;\n import com.google.gson.Gson;\n import com.mongodb.BasicDBObject;\n@@ -49,7 +50,6 @@\n import org.apache.commons.lang3.StringUtils;\n import org.bson.types.ObjectId;\n import org.json.JSONObject;\n-import org.mortbay.util.ajax.JSON;\n import org.slf4j.Logger;\n import org.slf4j.LoggerFactory;\n "
+  },
+  {
+    "sha": "1ae5694dc2d551d34560e07335a6cda897a59116",
+    "filename": "apps/testing/pom.xml",
+    "status": "modified",
+    "additions": 0,
+    "deletions": 11,
+    "changes": 11,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/acb18b6d96a14bc8b4d87cf409f5dc6b4b4f163f/apps%2Ftesting%2Fpom.xml",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/acb18b6d96a14bc8b4d87cf409f5dc6b4b4f163f/apps%2Ftesting%2Fpom.xml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Ftesting%2Fpom.xml?ref=acb18b6d96a14bc8b4d87cf409f5dc6b4b4f163f",
+    "patch": "@@ -16,11 +16,6 @@\n \n \n     <dependencies>\n-        <dependency>\n-            <groupId>org.mortbay.jetty</groupId>\n-            <artifactId>jetty</artifactId>\n-            <version>6.1.26</version>\n-        </dependency>\n         <dependency>\n             <groupId>com.akto.libs.dao</groupId>\n             <artifactId>dao</artifactId>\n@@ -44,12 +39,6 @@\n             <artifactId>bcprov-jdk16</artifactId>\n             <version>1.46</version>\n         </dependency>\n-        <!-- https://mvnrepository.com/artifact/org.yaml/snakeyaml -->\n-        <dependency>\n-            <groupId>org.yaml</groupId>\n-            <artifactId>snakeyaml</artifactId>\n-            <version>1.33</version>\n-        </dependency>\n         <dependency>\n             <groupId>de.flapdoodle.embed</groupId>\n             <artifactId>de.flapdoodle.embed.mongo</artifactId>"
+  },
+  {
+    "sha": "4b428ca0af1d53f6272f4f87173f2f7e03abedfd",
+    "filename": "apps/testing/src/main/java/com/akto/testing/TestExecutor.java",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 4,
+    "changes": 5,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/acb18b6d96a14bc8b4d87cf409f5dc6b4b4f163f/apps%2Ftesting%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Ftesting%2FTestExecutor.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/acb18b6d96a14bc8b4d87cf409f5dc6b4b4f163f/apps%2Ftesting%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Ftesting%2FTestExecutor.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Ftesting%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Ftesting%2FTestExecutor.java?ref=acb18b6d96a14bc8b4d87cf409f5dc6b4b4f163f",
+    "patch": "@@ -36,22 +36,19 @@\n import com.akto.test_editor.execution.VariableResolver;\n import com.akto.testing.yaml_tests.YamlTestTemplate;\n import com.akto.testing_issues.TestingIssuesHandler;\n-import com.akto.testing_utils.TestingUtils;\n import com.akto.usage.UsageMetricCalculator;\n import com.akto.util.Constants;\n import com.akto.util.JSONUtils;\n import com.akto.util.enums.GlobalEnums.Severity;\n import com.akto.util.enums.LoginFlowEnums;\n+import com.alibaba.fastjson2.JSON;\n import com.fasterxml.jackson.databind.ObjectMapper;\n import com.google.gson.Gson;\n-import com.mongodb.MongoInterruptedException;\n-import org.apache.commons.lang3.StringUtils;\n import com.mongodb.BasicDBObject;\n import com.mongodb.client.model.*;\n \n import org.bson.types.ObjectId;\n import org.json.JSONObject;\n-import org.mortbay.util.ajax.JSON;\n import org.slf4j.Logger;\n import org.slf4j.LoggerFactory;\n "
+  },
+  {
+    "sha": "5e3b2a61484f6f300b11b1a482c64597a8111927",
+    "filename": "libs/dao/src/main/java/com/akto/dto/ApiInfo.java",
+    "status": "modified",
+    "additions": 2,
+    "deletions": 2,
+    "changes": 4,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/acb18b6d96a14bc8b4d87cf409f5dc6b4b4f163f/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2FApiInfo.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/acb18b6d96a14bc8b4d87cf409f5dc6b4b4f163f/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2FApiInfo.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2FApiInfo.java?ref=acb18b6d96a14bc8b4d87cf409f5dc6b4b4f163f",
+    "patch": "@@ -259,8 +259,8 @@ public ApiInfoKey getId() {\n \n     public void setId(ApiInfoKey id) {\n         this.collectionIds = Util.replaceElementInList(this.collectionIds, \n-        id == null ? null : id.getApiCollectionId(),\n-        this.id == null ? null : this.id.getApiCollectionId());\n+        id == null ? null : (Integer)id.getApiCollectionId(),\n+        this.id == null ? null : (Integer)this.id.getApiCollectionId());\n         this.id = id;\n     }\n "
+  },
+  {
+    "sha": "4961ff5dbea9abb08c1bd7a83d17e4b77cbb80dd",
+    "filename": "libs/dao/src/main/java/com/akto/dto/traffic/SampleData.java",
+    "status": "modified",
+    "additions": 2,
+    "deletions": 2,
+    "changes": 4,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/acb18b6d96a14bc8b4d87cf409f5dc6b4b4f163f/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2Ftraffic%2FSampleData.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/acb18b6d96a14bc8b4d87cf409f5dc6b4b4f163f/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2Ftraffic%2FSampleData.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2Ftraffic%2FSampleData.java?ref=acb18b6d96a14bc8b4d87cf409f5dc6b4b4f163f",
+    "patch": "@@ -32,8 +32,8 @@ public Key getId() {\n \n     public void setId(Key id) {\n         this.collectionIds = Util.replaceElementInList(this.collectionIds, \n-        id == null ? null : id.getApiCollectionId(), \n-        this.id == null ? null : this.id.getApiCollectionId());\n+        id == null ? null : (Integer)id.getApiCollectionId(), \n+        this.id == null ? null : (Integer)this.id.getApiCollectionId());\n         this.id = id;\n     }\n "
+  }
+]

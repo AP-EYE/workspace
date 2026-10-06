@@ -1,0 +1,429 @@
+=== TITLE + ABSTRACT ===
+Detecting Broken Object-Level Authorization Vulnerabilities in
+Database-Backed Applications
+Yongheng Huang
+SKLP, Institute of Computing
+Technology, CAS
+University of Chinese Academy of
+Sciences
+Beijing, China
+huangyongheng20s@ict.ac.cn
+Chenghang Shi
+SKLP, Institute of Computing
+Technology, CAS
+University of Chinese Academy of
+Sciences
+Beijing, China
+shichenghang21s@ict.ac.cn
+Jie Lu∗
+SKLP, Institute of Computing
+Technology, CAS
+Beijing, China
+lujie@ict.ac.cn
+Haofeng Li
+SKLP, Institute of Computing
+Technology, CAS
+Beijing, China
+lihaofeng@ict.ac.cn
+Haining Meng
+SKLP, Institute of Computing
+Technology, CAS
+University of Chinese Academy of
+Sciences
+Beijing, China
+menghaining@ict.ac.cn
+Lian Li∗
+SKLP, Institute of Computing
+Technology, CAS
+University of Chinese Academy of
+Sciences
+Zhongguancun Laboratory
+Beijing, China
+lianli@ict.ac.cn
+Abstract
+Broken object-level authorization (BOLA) vulnerabilities are among
+the most critical security risks facing database-backed applications.
+However, there is still a significant gap in our systematic under-
+standing of these vulnerabilities. To bridge this gap, we conducted
+an in-depth study of 101 real-world BOLA vulnerabilities from open-
+source applications. Our study revealed the four most common
+object-level authorization models in database-backed application.
+The insights gained from our study inspired the development
+of a new tool called BolaRay. This tool employs a combination of
+SQL and static analysis to automatically infer the distinct types of
+object-level authorization models, and subsequently verify whether
+existing implementations enforce appropriate checks for these mod-
+els. We evaluated BolaRay using 25 popular database-backed appli-
+cations, which led to the identification of 193 true vulnerabilities,
+including 178 vulnerabilities that have never been reported before,
+at a false positive rate of 21.86%. We reported all newly identi-
+fied vulnerabilities to the corresponding maintainers. To date, 155
+vulnerabilities have been confirmed, with 52 CVE IDs granted.
+CCS Concepts
+• Security and privacy→ Software and application security.
+Keywords
+Broken Object-Level Authorization; Database-Backed Applications
+∗Corresponding author
+ACM Reference Format:
+Yongheng Huang, Chenghang Shi, Jie Lu, Haofeng Li, Haining Meng,
+and Lian Li. 2024. Detecting Broken Object-Level Authorization Vulnera-
+bilities in Database-Backed Applications. In Proceedings of the 2024 ACM
+SIGSAC Conference on Computer and Communications Security (CCS ’24),
+October 14–18, 2024, Salt Lake City, UT, USA. ACM, New York, NY, USA,
+15 pages. https://doi.org/10.1145/3658644.3690227
+
+=== INTRODUCTION ===
+
+1 Introduction
+This (BOLA) has been the most common and impactful attack on
+APIs.
+— The Open Web Application Security Project (OW ASP) [33]
+Database-backed applications utilize a database to manage data,
+often accompanied by a front-end to interact with the user and
+perform database operations upon the user’s requests. Such ap-
+plications are widely adopted across various industries, including
+content management systems, e-commerce websites, and hospital
+management platforms. However, given the vast amounts of sen-
+sitive data managed by these applications, they have also become
+prime targets for cybersecurity attacks.
+A variety of vulnerabilities, such as SQL injection [ 35] and
+XSS [36], can be exploited to compromise database-backed appli-
+cations and steal sensitive data. Among them, broken object-level
+authorization (BOLA) vulnerabilities, also known as insecure di-
+rect object reference (IDOR) [4], have gained the top position in the
+OWASP API Top 10 rankings [34] due to their common occurrence
+and high risk. Notably, many widely-used applications, such as Pay-
+Pal, Twitter, and TikTok, have suffered from BOLA vulnerabilities,
+as reported in HackerOne [39].
+Figure 1 illustrates CVE-2022-31295, a BOLA vulnerability in the
+application Odfs-1.0 (Online Discussion Forum Site ). As the name
+suggests, this application allows users to create posts which are
+stored in the post table—a database table utilizing id as its primary
+This work is licensed under a Creative Commons Attribution
+International 4.0 License.
+CCS ’24, October 14–18, 2024, Salt Lake City, UT, USA 
+© 2024 Copyright held by the owner/author(s). 
+ACM ISBN 979-8-4007-0636-3/24/10
+https://doi.org/10.1145/3658644.3690227
+2934
+
+CCS ’24, October 14–18, 2024, Salt Lake City, UT, USA Yongheng Huang, Chenghang Shi, Jie Lu, Haofeng Li, Haining Meng and Lian Li
+http://vulnerable.com/delpost.php?
+id=1
+http://vulnerable.com/delpost.php?
+id=2
+http://vulnerable.com/delpost.php?
+id=2
+if($role == "poster") {
+query("DELETE FROM 
+postWHEREid='$id'");
+}
+post
+id useridcontent
+1
+2
+1
+2
+···
+···
+Database
+Server
+1Attacker
+Victim
+2
+3
+user
+id name role
+1
+
+=== CONCLUSION / DISCUSSION / LIMITATIONS ===
+
+Limitations of TChecker. TChecker does not support variable
+functions, which are commonly used for implementing callbacks
+in PHP. Consequently, BolaRay reported 11 false positives in Os-
+commerce because its permission-checking APIs are implemented
+through variable functions. This limitation results in BolaRay ’s
+inability to infer the admin column in this application.
+5.2.4 Case Studies. Here we investigate three intriguing new
+BOLA vulnerabilities identified by BolaRay.
+CVE-2024-1693. In SP Manager, there is an ownership relation-
+ship between the user table and the sp_cu_project table. How-
+ever, the application only verifies ownership when deleting objects
+in the sp_cu_project table, while it fails to do so during updates
+to this table, allowing attackers to arbitrarily update other users’
+sp_cu_project entries, thereby violating system integrity. It is
+important to note that, due to the frequent updates of numerous
+APIs, developers can easily overlook object-level authorization for
+some APIs. This oversight undergoes the need for an automated
+tool like BolaRay to systematically scan each API.
+2945
+Detecting Broken Object-Level Authorization Vulnerabilities in Database-Backed Applications CCS ’24, October 14–18, 2024, Salt Lake City, UT, USA
+CVE-2024-23009. The Collabtive application contains a missing
+hierarchical check vulnerability, wherein upon deleting a project
+folder, it only verifies the membership relationship between the
+user and the project, neglecting to validate the parent-child rela-
+tionship between the project and its containing folder. As a result,
+attackers may delete any project folder. Such missing hierarchical
+check vulnerabilities demand multiple sub-checks, all of which need
+to be enforced to ensure safety.
+CVE-2024-32166. In Webid, the auction table, which stores auc-
+tion items, contains two status columns: closed and suspend.
+These two columns collaboratively determine whether an auction
+item can be purchased or not. However, Webid only checks the
+closed column, ignoring the suspend column. As a result, a sus-
+pended auction item can still be purchased. To avoid such vul-
+nerabilities, developers need to check all required statuses for a
+specific operation. BolaRay detects such vulnerabilities by enforc-
+ing checks on all status columns of an object, and the missing check
+of any status column will signify a report. This conservative strat-
+egy guarantees safety, and we did not encounter any false positives
+due to this over-approximation.
+5.2.5 Responsible Disclosure. All the new vulnerabilities detected
+by BolaRay can lead to serious consequences, including data loss,
+data tampering, and system instability. Recognizing the potential
+risks, we took the responsibility of disclosing all newly identified
+vulnerabilities in 25 database-backed applications, with detailed
+reports. We reached out to the corresponding organizations to re-
+port the total new vulnerabilities through their dedicated email
+addresses and security vulnerability reporting forms. Adhering to
+responsible disclosure practices, we will refrain from publicly releas-
+ing any unresolved vulnerabilities until they have been addressed
+by developers. As of now, 155 of the identified vulnerabilities have
+either been confirmed or resolved, and52 CVE identifiers have been
+assigned to these reports.
+5.3 Efficiency
+Figure 13 showcases the times required to analyze the 25 applica-
+tions listed in Table 2. Among them, SP Manager (a WordPress
+plugin) stands out for taking the longest time, amounting to 427.5
+seconds. This underscores the efficiency of BolaRay in conducting
+its analyses. By integrating the data from Figure 13 and Table 2,
+a clear positive correlation emerges between the overall analysis
+time and the size of the codebase.
+This analysis time can be divided into two main components:
+the time devoted to inferring authorization models and the time
+allocated to detecting BOLA vulnerabilities. Notably, a majority of
+the time is consumed by the model inference process. It is crucial to
+emphasize that the duration of model inference is directly related to
+the number of tables and SQL statements in the application, rather
+than its sheer volume of code. For instance, SP Manager, despite
+having a larger codebase, takes less time in model inference than
+Openemr, owing to its fewer table relations. This observation aligns
+with our expectations, as the process of model inference primarily
+involves analyzing SQL queries to infer table relationships.
+Mybloggie-2.1.4
+Scarf-1.0
+P
+hpns-2.1.1alpha
+W
+ebid-1.2.1
+Scho
+olMate-1.5.4
+P
+hpNews-1.3.0Time
+clock-1.04
+Hospital
+MS-4.0
+Do
+ctor Apt-1.0.0Wheatblog-1.1PHP7-
+WebchessHo
+cms-1.0
+Collabtiv
+e-3.1
+Oscommer
+ce-2.4.2
+Piwigo-14.4.0P
+hpBB-3.3.12SMF-2.1.4
+Op
+encart-4.0.2.3Zencart-2.0.1
+Odfs-1.0
+A
+dmidio-4.1.12
+T
+eamPass-3.0.0.22Rosariosis-8.9.4SP
+Manager-4.57Op
+enemr-7.0.0
+0
+50
+100
+150
+200
+250
+300
+350
+400
+450
+Inferring
+authorization models
+Detecting BOLA vulnerabilities
+Figure 13: Analysis time (s) of BolaRay
+Table 6: Ownership Models and BOLA vulnerabilities re-
+ported by Mace.
+Application
+# Ownership # MOCs
+# CVEsModels DELETE UPDATE Total
+TP FP TP FP TP FP TP FP
+Mybloggie-2.1.4 2 0 0 2 0 2 0 4 0
+Scarf-1.0 1 0 0 0 0 0 0 0 0
+Phpns-2.1.1alpha 5 4 0 0 1 0 1 0 1
+Webid-1.2.2 10 2 0 0 1 0 1 0 1
+SchoolMate-1.5.4 1 0 0 0 0 0 0 0 0
+PhpNews-1.3.0 2 0 0 0 0 1 0 1 0
+Timeclock-1.04 2 1 0 0 0 0 0 0 0
+Hospital MS-4.0 4 2 2 0 3 0 5 0 4
+Doctor Apt-1.0.0 1 0 0 0 0 0 0 0 0
+Wheatblog-1.1 1 0 0 0 0 0 0 0 0
+PHP7-Webchess 3 0 1 0 4 0 5 0 2
+Hocms-1.0 1 0 0 0 0 0 0 0 0
+Collabtive-3.1 4 5 3 0 3 0 6 0 4
+Oscommerce-2.4.2 10 0 0 2 0 7 0 9 0
+Piwigo-14.4.0 2 0 0 0 1 0 1 0 0
+PhpBB-3.3.12 3 1 0 0 0 0 0 0 0
+SMF-2.1.4 1 0 0 0 0 0 0 0 0
+Opencart-4.0.2.3 3 0 0 0 0 0 0 0 0
+Zencart-2.0.1 1 0 0 0 0 0 0 0 0
+Odfs-1.0 1 0 0 0 0 0 0 0 0
+Admidio-4.1.12 0 0 0 0 0 0 0 0 0
+TeamPass-3.0.0.22 11 4 0 0 0 0 0 0 0
+Rosariosis-8.9.4 2 0 0 0 0 0 0 0 0
+SP Manager-4.57 2 0 0 0 0 0 0 0 0
+Openemr-7.0.0 10 0 1 0 5 0 6 0 0
+Total 83 19 7 4 18 10 25 14 12
+5.4 Comparison
+Mace [28] is the most closely relevant work to BolaRay. This tool
+relies on the manual annotation of user variables to identify own-
+ership relationships, where the target table of an INSERT statement
+is owned by the inserted user variable (if it exists). Consequently,
+Mace checks whether the target tables of any UPDATE or DELETE
+statements enforce ownership checks in their WHERE clauses. Al-
+though Mace is closed-source, we reproduced the tool for a direct
+comparison with BolaRay. Instead of manually specifying user
+variables for Mace, we used the user variables inferred byBolaRay.
+The results of this comparison are summarized in Table 6. Mace
+correctly identified 83 true ownership models and 25 true BOLA
+vulnerabilities for 7 applications, all of which were also disclosed
+by BolaRay. However,Mace missed the rest 235 ownership models
+and 79 MOC vulnerabilities reported by BolaRay because it identi-
+fies ownership relation only from INSERT statements. In contrast,
+BolaRay analyzes aliases together with all forms of SQL statements
+to infer such relationship.
+Mace reported 19 false ownership models and 14 false vulnera-
+bilities, with 15 of the false ownership models and 10 of the false
+vulnerabilities also being reported by BolaRay. The additional
+2946
+CCS ’24, October 14–18, 2024, Salt Lake City, UT, USA Yongheng Huang, Chenghang Shi, Jie Lu, Haofeng Li, Haining Meng and Lian Li
+4 false ownership models occurred because Mace fails to recog-
+nize junction tables, which BolaRay can handle. This difference in
+capability leads to discrepancies in analyzing database table rela-
+tionships, further affecting the accuracy of inferred authorization
+models. Moreover, Mace reported 4 more false vulnerabilities than
+BolaRay. This because Mace only verifies checks in the WHERE
+clauses of SQL statements, whereas BolaRay also considers checks
+in conditional branches.
+5.5 Limitations and Future work
+Although effective in practice, BolaRay has the following limita-
+tions:
+• Manual DAL Specifications. Currently, BolaRay requires
+manual annotation of DAL specifications to detail how SQL
+queries are encapsulated in framework APIs. On average, we
+need to write 13 lines of specifications per API. Although
+this is a one-time effort, it is considered a barrier to adopting
+the tool for new applications.
+• Generalizability. BolaRay supports PHP applications; how-
+ever, the approach is suitable for general database-backed
+applications. The rules developed for inferring authorization
+models and applying authorization checks (Figure 8 to Fig-
+ure 11) can be readily implemented in a multi-language code
+analysis engine like CodeQL, and applied to applications
+written in other languages.
+• SELECT Statements. BolaRay does not consider SELECT state-
+ments as sensitive operations, meaning it cannot detect
+BOLA vulnerabilities causing sensitive information leakage.
+This limitation is also present in all existing static detection
+tools [7, 9, 12–14, 28, 30] for BOLA vulnerabilities. Deter-
+mining which data should be classified as sensitive in an
+application is a challenging topic worthy of further investi-
+gation [28].
+• Incorrect object-level authorization checks. We developed Bo-
+laRay based on the finding that all studied BOLA vulner-
+abilities were caused by missing object-level checks. Thus,
+BolaRay is not designed for detecting those incorrect object-
+level authorization checks against a wrong variable, which
+are rare in practice.
+In the future, we plan to overcome some of the limitations by utiliz-
+ing large language models to automatically generate DAL specifica-
+tions and identify sensitive data for handling SELECT statements.
+6 Related Work
+There have been a number of static tools capable of identify-
+ing BOLA vulnerabilities, including W aler [12], SPACE [30],
+ANOVUL [13], Cancheck [7], UrFlow [9], and FINAD [14]. These
+tools require the manual provision of authorization models and then
+apply various static analysis techniques, such as model checking
+and symbolic execution, to identify flaws in authorization imple-
+mentation. To express the underlying authorization model, different
+specifications were proposed. For instance, W aleruses invariant
+variables, UrFlow employs SQL query constraints, and FINAD
+utilizes activity flow graphs to annotate authorization rules. In con-
+trast, BolaRay automatically infers authorization models, making
+it distinctively innovative. The most closely relevant work to Bo-
+laRay is Mace [28], which assumes that an ownership relation
+exists between a user and a table as long as the INSERT statement
+of a table contains a user ID. Unlike Mace, our approach utilizes all
+types of SQL statements and expands the concept of ownership to
+include three additional authorization models.
+Dynamic tools [20–22, 27, 38, 40, 46, 55] for BOLA vulnerabil-
+ity detection focus on identifying tamperable IDs and vulnerabil-
+ity triggers. For example, Authscope [55] analyzes user requests
+to identify tamperable IDs and examines responses to determine
+whether vulnerabilities are triggered. The effectiveness of these
+efforts relies on the ability to trigger as many code paths as possible
+through comprehensive requests.
+A number of dynamic defense approaches have been proposed
+to prevent attacks that exploit BOLA vulnerabilities at runtime.
+FlowW atcher[29] detects violations of object-level authoriza-
+tion models at the HTTP proxy level. Conversely, SafeD [11],
+CLAMP [37], and Nemesis [26] focus on identifying these viola-
+tions within the SQL server environment. All of these works rely on
+manual descriptions of object-level authorization models. BolaRay
+can enhance these existing methods by automatically inferring
+object-level authorization models.
+General access control vulnerabilities have been studied exten-
+sively in the literature. AutoISES [44] statically infers security
+specifications of Linux systems by analyzing the correlation be-
+tween data structure accesses and security checks. PeX [53] detects
+access vulnerabilities in the Linux kernel using a crafted indirect
+call analysis to associate permission checks with privileged func-
+tions. ACHyb [15] enhances the precision ofPeX through combined
+static-dynamic analysis. Sun et al. [43] detect access control vul-
+nerabilities in web applications by first constructing a sitemap for
+different roles, then checking whether accesses from unprivileged
+pages can successfully reach privileged pages. RoleCast [41] pro-
+poses a role-specific consistency analysis to detect inconsistent
+authorization checks in web applications. MPChecker [24] auto-
+matically identifies privileged operations in distributed systems by
+inferring user- and system-related variables via log-based analysis,
+then checks whether the privileged operations are guarded by per-
+mission checks. Compared to the above works, BolaRay targets
+the more granular BOLA vulnerabilities.
+There have been numerous empirical studies targeting differ-
+ent issues in database-backed applications, including performance
+bugs [23, 51] and data constraint bugs [5, 16, 50]. To the best of our
+knowledge, this is the first paper to conduct an in-depth study of
+BOLA vulnerabilities in such systems.
+7 Conclusion
+We conducted the first in-depth study on BOLA vulnerabilities in
+database-backed applications and developed BolaRay, a novel tool
+for detecting such vulnerabilities. The key idea behind BolaRay
+is the use of a combined SQL and static analysis to automatically
+infer object-level authorization models. Our evaluation of BolaRay
+encompassed 25 popular database-backed applications, revealing
+178 new critical vulnerabilities. Notably,155 of these vulnerabilities
+have been confirmed, and 52 of them are documented with CVE
+identifiers.
+2947
+Detecting Broken Object-Level Authorization Vulnerabilities in Database-Backed Applications CCS ’24, October 14–18, 2024, Salt Lake City, UT, USA
+Acknowledgement
+We thank all reviewers for their valuable feedback. This work
+is supported by the National Key R&D Program of China
+(2022YFB3103900), the National Natural Science Foundation of
+China (62402474, 62132020 and 62202452), and the China Postdoc-
+toral Science Foundation (2024M753295).

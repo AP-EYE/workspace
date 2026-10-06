@@ -1,0 +1,110 @@
+[
+  {
+    "sha": "6521a7983ab838eead4c57c5d793d75a952f7dfa",
+    "filename": "Command-Injection/CommandInjectionByAddingQueryParams.yaml",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 0,
+    "changes": 1,
+    "blob_url": "https://github.com/akto-api-security/tests-library/blob/3d651233c70c42dded860ee4e14acd16f2986552/Command-Injection%2FCommandInjectionByAddingQueryParams.yaml",
+    "raw_url": "https://github.com/akto-api-security/tests-library/raw/3d651233c70c42dded860ee4e14acd16f2986552/Command-Injection%2FCommandInjectionByAddingQueryParams.yaml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/tests-library/contents/Command-Injection%2FCommandInjectionByAddingQueryParams.yaml?ref=3d651233c70c42dded860ee4e14acd16f2986552",
+    "patch": "@@ -61,6 +61,7 @@ api_selection_filters:\n       - account is locked\n       - account is blocked\n       - multiple failed attempts\n+      - \"hello world\"\n execute:\n   type: single\n   requests:"
+  },
+  {
+    "sha": "0542351c5ea63f803f8e01d3b85561875eca451c",
+    "filename": "Command-Injection/CommandInjectionCurl.yml",
+    "status": "modified",
+    "additions": 2,
+    "deletions": 0,
+    "changes": 2,
+    "blob_url": "https://github.com/akto-api-security/tests-library/blob/3d651233c70c42dded860ee4e14acd16f2986552/Command-Injection%2FCommandInjectionCurl.yml",
+    "raw_url": "https://github.com/akto-api-security/tests-library/raw/3d651233c70c42dded860ee4e14acd16f2986552/Command-Injection%2FCommandInjectionCurl.yml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/tests-library/contents/Command-Injection%2FCommandInjectionCurl.yml?ref=3d651233c70c42dded860ee4e14acd16f2986552",
+    "patch": "@@ -59,6 +59,8 @@ api_selection_filters:\n       - account is locked\n       - account is blocked\n       - multiple failed attempts\n+      - \"Response Time:\"\n+      - \"Response Size:\"\n   or:\n     - request_payload:\n         for_one:"
+  },
+  {
+    "sha": "baaf1ebe5f3a259f1809ef3bf805eea93ce0b2f4",
+    "filename": "Command-Injection/CommandInjectionCurlChainedCommand.yml",
+    "status": "modified",
+    "additions": 2,
+    "deletions": 0,
+    "changes": 2,
+    "blob_url": "https://github.com/akto-api-security/tests-library/blob/3d651233c70c42dded860ee4e14acd16f2986552/Command-Injection%2FCommandInjectionCurlChainedCommand.yml",
+    "raw_url": "https://github.com/akto-api-security/tests-library/raw/3d651233c70c42dded860ee4e14acd16f2986552/Command-Injection%2FCommandInjectionCurlChainedCommand.yml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/tests-library/contents/Command-Injection%2FCommandInjectionCurlChainedCommand.yml?ref=3d651233c70c42dded860ee4e14acd16f2986552",
+    "patch": "@@ -59,6 +59,8 @@ api_selection_filters:\n       - account is locked\n       - account is blocked\n       - multiple failed attempts\n+      - \"Response Time:\"\n+      - \"Response Size:\"\n   or:\n     - request_payload:\n         for_one:"
+  },
+  {
+    "sha": "e9c52c144b7885b57bee30e58648148113f285d6",
+    "filename": "Command-Injection/CommandInjectionMacOS.yml",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 0,
+    "changes": 1,
+    "blob_url": "https://github.com/akto-api-security/tests-library/blob/3d651233c70c42dded860ee4e14acd16f2986552/Command-Injection%2FCommandInjectionMacOS.yml",
+    "raw_url": "https://github.com/akto-api-security/tests-library/raw/3d651233c70c42dded860ee4e14acd16f2986552/Command-Injection%2FCommandInjectionMacOS.yml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/tests-library/contents/Command-Injection%2FCommandInjectionMacOS.yml?ref=3d651233c70c42dded860ee4e14acd16f2986552",
+    "patch": "@@ -59,6 +59,7 @@ api_selection_filters:\n       - account is locked\n       - account is blocked\n       - multiple failed attempts\n+      - \"Software\"\n   or:\n     - request_payload:\n         for_one:"
+  },
+  {
+    "sha": "ff4f57b09d2dd6cbf0b508ced64e7ab396b96d09",
+    "filename": "Command-Injection/CommandInjectionMathCompute.yml",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 0,
+    "changes": 1,
+    "blob_url": "https://github.com/akto-api-security/tests-library/blob/3d651233c70c42dded860ee4e14acd16f2986552/Command-Injection%2FCommandInjectionMathCompute.yml",
+    "raw_url": "https://github.com/akto-api-security/tests-library/raw/3d651233c70c42dded860ee4e14acd16f2986552/Command-Injection%2FCommandInjectionMathCompute.yml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/tests-library/contents/Command-Injection%2FCommandInjectionMathCompute.yml?ref=3d651233c70c42dded860ee4e14acd16f2986552",
+    "patch": "@@ -59,6 +59,7 @@ api_selection_filters:\n       - account is locked\n       - account is blocked\n       - multiple failed attempts\n+      - \"98616177\"\n   or:\n     - request_payload:\n         for_one:"
+  },
+  {
+    "sha": "3f34196630dbcfad79c9b51851c896505500f7c3",
+    "filename": "Command-Injection/CommandInjectionSystemInfoRetrieval.yml",
+    "status": "modified",
+    "additions": 9,
+    "deletions": 0,
+    "changes": 9,
+    "blob_url": "https://github.com/akto-api-security/tests-library/blob/3d651233c70c42dded860ee4e14acd16f2986552/Command-Injection%2FCommandInjectionSystemInfoRetrieval.yml",
+    "raw_url": "https://github.com/akto-api-security/tests-library/raw/3d651233c70c42dded860ee4e14acd16f2986552/Command-Injection%2FCommandInjectionSystemInfoRetrieval.yml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/tests-library/contents/Command-Injection%2FCommandInjectionSystemInfoRetrieval.yml?ref=3d651233c70c42dded860ee4e14acd16f2986552",
+    "patch": "@@ -59,6 +59,15 @@ api_selection_filters:\n       - account is locked\n       - account is blocked\n       - multiple failed attempts\n+      - \"Linux\"\n+      - \"Kernel\"\n+      - \"root\"\n+      - \"en0: flags=\"\n+      - \"<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST>\"\n+      - \"prefixlen\"\n+      - \"filesystem\"\n+      - \"capacity\"\n+      - \"buff/cache\"\n   or:\n     - request_payload:\n         for_one:"
+  },
+  {
+    "sha": "1c77d5306aac19aafc4a8618a81b9a0bb7efb1a9",
+    "filename": "Command-Injection/CommandInjectionUbuntu.yml",
+    "status": "modified",
+    "additions": 7,
+    "deletions": 0,
+    "changes": 7,
+    "blob_url": "https://github.com/akto-api-security/tests-library/blob/3d651233c70c42dded860ee4e14acd16f2986552/Command-Injection%2FCommandInjectionUbuntu.yml",
+    "raw_url": "https://github.com/akto-api-security/tests-library/raw/3d651233c70c42dded860ee4e14acd16f2986552/Command-Injection%2FCommandInjectionUbuntu.yml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/tests-library/contents/Command-Injection%2FCommandInjectionUbuntu.yml?ref=3d651233c70c42dded860ee4e14acd16f2986552",
+    "patch": "@@ -59,6 +59,13 @@ api_selection_filters:\n       - account is locked\n       - account is blocked\n       - multiple failed attempts\n+      - \"Distributor ID\"\n+      - \"Ubuntu\"\n+      - \"Codename\"\n+      - \"txqueuelen\"\n+      - \"Ethernet\"\n+      - \"adduser\"\n+      - \"bash\"\n   or:\n     - request_payload:\n         for_one:"
+  },
+  {
+    "sha": "1d7b5db63bf4585d26087ed4b2d9be6d6e3430ba",
+    "filename": "Command-Injection/CommandInjectionWindows.yml",
+    "status": "modified",
+    "additions": 5,
+    "deletions": 0,
+    "changes": 5,
+    "blob_url": "https://github.com/akto-api-security/tests-library/blob/3d651233c70c42dded860ee4e14acd16f2986552/Command-Injection%2FCommandInjectionWindows.yml",
+    "raw_url": "https://github.com/akto-api-security/tests-library/raw/3d651233c70c42dded860ee4e14acd16f2986552/Command-Injection%2FCommandInjectionWindows.yml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/tests-library/contents/Command-Injection%2FCommandInjectionWindows.yml?ref=3d651233c70c42dded860ee4e14acd16f2986552",
+    "patch": "@@ -59,6 +59,11 @@ api_selection_filters:\n       - account is locked\n       - account is blocked\n       - multiple failed attempts\n+      - \"Microsoft\"\n+      - \"System Manufacturer\"\n+      - \"Connection-specific DNS Suffix\"\n+      - \"Wireless LAN adapter Wi-Fi\"\n+      - \"Ethernet adapter Local Area Connection\"\n   or:\n     - request_payload:\n         for_one:"
+  },
+  {
+    "sha": "ce54f6fb293539c085d31b48798d68ca6d10d156",
+    "filename": "Command-Injection/KernelOpenCommandInjection.yaml",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 0,
+    "changes": 1,
+    "blob_url": "https://github.com/akto-api-security/tests-library/blob/3d651233c70c42dded860ee4e14acd16f2986552/Command-Injection%2FKernelOpenCommandInjection.yaml",
+    "raw_url": "https://github.com/akto-api-security/tests-library/raw/3d651233c70c42dded860ee4e14acd16f2986552/Command-Injection%2FKernelOpenCommandInjection.yaml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/tests-library/contents/Command-Injection%2FKernelOpenCommandInjection.yaml?ref=3d651233c70c42dded860ee4e14acd16f2986552",
+    "patch": "@@ -53,6 +53,7 @@ api_selection_filters:\n       - account is locked\n       - account is blocked\n       - multiple failed attempts\n+      - \"hello world\"\n   method:\n     neq: \"OPTIONS\"\n   or:"
+  }
+]

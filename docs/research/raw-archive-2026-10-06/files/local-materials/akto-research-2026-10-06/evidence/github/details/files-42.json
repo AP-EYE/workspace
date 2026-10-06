@@ -1,0 +1,50 @@
+[
+  {
+    "sha": "e7b1018d932bd3190cae0f0d00c6ae993406b9ac",
+    "filename": "apps/dashboard/web/src/apps/dashboard/layouts/LayoutWithTabs.vue",
+    "status": "modified",
+    "additions": 3,
+    "deletions": 2,
+    "changes": 5,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/f87775ee54398c317e8615d08df6b2c77c2b987f/apps%2Fdashboard%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Flayouts%2FLayoutWithTabs.vue",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/f87775ee54398c317e8615d08df6b2c77c2b987f/apps%2Fdashboard%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Flayouts%2FLayoutWithTabs.vue",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Flayouts%2FLayoutWithTabs.vue?ref=f87775ee54398c317e8615d08df6b2c77c2b987f",
+    "patch": "@@ -57,11 +57,12 @@\n             tabs: obj.arrR,\n             description: obj.strN,\n             defaultTabName: obj.strN,\n-            tabsContent: obj.objN\n+            tabsContent: obj.objN,\n+            tab: obj.strN\n         },\n         data () {\n             return {\n-                tabName: null\n+                tabName: parseInt(this.tab) || null\n             }\n         },\n         methods: {"
+  },
+  {
+    "sha": "c15a5f8d4326b00c8ccb36466d240da45f7c5189",
+    "filename": "apps/dashboard/web/src/apps/dashboard/views/observe/inventory/components/TestsSelector.vue",
+    "status": "modified",
+    "additions": 23,
+    "deletions": 4,
+    "changes": 27,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/f87775ee54398c317e8615d08df6b2c77c2b987f/apps%2Fdashboard%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fviews%2Fobserve%2Finventory%2Fcomponents%2FTestsSelector.vue",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/f87775ee54398c317e8615d08df6b2c77c2b987f/apps%2Fdashboard%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fviews%2Fobserve%2Finventory%2Fcomponents%2FTestsSelector.vue",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fviews%2Fobserve%2Finventory%2Fcomponents%2FTestsSelector.vue?ref=f87775ee54398c317e8615d08df6b2c77c2b987f",
+    "patch": "@@ -2,7 +2,11 @@\n     <spinner v-if=\"loading\"/>\n     <a-card  v-else title=\"Configure test\" icon=\"$fas_cog\" class=\"tests-selector-container\">\n         <div class=\"mx-8 my-4\">\n-            <div class=\"d-flex\">\n+            <div v-if=\"!authPresent\">\n+                Please set an authentication mechanism <a target=\"_blank\" class=\"clickable-link\" href=\"/dashboard/testing/active?tab=1\">here</a> before you test any APIs.\n+            </div>\n+            <div :class=\"disableLinkClass\">\n+            <div class=\"d-flex\" >\n                 <div class=\"name-div\">Name: </div>\n                 <name-input :defaultName=\"collectionName\" :defaultSuffixes=\"nameSuffixes\" @changed=\"setTestName\" />\n             </div>\n@@ -58,7 +62,7 @@\n             </div>\n \n             <schedule-box @schedule=\"emitTestSelection\" class=\"mt-2\"/>\n-\n+            </div>\n         </div>\n     </a-card>\n </template>\n@@ -67,6 +71,7 @@\n \n import marketplaceApi from '../../../marketplace/api'\n import issuesApi from '../../../issues/api'\n+import testingApi from '../../../testing/api'\n import Spinner from '@/apps/dashboard/shared/components/Spinner'\n import ScheduleBox from '@/apps/dashboard/shared/components/ScheduleBox'\n import func from '@/util/func'\n@@ -96,7 +101,9 @@ export default {\n             startTimestamp: func.timeNow(),\n             selectedCategory: null,\n             globalCheckbox: false,\n-            testName: \"\"\n+            testName: \"\",\n+            authPresent: false,\n+            disableLinkClass: 'disable-div'\n         }\n     },\n     mounted() {\n@@ -111,7 +118,12 @@ export default {\n                 _this.mapCategoryToSubcategory = _this.populateMapCategoryToSubcategory()\n             })\n         })\n-        \n+        testingApi.fetchAuthMechanismData().then(resp => {\n+            if(resp.authMechanism){\n+                this.authPresent = true;\n+                this.disableLinkClass = ''\n+            }\n+        })\n         \n     },\n     methods: {\n@@ -246,4 +258,11 @@ export default {\n     margin: auto 8px auto 0\n     font-size: 14px\n     font-weight: 500\n+\n+.clickable-link\n+    color: #6200ea !important\n+\n+.disable-div\n+    pointer-events: none\n+    opacity: 0.4\n </style>\n\\ No newline at end of file"
+  },
+  {
+    "sha": "975b68ff5227ae33cf67f00aed9afde0b7de63ab",
+    "filename": "apps/dashboard/web/src/apps/dashboard/views/testing/PageTesting.vue",
+    "status": "modified",
+    "additions": 5,
+    "deletions": 4,
+    "changes": 9,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/f87775ee54398c317e8615d08df6b2c77c2b987f/apps%2Fdashboard%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fviews%2Ftesting%2FPageTesting.vue",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/f87775ee54398c317e8615d08df6b2c77c2b987f/apps%2Fdashboard%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fviews%2Ftesting%2FPageTesting.vue",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fviews%2Ftesting%2FPageTesting.vue?ref=f87775ee54398c317e8615d08df6b2c77c2b987f",
+    "patch": "@@ -1,5 +1,5 @@\n <template>\n-    <layout-with-tabs title=\"API Testing\" class=\"page-testing\" :tabs='[\"Test results\", \"User config\", \"Roles\"]'>\n+    <layout-with-tabs title=\"API Testing\" class=\"page-testing\" :tabs='[\"Test results\", \"User config\", \"Roles\"]' :tab=\"tab\">\n         <template slot=\"Test results\">\n             <div class=\"py-8\">\n                 <div>\n@@ -40,7 +40,7 @@\n                             <p> 1 </p>\n                         </div>\n                         <div>\n-                            <h3> Inject hard-coded auth token </h3>\n+                            <h3> Inject hard-coded attacker auth token </h3>\n                         </div>\n                     </div>\n                     <!-- <div>\n@@ -83,7 +83,7 @@\n                         </div>\n                         \n                         <div>\n-                            <h3> Automate auth token generation </h3>\n+                            <h3> Automate attacker auth token generation </h3>\n                         </div>\n                     </div>\n                     \n@@ -153,6 +153,7 @@ import ApiCollectionGroup from '@/apps/dashboard/shared/components/menus/ApiColl\n import LoginStepBuilder from './components/token/LoginStepBuilder'\n import TokenAutomation from './components/token/TokenAutomation'\n import HelpTooltip from '@/apps/dashboard/shared/components/help/HelpTooltip'\n+import obj from \"@/util/obj\";\n \n export default {\n     name: \"PageTesting\",\n@@ -172,7 +173,7 @@ export default {\n         LogFetch\n     },\n     props: {\n-\n+        tab: obj.strN\n     },\n     data() {\n         return {"
+  },
+  {
+    "sha": "bfc1caf3ec7323a7a58038298dad73ed1f2fb397",
+    "filename": "apps/dashboard/web/src/apps/main/router/index.js",
+    "status": "modified",
+    "additions": 5,
+    "deletions": 0,
+    "changes": 5,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/f87775ee54398c317e8615d08df6b2c77c2b987f/apps%2Fdashboard%2Fweb%2Fsrc%2Fapps%2Fmain%2Frouter%2Findex.js",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/f87775ee54398c317e8615d08df6b2c77c2b987f/apps%2Fdashboard%2Fweb%2Fsrc%2Fapps%2Fmain%2Frouter%2Findex.js",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fweb%2Fsrc%2Fapps%2Fmain%2Frouter%2Findex.js?ref=f87775ee54398c317e8615d08df6b2c77c2b987f",
+    "patch": "@@ -70,6 +70,11 @@ const router =  new Router({\n                     components: {\n                         default: PageTesting\n                     },\n+                    props: {\n+                        default: route => ({\n+                            tab: route.query.tab\n+                        })\n+                    },\n                     children: [\n                         {\n                             path: 'active',"
+  }
+]

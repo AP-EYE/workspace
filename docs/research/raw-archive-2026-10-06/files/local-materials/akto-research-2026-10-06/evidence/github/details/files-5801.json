@@ -1,0 +1,14 @@
+[
+  {
+    "sha": "47744e1a06b741becdc5683e2bb5ed05f83faa40",
+    "filename": "apps/dashboard/web/polaris_web/web/src/apps/dashboard/components/layouts/leftnav/LeftNav.js",
+    "status": "modified",
+    "additions": 3,
+    "deletions": 3,
+    "changes": 6,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/16073041b51a47f74fe86048fc4947cc3d7a7a7d/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fcomponents%2Flayouts%2Fleftnav%2FLeftNav.js",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/16073041b51a47f74fe86048fc4947cc3d7a7a7d/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fcomponents%2Flayouts%2Fleftnav%2FLeftNav.js",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fcomponents%2Flayouts%2Fleftnav%2FLeftNav.js?ref=16073041b51a47f74fe86048fc4947cc3d7a7a7d",
+    "patch": "@@ -283,15 +283,15 @@ export default function LeftNav() {\n                         },\n                         selected: leftNavSelected === \"dashboard_observe_changes\",\n                     }] : []),\n-                    {\n+                    ...(dashboardCategory !== CATEGORY_AGENTIC_SECURITY ? [{\n                         label: \"Sensitive Data\",\n                         onClick: () => {\n                             navigate(\"/dashboard/observe/sensitive\");\n                             handleSelect(\"dashboard_observe_sensitive\");\n                             setActive(\"active\");\n                         },\n                         selected: leftNavSelected === \"dashboard_observe_sensitive\",\n-                    },\n+                    }] : []),\n                     ...(window?.STIGG_FEATURE_WISE_ALLOWED?.AKTO_DAST?.isGranted && dashboardCategory === CATEGORY_DAST ? [{\n                         label: \"DAST scans\",\n                         onClick: () => {\n@@ -301,7 +301,7 @@ export default function LeftNav() {\n                         },\n                         selected: leftNavSelected === \"dashboard_observe_dast_progress\"\n                     }] : []),\n-                    ...((dashboardCategory === \"MCP Security\" || dashboardCategory === \"Agentic Security\" || dashboardCategory === \"Endpoint Security\") ? [{\n+                    ...((dashboardCategory === \"MCP Security\" || dashboardCategory === \"Endpoint Security\") ? [{\n                         label: \"Audit Data\",\n                         onClick: () => {\n                             navigate(\"/dashboard/observe/audit\");"
+  }
+]

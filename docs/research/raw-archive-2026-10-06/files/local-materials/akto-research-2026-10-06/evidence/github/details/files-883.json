@@ -1,0 +1,38 @@
+[
+  {
+    "sha": "0c633bd8d02789f49f001efc1d83676773832355",
+    "filename": "apps/testing/src/main/java/com/akto/test_editor/Utils.java",
+    "status": "modified",
+    "additions": 2,
+    "deletions": 1,
+    "changes": 3,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/939cf6de0765ef80ab86a6fa2c358aa6d939be63/apps%2Ftesting%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Ftest_editor%2FUtils.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/939cf6de0765ef80ab86a6fa2c358aa6d939be63/apps%2Ftesting%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Ftest_editor%2FUtils.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Ftesting%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Ftest_editor%2FUtils.java?ref=939cf6de0765ef80ab86a6fa2c358aa6d939be63",
+    "patch": "@@ -391,7 +391,7 @@ public static UrlModifierPayload fetchUrlModifyPayload(String payload) {\n             payload = payload.replaceAll(\"=\", \":\");\n \n             if (payload.contains(\"regex:\")) {\n-                payload = payload.substring(0, 22) + \"\\\"\" + payload.substring(22, payload.indexOf(\",\")) + \"\\\"\" + payload.substring(payload.indexOf(\",\"), payload.length());\n+                payload = payload.substring(0, 22) + \"\\\"\" + payload.substring(22, payload.lastIndexOf(\",\")) + \"\\\"\" + payload.substring(payload.lastIndexOf(\",\"), payload.length());\n             }\n \n             String x[] = payload.split(\"replace_with:\");\n@@ -401,6 +401,7 @@ public static UrlModifierPayload fetchUrlModifyPayload(String payload) {\n             String y[] = x[1].split(\"}}\");\n             x[1] = y[0].toString() + \"\\\"}}\";\n             payload = String.join(\"replace_with:\\\"\", x);\n+            payload = payload.replace(\"\\\\\", \"\\\\\\\\\");\n             Map<String, Object> json = gson.fromJson(payload, Map.class);\n             String operation = \"regex_replace\";\n             Map<String, Object> operationMap = new HashMap<>();"
+  },
+  {
+    "sha": "2274b0d67a686edf0cca1cc0d16f4664c3d46f6e",
+    "filename": "apps/testing/src/main/java/com/akto/test_editor/execution/VariableResolver.java",
+    "status": "modified",
+    "additions": 4,
+    "deletions": 0,
+    "changes": 4,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/939cf6de0765ef80ab86a6fa2c358aa6d939be63/apps%2Ftesting%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Ftest_editor%2Fexecution%2FVariableResolver.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/939cf6de0765ef80ab86a6fa2c358aa6d939be63/apps%2Ftesting%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Ftest_editor%2Fexecution%2FVariableResolver.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Ftesting%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Ftest_editor%2Fexecution%2FVariableResolver.java?ref=939cf6de0765ef80ab86a6fa2c358aa6d939be63",
+    "patch": "@@ -66,6 +66,10 @@ public static List<Object> resolveExpression(Map<String, Object> varMap, Object\n \n         if (VariableResolver.isWordListVariable(key, varMap)) {\n             varList = (List) VariableResolver.resolveWordListVar(key.toString(), varMap);\n+            for (int i = 0; i < varList.size(); i++) {\n+                List<Object> vals = VariableResolver.resolveExpression(varMap, varList.get(i).toString());\n+                varList.set(i, vals.get(0).toString());\n+            }\n             return varList;\n         }\n "
+  },
+  {
+    "sha": "0edce0afeb9a90ae5f0c9c8509422c21e0cdacdb",
+    "filename": "apps/testing/src/main/java/com/akto/test_editor/filter/data_operands_impl/CookieExpireFilter.java",
+    "status": "modified",
+    "additions": 31,
+    "deletions": 15,
+    "changes": 46,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/939cf6de0765ef80ab86a6fa2c358aa6d939be63/apps%2Ftesting%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Ftest_editor%2Ffilter%2Fdata_operands_impl%2FCookieExpireFilter.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/939cf6de0765ef80ab86a6fa2c358aa6d939be63/apps%2Ftesting%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Ftest_editor%2Ffilter%2Fdata_operands_impl%2FCookieExpireFilter.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Ftesting%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Ftest_editor%2Ffilter%2Fdata_operands_impl%2FCookieExpireFilter.java?ref=939cf6de0765ef80ab86a6fa2c358aa6d939be63",
+    "patch": "@@ -1,11 +1,12 @@\n package com.akto.test_editor.filter.data_operands_impl;\n \n import java.time.Duration;\n-import java.time.ZonedDateTime;\n+import java.time.LocalDateTime;\n import java.time.format.DateTimeFormatter;\n import java.util.ArrayList;\n import java.util.Arrays;\n import java.util.List;\n+import java.util.Locale;\n import java.util.Map;\n \n import com.akto.dto.test_editor.DataOperandFilterRequest;\n@@ -34,26 +35,41 @@ public Boolean isValid(DataOperandFilterRequest dataOperandFilterRequest) {\n \n         Map<String,String> cookieMap = AuthPolicy.parseCookie(Arrays.asList(data));\n \n-        if (cookieMap.containsKey(\"Max-Age\")) {\n-            int maxAge = Integer.parseInt(cookieMap.get(\"Max-Age\"));\n+        boolean result = queryVal;\n+        boolean res = false;\n+        if (cookieMap.containsKey(\"Max-Age\") || cookieMap.containsKey(\"max-age\")) {\n+            int maxAge;\n+            if (cookieMap.containsKey(\"Max-Age\")) {\n+                maxAge = Integer.parseInt(cookieMap.get(\"Max-Age\"));\n+            } else {\n+                maxAge = Integer.parseInt(cookieMap.get(\"max-age\"));\n+            }\n             if (maxAge/(60*60*24) > 30) {\n-                return false == queryVal;\n+                res = true;\n+            }\n+        } else if (cookieMap.containsKey(\"Expires\") || cookieMap.containsKey(\"expires\")) {\n+            String expiresTs;\n+            if (cookieMap.containsKey(\"Expires\")) {\n+                expiresTs = cookieMap.get(\"Expires\");\n+            } else {\n+                expiresTs = cookieMap.get(\"expires\");\n             }\n-        } else if (cookieMap.containsKey(\"Expires\")) {\n-            String expiresTs = cookieMap.get(\"Expires\");\n-            DateTimeFormatter formatter = DateTimeFormatter.RFC_1123_DATE_TIME;\n-            ZonedDateTime dateTime = ZonedDateTime.parse(expiresTs, formatter);\n-            \n-            ZonedDateTime now = ZonedDateTime.now();\n+\n+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern(\"EEE, dd MMM yyyy HH:mm:ss z\", Locale.ENGLISH);\n+            LocalDateTime dateTime;\n+            try {\n+                dateTime = LocalDateTime.parse(expiresTs, formatter);\n+            } catch (Exception e) {\n+                formatter = DateTimeFormatter.ofPattern(\"EEE, dd-MMM-yyyy HH:mm:ss z\", Locale.ENGLISH);\n+                dateTime = LocalDateTime.parse(expiresTs, formatter);\n+            }\n+            LocalDateTime now = LocalDateTime.now();\n             Duration duration = Duration.between(now, dateTime);\n             long seconds = duration.getSeconds();\n             if (seconds/(60*60*24) > 30) {\n-                return false == queryVal;\n+                res = true;\n             }\n-        } else {\n-            return true == queryVal;\n         }\n-\n-        return true == queryVal;\n+        return result == res;\n     }\n }"
+  }
+]

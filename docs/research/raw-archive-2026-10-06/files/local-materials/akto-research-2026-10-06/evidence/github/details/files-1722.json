@@ -1,0 +1,14 @@
+[
+  {
+    "sha": "94771fc551f679a8c984e939069973d010a49a26",
+    "filename": "apps/dashboard/web/polaris_web/web/src/apps/dashboard/pages/test_editor/components/editor_config/editorSetup.js",
+    "status": "modified",
+    "additions": 7,
+    "deletions": 9,
+    "changes": 16,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/760bd0a6b0e7188a1faaf09418a9c25601db4010/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Ftest_editor%2Fcomponents%2Feditor_config%2FeditorSetup.js",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/760bd0a6b0e7188a1faaf09418a9c25601db4010/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Ftest_editor%2Fcomponents%2Feditor_config%2FeditorSetup.js",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Ftest_editor%2Fcomponents%2Feditor_config%2FeditorSetup.js?ref=760bd0a6b0e7188a1faaf09418a9c25601db4010",
+    "patch": "@@ -128,17 +128,15 @@ const editorSetup = {\n         })\n     },\n \n-    findErrors: function(Editor,keywords){\n-        // a key may start with spaces and may have a \"-\" before starting\n-        // it will end with \":\" and may have spaces at the end.\n-        let keyRegex = /^\\s*-?\\s*(\\w+)(?=:( *)$)/\n+    findErrors: function(Editor, keywords){\n+        let keyRegex = /^\\s*-?\\s*(\\w+)\\s*:( *)$/;\n         Editor.onDidChangeModelContent(() => {\n             const model = Editor.getModel();\n             const markers = model.getValue().split('\\n').flatMap((line, index) => {\n                 let match = keyRegex.exec(line);\n                 const words = [];\n-                if(match!=null){\n-                    words.push(match[0]);\n+                if (match != null) {\n+                    words.push(match[1]);\n                 }\n                 const errors = words.flatMap((word, wordIndex) => {\n                     const matchingKeywords = keywords.filter(keyword => {\n@@ -156,10 +154,10 @@ const editorSetup = {\n                 });\n                 return errors;\n             });\n-            editor.setModelMarkers(model, 'keyword-marker-owner', markers)\n-\n-        })\n+            editor.setModelMarkers(model, 'keyword-marker-owner', markers);\n+        });\n     }\n+    \n \n }\n "
+  }
+]

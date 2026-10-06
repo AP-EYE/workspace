@@ -1,0 +1,14 @@
+[
+  {
+    "sha": "ec40c0dd1ff2b218e860bb0d5ab521e587f78065",
+    "filename": "apps/database-abstractor/src/main/java/com/akto/utils/RedactAlert.java",
+    "status": "modified",
+    "additions": 7,
+    "deletions": 12,
+    "changes": 19,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/b4eb3a9ca525e47a1c165794bcf544c0de36fad1/apps%2Fdatabase-abstractor%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Futils%2FRedactAlert.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/b4eb3a9ca525e47a1c165794bcf544c0de36fad1/apps%2Fdatabase-abstractor%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Futils%2FRedactAlert.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdatabase-abstractor%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Futils%2FRedactAlert.java?ref=b4eb3a9ca525e47a1c165794bcf544c0de36fad1",
+    "patch": "@@ -8,18 +8,15 @@\n import java.util.regex.Pattern;\n \n import com.akto.dao.AccountSettingsDao;\n-import com.akto.dao.ApiCollectionsDao;\n import com.akto.dao.context.Context;\n import com.akto.dto.AccountSettings;\n-import com.akto.dto.ApiCollection;\n import com.akto.dto.Config;\n import com.akto.log.LoggerMaker;\n import com.akto.log.LoggerMaker.LogDb;\n-import com.mongodb.BasicDBObject;\n \n public class RedactAlert {\n     private static final ExecutorService executorService = Executors.newFixedThreadPool(20);\n-    private static final LoggerMaker loggerMaker = new LoggerMaker(RedactAlert.class, LogDb.RUNTIME);\n+    private static final LoggerMaker loggerMaker = new LoggerMaker(RedactAlert.class, LogDb.DB_ABS);\n \n     static final String regex = \".*\\\\*\\\\*\\\\*\\\\*.*\";\n     static final Pattern pattern = Pattern.compile(regex);\n@@ -38,17 +35,15 @@ private static boolean checkRedact() {\n         }\n \n         redactMap.put(accountId, false);\n-        AccountSettings accountSettings = AccountSettingsDao.instance.findOne(AccountSettingsDao.generateFilter());\n-        List<ApiCollection> all = ApiCollectionsDao.instance.findAll(new BasicDBObject());\n-        for (ApiCollection apiCollection : all) {\n-            if (apiCollection.getRedact()) {\n+        try{\n+            AccountSettings accountSettings = AccountSettingsDao.instance.findOne(AccountSettingsDao.generateFilter());\n+            if (accountSettings.isRedactPayload()) {\n                 redactMap.put(accountId, true);\n             }\n+            lastFetchedMap.put(accountId, now);\n+        } catch (Exception e){\n+            loggerMaker.errorAndAddToDb(e, \"Error in checkRedact\");\n         }\n-        if (accountSettings.isRedactPayload()) {\n-            redactMap.put(accountId, true);\n-        }\n-        lastFetchedMap.put(accountId, now);\n         return redactMap.get(accountId);\n     }\n "
+  }
+]

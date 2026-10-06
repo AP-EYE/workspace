@@ -1,0 +1,46 @@
+{
+  "started_utc": "2026-10-06T00:18:03.820132+00:00",
+  "requests": [
+    {
+      "name": "repo",
+      "cached": true,
+      "items": 87
+    },
+    {
+      "name": "releases",
+      "cached": true,
+      "items": 1900
+    },
+    {
+      "name": "all_issues_and_prs",
+      "cached": true,
+      "items": 6581
+    },
+    {
+      "name": "closed_pulls",
+      "cached": true,
+      "items": 6142
+    },
+    {
+      "name": "advisories",
+      "cached": true,
+      "items": 0
+    },
+    {
+      "name": "contributors",
+      "cached": true,
+      "items": 55
+    },
+    {
+      "name": "templates_repo",
+      "cached": true,
+      "items": 87
+    },
+    {
+      "name": "templates_issues",
+      "cached": true,
+      "items": 347
+    }
+  ],
+  "completed_utc": "2026-10-06T00:18:07.132205+00:00"
+}

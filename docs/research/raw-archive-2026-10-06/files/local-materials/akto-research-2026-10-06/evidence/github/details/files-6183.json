@@ -1,0 +1,14 @@
+[
+  {
+    "sha": "db5514c9b5afc10b2887d91f6a430c13d2a997e8",
+    "filename": "apps/dashboard/web/polaris_web/web/src/apps/dashboard/pages/guardrails/components/steps/CustomGuardrailsStep.jsx",
+    "status": "modified",
+    "additions": 3,
+    "deletions": 3,
+    "changes": 6,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/623754fcd78878e5ff903cb964a129a03da8ba13/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Fguardrails%2Fcomponents%2Fsteps%2FCustomGuardrailsStep.jsx",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/623754fcd78878e5ff903cb964a129a03da8ba13/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Fguardrails%2Fcomponents%2Fsteps%2FCustomGuardrailsStep.jsx",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Fguardrails%2Fcomponents%2Fsteps%2FCustomGuardrailsStep.jsx?ref=623754fcd78878e5ff903cb964a129a03da8ba13",
+    "patch": "@@ -286,9 +286,9 @@ const CustomGuardrailsStep = ({\n                         <Box paddingBlockStart=\"4\" style={{ paddingLeft: '28px' }}>\n                             <VerticalStack gap=\"4\">\n                                 <Banner>\n-                                    Requires Akto browser extension v1.0.69 or later and is supported\n-                                    on browser only for now, on claude.ai and chatgpt.com. Support for\n-                                    Endpoint Shield Agent to come soon.\n+                                    Requires Akto browser extension v1.0.69 or later. Currently\n+                                    supported only via the browser extension. Endpoint Shield\n+                                    Agent support is coming soon.\n                                 </Banner>\n                                 <FormLayout>\n                                     <TextField"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "sha": "f929f5748f09458873e8780982bac87be0ef3a29",
+    "filename": "apps/database-abstractor/pom.xml",
+    "status": "modified",
+    "additions": 2,
+    "deletions": 2,
+    "changes": 4,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/eb21ec5522f53e4669cf55ecc6251d52c24bf629/apps%2Fdatabase-abstractor%2Fpom.xml",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/eb21ec5522f53e4669cf55ecc6251d52c24bf629/apps%2Fdatabase-abstractor%2Fpom.xml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdatabase-abstractor%2Fpom.xml?ref=eb21ec5522f53e4669cf55ecc6251d52c24bf629",
+    "patch": "@@ -29,7 +29,7 @@\n         <dependency>\n             <groupId>org.apache.struts</groupId>\n             <artifactId>struts2-core</artifactId>\n-            <version>2.5.30</version>\n+            <version>2.5.33</version>\n         </dependency>\n \n         <dependency>\n@@ -51,7 +51,7 @@\n         <dependency>\n             <groupId>org.apache.struts</groupId>\n             <artifactId>struts2-json-plugin</artifactId>\n-            <version>2.5.30</version>\n+            <version>2.5.33</version>\n         </dependency>\n \n         <dependency>"
+  },
+  {
+    "sha": "093c69ebcad887b65824dd2d7d3f2aa7c94b2793",
+    "filename": "apps/mini-testing/pom.xml",
+    "status": "modified",
+    "additions": 0,
+    "deletions": 6,
+    "changes": 6,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/eb21ec5522f53e4669cf55ecc6251d52c24bf629/apps%2Fmini-testing%2Fpom.xml",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/eb21ec5522f53e4669cf55ecc6251d52c24bf629/apps%2Fmini-testing%2Fpom.xml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fmini-testing%2Fpom.xml?ref=eb21ec5522f53e4669cf55ecc6251d52c24bf629",
+    "patch": "@@ -39,12 +39,6 @@\n             <artifactId>bcprov-jdk16</artifactId>\n             <version>1.46</version>\n         </dependency>\n-        <!-- https://mvnrepository.com/artifact/org.yaml/snakeyaml -->\n-        <dependency>\n-            <groupId>org.yaml</groupId>\n-            <artifactId>snakeyaml</artifactId>\n-            <version>1.33</version>\n-        </dependency>\n     </dependencies>\n \n     <build>"
+  },
+  {
+    "sha": "a4f5a80a4b7d8321eb4f2de5ddebb42e12f2b097",
+    "filename": "apps/testing/pom.xml",
+    "status": "modified",
+    "additions": 0,
+    "deletions": 6,
+    "changes": 6,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/eb21ec5522f53e4669cf55ecc6251d52c24bf629/apps%2Ftesting%2Fpom.xml",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/eb21ec5522f53e4669cf55ecc6251d52c24bf629/apps%2Ftesting%2Fpom.xml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Ftesting%2Fpom.xml?ref=eb21ec5522f53e4669cf55ecc6251d52c24bf629",
+    "patch": "@@ -39,12 +39,6 @@\n             <artifactId>bcprov-jdk16</artifactId>\n             <version>1.46</version>\n         </dependency>\n-        <!-- https://mvnrepository.com/artifact/org.yaml/snakeyaml -->\n-        <dependency>\n-            <groupId>org.yaml</groupId>\n-            <artifactId>snakeyaml</artifactId>\n-            <version>1.33</version>\n-        </dependency>\n     </dependencies>\n \n     <build>"
+  },
+  {
+    "sha": "7e452353678fff923dd2a5320042ea8107df2d1b",
+    "filename": "libs/dao/pom.xml",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 1,
+    "changes": 2,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/eb21ec5522f53e4669cf55ecc6251d52c24bf629/libs%2Fdao%2Fpom.xml",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/eb21ec5522f53e4669cf55ecc6251d52c24bf629/libs%2Fdao%2Fpom.xml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/libs%2Fdao%2Fpom.xml?ref=eb21ec5522f53e4669cf55ecc6251d52c24bf629",
+    "patch": "@@ -105,7 +105,7 @@\n         <dependency>\n             <groupId>org.springframework.security</groupId>\n             <artifactId>spring-security-web</artifactId>\n-            <version>5.6.2</version>\n+            <version>5.6.3</version>\n         </dependency>\n         <dependency>\n             <groupId>de.flapdoodle.embed</groupId>"
+  }
+]

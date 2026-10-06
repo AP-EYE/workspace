@@ -1,0 +1,38 @@
+[
+  {
+    "sha": "106925864b2053424dd01ba2cf6ebbf24f4a00ae",
+    "filename": "apps/dashboard/src/main/java/com/akto/action/CustomDataTypeAction.java",
+    "status": "modified",
+    "additions": 5,
+    "deletions": 6,
+    "changes": 11,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/9695f7766673f74135bd0dd2fc8d81d38a71ca0a/apps%2Fdashboard%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Faction%2FCustomDataTypeAction.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/9695f7766673f74135bd0dd2fc8d81d38a71ca0a/apps%2Fdashboard%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Faction%2FCustomDataTypeAction.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Faction%2FCustomDataTypeAction.java?ref=9695f7766673f74135bd0dd2fc8d81d38a71ca0a",
+    "patch": "@@ -186,12 +186,10 @@ public String execute() {\n             CustomDataTypeDao.instance.insertOne(customDataType);\n         } else {\n \n-            if (customDataTypeFromDb!=null && customDataTypeFromDb.getCreatorId() == 1638571050 &&\n-                    checkConditionUpdate(customDataTypeFromDb, customDataType)) {\n-                addActionError(\"Cannot update data type conditions for akto data types. Please create a new data type.\");\n-                return ERROR.toUpperCase();\n+            if (customDataTypeFromDb!=null && customDataTypeFromDb.getCreatorId() == 1638571050) {\n+                customDataType.setUserModifiedTimestamp(Context.now());\n             }\n-\n+            \n             FindOneAndUpdateOptions options = new FindOneAndUpdateOptions();\n             options.returnDocument(ReturnDocument.AFTER);\n             options.upsert(false);\n@@ -210,7 +208,8 @@ public String execute() {\n                     Updates.set(CustomDataType.SAMPLE_DATA_FIXED,customDataType.isSampleDataFixed()),\n                     Updates.set(AktoDataType.CATEGORIES_LIST, customDataType.getCategoriesList()),\n                     Updates.set(AktoDataType.DATA_TYPE_PRIORITY, customDataType.getDataTypePriority()),\n-                    Updates.set(CustomDataType.ICON_STRING, customDataType.getIconString())\n+                    Updates.set(CustomDataType.ICON_STRING, customDataType.getIconString()),\n+                    Updates.set(CustomDataType.USER_MODIFIED_TIMESTAMP, customDataType.getUserModifiedTimestamp())\n                 ),\n                 options\n             );"
+  },
+  {
+    "sha": "f0b64e996e5bb26ab13f2b600be884d4f6562bf0",
+    "filename": "apps/dashboard/src/main/java/com/akto/listener/InitializerListener.java",
+    "status": "modified",
+    "additions": 6,
+    "deletions": 3,
+    "changes": 9,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/9695f7766673f74135bd0dd2fc8d81d38a71ca0a/apps%2Fdashboard%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Flistener%2FInitializerListener.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/9695f7766673f74135bd0dd2fc8d81d38a71ca0a/apps%2Fdashboard%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Flistener%2FInitializerListener.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Flistener%2FInitializerListener.java?ref=9695f7766673f74135bd0dd2fc8d81d38a71ca0a",
+    "patch": "@@ -590,11 +590,14 @@ public static void executePIISourceFetch() {\n                 CustomDataType existingCDT = customDataTypesMap.getOrDefault(piiKey, null);\n                 CustomDataType newCDT = getCustomDataTypeFromPiiType(piiSource, piiType, false);\n \n-                if (currTypes.containsKey(piiKey) &&\n+                boolean hasNotChangedCondition = currTypes.containsKey(piiKey) &&\n                         (currTypes.get(piiKey).equals(piiType) && dt.getBoolean(PIISource.ACTIVE, true)) &&\n                         (existingCDT != null && existingCDT.getDataTypePriority() != null)\n-                        && (existingCDT.getCategoriesList() != null && !existingCDT.getCategoriesList().isEmpty())\n-                ) {\n+                        && (existingCDT.getCategoriesList() != null && !existingCDT.getCategoriesList().isEmpty());\n+\n+                boolean userHasChangedCondition = existingCDT.getUserModifiedTimestamp() > 0;\n+                \n+                if (userHasChangedCondition || hasNotChangedCondition) {\n                     continue;\n                 } else {\n                     Severity dtSeverity = null;"
+  },
+  {
+    "sha": "36021bb3afdca8a8448aa456dc2c08decd960305",
+    "filename": "libs/dao/src/main/java/com/akto/dto/CustomDataType.java",
+    "status": "modified",
+    "additions": 15,
+    "deletions": 0,
+    "changes": 15,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/9695f7766673f74135bd0dd2fc8d81d38a71ca0a/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2FCustomDataType.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/9695f7766673f74135bd0dd2fc8d81d38a71ca0a/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2FCustomDataType.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2FCustomDataType.java?ref=9695f7766673f74135bd0dd2fc8d81d38a71ca0a",
+    "patch": "@@ -45,6 +45,9 @@ public class CustomDataType {\n     public static final String ICON_STRING = \"iconString\";\n     private String iconString;\n \n+    public static final String  USER_MODIFIED_TIMESTAMP = \"userModifiedTimestamp\";\n+    private int userModifiedTimestamp;\n+\n     public CustomDataType() { }\n \n     public CustomDataType(String name, boolean sensitiveAlways, List<SingleTypeInfo.Position> sensitivePosition, int creatorId, boolean active, Conditions keyConditions, Conditions valueConditions, Conditions.Operator operator, IgnoreData ignoreData, boolean redacted, boolean sampleDataFixed) {\n@@ -262,4 +265,16 @@ public String getIconString() {\n     public void setIconString(String iconString) {\n         this.iconString = iconString;\n     }\n+\n+    public int getUserModifiedTimestamp() {\n+        return userModifiedTimestamp;\n+    }\n+\n+    public void setUserModifiedTimestamp(int userModifiedTimestamp) {\n+        this.userModifiedTimestamp = userModifiedTimestamp;\n+    }\n+\n+   \n+    \n+    \n }"
+  }
+]

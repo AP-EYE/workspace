@@ -1,0 +1,14 @@
+[
+  {
+    "sha": "092cbb02acb3ac1575d4cf542df1609ce162343d",
+    "filename": "apps/guardrails-service/container/src/pkg/session/headers.go",
+    "status": "modified",
+    "additions": 2,
+    "deletions": 9,
+    "changes": 11,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/04b0bc03b2cd35e046393902be24f1f06f382496/apps%2Fguardrails-service%2Fcontainer%2Fsrc%2Fpkg%2Fsession%2Fheaders.go",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/04b0bc03b2cd35e046393902be24f1f06f382496/apps%2Fguardrails-service%2Fcontainer%2Fsrc%2Fpkg%2Fsession%2Fheaders.go",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fguardrails-service%2Fcontainer%2Fsrc%2Fpkg%2Fsession%2Fheaders.go?ref=04b0bc03b2cd35e046393902be24f1f06f382496",
+    "patch": "@@ -16,13 +16,12 @@ func ExtractSessionID(headers map[string]string) string {\n \t\t\"X-Akto-Installer-Akto_session_id\", \"x-akto-installer-akto_session_id\", // Akto CLI hooks\n \t\t\"x-session-id\", \"X-Session-Id\",\n \t\t\"x-conversation-id\", \"X-Conversation-Id\",\n-\t\t\"authorization\", \"Authorization\",\n \t\t\"x-user-id\", \"X-User-Id\",\n \t}\n \n \tfor _, key := range candidates {\n \t\tif val, ok := headers[key]; ok && val != \"\" {\n-\t\t\treturn sanitizeSessionID(key, val)\n+\t\t\treturn sanitizeSessionID(val)\n \t\t}\n \t}\n \treturn \"\"\n@@ -46,13 +45,7 @@ func ExtractRequestID(headers map[string]string) string {\n \treturn \"\"\n }\n \n-func sanitizeSessionID(headerName, value string) string {\n-\t// Remove \"Bearer \" prefix from authorization header\n-\tif strings.ToLower(headerName) == \"authorization\" {\n-\t\tvalue = strings.TrimPrefix(value, \"Bearer \")\n-\t\tvalue = strings.TrimPrefix(value, \"bearer \")\n-\t}\n-\n+func sanitizeSessionID(value string) string {\n \t// Hash if too long (>100 chars)\n \tif len(value) > 100 {\n \t\thash := sha256.Sum256([]byte(value))"
+  }
+]

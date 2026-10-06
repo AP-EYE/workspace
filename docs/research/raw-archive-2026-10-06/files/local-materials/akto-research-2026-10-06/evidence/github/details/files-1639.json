@@ -1,0 +1,26 @@
+[
+  {
+    "sha": "8a76a9e2001a6351d5685fc87d6714bc619a39af",
+    "filename": "apps/dashboard/web/polaris_web/web/src/apps/dashboard/components/CollectionComponent.jsx",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 1,
+    "changes": 2,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/cecf652dba0aebfe49dd823b5682385a4ecdfc44/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fcomponents%2FCollectionComponent.jsx",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/cecf652dba0aebfe49dd823b5682385a4ecdfc44/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fcomponents%2FCollectionComponent.jsx",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fcomponents%2FCollectionComponent.jsx?ref=cecf652dba0aebfe49dd823b5682385a4ecdfc44",
+    "patch": "@@ -25,7 +25,7 @@ function CollectionComponent(props) {\n     const { condition, index, dispatch, operatorComponent } = props\n     const [apiEndpoints, setApiEndpoints] = useState({})\n     const initialRegexText = (condition && condition?.type === 'REGEX') ? (condition?.data?.regex || '') : ''\n-    const initialHostRegexText = (condition && condition?.type === 'HOST_REGEX') ? (condition?.data?.regex || '') : ''\n+    const initialHostRegexText = (condition && condition?.type === 'HOST_REGEX') ? (condition?.data?.host_regex || '') : ''\n     const [regexText, setRegexText] = useState(initialRegexText)\n     const [hostRegexText, setHostRegexText] = useState(initialHostRegexText)\n "
+  },
+  {
+    "sha": "186504f93a2e50b662d8582f58cd7e8d669d140e",
+    "filename": "apps/dashboard/web/polaris_web/web/src/apps/dashboard/pages/observe/api_collections/APIQuery.jsx",
+    "status": "modified",
+    "additions": 6,
+    "deletions": 0,
+    "changes": 6,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/cecf652dba0aebfe49dd823b5682385a4ecdfc44/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Fobserve%2Fapi_collections%2FAPIQuery.jsx",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/cecf652dba0aebfe49dd823b5682385a4ecdfc44/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Fobserve%2Fapi_collections%2FAPIQuery.jsx",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Fobserve%2Fapi_collections%2FAPIQuery.jsx?ref=cecf652dba0aebfe49dd823b5682385a4ecdfc44",
+    "patch": "@@ -77,6 +77,12 @@ function APIQuery() {\n                     let temp = JSON.parse(JSON.stringify(x))\n                     delete temp['type']\n                     delete temp['operator']\n+                    if(x?.actualType !== undefined && x?.actualType === 'HOST_REGEX'){\n+                        temp['host_regex'] = temp.regex\n+                        delete temp['regex']\n+                    }\n+                    delete temp['actualType']\n+                    \n                     dispatchConditions({index: index, type: \"overwrite\", obj: temp, key: \"data\"})\n                 }\n                 "
+  }
+]

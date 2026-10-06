@@ -1,0 +1,62 @@
+[
+  {
+    "sha": "a54ec464a89f0afc4e3d9841b07ee8c420cc1147",
+    "filename": "apps/dashboard/src/main/java/com/akto/action/CustomDataTypeAction.java",
+    "status": "modified",
+    "additions": 3,
+    "deletions": 2,
+    "changes": 5,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/e16c5421d0ea68a33f08df2ae53c293e11c95578/apps%2Fdashboard%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Faction%2FCustomDataTypeAction.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/e16c5421d0ea68a33f08df2ae53c293e11c95578/apps%2Fdashboard%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Faction%2FCustomDataTypeAction.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Faction%2FCustomDataTypeAction.java?ref=e16c5421d0ea68a33f08df2ae53c293e11c95578",
+    "patch": "@@ -248,7 +248,7 @@ public String execute() {\n \n     private AktoDataType aktoDataType;\n     \n-    public String saveAktoDataType(){\n+    public String saveAktoDataType() {\n \n         aktoDataType = AktoDataTypeDao.instance.findOne(\"name\",name);\n         if(aktoDataType==null){\n@@ -305,7 +305,8 @@ public String saveAktoDataType(){\n                 Updates.set(AktoDataType.KEY_CONDITIONS, keyConditions),\n                 Updates.set(AktoDataType.VALUE_CONDITIONS, valueConditions),\n                 Updates.set(AktoDataType.OPERATOR, mainOperator),\n-                Updates.set(AktoDataType.DATA_TYPE_PRIORITY, dataTypePriority)\n+                Updates.set(AktoDataType.DATA_TYPE_PRIORITY, dataTypePriority),\n+                Updates.set(AktoDataType._INACTIVE, !active)\n             ),\n             options\n         );"
+  },
+  {
+    "sha": "500234cafc359e0c5fb70a679c766ed10da17774",
+    "filename": "apps/dashboard/web/polaris_web/web/src/apps/dashboard/pages/observe/data_types/DataTypes.jsx",
+    "status": "modified",
+    "additions": 4,
+    "deletions": 6,
+    "changes": 10,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/e16c5421d0ea68a33f08df2ae53c293e11c95578/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Fobserve%2Fdata_types%2FDataTypes.jsx",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/e16c5421d0ea68a33f08df2ae53c293e11c95578/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Fobserve%2Fdata_types%2FDataTypes.jsx",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Fobserve%2Fdata_types%2FDataTypes.jsx?ref=e16c5421d0ea68a33f08df2ae53c293e11c95578",
+    "patch": "@@ -175,7 +175,7 @@ function DataTypes() {\n         valueOperator: currState.valueConditions.operator,\n         dataTypePriority: currState?.priority ? currState.priority.toUpperCase() : \"\",\n         ...transform.convertToSensitiveData(currState.sensitiveState),\n-        \n+        active: JSON.parse(currState.active)\n       }\n       api.saveAktoDataType(obj).then((response) => {\n         func.setToast(true, false, \"Data type updated successfully\");\n@@ -250,11 +250,9 @@ function DataTypes() {\n               requiredIndicator={true}\n               {...errorMessage.length > 0 ? {error: errorMessage} : {}}\n               />\n-            {currState.dataType === 'Custom' ?\n-              <Dropdown id={\"active-dropdown\"} menuItems={statusItems}\n-                selected={(val) => { handleChange({ active: val }) }}\n-                initial={currState.active} label=\"Active\" />\n-              : null}\n+            <Dropdown id={\"active-dropdown\"} menuItems={statusItems}\n+              selected={(val) => { handleChange({ active: val }) }}\n+              initial={currState.active} label=\"Active\" />\n             <Dropdown\n               menuItems={severityItems}\n               initial={currState.priority}"
+  },
+  {
+    "sha": "cb095ded74a3b2cb11b6b41d4a80f269f8c56df2",
+    "filename": "apps/dashboard/web/polaris_web/web/src/apps/dashboard/pages/observe/data_types/transform.js",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 1,
+    "changes": 2,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/e16c5421d0ea68a33f08df2ae53c293e11c95578/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Fobserve%2Fdata_types%2Ftransform.js",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/e16c5421d0ea68a33f08df2ae53c293e11c95578/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Fobserve%2Fdata_types%2Ftransform.js",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Fobserve%2Fdata_types%2Ftransform.js?ref=e16c5421d0ea68a33f08df2ae53c293e11c95578",
+    "patch": "@@ -61,8 +61,8 @@ const func = {\n         initialObj.iconString = dataObj?.iconString || globalFunc.getSensitiveIcons(dataObj.name)\n         let state = func.convertDataToState(dataObj.sensitiveAlways, dataObj.sensitivePosition)\n         initialObj.sensitiveState = state\n+        initialObj.active = dataObj.active.toString()\n         if(type === 'Custom'){\n-          initialObj.active = dataObj.active.toString()\n           initialObj.operator= dataObj.operator\n           initialObj.creatorId= dataObj.creatorId\n           initialObj.skipDataTypeTestTemplateMapping = dataObj.skipDataTypeTestTemplateMapping"
+  },
+  {
+    "sha": "a4b89ebf2d633827576b02b04ae0c1753ca316a9",
+    "filename": "libs/dao/src/main/java/com/akto/dao/SingleTypeInfoDao.java",
+    "status": "modified",
+    "additions": 17,
+    "deletions": 1,
+    "changes": 18,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/e16c5421d0ea68a33f08df2ae53c293e11c95578/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdao%2FSingleTypeInfoDao.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/e16c5421d0ea68a33f08df2ae53c293e11c95578/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdao%2FSingleTypeInfoDao.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdao%2FSingleTypeInfoDao.java?ref=e16c5421d0ea68a33f08df2ae53c293e11c95578",
+    "patch": "@@ -5,6 +5,7 @@\n import java.util.*;\n \n import com.akto.dao.context.Context;\n+import com.akto.dto.AktoDataType;\n import com.akto.dto.ApiInfo;\n import com.akto.dto.CollectionConditions.MethodCondition;\n import com.akto.dto.rbac.UsersCollectionsList;\n@@ -209,13 +210,17 @@ public List<String> sensitiveSubTypeNames() {\n         // AKTO sensitive\n         for (SingleTypeInfo.SubType subType: SingleTypeInfo.subTypeMap.values()) {\n             if (subType.isSensitiveAlways()) {\n+                AktoDataType dt = SingleTypeInfo.getAktoDataTypeMap(Context.accountId.get()).get(subType.getName());\n+                if (dt != null && !dt.getActive()) {\n+                    continue;\n+                }\n                 sensitiveSubTypes.add(subType.getName());\n             }\n         }\n \n         // Custom data type sensitive\n         for (CustomDataType customDataType: SingleTypeInfo.getCustomDataTypeMap(Context.accountId.get()).values()) {\n-            if (customDataType.isSensitiveAlways()) {\n+            if (customDataType.isSensitiveAlways() && customDataType.isActive()){\n                 sensitiveSubTypes.add(customDataType.getName());\n             }\n         }\n@@ -229,6 +234,11 @@ public List<String> sensitiveSubTypeInRequestNames() {\n             if (subType.isSensitiveAlways() ||\n                     subType.getSensitivePosition().contains(SingleTypeInfo.Position.REQUEST_HEADER)\n                     || subType.getSensitivePosition().contains(SingleTypeInfo.Position.REQUEST_PAYLOAD)) {\n+\n+                AktoDataType dt = SingleTypeInfo.getAktoDataTypeMap(Context.accountId.get()).get(subType.getName());\n+                if (dt != null && !dt.getActive()) {\n+                    continue;\n+                }\n                 sensitiveInRequest.add(subType.getName());\n             }\n         }\n@@ -252,6 +262,12 @@ public List<String> sensitiveSubTypeInResponseNames() {\n             if (subType.isSensitiveAlways() ||\n                     subType.getSensitivePosition().contains(SingleTypeInfo.Position.RESPONSE_HEADER) ||\n                     subType.getSensitivePosition().contains(SingleTypeInfo.Position.RESPONSE_PAYLOAD)) {\n+\n+                AktoDataType dt = SingleTypeInfo.getAktoDataTypeMap(Context.accountId.get()).get(subType.getName());\n+                if (dt != null && !dt.getActive()) {\n+                    continue;\n+                }\n+\n                 sensitiveInResponse.add(subType.getName());\n             }\n         }"
+  },
+  {
+    "sha": "f5c4c7d2ce7be57a06f0e540a6e09e2b2c4e1e24",
+    "filename": "libs/dao/src/main/java/com/akto/dto/AktoDataType.java",
+    "status": "modified",
+    "additions": 20,
+    "deletions": 0,
+    "changes": 20,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/e16c5421d0ea68a33f08df2ae53c293e11c95578/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2FAktoDataType.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/e16c5421d0ea68a33f08df2ae53c293e11c95578/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2FAktoDataType.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2FAktoDataType.java?ref=e16c5421d0ea68a33f08df2ae53c293e11c95578",
+    "patch": "@@ -32,6 +32,9 @@ public class AktoDataType {\n     public static final String OPERATOR = \"operator\";\n     Conditions.Operator operator;\n \n+    public static final String _INACTIVE = \"inactive\";\n+    private boolean inactive;\n+\n     public AktoDataType() {\n     }\n     public AktoDataType(String name, boolean sensitiveAlways, List<SingleTypeInfo.Position> sensitivePosition,int timestamp, IgnoreData ignoreData, boolean redacted, boolean sampleDataFixed) {\n@@ -152,4 +155,21 @@ public boolean validate(Object value, Object key) {\n     public boolean validateRaw(Object value, Object key) throws Exception {\n         return CustomDataType.validateRawUtility(value, key, this.keyConditions, this.valueConditions, this.operator);\n     }\n+\n+    /*\n+     * Default is inactive:false\n+     */\n+    public boolean getInactive() {\n+        return inactive;\n+    }\n+\n+    public void setInactive(boolean inactive) {\n+        this.inactive = inactive;\n+    }\n+\n+    // To send a field in frontend.\n+    public boolean getActive() {\n+        return !inactive;\n+    }\n+\n }"
+  }
+]

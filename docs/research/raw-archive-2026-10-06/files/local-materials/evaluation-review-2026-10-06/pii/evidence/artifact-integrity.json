@@ -1,0 +1,156 @@
+{
+  "checked_at": "2026-10-06",
+  "local_report_links_missing": [],
+  "files": [
+    {
+      "path": "scripts/audit_and_baseline.py",
+      "bytes": 7622,
+      "sha256": "1d1b871d8409719a40f5f4905a8353db690d6e8e2058aa8c0a5d6a8370d613a3"
+    },
+    {
+      "path": "scripts/audit_openpii.py",
+      "bytes": 1721,
+      "sha256": "45666161ff542bbc1e151e36b3080bcb50bfb5c58f2ebe4ddfc89d3b6412ab8b"
+    },
+    {
+      "path": "scripts/fetch_openpii_pages.py",
+      "bytes": 1009,
+      "sha256": "cd666b4bb888c8a516a756b520c1f07d3260019f293b2a58949111c20a98f02d"
+    },
+    {
+      "path": "scripts/fetch_samples.py",
+      "bytes": 1301,
+      "sha256": "7a1c24539f692062ec5eaac518f22c9fd09c045f01f43f76e1d5b85d07082285"
+    },
+    {
+      "path": "scripts/fetch_sources.py",
+      "bytes": 1597,
+      "sha256": "3d7906476c9e5ada30180eb80d98537ce8adefcb049b09604f3bf8c46568ebe9"
+    },
+    {
+      "path": "scripts/probe_kpii_scorer.py",
+      "bytes": 1080,
+      "sha256": "b2949a8d52cdc3ddd966baad2d97307c668b8d344f78ecad3c82f687815baf50"
+    },
+    {
+      "path": "evidence/audit-and-baseline.log",
+      "bytes": 581,
+      "sha256": "9bb76f3f98db408612ed167d6370b0c4f16936fb5b0d1313f8c63579e194d7a8"
+    },
+    {
+      "path": "evidence/fetch-manifest.json",
+      "bytes": 1840,
+      "sha256": "ccd2e9198ebdb5bf920e63490f15ec766f066f59f5a722b7b1f986cb623f1378"
+    },
+    {
+      "path": "evidence/gretel-card.md",
+      "bytes": 14735,
+      "sha256": "1818d7f7cd27101ee9f8c932baf5183482e49e54e4b108a1ba9138db60a3e8c8"
+    },
+    {
+      "path": "evidence/gretel-meta.json",
+      "bytes": 3786,
+      "sha256": "a4a072e68f6fc06c07e55d8a3d142798c2aae102893a6f1550dbd5f4f8f55b01"
+    },
+    {
+      "path": "evidence/gretel-splits.json",
+      "bytes": 222,
+      "sha256": "670d65bc435d79448174a66033bee958392775447ae8811e782c55315af5d74c"
+    },
+    {
+      "path": "evidence/gretel-train-firstrows.json",
+      "bytes": 198988,
+      "sha256": "7a1aaf80e8658f2e63cdc400a0b7a5721dfa453dd22db769cb6fa82fb5de1c76"
+    },
+    {
+      "path": "evidence/ko-pii-full-audit-and-baseline.json",
+      "bytes": 16029,
+      "sha256": "419660b4210fa83d376b7553b94e8ef88615652d1ee904b60a2ced6e66a89729"
+    },
+    {
+      "path": "evidence/kpii-context-review-input.json",
+      "bytes": 422717,
+      "sha256": "7613696dbce49d084474195c7534ebc9527d9fd0b6ce45feb34a128ca3ef8f71"
+    },
+    {
+      "path": "evidence/kpii-deep-sample-audit.json",
+      "bytes": 983,
+      "sha256": "1f3854f35165c3f666014a6b0744b7aa759e1c49161db22d313227a74a63ce05"
+    },
+    {
+      "path": "evidence/kpii-scorer-probe.json",
+      "bytes": 1259,
+      "sha256": "9597949c78d4ace4dc27cdf588de7f41a814c746449672dc856d0068bb0a5ccf"
+    },
+    {
+      "path": "evidence/kpii-scorer-probe.log",
+      "bytes": 1261,
+      "sha256": "018e6d0d56e74ec59481a4e23d5adb6f02c64051af3390578379e5215d0e2136"
+    },
+    {
+      "path": "evidence/new-papers-manifest.json",
+      "bytes": 710,
+      "sha256": "3ddadb1daceba81e9681d3d5063dad896cae9b3cb2819146847d4eb96fd30812"
+    },
+    {
+      "path": "evidence/openpii-card.md",
+      "bytes": 9208,
+      "sha256": "09718505013ce52cbdcfdb8e61eba5705314b3931e43fdfba1aaeafae9c0ca38"
+    },
+    {
+      "path": "evidence/openpii-korean-audit.json",
+      "bytes": 1067,
+      "sha256": "adfd5286507c0e2c448238effa70efd227a5f57bcc5913376702084d4e06da12"
+    },
+    {
+      "path": "evidence/openpii-korean-review-input.json",
+      "bytes": 27003,
+      "sha256": "06c432321aa6b62e367f06a80cded02a9c1135b1ef268e0a53fe6e64487ece26"
+    },
+    {
+      "path": "evidence/openpii-meta.json",
+      "bytes": 2920,
+      "sha256": "a4704eba5312c5d6fda461394f0e8d6cbfc6ea7d87c186dfd8bcded61c91dbdf"
+    },
+    {
+      "path": "evidence/openpii-pages-manifest.json",
+      "bytes": 2675,
+      "sha256": "acc5ce2620d1a28942b69b5c1ba0e209cb30cf21e66fe747cc8d4f8ca922b34c"
+    },
+    {
+      "path": "evidence/openpii-splits.json",
+      "bytes": 212,
+      "sha256": "73c4993dde9dbe8757e121d5cae7239b047d35de0313aaad74eac4e05190ffdc"
+    },
+    {
+      "path": "evidence/openpii-train-firstrows.json",
+      "bytes": 197083,
+      "sha256": "a3a070ba1f0efb0b7886628fd4e5df6e82e4dd70eefa3ddf4b4f1dfd21530597"
+    },
+    {
+      "path": "evidence/openpii-validation-firstrows.json",
+      "bytes": 197672,
+      "sha256": "654fad6ce90ef27f26e23d0555e74e0ace7cdb6b7247ec8ad3a428ccd83ea280"
+    },
+    {
+      "path": "evidence/PII_Bench_ACL26-pages.json",
+      "bytes": 118540,
+      "sha256": "7baf3e5c53bb1b51a71e09d8459c089509b8e3988aa1f4c4f1a55e6ce0498f3a"
+    },
+    {
+      "path": "evidence/PIIBench_2604.15776-pages.json",
+      "bytes": 32303,
+      "sha256": "485502003a91e3c4b2cc542c8bcfae64ef0c5f7d423ca79914e5ee247d96ba3f"
+    },
+    {
+      "path": "evidence/sample-fetch-manifest.json",
+      "bytes": 1568,
+      "sha256": "d919449d7d943f9dd4183ea89c3d81ac0c1aeb4f6cb74a7dbed2d710534f9081"
+    },
+    {
+      "path": "evidence/SPIA_ACL26-pages.json",
+      "bytes": 116515,
+      "sha256": "712ba4394656e5c8224a0b224d31db19620159b735a8aee5087077baf3b66d8d"
+    }
+  ]
+}

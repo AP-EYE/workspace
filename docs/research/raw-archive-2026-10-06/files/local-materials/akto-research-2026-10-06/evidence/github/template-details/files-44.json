@@ -1,0 +1,98 @@
+[
+  {
+    "sha": "c3d1942acc7bdeb1453faed41e3641a4a2fbff22",
+    "filename": "Broken-User-Authentication/NoAuth.yaml",
+    "status": "modified",
+    "additions": 2,
+    "deletions": 0,
+    "changes": 2,
+    "blob_url": "https://github.com/akto-api-security/tests-library/blob/1adc6658194a5176e0d08a8eba5caba87f618bf7/Broken-User-Authentication%2FNoAuth.yaml",
+    "raw_url": "https://github.com/akto-api-security/tests-library/raw/1adc6658194a5176e0d08a8eba5caba87f618bf7/Broken-User-Authentication%2FNoAuth.yaml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/tests-library/contents/Broken-User-Authentication%2FNoAuth.yaml?ref=1adc6658194a5176e0d08a8eba5caba87f618bf7",
+    "patch": "@@ -33,6 +33,8 @@ api_selection_filters:\n   response_code:\n     gte: 200\n     lt: 300\n+  method:\n+    neq: OPTIONS\n \n execute:\n   type: single"
+  },
+  {
+    "sha": "b93e86525ac803fb16195dfa6aae920597ebf059",
+    "filename": "Broken-User-Authentication/RemoveCSRF.yaml",
+    "status": "modified",
+    "additions": 32,
+    "deletions": 19,
+    "changes": 51,
+    "blob_url": "https://github.com/akto-api-security/tests-library/blob/1adc6658194a5176e0d08a8eba5caba87f618bf7/Broken-User-Authentication%2FRemoveCSRF.yaml",
+    "raw_url": "https://github.com/akto-api-security/tests-library/raw/1adc6658194a5176e0d08a8eba5caba87f618bf7/Broken-User-Authentication%2FRemoveCSRF.yaml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/tests-library/contents/Broken-User-Authentication%2FRemoveCSRF.yaml?ref=1adc6658194a5176e0d08a8eba5caba87f618bf7",
+    "patch": "@@ -29,25 +29,38 @@ info:\n     - CVE-2022-26180\n \n api_selection_filters:\n-  response_code:\n-    gte: 200\n-    lt: 300\n-  or:\n-    - request_headers:\n-        for_one:\n-          key:\n-            contains_either: csrf\n-            extract: csrf_key\n-    - request_payload:\n-        for_one:\n-          key:\n-            contains_either: csrf\n-            extract: csrf_key\n-    - query_param:\n-        for_one:\n-          key:\n-            contains_either: csrf\n-            extract: csrf_key\n+  and:\n+    - response_code:\n+        gte: 200\n+        lt: 300\n+    - or:\n+      - method:\n+          neq: GET\n+      - or:\n+          - request_payload:\n+              for_one:\n+                key:\n+                  regex: .*\n+          - query_param:\n+              for_one:\n+                key:\n+                  regex: .*\n+    - or:\n+      - request_headers:\n+          for_one:\n+            key:\n+              contains_either: csrf\n+              extract: csrf_key\n+      - request_payload:\n+          for_one:\n+            key:\n+              contains_either: csrf\n+              extract: csrf_key\n+      - query_param:\n+          for_one:\n+            key:\n+              contains_either: csrf\n+              extract: csrf_key\n \n execute:\n   type: single"
+  },
+  {
+    "sha": "e615469a6e704c07e5bc28a8bb6ce4446e2a7499",
+    "filename": "Broken-User-Authentication/ReplaceCSRF.yaml",
+    "status": "modified",
+    "additions": 32,
+    "deletions": 19,
+    "changes": 51,
+    "blob_url": "https://github.com/akto-api-security/tests-library/blob/1adc6658194a5176e0d08a8eba5caba87f618bf7/Broken-User-Authentication%2FReplaceCSRF.yaml",
+    "raw_url": "https://github.com/akto-api-security/tests-library/raw/1adc6658194a5176e0d08a8eba5caba87f618bf7/Broken-User-Authentication%2FReplaceCSRF.yaml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/tests-library/contents/Broken-User-Authentication%2FReplaceCSRF.yaml?ref=1adc6658194a5176e0d08a8eba5caba87f618bf7",
+    "patch": "@@ -29,25 +29,38 @@ info:\n     - CVE-2020-27379\n \n api_selection_filters:\n-  response_code:\n-    gte: 200\n-    lt: 300\n-  or:\n-    - request_headers:\n-        for_one:\n-          key:\n-            contains_either: csrf\n-            extract: csrf_key\n-    - request_payload:\n-        for_one:\n-          key:\n-            contains_either: csrf\n-            extract: csrf_key\n-    - query_param:\n-        for_one:\n-          key:\n-            contains_either: csrf\n-            extract: csrf_key\n+  and:\n+    - response_code:\n+        gte: 200\n+        lt: 300\n+    - or:\n+      - method:\n+          neq: GET\n+      - or:\n+          - request_payload:\n+              for_one:\n+                key:\n+                  regex: .*\n+          - query_param:\n+              for_one:\n+                key:\n+                  regex: .*\n+    - or:\n+      - request_headers:\n+          for_one:\n+            key:\n+              contains_either: csrf\n+              extract: csrf_key\n+      - request_payload:\n+          for_one:\n+            key:\n+              contains_either: csrf\n+              extract: csrf_key\n+      - query_param:\n+          for_one:\n+            key:\n+              contains_either: csrf\n+              extract: csrf_key\n \n execute:\n   type: single"
+  },
+  {
+    "sha": "c6c3eceaa0108a65500eb300bc918236708c8f64",
+    "filename": "Cross-Site-Scripting/AppendXSS.yaml",
+    "status": "modified",
+    "additions": 3,
+    "deletions": 3,
+    "changes": 6,
+    "blob_url": "https://github.com/akto-api-security/tests-library/blob/1adc6658194a5176e0d08a8eba5caba87f618bf7/Cross-Site-Scripting%2FAppendXSS.yaml",
+    "raw_url": "https://github.com/akto-api-security/tests-library/raw/1adc6658194a5176e0d08a8eba5caba87f618bf7/Cross-Site-Scripting%2FAppendXSS.yaml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/tests-library/contents/Cross-Site-Scripting%2FAppendXSS.yaml?ref=1adc6658194a5176e0d08a8eba5caba87f618bf7",
+    "patch": "@@ -53,6 +53,6 @@ execute:\n \n validate:\n   response_payload:\n-    contains_either: \"<script>alert(document.domain)</script>\"\n-  response_payload:\n-    contains_either: <!doctype html>\n\\ No newline at end of file\n+    contains_all:\n+      - \"<script>alert(document.domain)</script>\"\n+      - <!doctype html>\n\\ No newline at end of file"
+  },
+  {
+    "sha": "a9e70756256203ec538558912dfa6b6f04bcc6e8",
+    "filename": "Cross-Site-Scripting/BasicXSS.yaml",
+    "status": "modified",
+    "additions": 3,
+    "deletions": 3,
+    "changes": 6,
+    "blob_url": "https://github.com/akto-api-security/tests-library/blob/1adc6658194a5176e0d08a8eba5caba87f618bf7/Cross-Site-Scripting%2FBasicXSS.yaml",
+    "raw_url": "https://github.com/akto-api-security/tests-library/raw/1adc6658194a5176e0d08a8eba5caba87f618bf7/Cross-Site-Scripting%2FBasicXSS.yaml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/tests-library/contents/Cross-Site-Scripting%2FBasicXSS.yaml?ref=1adc6658194a5176e0d08a8eba5caba87f618bf7",
+    "patch": "@@ -52,6 +52,6 @@ execute:\n \n validate:\n   response_payload:\n-    contains_either: \"<script>alert(document.domain)</script>\"\n-  response_payload:\n-    contains_either: <!doctype html>\n\\ No newline at end of file\n+    contains_all:\n+      - \"<script>alert(document.domain)</script>\"\n+      - <!doctype html>\n\\ No newline at end of file"
+  },
+  {
+    "sha": "7dd9cbaa90310f4afd9691c7d943694685cbad01",
+    "filename": "Cross-Site-Scripting/XSSInPath.yaml",
+    "status": "modified",
+    "additions": 3,
+    "deletions": 4,
+    "changes": 7,
+    "blob_url": "https://github.com/akto-api-security/tests-library/blob/1adc6658194a5176e0d08a8eba5caba87f618bf7/Cross-Site-Scripting%2FXSSInPath.yaml",
+    "raw_url": "https://github.com/akto-api-security/tests-library/raw/1adc6658194a5176e0d08a8eba5caba87f618bf7/Cross-Site-Scripting%2FXSSInPath.yaml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/tests-library/contents/Cross-Site-Scripting%2FXSSInPath.yaml?ref=1adc6658194a5176e0d08a8eba5caba87f618bf7",
+    "patch": "@@ -48,7 +48,6 @@ execute:\n       - modify_url: ${urlVar}/%22%3E%3C%2Fscript%3E%3Cscript%3Ealert%28document.domain%29%3C%2Fscript%3E\n \n validate:\n-  response_payload:\n-    contains_either: \"<script>alert(document.domain)</script>\"\n-  response_payload:\n-    contains_either: <!doctype html>\n\\ No newline at end of file\n+  contains_all:\n+      - \"<script>alert(document.domain)</script>\"\n+      - <!doctype html>\n\\ No newline at end of file"
+  },
+  {
+    "sha": "1ce79037265f51ab06ee2f88c8601910c47dec00",
+    "filename": "Cross-Site-Scripting/XSSViaFilename.yaml",
+    "status": "modified",
+    "additions": 3,
+    "deletions": 4,
+    "changes": 7,
+    "blob_url": "https://github.com/akto-api-security/tests-library/blob/1adc6658194a5176e0d08a8eba5caba87f618bf7/Cross-Site-Scripting%2FXSSViaFilename.yaml",
+    "raw_url": "https://github.com/akto-api-security/tests-library/raw/1adc6658194a5176e0d08a8eba5caba87f618bf7/Cross-Site-Scripting%2FXSSViaFilename.yaml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/tests-library/contents/Cross-Site-Scripting%2FXSSViaFilename.yaml?ref=1adc6658194a5176e0d08a8eba5caba87f618bf7",
+    "patch": "@@ -101,7 +101,6 @@ execute:\n           png_file_name: '%22%3E%3C%2Fscript%3E%3Cscript%3Ealert%28document.domain%29%3C%2Fscript%3E.png'\n \n validate:\n-  response_payload:\n-    contains_either: \"<script>alert(document.domain)</script>\"\n-  response_payload:\n-    contains_either: <!doctype html>\n\\ No newline at end of file\n+  contains_all:\n+      - \"<script>alert(document.domain)</script>\"\n+      - <!doctype html>\n\\ No newline at end of file"
+  },
+  {
+    "sha": "2bd399735c7bf49bf84381137bbcfe85ff709a59",
+    "filename": "Server-Side-Request-Forgery/SSRFOnLocalhost.yaml",
+    "status": "modified",
+    "additions": 4,
+    "deletions": 0,
+    "changes": 4,
+    "blob_url": "https://github.com/akto-api-security/tests-library/blob/1adc6658194a5176e0d08a8eba5caba87f618bf7/Server-Side-Request-Forgery%2FSSRFOnLocalhost.yaml",
+    "raw_url": "https://github.com/akto-api-security/tests-library/raw/1adc6658194a5176e0d08a8eba5caba87f618bf7/Server-Side-Request-Forgery%2FSSRFOnLocalhost.yaml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/tests-library/contents/Server-Side-Request-Forgery%2FSSRFOnLocalhost.yaml?ref=1adc6658194a5176e0d08a8eba5caba87f618bf7",
+    "patch": "@@ -30,6 +30,10 @@ api_selection_filters:\n     and:\n       gte: 200\n       lt: 205\n+  response_payload:\n+    not_contains:\n+      - \"admin\"\n+      - localhost\n   or:\n     - request_payload:\n         for_one:"
+  }
+]

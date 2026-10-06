@@ -1,0 +1,49 @@
+[
+  {
+    "url": "https://api.github.com/repos/akto-api-security/akto/issues/comments/5304157495",
+    "html_url": "https://github.com/akto-api-security/akto/issues/5512#issuecomment-5304157495",
+    "issue_url": "https://api.github.com/repos/akto-api-security/akto/issues/5512",
+    "id": 5304157495,
+    "node_id": "IC_kwDOI38B3s8AAAABPCcFNw",
+    "user": {
+      "login": "sarthaknimbalkar",
+      "id": 54149390,
+      "node_id": "MDQ6VXNlcjU0MTQ5Mzkw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/54149390?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/sarthaknimbalkar",
+      "html_url": "https://github.com/sarthaknimbalkar",
+      "followers_url": "https://api.github.com/users/sarthaknimbalkar/followers",
+      "following_url": "https://api.github.com/users/sarthaknimbalkar/following{/other_user}",
+      "gists_url": "https://api.github.com/users/sarthaknimbalkar/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/sarthaknimbalkar/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/sarthaknimbalkar/subscriptions",
+      "organizations_url": "https://api.github.com/users/sarthaknimbalkar/orgs",
+      "repos_url": "https://api.github.com/users/sarthaknimbalkar/repos",
+      "events_url": "https://api.github.com/users/sarthaknimbalkar/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/sarthaknimbalkar/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "created_at": "2026-08-15T20:45:32Z",
+    "updated_at": "2026-08-15T20:48:42Z",
+    "body": "Hit this exact thing on a fresh self-hosted `2.19.0_local` and your diagnosis is correct - nice write-up.\n\n**Confirming the root cause:** the SPA gate in `apps/main/index.js` only grants access when `window.PLAN_TYPE ∈ {enterprise, professional, trial}`. `PLAN_TYPE` is injected from `pages/login.jsp` (`${requestScope.planType}`) and resolves via the billing service, which a `local_deploy` box doesn't have - so it comes back `\"\"` and you get blocked, even though `window.DASHBOARD_MODE === \"LOCAL_DEPLOY\"`. The gate never looks at `DASHBOARD_MODE`/`IS_SAAS`.\n\n**Proper fix:** I opened #6112 to make the gate treat `local_deploy` / non-SaaS deployments as never-paywalled (added to the same bypass as whitelisted orgs / signup pages). That routes OSS logins straight to the dashboard.\n\n**Workarounds until it merges** (either one):\n\n1. *No rebuild* - set a valid plan on your org in Mongo, then restart the dashboard so it re-reads it:\n   ```js\n   // mongosh\n   db.getSiblingDB(\"billing\").organizations.updateOne(\n     { adminEmail: \"<your-admin-email>\" },\n     { $set: { planType: \"enterprise\" } }\n   )\n   ```\n   (Depending on your build the backend may still serve `PLAN_TYPE` empty; if so use #2.)\n\n2. *Frontend* - in `pages/login.jsp`, change `window.PLAN_TYPE = '${requestScope.planType}'` to `window.PLAN_TYPE = 'enterprise'` (or apply the #6112 gate change), and redeploy the WAR.\n\nTo answer your Q1 directly: yes, the OSS dashboard is meant to be fully usable on `local_deploy` - this is just a gate that forgot to account for it.",
+    "author_association": "NONE",
+    "pin": null,
+    "reactions": {
+      "url": "https://api.github.com/repos/akto-api-security/akto/issues/comments/5304157495/reactions",
+      "total_count": 0,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "performed_via_github_app": null,
+    "minimized": null
+  }
+]

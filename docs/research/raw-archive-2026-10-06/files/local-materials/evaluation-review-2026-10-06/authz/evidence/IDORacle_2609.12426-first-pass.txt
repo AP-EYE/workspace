@@ -1,0 +1,382 @@
+=== TITLE + ABSTRACT ===
+IDORacle: Template-Guided SQL-Sink Mediation for Object-Level Authorization in Java
+Applications
+Yuewantong Songa,1, Guanhang Shib,c,1, Yin Caib,c, Changhui Wangb,c, Jin Weib,c, Ping Chenc,∗, Lei Shid, Jiangxing Wua,c
+aSchool of Computer Science and Artificial Intelligence, Zhengzhou University, Zhengzhou, China
+bSchool of Computer Science, Fudan University, Shanghai, China
+cInstitute of Big Data, Fudan University, Shanghai, China
+dSchool of Cyber Science and Engineering, Zhengzhou University, Zhengzhou, China
+Abstract
+Insecure Direct Object Reference (IDOR), frequently modeled as Broken Object-Level Authorization (BOLA), remains prevalent
+in Java database applications. The root cause is an architectural disconnect between identity and authorization checks enforced
+at the Controller or Service layer and the underlying SQL execution layer, which performs object-level operations based solely
+on resource identifiers. Existing research predominantly addresses detection of such vulnerabilities in source code, leaving a
+gap in low-intrusion runtime defense solutions for legacy Java-SQL applications. This paper presents IDORacle, a template-
+guided SQL-sink interception and rewriting framework designed to mitigate horizontal privilege escalation at runtime. IDORacle
+propagates authenticated identity contexts across HTTP requests, asynchronous tasks, and data-access boundaries via a server-side
+trace identifier. At the MyBatis/JDBC boundary, it extracts SQL templates and computes dual fingerprints, performing a one-time
+template-level analysis to generate reusable mediation plans. During instance execution, the framework combines runtime subject
+context, AST structures, table metadata, and cached authorization proofs to permit, rewrite, or block each SQL operation. IDORacle
+supports direct ownership predicate injection, join-derived ownership guards, probe-based authorization for group-owned resources,
+role-sensitive state-transition checks, and sensitive-column mediation. This guard taxonomy avoids the unsound assumption that all
+authorization failures reduce to a single row predicate. To contain overhead in production environments, IDORacle architecturally
+decouples template-level analysis from instance-level caching. A dedicated Java-SQL benchmark suite is constructed to evaluate the
+framework against diverse IDOR scenarios grounded in real-world CVE reports. Experimental results demonstrate that IDORacle
+prevents horizontal authorization violations with a worst-case guard latency of 0.17 ms. Its redundancy-aware optimization reduces
+average per-instance overhead by over 90% (to 0.017 ms) for hot SQL templates, bridging the gap between detection-phase BOLA
+analysis and practical, low-overhead runtime enforcement.
+Keywords:Insecure direct object reference, Broken object-level authorization, SQL-sink mediation, Runtime authorization
+enforcement, Java applications
+
+=== INTRODUCTION ===
+
+1. Introduction
+Broken access control remains one of the most persistent
+classes of web-application security failures. In the OW ASP
+Top 10:2025, Broken Access Control retains its ranking as the
+leading application-security risk (OW ASP Foundation, 2021,
+2025; MITRE Corporation, 2026a). In the OW ASP API Secu-
+rity Top 10 2023, Broken Object Level Authorization (BOLA)
+is listed as API1:2023, reflecting the broad attack surface cre-
+ated when APIs expose object identifiers through URLs, re-
+quest bodies, and API parameters without enforcing object-
+level authorization checks (OW ASP Foundation, 2023a). In-
+∗Corresponding author.
+Email addresses:sywt149@gs.zzu.edu.cn(Yuewantong Song),
+guanhang@bu.edu(Guanhang Shi),ycai25@m.fudan.edu.cn(Yin Cai),
+changhuiwang25@m.fudan.edu.cn(Changhui Wang),
+j_wei@fudan.edu.cn(Jin Wei),pchen@fudan.edu.cn(Ping Chen),
+shilei@zzu.edu.cn(Lei Shi),ndscwjx@126.com(Jiangxing Wu)
+1Yuewantong Song and Guanhang Shi contributed equally to this work.
+secure Direct Object Reference (IDOR) is a concrete instanti-
+ation of this problem: an authenticated user substitutes an ob-
+ject identifier—such as an order ID, job ID, tenant ID, or user
+ID—and the server omits verification that the referenced object
+falls within the user’s authorized scope (MITRE Corporation,
+2026b; PortSwigger Web Security Academy, 2026a,b).
+Unlike injection vulnerabilities, IDOR is a semantic
+vulnerability. An HTTP request may be syntactically valid,
+the SQL statement may be well-formed, and the authenticated
+user may be permitted to invoke the endpoint, yet the concrete
+database object accessed by the backend may belong to another
+user, tenant, or group. Correctness therefore depends on
+application-specific authorization invariants rather than on
+input syntax (Felmetsger et al., 2010; Pellegrino and Balzarotti,
+2014; Wang et al., 2026). Object-level authorization cannot
+be addressed as a pure input-sanitization problem; it must be
+enforced at the layer where subjects, objects, and backend
+operations converge.
+A substantial body of research has investigated static anal-
+arXiv:2609.12426v1  [cs.CR]  11 Sep 2026
+ysis, directed fuzzing, and runtime observation to detect BOLA
+and missing owner-check vulnerabilities in web applications
+(Huang et al., 2024; Liu et al., 2025a,b; Dharmaadi et al., 2025;
+Zhang et al., 2025). These detection-oriented approaches effec-
+tively identify whether a vulnerable endpoint exists, yet they
+operate within a testing-phase paradigm. In enterprise envi-
+ronments, legacy codebases frequently contain large numbers
+of endpoints in which authorization logic is interleaved with
+business SQL. Even when a scanner successfully flags a miss-
+ing ownership check, retrofitting authorization into monolithic
+legacy services is error-prone and time-consuming. A deploy-
+able, low-intrusion runtime prevention mechanism is therefore
+needed as a complementary last line of defense.
+A natural enforcement point is the database access bound-
+ary. Prior work has explored fine-grained access control
+through query rewriting, authorization views, row-level
+security, and middleware mediation (Rizvi et al., 2004; Chaud-
+huri et al., 2007; Mehta et al., 2017; Eykholt et al., 2017;
+PostgreSQL Global Development Group, 2026; Microsoft,
+2025; Zhang et al., 2022). These mechanisms establish that
+SQL-level mediation is both security-relevant and practical.
+However, applying them directly to Java web stacks exposes
+a critical semantic gap: legacy Java applications enforce au-
+thentication and role checks in filters, annotations, controllers,
+or service methods, while MyBatis or JDBC mappers execute
+SQL statements using only resource identifiers. The authorized
+subject identity is therefore separated from the SQL sink that
+commits the database operation.
+This paper addresses this deployment gap by studying
+runtime prevention of horizontal Java-SQL authorization vio-
+lations, where an authenticated low-privilege user attempts to
+read, update, delete, or trigger state changes on objects outside
+her authorized scope—the core semantics of IDOR/BOLA
+(OW ASP Foundation, 2023c,b). The primary goal is not to
+replace framework-level authentication, RBAC, or ABAC
+(Sandhu et al., 1996; Hu et al., 2014), but to add a last-mile
+SQL-sink reference monitor that complements existing checks
+by requiring sufficient object-level evidence before protected
+SQL instances reach the database.
+Realizing this goal surfaces four challenges. First, authori-
+zation evidence is fragmented: ownership semantics vary
+widely across tables, ranging from direct ownership columns
+(e.g.,user_id) to derivation via multi-hop joins, tenant
+groupings, or dynamic states. Second, SQL-sink enforcement
+must be semantics-aware; uniformly appendingAND user_id
+= ?would disrupt dictionary tables, administrator opera-
+tions, and legitimate cross-user workflows. Third, runtime
+enforcement must be efficient for production services, where
+SQL statements execute inside loops, scheduled jobs, or asyn-
+chronous tasks, making per-instance full parsing prohibitively
+costly. Fourth, credible evaluation requires paired benign
+and adversarial traces covering diverse ownership patterns,
+subquery-shaped bypasses, and performance stress cases.
+To address these challenges, we presentIDORacle, a
+template-guided runtime prevention framework for Java-SQL
+IDOR vulnerabilities. IDORacle places a lightweight media-
+tion layer at MyBatis/JDBC-style SQL sinks. At application
+entry, it propagates the authenticated subject context via a
+server-side trace identifier. At the data-access boundary, it
+separatestemplate planningfrominstance mediation: a SQL
+template is parsed, normalized, and compiled into a reusable
+mediation plan once, while per-execution work is limited
+to context binding, resource-key extraction, proof lookup,
+and guard evaluation. Guard types cover direct ownership
+predicates, join-derived ownership, group/tenant membership
+probes, role-sensitive state transitions, and sensitive-column
+policies, avoiding the unsound assumption that all authorization
+failures reduce to a single row predicate.
+This paper makes the following contributions:
+•Template-guided SQL-sink reference monitor .IDO-
+Racle introduces a low-intrusion reference monitor at
+the database access boundary that binds trusted subject
+context to SQL executions. By separating template-
+level planning from instance-level mediation, it reuses
+authorization plans across normalized SQL fingerprints
+and enforces checks on runtime context and policy
+metadata for each execution.
+•Heterogeneous guard model for object-level authori-
+zation.IDORacle defines a guard taxonomy covering
+direct ownership, derived ownership, group/tenant
+membership, role/state policy, and sensitive-column
+policy. This model supports diverse authorization
+semantics within a unified declarative configuration,
+complementing existing controller- and service-layer
+checks.
+•Benchmark design and empirical evaluation.We
+construct a dedicated Java-SQL IDOR benchmark
+grounded in real-world CVE reports to evaluate the
+framework across diverse ownership patterns. Results
+demonstrate that IDORacle prevents all tested horizontal
+privilege escalation attempts with zero false positives.
+The redundancy-aware caching mechanism reduces
+average overhead by over 90% (to 0.017 ms) for hot SQL
+templates, with a worst-case latency of 0.17 ms.
+
+=== CONCLUSION / DISCUSSION / LIMITATIONS ===
+
+8. Discussion
+8.1. Scope of SQL-Sink Enforcement
+IDORacle is designed to prevent horizontal object-level
+authorization violations whose security effect is ultimately
+realized through Java-SQL database operations. Its protection
+boundary is intentionally narrower than the full space of
+access-control failures. The system is effective when an
+attacker-controlled object identifier reaches a protected SQL
+sink and when the relevant authorization relation can be rep-
+resented by table metadata, ownership predicates, or column
+policies.
+Several limitations inherently bound this architectural
+scope. First, privilege escalation requests executing through
+third-party opaque APIs, rather than downstream observable
+SQL sinks, evade interception. Without local protected SQL
+operations, IDORacle lacks the runtime AST manipulation
+leverage necessary to enforce constraints. Second, accesses
+that bypass instrumented JDBC drivers—such as complex
+encapsulated stored procedures without explicit resource
+semantics—require manual adapter interventions. Third, if
+access-control decisions rely exclusively on volatile transient
+business states unmapped to database schemas or the identity
+record, a purely SQL-layer reference monitor cannot inde-
+pendently infer such intent. Fourth, fully automated ORM
+frameworks such as Hibernate or JPA often generate highly
+dynamic and fragmented SQL strings at runtime; applying
+IDORacle directly at the raw JDBC layer in such environments
+may reduce template cache hit rates, potentially approaching
+theGUARD_NO_CACHEperformance baseline (∼0.17 ms). A
+viable mitigation is to lift the interception point to the HQL
+or Criteria API abstraction layer, where query structure re-
+mains stable and the dual-fingerprint mechanism retains its
+efficiency—though this requires framework-specific adapters
+beyond the current prototype.
+A broader avenue for future work is the integration of
+IDORacle with static analysis or authorization-inference tools
+such as BolaRay or MOCGuard (Huang et al., 2024; Liu et al.,
+2025a). Automatically generating baseline policy templates
+from inferred ownership relations would reduce the manual
+configuration overhead for large-scale legacy deployments,
+allowing IDORacle to serve as the runtime enforcement engine
+for statically derived policies.
+8.2. Layer Placement and Deployment Trade-offs
+IDORacle does not require developers to rewrite MVC
+controllers, service methods, or mapper definitions. This
+low-intrusion deployment model is important for legacy Java
+systems, where authorization logic is often scattered. By
+enforcing object-level constraints at the DAO/JDBC bound-
+ary, IDORacle provides a resilient safety net even when
+service-layer checks are absent or incomplete.
+However, delaying enforcement to the JDBC layer in-
+troduces specific deployment trade-offs. When a malicious
+request could have been denied at the routing layer via strict
+RBAC annotations, intercepting it at the SQL sink means
+the application has already expended CPU cycles on routing,
+parameter parsing, and intermediate business logic. While this
+late-enforcement model ensures the database state remains
+secure, it incurs a marginal computational cost prior to rejec-
+tion. Nonetheless, as the micro-benchmark and caching results
+demonstrate, this overhead is effectively contained. IDORacle
+12
+prioritizes a deterministic, unified enforcement point at the
+data-access boundary, complementing rather than supplanting
+existing early-stage authorization mechanisms.
+9. Related Work
+9.1. Web Logic Vulnerabilities
+Access-control flaws are widely recognized as semantic
+web logic vulnerabilities, distinct from syntactic input-
+validation errors. Early systems such as NoTamper, MACE,
+and AuthScope reason about hidden parameters, user sessions,
+and protocol fields to identify parameter tampering and hor-
+izontal privilege escalation (Bisht et al., 2010; Monshizadeh
+et al., 2014; Zuo et al., 2017). Complementary static and
+black-box studies further demonstrate that authorization
+defects depend on application-specific workflows, state tran-
+sitions, and business invariants (Sun et al., 2011; Felmetsger
+et al., 2010; Pellegrino and Balzarotti, 2014; Wang et al.,
+2026). These analyses establish that the legitimacy of a given
+request parameter is determined by the authenticated subject,
+the referenced object, and the backend operation jointly—a
+perspective that motivates treating IDOR prevention as a
+subject–object–operation consistency problem.
+Building on this foundation, recent testing systems im-
+prove logic-vulnerability discovery through stateful crawling,
+directed fuzzing, multi-user differential testing, and runtime
+validation. Atropos, EvoCrawl, and Predator emphasize
+that realistic vulnerability discovery requires valid sessions,
+reachable program states, and semantically meaningful inputs
+(Güler et al., 2024; Guo et al., 2025; Wang et al., 2025). A2CT
+and DRacv further address automated testing and repair for
+function- and role-based access-control flaws (Schlaubitz et al.,
+2025; Xu et al., 2025). These techniques are complementary
+to IDORacle: they expose access-control defects during testing
+and analysis phases, whereas this work focuses on enforcing
+object-level authorization for deployed Java-SQL applications
+where vulnerable code paths may persist in production.
+9.2. BOLA Detection and Ownership Analysis
+IDOR is characterized as a concrete instance of Broken
+Object-Level Authorization (BOLA), where an authenticated
+user manipulates an object reference to access data or trigger
+state transitions outside the authorized scope (OW ASP Foun-
+dation, 2023a; MITRE Corporation, 2026b; PortSwigger Web
+Security Academy, 2026b). Unlike Broken Function-Level
+Authorization, the endpoint itself may be legitimately callable;
+the violation arises when the concrete object selected by the
+request is not owned by, visible to, or administrable by the
+current subject (OW ASP Foundation, 2023c,b). Effective
+IDOR reasoning therefore requires connecting the authenti-
+cated principal, attacker-controlled object identifiers, and the
+backend operation that dereferences them.
+Recent BOLA-oriented systems provide increasingly pre-
+cise evidence for missing object-level checks. BolaRay infers
+object-level authorization models in database-backed applica-
+tions, while MOCGuard targets missing-owner-check vulnera-
+bilities in Java web applications (Huang et al., 2024; Liu et al.,
+2025a). BACScan and BACFuzz demonstrate that HTTP re-
+sponse observation alone may be insufficient, and improve de-
+tection through multi-user differential analysis, runtime infor-
+mation, and SQL-level evidence (Liu et al., 2025b; Dharmaadi
+et al., 2025). UABScan further reveals inconsistent authenti-
+cation and authorization assumptions across Java web layers
+(Zhang et al., 2025). Empirical and zero-trust-oriented stud-
+ies reinforce the need to reason about BOLA beyond simple
+identifier guessing (Wu et al., 2025; Kaur, 2026). Collectively,
+these works advance the state of vulnerability discovery. IDOR-
+acle is positioned differently: it shifts the objective from detect-
+ing whether a vulnerable endpoint exists to preventing unautho-
+rized object operations at the SQL execution boundary, provid-
+ing a runtime safety net for applications where detection-phase
+remediation is incomplete.
+9.3. SQL-Level Policy Enforcement
+Database and middleware research has long explored
+fine-grained policy enforcement through query rewriting,
+authorization views, predicated grants, row-level security,
+and policy-aware adapters. Classical approaches encode
+fine-grained authorization decisions as SQL predicates inside
+query processing (Rizvi et al., 2004; Chaudhuri et al., 2007),
+and modern database systems provide row-level-security
+mechanisms for policy-controlled row visibility (PostgreSQL
+Global Development Group, 2026; Microsoft, 2025). Security
+systems such as Qapla, Authorized Updates, and Blockaid
+further demonstrate that application-layer data access can be
+protected by mediating SQL outside ordinary business logic
+(Mehta et al., 2017; Eykholt et al., 2017; Zhang et al., 2022).
+Related middleware and policy-extraction studies address
+scalable database access control, query-control interfaces,
+and automated recovery of application access-control policies
+(Pappachan et al., 2020; Bogaerts et al., 2021; Shay et al.,
+2018; Zhang et al., 2023, 2024).
+While these systems establish the feasibility of SQL-level
+mediation, typical Java web deployments introduce an ad-
+ditional semantic gap not addressed by prior work. JDBC
+connection pools execute SQL under shared database cre-
+dentials, rendering the underlying DBMS unable to observe
+end-user identity. Authenticated user context, maintained in
+framework security components such as filters, controllers, or
+service methods, is therefore invisible at the database boundary.
+Moreover, IDOR policies span direct owner columns, join-
+derived ownership, group or tenant membership, role-sensitive
+transitions, and sensitive-column constraints—a breadth not
+captured by generic query-rewriting or row-level-security
+primitives. This gap motivates a Java-SQL-specific design that
+binds server-side identity context to SQL-template mediation,
+as realized by IDORacle.
+9.4. Java-SQL Access Control
+RBAC and ABAC remain important frameworks for ex-
+pressing roles, attributes, and coarse-grained authorization poli-
+cies (Sandhu et al., 1996; Hu et al., 2014). In legacy Java enter-
+prise systems, however, authorization logic is distributed across
+13
+filters, annotations, controllers, service methods, MyBatis map-
+pers, scheduled jobs, and JDBC calls. The layer that holds
+the authenticated subject identity is typically separated from
+the layer that executes the concrete SQL statement against the
+database. This separation creates a last-mile enforcement gap
+that upstream framework mechanisms do not directly address.
+IDORacle targets this gap by placing a reference monitor
+at the MyBatis/JDBC boundary as a complementary enforce-
+ment point, rather than a replacement for upstream authenti-
+cation or role authorization. Its template-guided design amor-
+tizes expensive parsing, normalization, table classification, and
+guard binding at the SQL-template level. Per-instance medi-
+ation then performs context binding, resource-key extraction,
+proof lookup, and guard-specific validation with low overhead.
+This placement preserves existing business code while enforc-
+ing object-level constraints immediately before protected SQL
+statements reach the database, making it well-suited for legacy
+Java-SQL applications where retrofitting authorization into ser-
+vice methods is impractical.
+10. Conclusion
+This paper presented IDORacle, a template-guided runtime
+prevention framework for Java-SQL IDOR vulnerabilities.
+IDORacle bridges the semantic gap between application-level
+identity and SQL-level object operations by propagating
+trusted subject context, compiling reusable SQL-template
+mediation plans, and enforcing ownership, membership,
+resolver-based, role/state, and sensitive-column guards before
+protected statements reach the database. The evaluation shows
+that IDORacle prevents the tested horizontal object-reference
+violations while preserving benign accesses, with a worst-case
+guard latency of 0.17 ms and a 90.1% overhead reduction
+under rewrite-decision caching. These results demonstrate that
+SQL-sink mediation can provide a practical last-mile safety net
+for legacy Java database-backed applications, complementing
+existing controller-, service-, and external-API authorization
+mechanisms.
+Declaration of competing interest
+The authors declare that they have no known competing fi-
+nancial interests or personal relationships that could have ap-
+peared to influence the work reported in this paper.
+Data availability
+Data will be made available on request.
+Funding
+This research did not receive any specific grant from fund-
+ing agencies in the public, commercial, or not-for-profit sectors.

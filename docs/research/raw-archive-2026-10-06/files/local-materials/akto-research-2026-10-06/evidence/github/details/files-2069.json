@@ -1,0 +1,14 @@
+[
+  {
+    "sha": "932b04e3a1e197e3262c72f285a13907b3ff358c",
+    "filename": "apps/dashboard/src/main/java/com/akto/action/CustomDataTypeAction.java",
+    "status": "modified",
+    "additions": 5,
+    "deletions": 0,
+    "changes": 5,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/a50d99687a93f736b8c8e1c79b0c56ee811abf55/apps%2Fdashboard%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Faction%2FCustomDataTypeAction.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/a50d99687a93f736b8c8e1c79b0c56ee811abf55/apps%2Fdashboard%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Faction%2FCustomDataTypeAction.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Faction%2FCustomDataTypeAction.java?ref=a50d99687a93f736b8c8e1c79b0c56ee811abf55",
+    "patch": "@@ -600,6 +600,11 @@ public String resetDataTypeRetro() {\n             Bson sort = Sorts.ascending(\"_id.apiCollectionId\", \"_id.url\", \"_id.method\");    \n             List<HttpResponseParams> responses = new ArrayList<>();\n             this.customSubTypeMatches = new ArrayList<>();\n+\n+            SensitiveSampleDataDao.instance.getMCollection().deleteMany(Filters.eq(\"_id.subType\", name));\n+            SingleTypeInfoDao.instance.updateMany(Filters.eq(SingleTypeInfo.SUB_TYPE, name),\n+                    Updates.set(SingleTypeInfo.SUB_TYPE, SingleTypeInfo.GENERIC.getName()));\n+\n             do {\n                 sampleDataList = SampleDataDao.instance.findAll(Filters.empty(), skip, LIMIT, sort);\n                 skip += LIMIT;"
+  }
+]

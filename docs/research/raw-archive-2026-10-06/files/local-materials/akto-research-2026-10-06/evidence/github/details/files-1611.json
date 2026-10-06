@@ -1,0 +1,14 @@
+[
+  {
+    "sha": "8a76a9e2001a6351d5685fc87d6714bc619a39af",
+    "filename": "apps/dashboard/web/polaris_web/web/src/apps/dashboard/components/CollectionComponent.jsx",
+    "status": "modified",
+    "additions": 4,
+    "deletions": 2,
+    "changes": 6,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/099759002e33231ce5359d3c4f652b4016fc75a7/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fcomponents%2FCollectionComponent.jsx",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/099759002e33231ce5359d3c4f652b4016fc75a7/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fcomponents%2FCollectionComponent.jsx",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fcomponents%2FCollectionComponent.jsx?ref=099759002e33231ce5359d3c4f652b4016fc75a7",
+    "patch": "@@ -24,8 +24,10 @@ function CollectionComponent(props) {\n \n     const { condition, index, dispatch, operatorComponent } = props\n     const [apiEndpoints, setApiEndpoints] = useState({})\n-    const [regexText, setRegexText] = useState('')\n-    const [hostRegexText, setHostRegexText] = useState('')\n+    const initialRegexText = (condition && condition?.type === 'REGEX') ? (condition?.data?.regex || '') : ''\n+    const initialHostRegexText = (condition && condition?.type === 'HOST_REGEX') ? (condition?.data?.host_regex || '') : ''\n+    const [regexText, setRegexText] = useState(initialRegexText)\n+    const [hostRegexText, setHostRegexText] = useState(initialHostRegexText)\n \n     useEffect(() => {\n         fetchApiEndpoints(condition.data)"
+  }
+]

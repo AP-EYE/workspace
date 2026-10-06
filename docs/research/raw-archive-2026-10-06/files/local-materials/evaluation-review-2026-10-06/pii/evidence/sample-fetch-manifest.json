@@ -1,0 +1,33 @@
+[
+  {
+    "file": "openpii-train-firstrows.json",
+    "url": "https://datasets-server.huggingface.co/first-rows?dataset=ai4privacy%2Fpii-masking-openpii-1.5m&config=default&split=train",
+    "status": 200,
+    "bytes": 197083,
+    "sha256": "a3a070ba1f0efb0b7886628fd4e5df6e82e4dd70eefa3ddf4b4f1dfd21530597"
+  },
+  {
+    "file": "openpii-train-ko100.json",
+    "url": "https://datasets-server.huggingface.co/filter?dataset=ai4privacy%2Fpii-masking-openpii-1.5m&config=default&split=train&where=%22language%22%3D%27ko%27&offset=0&length=100",
+    "error": "HTTP Error 500: Internal Server Error"
+  },
+  {
+    "file": "openpii-validation-firstrows.json",
+    "url": "https://datasets-server.huggingface.co/first-rows?dataset=ai4privacy%2Fpii-masking-openpii-1.5m&config=default&split=validation",
+    "status": 200,
+    "bytes": 197672,
+    "sha256": "654fad6ce90ef27f26e23d0555e74e0ace7cdb6b7247ec8ad3a428ccd83ea280"
+  },
+  {
+    "file": "openpii-validation-ko100.json",
+    "url": "https://datasets-server.huggingface.co/filter?dataset=ai4privacy%2Fpii-masking-openpii-1.5m&config=default&split=validation&where=%22language%22%3D%27ko%27&offset=0&length=100",
+    "error": "HTTP Error 500: Internal Server Error"
+  },
+  {
+    "file": "gretel-train-firstrows.json",
+    "url": "https://datasets-server.huggingface.co/first-rows?dataset=gretelai%2Fsynthetic_pii_finance_multilingual&config=default&split=train",
+    "status": 200,
+    "bytes": 198988,
+    "sha256": "7a1aaf80e8658f2e63cdc400a0b7a5721dfa453dd22db769cb6fa82fb5de1c76"
+  }
+]

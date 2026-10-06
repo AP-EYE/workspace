@@ -1,0 +1,14 @@
+[
+  {
+    "sha": "dd0a803ab8c8fa6ba5f999d677e23b025387f6f1",
+    "filename": "apps/dashboard/web/polaris_web/web/src/util/func.js",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 1,
+    "changes": 2,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/a90fd3c25b4dfbe0ca944c91a7d0fea2d00bfefe/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Futil%2Ffunc.js",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/a90fd3c25b4dfbe0ca944c91a7d0fea2d00bfefe/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Futil%2Ffunc.js",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Futil%2Ffunc.js?ref=a90fd3c25b4dfbe0ca944c91a7d0fea2d00bfefe",
+    "patch": "@@ -1889,7 +1889,7 @@ joinWordsWithUnderscores(input) {\n     const segments = transformedString.split('/');\n     for (let i = 0; i < segments.length; i++) {\n         // Check if the segment is alphanumeric\n-        if (/^[0-9a-fA-F]+$/.test(segments[i]) || /^[0-9]+$/.test(segments[i])) {\n+        if (/^-?[0-9a-fA-F]+$/.test(segments[i]) || /^-?[0-9]+$/.test(segments[i])) {\n         segments[i] = 'id';\n         }\n     }"
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "sha": "fc6f005ad51d62223834d429bb325dcd49c18ec6",
+    "filename": "apps/api-runtime/src/main/java/com/akto/runtime/APICatalogSync.java",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 1,
+    "changes": 2,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/ba7f126cc5afbef2d9206f467c2d0588451319bd/apps%2Fapi-runtime%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fruntime%2FAPICatalogSync.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/ba7f126cc5afbef2d9206f467c2d0588451319bd/apps%2Fapi-runtime%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fruntime%2FAPICatalogSync.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fapi-runtime%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fruntime%2FAPICatalogSync.java?ref=ba7f126cc5afbef2d9206f467c2d0588451319bd",
+    "patch": "@@ -1871,7 +1871,7 @@ public void syncWithDB(boolean syncImmediately, boolean fetchAllSTI, SyncLimit a\n \n         boolean redact = false;\n         if (accountSettings != null) {\n-            redact =  accountSettings.isRedactPayload();\n+            redact = accountSettings.isRedactPayload() && source.equals(HttpResponseParams.Source.MIRRORING);\n             if (accountSettings.getPartnerIpList() != null) {\n                 partnerIpsList = accountSettings.getPartnerIpList();\n             }"
+  }
+]

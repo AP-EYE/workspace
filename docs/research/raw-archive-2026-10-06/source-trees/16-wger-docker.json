@@ -1,0 +1,344 @@
+[
+  {
+    "path": ".github/contributing.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2bc5932449260e0a36b6ce7b8ec1ebd67b1bdd85"
+  },
+  {
+    "path": ".github/pull_request_template.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "24594e0dd9de77c742fea28e64fe4acfbb71864e"
+  },
+  {
+    "path": ".github/workflows/test-nginx.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "90894a08e986e90df826cc03467c210784c8b38c"
+  },
+  {
+    "path": ".gitignore",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c2de2c78d12a9d8a75266705575022ac34e70ab4"
+  },
+  {
+    "path": "AUTHORS.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5d9ba0f12698b7f5e3bd1a0e993184be376580e4"
+  },
+  {
+    "path": "LICENSE",
+    "mode": "100644",
+    "type": "blob",
+    "object": "dba13ed2ddf783ee8118c6a581dbf75305f816a3"
+  },
+  {
+    "path": "README.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d7a7dced62016557c61cc82b6ab3283ba24975c5"
+  },
+  {
+    "path": "config/Caddyfile.example",
+    "mode": "100644",
+    "type": "blob",
+    "object": "90f941475fe88039d8dabd370a4881eeceff2ea7"
+  },
+  {
+    "path": "config/anubis-rules.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4e4617806ea74937e5c2dbd779431f821eefdb1b"
+  },
+  {
+    "path": "config/dev-sqlite.env",
+    "mode": "100644",
+    "type": "blob",
+    "object": "10288726103b4eb49d13d129d57b812b349fded8"
+  },
+  {
+    "path": "config/dev.env",
+    "mode": "100644",
+    "type": "blob",
+    "object": "573c4dd9441c66507d0ee628a4feb96c5f012cea"
+  },
+  {
+    "path": "config/nginx.conf",
+    "mode": "100644",
+    "type": "blob",
+    "object": "852667743442eb5b270d32bd9a88ad610a32a306"
+  },
+  {
+    "path": "config/prod.env",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a28e2fd2f21d33ffa8d32b247ebda77df606c096"
+  },
+  {
+    "path": "config/redis.conf",
+    "mode": "100644",
+    "type": "blob",
+    "object": "54824eb823e7444d05d4c54f9ae70a327cf44514"
+  },
+  {
+    "path": "dev-postgres/.env.example",
+    "mode": "100644",
+    "type": "blob",
+    "object": "caaca69ff4ce0260ff46e65f32d94ef6da9e1d22"
+  },
+  {
+    "path": "dev-postgres/README.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "74531e93549dbb15553f6ceede12028e6d81b2fc"
+  },
+  {
+    "path": "dev-postgres/docker-compose.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8e39cb05071e07a0c52b1bab40dd1db66f6ec941"
+  },
+  {
+    "path": "dev-postgres/initdb/01-reset-password.sql",
+    "mode": "100644",
+    "type": "blob",
+    "object": "48f766754f974531bbe4661960c3a1c6b77fabee"
+  },
+  {
+    "path": "dev-postgres/initdb/02-cleanup.sql",
+    "mode": "100644",
+    "type": "blob",
+    "object": "38ff1029224c1592d7c4fd707a82c61e6e3127ba"
+  },
+  {
+    "path": "dev-postgres/initdb/03-powersync.sql",
+    "mode": "100644",
+    "type": "blob",
+    "object": "44b6e4eb67ade0a0e36077e3bedb130e92de420d"
+  },
+  {
+    "path": "dev-postgres/initdb/README.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "425e47e9aaf58b4e7037ee5d1bda37532daff724"
+  },
+  {
+    "path": "dev/.env.example",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a8a5e42cd86990016936112149131e7d73338fa2"
+  },
+  {
+    "path": "dev/README.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "74531e93549dbb15553f6ceede12028e6d81b2fc"
+  },
+  {
+    "path": "dev/docker-compose.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "837fa29950da3b7b48e2f80778c16483eca6d28c"
+  },
+  {
+    "path": "docker-compose.override.example.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2b0347269dbb7fb152cdf23fd3804f03ca5970f2"
+  },
+  {
+    "path": "docker-compose.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f49c838086fed21427e35ad4ce937f8b91bd2cbb"
+  },
+  {
+    "path": "grafana/README.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "548cededa5b800a767403719f098b38692ed014f"
+  },
+  {
+    "path": "grafana/config.alloy",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ceae832bbab3b889e3439f5d8007a8d989c3328d"
+  },
+  {
+    "path": "grafana/dashboards/anubis.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4ee0bb91eb43fce887a159a87f2107daa6c9eb35"
+  },
+  {
+    "path": "grafana/dashboards/caddy.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "db7d05cfcf987aca9a019ed541847ce4c891345c"
+  },
+  {
+    "path": "grafana/dashboards/django.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9bafc59e277404ac0b03ceba36f714399bc37698"
+  },
+  {
+    "path": "grafana/dashboards/docker_daemon_metrics.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e67325eed0f866fd7422e52f6574fc2836183af5"
+  },
+  {
+    "path": "grafana/dashboards/exercise_database.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d0e9ba098abfd7eeed5760d00ee2bf19a7dcb49f"
+  },
+  {
+    "path": "grafana/dashboards/node_exporter_full.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ba490a6f7925c585a1f53909e415283920950ece"
+  },
+  {
+    "path": "grafana/dashboards/powersync.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "00186b5999b5d2eb278993ef2725fdba641018cc"
+  },
+  {
+    "path": "grafana/dashboards/wger_access_logs.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "144c23b9f3e97d4e487c6386afc31131bc47d564"
+  },
+  {
+    "path": "grafana/docker-compose.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "48ac179bf23b2cc9b767f4fb40eaa0ce18630dfe"
+  },
+  {
+    "path": "grafana/gen-pass.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "daa123b09635bf20721e97b81321d68b39bbd84c"
+  },
+  {
+    "path": "grafana/loki-config.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "402eb51445c822470c89a30b67327e21790f2a19"
+  },
+  {
+    "path": "grafana/prometheus.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5521b0b2ddd569d657eb61f2ee359c766f915742"
+  },
+  {
+    "path": "grafana/provisioning/dashboards/dashboards.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "22fbd885de844478ee5cbee22573c322b5e7bb32"
+  },
+  {
+    "path": "grafana/provisioning/datasources/loki.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b91326322a4cb6bba9652302ab8b155c2199d2a2"
+  },
+  {
+    "path": "grafana/provisioning/datasources/postgres.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3afcb1fb1c66f83515b5798d97c18934f83ce9b9"
+  },
+  {
+    "path": "grafana/provisioning/datasources/prometheus.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7fda6c133b3d50702d9a4f33bc33c81a27ed3662"
+  },
+  {
+    "path": "grafana/web.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "67a991068fca9d4323ed859e473fc377f3726f01"
+  },
+  {
+    "path": "grafana/wger.rules",
+    "mode": "100644",
+    "type": "blob",
+    "object": "cd32eff5368e884598ccb7b4bdf42482e40f231a"
+  },
+  {
+    "path": "services/config-powersync/powersync.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a5c2b0b2b8e6a18395544a4f9d7079b226ed1156"
+  },
+  {
+    "path": "services/config-powersync/sync_rules.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ca616e27b20f1a387d7ce93633a1d5f1faf3b8be"
+  },
+  {
+    "path": "services/postgres.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "40544be148a097624aaa2fbf96c825f7e97a09d6"
+  },
+  {
+    "path": "services/powersync.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "98aff86996d12d92613a4355be5a7c500dd6283e"
+  },
+  {
+    "path": "services/redis.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "fd06f6edf987044b46b63189ca62ed64e7e6eeb0"
+  },
+  {
+    "path": "tests/README.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d25c00943a390496cd538acfb059c794b241c934"
+  },
+  {
+    "path": "tests/conftest.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ec677a3d4e03e6cc620fedfa9e30c0072e3232eb"
+  },
+  {
+    "path": "tests/docker-compose.test.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6e59d566b866a657d418a3e613b43ee1852fe122"
+  },
+  {
+    "path": "tests/mock_backend.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3235eab503895ea3dee6ae85fb93d9d258305524"
+  },
+  {
+    "path": "tests/requirements.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3c3b7a86714ac2bad323d34c913754ff7d9ccd8b"
+  },
+  {
+    "path": "tests/test_nginx_config.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "cd35c348f88bed2fdfbf82ab9bfca81330c8bde0"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "sha": "e3571471e7a440efa80f4e071acf8858d0ef1ee2",
+    "filename": "apps/testing/src/main/java/com/akto/test_editor/execution/Executor.java",
+    "status": "modified",
+    "additions": 3,
+    "deletions": 3,
+    "changes": 6,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/b2774cbd4b3da7971e35762a673984d2e7623bea/apps%2Ftesting%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Ftest_editor%2Fexecution%2FExecutor.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/b2774cbd4b3da7971e35762a673984d2e7623bea/apps%2Ftesting%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Ftest_editor%2Fexecution%2FExecutor.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Ftesting%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Ftest_editor%2Fexecution%2FExecutor.java?ref=b2774cbd4b3da7971e35762a673984d2e7623bea",
+    "patch": "@@ -736,7 +736,7 @@ public ExecutorSingleOperationResp runOperation(String operationType, RawApi raw\n                     // resolve context for auth mechanism keys\n                     authVal = VariableResolver.resolveAuthContext(key, rawApi.getRequest().getHeaders(), authHeader);\n                     if (authVal != null) {\n-                        ExecutorSingleOperationResp authMechanismContextResult = Operations.modifyHeader(rawApi, authHeader, authVal);\n+                        ExecutorSingleOperationResp authMechanismContextResult = Operations.modifyHeader(rawApi, authHeader, authVal, true);\n                         modifiedAtLeastOne = modifiedAtLeastOne || authMechanismContextResult.getSuccess();\n                     }\n \n@@ -746,7 +746,7 @@ public ExecutorSingleOperationResp runOperation(String operationType, RawApi raw\n                         for (String customAuthHeaderKey: customAuthHeaderKeys) {\n                             authVal = VariableResolver.resolveAuthContext(key.toString(), rawApi.getRequest().getHeaders(), customAuthHeaderKey);\n                             if (authVal == null) continue;\n-                            ExecutorSingleOperationResp customAuthContextResult = Operations.modifyHeader(rawApi, customAuthHeaderKey, authVal);\n+                            ExecutorSingleOperationResp customAuthContextResult = Operations.modifyHeader(rawApi, customAuthHeaderKey, authVal, true);\n                             modifiedAtLeastOne = modifiedAtLeastOne || customAuthContextResult.getSuccess();\n                         }\n \n@@ -767,7 +767,7 @@ public ExecutorSingleOperationResp runOperation(String operationType, RawApi raw\n \n                     for (AuthParam authParam: authMechanism.getAuthParams()) {\n                         authVal = authParam.getValue();\n-                        ExecutorSingleOperationResp result = Operations.modifyHeader(rawApi, authParam.getKey(), authVal);\n+                        ExecutorSingleOperationResp result = Operations.modifyHeader(rawApi, authParam.getKey(), authVal, true);\n                         modifiedAtLeastOne = modifiedAtLeastOne || result.getSuccess();\n                     }\n                 }"
+  },
+  {
+    "sha": "b47897ecbae6c09b5ed15d28195f2e00ea52707d",
+    "filename": "apps/testing/src/main/java/com/akto/test_editor/execution/Operations.java",
+    "status": "modified",
+    "additions": 6,
+    "deletions": 1,
+    "changes": 7,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/b2774cbd4b3da7971e35762a673984d2e7623bea/apps%2Ftesting%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Ftest_editor%2Fexecution%2FOperations.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/b2774cbd4b3da7971e35762a673984d2e7623bea/apps%2Ftesting%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Ftest_editor%2Fexecution%2FOperations.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Ftesting%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Ftest_editor%2Fexecution%2FOperations.java?ref=b2774cbd4b3da7971e35762a673984d2e7623bea",
+    "patch": "@@ -57,13 +57,18 @@ public static boolean deleteCookie(Map<String, List<String>> headers, String key\n     }\n \n     public static ExecutorSingleOperationResp modifyHeader(RawApi rawApi, String key, String value) {\n+        return modifyHeader(rawApi, key, value, false);\n+    }\n+    public static ExecutorSingleOperationResp modifyHeader(RawApi rawApi, String key, String value, boolean upsert) {\n         Map<String, List<String>> headers = rawApi.fetchReqHeaders();\n         boolean modified = false;\n         modified = modifyCookie(headers, key, value);\n \n         if (!headers.containsKey(key)) {\n             if (!modified) {\n-                return new ExecutorSingleOperationResp(true, \"header key not present \" + key);\n+                if (!upsert) {\n+                    return new ExecutorSingleOperationResp(true, \"header key not present \" + key);\n+                }\n             } else {\n                 rawApi.modifyReqHeaders(headers);\n                 return new ExecutorSingleOperationResp(true, \"\");"
+  }
+]

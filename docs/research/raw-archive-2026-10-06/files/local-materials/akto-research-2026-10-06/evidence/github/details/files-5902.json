@@ -1,0 +1,50 @@
+[
+  {
+    "sha": "d1045659d1ef2651d4b7225bf2c41af9c35502de",
+    "filename": ".github/workflows/akto-agent-guard-anonymizer-ci.yml",
+    "status": "added",
+    "additions": 37,
+    "deletions": 0,
+    "changes": 37,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/4504da2a5980c77bb8d60e8d5585ab101e4bd938/.github%2Fworkflows%2Fakto-agent-guard-anonymizer-ci.yml",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/4504da2a5980c77bb8d60e8d5585ab101e4bd938/.github%2Fworkflows%2Fakto-agent-guard-anonymizer-ci.yml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/.github%2Fworkflows%2Fakto-agent-guard-anonymizer-ci.yml?ref=4504da2a5980c77bb8d60e8d5585ab101e4bd938",
+    "patch": "@@ -0,0 +1,37 @@\n+name: Agent Guard Anonymizer CI\n+\n+on:\n+  pull_request:\n+    paths:\n+      - \"apps/agent-guard/python-service/anonymizer-container/**\"\n+      - \".github/workflows/akto-agent-guard-anonymizer-ci.yml\"\n+  push:\n+    branches: [\"master\"]\n+    paths:\n+      - \"apps/agent-guard/python-service/anonymizer-container/**\"\n+      - \".github/workflows/akto-agent-guard-anonymizer-ci.yml\"\n+\n+jobs:\n+  test:\n+    name: Test\n+    runs-on: ubuntu-22.04\n+    defaults:\n+      run:\n+        working-directory: apps/agent-guard/python-service/anonymizer-container\n+    steps:\n+      - uses: actions/checkout@v4\n+\n+      - uses: actions/setup-python@v5\n+        with:\n+          python-version: \"3.12\"\n+          cache: \"pip\"\n+          cache-dependency-path: apps/agent-guard/python-service/anonymizer-container/src/requirements.txt\n+\n+      - name: Install dependencies\n+        run: pip install --no-cache-dir -r src/requirements.txt pytest\n+\n+      - name: Download spaCy model\n+        run: python -m spacy download en_core_web_sm\n+\n+      - name: pytest\n+        run: pytest -q"
+  },
+  {
+    "sha": "80432c2203160dff3c5478bf78b8fa77f0567ed1",
+    "filename": "apps/agent-guard/python-service/anonymizer-container/pytest.ini",
+    "status": "added",
+    "additions": 3,
+    "deletions": 0,
+    "changes": 3,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/4504da2a5980c77bb8d60e8d5585ab101e4bd938/apps%2Fagent-guard%2Fpython-service%2Fanonymizer-container%2Fpytest.ini",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/4504da2a5980c77bb8d60e8d5585ab101e4bd938/apps%2Fagent-guard%2Fpython-service%2Fanonymizer-container%2Fpytest.ini",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fagent-guard%2Fpython-service%2Fanonymizer-container%2Fpytest.ini?ref=4504da2a5980c77bb8d60e8d5585ab101e4bd938",
+    "patch": "@@ -0,0 +1,3 @@\n+[pytest]\n+testpaths = tests\n+pythonpath = src"
+  },
+  {
+    "sha": "9255bdd62b605fc4197e398853111b2b3c4a38e4",
+    "filename": "apps/agent-guard/python-service/anonymizer-container/src/anonymizer_service.py",
+    "status": "modified",
+    "additions": 3,
+    "deletions": 0,
+    "changes": 3,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/4504da2a5980c77bb8d60e8d5585ab101e4bd938/apps%2Fagent-guard%2Fpython-service%2Fanonymizer-container%2Fsrc%2Fanonymizer_service.py",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/4504da2a5980c77bb8d60e8d5585ab101e4bd938/apps%2Fagent-guard%2Fpython-service%2Fanonymizer-container%2Fsrc%2Fanonymizer_service.py",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fagent-guard%2Fpython-service%2Fanonymizer-container%2Fsrc%2Fanonymizer_service.py?ref=4504da2a5980c77bb8d60e8d5585ab101e4bd938",
+    "patch": "@@ -27,6 +27,8 @@\n # Noisy spaCy/keyword recognizers (no format validation) that misfire on ordinary text.\n EXCLUDED_ENTITY_TYPES = {\"DATE_TIME\", \"NRP\", \"LOCATION\"}\n \n+SCORE_THRESHOLD = 0.4\n+\n \n def _build_analyzer() -> AnalyzerEngine:\n     if not spacy.util.is_package(SPACY_MODEL):\n@@ -107,6 +109,7 @@ def anonymize(req: AnonymizeRequest, request: Request):\n         text=req.text,\n         language=req.language,\n         entities=req.entities,\n+        score_threshold=SCORE_THRESHOLD,\n     )\n     # Drop noisy types unless the caller explicitly asked for specific entities.\n     if not req.entities:"
+  },
+  {
+    "sha": "d0746997196f7ca9b37d95f2129a7193d0b79adc",
+    "filename": "apps/agent-guard/python-service/anonymizer-container/tests/test_anonymizer_service.py",
+    "status": "added",
+    "additions": 45,
+    "deletions": 0,
+    "changes": 45,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/4504da2a5980c77bb8d60e8d5585ab101e4bd938/apps%2Fagent-guard%2Fpython-service%2Fanonymizer-container%2Ftests%2Ftest_anonymizer_service.py",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/4504da2a5980c77bb8d60e8d5585ab101e4bd938/apps%2Fagent-guard%2Fpython-service%2Fanonymizer-container%2Ftests%2Ftest_anonymizer_service.py",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fagent-guard%2Fpython-service%2Fanonymizer-container%2Ftests%2Ftest_anonymizer_service.py?ref=4504da2a5980c77bb8d60e8d5585ab101e4bd938",
+    "patch": "@@ -0,0 +1,45 @@\n+\"\"\"Regression tests for SCORE_THRESHOLD in anonymizer_service.py.\"\"\"\n+\n+from anonymizer_service import AnonymizeRequest, anonymize\n+\n+\n+class _FakeRequest:\n+    client = None\n+\n+\n+def _sanitize(text: str) -> str:\n+    return anonymize(AnonymizeRequest(text=text), _FakeRequest()).sanitized_text\n+\n+\n+# The reported bug: weak scores on \"\\n\\n1.\"/\"\\n\\n2.\" ate the list markers.\n+def test_escaped_list_markers_survive_the_reported_wording():\n+    out = _sanitize(\n+        r'{\"body\": \"I notice you have shared an email address (`demo@kaot.io`), but I want '\n+        r'to clarify before updating anything:\\n\\n1. Is this intentional, or did you mean '\n+        r'`demo@akto.io` (which matches your existing contact info in memory)?\\n\\n2. Are you '\n+        r'asking me to update your contact information in memory, or are you sharing this '\n+        r'for a different purpose?\"}'\n+    )\n+    assert r\"\\n\\n1. Is this intentional\" in out\n+    assert r\"\\n\\n2. Are you asking\" in out\n+    assert \"demo@kaot.io\" not in out\n+    assert \"demo@akto.io\" not in out\n+\n+\n+# Email glued to an escape still gets caught.\n+def test_email_after_escape_is_redacted():\n+    out = _sanitize(r'{\"body\":\"contact:\\njane@corp.com is the owner\"}')\n+    assert \"jane@corp.com\" not in out\n+\n+\n+# Note: Presidio rejects known-fake SSNs (123-45-6789), so use a valid-format one.\n+def test_real_pii_still_redacted():\n+    out = _sanitize(\n+        r'{\"body\": \"email jane.doe@example.com, phone +1-415-555-2671, '\n+        r'card 4111 1111 1111 1111, driver license C1234567, SSN 457-55-5462, '\n+        r'IBAN GB33BUKB20201555555555, IP 192.168.1.10, name Michael Thompson\"}'\n+    )\n+    for secret in (\"jane.doe@example.com\", \"+1-415-555-2671\", \"4111 1111 1111 1111\",\n+                   \"C1234567\", \"457-55-5462\", \"GB33BUKB20201555555555\", \"192.168.1.10\",\n+                   \"Michael Thompson\"):\n+        assert secret not in out, secret"
+  }
+]

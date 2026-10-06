@@ -1,0 +1,2 @@
+# Preserve collected evidence bytes across platforms.
+* -text whitespace=-trailing-space,-blank-at-eof

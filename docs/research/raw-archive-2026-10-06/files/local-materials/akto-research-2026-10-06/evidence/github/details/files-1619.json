@@ -1,0 +1,26 @@
+[
+  {
+    "sha": "36874b8cfe3106ba7724c52bd6a1cedf1ed1406a",
+    "filename": "apps/data-ingestion-service/pom.xml",
+    "status": "modified",
+    "additions": 2,
+    "deletions": 2,
+    "changes": 4,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/db972d2ce8abeaae9fc3d9730db9de5ee5f34a6a/apps%2Fdata-ingestion-service%2Fpom.xml",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/db972d2ce8abeaae9fc3d9730db9de5ee5f34a6a/apps%2Fdata-ingestion-service%2Fpom.xml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdata-ingestion-service%2Fpom.xml?ref=db972d2ce8abeaae9fc3d9730db9de5ee5f34a6a",
+    "patch": "@@ -29,7 +29,7 @@\n         <dependency>\n             <groupId>org.apache.struts</groupId>\n             <artifactId>struts2-core</artifactId>\n-            <version>2.5.30</version>\n+            <version>2.5.33</version>\n         </dependency>\n \n         <dependency>\n@@ -46,7 +46,7 @@\n         <dependency>\n             <groupId>org.apache.struts</groupId>\n             <artifactId>struts2-json-plugin</artifactId>\n-            <version>2.5.30</version>\n+            <version>2.5.33</version>\n         </dependency>\n \n         <dependency>"
+  },
+  {
+    "sha": "4e9f177b2664456ebe16c5f7dd3690aff5f3a9b4",
+    "filename": "libs/dao/pom.xml",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 1,
+    "changes": 2,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/db972d2ce8abeaae9fc3d9730db9de5ee5f34a6a/libs%2Fdao%2Fpom.xml",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/db972d2ce8abeaae9fc3d9730db9de5ee5f34a6a/libs%2Fdao%2Fpom.xml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/libs%2Fdao%2Fpom.xml?ref=db972d2ce8abeaae9fc3d9730db9de5ee5f34a6a",
+    "patch": "@@ -100,7 +100,7 @@\n         <dependency>\n             <groupId>org.springframework.security</groupId>\n             <artifactId>spring-security-web</artifactId>\n-            <version>5.6.2</version>\n+            <version>5.6.3</version>\n         </dependency>\n         <dependency>\n             <groupId>de.flapdoodle.embed</groupId>"
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "sha": "360735432d9d2a68c66e82d46f6b79eeb429a35f",
+    "filename": "libs/dao/src/main/java/com/akto/dto/GuardrailPolicies.java",
+    "status": "modified",
+    "additions": 4,
+    "deletions": 1,
+    "changes": 5,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/403b7516e1abd52b92fdad495ac01198f6fcff31/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2FGuardrailPolicies.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/403b7516e1abd52b92fdad495ac01198f6fcff31/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2FGuardrailPolicies.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2FGuardrailPolicies.java?ref=403b7516e1abd52b92fdad495ac01198f6fcff31",
+    "patch": "@@ -189,10 +189,13 @@ public DeniedTopic(String topic, String description, List<String> samplePhrases)\n     public static class PiiType {\n         private String type;\n         private String behavior; // \"Block\" or \"Mask\"\n+        /** Minimum matches for this data type in the prompt (inclusive) to trigger; e.g. 20 means fire when 20+ of this type are present. */\n+        private int minMatchCount = 1;\n \n-        public PiiType(String type, String behavior) {\n+        public PiiType(String type, String behavior, int minMatchCount) {\n             this.type = type;\n             this.behavior = behavior;\n+            this.minMatchCount = minMatchCount >= 1 ? minMatchCount : 1;\n         }\n     }\n "
+  }
+]

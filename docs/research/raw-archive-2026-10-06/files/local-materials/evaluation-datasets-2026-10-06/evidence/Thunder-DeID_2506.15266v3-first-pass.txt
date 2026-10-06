@@ -1,0 +1,40 @@
+=== TITLE + ABSTRACT ===
+Thunder-DeID: Accurate and Efficient De-identification Framework
+for Korean Court Judgments
+Sungeun Hahm*1 Heejin Kim*1 Gyuseong Lee*1 Hyunji M. Park1 Jaejin Lee1,2
+1Graduate School of Data Science, Dept. of Data Science, Seoul National University
+2College of Engineering, Dept. of Computer Science and Engineering, Seoul National University
+{isungeuni, kheejin, ksnannaya, mhj233, jaejin}@snu.ac.kr
+Abstract
+To ensure a balance between open access to jus-
+tice and personal data protection, the South Ko-
+rean judiciary mandates the de-identification of
+court judgments before they can be publicly dis-
+closed. However, the current de-identification
+process is inadequate for handling court judg-
+ments at scale while adhering to strict legal re-
+quirements. Additionally, the legal definitions
+and categorizations of personal identifiers are
+vague and not well-suited for technical solu-
+tions. To tackle these challenges, we propose
+a de-identification framework called Thunder-
+DeID, which aligns with relevant laws and
+practices. Specifically, we (i) construct and re-
+lease the first Korean legal dataset containing
+annotated judgments along with correspond-
+ing lists of entity mentions, (ii) introduce a
+systematic categorization of Personally Iden-
+tifiable Information (PII), and (iii) develop an
+end-to-end deep neural network (DNN)-based
+de-identification pipeline. Our experimental re-
+sults demonstrate that our model achieves state-
+of-the-art performance in the de-identification
+of court judgments.
+
+=== INTRODUCTION ===
+Traceback (most recent call last):
+  File "C:\Users\andyw\Desktop\AP-EYE\team_hub\.agents\skills\paper-reading\scripts\extract_sections.py", line 61, in <module>
+    main()
+  File "C:\Users\andyw\Desktop\AP-EYE\team_hub\.agents\skills\paper-reading\scripts\extract_sections.py", line 48, in main
+    print(intro if intro else "\n".join(pages[:2])[:limit])
+UnicodeEncodeError: 'cp949' codec can't encode character '\u2022' in position 3672: illegal multibyte sequence

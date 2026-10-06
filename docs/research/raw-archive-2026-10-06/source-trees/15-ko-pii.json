@@ -1,0 +1,2120 @@
+[
+  {
+    "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c9cdeffffd77272597b6e106d8d6802609386752"
+  },
+  {
+    "path": ".github/ISSUE_TEMPLATE/config.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4a3377090cbfc970f8dfe1c416a5189fc00d215b"
+  },
+  {
+    "path": ".github/ISSUE_TEMPLATE/feature_request.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c1cccc5e59d3717e17808ca805b681e0e18b8f8b"
+  },
+  {
+    "path": ".github/PULL_REQUEST_TEMPLATE.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "137bdc56957a9dada9dfb82895eaabdb3c9524eb"
+  },
+  {
+    "path": ".github/dependabot.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e5e3023b81282af3576206936318b327dfac9c4d"
+  },
+  {
+    "path": ".github/workflows/ci.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1a84d603463eedd187c5b27da3cdf13732679873"
+  },
+  {
+    "path": ".github/workflows/release.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "111d487e6fbce4707d9fc78bcce608b1deb30416"
+  },
+  {
+    "path": ".gitignore",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b4354fe6607014dad839358c3c421fe5eda91e8e"
+  },
+  {
+    "path": "CHANGELOG.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "fd3b3d88a94d76955334f00d4f13309b0c3f0805"
+  },
+  {
+    "path": "CONTRIBUTING.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0644047105903b751f7f77f4d36137416717eb82"
+  },
+  {
+    "path": "LICENSE",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8104a6af57b1acb83f919c250369262993f97595"
+  },
+  {
+    "path": "README.en.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "830786241f6596eedef33b0c4c08b1d8f61e52d2"
+  },
+  {
+    "path": "README.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9b1d63bd8dfad67247e1c0f7a71c82f3a0bbf06f"
+  },
+  {
+    "path": "SECURITY.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "79bce47840896bf2d67062a302f28cb4eba7e518"
+  },
+  {
+    "path": "data/build_eval_corpus.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c7785424cf608da0d581d941627f5038b834de1f"
+  },
+  {
+    "path": "data/build_external_eval_v2.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "18bceb66444af820e634eabc384fa04e2c51f869"
+  },
+  {
+    "path": "data/corpus/aihub_569/multiple_choice.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f7a6051e24a20a9dbc1969f9e9a1e5a5bd23dac9"
+  },
+  {
+    "path": "data/corpus/aihub_569/span_extraction.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0103922c0daedc1d941c4b4ad609c4e6cdba3843"
+  },
+  {
+    "path": "data/corpus/aihub_569/span_extraction_how.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c7fa4c2a604338fabe8fc41fc140de338ca2a2e1"
+  },
+  {
+    "path": "data/corpus/aihub_569/tableqa.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c8e988b0c10fc4f404aa606bb072d2c0605475a6"
+  },
+  {
+    "path": "data/corpus/aihub_569/text_entailment.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7d5cf0472880eded0e7b1346c2cd38cfad62b256"
+  },
+  {
+    "path": "data/corpus/aihub_569/unanswerable.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "75e6ee068e81aba66a366de5340fca4511a3cfb9"
+  },
+  {
+    "path": "data/corpus/aihub_71845/국립아시아문화전당.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5c5bf3a391ef5fbab17c9cf34c79b28fe34ca83c"
+  },
+  {
+    "path": "data/corpus/aihub_71845/중앙행정기관.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "50510c5f6abb5ab648e189190d798f28d2a40749"
+  },
+  {
+    "path": "data/corpus/aihub_71845/지방행정기관.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3e38695c2115b54b45a677021148e6ed231402ae"
+  },
+  {
+    "path": "data/corpus/eval_corpus.jsonl",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6d784ccbcedd0c0587116d9e80c48ed3ac7517d7"
+  },
+  {
+    "path": "data/corpus/external_inject_v2.jsonl",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0d61b37858df3b33d864b70272481108258c43d3"
+  },
+  {
+    "path": "data/corpus/injected_pii_corpus.jsonl",
+    "mode": "100644",
+    "type": "blob",
+    "object": "159a30adc87ad3989c30510d3a99768f65269480"
+  },
+  {
+    "path": "data/corpus/korea_kr.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "45a18d3f253c7f006f697e7155aaddab705dfb42"
+  },
+  {
+    "path": "data/corpus/wikipedia.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d5e834b61c7f65282c83d6c6e1ce714302674c10"
+  },
+  {
+    "path": "data/eval/eval_injected_corpus.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7b0390c50c195c3e6cc606816c33b8a13c634c97"
+  },
+  {
+    "path": "data/eval/eval_naver_changwon_ner.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d84327a866e4f10b3723481212e64dd8ccf378c2"
+  },
+  {
+    "path": "data/eval/eval_openai_klue_ner.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3e3e54bdda777ff0e1abd3e1488f70a4210e583f"
+  },
+  {
+    "path": "data/eval/eval_openai_synth.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "340b2cb05d48581368250cec4f4c716017548074"
+  },
+  {
+    "path": "data/eval/eval_openmed_all.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b05d01cf352d4fa25efd37084fec2c01a048570b"
+  },
+  {
+    "path": "data/eval/eval_presidio_all.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "01bef921cf23bf023e253d1b9e290e0ff4d485e3"
+  },
+  {
+    "path": "data/generated_eval.README.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ed65e4caa27c04c83d7b3c6632c540a5ed7cfa88"
+  },
+  {
+    "path": "data/generated_eval.jsonl",
+    "mode": "100644",
+    "type": "blob",
+    "object": "41816d7d16aae2a54e38406d070d7e16529a57af"
+  },
+  {
+    "path": "data/generated_eval_large.README.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ef1207c36282e289df8ad53dcd2fa1cf6c4e65e0"
+  },
+  {
+    "path": "data/generated_eval_large.jsonl",
+    "mode": "100644",
+    "type": "blob",
+    "object": "84cc0030b6f23fbc90f4b18690114f3408cd0d43"
+  },
+  {
+    "path": "data/inject_pii_corpus.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9bbe801119d745be0e2f572c219b55f21d0a0831"
+  },
+  {
+    "path": "data/kdpii/README.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "09d49720090b1ef0724a830e9e5e730e28a54d83"
+  },
+  {
+    "path": "data/kdpii/test.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4808882829752d40b5720986a5033063ac38c76f"
+  },
+  {
+    "path": "data/kdpii/train.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "bf813c75a43b5cac95f827ea89ef78ed44620c91"
+  },
+  {
+    "path": "data/kdpii/valid.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "97d50f4506177bf16525bc957278ed6b39bef281"
+  },
+  {
+    "path": "data/klue_ner/klue-ner-v1.1_dev.tsv",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3ed843a2e62d536fc2e2dbcc0f304ee346dda62e"
+  },
+  {
+    "path": "data/labeling/GUIDE.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "241d3982167492808a894395f644ebdd124b3607"
+  },
+  {
+    "path": "data/labeling/label_ui.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e9e274f84bd9d8592d3ef79accfefa515eb920e7"
+  },
+  {
+    "path": "data/labeling/labeling_sample.jsonl",
+    "mode": "100644",
+    "type": "blob",
+    "object": "dfcdea9a9db20348d4b6617db406be7a50bd69c5"
+  },
+  {
+    "path": "data/labeling/make_sample.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "148789bd4e4da8ba7c8e52d6d17063314b69e43b"
+  },
+  {
+    "path": "data/labeling/score_labeled.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "41046ee0e21479babfb77a9411769c94774a727d"
+  },
+  {
+    "path": "data/results/bootstrap_detections.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "729b6d869cada13efb981ce711928c2c09e19fcb"
+  },
+  {
+    "path": "data/results/eval_corpus_kpii.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1d148e3efd8ac2c1bc797f35b04bf680075bfb1f"
+  },
+  {
+    "path": "data/results/injected_full_eval.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "734791c30b51f8fce02369c964cb8c0ac5fd585f"
+  },
+  {
+    "path": "data/results/kdpii_3way_full.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2e491b5e6db78d54e4eda9398c549b792dc4bc13"
+  },
+  {
+    "path": "data/results/klue_ner_openai_full.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "460445bef29cf9c87f8905a83a5e6534f94089c3"
+  },
+  {
+    "path": "data/results/naver_changwon_ner_eval.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c0602172707b242ce1e0f52b24a497f45f3b89ee"
+  },
+  {
+    "path": "data/results/presidio_injected_default.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e52d4fed0199783e8e2d48692d015378b184c4e9"
+  },
+  {
+    "path": "data/results/presidio_injected_kr_adapt.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5985516889cab56b694f95ba227fa43e831963e4"
+  },
+  {
+    "path": "data/results/presidio_kdpii_default.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "634c1b52597e08a74cfc258f67af94b388a1a5db"
+  },
+  {
+    "path": "data/results/presidio_kdpii_kr_adapt.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "833c563d095ca62b263c4c20a8f863792756c176"
+  },
+  {
+    "path": "data/results/presidio_klue_default.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9bed569e13484ac87987629ad22ffde912ec70e5"
+  },
+  {
+    "path": "data/results/presidio_klue_kr_adapt.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1acfce052ea08b16dc90c2f77e473b5cf1fdcdaf"
+  },
+  {
+    "path": "data/results/presidio_synth_default.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e9f629dca75c616ed9b517d4eaef55f12cb98b0c"
+  },
+  {
+    "path": "data/results/presidio_synth_kr_adapt.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "44f9db2b09fd46b51527c9556115b77377c3d770"
+  },
+  {
+    "path": "data/results/synth_enhanced_kpii.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3e5796163e59ad1b17e71af6c452a8a68575e1e1"
+  },
+  {
+    "path": "data/results/synth_enhanced_openai.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "cc6a8ef55f2c805d2739a6d6d5d0903d741cb34e"
+  },
+  {
+    "path": "data/tools/classify_fp_candidates.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "13e61a3d39dc39f60319838cb4a47d9947e69ce6"
+  },
+  {
+    "path": "data/tools/count_bootstrap_detections.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e518282cd4e363051db179750bec68a05cf67965"
+  },
+  {
+    "path": "data/tools/extract_aihub.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4700b01dc284d5eeb805407341d9bd6c8085b3ec"
+  },
+  {
+    "path": "data/tools/fetch_corpus.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2e04234ae37800334fcac3bd08d3e90028933932"
+  },
+  {
+    "path": "data/tools/probe_aihub.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f409522b6f751e3858146e5b15d390c02585514a"
+  },
+  {
+    "path": "demo/app.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e1fdc33b259a97c5f46f17dbf6fccaab0bdc6ea1"
+  },
+  {
+    "path": "docs/BENCHMARK.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "955cc75cdc68e4c2fd21d81b949ec6f5fed6e91a"
+  },
+  {
+    "path": "docs/EVALUATION_REPORT.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f8e15ce3013f7a882fba08b2aaa54bb4d2bf1441"
+  },
+  {
+    "path": "docs/HYBRID_NER.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6793d94109715c6c4171317312955fdeb1cb532a"
+  },
+  {
+    "path": "docs/VAULT_SECURITY.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ef0b802af77c124834d684d4fcecb4f0cfaf44ff"
+  },
+  {
+    "path": "docs/annotation_policy.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "cce67262654998837e4e96194044462632e52341"
+  },
+  {
+    "path": "docs/coverage.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "11e9d2913075b906ac3d3a5fe516b1b7f9bc36b3"
+  },
+  {
+    "path": "docs/domain_fit_report.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e6b4fef1d5a940aa601b094c9a3e8952a74c3eb8"
+  },
+  {
+    "path": "docs/integration_mcp.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4fa0be3e7d54336f00718ec7d79ac045db8c4983"
+  },
+  {
+    "path": "docs/integration_openai_privacy_filter.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e730e21bf955c61704c45d40b931da6fc06001aa"
+  },
+  {
+    "path": "docs/integration_presidio.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "fd3c1abbe7a7bfe8800c0be8f40e8ce64076b9da"
+  },
+  {
+    "path": "docs/kdpii_visual_compare.html",
+    "mode": "100644",
+    "type": "blob",
+    "object": "dd88217fca90edc1a4519a2db2db09dcc0ba542a"
+  },
+  {
+    "path": "docs/legal_mapping.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "837ee8876da5682979bace1d8ad6aa5047ba097c"
+  },
+  {
+    "path": "docs/pattern_analysis.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ee54a3e81b04b88224f4a2c5fd501535cef19a01"
+  },
+  {
+    "path": "docs/presentation/ko-pii-종합비교.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "00129480d69472299e215ee31453316ad6649248"
+  },
+  {
+    "path": "docs/risk_levels.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "12ba0f49b3fcad2c62c477c036d0dafd75e2b767"
+  },
+  {
+    "path": "docs/sample_redaction.html",
+    "mode": "100644",
+    "type": "blob",
+    "object": "71d5ca9987d18ce29b16fa898d9770b2a023b30e"
+  },
+  {
+    "path": "docs/showcase.html",
+    "mode": "100644",
+    "type": "blob",
+    "object": "89bf74ccea04ea55a593dbc890f4c05712c6253e"
+  },
+  {
+    "path": "docs/synthetic_sample.html",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a7b23c7d5631c3186b38674ef3a321d9d38a4285"
+  },
+  {
+    "path": "docs/user_megademo.html",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b78b8ccd2354138f7c68142525247c7632764a30"
+  },
+  {
+    "path": "eval/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "eval/blueteam.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1bfd3cca7bd2595ecbf0178225da2af554c5b108"
+  },
+  {
+    "path": "pyproject.toml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4a64296d57d2beae64838b5c99424332f1e3cc64"
+  },
+  {
+    "path": "src/ko_pii/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ec2d03fd2f99f3509aeef4b1eea776ad3dab2897"
+  },
+  {
+    "path": "src/ko_pii/analytics/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9e0f23b5ba0b8dcae249a9d09e4bfe18de93b0db"
+  },
+  {
+    "path": "src/ko_pii/analytics/combined_risk.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9fc5aa7beff179f8be8d456545002a6dcfe6fa03"
+  },
+  {
+    "path": "src/ko_pii/analytics/k_anonymity.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6eb4a7f0d94ae0f834f36247376f8dbbd1ae7226"
+  },
+  {
+    "path": "src/ko_pii/anonymizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2b3c4f3ae7e9350a2a53537f42d54e7151335f41"
+  },
+  {
+    "path": "src/ko_pii/batch.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e01f77a00346c931a062b9e2af27b6b433403e33"
+  },
+  {
+    "path": "src/ko_pii/checksum/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c3195fd42fc173dfb2b5545335d7db3abedb7d1d"
+  },
+  {
+    "path": "src/ko_pii/checksum/business_reg_checksum.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9e4383599baefc1c5214160a27d968fde7c293a8"
+  },
+  {
+    "path": "src/ko_pii/checksum/corp_reg_checksum.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d06bbba0befbaeef024449e3acbee6f572cfe0b3"
+  },
+  {
+    "path": "src/ko_pii/checksum/luhn.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4ce183b79aced85309479a470a3a610383c927c0"
+  },
+  {
+    "path": "src/ko_pii/checksum/rrn_checksum.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "08e5fa57f1e82913234c912d07619cd62758c05a"
+  },
+  {
+    "path": "src/ko_pii/classifier/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c6928807f7cf39e42446663c592bb8d18211f355"
+  },
+  {
+    "path": "src/ko_pii/classifier/cli.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "92b3ed690c2f680701f71b27b86466a3b3303cd6"
+  },
+  {
+    "path": "src/ko_pii/classifier/hybrid.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b7d70d9abc86b9ff96a7d7aa936b5d4caf8a9167"
+  },
+  {
+    "path": "src/ko_pii/classifier/predict.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a1ccf01560b94daff6d721b0c0ea3255a933e4fa"
+  },
+  {
+    "path": "src/ko_pii/classifier/tfidf_baseline.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c79c5b078b679d9235a7fe8ab18c5d09fbde4ed5"
+  },
+  {
+    "path": "src/ko_pii/classifier/train.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "df971bff857827a29393a1558166746c31943b15"
+  },
+  {
+    "path": "src/ko_pii/cli.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5fdf38b01d9924b565e840430e0aa58bd86c9d7f"
+  },
+  {
+    "path": "src/ko_pii/context/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "10c379b8eb965b1160c8c843e09931d164d3a293"
+  },
+  {
+    "path": "src/ko_pii/context/context_rules.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "33a340d50469495b784bcea72bce57ae0a8c265c"
+  },
+  {
+    "path": "src/ko_pii/context/hanja.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0f14244d7aaedddb3f1ef52e06254a3c0b663f5a"
+  },
+  {
+    "path": "src/ko_pii/context/name_dictionary.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1c4a6f32cfb2b45fe728cab519b0e7f6ba6a6b73"
+  },
+  {
+    "path": "src/ko_pii/context/name_origin.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "620d0a2a207816f00b977991288dfb7378cc0587"
+  },
+  {
+    "path": "src/ko_pii/context/name_syllables.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9f4f20ba7dbb35222ae0713d3d68a53cec428340"
+  },
+  {
+    "path": "src/ko_pii/context/particles.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4120373a6071b0f1469b1321402835d0acdaa43c"
+  },
+  {
+    "path": "src/ko_pii/context/romanization.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d69911052f2428d248af552becbcca5ec280e995"
+  },
+  {
+    "path": "src/ko_pii/core/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6d648bfb4775acbd69781b7010bb246bb4d538da"
+  },
+  {
+    "path": "src/ko_pii/core/modes.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c387beec72e9ca762c6f725172e7dd7682e8934e"
+  },
+  {
+    "path": "src/ko_pii/core/overlap.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5e52ce6edc52b9fd9690d6ee14813b68b7bb8417"
+  },
+  {
+    "path": "src/ko_pii/core/types.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ba47f71d283cfb52145e35539744bb48c5e50c45"
+  },
+  {
+    "path": "src/ko_pii/core/unicode_norm.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "772fcd837406dc709e62ffc3a7afeaa4c6c5a802"
+  },
+  {
+    "path": "src/ko_pii/detect.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0707088833311c69fcd8225e5b276a51b086718f"
+  },
+  {
+    "path": "src/ko_pii/dictionaries/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c7b579f97dc2a46611d7385aeb8d659bbd0de9b5"
+  },
+  {
+    "path": "src/ko_pii/dictionaries/agencies.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "bbf95321f338c6076ccb16ac6bdd62a57cbe9b59"
+  },
+  {
+    "path": "src/ko_pii/dictionaries/agency_abbrev.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "77ed65890e25b813ebaabda6f963eafdff5ae34d"
+  },
+  {
+    "path": "src/ko_pii/dictionaries/agency_titles.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "02bfe6908aa816eebf0937c33c2686add1b6f3ad"
+  },
+  {
+    "path": "src/ko_pii/dictionaries/common_words.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "05fbb850da5447173d550eaf35c116d0d1892b12"
+  },
+  {
+    "path": "src/ko_pii/dictionaries/districts.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e15152f5617860fb46212ca5b9c407418fa64844"
+  },
+  {
+    "path": "src/ko_pii/dictionaries/field_labels.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "17e5381f8ebf5746af437263e022a0aa500acfc4"
+  },
+  {
+    "path": "src/ko_pii/dictionaries/legal_dongs.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0c72d4eaf326250197d9e8a56a68a0069f1c7a29"
+  },
+  {
+    "path": "src/ko_pii/dictionaries/legal_dongs.txt.gz",
+    "mode": "100644",
+    "type": "blob",
+    "object": "53e8b4255f8b26e6769499ca7756e12cdeaa9556"
+  },
+  {
+    "path": "src/ko_pii/dictionaries/majors.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "903ee009bfe9799cd06c66659fd5607d8e98a142"
+  },
+  {
+    "path": "src/ko_pii/dictionaries/surnames.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "60a3c0e897163df53b74af64c412a2be2544687b"
+  },
+  {
+    "path": "src/ko_pii/dictionaries/titles.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b38bce037078d1cd86a3ced5d17601fa6f28245e"
+  },
+  {
+    "path": "src/ko_pii/dictionaries/universities.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "095a59db922877d7ba749c6184514d6ff024261b"
+  },
+  {
+    "path": "src/ko_pii/domain/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e6625f900fe622cee2bf50df81761d452af0e041"
+  },
+  {
+    "path": "src/ko_pii/domain/civil_petition.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7016f177e5a8c9e816b3890249d6bc1bba21ed2d"
+  },
+  {
+    "path": "src/ko_pii/domain/government.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a146ad8c2a7e4c0466effdbe21e4c0ebcdce8f2c"
+  },
+  {
+    "path": "src/ko_pii/domain/hr.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d11ee217aaa237f927243e212f760ec2fc36c52f"
+  },
+  {
+    "path": "src/ko_pii/eval/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8915535967c749d359e4f0f8ff909098d0edfa96"
+  },
+  {
+    "path": "src/ko_pii/eval/benchmark.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7915760f9972cfe96344743383150d33c6991683"
+  },
+  {
+    "path": "src/ko_pii/eval/dataset_integrity.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "15021687342f1a62edb20efea3309510b44182a8"
+  },
+  {
+    "path": "src/ko_pii/eval/fp_collector.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "21e7f48cce5930bd06d775580107704289e903e8"
+  },
+  {
+    "path": "src/ko_pii/eval/kdpii.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e8d61c60fff005034119504c9938fa1526259d48"
+  },
+  {
+    "path": "src/ko_pii/eval/klue_benchmark.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8d400e5d1ac688b0b853bf3dcd48e7bf540f2aed"
+  },
+  {
+    "path": "src/ko_pii/eval/klue_ner.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e19f418bb33b9b2592352d83a8bb4c041912b265"
+  },
+  {
+    "path": "src/ko_pii/eval/metrics.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0a7f0c4fd770ae2dd3fd835ee1d14e4b59019a1c"
+  },
+  {
+    "path": "src/ko_pii/eval/model_comparison.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ad84c7d17652e89ced078ac7ddd79ceacb60e473"
+  },
+  {
+    "path": "src/ko_pii/eval/presidio_compare.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "854a3f444802e8a28ab210e693b3267574d365ee"
+  },
+  {
+    "path": "src/ko_pii/eval/synth.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "033c44ff08b66d3eef1356616ed6ae032cb83aa0"
+  },
+  {
+    "path": "src/ko_pii/generalization/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "bd190e61d3766141b2103305e227925e9f5398d7"
+  },
+  {
+    "path": "src/ko_pii/generalization/address.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e03f6a1b06049008d45b58a707913d00b155b5e1"
+  },
+  {
+    "path": "src/ko_pii/generalization/age.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1674479b5a883f85f4b5cabd88180026d8247831"
+  },
+  {
+    "path": "src/ko_pii/generalization/date.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "95dd54644c082e6025e8ff7548a575118a56d808"
+  },
+  {
+    "path": "src/ko_pii/generalization/occupation.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "23fbcc057ce9f5e64767b9bf0d8d27f44484097d"
+  },
+  {
+    "path": "src/ko_pii/integrations/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5cbd244ddb791ae6870fe79f0543a6e8b98337c9"
+  },
+  {
+    "path": "src/ko_pii/integrations/base.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "056314a3ee309487df83c3daafd18f2fb538096d"
+  },
+  {
+    "path": "src/ko_pii/integrations/hf_token_ner.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ae5c9edb475d6abc8509d0f37e134354ef493d2f"
+  },
+  {
+    "path": "src/ko_pii/integrations/hybrid.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ba72f248d245258081be864e1669bd8c4cd35464"
+  },
+  {
+    "path": "src/ko_pii/integrations/langchain.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "35acc16dbe59aceed8894f38e96d1d84bdc8a513"
+  },
+  {
+    "path": "src/ko_pii/integrations/llamaindex.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7f245f0bd8bb2caf9eb8dc3711bf34ffba32975b"
+  },
+  {
+    "path": "src/ko_pii/integrations/mcp_server.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6a25aa94255c72245739e0f109195d50e5046aa3"
+  },
+  {
+    "path": "src/ko_pii/integrations/openai_privacy_filter.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "518b634a641f05f75760bc2cc0ce7f3936e68901"
+  },
+  {
+    "path": "src/ko_pii/integrations/presidio_plugin.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2a829497db4581b410ef1ff4b15d561df8cdef2a"
+  },
+  {
+    "path": "src/ko_pii/io_/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "39823d7b7b7cc4939c66f3927960d11ae0c5acda"
+  },
+  {
+    "path": "src/ko_pii/io_/bounded.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "361eb715b39744ee928b947c973d7f5cb5b58bbb"
+  },
+  {
+    "path": "src/ko_pii/io_/csv_reader.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "abaea218bcebacb06aa669931d4b4621c10b1def"
+  },
+  {
+    "path": "src/ko_pii/io_/dispatcher.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e791d92d8aec2ab679333249223a755a14e1249e"
+  },
+  {
+    "path": "src/ko_pii/io_/docx.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "bdc726d71242afff29fba5cfbd6050f70782e418"
+  },
+  {
+    "path": "src/ko_pii/io_/hwp.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "56bf87e63e245001531901b34817b8ce438fdb9f"
+  },
+  {
+    "path": "src/ko_pii/io_/hwpx.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a5b7407da066344500655b5a6f7115edad8dac58"
+  },
+  {
+    "path": "src/ko_pii/io_/pdf.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7e4ee50d64bf712b648ec616d64ab185687dba86"
+  },
+  {
+    "path": "src/ko_pii/io_/plain.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "bb1739855166580e102a2c908fcd67d716c6e890"
+  },
+  {
+    "path": "src/ko_pii/io_/text_normalizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "aeac6bef8dca3aae90306c2b5b630aeee660121c"
+  },
+  {
+    "path": "src/ko_pii/io_/xlsx.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f2d9c528af5509b7161906cb6bb34bebdcf9ee71"
+  },
+  {
+    "path": "src/ko_pii/labels.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b23b18d90f0348167e5361a2eabf9d0167dc8d76"
+  },
+  {
+    "path": "src/ko_pii/legal/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "fa5077ebaef4b91e92e71d635eb5437cf606f7ee"
+  },
+  {
+    "path": "src/ko_pii/legal/mapping.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5cfa581a2c3a5f2f427580da6d6b7e93266f43cf"
+  },
+  {
+    "path": "src/ko_pii/modes/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "044df18d54caaf38d58028a1c50fc262a388d430"
+  },
+  {
+    "path": "src/ko_pii/modes/_apply.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "84010fa3433467d01f2d0a94f82eee78ca10e8b3"
+  },
+  {
+    "path": "src/ko_pii/modes/fpe.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0a1f8cdcb75831aefe96ed63481f4cb83c5fc122"
+  },
+  {
+    "path": "src/ko_pii/modes/hashed.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "fae30f808dd231f42934405d4e79fd660090e779"
+  },
+  {
+    "path": "src/ko_pii/modes/partial.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a5ebdbf7f83f2efd343592e62a78e872da8847db"
+  },
+  {
+    "path": "src/ko_pii/modes/redact.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "22c91f2142d10d55ff4c0c4bf3e52bd2d2c72944"
+  },
+  {
+    "path": "src/ko_pii/modes/tokenize.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "eafe0643b1457aed64f9a709e43fa7a497354a49"
+  },
+  {
+    "path": "src/ko_pii/patterns/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d6f2ceef498a9f7637d30900cb37f6eeced9195c"
+  },
+  {
+    "path": "src/ko_pii/patterns/account.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "99af664d83864b69c6a6d7b2a9525f0ec64e271d"
+  },
+  {
+    "path": "src/ko_pii/patterns/address.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "33b4bfd97018870879be620d205b8d0370a83cef"
+  },
+  {
+    "path": "src/ko_pii/patterns/birth.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "94925c01a1c652ac815b50779388aa9ef752bdc3"
+  },
+  {
+    "path": "src/ko_pii/patterns/business_reg.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b5c06ee35e106b94d6ed822e3720e4c9a4596cb6"
+  },
+  {
+    "path": "src/ko_pii/patterns/card.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b642dd01ad8f5d2f45fe577f32ff3dbe5395f646"
+  },
+  {
+    "path": "src/ko_pii/patterns/corp_reg.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e27a083d38139bf1f1734156c9f6b1d04df29539"
+  },
+  {
+    "path": "src/ko_pii/patterns/court_case.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9589d487ec61dfd0b707bde64aaeb0d4a24f08b3"
+  },
+  {
+    "path": "src/ko_pii/patterns/driver_license.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a7045e3833309d31c175931fffd4d866fa6f21e3"
+  },
+  {
+    "path": "src/ko_pii/patterns/edi_drug.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "35666ecfa60b40c9887a6504c58c7159b26ee11f"
+  },
+  {
+    "path": "src/ko_pii/patterns/email.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "59dc50c36333bebe5bfdc7c5260ed9a0eb7094f8"
+  },
+  {
+    "path": "src/ko_pii/patterns/fax.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0dad8e64bf60ddb9552935b49ae0c0bce2f12d56"
+  },
+  {
+    "path": "src/ko_pii/patterns/frn.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0f54ea47b88fe5d6e75219102bb344c5eae4ddc7"
+  },
+  {
+    "path": "src/ko_pii/patterns/ip.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "863f0c160697950973047a1b0394295f29a89e54"
+  },
+  {
+    "path": "src/ko_pii/patterns/medical_insurance.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8620b3935e8e70ed606ebe118546ce17bf9e90a9"
+  },
+  {
+    "path": "src/ko_pii/patterns/nationality.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2476cee2787847b8846557964603469ba86dfecd"
+  },
+  {
+    "path": "src/ko_pii/patterns/passport.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4a5c931971270e2ff9bb6c6981dd3714b6c2c1e0"
+  },
+  {
+    "path": "src/ko_pii/patterns/person.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0b7c243234c904ef456543058e4fd107d45d544a"
+  },
+  {
+    "path": "src/ko_pii/patterns/personal_attr.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1428b2147a1ff4ddb5f0f93897d7af5151f5d7b1"
+  },
+  {
+    "path": "src/ko_pii/patterns/phone.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f1ac37bd937d9082db7d2557f0274c310fbd67b6"
+  },
+  {
+    "path": "src/ko_pii/patterns/pnu.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4556c65d4a01ab2d70c152cc157aa52f1e5d2ba2"
+  },
+  {
+    "path": "src/ko_pii/patterns/postal_code.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6ca2abaa868fd7b84330182b9d04f0c8cf5754d9"
+  },
+  {
+    "path": "src/ko_pii/patterns/prescription.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3d002ad432b551e1416587f94fb9d7037297961b"
+  },
+  {
+    "path": "src/ko_pii/patterns/rrn.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "eddde1944bb9d6c64e533401ce088b2a6e339294"
+  },
+  {
+    "path": "src/ko_pii/patterns/url.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e1e70fde9eb80f076961cfc91b3630fd0ba6be8c"
+  },
+  {
+    "path": "src/ko_pii/patterns/vehicle.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "36cfc172e443f4d3b63cbf117534e8d38d180b69"
+  },
+  {
+    "path": "src/ko_pii/py.typed",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "src/ko_pii/reporting/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "00351e19b6557c4e8079ef4cf7f1b8fed8a25368"
+  },
+  {
+    "path": "src/ko_pii/reporting/certificate.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "390fad15ec41f17e2d37b1a85b4613e1d9b0b8d7"
+  },
+  {
+    "path": "src/ko_pii/reporting/html_report.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2dc2f5491add321682e4567f5783ed8127ccc645"
+  },
+  {
+    "path": "src/ko_pii/reporting/summary.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0cff99551c081775fa2f435237ee71682c026c26"
+  },
+  {
+    "path": "src/ko_pii/review/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ed0c04e8ea08a58e26a6e589d35d2a1cdac53728"
+  },
+  {
+    "path": "src/ko_pii/review/feedback.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9d1722b593a7f7bf80d4f1418fd6b660a7f460c9"
+  },
+  {
+    "path": "src/ko_pii/review/queue.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "507dabe013dabec4b5248fc37b411a898a085f72"
+  },
+  {
+    "path": "src/ko_pii/streaming.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "eba0af453d5a49049da5d45d0496b6c7a1c5b11a"
+  },
+  {
+    "path": "src/ko_pii/tabular.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "60da8415878e2763dc2b3d323004c9d7bfca9ad5"
+  },
+  {
+    "path": "src/ko_pii/vault/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b88d35ae4ca7d97342effd9a775c73675183749a"
+  },
+  {
+    "path": "src/ko_pii/vault/audit.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6da6f87ae07c448fb7177e49d3749b2182a58e90"
+  },
+  {
+    "path": "src/ko_pii/vault/encrypted.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ba260ccf8b47e704888bf28e7ac445a3a5879c38"
+  },
+  {
+    "path": "src/ko_pii/vault/reversible.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ad2549d0d154bbe84f858ea581eda3ca48f3a23b"
+  },
+  {
+    "path": "tests/integration/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "tests/integration/test_end_to_end.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4334c49cb5ac41050e02dd7649b59ab3a2583b82"
+  },
+  {
+    "path": "tests/unit/analytics/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "tests/unit/analytics/test_anonymizer_integration.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d1fe5c4f0e3f31e71d4645b15b64cd112390948b"
+  },
+  {
+    "path": "tests/unit/analytics/test_combined_risk.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "47addb4acd2bcfa4e042f9002e7ff633fd7bded1"
+  },
+  {
+    "path": "tests/unit/analytics/test_k_anonymity.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "002e3e59539af5187ea3369a5153e0cd716cfaf2"
+  },
+  {
+    "path": "tests/unit/checksum/test_business_reg_checksum.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4408a57b6025cf78b1945a20e47d68006897556d"
+  },
+  {
+    "path": "tests/unit/checksum/test_corp_reg_checksum.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "bd0cad189b3b11b4498612c2d66bd89a13b3acdd"
+  },
+  {
+    "path": "tests/unit/checksum/test_luhn.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9df97ddb02b1ce45a0315a933d44a748ee98d3b2"
+  },
+  {
+    "path": "tests/unit/checksum/test_rrn_checksum.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8784b5e7ed0289fb28e1cd9cb7cc73f7010c63e9"
+  },
+  {
+    "path": "tests/unit/classifier/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "tests/unit/classifier/conftest.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3ec09eb1807b8953f43dc8d15b06f5a3bbd6b88d"
+  },
+  {
+    "path": "tests/unit/classifier/test_hybrid.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "073418ba62a9c8a15fde7a674a68e44f3dc9166f"
+  },
+  {
+    "path": "tests/unit/classifier/test_predict.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f64c5116e0bb907ce1f519ba7a8cb8b9ede00a51"
+  },
+  {
+    "path": "tests/unit/classifier/test_tfidf.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "de54980d1952e41e083cb68c13bf6feab78957ac"
+  },
+  {
+    "path": "tests/unit/context/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "tests/unit/context/test_context_rules.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3f8090dfbac2de11e5d60d5c87dcdd7d1be08fc0"
+  },
+  {
+    "path": "tests/unit/context/test_hanja.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "dec388df9848e992ef6116908f994f658af3d29d"
+  },
+  {
+    "path": "tests/unit/context/test_name_dictionary.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "17ff89ef57b9341cb833ecf21513b4c09e25e08f"
+  },
+  {
+    "path": "tests/unit/context/test_name_origin.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6e4b824f904f336404ba9a4613359c8643cf7587"
+  },
+  {
+    "path": "tests/unit/context/test_name_syllables.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3593d352589b48786c9792690e8596d57fef33f7"
+  },
+  {
+    "path": "tests/unit/context/test_particles.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5109dba92d8febdfbea792b7fb1630e6eb63c2f8"
+  },
+  {
+    "path": "tests/unit/context/test_romanization.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7f6c91809d98ef7943be3dd709cc0b66faf6ecaf"
+  },
+  {
+    "path": "tests/unit/dictionaries/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "tests/unit/dictionaries/test_agencies.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7feb7d8ef1903f694eab67f1c62c19bc86b4a989"
+  },
+  {
+    "path": "tests/unit/dictionaries/test_agency_abbrev.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "350deee4db0964ab32c40fc631df1f7b4296d14a"
+  },
+  {
+    "path": "tests/unit/dictionaries/test_combinations.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0a744e245f9d1de1a05149f163b2c6cabbbddd57"
+  },
+  {
+    "path": "tests/unit/dictionaries/test_common_words.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c36e303e2c2830aea95928f04e8ae24fb734be10"
+  },
+  {
+    "path": "tests/unit/dictionaries/test_districts.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "78057dc8597fe10a6f8eb53c7b0b2c6e218bed37"
+  },
+  {
+    "path": "tests/unit/dictionaries/test_field_labels.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "56e058d1989020acdd521d0c1cc7c059b0638dfd"
+  },
+  {
+    "path": "tests/unit/dictionaries/test_surnames.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a06ad1b1a6912f46992fa88ed3a748138a3791db"
+  },
+  {
+    "path": "tests/unit/dictionaries/test_titles.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1f52009c11db4397541cd84566e3295c263bb9bf"
+  },
+  {
+    "path": "tests/unit/dictionaries/test_titles_special.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1befd7c28b30daf1d719281061d2b992627d2bbf"
+  },
+  {
+    "path": "tests/unit/domain/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "tests/unit/domain/test_civil_petition.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1215a1e2a929a119400146c7ff1b9104543abd1c"
+  },
+  {
+    "path": "tests/unit/domain/test_government.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "dcf67710e1689e6bd2fb3fcc29ea063d46c1f286"
+  },
+  {
+    "path": "tests/unit/domain/test_hr.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "46df9c6bc1926f5c060876510b95b009c37a7b30"
+  },
+  {
+    "path": "tests/unit/eval/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "tests/unit/eval/test_benchmark_smoke.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "bf09c092d0ebd29083967c42935dd7b3e9661789"
+  },
+  {
+    "path": "tests/unit/eval/test_dataset_integrity.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9c67352807c9be6b92f8e0ac4282fa0429b97405"
+  },
+  {
+    "path": "tests/unit/eval/test_generated_eval_regression.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0030b16090343f269bb5c95d57007401ea0ec437"
+  },
+  {
+    "path": "tests/unit/eval/test_kdpii_matcher.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a4860186ab2be060f04a420bc89ced145614c22b"
+  },
+  {
+    "path": "tests/unit/eval/test_metrics.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "00e7347cbdf611b6c31f833dc9742df2a8e1b0e1"
+  },
+  {
+    "path": "tests/unit/eval/test_synth.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3fabf3995d15c8d43be63c21d05da766a0d3379e"
+  },
+  {
+    "path": "tests/unit/generalization/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "tests/unit/generalization/test_address.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f8eb1964a98f15aaacbf51abcdc3e9daf059bb40"
+  },
+  {
+    "path": "tests/unit/generalization/test_age.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "55f0dce78b1836d5924dcd50e8f83d517c754df2"
+  },
+  {
+    "path": "tests/unit/generalization/test_date.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f5973afcc6fd08376cb599882001074719d9f1c7"
+  },
+  {
+    "path": "tests/unit/generalization/test_occupation.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "80b55e831350c6379955832929b507e650e2c4b2"
+  },
+  {
+    "path": "tests/unit/integrations/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "tests/unit/integrations/test_anonymizer_with_secondary.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7f3d710d557b496e9ebc944b27de1bedfce634de"
+  },
+  {
+    "path": "tests/unit/integrations/test_hybrid.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9930348b893bdf7ddce89d9d5e818d52fecc0b46"
+  },
+  {
+    "path": "tests/unit/integrations/test_mcp_server.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ee5463e8848ea43fba99ba818c4c2deb7f7d6b21"
+  },
+  {
+    "path": "tests/unit/integrations/test_presidio_plugin.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2af8fe4ad8565cf156225ba2c3ac0a9facf9cd11"
+  },
+  {
+    "path": "tests/unit/integrations/test_privacy_filter_adapter.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e6762752122d6c371bace5909923226a302c1448"
+  },
+  {
+    "path": "tests/unit/integrations/test_rag_adapters.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d15a9f7e1c774b851b137319728a485c62c2c380"
+  },
+  {
+    "path": "tests/unit/integrations/test_role_split.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c2a99b0208e61c868d5e212f4805eac4f5307379"
+  },
+  {
+    "path": "tests/unit/io_/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "tests/unit/io_/test_file_readers.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "cd4f4caf0a38478c96bcb2656f47bd44a3ee5cd4"
+  },
+  {
+    "path": "tests/unit/io_/test_optional_formats.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4c50687ac19175ca8a0e51be04d58ca6679d1b4a"
+  },
+  {
+    "path": "tests/unit/legal/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "tests/unit/legal/test_mapping.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "397886b6aa6c57a552520bc0a80bb041621c2735"
+  },
+  {
+    "path": "tests/unit/modes/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "tests/unit/modes/test_fpe.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "79824e491b10287283eec18a587cf94f20685bd9"
+  },
+  {
+    "path": "tests/unit/modes/test_hashed.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4960e487cae6f50673b102225b0e583633fd46b6"
+  },
+  {
+    "path": "tests/unit/modes/test_partial.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "bcf41d26f4e4f5adc063380ed03f8efe88dd8da5"
+  },
+  {
+    "path": "tests/unit/modes/test_redact.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9048774515f62f697f7accff169bf71a851571a6"
+  },
+  {
+    "path": "tests/unit/modes/test_tokenize.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0bf8e89c78aea4da5be5cce30d6d0f0dd1b8ee64"
+  },
+  {
+    "path": "tests/unit/patterns/test_account.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f732f25abc70255d30eab4ea99b6ee01c21a9e74"
+  },
+  {
+    "path": "tests/unit/patterns/test_address.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "12cd5ab01e02d2affe145576789aa8b9d5fcba83"
+  },
+  {
+    "path": "tests/unit/patterns/test_address_jibun.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3aa16f5fa603caf64638ea1c8527c70b78298f79"
+  },
+  {
+    "path": "tests/unit/patterns/test_birth.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "424a6663d9b162e1c6b24acf8e297443f83eab5a"
+  },
+  {
+    "path": "tests/unit/patterns/test_boundary_rules.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7b06e61b997a4109af0d14191d67659319578956"
+  },
+  {
+    "path": "tests/unit/patterns/test_business_reg.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3798d0529cf858a721955c3c7561c75642289887"
+  },
+  {
+    "path": "tests/unit/patterns/test_card.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "13dd445209edfd954e948439835b6377cf0aba68"
+  },
+  {
+    "path": "tests/unit/patterns/test_corp_reg.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "57a748acda304138519d96facef81c6e712c942d"
+  },
+  {
+    "path": "tests/unit/patterns/test_court_case.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "134d967856053bcd08f6a7cffff6056cc61d96f9"
+  },
+  {
+    "path": "tests/unit/patterns/test_driver_license.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4f6dea77901d8c3719d13097f57886f9199a734b"
+  },
+  {
+    "path": "tests/unit/patterns/test_edi_drug.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "50c86d8010c38f8cfe4137494a42f3c2894d65b3"
+  },
+  {
+    "path": "tests/unit/patterns/test_email.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "36f2d1bc2a17b92f5527ff8aff3501f10aa496eb"
+  },
+  {
+    "path": "tests/unit/patterns/test_fax.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "bc297359ef7bcd65b04014ae5a09d8b8815ca96f"
+  },
+  {
+    "path": "tests/unit/patterns/test_frn.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "fbf8b176c725f1371069db87280ad574c90221ea"
+  },
+  {
+    "path": "tests/unit/patterns/test_ip.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ea62c7b6d81b61b58e17a63bddaebae9f9eac631"
+  },
+  {
+    "path": "tests/unit/patterns/test_ip_v6.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f6443bf2b93c4f4cb2ca6106c6ea0a75e9243419"
+  },
+  {
+    "path": "tests/unit/patterns/test_medical_insurance.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c343567b5f7a418fd807f747be4aeb4d78867e42"
+  },
+  {
+    "path": "tests/unit/patterns/test_passport.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "079557de39f436d3b779b0e277a2d3d9b8977456"
+  },
+  {
+    "path": "tests/unit/patterns/test_person.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e0e5b8e469762e8706cf7fd566f533ff2420e2c2"
+  },
+  {
+    "path": "tests/unit/patterns/test_personal_attr.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "72fb944020c6ddb14650ffb7e34e5ed1909735b5"
+  },
+  {
+    "path": "tests/unit/patterns/test_phone.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "221e090ca752f33b1340a2f4040f9c21c93d3f57"
+  },
+  {
+    "path": "tests/unit/patterns/test_phone_intl.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6479b5b26c0662d14cb3000b9a0f9d530aa3c373"
+  },
+  {
+    "path": "tests/unit/patterns/test_pnu.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2cc7d87e8ea3b7446bab384398f56242a1aaca60"
+  },
+  {
+    "path": "tests/unit/patterns/test_postal_code.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2390f809390afa6804c9ad8b587251fe3c907a28"
+  },
+  {
+    "path": "tests/unit/patterns/test_prescription.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "abfd18192aafaf0b8bcfc7b681e68cb89d002871"
+  },
+  {
+    "path": "tests/unit/patterns/test_rrn.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "feb5cb4bee6d961b1e01493b9b532182d0f0aaf2"
+  },
+  {
+    "path": "tests/unit/patterns/test_url.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "bf13ba78d9ff0e36fd694e8be863b2f3efaaca74"
+  },
+  {
+    "path": "tests/unit/patterns/test_vehicle.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ea51a71cafe877e5702ed619198604ba6c10dd44"
+  },
+  {
+    "path": "tests/unit/reporting/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "tests/unit/reporting/test_certificate.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "49feac4eaf02dae4c5fbd4db715ff5890476d8f7"
+  },
+  {
+    "path": "tests/unit/reporting/test_html_report.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0b314cb7c92d419f3b6aa3803345e719f1d54665"
+  },
+  {
+    "path": "tests/unit/reporting/test_summary.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b101a3141b041744da5304b4bbf1b87b1d888fdd"
+  },
+  {
+    "path": "tests/unit/review/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "tests/unit/review/test_feedback.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4579acb3068063456c8a70a9e68ce9609579dcd0"
+  },
+  {
+    "path": "tests/unit/review/test_queue.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "221a3a7a03af7627db4034f6cb10fc7b9e95a07c"
+  },
+  {
+    "path": "tests/unit/test_anonymizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "71f4319538c055d6293b396995bf3c743fd27cdb"
+  },
+  {
+    "path": "tests/unit/test_batch.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "70813afbc662ab4fc3ec4e8f7223d21ad7c82e30"
+  },
+  {
+    "path": "tests/unit/test_bounded_io.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "72ffbb02f11d415fb859c98d0348c92a2cdcd157"
+  },
+  {
+    "path": "tests/unit/test_cli.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "610de2e702962599d77db1d74502f13508da7e44"
+  },
+  {
+    "path": "tests/unit/test_detect_all.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f8ee9469bc7bf3bb1996fa3d68977e235bf30baf"
+  },
+  {
+    "path": "tests/unit/test_digit_evasion.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f4d86091b19341ccb4bcae4b8b33c9c9d0979858"
+  },
+  {
+    "path": "tests/unit/test_fp_stress.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e917efeee039448609bc992db4ae326c215dcbf1"
+  },
+  {
+    "path": "tests/unit/test_labels.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3d820cf1191ac2fe9ac3fe1f7baed0a8d854e772"
+  },
+  {
+    "path": "tests/unit/test_leak_hunt_fixes.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "893e6c3561a4bcd38cf4c3e8c298f0a1cd06c559"
+  },
+  {
+    "path": "tests/unit/test_masking_evasion.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "24c2094e47eeaded7558af65ff27c6be95673562"
+  },
+  {
+    "path": "tests/unit/test_modes_policy.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "16156563e629ff5a90ae39630d7495c9ca76749f"
+  },
+  {
+    "path": "tests/unit/test_performance.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "cb5e7aae533420ff5faad9379c08bb4747304899"
+  },
+  {
+    "path": "tests/unit/test_robustness.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3f457592ee8f0d8013b4cc028c0c717a09465492"
+  },
+  {
+    "path": "tests/unit/test_streaming.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "edbfa36e38741465c279f9521d2780f37febf579"
+  },
+  {
+    "path": "tests/unit/test_tabular.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "dcab35518644a2430c68118a903fbfd67b1d9b02"
+  },
+  {
+    "path": "tests/unit/test_version.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a36204c585282ec0f7771e591616d2f4e9cf8a1f"
+  },
+  {
+    "path": "tests/unit/vault/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "tests/unit/vault/test_audit.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "cfa9bd62e943259418dcbc2fc8bde94febbb2101"
+  },
+  {
+    "path": "tests/unit/vault/test_encrypted.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0dd6b568f4fa7956bb4e824c174b8fc168ca5150"
+  },
+  {
+    "path": "tests/unit/vault/test_reversible.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2be73e95bc22c7f2e623ce70da72555e1d0e85f1"
+  }
+]

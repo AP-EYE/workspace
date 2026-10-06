@@ -1,0 +1,49 @@
+[
+  {
+    "url": "https://api.github.com/repos/akto-api-security/akto/issues/comments/1754609053",
+    "html_url": "https://github.com/akto-api-security/akto/issues/126#issuecomment-1754609053",
+    "issue_url": "https://api.github.com/repos/akto-api-security/akto/issues/126",
+    "id": 1754609053,
+    "node_id": "IC_kwDOI38B3s5olTWd",
+    "user": {
+      "login": "ankush-jain-akto",
+      "id": 91221068,
+      "node_id": "MDQ6VXNlcjkxMjIxMDY4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/91221068?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ankush-jain-akto",
+      "html_url": "https://github.com/ankush-jain-akto",
+      "followers_url": "https://api.github.com/users/ankush-jain-akto/followers",
+      "following_url": "https://api.github.com/users/ankush-jain-akto/following{/other_user}",
+      "gists_url": "https://api.github.com/users/ankush-jain-akto/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/ankush-jain-akto/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/ankush-jain-akto/subscriptions",
+      "organizations_url": "https://api.github.com/users/ankush-jain-akto/orgs",
+      "repos_url": "https://api.github.com/users/ankush-jain-akto/repos",
+      "events_url": "https://api.github.com/users/ankush-jain-akto/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/ankush-jain-akto/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "created_at": "2023-10-10T07:50:07Z",
+    "updated_at": "2023-10-10T07:50:07Z",
+    "body": "This has been fixed in the new Polaris UI. Closing the issue",
+    "author_association": "CONTRIBUTOR",
+    "pin": null,
+    "reactions": {
+      "url": "https://api.github.com/repos/akto-api-security/akto/issues/comments/1754609053/reactions",
+      "total_count": 0,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "performed_via_github_app": null,
+    "minimized": null
+  }
+]

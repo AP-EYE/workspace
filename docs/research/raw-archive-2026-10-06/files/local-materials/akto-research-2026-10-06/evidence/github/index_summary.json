@@ -1,0 +1,21 @@
+{
+  "total": 6581,
+  "kinds": {
+    "PR": 6402,
+    "ISSUE": 179
+  },
+  "states": {
+    "PR:open": 261,
+    "PR:closed": 6141,
+    "ISSUE:open": 88,
+    "ISSUE:closed": 91
+  },
+  "merged_prs": 5658,
+  "keyword_tags": {
+    "bug": 1398,
+    "ai": 172,
+    "pii": 158,
+    "platform_security": 188,
+    "bola": 45
+  }
+}

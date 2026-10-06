@@ -1,0 +1,207 @@
+=== TITLE + ABSTRACT ===
+Proceedings of the 19th Conference of the European Chapter of the Association for Computational Linguistics
+V olume 1: Long Papers, pages 2308–2325
+March 24-29, 2026 ©2026 Association for Computational Linguistics
+K-LegalDeID: A Benchmark Dataset and KLUEBERT-CRF for
+De-identification in Korean Court Judgments
+Wooseok Choi Hyungbin Kim Yon Dohn Chung
+Department of Computer Science and Engineering, Korea University
+{woosukqw, hyungbinkim, ydchung}@korea.ac.kr
+Abstract
+The Korean legal system mandates public
+access to court judgments to ensure judi-
+cial transparency. However, this requirement
+conflicts with privacy protection obligations
+due to the prevalence of Personally Identi-
+fiable Information (PII) in legal documents.
+To address this challenge, we introduceK-
+LegalDeID, a large-scale benchmark dataset
+and an efficient KLUEBERT-CRF model for
+de-identification for Korean court judgments.
+Our primary contribution is a new large-scale
+benchmark dataset spanning 39 legal domains,
+with its quality is validated by a high inter-
+annotator agreement (IAA) with Fleiss’ Kappa
+of 0.7352. Our results demonstrate that a
+lightweight KLUEBERT-CRF model, when
+trained on our dataset, achieves state-of-the-
+art performance with an entity-level micro F1
+score of 0.9923. Our end-to-end framework of-
+fers a practical and computationally efficient
+solution for real-world legal systems.
+
+=== INTRODUCTION ===
+
+1 Introduction
+The Korean legal system has established a funda-
+mental principle that court proceedings and judg-
+ments must be transparent to ensure public trust
+and accountability. Article 109 of the Korean Con-
+stitution mandates that ‘the trial and judgment of
+courts shall be open to the public,’ with an excep-
+tion allowing trials to be closed only if openness
+might harm national security, public order, or good
+morals. The objective of this constitutional provi-
+sion is to guarantee transparency in judicial pro-
+ceedings, thereby maintaining public trust in the
+judiciary while simultaneously safeguarding the
+rights of the parties involved in litigation.
+The necessity of disclosing court judgments ex-
+tends beyond mere constitutional compliance to
+encompass broader societal benefits. Public access
+to these documents enables citizens to understand
+legal principles and precedents, supports academic
+research and legal education, and facilitates effec-
+tive monitoring of judicial decision-making. Fur-
+thermore, the disclosure of judgments helps pre-
+vent corruption and abuse of power within the ju-
+dicial system, promotes equal access to legal in-
+formation regardless of social or economic status,
+and contributes to the development of legal tech-
+nology by supplying essential data for AI-based
+legal services and research.
+However, several challenges impede the effec-
+tive implementation of judgment disclosure in Ko-
+rean legal documents. First, there exists an inher-
+ent conflict between the constitutional mandate
+for transparency and the obligation to protect Per-
+sonally Identifiable Information (PII), including
+names, resident registration numbers, addresses,
+and other personal identifiers for not only parties
+but also witnesses, victims, and various stakehold-
+ers.
+Secondly, most de-identification processes rely
+on manual methods, which introduce significant
+bottlenecks. Manual masking typically requires
+approximately two weeks per document and sub-
+stantial human resources, severely limiting the
+scope and speed of judgment disclosure. Despite
+existing guidelines for personal information pro-
+tection, manual processing may yield inconsistent
+results that vary in quality across cases and per-
+sonnel. Only about 1.6 million judgment docu-
+ments, approximately 5.97% of the total (Admin-
+istration, 2019), have undergone de-identification,
+highlighting the limited extent of automated or
+systematic anonymization to date.
+Korean courts have attempted to address these
+challenges through automated systems, including
+an ‘intelligent judgment de-identification system.’
+However, this system performs poorly, achieving
+only around 8% accuracy in identifying and mask-
+ing PII (Administration, 2025). The limited effec-
+tiveness of current automation stems from several
+key technical challenges: the unique characteris-
+2308
+tics of Korean legal documents, linguistic chal-
+lenges such as agglutinative morphology and ir-
+regular spacing, and a severe shortage of high-
+quality training data.
+To overcome these challenges, we propose an
+enhanced framework that combines KLUEBERT
+with a Conditional Random Field (CRF) layer,
+significantly improving PII detection and mask-
+ing in Korean legal documents. To this end, we
+introduce two new datasets—one comprising case
+documents from 39 legal categories and another
+comprising multi-turn conversations from Korean
+SNS—and establish a unified 11-label PII anno-
+tation scheme. Our method addresses the limita-
+tions of existing systems by resolving ambigui-
+ties in masking guidelines, and implementing an
+end-to-end framework that ensures consistent en-
+tity anonymization while maintaining document
+coherence and legal relevance.
+This paper provides evidence for the value of of-
+fering de-identified legal documents and supports
+further research in related domains. The main con-
+tributions of this paper are as follows:
+• We introduce the first large-scale, high-
+quality benchmark dataset specifically de-
+signed for de-identification for Korean court
+judgments, comprising 46,973 annotated sen-
+tences from 2,000 cases across 39 diverse le-
+gal fields.
+• The dataset’s integrity is validated by a
+Fleiss’ Kappa score of 0.7352, indicating
+substantial inter-annotator agreement and en-
+suring consistent, trustworthy labeling.
+• We introduce an enhanced model architec-
+ture, KLUEBERT-CRF, specifically designed
+to handle Korean language and legal text
+complexities such as agglutinative morphol-
+ogy and intricate sentence structures.
+• We present an end-to-end framework that
+spans the entire de-identification pipeline,
+demonstrating a practical pathway for
+deploying automated, high-accuracy de-
+identification for real-world environments.
+
+=== CONCLUSION / DISCUSSION / LIMITATIONS ===
+
+7 Conclusion
+In this paper, we propose a BERT-based frame-
+work to address the challenge of automated de-
+identification for Korean court judgments, balanc-
+ing judicial transparency with privacy protection.
+Our primary contribution is the creation of a large-
+scale PII dataset of approximately one million in-
+stances, constructed by combining a new, com-
+prehensive Korean legal document dataset with
+SNS conversation dataset and the Thunder-DeID
+dataset. The legal dataset, spanning 39 legal fields,
+demonstrates high quality and reliability, vali-
+dated by a Fleiss’ Kappa score of 0.7352 for
+IAA. Experimental results show that our proposed
+KLUEBERT-CRF model, trained on this diverse
+dataset, achieves state-of-the-art performance, set-
+ting a new benchmark for de-identification for Ko-
+rean legal documents.
+2315
+Limitations
+Supreme Court Regulation
+According to Supreme Court regulations, we can-
+not access the original (non-anonymized) court
+judgments. To address this limitation, human an-
+notators processed anonymized court judgment by
+annotating PII entities and inserting synthetic data
+into the masked placeholders by our synthetic data
+generator. However, this synthetic data cannot per-
+fectly replicate the characteristics of actual origi-
+nal court judgments. Furthermore, without access
+to the original court judgments, we cannot con-
+duct comparative experiments to analyze the dif-
+ferences between the original and our processed
+court judgments. To minimize these limitations,
+we plan to analyze dependencies between PII en-
+tities and refine our synthetic data generator to
+achieve greater precision.
+Generalizability and Resources Adaptation.
+While the proposed data processing pipeline and
+model architecture are fundamentally language-
+agnostic, the current implementation utilizes re-
+sources specialized for the Korean language, such
+as KSS for sentence segmentation and KLUE-
+BERT for embedding. Therefore, extending this
+framework to other languages does not require
+structural changes but necessitates the substitu-
+tion of these language-specific components with
+equivalent tools suitable for the target language.
+For example, it is possible to replace tools like the
+Korean sentence segmenter (KSS) with multilin-
+gual tools (e.g., spaCy, NLTK) and swap KLUE-
+BERT with language-specific encoders suitable
+for the target language (e.g., UmBERTo(Parisi
+et al., 2020) for Italian, RoBERTa(Liu et al., 2019)
+for English, CamemBERT(Martin et al., 2020) for
+French).
+Acknowledgments
+This work was supported in part by the Institute
+of Information & Communications Technology
+Planning & Evaluation (IITP)-ICT Creative Con-
+silience Program grant funded by the Korea gov-
+ernment (MSIT) (IITP-2025-RS-2020-II201819);
+and in part by the Basic Science Research Pro-
+gram through the National Research F oundation
+of Korea (NRF) funded by the Ministry of Educa-
+tion (RS-2021-NR060143)

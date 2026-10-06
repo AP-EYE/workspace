@@ -1,0 +1,26 @@
+[
+  {
+    "sha": "003b9da0a121f70d3ef8637f307b50961695d864",
+    "filename": "Threat-Protection/PIIDataLeak.yml",
+    "status": "added",
+    "additions": 20,
+    "deletions": 0,
+    "changes": 20,
+    "blob_url": "https://github.com/akto-api-security/tests-library/blob/e55008342423e20aac129e28ec11818b9c8e333d/Threat-Protection%2FPIIDataLeak.yml",
+    "raw_url": "https://github.com/akto-api-security/tests-library/raw/e55008342423e20aac129e28ec11818b9c8e333d/Threat-Protection%2FPIIDataLeak.yml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/tests-library/contents/Threat-Protection%2FPIIDataLeak.yml?ref=e55008342423e20aac129e28ec11818b9c8e333d",
+    "patch": "@@ -0,0 +1,20 @@\n+id: PIIDataLeak \n+filter:\n+  or:\n+    - response_payload:\n+        regex:\n+          - (?:\\b(?:4\\d{3}|5[1-5]\\d{2}|2\\d{3}|3[47]\\d{1,2})[\\s\\-]?\\d{4,6}[\\s\\-]?\\d{4,6}?(?:[\\s\\-]\\d{3,4})?(?:\\d{3})?|\\b(?!000|666|9\\d{2})([0-8]\\d{2}|7([0-6]\\d))([-]?|\\s{1})(?!00)\\d\\d\\3(?!0000)\\d{4})\\b\n+    - response_payload:\n+        regex:\n+          - \\b(\\d{4}[- ]?\\d{4}[- ]?\\d{4}|[A-Z]{5}[0-9]{4}[A-Z])\\b\n+\n+info:\n+  name: \"PIIDataLeak\"\n+  description: \"PII Data Leak refers to the accidental or unauthorized exposure of Personally Identifiable Information through logs, APIs, misconfigured systems, or insecure data handling practices. Such leaks can occur due to improper data masking, verbose error messages, exposed endpoints, or insecure storage.\"\n+  details: \"PII leaks commonly stem from insecure logging, improperly secured APIs, misconfigured cloud buckets, or data inadvertently exposed in URLs, headers, or request/response bodies. Examples include Aadhaar numbers in logs, credit card numbers in query params, or SSNs in error traces. Prevention involves data classification, redaction/masking, input validation, and restricting data flow through sensitive components.\"\n+  impact: \"Exposed PII can lead to identity theft, financial fraud, regulatory violations (e.g., GDPR, HIPAA), and reputational harm. Attackers may exploit leaked data to conduct phishing attacks, impersonate users, or gain deeper access into systems. Organizations may face penalties, lawsuits, and loss of user trust.\"\n+  category:\n+    name: \"PIIDataLeak\"\n+    displayName: \"PIIDataLeak\"\n+  subCategory: \"PIIDataLeak\"\n+  severity: MEDIUM"
+  },
+  {
+    "sha": "b5fa79d6baf933eae67894af96755b3a8c382e2b",
+    "filename": "Threat-Protection/SecurityMisconfig.yml",
+    "status": "added",
+    "additions": 23,
+    "deletions": 0,
+    "changes": 23,
+    "blob_url": "https://github.com/akto-api-security/tests-library/blob/e55008342423e20aac129e28ec11818b9c8e333d/Threat-Protection%2FSecurityMisconfig.yml",
+    "raw_url": "https://github.com/akto-api-security/tests-library/raw/e55008342423e20aac129e28ec11818b9c8e333d/Threat-Protection%2FSecurityMisconfig.yml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/tests-library/contents/Threat-Protection%2FSecurityMisconfig.yml?ref=e55008342423e20aac129e28ec11818b9c8e333d",
+    "patch": "@@ -0,0 +1,23 @@\n+\n+id: SecurityMisconfig \n+filter:\n+  or:\n+    - response_payload:\n+        regex:\n+          - (?i)(?:Exception in thread \"[^\"]*\"|java[\\.a-z]+E(?:xception|rror)|(?:org|com)\\.[\\.a-z]+Exception|at[\\s\\x0b]+(?:ja(?:vax?|karta)|org|com)|goroutine\\s+\\d+\\s+\\[.*?]:|panic:\\s+.+|Traceback\\s+\\(most recent call last\\):|File\\s+\".+?\",\\s+line\\s+\\d+,\\s+in\\s+\\w+) \n+    - request_headers:\n+        for_one:\n+          key:\n+            eq: host\n+          value:\n+            regex: ^(?:\\d{1,3}(?:\\.\\d{1,3}){3}|[a-zA-Z0-9.-]+:\\d+)$ \n+info:\n+  name: \"SecurityMisconfig\"\n+  description: \"Security misconfigurations occur when systems, applications, or APIs are not securely configured, exposing vulnerabilities that attackers can exploit. This includes improper settings, default configurations, unnecessary features enabled, or misconfigured permissions, leading to unauthorized access or data exposure.\"\n+  details: \"Security misconfigurations arise from insecure default settings, incomplete configurations, open cloud storage, misconfigured HTTP headers, or verbose error messages exposing sensitive information. Examples include unpatched systems, exposed admin interfaces, or unnecessary services running. Mitigation involves secure configuration baselines, regular audits, and minimizing attack surfaces.\"\n+  impact: \"Exploiting security misconfigurations can lead to unauthorized access, data breaches, or full system compromise. Attackers may gain access to sensitive data, escalate privileges, or disrupt operations, causing financial loss, reputational damage, or regulatory penalties.\"\n+  category:\n+    name: \"SecurityMisconfig\"\n+    displayName: \"SecurityMisconfig\"\n+  subCategory: \"SecurityMisconfig\"\n+  severity: MEDIUM"
+  }
+]

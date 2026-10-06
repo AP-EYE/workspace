@@ -1,0 +1,50 @@
+[
+  {
+    "sha": "69c936d9d2349e58984e62b650430b0b8358784d",
+    "filename": "apps/api-runtime/pom.xml",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 1,
+    "changes": 2,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/6c599dbbf97f65fca2e2e8002ac6802cdb3bd600/apps%2Fapi-runtime%2Fpom.xml",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/6c599dbbf97f65fca2e2e8002ac6802cdb3bd600/apps%2Fapi-runtime%2Fpom.xml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fapi-runtime%2Fpom.xml?ref=6c599dbbf97f65fca2e2e8002ac6802cdb3bd600",
+    "patch": "@@ -50,7 +50,7 @@\n         <dependency>\n             <groupId>org.apache.kafka</groupId>\n             <artifactId>kafka-clients</artifactId>\n-            <version>3.0.0</version>\n+            <version>3.9.1</version>\n         </dependency>\n         <dependency>\n             <groupId>com.akto.libs.utils</groupId>"
+  },
+  {
+    "sha": "6f5cbf5f63e9d0666597d99c807c49bfd3224d83",
+    "filename": "apps/dashboard/pom.xml",
+    "status": "modified",
+    "additions": 2,
+    "deletions": 2,
+    "changes": 4,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/6c599dbbf97f65fca2e2e8002ac6802cdb3bd600/apps%2Fdashboard%2Fpom.xml",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/6c599dbbf97f65fca2e2e8002ac6802cdb3bd600/apps%2Fdashboard%2Fpom.xml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fpom.xml?ref=6c599dbbf97f65fca2e2e8002ac6802cdb3bd600",
+    "patch": "@@ -65,7 +65,7 @@\n         <dependency>\n             <groupId>org.apache.commons</groupId>\n             <artifactId>commons-lang3</artifactId>\n-            <version>3.12.0</version>\n+            <version>3.18.0</version>\n         </dependency>\n         <!-- https://mvnrepository.com/artifact/org.kohsuke/github-api -->\n         <dependency>\n@@ -246,7 +246,7 @@\n         <dependency>\n             <groupId>software.amazon.awssdk</groupId>\n             <artifactId>wafv2</artifactId>\n-            <version>2.20.50</version> <!-- Use latest version -->\n+            <version>2.32.26</version> <!-- Use latest version -->\n         </dependency>\n     </dependencies>\n     <build>"
+  },
+  {
+    "sha": "c1245e0f61ce950cf55e191e91f6650ec919df7e",
+    "filename": "libs/dao/pom.xml",
+    "status": "modified",
+    "additions": 3,
+    "deletions": 3,
+    "changes": 6,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/6c599dbbf97f65fca2e2e8002ac6802cdb3bd600/libs%2Fdao%2Fpom.xml",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/6c599dbbf97f65fca2e2e8002ac6802cdb3bd600/libs%2Fdao%2Fpom.xml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/libs%2Fdao%2Fpom.xml?ref=6c599dbbf97f65fca2e2e8002ac6802cdb3bd600",
+    "patch": "@@ -56,7 +56,7 @@\n         <dependency>\n             <groupId>commons-validator</groupId>\n             <artifactId>commons-validator</artifactId>\n-            <version>1.7</version>\n+            <version>1.10.0</version>\n         </dependency>\n         <dependency>\n             <groupId>io.swagger.parser.v3</groupId>\n@@ -100,7 +100,7 @@\n         <dependency>\n             <groupId>org.springframework.security</groupId>\n             <artifactId>spring-security-web</artifactId>\n-            <version>5.7.13</version>\n+            <version>5.8.16</version>\n         </dependency>\n         <dependency>\n             <groupId>de.flapdoodle.embed</groupId>\n@@ -142,7 +142,7 @@\n         <dependency>\n             <groupId>com.nimbusds</groupId>\n             <artifactId>nimbus-jose-jwt</artifactId>\n-            <version>9.37.2</version>\n+            <version>9.37.4</version>\n         </dependency>\n         <dependency>\n             <groupId>com.auth0</groupId>"
+  },
+  {
+    "sha": "c680146965a8310e265b7f53317a0dba919eb14b",
+    "filename": "libs/utils/pom.xml",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 1,
+    "changes": 2,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/6c599dbbf97f65fca2e2e8002ac6802cdb3bd600/libs%2Futils%2Fpom.xml",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/6c599dbbf97f65fca2e2e8002ac6802cdb3bd600/libs%2Futils%2Fpom.xml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/libs%2Futils%2Fpom.xml?ref=6c599dbbf97f65fca2e2e8002ac6802cdb3bd600",
+    "patch": "@@ -97,7 +97,7 @@\n         <dependency>\n             <groupId>org.apache.kafka</groupId>\n             <artifactId>kafka-clients</artifactId>\n-            <version>3.0.0</version>\n+            <version>3.9.1</version>\n         </dependency>\n         <dependency>\n             <groupId>io.confluent.parallelconsumer</groupId>"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "sha": "1e52492c00d6267f729827d8100139343a0ccc74",
+    "filename": "apps/dashboard/web/polaris_web/web/src/apps/dashboard/components/shared/SampleDataComponent.jsx",
+    "status": "modified",
+    "additions": 4,
+    "deletions": 4,
+    "changes": 8,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/825f9f3df068892c39f4313af8eb93b257c2e578/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fcomponents%2Fshared%2FSampleDataComponent.jsx",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/825f9f3df068892c39f4313af8eb93b257c2e578/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fcomponents%2Fshared%2FSampleDataComponent.jsx",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fcomponents%2Fshared%2FSampleDataComponent.jsx?ref=825f9f3df068892c39f4313af8eb93b257c2e578",
+    "patch": "@@ -13,7 +13,7 @@ import transform from './customDiffEditor';\n \n function SampleDataComponent(props) {\n \n-    const { type, sampleData, minHeight, showDiff, isNewDiff, metadata, readOnly = false, getEditorData = () => {}, showResponse = true, simpleJson = false } = props;\n+    const { type, sampleData, minHeight, showDiff, isNewDiff, metadata, readOnly = false, getEditorData = () => {}, showResponse = true, simpleJson = false, redactHeaders = [] } = props;\n     const [sampleJsonData, setSampleJsonData] = useState({ request: { message: \"\" }, response: { message: \"\" } });\n     const [popoverActive, setPopoverActive] = useState({});\n     const [lineNumbers, setLineNumbers] = useState({request: [], response: []})\n@@ -125,11 +125,11 @@ function SampleDataComponent(props) {\n         }else{\n             setSampleJsonData({ \n                 // If segments came from threat metadata, highlight in request; if they were provided by caller (e.g., LLM analysis), pass to both panes\n-                request: { message: transform.formatData(requestJson,\"http\"), original: transform.formatData(originalRequestJson,\"http\"), highlightPaths:requestJson?.highlightPaths, vulnerabilitySegments }, \n-                response: showResponse ? { message: transform.formatData(responseJson,\"http\"), original: transform.formatData(originalResponseJson,\"http\"), highlightPaths:responseJson?.highlightPaths, ...(segmentsFromMetadata ? {} : {vulnerabilitySegments}) } : {},\n+                request: { message: transform.formatData(requestJson,\"http\", redactHeaders), original: transform.formatData(originalRequestJson,\"http\", redactHeaders), highlightPaths:requestJson?.highlightPaths, vulnerabilitySegments },\n+                response: showResponse ? { message: transform.formatData(responseJson,\"http\", redactHeaders), original: transform.formatData(originalResponseJson,\"http\", redactHeaders), highlightPaths:responseJson?.highlightPaths, ...(segmentsFromMetadata ? {} : {vulnerabilitySegments}) } : {},\n             })\n         }\n-    }, [sampleData, metadata, isNewDiff, showResponse, simpleJson, type])\n+    }, [sampleData, metadata, isNewDiff, showResponse, simpleJson, type, redactHeaders])\n \n     const copyContent = async(type, completeData, isSimpleJson = false) => {\n         let copyString = \"\";"
+  },
+  {
+    "sha": "ce894ef6e68bc2f2602425531ed19a136e3c528b",
+    "filename": "apps/dashboard/web/polaris_web/web/src/apps/dashboard/components/shared/SampleDataList.js",
+    "status": "modified",
+    "additions": 2,
+    "deletions": 1,
+    "changes": 3,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/825f9f3df068892c39f4313af8eb93b257c2e578/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fcomponents%2Fshared%2FSampleDataList.js",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/825f9f3df068892c39f4313af8eb93b257c2e578/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fcomponents%2Fshared%2FSampleDataList.js",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fcomponents%2Fshared%2FSampleDataList.js?ref=825f9f3df068892c39f4313af8eb93b257c2e578",
+    "patch": "@@ -44,7 +44,7 @@ function SchemaValidationError({ sampleData}) {\n \n function SampleDataList(props) {\n \n-    const {showDiff, sampleData, heading, minHeight, vertical, isVulnerable, isNewDiff, metadata} = props;\n+    const {showDiff, sampleData, heading, minHeight, vertical, isVulnerable, isNewDiff, metadata, redactHeaders = []} = props;\n \n     const [page, setPage] = useState(0);\n \n@@ -108,6 +108,7 @@ function SampleDataList(props) {\n                       isNewDiff={isNewDiff}\n                       metadata={metadata}\n                       readOnly={true}\n+                      redactHeaders={redactHeaders}\n                     />\n                   </LegacyCard>\n                 </Box>"
+  },
+  {
+    "sha": "9af5f2f4e9395f22dfaa88f59edabafe40c32729",
+    "filename": "apps/dashboard/web/polaris_web/web/src/apps/dashboard/components/shared/customDiffEditor.js",
+    "status": "modified",
+    "additions": 4,
+    "deletions": 2,
+    "changes": 6,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/825f9f3df068892c39f4313af8eb93b257c2e578/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fcomponents%2Fshared%2FcustomDiffEditor.js",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/825f9f3df068892c39f4313af8eb93b257c2e578/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fcomponents%2Fshared%2FcustomDiffEditor.js",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fcomponents%2Fshared%2FcustomDiffEditor.js?ref=825f9f3df068892c39f4313af8eb93b257c2e578",
+    "patch": "@@ -238,17 +238,19 @@ const transform = {\n             updatedData: jsonObj.updatedData,\n         }\n     },\n-    formatData(data,style){\n+    formatData(data, style, redactHeaders = []){\n         let localFirstLine = data?.firstLine\n         let finalData = \"\"\n         let payLoad = null\n+        const redactSet = new Set(redactHeaders.map((h) => h.toLowerCase()))\n         if(style === \"http\" && data && Object.keys(data).length > 0){\n             if(data.json){\n                 Object.keys(data?.json).forEach((element)=> {\n                     if(element.includes(\"Header\")){\n                         if(data.json[element]){\n                             Object.keys(data?.json[element]).forEach((key) => {\n-                                finalData = finalData + key + ': ' + data.json[element][key] + \"\\n\"\n+                                const value = redactSet.has(key.toLowerCase()) ? '******' : data.json[element][key]\n+                                finalData = finalData + key + ': ' + value + \"\\n\"\n                             })\n                         }\n                     }else{"
+  },
+  {
+    "sha": "865a29fda3a8a4110aed70622a20cc59dfdb6994",
+    "filename": "apps/dashboard/web/polaris_web/web/src/apps/dashboard/pages/threat_detection/components/SampleDetails.jsx",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 0,
+    "changes": 1,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/825f9f3df068892c39f4313af8eb93b257c2e578/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Fthreat_detection%2Fcomponents%2FSampleDetails.jsx",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/825f9f3df068892c39f4313af8eb93b257c2e578/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Fthreat_detection%2Fcomponents%2FSampleDetails.jsx",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Fthreat_detection%2Fcomponents%2FSampleDetails.jsx?ref=825f9f3df068892c39f4313af8eb93b257c2e578",
+    "patch": "@@ -224,6 +224,7 @@ function SampleDetails(props) {\n                     sampleData={data && Array.isArray(data) && data.length > 0 ? data.map((result) => {\n                         return { message: result.orig, highlightPaths: [], metadata: result.metadata }\n                     }) : []}\n+                    redactHeaders={window.ACTIVE_ACCOUNT === 1758787662 ? ['authorization'] : []}\n                 />\n             </Box>)\n     }"
+  }
+]

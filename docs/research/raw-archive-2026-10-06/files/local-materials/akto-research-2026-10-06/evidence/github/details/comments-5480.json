@@ -1,0 +1,49 @@
+[
+  {
+    "url": "https://api.github.com/repos/akto-api-security/akto/issues/comments/4797141817",
+    "html_url": "https://github.com/akto-api-security/akto/issues/5480#issuecomment-4797141817",
+    "issue_url": "https://api.github.com/repos/akto-api-security/akto/issues/5480",
+    "id": 4797141817,
+    "node_id": "IC_kwDOI38B3s8AAAABHe6TOQ",
+    "user": {
+      "login": "PeterObeden",
+      "id": 272753551,
+      "node_id": "U_kgDOEEHjjw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/272753551?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/PeterObeden",
+      "html_url": "https://github.com/PeterObeden",
+      "followers_url": "https://api.github.com/users/PeterObeden/followers",
+      "following_url": "https://api.github.com/users/PeterObeden/following{/other_user}",
+      "gists_url": "https://api.github.com/users/PeterObeden/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/PeterObeden/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/PeterObeden/subscriptions",
+      "organizations_url": "https://api.github.com/users/PeterObeden/orgs",
+      "repos_url": "https://api.github.com/users/PeterObeden/repos",
+      "events_url": "https://api.github.com/users/PeterObeden/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/PeterObeden/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "created_at": "2026-06-25T08:06:14Z",
+    "updated_at": "2026-06-25T08:06:14Z",
+    "body": "Issue fixed",
+    "author_association": "NONE",
+    "pin": null,
+    "reactions": {
+      "url": "https://api.github.com/repos/akto-api-security/akto/issues/comments/4797141817/reactions",
+      "total_count": 0,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "performed_via_github_app": null,
+    "minimized": null
+  }
+]

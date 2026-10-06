@@ -1,0 +1,14 @@
+[
+  {
+    "sha": "c3f3a244af9d417b5e82577722d52d97f0e323f7",
+    "filename": "apps/testing/src/main/java/com/akto/test_editor/filter/FilterAction.java",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 1,
+    "changes": 2,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/43c9189c2b8e7583d84d08fc4227c33124336563/apps%2Ftesting%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Ftest_editor%2Ffilter%2FFilterAction.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/43c9189c2b8e7583d84d08fc4227c33124336563/apps%2Ftesting%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Ftest_editor%2Ffilter%2FFilterAction.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Ftesting%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Ftest_editor%2Ffilter%2FFilterAction.java?ref=43c9189c2b8e7583d84d08fc4227c33124336563",
+    "patch": "@@ -1113,7 +1113,7 @@ public Object resolveResponseHeader(FilterActionRequest filterActionRequest, Boo\n     public DataOperandsFilterResponse evaluatePrivateVariables(FilterActionRequest filterActionRequest) {\n \n         List<BasicDBObject> privateValues = new ArrayList<>();\n-        StringBuilder vulnerabilityReasonString = null;\n+        StringBuilder vulnerabilityReasonString = new StringBuilder();\n         if (filterActionRequest.getOperand().equalsIgnoreCase(TestEditorEnums.DataOperands.REGEX.toString())) {\n             if (filterActionRequest.getContextEntities() == null) {\n                 return new DataOperandsFilterResponse(false, null, filterActionRequest.getContextEntities(), null);"
+  }
+]

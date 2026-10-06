@@ -1,0 +1,1 @@
+level=INFO ts=2026-10-06 05:16:40,597 module=apps path=/home/wger/.local/lib/python3.12/site-packages/axes/apps.py line=53 message=AXES: BEGIN version 8.0.0, blocking by ip_address

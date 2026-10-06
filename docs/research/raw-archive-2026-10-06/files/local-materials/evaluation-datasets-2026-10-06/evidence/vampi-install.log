@@ -1,0 +1,94 @@
+Collecting werkzeug<3
+  Downloading werkzeug-2.3.8-py3-none-any.whl.metadata (4.1 kB)
+Collecting connexion==2.14.2 (from connexion[swagger-ui]==2.14.2->-r local-materials/evaluation-datasets-2026-10-06/sources/VAmPI/requirements.txt (line 1))
+  Downloading connexion-2.14.2-py2.py3-none-any.whl.metadata (28 kB)
+Collecting flask==2.2.2 (from -r local-materials/evaluation-datasets-2026-10-06/sources/VAmPI/requirements.txt (line 2))
+  Downloading Flask-2.2.2-py3-none-any.whl.metadata (3.9 kB)
+Collecting flask-sqlalchemy==3.0.3 (from -r local-materials/evaluation-datasets-2026-10-06/sources/VAmPI/requirements.txt (line 3))
+  Downloading Flask_SQLAlchemy-3.0.3-py3-none-any.whl.metadata (3.4 kB)
+Collecting jsonschema==4.17.3 (from -r local-materials/evaluation-datasets-2026-10-06/sources/VAmPI/requirements.txt (line 4))
+  Downloading jsonschema-4.17.3-py3-none-any.whl.metadata (7.9 kB)
+Collecting sqlalchemy==2.0.2 (from -r local-materials/evaluation-datasets-2026-10-06/sources/VAmPI/requirements.txt (line 5))
+  Downloading SQLAlchemy-2.0.2-py3-none-any.whl.metadata (9.3 kB)
+Collecting swagger-ui-bundle (from -r local-materials/evaluation-datasets-2026-10-06/sources/VAmPI/requirements.txt (line 6))
+  Downloading swagger_ui_bundle-1.1.0-py3-none-any.whl.metadata (3.4 kB)
+Collecting PyJWT==2.6.0 (from -r local-materials/evaluation-datasets-2026-10-06/sources/VAmPI/requirements.txt (line 7))
+  Downloading PyJWT-2.6.0-py3-none-any.whl.metadata (4.0 kB)
+Collecting markupsafe==2.1.2 (from -r local-materials/evaluation-datasets-2026-10-06/sources/VAmPI/requirements.txt (line 8))
+  Downloading MarkupSafe-2.1.2.tar.gz (19 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting clickclick<21,>=1.2 (from connexion==2.14.2->connexion[swagger-ui]==2.14.2->-r local-materials/evaluation-datasets-2026-10-06/sources/VAmPI/requirements.txt (line 1))
+  Downloading clickclick-20.10.2-py2.py3-none-any.whl.metadata (7.6 kB)
+Collecting PyYAML<7,>=5.1 (from connexion==2.14.2->connexion[swagger-ui]==2.14.2->-r local-materials/evaluation-datasets-2026-10-06/sources/VAmPI/requirements.txt (line 1))
+  Using cached pyyaml-6.0.3-cp312-cp312-win_amd64.whl.metadata (2.4 kB)
+Collecting requests<3,>=2.9.1 (from connexion==2.14.2->connexion[swagger-ui]==2.14.2->-r local-materials/evaluation-datasets-2026-10-06/sources/VAmPI/requirements.txt (line 1))
+  Using cached requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+Collecting inflection<0.6,>=0.3.1 (from connexion==2.14.2->connexion[swagger-ui]==2.14.2->-r local-materials/evaluation-datasets-2026-10-06/sources/VAmPI/requirements.txt (line 1))
+  Downloading inflection-0.5.1-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting werkzeug<3
+  Downloading Werkzeug-2.2.3-py3-none-any.whl.metadata (4.4 kB)
+Collecting packaging>=20 (from connexion==2.14.2->connexion[swagger-ui]==2.14.2->-r local-materials/evaluation-datasets-2026-10-06/sources/VAmPI/requirements.txt (line 1))
+  Using cached packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+Collecting itsdangerous>=0.24 (from connexion==2.14.2->connexion[swagger-ui]==2.14.2->-r local-materials/evaluation-datasets-2026-10-06/sources/VAmPI/requirements.txt (line 1))
+  Using cached itsdangerous-2.2.0-py3-none-any.whl.metadata (1.9 kB)
+Collecting Jinja2>=3.0 (from flask==2.2.2->-r local-materials/evaluation-datasets-2026-10-06/sources/VAmPI/requirements.txt (line 2))
+  Using cached jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting click>=8.0 (from flask==2.2.2->-r local-materials/evaluation-datasets-2026-10-06/sources/VAmPI/requirements.txt (line 2))
+  Using cached click-8.5.0-py3-none-any.whl.metadata (2.6 kB)
+Collecting attrs>=17.4.0 (from jsonschema==4.17.3->-r local-materials/evaluation-datasets-2026-10-06/sources/VAmPI/requirements.txt (line 4))
+  Using cached attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)
+Collecting pyrsistent!=0.17.0,!=0.17.1,!=0.17.2,>=0.14.0 (from jsonschema==4.17.3->-r local-materials/evaluation-datasets-2026-10-06/sources/VAmPI/requirements.txt (line 4))
+  Downloading pyrsistent-0.20.0-cp312-cp312-win_amd64.whl.metadata (976 bytes)
+Collecting typing-extensions>=4.2.0 (from sqlalchemy==2.0.2->-r local-materials/evaluation-datasets-2026-10-06/sources/VAmPI/requirements.txt (line 5))
+  Using cached typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting greenlet!=0.4.17 (from sqlalchemy==2.0.2->-r local-materials/evaluation-datasets-2026-10-06/sources/VAmPI/requirements.txt (line 5))
+  Downloading greenlet-3.5.6-cp312-cp312-win_amd64.whl.metadata (3.9 kB)
+Collecting swagger-ui-bundle (from -r local-materials/evaluation-datasets-2026-10-06/sources/VAmPI/requirements.txt (line 6))
+  Downloading swagger_ui_bundle-0.0.9-py3-none-any.whl.metadata (2.8 kB)
+Collecting charset_normalizer<4,>=2 (from requests<3,>=2.9.1->connexion==2.14.2->connexion[swagger-ui]==2.14.2->-r local-materials/evaluation-datasets-2026-10-06/sources/VAmPI/requirements.txt (line 1))
+  Using cached charset_normalizer-3.5.2-cp312-cp312-win_amd64.whl.metadata (47 kB)
+Collecting idna<4,>=2.5 (from requests<3,>=2.9.1->connexion==2.14.2->connexion[swagger-ui]==2.14.2->-r local-materials/evaluation-datasets-2026-10-06/sources/VAmPI/requirements.txt (line 1))
+  Using cached idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+Collecting urllib3<3,>=1.26 (from requests<3,>=2.9.1->connexion==2.14.2->connexion[swagger-ui]==2.14.2->-r local-materials/evaluation-datasets-2026-10-06/sources/VAmPI/requirements.txt (line 1))
+  Using cached urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+Collecting certifi>=2023.5.7 (from requests<3,>=2.9.1->connexion==2.14.2->connexion[swagger-ui]==2.14.2->-r local-materials/evaluation-datasets-2026-10-06/sources/VAmPI/requirements.txt (line 1))
+  Using cached certifi-2026.7.22-py3-none-any.whl.metadata (2.5 kB)
+Downloading connexion-2.14.2-py2.py3-none-any.whl (95 kB)
+Downloading Flask-2.2.2-py3-none-any.whl (101 kB)
+Downloading Flask_SQLAlchemy-3.0.3-py3-none-any.whl (24 kB)
+Downloading jsonschema-4.17.3-py3-none-any.whl (90 kB)
+Downloading SQLAlchemy-2.0.2-py3-none-any.whl (1.8 MB)
+   ---------------------------------------- 1.8/1.8 MB 7.5 MB/s eta 0:00:00
+Downloading PyJWT-2.6.0-py3-none-any.whl (20 kB)
+Downloading Werkzeug-2.2.3-py3-none-any.whl (233 kB)
+Downloading swagger_ui_bundle-0.0.9-py3-none-any.whl (6.2 MB)
+   ---------------------------------------- 6.2/6.2 MB 7.9 MB/s eta 0:00:00
+Using cached attrs-26.1.0-py3-none-any.whl (67 kB)
+Using cached click-8.5.0-py3-none-any.whl (125 kB)
+Downloading clickclick-20.10.2-py2.py3-none-any.whl (7.4 kB)
+Downloading greenlet-3.5.6-cp312-cp312-win_amd64.whl (324 kB)
+Downloading inflection-0.5.1-py2.py3-none-any.whl (9.5 kB)
+Using cached itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+Using cached jinja2-3.1.6-py3-none-any.whl (134 kB)
+Using cached packaging-26.3-py3-none-any.whl (129 kB)
+Downloading pyrsistent-0.20.0-cp312-cp312-win_amd64.whl (63 kB)
+Using cached pyyaml-6.0.3-cp312-cp312-win_amd64.whl (154 kB)
+Using cached requests-2.34.2-py3-none-any.whl (73 kB)
+Using cached typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+Using cached certifi-2026.7.22-py3-none-any.whl (136 kB)
+Using cached charset_normalizer-3.5.2-cp312-cp312-win_amd64.whl (207 kB)
+Using cached idna-3.20-py3-none-any.whl (69 kB)
+Using cached urllib3-2.8.0-py3-none-any.whl (135 kB)
+Building wheels for collected packages: markupsafe
+  Building wheel for markupsafe (pyproject.toml): started
+  Building wheel for markupsafe (pyproject.toml): finished with status 'done'
+  Created wheel for markupsafe: filename=markupsafe-2.1.2-cp312-cp312-win_amd64.whl size=17016 sha256=d1c305b039c5dc24c33c35a6fc3c3575433bc1b84cb3941531e221edf426ebae
+  Stored in directory: c:\users\andyw\appdata\local\pip\cache\wheels\2c\40\ee\f5dc47077cc22aa7698564d653641f839cbe388a9be7a8a8e7
+Successfully built markupsafe
+Installing collected packages: urllib3, typing-extensions, PyYAML, pyrsistent, PyJWT, packaging, markupsafe, itsdangerous, inflection, idna, greenlet, click, charset_normalizer, certifi, attrs, werkzeug, sqlalchemy, requests, jsonschema, Jinja2, clickclick, swagger-ui-bundle, flask, flask-sqlalchemy, connexion
+Successfully installed Jinja2-3.1.6 PyJWT-2.6.0 PyYAML-6.0.3 attrs-26.1.0 certifi-2026.7.22 charset_normalizer-3.5.2 click-8.5.0 clickclick-20.10.2 connexion-2.14.2 flask-2.2.2 flask-sqlalchemy-3.0.3 greenlet-3.5.6 idna-3.20 inflection-0.5.1 itsdangerous-2.2.0 jsonschema-4.17.3 markupsafe-2.1.2 packaging-26.3 pyrsistent-0.20.0 requests-2.34.2 sqlalchemy-2.0.2 swagger-ui-bundle-0.0.9 typing-extensions-4.16.0 urllib3-2.8.0 werkzeug-2.2.3

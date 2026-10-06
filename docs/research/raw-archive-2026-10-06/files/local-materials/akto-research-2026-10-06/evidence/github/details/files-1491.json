@@ -1,0 +1,38 @@
+[
+  {
+    "sha": "2995dcf7e582cac4a7fb441de52d40ed0e87e3c0",
+    "filename": "apps/mini-runtime/src/main/java/com/akto/hybrid_runtime/APICatalogSync.java",
+    "status": "modified",
+    "additions": 13,
+    "deletions": 1,
+    "changes": 14,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/eea439e17f992e5fbfb311d68f25c90cd1e16d6b/apps%2Fmini-runtime%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fhybrid_runtime%2FAPICatalogSync.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/eea439e17f992e5fbfb311d68f25c90cd1e16d6b/apps%2Fmini-runtime%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fhybrid_runtime%2FAPICatalogSync.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fmini-runtime%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fhybrid_runtime%2FAPICatalogSync.java?ref=eea439e17f992e5fbfb311d68f25c90cd1e16d6b",
+    "patch": "@@ -1601,7 +1601,19 @@ public DbUpdateReturnHybrid getDBUpdatesForParamsHybrid(APICatalog currentDelta,\n             updatePayload = new UpdatePayload(SingleTypeInfo.MIN_VALUE, deltaInfo.getMinValue(), \"min\");\n             updates.add(updatePayload.toString());\n \n-            if (!redactSampleData && deltaInfo.getExamples() != null && !deltaInfo.getExamples().isEmpty()) {\n+            if (!(redactSampleData || collectionLevelRedact) && deltaInfo.getExamples() != null && !deltaInfo.getExamples().isEmpty()) {\n+                Set<Object> updatedSampleData = new HashSet<>();\n+                for (Object example : deltaInfo.getExamples()) {\n+                    try{\n+                        String exampleStr = (String) example;\n+                        String s = RedactSampleData.redactDataTypes(exampleStr);\n+                        loggerMaker.infoAndAddToDb(\"redacted data, updated sample is \" + s, LogDb.RUNTIME);\n+                        updatedSampleData.add(s);\n+                    } catch (Exception e) {\n+                        ;\n+                    }\n+                }\n+                deltaInfo.setExamples(updatedSampleData);\n                 ArrayList<String> sampleDataUpdates = new ArrayList<>();\n                 updatePayload = new UpdatePayload(SensitiveSampleData.SAMPLE_DATA, Arrays.asList(deltaInfo.getExamples().toArray()), \"pushEach\");\n                 AllMetrics.instance.setCyborgApiPayloadSize(updatePayload.getSize());"
+  },
+  {
+    "sha": "2da3313a2112770ec38e99235eed63f39ccecb09",
+    "filename": "libs/dao/src/main/java/com/akto/dto/CustomDataTypeMapper.java",
+    "status": "modified",
+    "additions": 15,
+    "deletions": 0,
+    "changes": 15,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/eea439e17f992e5fbfb311d68f25c90cd1e16d6b/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2FCustomDataTypeMapper.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/eea439e17f992e5fbfb311d68f25c90cd1e16d6b/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2FCustomDataTypeMapper.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2FCustomDataTypeMapper.java?ref=eea439e17f992e5fbfb311d68f25c90cd1e16d6b",
+    "patch": "@@ -20,6 +20,7 @@ public class CustomDataTypeMapper {\n     Conditions valueConditions;\n     Conditions.Operator operator;\n     private IgnoreData ignoreData;\n+    private Boolean redacted;\n \n     public CustomDataTypeMapper() { }\n \n@@ -35,6 +36,7 @@ public CustomDataTypeMapper(CustomDataType customDataType) {\n         this.valueConditions = customDataType.getValueConditions();\n         this.operator = customDataType.getOperator();\n         this.ignoreData = customDataType.getIgnoreData();\n+        this.redacted = customDataType.isRedacted();\n     }\n \n     public static CustomDataType buildCustomDataType(CustomDataTypeMapper customDataTypeMapper, String id, Conditions keyConditions, Conditions valueConditions) {\n@@ -50,6 +52,11 @@ public static CustomDataType buildCustomDataType(CustomDataTypeMapper customData\n         customDataType.setValueConditions(valueConditions);\n         customDataType.setOperator(customDataTypeMapper.getOperator());\n         customDataType.setIgnoreData(customDataTypeMapper.getIgnoreData());\n+        boolean redacted = false;\n+        if (customDataTypeMapper.getRedacted() != null) {\n+            redacted = customDataTypeMapper.getRedacted();\n+        }\n+        customDataType.setRedacted(redacted);\n         return customDataType;\n     }\n \n@@ -140,4 +147,12 @@ public IgnoreData getIgnoreData() {\n     public void setIgnoreData(IgnoreData ignoreData) {\n         this.ignoreData = ignoreData;\n     }\n+\n+    public Boolean getRedacted() {\n+        return redacted;\n+    }\n+\n+    public void setRedacted(Boolean redacted) {\n+        this.redacted = redacted;\n+    }\n }"
+  },
+  {
+    "sha": "cda3eddcb8fc602ce9d80a24fb60e5ec694e13a1",
+    "filename": "libs/dao/src/main/java/com/akto/dto/type/SingleTypeInfo.java",
+    "status": "modified",
+    "additions": 8,
+    "deletions": 0,
+    "changes": 8,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/eea439e17f992e5fbfb311d68f25c90cd1e16d6b/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2Ftype%2FSingleTypeInfo.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/eea439e17f992e5fbfb311d68f25c90cd1e16d6b/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2Ftype%2FSingleTypeInfo.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2Ftype%2FSingleTypeInfo.java?ref=eea439e17f992e5fbfb311d68f25c90cd1e16d6b",
+    "patch": "@@ -145,13 +145,17 @@ public static void fetchCustomDataTypes(int accountId, List<CustomDataType> cust\n         Map<String, CustomDataType> newMap = new HashMap<>();\n         List<CustomDataType> sensitiveCustomDataType = new ArrayList<>();\n         List<CustomDataType> nonSensitiveCustomDataType = new ArrayList<>();\n+        Set<String> redactedDataTypes = new HashSet<>();\n         for (CustomDataType customDataType: customDataTypes) {\n             newMap.put(customDataType.getName(), customDataType);\n             if (customDataType.isSensitiveAlways() || customDataType.getSensitivePosition().size()>0) {\n                 sensitiveCustomDataType.add(customDataType);\n             } else {\n                 nonSensitiveCustomDataType.add(customDataType);\n             }\n+            if (customDataType.isRedacted()) {\n+                redactedDataTypes.add(customDataType.getName());\n+            }\n         }\n \n         accountToDataTypesInfo.putIfAbsent(accountId, new AccountDataTypesInfo());\n@@ -167,9 +171,13 @@ public static void fetchCustomDataTypes(int accountId, List<CustomDataType> cust\n                 newAktoMap.put(aktoDataType.getName(), aktoDataType);\n                 subTypeMap.get(aktoDataType.getName()).setSensitiveAlways(aktoDataType.getSensitiveAlways());\n                 subTypeMap.get(aktoDataType.getName()).setSensitivePosition(aktoDataType.getSensitivePosition());\n+                if(aktoDataType.isRedacted()){\n+                    redactedDataTypes.add(aktoDataType.getName());\n+                }\n             }\n         }\n         info.setAktoDataTypeMap(newAktoMap);\n+        info.setRedactedDataTypes(redactedDataTypes);\n     }\n \n     public static boolean isRedacted(String dataTypeName){"
+  }
+]

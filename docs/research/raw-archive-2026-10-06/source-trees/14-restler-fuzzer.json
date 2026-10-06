@@ -1,0 +1,2858 @@
+[
+  {
+    "path": ".github/ISSUE_TEMPLATE/01-bug-report.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "df24074caba296336ebed263cb08423fb84f400f"
+  },
+  {
+    "path": ".github/ISSUE_TEMPLATE/02-feature-request.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "aeae2cda404b6c1cb091f8774541e453d8470a69"
+  },
+  {
+    "path": ".github/ISSUE_TEMPLATE/03-question.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8206e3ff2e9a24e297e14c57eeea677827fe574f"
+  },
+  {
+    "path": ".github/ISSUE_TEMPLATE/04-blank.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f2ec94222479bbeefe096ed3295237b8f030b576"
+  },
+  {
+    "path": ".github/ISSUE_TEMPLATE/config.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "99d680b0ab430eee5b7c7b49241df938840b8777"
+  },
+  {
+    "path": ".github/actions/utilities/check_stderr.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "bab0531574ec042fc8e6a490a044d1289d63fe01"
+  },
+  {
+    "path": ".github/dependabot.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a1ef8b6a84a8055c4215f4b83120baa17d705b4b"
+  },
+  {
+    "path": ".github/workflows/ci_build_test_pr.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "11069841acf5afda416ba17c64553f3bc0d2925a"
+  },
+  {
+    "path": ".gitignore",
+    "mode": "100644",
+    "type": "blob",
+    "object": "eba572faafdb969679f7ffa711ee9f34dc6312bb"
+  },
+  {
+    "path": ".vscode/launch.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ae17df7aac6bb9bd2f1d4f2660f4d87436891b3f"
+  },
+  {
+    "path": "CODE_OF_CONDUCT.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f9ba8cf65f3e3104dd061c178066ec8247811f33"
+  },
+  {
+    "path": "Dockerfile",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e80091d6a725282bb013cb06dce88f121d8aa3a4"
+  },
+  {
+    "path": "LICENSE",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9e841e7a26e4eb057b24511e7b92d42b257a80e5"
+  },
+  {
+    "path": "README.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ebc06359596abda3a0ad485b60c0529ca58447d7"
+  },
+  {
+    "path": "SECURITY.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "bf28c8cc40123476710ff104d370d18c417d856d"
+  },
+  {
+    "path": "build-restler.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6a24a9be61ef661498875f34eeecb6be89bc25f5"
+  },
+  {
+    "path": "ci_build_pipelines/publish-restler.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e81a9a8efb94fd1c5439875fd2bd3407ab53ea25"
+  },
+  {
+    "path": "ci_build_pipelines/stages/build/build.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f5cb3bdad2ee4f53e8fd519c220820f761829ca0"
+  },
+  {
+    "path": "ci_build_pipelines/stages/build/steps/restlerfullbuild.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "091b1761b0cca13958e86f811bd44e24350654f2"
+  },
+  {
+    "path": "ci_build_pipelines/stages/test/steps/compilerFunctionalTests.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2870e8f660166d20d2487f57d784b6f439512771"
+  },
+  {
+    "path": "ci_build_pipelines/stages/test/steps/engineUnitTests.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "61f45c0c55b1e559b1c18fbd45c0fe6bde129cdf"
+  },
+  {
+    "path": "ci_build_pipelines/stages/test/steps/quickStartTests.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "47f36c267ed941de39858aa280e3b214c059fcae"
+  },
+  {
+    "path": "ci_build_pipelines/stages/test/test.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "bebeeec3dda23eed13214c3a453340efb66f7f57"
+  },
+  {
+    "path": "ci_build_pipelines/variables/version-variables.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "155a1d5e3f2bda0af64ec9145305bb282a22de8f"
+  },
+  {
+    "path": "demo_server/Dockerfile",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f84613df8235efba1798bb6fc2d1830ca47d13ae"
+  },
+  {
+    "path": "demo_server/README.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9fad6828b8d69e4240eb5bad8da060e06d88f896"
+  },
+  {
+    "path": "demo_server/demo_server/app.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1696387547a3b6854f667aeab7e185eb87bb56ae"
+  },
+  {
+    "path": "demo_server/demo_server/db.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2456c78961b23c6e5a17fbd9d9f5dad78bf087e2"
+  },
+  {
+    "path": "demo_server/demo_server/db.sqlite",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d940e923cd52b1f09a0bd0647e7df440426c4384"
+  },
+  {
+    "path": "demo_server/demo_server/routers/blog.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "340479db6150c891cf690e255fb19983f363ee9d"
+  },
+  {
+    "path": "demo_server/demo_server/routers/doc.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6874b3dadf7cdaee64e5368c36c9f3b41695bf91"
+  },
+  {
+    "path": "demo_server/demo_server/schemas.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "24efaf08a6ba8f1eef630d8b503ed47431eba5ae"
+  },
+  {
+    "path": "demo_server/requirements.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7407203269a8544c9fe04eacd323157096dc7100"
+  },
+  {
+    "path": "demo_server/swagger.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8c200d1240ebfa021c6b8b6e88c273b0747e3ed6"
+  },
+  {
+    "path": "docker/Dockerfile",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e80091d6a725282bb013cb06dce88f121d8aa3a4"
+  },
+  {
+    "path": "docs/contributor-guide/Contributing.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e84f321ebd8c56a11c194bc946aedc14cc80c0b4"
+  },
+  {
+    "path": "docs/contributor-guide/DeveloperGuide.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "457d07afdacfb9ddfb7fb5ab830bba7275831c36"
+  },
+  {
+    "path": "docs/contributor-guide/EngineGettingStarted.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "718add7dca881d62ef01e64bbed72eab7f06c984"
+  },
+  {
+    "path": "docs/contributor-guide/PullRequestTemplate.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1849c1d043d09eff21ebe17b427a9561a1755538"
+  },
+  {
+    "path": "docs/user-guide/Annotations.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f77b9541eefd0cbc1a88efe3373530679529d799"
+  },
+  {
+    "path": "docs/user-guide/Authentication.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2e91fc5c13f1868ddd847374dcd88d9bb2538bb1"
+  },
+  {
+    "path": "docs/user-guide/BestPractices.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "31201be9d561dfff1fc1a3eb83f56fa6346db1d1"
+  },
+  {
+    "path": "docs/user-guide/BugBuckets.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f9e73b654910b90fd1af056d7d96fdafe5ea95e4"
+  },
+  {
+    "path": "docs/user-guide/Checkers.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3ed386b4fbfb7ea1ff2e4c426431a858119656d3"
+  },
+  {
+    "path": "docs/user-guide/CompilerConfig.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e2124c51a624874f9dc8030e1264e6f5e608d2f5"
+  },
+  {
+    "path": "docs/user-guide/Compiling.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c10e7c1db2e337045baa9a3f2ed8466227e0109d"
+  },
+  {
+    "path": "docs/user-guide/Examples.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e99e3b4fae109d434e71a6c06756a02323842d1d"
+  },
+  {
+    "path": "docs/user-guide/FAQ.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "827e64a66301894c496412bccd845c8d6084ed5b"
+  },
+  {
+    "path": "docs/user-guide/Fuzzing.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "458e7a47d6822d5576f3ca6916d28de54e0149fc"
+  },
+  {
+    "path": "docs/user-guide/FuzzingDictionary.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "dd9d89ba77da5390a0fc349fd58f8b1a558f664b"
+  },
+  {
+    "path": "docs/user-guide/GettingStartedWorkflow.dot",
+    "mode": "100644",
+    "type": "blob",
+    "object": "24e6ffd18281a207fde5977ed3b5d193f8b8630c"
+  },
+  {
+    "path": "docs/user-guide/GettingStartedWorkflow.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6149bb65b18efe95acac9c9d837d94232aacf1c5"
+  },
+  {
+    "path": "docs/user-guide/ImprovingCoverage.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d5de31838eb55a45c064b2e287423cf00cec851b"
+  },
+  {
+    "path": "docs/user-guide/Links.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f1681bab1310470122253ebc66f1b53844dad405"
+  },
+  {
+    "path": "docs/user-guide/QuickStart.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "da17264f5acf78d862142baab0f9222db6b47df9"
+  },
+  {
+    "path": "docs/user-guide/RESTler-arch.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "71b480b6499dcdc95df204400eb0e2c3db205d69"
+  },
+  {
+    "path": "docs/user-guide/Replay.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9a644408f396d4add5b6ed58d5969dd0b7120b6a"
+  },
+  {
+    "path": "docs/user-guide/ResultsAnalyzer.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f832773c823302acb80e4bbc1dbb3c2f2a34d2fe"
+  },
+  {
+    "path": "docs/user-guide/SettingsFile.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "51db13a6a1af6bc0bc4a1677fe6e6ae80931c1bc"
+  },
+  {
+    "path": "docs/user-guide/Telemetry.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "429cd4d0c02a221afe020deedc944463c031e732"
+  },
+  {
+    "path": "docs/user-guide/Testing.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7b92888af8b2d82f2b9835fa248fa980e3122a0a"
+  },
+  {
+    "path": "docs/user-guide/TutorialDemoServer.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "64dfc3f34d9eaca90d17da0e0207e657afbecace"
+  },
+  {
+    "path": "docs/user-guide/icse2019.bib",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5b567cc057cd37aac0842606439b553775b46e50"
+  },
+  {
+    "path": "global.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5b8e7939ac2839d07c82e5347ac9202b48e25b76"
+  },
+  {
+    "path": "restler-quick-start.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ce8faaed7da62d34ab5b2ed07b544a038d226b6b"
+  },
+  {
+    "path": "restler/.vscode/settings.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "aed4f664aa423925f9cae7d31fa44a3b632ceb8b"
+  },
+  {
+    "path": "restler/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "restler/checkers/README.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9444a6a0a875d76fb32f136efa142d76ba1ab575"
+  },
+  {
+    "path": "restler/checkers/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "307d758db0976f1a636672aa6258316afe214f33"
+  },
+  {
+    "path": "restler/checkers/body_schema_fuzzer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ac0194d67dd6d036ef4a0f259ca699ff0a2ff01d"
+  },
+  {
+    "path": "restler/checkers/checker_base.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a992192cd9c1ca246219a623269767f672ae3b2c"
+  },
+  {
+    "path": "restler/checkers/checker_log.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6cef0b375dc416be2c958051d5eef16f02884782"
+  },
+  {
+    "path": "restler/checkers/demo_checker.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1af77725a7eec056a2dfc5dc9b39eab8ad0775c4"
+  },
+  {
+    "path": "restler/checkers/examples_checker.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d2aa10785dfe0ac865c9c888e3fd47ff3358a0fe"
+  },
+  {
+    "path": "restler/checkers/invalid_dynamic_object_checker.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1cbcf2272a60c1c71fd442c852e2c136020dbd39"
+  },
+  {
+    "path": "restler/checkers/invalid_value_checker.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d132b8682e8551cb89736b1c52ab1856202877c4"
+  },
+  {
+    "path": "restler/checkers/invalid_value_checker_value_gen.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9ffcdfc85d494e7558ee34561ffd94b267c5dea1"
+  },
+  {
+    "path": "restler/checkers/leakage_rule_checker.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b567f2f3d16fe3f8f313798884263d165710ba03"
+  },
+  {
+    "path": "restler/checkers/namespace_rule_checker.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3e827b9e4a851dbc83c659efbf0b03ae24aeea3f"
+  },
+  {
+    "path": "restler/checkers/payload_body_bucketing.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "dce3bcebf551d83901a191a3d9184df8ae94c033"
+  },
+  {
+    "path": "restler/checkers/payload_body_checker.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "dcf59fcc96c51f06326f202a991f18406f49a419"
+  },
+  {
+    "path": "restler/checkers/resource_hierarchy_checker.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6bdc0e1a812cccab563e9ad3dda813ad3ba36563"
+  },
+  {
+    "path": "restler/checkers/response_analyzer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "529cfe83b3c4360ba78624f9db997a18c65a4c5e"
+  },
+  {
+    "path": "restler/checkers/use_after_free_checker.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3f7ab97268caa2ae5eaa3f96fc08d97aa1fa09ee"
+  },
+  {
+    "path": "restler/end_to_end_tests/baselines/mutated_swagger_coverage_failures.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ed6fab14c213220d58bf9402c8a71db1aa1cc7a5"
+  },
+  {
+    "path": "restler/end_to_end_tests/test_quick_start.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7e73f84e346693a7a5ac85477d8e57d084548449"
+  },
+  {
+    "path": "restler/engine/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "restler/engine/bug_bucketing.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "48f10907eedef6e756ee684b113dd0f714877574"
+  },
+  {
+    "path": "restler/engine/core/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "restler/engine/core/async_request_utilities.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0e824ed8ee8c6368933848d9ff487a54e0c433d2"
+  },
+  {
+    "path": "restler/engine/core/driver.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "be31938886e8c3c0a4e57cfcc6562dbf87907d3a"
+  },
+  {
+    "path": "restler/engine/core/fuzzer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a41cc516f1fd3156958953755684776ea4f4faad"
+  },
+  {
+    "path": "restler/engine/core/fuzzing_monitor.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7edc5740f525cc2aad622ce1ea8955025647a73e"
+  },
+  {
+    "path": "restler/engine/core/fuzzing_requests.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0557a03bd0a9ef51361645e46a63376b8f8b4b29"
+  },
+  {
+    "path": "restler/engine/core/postprocessing.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3ececd34c660c5e3610442505e2ffca17ea707d1"
+  },
+  {
+    "path": "restler/engine/core/preprocessing.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e313b9b45cb70de4232638ba2b6743637321a0fd"
+  },
+  {
+    "path": "restler/engine/core/renderings_monitor.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e8f6e371ac92a75217103b680fa7bb11eccf89a1"
+  },
+  {
+    "path": "restler/engine/core/request_utilities.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "80f2ba6557789877acee212767129f2e3e3ee8d8"
+  },
+  {
+    "path": "restler/engine/core/requests.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2a5a18b19bdbf6dd20a7265a0ed1b11418c4759e"
+  },
+  {
+    "path": "restler/engine/core/retry_handler.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8deb79f81e2092c564d5aec8ae06df07e97c1694"
+  },
+  {
+    "path": "restler/engine/core/sequences.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ebd00cc74a69ce1fe95c76ea15c9130fe5aeceac"
+  },
+  {
+    "path": "restler/engine/core/status_codes_monitor.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7d24dbca6c708b2f31fe3900cfea4950867aee7f"
+  },
+  {
+    "path": "restler/engine/dependencies.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b5097d87cd0d4824f1514c27d205d5c167cdfb6a"
+  },
+  {
+    "path": "restler/engine/errors.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "42776b4230d214af5029f81b07e09a968d0f0f92"
+  },
+  {
+    "path": "restler/engine/fuzzing_parameters/body_schema.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4d1032fe7416aad9b4cbdf27f81c47017ab06267"
+  },
+  {
+    "path": "restler/engine/fuzzing_parameters/fuzzing_config.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "cd32c4a632e8cc643f30918293b706569b9f6ee6"
+  },
+  {
+    "path": "restler/engine/fuzzing_parameters/fuzzing_utils.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e9cb2cdd565b1ed6e6072b5e6655c73a3a05a6a0"
+  },
+  {
+    "path": "restler/engine/fuzzing_parameters/param_combinations.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b8b52d433b7659fb721e55ce58d34e97db9b7261"
+  },
+  {
+    "path": "restler/engine/fuzzing_parameters/parameter_schema.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "023ca07879519fe6d43c0cc41d042fa3e0f3f0d6"
+  },
+  {
+    "path": "restler/engine/fuzzing_parameters/request_examples.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c3a9a10e848f4b3fb5a878139ae01420d12f925f"
+  },
+  {
+    "path": "restler/engine/fuzzing_parameters/request_params.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f85c586e795cd2a518255599e2b5ea0f582340f9"
+  },
+  {
+    "path": "restler/engine/fuzzing_parameters/request_schema_parser.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "096c1e1480a35abc2262cac6c0e2cb45bb49b139"
+  },
+  {
+    "path": "restler/engine/mime/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "restler/engine/mime/multipart_formdata.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "281e8d75ce820c3f108e71277cc69599e4785afd"
+  },
+  {
+    "path": "restler/engine/primitives.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6a3ca7c0eaec7d47d6afe6e2993b4e95f92a94b6"
+  },
+  {
+    "path": "restler/engine/transport_layer/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "restler/engine/transport_layer/messaging.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9fd4d532c2986805f7848dabbc738dd4af5b1a41"
+  },
+  {
+    "path": "restler/engine/transport_layer/response.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9728b2ade1350d10adcd6b1ddd78fc5e38bbca28"
+  },
+  {
+    "path": "restler/requirements.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b60b27a2571c1d14c000b64fad44125ae516df4a"
+  },
+  {
+    "path": "restler/restler.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "39ac5ef905fd35f1f08445298257bb7f2a17f446"
+  },
+  {
+    "path": "restler/restler_settings.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "94652423155f59923f7960524847599947fd9f8e"
+  },
+  {
+    "path": "restler/test_servers/README.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "882236639b12d40623e9810a5c0b228f1d69f1d5"
+  },
+  {
+    "path": "restler/test_servers/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b7c525821a811a09e77cfd652052fb83566f62c1"
+  },
+  {
+    "path": "restler/test_servers/log_parser.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d07990051c413d2d85ea43e946db6f7e90586f78"
+  },
+  {
+    "path": "restler/test_servers/parsed_requests.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "32223591204424ff2353fba7ef4febce0e1b3e97"
+  },
+  {
+    "path": "restler/test_servers/resource_base.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c85fd7118c37b9cd79265e4b9884fe4d4b39d87a"
+  },
+  {
+    "path": "restler/test_servers/test_server_base.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "02877ce6ccce52f723e7009536e301fc99126a95"
+  },
+  {
+    "path": "restler/test_servers/test_socket.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7222dd4aa1f65c0eda97d90c920e7b0ca6adb522"
+  },
+  {
+    "path": "restler/test_servers/unit_test_server/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "restler/test_servers/unit_test_server/unit_test_resources.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e98143d23b04e07ea86d6d19fc8fd09bc55f343b"
+  },
+  {
+    "path": "restler/test_servers/unit_test_server/unit_test_server.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a75f0c5dd8f361eab6bd13b7a49907e22b01aa45"
+  },
+  {
+    "path": "restler/unit_tests/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "restler/unit_tests/authentication_test_files/authentication_token.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "709045598d71bf01eb758f113b0b667347940b08"
+  },
+  {
+    "path": "restler/unit_tests/authentication_test_files/token_cmd_authentication_settings.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0c4db127feba29ec2a8e5462f825ab796145eab3"
+  },
+  {
+    "path": "restler/unit_tests/authentication_test_files/token_location_authentication_settings.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "098e4668aa41b764736ee9301a7c6e9befc8540c"
+  },
+  {
+    "path": "restler/unit_tests/authentication_test_files/token_module_authentication_data_settings.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "005870e03d056d90e64cfc3729d5bf534a21616c"
+  },
+  {
+    "path": "restler/unit_tests/authentication_test_files/token_module_authentication_settings.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "05cd1109303d5ab28d76dc2de1daa350bf51fa5e"
+  },
+  {
+    "path": "restler/unit_tests/authentication_test_files/unit_test_server_auth.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ca915e4b74e006f4e4eb822ada5b9fa2c3f96f3f"
+  },
+  {
+    "path": "restler/unit_tests/authentication_test_files/unit_test_server_auth_module.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "60ad104d930c5f701bdb3ccf8aab068f378457ca"
+  },
+  {
+    "path": "restler/unit_tests/grammar_schema_test_files/README.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8f4a7d17e6def6f9340c1df69cb4f2a36bb8c116"
+  },
+  {
+    "path": "restler/unit_tests/grammar_schema_test_files/demo_server_grammar.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8ef66599fc440b0554c132ed608d5b8e75c9f3f6"
+  },
+  {
+    "path": "restler/unit_tests/grammar_schema_test_files/demo_server_grammar.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "182cdeecc5df9e01497e3faa9a6188239e3f94d2"
+  },
+  {
+    "path": "restler/unit_tests/grammar_schema_test_files/null_test_example_grammar.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6cf19e40cd5858d7280583da674886abd691fc14"
+  },
+  {
+    "path": "restler/unit_tests/grammar_schema_test_files/null_test_example_grammar.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e0e2bf288cc55745b486e2f4b0d9a587d7dbdcdd"
+  },
+  {
+    "path": "restler/unit_tests/grammar_schema_test_files/null_test_swagger.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e953c07c0fdfd33eb4ad1e6b1340162a81c1aa5e"
+  },
+  {
+    "path": "restler/unit_tests/grammar_schema_test_files/readonly_test_grammar.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2333c81a02723ff1b5187307ba7498da04cfb71a"
+  },
+  {
+    "path": "restler/unit_tests/grammar_schema_test_files/readonly_test_grammar.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a9a71fd57da020a950f80cd0d3f5e78fd9400f17"
+  },
+  {
+    "path": "restler/unit_tests/grammar_schema_test_files/readonly_test_swagger.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6793a39f4148f2111c95eaa68eb5788243a1a6b1"
+  },
+  {
+    "path": "restler/unit_tests/grammar_schema_test_files/simple_swagger_all_param_data_types.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "afbf4be253510296843f7c79f8449ad519c7a28b"
+  },
+  {
+    "path": "restler/unit_tests/grammar_schema_test_files/simple_swagger_all_param_data_types_grammar.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8cdae7a240125395aa3f4ddd39e810b574bb4788"
+  },
+  {
+    "path": "restler/unit_tests/grammar_schema_test_files/simple_swagger_all_param_data_types_grammar.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e6a94e91a69c3ff9348dcf96cff61c847c94bdbb"
+  },
+  {
+    "path": "restler/unit_tests/grammar_schema_test_files/simple_swagger_all_param_data_types_local_examples.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "be4775d7520bd8c8ebe75a52fa604bb2dcfb61c7"
+  },
+  {
+    "path": "restler/unit_tests/grammar_schema_test_files/simple_swagger_all_param_data_types_local_examples_grammar.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7b9084ac2d060a2a76af5977577af4bc8e27ea9b"
+  },
+  {
+    "path": "restler/unit_tests/grammar_schema_test_files/simple_swagger_all_param_data_types_local_examples_grammar.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c99aff4fa73ef3f93748bdbdcfc92c4e1a45f30b"
+  },
+  {
+    "path": "restler/unit_tests/grammar_schema_test_files/simple_swagger_all_param_types.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f6df37e009f80d1e71c61a2cd6671612fc13deda"
+  },
+  {
+    "path": "restler/unit_tests/grammar_schema_test_files/simple_swagger_all_param_types_dict.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "366e22107d370d7212b4f5664622d173bb4afab8"
+  },
+  {
+    "path": "restler/unit_tests/grammar_schema_test_files/simple_swagger_all_param_types_grammar.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ca89c1e05adc9049fe7ba10b5b22dcd03b4b67bb"
+  },
+  {
+    "path": "restler/unit_tests/grammar_schema_test_files/simple_swagger_all_param_types_grammar.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "43763674cc5de7b586fcc1713ea823081ebed210"
+  },
+  {
+    "path": "restler/unit_tests/grammar_schema_test_files/simple_swagger_annotations.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "725b230772eaaa85c08c722bf7c5960aa33f46ea"
+  },
+  {
+    "path": "restler/unit_tests/grammar_schema_test_files/simple_swagger_annotations_uuid4_suffix.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d5bd867d898bc7f507dbb66fbdc70ef84d274cb3"
+  },
+  {
+    "path": "restler/unit_tests/grammar_schema_test_files/simple_swagger_annotations_uuid4_suffix.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a1e3b1f524d6c5266369cbaa103691c4ed932a91"
+  },
+  {
+    "path": "restler/unit_tests/grammar_schema_test_files/simple_swagger_with_annotations_grammar.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "011c21fd59ce20b8fe0605bb16cd15d597804428"
+  },
+  {
+    "path": "restler/unit_tests/grammar_schema_test_files/simple_swagger_with_annotations_grammar.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "224932c31bf429379ac25aeecbbf82ce6c2f679b"
+  },
+  {
+    "path": "restler/unit_tests/grammar_schema_test_files/substitute_body_regression_test_grammar.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c30a1abbb236160fd051cbd601f5783d154de8d3"
+  },
+  {
+    "path": "restler/unit_tests/grammar_schema_test_files/substitute_body_regression_test_grammar.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3ca032893169a98f9b434c36ae56825be53c716f"
+  },
+  {
+    "path": "restler/unit_tests/grammar_schema_test_files/uuidsuffix_test_grammar.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e18485ec949b2d596f486f419982f60f2d38dc1c"
+  },
+  {
+    "path": "restler/unit_tests/grammar_schema_test_files/uuidsuffix_test_grammar.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0f538de9a14a897554687c8329fb828f22218bb0"
+  },
+  {
+    "path": "restler/unit_tests/grammar_schema_test_files/uuidsuffix_test_swagger.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1c7cf83553a44bd3fc0817e10dd296b91e302180"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/Bug_Buckets_Json/Bugs_Bucket_AsJson.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "63cad85654e4e9b05cff7d0e94b4be69de78a056"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/Bug_Buckets_Json/InvalidDynamicObjectChecker_20x_1.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "782cdfbdee29706d8beff5805e1b4f8846ce9be5"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/Bug_Buckets_Json/UseAfterFreeChecker_20x_1.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "bfc2ffc6207a7ebdab5dff7b4fc7978ff30e7267"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/ab_flaky_b_all_combinations_speccov.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d4eff36363905dfae253bd8ac1b124cf9d3ba87a"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/ab_flaky_b_all_combinations_testing_log.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9bc35f3ed6b24ef691f1d02b8a337c9d472efbee"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/ab_flaky_b_grammar.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "22c8f5da254829b6e16da76844d051b812fb4274"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/abc_dict.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d6971770373ccdfb7bd025364c3d62fcc01e9131"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/abc_smoke_test_invalid_b_testing_log.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "027026ffece741bd72bce4e5c59b687170a37fa8"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/abc_smoke_test_settings_prefix_cache.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "481e73c71ce2cdaad346acff097bdefec4f9e58b"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/abc_smoke_test_testing_log.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ce40e3148f4944e0b526f439dbc38f2bc2f8a716"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/abc_smoke_test_testing_log_all_combinations.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ab8c567659ad4f2ea93c0d8ee0d4dc3b22fdcf8c"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/abc_smoke_test_trace_data_baseline.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "120183fe71b5cf6a41e4529facf4d7c7b9d8879d"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/abc_test_grammar.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8bd1dfffc05c471f577e88bdd556be52d6d1ff34"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/abc_test_grammar_combinations.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "90d3db9f8ca1eab8eb2f06c88e1ba7e7adadb21c"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/abc_test_grammar_invalid_b.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4bc654ae836559215ba6b1bb58a30f3d0d54dd20"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/abc_test_grammar_without_responses.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9639e875b80dd7f97c788ba07ffbb496c772b1b7"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/always_render_full_seq_settings.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f2c5003709c73ea1563431be863070bc563179c3"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/checkers_bug_buckets.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "47b84304809486bd411b8a8c3580c4e99f804fd7"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/checkers_gc_log.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "80d1aeb22695f41c40865ce4f2494a406b7b2b18"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/checkers_testing_log.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b32587f64b059c85527de0cd6b48ea24df87363f"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/create_once_gc_log.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2c024fe729003a519a6d9e71065ce9f8efd13b54"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/create_once_pre_log.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f0eac9be9197e34fe0ece208ee9da7cdc5f4214a"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/create_once_testing_log.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "835c680ecf05fd023837e3b661a25a57eca2f725"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/custom_value_gen.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1f50d83b9b9f3eb4152b0762836c1e7b08fc1e32"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/dynamic_obj_dict.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8d5a1bc4da7c12ddd7458df375de6688c7b76fd9"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/examples_gc_log.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6a5c1179cffc633da1ed76d39e9b6d1670176ca0"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/examples_testing_log.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "767e0cdf89252ca8135b4b7219a3720a87d373c9"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/fuzz_testing_log.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "25c98b92f51c15d17525914cd6f0eba77c05aefb"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/gc_test_dict.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d2162fd7c01862c7ff60ce80cc8da4882b022bbc"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/gc_test_grammar.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a1008982e7af212108c25c3b7d152803b08fde75"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/gc_test_settings.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0ff553c0df4f154786e59013f84f636d87b150f1"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/invalidvalue_advanced_bug_buckets.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "01474e963c94096dd313702dcf2b4cd08a23ee46"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/invalidvalue_advanced_testing_log.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "cea570c90ca10841ac37f63b8d26a6ba4f232c29"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/invalidvalue_bug_buckets.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "82cb4fd81905d348bccdd2d37ab96a606065a84d"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/invalidvalue_gc_log.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "af5d53943ac4b6e3270e5562ff776a03ca6a603d"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/invalidvalue_testing_log.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4a25a0a5efd8dd827b6ed7782957478188f99175"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/multidict_gc_log.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f64f9cb22f91228c332bad217499470e80999c84"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/multidict_testing_log.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "917bb743bc79928d3d6091f74920df200b1b5c20"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/payloadbody_advanced_testing_log.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b8057cee34f7df04da25882c4f6b2e2f1fda1cd2"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/payloadbody_bug_buckets.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "56264c4afd946f159e94bf0a8df895168f82efdc"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/payloadbody_gc_log.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8e6f3877aa598f3270f8c067b92bda97ede4153c"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/payloadbody_testing_log.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5a15adeb5501919e004e1c383b48dd0a22e6d9f8"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/replay_sanity_test_for_tracedb.replay.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7400dc91b8388c140beeb1d2c23620c4cad3f254"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/smoke_test_gc_log.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f6f27abb6491aa965fb53364090ff18ac6c91394"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/smoke_test_testing_log.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2d1518ee3409c7212569d50595189953f2a2e5e7"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/test_dict.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d9a25739b4a6b6c661cfe89152597db93b3aeba5"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/test_dict2.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2ff5d60d3bd8046d8243a25b5c83e7f0159b389c"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/test_dynamic_obj_writer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "24ae7cdc7d731b79fd5b4605f68c86b8c6649713"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/test_fuzz_settings.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "31735ebd5cdc952457e19f21e9dd669ff0094960"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/test_gc_during_main_loop_settings.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "232f27be1de77d2366defa105f0b7e163a1b9105"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/test_grammar.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "71de09fb447d56c56d54e4ecd174ab802f54e414"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/test_grammar.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5886d5f24f3761128ebacc502da427e530f27354"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/test_grammar_body.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0ec7f18113a684774029f2f320d725476160683d"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/test_grammar_body.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "918d060d0be408f4b591bcd2e47f9c720fc06ef3"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/test_grammar_bugs.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b67e0c48e9d9fca32bb075c76144dc1ae84dc9cf"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/test_invalid_value_checker_settings.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4681caa6d193efb57b38d6966098e71b59ebaa5f"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/test_one_schema_settings.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4cb2790cc9601eac5e91a7a4edab45cd91f9342b"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/test_settings_createonce.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a0ca0a51e94bcbaac1cc01ed2b8cd44c4fd56cdf"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/test_settings_multidict.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e8c595158ea3c1bd2b5e73f8a41df9b97b9d2e13"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/trace_data_baseline.ndjson",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ef0138525581c3e6dc3266a9b80adeb9f6ee1cc7"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/trace_data_baseline_checkers.ndjson",
+    "mode": "100644",
+    "type": "blob",
+    "object": "012a4de86f77670143d2fe22b40cc168ab4e220e"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/trace_data_replay_baseline.ndjson",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f86db1137104c1c7ccb51aae752fe986cd27276a"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/trace_db_text_serializer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3492f5ccbebc746fae0bb255beedb7d745e7872e"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/value_gen_dict.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8b2375c93b2a113961e4d8ca0822a429356b14a6"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/value_gen_settings.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e45282f1518290759d3e41f61969dd7ddb5ab122"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/value_gen_test_grammar.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2fbd9c1e748b59143221f67244665b3fe36b69d8"
+  },
+  {
+    "path": "restler/unit_tests/log_baseline_test_files/value_gen_testing_log.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9fbf6300f498cba8f051ae7b9115af3757a2b511"
+  },
+  {
+    "path": "restler/unit_tests/pytest.ini",
+    "mode": "100644",
+    "type": "blob",
+    "object": "39283abfed3b52dd95a77bbd4954595ce3453574"
+  },
+  {
+    "path": "restler/unit_tests/restler_user_settings.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9d9734924407c6256a34fdd2044368fdea2af559"
+  },
+  {
+    "path": "restler/unit_tests/test_auth_parser.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "13733f9d2b948419d468cfd69ff66f3a08ee03e7"
+  },
+  {
+    "path": "restler/unit_tests/test_basic_functionality_end_to_end.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b44db061f4cef47680a3c2b27b7bceb688af6db5"
+  },
+  {
+    "path": "restler/unit_tests/test_candidate_values.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "72b55daf3b14bd1a9862bb96b4536d9816ee3be2"
+  },
+  {
+    "path": "restler/unit_tests/test_grammar_schema_parser.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7d563d72137a22973c9e7f94ec82bac7474b0fb3"
+  },
+  {
+    "path": "restler/unit_tests/test_log_parsers.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4c99ca44d95a4daf90c5b9da72d9fce1969319cf"
+  },
+  {
+    "path": "restler/unit_tests/test_logs/bug_buckets.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b9f9f00ab969038b5790e1846b1c86def7f7014c"
+  },
+  {
+    "path": "restler/unit_tests/test_logs/bug_buckets2.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "868ca46546b5389dc3488a2e73f0b8f8288642fa"
+  },
+  {
+    "path": "restler/unit_tests/test_logs/bug_buckets3.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "389e845b8bcad7e639309c1139cebf5019710f45"
+  },
+  {
+    "path": "restler/unit_tests/test_logs/bug_buckets4.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "06e7e5c5e88c42ec9b8067e0ec17d7d37e9d30cd"
+  },
+  {
+    "path": "restler/unit_tests/test_logs/bug_buckets_bad.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "376657f52a804499edb5d01752d6c6325f7fec7f"
+  },
+  {
+    "path": "restler/unit_tests/test_logs/fuzzing_log.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4cac46dc2cd17268a4ee81152e98cda6a11a7154"
+  },
+  {
+    "path": "restler/unit_tests/test_logs/fuzzing_log_2.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "fc182b9314122fa7bfcd67bb060124dffd678eda"
+  },
+  {
+    "path": "restler/unit_tests/test_logs/fuzzing_log_3.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "73cc1e2ed997b2043f5511ebdd703baadc1ed5d4"
+  },
+  {
+    "path": "restler/unit_tests/test_logs/fuzzing_log_bad.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7358a0e0d9b7ea52343bd410539ba0877f498dea"
+  },
+  {
+    "path": "restler/unit_tests/test_logs/gc_log.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "fa2855db640f01b969efd5c29a586a230ad80d53"
+  },
+  {
+    "path": "restler/unit_tests/test_logs/gc_log_2.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e571063a52889da0693b3981ddea953d57860734"
+  },
+  {
+    "path": "restler/unit_tests/test_logs/gc_log_bad.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3b3adc74b9716029e00901082a58be6e1369b70e"
+  },
+  {
+    "path": "restler/unit_tests/test_restler_settings.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "142d47f44f32ded7ffc6e55699d42befdd273325"
+  },
+  {
+    "path": "restler/unit_tests/test_retry_handler.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "aed041fa418e07de9e54804dbd1df4dca24eeebf"
+  },
+  {
+    "path": "restler/unit_tests/test_test_server.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4dbb08fd4db9f0d31a0794b3fac58f1d92f61197"
+  },
+  {
+    "path": "restler/utils/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "restler/utils/formatting.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8c15743defca0157d93881458356e27fe4613ad6"
+  },
+  {
+    "path": "restler/utils/hooks.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a985fb19a2b2151b9467d4952fc6286f019e1632"
+  },
+  {
+    "path": "restler/utils/import_utilities.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a8b2c3cad9363ef841e99d15f19d7a141762040a"
+  },
+  {
+    "path": "restler/utils/logger.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3a812ff9016d9bc7df7a93da59c3f570e46966be"
+  },
+  {
+    "path": "restler/utils/logging/ndjson_serializer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f75cd22330a79320f5ce08a528308dfdca3e6165"
+  },
+  {
+    "path": "restler/utils/logging/serializer_base.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a98fb06593cf00915cf8e579f11bf7f2673b3c8f"
+  },
+  {
+    "path": "restler/utils/logging/trace_db.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8de0863063a6e2924014397720a00a94f3117670"
+  },
+  {
+    "path": "restler/utils/network_logs/diff_network_logs.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c80a05ff5f5dd67598a27bee24455f70649d8877"
+  },
+  {
+    "path": "restler/utils/saver.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6bdba0ec5f4f3bd7e04d03804b466d52d2e8e3dc"
+  },
+  {
+    "path": "src/Restler.sln",
+    "mode": "100644",
+    "type": "blob",
+    "object": "06fec1d2834a260b3a4cee272cee02c17cead34d"
+  },
+  {
+    "path": "src/ResultsAnalyzer/Analyze/Buckets.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "56084f33bfa524a1d23179cbb69af1c005796583"
+  },
+  {
+    "path": "src/ResultsAnalyzer/Analyze/Main.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5805877fe30767d432a85e9f88946a925e0e49d1"
+  },
+  {
+    "path": "src/ResultsAnalyzer/Analyze/Types.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "36d73af9e44c5f1ffdf4fb40f587064ac97390c5"
+  },
+  {
+    "path": "src/ResultsAnalyzer/Common/Abstractions.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3fd5604f9ebd7b9a3c116cbd04f1da35153b4292"
+  },
+  {
+    "path": "src/ResultsAnalyzer/Common/Http.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a4b441bbc457ee0a1e66aa96c2557df29fb838f7"
+  },
+  {
+    "path": "src/ResultsAnalyzer/Common/Log.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "acae4a9d19a23171744002333c9e24b1594ebdba"
+  },
+  {
+    "path": "src/ResultsAnalyzer/Common/Utilities.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e8ff54f1989d9e58aa5cdd3ae991110fa4abafe3"
+  },
+  {
+    "path": "src/ResultsAnalyzer/Convert.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "86fbf957e6dfcacd32367fe38613962145c2d7a8"
+  },
+  {
+    "path": "src/ResultsAnalyzer/Diff/Diff.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0f01a84092d8e244b04948b2ff7368364301b265"
+  },
+  {
+    "path": "src/ResultsAnalyzer/Diff/DiffHttp.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9d4c9f29ff348b21e33af26b1a4be4ddc0f6a01d"
+  },
+  {
+    "path": "src/ResultsAnalyzer/Diff/DiffLines.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "34105efce9dcb2ceaafd2ab03af03773c702c77e"
+  },
+  {
+    "path": "src/ResultsAnalyzer/Diff/Main.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f4780132eca04d7e56821502d467e49fcb71a54a"
+  },
+  {
+    "path": "src/ResultsAnalyzer/Overview.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d170750d59e2d602acb354d37893017c1afa73de"
+  },
+  {
+    "path": "src/ResultsAnalyzer/OverviewDiff.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "95158a29aaef8d0baa2d03c424208c57bcaf6b90"
+  },
+  {
+    "path": "src/ResultsAnalyzer/Program.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4364dd4a83148fb8046d0f90f7524b3d6a49cd74"
+  },
+  {
+    "path": "src/ResultsAnalyzer/ResultsAnalyzer.fsproj",
+    "mode": "100644",
+    "type": "blob",
+    "object": "539d5865ce4a6b5786ac09b39400f8346b08423b"
+  },
+  {
+    "path": "src/ResultsAnalyzer/Timing.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a55ac46c0c6186349f4302038b4b82c9ff2c883e"
+  },
+  {
+    "path": "src/ResultsAnalyzer/packages.lock.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "88bd44b37cc8921bcb29175487083e1fb4613192"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/CodeGeneratorTests.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "cf22ab51f537c0895d0b1844483f497973ca3874"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/ConfigTests.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e967c3848a003f64914cca1e6f117f8a19f5c13d"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/DependencyTests.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0e80e7350956a8ba3f3639443e13bdad2d0648c6"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/DictionaryTests.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d06f9b37496eefe2f8dae640a826134e3544d523"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/ExampleTests.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5df419337d72a4dbd5bd6e12c8c5b32a89484742"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/JsonGrammarTests.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "de6b617fb5ef887a05bfbb8d92c7ddd9877b984b"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/RealWorldTests.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0ae979dfc886085957b03055bdcb7e6e5adc503d"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/ReferencesTests.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7676a9c442b9df6f18b035adf760cdddc5285506"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/Restler.Compiler.Test.fsproj",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a986c14e68ebcf17b44918e6c443704a1a3d6826"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/SchemaTests.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e86d0b9496a032fd635fba3761f98f7c0b00059a"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/SwaggerSpecs.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "59af14155519669d8eed135047768dc866475e1f"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/TestUtilities.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "df689145f4994647971fb7319c7171c9c7c0f32b"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/baselines/dependencyTests/header_deps_grammar.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "854bc306078a772f6266f5a1cec50bc2f3aed02b"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/baselines/dependencyTests/header_response_writer_annotation_grammar.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "605ae357e3a5313e803c84ae9395d0c3b58487cd"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/baselines/dependencyTests/header_response_writer_grammar.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "73e29e715e429183930d7eccd27e834ff0ccca4d"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/baselines/dependencyTests/ordering_test_grammar.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ecf4e24838f0d078e6a980668c83b86483cc83eb"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/baselines/dependencyTests/path_annotation_grammar.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "fa87e5fb17451934b8d39d045a4718960aa499e6"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/baselines/dependencyTests/path_in_dictionary_payload_grammar.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "bdf481fcf07516b701e01dd3c37812159e2e2fd0"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/baselines/dependencyTests/soft_delete_test_grammar1.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3365542382c094ca7e060118076f60e02edf5a74"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/baselines/dependencyTests/soft_delete_test_grammar2.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8700213a07d6edfe57b421c6e6cd0504a4222b56"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/baselines/dictionaryTests/customPayloadContentType_grammar.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2d4607c1f0164740b1ecf76e8bc5bfb8cd971fb2"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/baselines/dictionaryTests/customPayloadDict_ValueGeneratorTemplate.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d90fd6d8d0d7cc6f1473164525cc0dbac9406aa1"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/baselines/dictionaryTests/customPayloadHeaderContentType_grammar.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e7a8d2702f63dd0f84301fdd627675d70867d15b"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/baselines/dictionaryTests/quoted_primitives_grammar.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7ce6bec9e76c9ba2c74cd707a404a616fd788e40"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/baselines/exampleTests/array_example_grammar.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c1ed8a7bab68e3b5c30764ef0c106df0930dd37c"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/baselines/exampleTests/body_param_exactCopy_grammar.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3c670ca60053fb708cbdbdeab487acaf62f7f73f"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/baselines/grammarTests/required_params_grammar.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7bb64000544024d6743616c7f22cc1e0adda179c"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/baselines/grammarTests/required_params_grammar.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2242ffcb8750699ed9cd7e5c194562aa243842a7"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/baselines/grammarTests/required_params_grammar_requiredonly.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "271d6cbc3f0d5ba87b3a41d3adfae2d8a08c46b9"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/baselines/schemaTests/path_param_substrings_grammar.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "118b4a00bcfbcf584104497870c97534932366f5"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/baselines/schemaTests/path_param_substrings_grammar.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b4170a45adedf56972f788aa984d35248ba4afe4"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/baselines/schemaTests/xMsPaths_grammar.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5139aa0dcd4b1ac1796e1d1f44757d96b8b42eb8"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/baselines/schemaTests/xMsPaths_grammar.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e1fcfa36423a3bd237d4b4660921a29f3e0bb646"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/packages.lock.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e45194b5d32d20ef1735a5aa55785d90b35b9877"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/annotationTests/globalAnnotations.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "66cf644d5dc6b78b03c3ce01ecbb7bd4d0b383ad"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/annotationTests/localAnnotations.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "80c92114c32bdc2137fd9578dd741b3c940cd0f8"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/annotationTests/pathAnnotation.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "11b1402c371768b906f97fa2f9f21aec0e837d90"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/annotationTests/pathAnnotationInSeparateFile.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "38c23eb646a072752b0863e49f17a979746e2760"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/array_example.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "18f134da098eee1efcf7c9b835fda1a8e5e8ebbb"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/array_example_annotations.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f281730b2760cde07055bd9cd4f8d33ab72f3671"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/array_example_external.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "07990853a6f4cabd7c0c40e6ff5b9c9c2c214688"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/configTests/dict1.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "769a3dcee99486b058041bb127b5984e66a0d500"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/configTests/dict2.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c76b6dacb0b03aa5527bb28fd0e594266001e281"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/configTests/exampleConfigTestConfig1.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5382512bca1bd09e5bbf4a531bd8c8a989c46f4f"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/configTests/exampleConfigTestConfig2.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d5add827344f3eec829729ede99ce23e8b9adeee"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/configTests/exampleConfigTestPut.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "96004e8cc2a1569db15092bf6c982d4bb691356a"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/configTests/maindict.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f6ef88121fb97d4104dd3fb7cb339d4d9c1144ea"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/configTests/restlerEngineSettings.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "79cb935e6cd83d37c0245d1798931f92ca486b65"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/configTests/swagger1.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "09b2afd97e0988f5e6b337b3b1cfcd65f8a72a08"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/configTests/swagger2.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "857f7335baa64d47c9eacafda5ff6251d026473e"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/configTests/swagger3.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e17bad3dabcbbc3540c95b382b115193d737d9e2"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/demo_server.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "788c65dcb1c8d27c0b248cdf32b4e9b42fd65fad"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/dependencyTests/array_dep_multiple_items.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "54c620ec5e879ffa8ceb27741aa50689f5ea216c"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/dependencyTests/body_dependency_cycles.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c5791ada6e43b7d830033a029217e328673492ad"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/dependencyTests/examples/create_application_gateway.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "369f6514e584be6c006585f46dd4ec3dcb30480f"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/dependencyTests/examples/create_network_interface.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a5510d0387fb88fc4aed1541b28296d8663b7bb2"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/dependencyTests/examples/create_subnet.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a9fad5de088465803d788b92a4eef2c275a19ea6"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/dependencyTests/examples/create_vnet_with_subnet.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "276f865d86235285cf03b2ba10692f0ecf5cc7e1"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/dependencyTests/frontend_port_id.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9e6a1aaa44276fddf54ec0e3d9525451582059cf"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/dependencyTests/header_deps.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "78301f9078fcf15da889ef7c085fd52d0d52298f"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/dependencyTests/header_deps_annotations.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "28dd2b7e16d2f9fddb4dd4aa893817add35abd40"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/dependencyTests/inconsistent_casing_paths.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5e2fbb1a4da0fc8ba2d492188caaa8c1c737dfbc"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/dependencyTests/input_producer_annotations.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "749a26ce28cda7aa50c6f3692b1c21f73a40d3ae"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/dependencyTests/input_producer_dict.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7c3c021f3ec0976d0e6389bba5ad4404d34e017a"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/dependencyTests/input_producer_spec.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "84b9b2b4b9445f7e05aa81404dbb82fa364b1e45"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/dependencyTests/ip_configurations_get.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "005ace1d57cdc9919a6ee9258c456291ed03ba8a"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/dependencyTests/lowercase_paths.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b40ddf4470110a25fce7f0860df20ebe02055c9e"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/dependencyTests/nested_objects_naming.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "197e9bb3b55115a986432916b430c75a7b7338ac"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/dependencyTests/ordering_test.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b35cf8042e7502d438645e0c87e4ef6a2aacb676"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/dependencyTests/ordering_test_annotations.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ac4fa31d2648cf672a3a2be4fb25b4cd9dd9d111"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/dependencyTests/ordering_test_anntations.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "28dd2b7e16d2f9fddb4dd4aa893817add35abd40"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/dependencyTests/post_patch_dependency.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5952d4356b758068e417b699472656d97b8f9179"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/dependencyTests/response_headers.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5f82fff8cf67a19fa0690c5cc2f1a1967d21d5f0"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/dependencyTests/response_headers_annotations.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "04345a7de5769ac630ca3589a063f804a8d3933d"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/dependencyTests/same_body_dep.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3bd3c73cc230859b5eb0c396c9211266f36133ed"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/dependencyTests/same_body_dep_annotations.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b1a5febf28b67baa56c6b18805c066f84fb944e5"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/dependencyTests/simple_api_soft_delete.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9b7af84eabdae4f4af60cf2ce3c00de76e4f3b1c"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/dependencyTests/simple_api_soft_delete_annotations1.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a8b4ea07e5f15472c46d7bf4e82a01c4ee3e7c13"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/dependencyTests/simple_api_soft_delete_annotations2.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0281117ab3486cc17cbada781c0c0dfce03c89b7"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/dependencyTests/simple_crud_api.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e526417aeda460356ff6079d938e2a4621ba2863"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/dependencyTests/simple_crud_api_annotations.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "46d867eeed04708573b6c0aea8a9f47ff563d9a8"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/dependencyTests/subnet_id.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b5e9dbd75c998fbc1a755513c5e6d7baf585e534"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/dict_secgroup_example.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e6c907fd14aa7ebe747517c8c6cc25eabfa9ab76"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/dictionaryTests/customPayloadContentTypeSwagger.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "055ac69282ef3748d737e97f53f35d3f90df07fe"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/dictionaryTests/customPayloadDict.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2d1ef227fd6c96e190cf8af01a033509875478e1"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/dictionaryTests/customPayloadHeaderRequestTypeDict.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d093e2ba635c338a26fa7b7bc4193e843c8023ac"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/dictionaryTests/customPayloadRequestTypeDict.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "75453215a0fbedab160bfe8f0c1d644a9e5af80d"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/dictionaryTests/customPayloadSwagger.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4d4ea92978ca14df97bc5206512750b66c34404d"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/dictionaryTests/dict.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2b5737542f02020bd28648d00eba5ec0c2a609a6"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/dictionaryTests/inject_custom_payloads_dict.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f3ea5897161796f2da74390181616c0af04873a1"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/dictionaryTests/multipleIdenticalUuidSuffix.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "77d4d5856ac6941fcfd9224ca69a95fcf9b28b69"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/dictionaryTests/multipleIdenticalUuidSuffixDict.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2f72ec39b6a1bd0f24fadcec767dd60ad94539d0"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/dictionaryTests/no_params.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "73c3dd69f97c984d8a77cd4ede54a837f97f5bc7"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/dictionaryTests/pathDictionaryPayload.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7af7db5f47629d1d3f2b25d9b9bd3b5df24f9213"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/dictionaryTests/serializationTestDict.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4eae23f2b209dcdc51972d6e3d89969667c17464"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/empty_array_example.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "292e0d4eedeac9b74d946a464ea5377d5405c538"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/exactCopy/array_example.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "26e604e79b8ddabe8424e897398e2f735a7b36b7"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/exactCopy/examples.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0ee42b756bed83ce2251e52d789170ab6e5abd3d"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/exactCopy/make_order_post.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "870d74187ac1bc982178ca697ef37e142e372eb0"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/exampleTests/body_param.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "55c533ca3bdbb74e52d13d2ae86cb35db4ac4891"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/exampleTests/body_param_example.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b4e6bfe6087f8fb24be01edd38fff51cd6ebdb29"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/exampleTests/example_int_openapi3.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7829c0b195b98ae58edefea4b8ea75e644ed9515"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/exampleTests/optional_params.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b9eccb162203aebb8130ca26d73e901fdbdb59a6"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/exampleTests/optional_params_example.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "11d212cd0e19d5b937d5fe0134efe149a5c340ce"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/example_config_file.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c47f3831c9c002dd9a69a5d7840e48ddbd923089"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/example_demo.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "468f6ff910ce1b1df0c7bc46e2d38f3769854fe9"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/example_demo1.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "27bbee5d23572cc98c4aaac4a0584baecfc76961"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/example_demo1.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5938a713590172f7e10f991714fd23e18bb30cf8"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/example_demo_dictionary.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "91e1d9644522f59b0056d162a5b69839909ab28d"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/examples/ApplicationSecurityGroupCreate.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e4edff71c6ae1bf2068179034d79789afe685d6d"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/examples/headers_example.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0115a1a86becc58b2544d1fd9433065b232cee59"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/examples/inline_payload_examples.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "98683205a0de64a15467a6356ef1dc4fb9837513"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/examples/make_big_order.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "22456596a54bb32b087af70eefd4cdde625e034c"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/examples/make_order.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e1e3855dc67f43166e73b0fdeba240ac586d99c1"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/examples/make_order1.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c431777d33dfecbff7c477a5868068c9745f918c"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/examples/make_order2.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "35c4f201ccf8ffb6ec49c5fd6d0a7ec79eeba5fa"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/examples/make_order_descriptions.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "28582d0d5a1155367b03a59896c91c08f83d345c"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/examples/make_order_empty_descriptions.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b0bc4d0051bab3c86571b0354347804d12ae3db1"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/examples/make_order_tags.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a6582a7713f33f830d2499a33bf550c6eb10e647"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/get_path_dependencies.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "005d1d09142b7aa57b38a230511cf5a376b83e62"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/grammarTests/required_params.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a4b289201472dac2f1e522f9f10c7ed5b972c56d"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/headers.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b0d6901108182d3d00632a92d3069547dbba8152"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/headers_dict.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8210a2d790e4ad520a514832fc8fa6afed62b6f5"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/inline_examples.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3dd6f924098680b5a794b0aff020bae371035f02"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/linksTests/annotations.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8fe4e816321ea81b6b75a9c63de77ef4342d5df0"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/linksTests/etag_with_annotations.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ebe1c860cea1eea2b6805d33bd7644ce1c575254"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/linksTests/etag_with_links.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "96c7bb699ffff5b4ae77f603792dd51d31ecf2f5"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/linksTests/soft_delete.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a337eb4fdc162e77dd48b54b5f7d85460eb17674"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/linksTests/soft_delete_with_links.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "29b5881a073ab884e47450914aa15b2268ce0b59"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/linksTests/widgets_with_annotations.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "967444387927033a87fb3615b2bba1b9b964a465"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/linksTests/widgets_with_links.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f3fe6981b592baf1def16be79f1f39c932c816a9"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/object_example.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "fa04bbf8b2df89c1e7f121b42d77291941648984"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/put_createorupdate.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "73d2e9a954a25b1d94c087e7599b08c1feaf0bce"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/referencesTests/circular_array.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1c7ba6888e0818b045b44def712ea54602c5d244"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/referencesTests/circular_path.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "420e40d69cf38740122cfb70b58e0ff98c5c3f9f"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/referencesTests/first.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7242d1d66382b9eda8c572e9fedfa1650e2fce3d"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/referencesTests/multiple_circular_paths.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "55b8744c4d4cabef945af81c13fed134d758fe44"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/referencesTests/second.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "476472103836b4380d8cc93ea12527108c5d66dd"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/referencesTests/second_reordered.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6f7bcd7e484dac0581e59ccaaf5978108ddb0c45"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/schemaTests/additionalProperties.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3908dc08242b6c6eca03196045c09db50a6ae378"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/schemaTests/global_path_parameters.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1aad56f86a083f609c3ea5384dae586e9b5c863c"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/schemaTests/large_json_body.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a6f08f7ff86eec94a215ead7b52ddbbad811b20f"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/schemaTests/openapi3_examples.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "fac48f707f028d01804af69bf6bf057e2a9de80c"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/schemaTests/openapi3_requestbody.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b740305113bf8c4acdedb98381292d5807e0b937"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/schemaTests/path_param_substrings.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d4275d7fa0d8098a08dc00cbfc16ca2913107eef"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/schemaTests/requiredHeader.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c12bb8f2c4374883db49b39eb6e08df062f69342"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/schemaTests/swagger_escape_characters.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1debb50d5db68b684fe90957350ae42ae1db148e"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/schemaTests/xMsPaths.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4d5cf129f5c30e19050d8b9686c740e2c1107711"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/schemaTests/xMsPaths_annotations.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ed618a3b33ccc35061bb92c4c48020c26246065e"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/schemaTests/xMsPaths_dict.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9735ab799380aaf361532596f1cc8ce1f40aa5e4"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/schemaTests/xMsPaths_examples.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "bf7d73029e992d5425eaf5f5e32624ec2a9e4f89"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler.Test/swagger/secgroup_example.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "09a9fe8b55a1a8af0236a47f3e714efdae6e2697"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler/AccessPaths.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "713587a58213789dc3bb3239fdf348be81080fa2"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler/Annotations.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "432ea57975d3efc9a9ca250e831e42c0fde865a5"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler/ApiResourceTypes.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "52fe80e7c5448f6620db333666c63b4e36628e78"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler/CodeGenerator.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2135942516608b6ff03457070450fb75ff9dd85f"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler/Compiler.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8a5a0f15cd823985dcdd98f819a6e16b76047cb9"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler/Config.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5d2c6c4fbf18eacf9f432c399b73a9a485f624f5"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler/Dependencies.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0ba933b45928ce3929feb442c4210cbaf886644c"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler/DependencyAnalysisTypes.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b3bd960fd57d92e9449f24117454b73606bee915"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler/Dictionary.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "02a98a69c66ef3630ea9aa242704c456f28e2453"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler/Examples.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c31ce931fe85a9e3722573eff8fec819510eca7e"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler/Grammar.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c72a28e07d339a6697b044bf9d669cb56f116055"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler/Restler.Compiler.fsproj",
+    "mode": "100644",
+    "type": "blob",
+    "object": "87503a745b07cfecba97acf3480390b4a608c50b"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler/RestlerEngineSettings.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6c7e24bae9e6b9ce5b8da22a632f72dc17330891"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler/Swagger.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "23bc0f9f49b66522329d71259cae007f6d025027"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler/SwaggerSpecPreprocessor.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1674aae3bf90d02650bd081465099e9fc7530236"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler/SwaggerVisitors.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "22b143621932bc35526cc99ce7eddd3012c5072d"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler/Telemetry.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "88879b66644c86454e8ad2328d3e26bfd0a6c522"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler/Utilities.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2ad316591bb4741943331555036a806c540435d3"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler/Workflow.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4c45e885232e5c6b234628614bd69649f5769cb7"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler/XMsPaths.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6db4d7a880ecf6bc0250eb2eeba7b7eb953664eb"
+  },
+  {
+    "path": "src/compiler/Restler.Compiler/packages.lock.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a82e3617261de9305467c4b84ec28ca1f255fdbf"
+  },
+  {
+    "path": "src/compiler/Restler.CompilerExe/Program.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5c1a342eb9b4388f55788dca9073d13c43221357"
+  },
+  {
+    "path": "src/compiler/Restler.CompilerExe/Properties/launchSettings.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "889cd568042ef9e310a599720cef27785bffdda7"
+  },
+  {
+    "path": "src/compiler/Restler.CompilerExe/Restler.CompilerExe.fsproj",
+    "mode": "100644",
+    "type": "blob",
+    "object": "863e696904440bdb44b60406081daaefd2fd91f3"
+  },
+  {
+    "path": "src/compiler/Restler.CompilerExe/packages.lock.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "07ff9f54b8830c2880898f4d1b595b44e0687e08"
+  },
+  {
+    "path": "src/driver/Files.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1c8acbdd8a78736bcc2275c94394e213c2f0bd58"
+  },
+  {
+    "path": "src/driver/LogCollection.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "599dde6448229f08f6c222fc11fd0cb6635b6721"
+  },
+  {
+    "path": "src/driver/Program.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c3032acc5c44cadbd8c533e255ce2b7d0dfbb195"
+  },
+  {
+    "path": "src/driver/Restler.Driver.fsproj",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d0a8f6b17c9e1c87e9b829f1fced2e7423bc98d6"
+  },
+  {
+    "path": "src/driver/SpecCoverage.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e146c6745080ab21eba926185baa4eecf7c3664b"
+  },
+  {
+    "path": "src/driver/TaskResults.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4441de491e5029f016465914b3ff0e69b39f69ec"
+  },
+  {
+    "path": "src/driver/Telemetry.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "382ea85e22f13c896a4b2d36bd3c384559f2cdfb"
+  },
+  {
+    "path": "src/driver/Types.fs",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f5efc2fd2a64f5e690750df12eefd0ac7b8a1f42"
+  },
+  {
+    "path": "src/driver/packages.lock.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "77fa4b8db3cf56833bc2d6b62f426d2716687968"
+  },
+  {
+    "path": "src/driver/runtimeconfig.template.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "da184100256973c48c32ca3c2b16d41fc0ae78bd"
+  },
+  {
+    "path": "utilities/grammar/update_restler_grammar.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6f2beea942ee1696228b2f4fa2c55eee7ce5ac30"
+  },
+  {
+    "path": "utilities/speccovparsing/diff_speccov.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e6e69a38cccb14ed511262d1d283b91f5c3b464c"
+  },
+  {
+    "path": "utilities/speccovparsing/sum_speccov.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "56eab49872b8f86a4294d06085c8fd1225852e74"
+  }
+]

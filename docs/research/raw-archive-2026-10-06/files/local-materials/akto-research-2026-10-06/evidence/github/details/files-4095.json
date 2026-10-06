@@ -1,0 +1,14 @@
+[
+  {
+    "sha": "9756e3426634708f816ba57213ac731dd1c12051",
+    "filename": "apps/dashboard/src/main/java/com/akto/action/AktoJaxAction.java",
+    "status": "modified",
+    "additions": 2,
+    "deletions": 2,
+    "changes": 4,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/429032f4e054edd415a5251334c574c719604b21/apps%2Fdashboard%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Faction%2FAktoJaxAction.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/429032f4e054edd415a5251334c574c719604b21/apps%2Fdashboard%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Faction%2FAktoJaxAction.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Faction%2FAktoJaxAction.java?ref=429032f4e054edd415a5251334c574c719604b21",
+    "patch": "@@ -135,7 +135,7 @@ public String initiateCrawler() {\n \n             String crawlId = UUID.randomUUID().toString();\n \n-            Object cookies = null;\n+            String cookies = null;\n             if(!StringUtils.isEmpty(username) && !StringUtils.isEmpty(password)) {\n             } else if(testRoleHaxId != null && !testRoleHaxId.isEmpty()) {\n                 TestRoles testRole = TestRolesDao.instance.findOne(Filters.eq(Constants.ID, new ObjectId(testRoleHaxId)));\n@@ -155,7 +155,7 @@ public String initiateCrawler() {\n                         if (parseToken != null) {\n                             loggerMaker.infoAndAddToDb(\"Got the cookies from test role for crawler\");\n                             BasicDBList allCookies = (BasicDBList) parseToken.get(\"all_cookies\");\n-                            cookies = allCookies;\n+                            cookies = allCookies.toString();\n                         }\n                     } catch (Exception e) {\n                         loggerMaker.errorAndAddToDb(\"Error while fetching cookies/token from test role using jsonRecording. Error: \" + e.getMessage());"
+  }
+]

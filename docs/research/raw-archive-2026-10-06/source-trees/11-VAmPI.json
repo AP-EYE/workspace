@@ -1,0 +1,134 @@
+[
+  {
+    "path": ".dockerignore",
+    "mode": "100644",
+    "type": "blob",
+    "object": "759434da9f4b74dbab4d27d2df90588dcf98379f"
+  },
+  {
+    "path": ".github/FUNDING.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ed217359b83887bffd5b1ef4ae5cbc66280ef321"
+  },
+  {
+    "path": ".github/workflows/docker-image.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7396a3b96711bef7e9f58ac0774048c8f20c70c1"
+  },
+  {
+    "path": ".gitignore",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b2dc717728a362e3e287137ba39ec8814b6d1bc6"
+  },
+  {
+    "path": "Dockerfile",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3c725caded859ca9b628ae3650b1febecb00ebf8"
+  },
+  {
+    "path": "LICENSE",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1c31e24e2e1c8e11290ddddf93305e7c5e2708d5"
+  },
+  {
+    "path": "README.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4fb7bd121c155cccc19110d885c994e3b76a258b"
+  },
+  {
+    "path": "api_views/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "api_views/books.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f153b1ce719681d86d1e34ca2e1ce679c7b2bc38"
+  },
+  {
+    "path": "api_views/json_schemas.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "62986f8d79562991bc0a98209a5f9280e2f2faec"
+  },
+  {
+    "path": "api_views/main.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6cb8a05a7d5246e401646319ecf3a2dfe7185389"
+  },
+  {
+    "path": "api_views/users.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "172540ac210224df36afd3d9767ffe377ee8b367"
+  },
+  {
+    "path": "app.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a6c70dab01b2ee7590d03f3fa4bf3be169542346"
+  },
+  {
+    "path": "config.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "17e65c5e94d3176803d13f98965d00c97e545bea"
+  },
+  {
+    "path": "database/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "docker-compose.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "edd08577432e8cda9f1828ca2e987ef69979b902"
+  },
+  {
+    "path": "models/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "models/books_model.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5ee202fd03d7b8053c456df7c4ce229eafa4ef91"
+  },
+  {
+    "path": "models/user_model.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4414038c08f6a365823e705754cdae0abb189114"
+  },
+  {
+    "path": "openapi_specs/VAmPI.postman_collection.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e4a2a1a3d3f68295d88bf4a8c0595cb5a4ea3412"
+  },
+  {
+    "path": "openapi_specs/openapi3.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "744de6dc04da4d9dbf8b43d1b7a1a6555796bb5e"
+  },
+  {
+    "path": "requirements.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "37b558b4b0da8a5d0cfe8b4502d31593ee88c103"
+  }
+]

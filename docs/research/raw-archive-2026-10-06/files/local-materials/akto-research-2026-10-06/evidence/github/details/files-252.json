@@ -1,0 +1,14 @@
+[
+  {
+    "sha": "acb962b58ecddc7b34a55e337f284045f9c8a7d8",
+    "filename": "apps/dashboard/src/test/java/com/akto/listener/TestFintechTypes.java",
+    "status": "modified",
+    "additions": 4,
+    "deletions": 0,
+    "changes": 4,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/0267e61a2a6c46f9d659cb3f9ac05f41f2d8864e/apps%2Fdashboard%2Fsrc%2Ftest%2Fjava%2Fcom%2Fakto%2Flistener%2FTestFintechTypes.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/0267e61a2a6c46f9d659cb3f9ac05f41f2d8864e/apps%2Fdashboard%2Fsrc%2Ftest%2Fjava%2Fcom%2Fakto%2Flistener%2FTestFintechTypes.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fsrc%2Ftest%2Fjava%2Fcom%2Fakto%2Flistener%2FTestFintechTypes.java?ref=0267e61a2a6c46f9d659cb3f9ac05f41f2d8864e",
+    "patch": "@@ -32,6 +32,10 @@ public void testTypes() {\n                 case \"PAN CARD\":\n                     assertTrue(cdt.validate(\"ABCDE9458J\", \"foo\"));\n                     assertFalse(cdt.validate(\"ACDE9458J\", \"foo\"));\n+                case \"Google Ad Cookie\":\n+                    assertTrue(cdt.validate(\"__gads\", \"foo\"));\n+                    assertTrue(cdt.validate(\"_gcl_gb\", \"foo\"));\n+                    assertTrue(cdt.validate(\"__gpi\", \"foo\"));\n                     break;\n                 \n                 default:"
+  }
+]

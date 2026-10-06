@@ -1,0 +1,14 @@
+[
+  {
+    "sha": "6404737623341dc0f5aaa532a2e01b8af84d22a3",
+    "filename": "apps/mini-runtime/src/main/java/com/akto/utils/RedactSampleData.java",
+    "status": "modified",
+    "additions": 30,
+    "deletions": 0,
+    "changes": 30,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/14275e1731c39ef6e693e704354853213d222b34/apps%2Fmini-runtime%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Futils%2FRedactSampleData.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/14275e1731c39ef6e693e704354853213d222b34/apps%2Fmini-runtime%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Futils%2FRedactSampleData.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fmini-runtime%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Futils%2FRedactSampleData.java?ref=14275e1731c39ef6e693e704354853213d222b34",
+    "patch": "@@ -53,6 +53,33 @@ public static String redactCookie(Map<String, List<String>> headers, String head\n         return cookie;\n     }\n \n+    private static String handleQueryParams(String url, boolean redactAll, String redactValue) {\n+\n+        if (!redactAll || url == null || url.isEmpty()) {\n+            return url;\n+        }\n+        String finalUrl = url;\n+        try {\n+            String[] split = url.split(\"\\\\?\");\n+            if (split.length == 2) {\n+                finalUrl = split[0];\n+                finalUrl += \"?\";\n+                String[] urlParams = split[1].split(\"&\");\n+                for (int i = 0; i < urlParams.length; i++) {\n+                    String[] param = urlParams[i].split(\"=\");\n+                    if (i != 0) {\n+                        finalUrl += \"&\";\n+                    }\n+                    finalUrl += param[0] + \"=\" + redactValue;\n+                }\n+            }\n+\n+        } catch (Exception e) {\n+            loggerMaker.errorAndAddToDb(e, \"unable to redact query params\");\n+        }\n+        return finalUrl;\n+    }\n+\n     private static void handleHeaders(Map<String, List<String>> responseHeaders, boolean redactAll) {\n         if(redactAll){\n             for (String header : responseHeaders.keySet()) {\n@@ -113,6 +140,9 @@ public static String redact(HttpResponseParams httpResponseParams, final boolean\n \n         // request payload\n         String requestPayload = httpResponseParams.requestParams.getPayload();\n+        //query params\n+        String url = handleQueryParams(httpResponseParams.requestParams.getURL(), redactAll, redactValue);\n+        httpResponseParams.requestParams.setUrl(url);\n         if (requestPayload == null) requestPayload = \"{}\";\n         try {\n             // TODO: support subtype/collection wise redact for graphql"
+  }
+]

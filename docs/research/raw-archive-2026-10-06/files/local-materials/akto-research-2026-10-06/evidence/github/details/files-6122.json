@@ -1,0 +1,14 @@
+[
+  {
+    "sha": "9347133c7a7bea89132bdcbbc34283e5cab19820",
+    "filename": "libs/dao/src/main/java/com/akto/dto/GuardrailPolicies.java",
+    "status": "modified",
+    "additions": 19,
+    "deletions": 0,
+    "changes": 19,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/3d7c48ecd49518b9aaa833a5bdfefee97bf43177/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2FGuardrailPolicies.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/3d7c48ecd49518b9aaa833a5bdfefee97bf43177/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2FGuardrailPolicies.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2FGuardrailPolicies.java?ref=3d7c48ecd49518b9aaa833a5bdfefee97bf43177",
+    "patch": "@@ -61,6 +61,8 @@ public class GuardrailPolicies {\n     private Map<String, Object> contentFiltering;\n \n     private LLMRule llmRule;\n+    \n+    private List<RedactionRule> redactionRules;\n \n     // Step 7: Base Prompt Rule\n     private BasePromptRule basePromptRule;\n@@ -419,6 +421,23 @@ public LLMRule(boolean enabled, String userPrompt, double confidenceScore) {\n         }\n     }\n \n+    @Getter\n+    @Setter\n+    @NoArgsConstructor\n+    public static class RedactionRule {\n+        private boolean enabled;\n+        private String userPrompt;\n+        private String replacementString;\n+        private double confidenceScore;\n+\n+        public RedactionRule(boolean enabled, String userPrompt, String replacementString, double confidenceScore) {\n+            this.enabled = enabled;\n+            this.userPrompt = userPrompt;\n+            this.replacementString = replacementString;\n+            this.confidenceScore = confidenceScore;\n+        }\n+    }\n+\n     @Getter\n     @Setter\n     @NoArgsConstructor"
+  }
+]

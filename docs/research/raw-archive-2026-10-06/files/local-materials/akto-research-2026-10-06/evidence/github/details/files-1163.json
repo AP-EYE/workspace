@@ -1,0 +1,50 @@
+[
+  {
+    "sha": "7465688c2b3f4a17cfcf2bee548e7ca69d1f1c30",
+    "filename": "apps/dashboard/web/polaris_web/web/src/apps/dashboard/components/shared/SampleData.js",
+    "status": "modified",
+    "additions": 14,
+    "deletions": 2,
+    "changes": 16,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/320ced8cebf0832db132dc3dbbb24752da2f2e62/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fcomponents%2Fshared%2FSampleData.js",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/320ced8cebf0832db132dc3dbbb24752da2f2e62/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fcomponents%2Fshared%2FSampleData.js",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fcomponents%2Fshared%2FSampleData.js?ref=320ced8cebf0832db132dc3dbbb24752da2f2e62",
+    "patch": "@@ -10,7 +10,13 @@ function highlightPaths(highlightPathMap, ref){\n       if (highlightPathMap[key].highlight) {\n         let path = key.split(\"#\");\n         let mainKey = path[path.length - 1];\n-        let matches = ref.getModel().findMatches(mainKey, false, false, false, null, true);\n+        let matches = []\n+        try {\n+          matches = ref.getModel().findMatches(mainKey, false, false, false, null, true);\n+        } catch (error) {\n+          console.error(error)\n+          console.log(\"mainKey: \" + mainKey)\n+        }\n         matches.forEach((match) => {\n           ref.createDecorationsCollection([\n               {\n@@ -55,7 +61,13 @@ function highlightHeaders(data, ref, getLineNumbers){\n   let changesArr = []\n   headerKeysMap && Object.keys(headerKeysMap).forEach((key) => {\n     const header = key\n-    let matchRanges = ref.getModel().findMatches(header, false, false, true, null, true, 1)\n+    let matchRanges = []\n+    try {\n+      matchRanges = ref.getModel().findMatches(header, false, false, true, null, true, 1)\n+    } catch (error) {\n+      console.error(error)\n+      console.log(\"header: \" + header)\n+    }\n     changesArr = [ ...changesArr, ...matchRanges]\n     matchRanges.forEach((obj) => {\n       let matchRange = obj.range"
+  },
+  {
+    "sha": "8f58fd7aa1474836891c34ca77c39648b17280bd",
+    "filename": "apps/dashboard/web/polaris_web/web/src/apps/dashboard/components/tables/cells/GithubCell.js",
+    "status": "modified",
+    "additions": 2,
+    "deletions": 2,
+    "changes": 4,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/320ced8cebf0832db132dc3dbbb24752da2f2e62/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fcomponents%2Ftables%2Fcells%2FGithubCell.js",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/320ced8cebf0832db132dc3dbbb24752da2f2e62/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fcomponents%2Ftables%2Fcells%2FGithubCell.js",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fcomponents%2Ftables%2Fcells%2FGithubCell.js?ref=320ced8cebf0832db132dc3dbbb24752da2f2e62",
+    "patch": "@@ -14,7 +14,7 @@ import TooltipText from '../../shared/TooltipText';\n \n function GithubCell(props){\n \n-    const {data, headers, getStatus, width, nameWidth, isBadgeClickable, badgeClicked} = props\n+    const {data, headers, getStatus, width, nameWidth, isBadgeClickable, badgeClicked, divWrap} = props\n     return (\n     <HorizontalStack gap=\"1\" wrap={false}>\n     {\n@@ -40,7 +40,7 @@ function GithubCell(props){\n         })\n     }\n     <VerticalStack gap=\"2\" inlineAlign='baseline'>\n-        <HorizontalStack wrap={false} gap=\"2\" align='start'>\n+        <HorizontalStack wrap={divWrap || false} gap=\"2\" align='start'>\n             {\n                 headers?.filter((header) => {\n                     return header.itemOrder == 1"
+  },
+  {
+    "sha": "625b8905708c9a06c941e83d6082b3632d92d558",
+    "filename": "apps/dashboard/web/polaris_web/web/src/apps/dashboard/pages/settings/about/About.jsx",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 1,
+    "changes": 2,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/320ced8cebf0832db132dc3dbbb24752da2f2e62/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Fsettings%2Fabout%2FAbout.jsx",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/320ced8cebf0832db132dc3dbbb24752da2f2e62/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Fsettings%2Fabout%2FAbout.jsx",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Fsettings%2Fabout%2FAbout.jsx?ref=320ced8cebf0832db132dc3dbbb24752da2f2e62",
+    "patch": "@@ -1,4 +1,4 @@\n-import { Box, Button, ButtonGroup, Divider, LegacyCard, Page, Text, VerticalStack, HorizontalGrid, HorizontalStack, Icon, Scrollable, TextField, Tooltip, Tag, Form } from '@shopify/polaris'\n+import { Box, Button, ButtonGroup, Divider, LegacyCard, Text, VerticalStack, HorizontalGrid, HorizontalStack, Icon, Scrollable, TextField, Tooltip, Tag, Form } from '@shopify/polaris'\n import React, { useEffect, useState } from 'react'\n import settingFunctions from '../module'\n import Dropdown from '../../../components/layouts/Dropdown'"
+  },
+  {
+    "sha": "311e68c5e7848c0f99fce2933f4b239ea9dc5084",
+    "filename": "apps/dashboard/web/polaris_web/web/src/apps/dashboard/pages/testing/TestRunResultPage/TestRunResultFull.jsx",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 0,
+    "changes": 1,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/320ced8cebf0832db132dc3dbbb24752da2f2e62/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Ftesting%2FTestRunResultPage%2FTestRunResultFull.jsx",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/320ced8cebf0832db132dc3dbbb24752da2f2e62/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Ftesting%2FTestRunResultPage%2FTestRunResultFull.jsx",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Ftesting%2FTestRunResultPage%2FTestRunResultFull.jsx?ref=320ced8cebf0832db132dc3dbbb24752da2f2e62",
+    "patch": "@@ -123,6 +123,7 @@ function TestRunResultFull(props) {\n                 data={selectedTestRunResult}\n                 headers={headerDetails}\n                 getStatus={func.getTestResultStatus}\n+                divWrap={true}\n                 />\n             }\n             divider= {true}"
+  }
+]

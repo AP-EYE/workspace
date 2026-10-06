@@ -1,0 +1,470 @@
+[
+  {
+    "path": ".gitignore",
+    "mode": "100644",
+    "type": "blob",
+    "object": "da006bcdd70285069d22857d6cc7d6a511970239"
+  },
+  {
+    "path": "CITATION.cff",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b9cb5bbfab99e988b11bbf9fdfa3562025a5bd6d"
+  },
+  {
+    "path": "DATASHEET.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4a05bba4ffdee3cd14b1e0ea30d46d1f34d6f026"
+  },
+  {
+    "path": "LICENSE",
+    "mode": "100644",
+    "type": "blob",
+    "object": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64"
+  },
+  {
+    "path": "LICENSE-DATA",
+    "mode": "100644",
+    "type": "blob",
+    "object": "837944ee0a67fa1ec59b9cd90db04b1ba86f929b"
+  },
+  {
+    "path": "README.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "94f5ba1bdd1894188f35ea24b086b60dc5a1896e"
+  },
+  {
+    "path": "configs/koelectra_config.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ff18c83268432f5abb9f09a1afb17009f5f2d771"
+  },
+  {
+    "path": "configs/label_map_global.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a4d2861aa9c7c70c520cd4f5112f0e43109eb5ef"
+  },
+  {
+    "path": "configs/llm_prompts/README.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a57368ff98c06da84d8ee225ad0e8b6c39c197e2"
+  },
+  {
+    "path": "configs/llm_prompts/zeroshot_prompt.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7eeee7138f4251aa45955fb13a311deb029e0203"
+  },
+  {
+    "path": "configs/presidio_config.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "47f1393dac5ae63df03be62067293caac5e854b2"
+  },
+  {
+    "path": "data/README.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4d190bc39326cd684d1bad79ba8e34260c1fbc4b"
+  },
+  {
+    "path": "data/label_map_global.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a4d2861aa9c7c70c520cd4f5112f0e43109eb5ef"
+  },
+  {
+    "path": "data/split_statistics.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0b5937a5e8df633b1cf15270bd76472d4d0b5909"
+  },
+  {
+    "path": "data/splits/track_b_domains.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a17eea1ed4870bb6ff63382e2ee52bd2657e87a5"
+  },
+  {
+    "path": "data/splits/track_c_perturbations.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "13125226714319c1357464db7a95f63a8ccabc74"
+  },
+  {
+    "path": "docs/benchmark_protocol.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "74a4f96a76a66639573e5ed0377fad2e60a3a72d"
+  },
+  {
+    "path": "docs/reproducibility.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "485a0179d4ffc5b6b11635ab3f0997a165db89d6"
+  },
+  {
+    "path": "pyproject.toml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "73e848fe81e2ada44cb36312c2b88b4e741390f0"
+  },
+  {
+    "path": "scripts/regenerate_corrected.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "dfaf1c5c86e3a0b8f5141e5f051ef4ad4400f4a8"
+  },
+  {
+    "path": "scripts/skeleton_disjoint_split.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c4603c494e6a72553173404fd92791a6e5505469"
+  },
+  {
+    "path": "scripts/validate_data.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c75fd287ff4e7e58e70910e0998f542c18fc0fba"
+  },
+  {
+    "path": "src/k_pii_bench/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "src/k_pii_bench/baselines/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "dbcacd0be41ec0e493050210eefee2e9a9e1c2c9"
+  },
+  {
+    "path": "src/k_pii_bench/baselines/auto_update_comparison_table.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ea033d7e41682659c88a605f7ae05493b3a1a4cd"
+  },
+  {
+    "path": "src/k_pii_bench/baselines/llm_openai_endpoint.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d8cfe8ce5f44130d3f2e9ca7f8d561ebecc18971"
+  },
+  {
+    "path": "src/k_pii_bench/baselines/llm_openai_endpoint_parallel.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "58ccd513a4cec3454658a38347356b159627b59c"
+  },
+  {
+    "path": "src/k_pii_bench/baselines/llm_zeroshot.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f74a221c927876fb5d2856e6929c510a87897ac3"
+  },
+  {
+    "path": "src/k_pii_bench/baselines/presidio_korean.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ac1616308e8c92b8da4e6aeae487204c7a604d58"
+  },
+  {
+    "path": "src/k_pii_bench/baselines/presidio_v2_eval.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e3d238679ee144b525e2205cc483b39321341f8d"
+  },
+  {
+    "path": "src/k_pii_bench/evaluation/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4f0b9b6cb9eb2c402307766365374545bd772839"
+  },
+  {
+    "path": "src/k_pii_bench/evaluation/aggregate_results.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "41800f2b576ab5a204d449b34b40af0f271af661"
+  },
+  {
+    "path": "src/k_pii_bench/evaluation/data/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6c9d278e93af2ba67ee9d352747442eb6b9fe484"
+  },
+  {
+    "path": "src/k_pii_bench/evaluation/data/audit_dataset.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "20afaaa0bbc24dfcb99a09c47d7cd560e1bed097"
+  },
+  {
+    "path": "src/k_pii_bench/evaluation/data/convert_to_bio.py",
+    "mode": "100755",
+    "type": "blob",
+    "object": "222fdbda8c076c640ab14be260cc3ad7db29221e"
+  },
+  {
+    "path": "src/k_pii_bench/evaluation/data/create_global_label_map.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a635a5f9b54764ae49f880de42b1ac0fbb46f80d"
+  },
+  {
+    "path": "src/k_pii_bench/evaluation/data/split_dataset.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "26fb9910024c9fe4ba0f9d9c98ef33e790801ea7"
+  },
+  {
+    "path": "src/k_pii_bench/evaluation/evaluate.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4be323dae664f673c21abae2702066f5f714082a"
+  },
+  {
+    "path": "src/k_pii_bench/evaluation/external_validation/convert_kdpii.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1abe34f1b4426f7edb813a9b9b20cbc354be3b94"
+  },
+  {
+    "path": "src/k_pii_bench/evaluation/external_validation/evaluate_external.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0fcc463924bd42f89808d6a6e62fead9dcf6df08"
+  },
+  {
+    "path": "src/k_pii_bench/evaluation/external_validation/evaluate_partial_match.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "796d0edd0fffd58ca361c5f224f4eb57b28fdc4b"
+  },
+  {
+    "path": "src/k_pii_bench/evaluation/external_validation/label_mapping.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5b305e8cb09f5d5587f7f29a1fb21e26f7754ab5"
+  },
+  {
+    "path": "src/k_pii_bench/evaluation/external_validation/presidio_kdpii.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "06341fe1c27b8347d009368be869329b84911c6c"
+  },
+  {
+    "path": "src/k_pii_bench/evaluation/metrics/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f176e4fffdbb00a496f9879cfa88d0d7870623a1"
+  },
+  {
+    "path": "src/k_pii_bench/evaluation/metrics/compute_metrics.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "09e524532077d0af381905604d2f6e2d77f18818"
+  },
+  {
+    "path": "src/k_pii_bench/evaluation/metrics/span_metrics.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2642c4b2f03782395348888580dfa34c3e1622f7"
+  },
+  {
+    "path": "src/k_pii_bench/evaluation/supervised/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b7f02a41192d06045a5294ea13568b491934e417"
+  },
+  {
+    "path": "src/k_pii_bench/evaluation/supervised/domain_transfer.py",
+    "mode": "100755",
+    "type": "blob",
+    "object": "1683c8a0d7fe0db0a70fc27925fe38d10043a04d"
+  },
+  {
+    "path": "src/k_pii_bench/evaluation/supervised/evaluate.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "393f02062060cf71b653a7ab2753fc479fa69013"
+  },
+  {
+    "path": "src/k_pii_bench/evaluation/supervised/self_test_infer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "62e61632a8d96ba9935fe49aae95774c66c40624"
+  },
+  {
+    "path": "src/k_pii_bench/evaluation/supervised/train.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "705b5a25d17f9f6fde71c3e602b97167eedae4c3"
+  },
+  {
+    "path": "src/k_pii_bench/evaluation/supervised/train.sh",
+    "mode": "100755",
+    "type": "blob",
+    "object": "856b219fd55a44ef50e357c0bc7d22e340862196"
+  },
+  {
+    "path": "src/k_pii_bench/generation/AGENTS.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "73ecb47c3ab138166c292f719e23d59321ae1de6"
+  },
+  {
+    "path": "src/k_pii_bench/generation/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "src/k_pii_bench/generation/config.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "238450b8a10ee49d983d9b9408040bdb6254ef66"
+  },
+  {
+    "path": "src/k_pii_bench/generation/data/AGENTS.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0b6a77143a4eec89f81b11b7016d53a90680a47a"
+  },
+  {
+    "path": "src/k_pii_bench/generation/data/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2fbd7682bd9cf0b28e6460bffd1005967c4f49eb"
+  },
+  {
+    "path": "src/k_pii_bench/generation/data/korean_addresses.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "83479a645b2670d7613a0822eb0746357cd17ee7"
+  },
+  {
+    "path": "src/k_pii_bench/generation/data/short_locations.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "76fcd40a1afc0a0d19d635cf9f512d6109f9fb01"
+  },
+  {
+    "path": "src/k_pii_bench/generation/main.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "15300740883ec5ef2c175d1361f11a9e80ee3995"
+  },
+  {
+    "path": "src/k_pii_bench/generation/models.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "fb53577ce079409696782ede42456063fecc80d9"
+  },
+  {
+    "path": "src/k_pii_bench/generation/services/AGENTS.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ae3c0da531d3e3bd538c991c910e197a0ff76e0b"
+  },
+  {
+    "path": "src/k_pii_bench/generation/services/bio_tagger.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b3d57acf1ae02086ec2e1528e3d2bda7de79da7d"
+  },
+  {
+    "path": "src/k_pii_bench/generation/services/convert_to_bio.py",
+    "mode": "100755",
+    "type": "blob",
+    "object": "52c7700b4f7f79da2e9a7c5397d54c5a00d94b0d"
+  },
+  {
+    "path": "src/k_pii_bench/generation/services/gemini.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5e2438622f1c7d93ac3b5c2401fc1c0da2c6e7ac"
+  },
+  {
+    "path": "src/k_pii_bench/generation/services/generator.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a2abf4288d137a3514f4dc7529c9414cf22817c4"
+  },
+  {
+    "path": "src/k_pii_bench/generation/services/particle_augmenter.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "369ac7dd9abb199b48f6390cf449b1ae8033c1ba"
+  },
+  {
+    "path": "src/k_pii_bench/generation/utils.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7c51a1c265299ddbda82f256e0a77a5b9b83ad9a"
+  },
+  {
+    "path": "src/k_pii_bench/perturbations/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "539a73ea2f1780fa54db9444a52e1cebcb12dab3"
+  },
+  {
+    "path": "src/k_pii_bench/perturbations/apply_transforms.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "37da20e821e7fbf8d1133dd84f71d931bf516bd3"
+  },
+  {
+    "path": "src/k_pii_bench/perturbations/evaluate_robustness.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3a305d33518dbad514f49b4c217aff258d11a6b0"
+  },
+  {
+    "path": "src/k_pii_bench/perturbations/noise_transforms.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "42c8a76c3e99441c3468d4c9ddd51f3f1376ce42"
+  },
+  {
+    "path": "tests/AGENTS.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "391ce2f5f8b8c83356c71edd58524f463757c865"
+  },
+  {
+    "path": "tests/test_bio_tagger.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8fba14af912ac9df9fe54e5a8d8f265aa8fababe"
+  },
+  {
+    "path": "tests/test_generator.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "344978917349e031585aca66eb331bb94cd87e79"
+  },
+  {
+    "path": "tests/test_new_pii_types.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "562ad78246d87fa0bfd679c359c82e2c1fc7dad1"
+  },
+  {
+    "path": "tests/test_particle_augmenter.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "21290c7f715f1928013f2e445818c20ab27a5eb3"
+  },
+  {
+    "path": "tests/test_unique_generation.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "361014ee94830e7a5f03191cefd91f8cab47d10e"
+  }
+]

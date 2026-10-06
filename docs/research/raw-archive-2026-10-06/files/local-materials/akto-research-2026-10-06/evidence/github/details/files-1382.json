@@ -1,0 +1,62 @@
+[
+  {
+    "sha": "715cc8171e93c3128abb1df9fa899ca3b9a58424",
+    "filename": ".github/workflows/prod.yml",
+    "status": "modified",
+    "additions": 2,
+    "deletions": 2,
+    "changes": 4,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/b0011b05df81880c7b83c324a8e5889b4fc8e0dd/.github%2Fworkflows%2Fprod.yml",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/b0011b05df81880c7b83c324a8e5889b4fc8e0dd/.github%2Fworkflows%2Fprod.yml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/.github%2Fworkflows%2Fprod.yml?ref=b0011b05df81880c7b83c324a8e5889b4fc8e0dd",
+    "patch": "@@ -61,7 +61,7 @@ jobs:\n           IMAGE_TAG: latest\n           IMAGE_TAG1: testruntime\n           IMAGE_TAG2: local\n-          IMAGE_TAG3: 1.41.16_local\n+          IMAGE_TAG3: 1.41.17_local\n         run: |\n           docker buildx create --use\n           # Build a docker container and push it to DockerHub \n@@ -86,7 +86,7 @@ jobs:\n           IMAGE_TAG: latest\n           IMAGE_TAG1: testruntime\n           IMAGE_TAG2: local\n-          IMAGE_TAG3: 1.41.16_local\n+          IMAGE_TAG3: 1.41.17_local\n         run: |\n           echo $IMAGE_TAG >> $GITHUB_STEP_SUMMARY\n           docker buildx create --use"
+  },
+  {
+    "sha": "dd9f2605655a588c92edb62dcf93b43f7c175344",
+    "filename": "apps/mini-testing/src/main/java/com/akto/test_editor/auth/AuthValidator.java",
+    "status": "modified",
+    "additions": 16,
+    "deletions": 12,
+    "changes": 28,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/b0011b05df81880c7b83c324a8e5889b4fc8e0dd/apps%2Fmini-testing%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Ftest_editor%2Fauth%2FAuthValidator.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/b0011b05df81880c7b83c324a8e5889b4fc8e0dd/apps%2Fmini-testing%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Ftest_editor%2Fauth%2FAuthValidator.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fmini-testing%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Ftest_editor%2Fauth%2FAuthValidator.java?ref=b0011b05df81880c7b83c324a8e5889b4fc8e0dd",
+    "patch": "@@ -20,13 +20,13 @@\n \n public class AuthValidator {\n     \n-    public static boolean validate(Auth auth, RawApi rawApi, AuthMechanism authMechanism) {\n+    public static boolean validate(Auth auth, RawApi rawApi, AuthMechanism authMechanism, List<CustomAuthType> customAuthTypes) {\n \n         if (auth == null) {\n             return true;\n         }\n \n-        List<String> headerKeys = getHeaders(auth, authMechanism);\n+        List<String> headerKeys = getHeaders(auth, authMechanism, customAuthTypes);\n \n         auth.setHeaders(headerKeys);\n \n@@ -41,29 +41,33 @@ public static boolean validate(Auth auth, RawApi rawApi, AuthMechanism authMecha\n         for (String header: headerKeys) {\n             contains = headers.containsKey(header) || CookieTransformer.isKeyPresentInCookie(cookieList, header);\n             res = auth.getAuthenticated() && contains;\n-            if (!res) {\n-                return res;\n+            if (res) {\n+                return true;\n             }\n         }\n-        return true;\n+        return false;\n     }\n \n-    public static List<String> getHeaders(Auth auth, AuthMechanism authMechanism) {\n+    public static List<String> getHeaders(Auth auth, AuthMechanism authMechanism, List<CustomAuthType> customAuthTypes) {\n \n         if (auth != null && auth.getHeaders() != null && auth.getHeaders().size() > 0) {\n             return auth.getHeaders();\n         }\n \n         List<String> headerKeys = new ArrayList<>();\n \n-        if (authMechanism == null || authMechanism.getAuthParams() == null || authMechanism.getAuthParams().size() == 0) {\n-            return null;\n+        if (authMechanism != null && authMechanism.getAuthParams() != null && authMechanism.getAuthParams().size() > 0) {\n+            for (AuthParam authParam: authMechanism.getAuthParams()) {\n+                String key = authParam.getKey();\n+                if (key == null) continue;\n+                headerKeys.add(key.toLowerCase());\n+            }\n         }\n \n-        for (AuthParam authParam: authMechanism.getAuthParams()) {\n-            String key = authParam.getKey();\n-            if (key == null) continue;\n-            headerKeys.add(key.toLowerCase());\n+        if (customAuthTypes != null) {\n+            for(CustomAuthType customAuthType: customAuthTypes) {\n+                headerKeys.addAll(customAuthType.getHeaderKeys());\n+            }\n         }\n \n         return headerKeys;"
+  },
+  {
+    "sha": "48124c4bcda9282e8cc26df5157256e343cfb9b6",
+    "filename": "apps/mini-testing/src/main/java/com/akto/testing/yaml_tests/YamlTestTemplate.java",
+    "status": "modified",
+    "additions": 2,
+    "deletions": 2,
+    "changes": 4,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/b0011b05df81880c7b83c324a8e5889b4fc8e0dd/apps%2Fmini-testing%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Ftesting%2Fyaml_tests%2FYamlTestTemplate.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/b0011b05df81880c7b83c324a8e5889b4fc8e0dd/apps%2Fmini-testing%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Ftesting%2Fyaml_tests%2FYamlTestTemplate.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fmini-testing%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Ftesting%2Fyaml_tests%2FYamlTestTemplate.java?ref=b0011b05df81880c7b83c324a8e5889b4fc8e0dd",
+    "patch": "@@ -31,14 +31,14 @@ public YamlTestTemplate(ApiInfo.ApiInfoKey apiInfoKey, FilterNode filterNode, Fi\n     @Override\n     public boolean filter() {\n         // loggerMaker.infoAndAddToDb(\"filter started\" + logId, LogDb.TESTING);\n-        List<String> authHeaders = AuthValidator.getHeaders(this.auth, this.authMechanism);\n+        List<String> authHeaders = AuthValidator.getHeaders(this.auth, this.authMechanism, this.customAuthTypes);\n         // loggerMaker.infoAndAddToDb(\"found authHeaders \" + authHeaders + \" \" + logId, LogDb.TESTING);\n         if (authHeaders != null && authHeaders.size() > 0) {\n             this.varMap.put(\"auth_headers\", authHeaders);\n         }\n         if (this.auth != null && this.auth.getAuthenticated() != null) {\n             // loggerMaker.infoAndAddToDb(\"validating auth, authenticated value is \" + this.auth.getAuthenticated() + \" \" + logId, LogDb.TESTING);\n-            boolean validAuthHeaders = AuthValidator.validate(this.auth, this.rawApi, this.authMechanism);\n+            boolean validAuthHeaders = AuthValidator.validate(this.auth, this.rawApi, this.authMechanism, this.customAuthTypes);\n             if (!validAuthHeaders) {\n                 // loggerMaker.infoAndAddToDb(\"invalid auth, skipping filter \" + logId, LogDb.TESTING);\n                 return false;"
+  },
+  {
+    "sha": "23fd6e68ecbd55dd760f79bf32f9c99cbf36d14e",
+    "filename": "libs/dao/src/main/java/com/akto/dto/CustomAuthTypeMapper.java",
+    "status": "modified",
+    "additions": 11,
+    "deletions": 0,
+    "changes": 11,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/b0011b05df81880c7b83c324a8e5889b4fc8e0dd/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2FCustomAuthTypeMapper.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/b0011b05df81880c7b83c324a8e5889b4fc8e0dd/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2FCustomAuthTypeMapper.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2FCustomAuthTypeMapper.java?ref=b0011b05df81880c7b83c324a8e5889b4fc8e0dd",
+    "patch": "@@ -17,6 +17,17 @@ public class CustomAuthTypeMapper {\n     private int creatorId;\n     private int timestamp;\n \n+    public CustomAuthTypeMapper(String id, String name, List<String> headerKeys, List<String> payloadKeys,\n+            boolean active, int creatorId, int timestamp) {\n+        this.id = id;\n+        this.name = name;\n+        this.headerKeys = headerKeys;\n+        this.payloadKeys = payloadKeys;\n+        this.active = active;\n+        this.creatorId = creatorId;\n+        this.timestamp = timestamp;\n+    }\n+\n     public CustomAuthTypeMapper(CustomAuthType customAuthType) {\n         this.id = customAuthType.getId().toHexString();\n         this.name = customAuthType.getName();"
+  },
+  {
+    "sha": "d4b674fe9a4bd02a3818e98dac1550c449d78033",
+    "filename": "libs/utils/src/main/java/com/akto/data_actor/ClientActor.java",
+    "status": "modified",
+    "additions": 2,
+    "deletions": 2,
+    "changes": 4,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/b0011b05df81880c7b83c324a8e5889b4fc8e0dd/libs%2Futils%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdata_actor%2FClientActor.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/b0011b05df81880c7b83c324a8e5889b4fc8e0dd/libs%2Futils%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdata_actor%2FClientActor.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/libs%2Futils%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdata_actor%2FClientActor.java?ref=b0011b05df81880c7b83c324a8e5889b4fc8e0dd",
+    "patch": "@@ -726,8 +726,8 @@ public List<CustomAuthType> fetchCustomAuthTypes() {\n                     BasicDBObject obj2 = (BasicDBObject) obj;\n                     String id = (String) obj2.get(\"id\");\n                     obj2.put(\"id\", null);\n-                    CustomAuthTypeMapper customAuthTypeMapper = objectMapper.readValue(obj2.toJson(), CustomAuthTypeMapper.class);\n-                    CustomAuthType customAuthType = CustomAuthTypeMapper.buildCustomAuthType(customAuthTypeMapper, id);\n+                    // CustomAuthTypeMapper customAuthTypeMapper = objectMapper.readValue(obj2.toJson(), CustomAuthTypeMapper.class);\n+                    CustomAuthType customAuthType = objectMapper.readValue(obj2.toJson(), CustomAuthType.class);\n                     customAuthTypes.add(customAuthType);\n                 }\n             } catch(Exception e) {"
+  }
+]

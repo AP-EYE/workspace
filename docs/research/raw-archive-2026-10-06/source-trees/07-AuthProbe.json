@@ -1,0 +1,296 @@
+[
+  {
+    "path": ".github/workflows/ci.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7aa7c5a367dd90d45fafe6f505daabf43b9d49ca"
+  },
+  {
+    "path": ".gitignore",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a841f570b3c1b2accbd28c8ad15084c118205117"
+  },
+  {
+    "path": "CHANGELOG.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c9ced8df3de9cbc03f19e690b17f932cef1763e6"
+  },
+  {
+    "path": "CITATION.cff",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6440a6914ef9de27bd762be72ecb277e3fe476a2"
+  },
+  {
+    "path": "CONTRIBUTING.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "cf1e6a164c2213eba26f11ebdb0cfaf1c1a95d84"
+  },
+  {
+    "path": "Dockerfile",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c8df3cc40250e57eda6f25ebdf0bbe8ecafb2c6b"
+  },
+  {
+    "path": "LICENSE",
+    "mode": "100644",
+    "type": "blob",
+    "object": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64"
+  },
+  {
+    "path": "Makefile",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f2f9df30b41f98c1f385afe4ce8ecd2644553564"
+  },
+  {
+    "path": "NOTICE",
+    "mode": "100644",
+    "type": "blob",
+    "object": "662d93cc41e9cb621c74f477edf97e01050a75b8"
+  },
+  {
+    "path": "README.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c8ca0e83172a4b81d282b7c8b4282cd24ddf9581"
+  },
+  {
+    "path": "ROADMAP.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "57471d964a6e73249d1a6199fc4f6c14ffe261f8"
+  },
+  {
+    "path": "SECURITY.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f3853b7d5f5c220c99f8617437c0599da2342ea1"
+  },
+  {
+    "path": "authprobe/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "bcf684e18b9e46762cb220cf6bd412d9e32ab76b"
+  },
+  {
+    "path": "authprobe/__main__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9ae637f13cd528a1823ec240ed01b3bdaaa19967"
+  },
+  {
+    "path": "authprobe/_serve.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "dca481c6e64042c81454a452551d114896d146b7"
+  },
+  {
+    "path": "authprobe/cli.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "884a38d2f5f7eb7b823b9d5feb7fb010fe376852"
+  },
+  {
+    "path": "authprobe/config.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "69a39aa5322fd58f01b3c8c8f630b78ece8fca22"
+  },
+  {
+    "path": "authprobe/demo.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a8510705748e85ef7bc74f92db52fba057717ac5"
+  },
+  {
+    "path": "authprobe/diff.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "52d2327cd5a4491723d10440061912be08f5e874"
+  },
+  {
+    "path": "authprobe/findings.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "cccd4cb37613d43ef79a1d154bf201dd9811afcb"
+  },
+  {
+    "path": "authprobe/http_client.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "87362373e83a7beeabde5a110e9424b9449ca5b2"
+  },
+  {
+    "path": "authprobe/identities.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "09c290a084c4af0b1832e2fba8d74e48067f3bb1"
+  },
+  {
+    "path": "authprobe/probes/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "authprobe/probes/bola.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "cb5d4fca5ff6ca8ec5171cfb42a32b86fa653ecb"
+  },
+  {
+    "path": "authprobe/probes/idor_enum.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9f52aae8665e685abed326856cc8bfdd6cf42cc7"
+  },
+  {
+    "path": "authprobe/probes/missing_auth.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "712920e45563e1164c848ce4039cdcb0d63dbbf5"
+  },
+  {
+    "path": "authprobe/probes/oracle.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "43472924b27443bdad1ab94875e09a2af2e3fb1a"
+  },
+  {
+    "path": "authprobe/report.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c5a4cf3e1b8ec54e99b5fdb10a5df156a97dec38"
+  },
+  {
+    "path": "authprobe/scanner.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2737f091539b1fadac98f7043670358674adcca9"
+  },
+  {
+    "path": "authprobe/spec.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6c670a9393170c87048fcea9593c95179755f9ee"
+  },
+  {
+    "path": "docker-compose.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ce2a6ae5b233d764029219a7dfd2a18bb891de49"
+  },
+  {
+    "path": "docs/00-overview.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "123fe0bb25b8946442a22850709b2a7c15c9c406"
+  },
+  {
+    "path": "docs/01-how-it-works.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "540eedfdfc59fecab3eab47f78ca913f162b7242"
+  },
+  {
+    "path": "docs/02-ci-integration.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2303b8597fc92ea7635e8560f43d80d24b7d49fe"
+  },
+  {
+    "path": "docs/diagrams/pipeline.mmd",
+    "mode": "100644",
+    "type": "blob",
+    "object": "44ed7190882cc107c95ba7694c8944ec6a36e27c"
+  },
+  {
+    "path": "examples/config.example.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "22ff5ca40609605fc3c6a885a312df84ac80148d"
+  },
+  {
+    "path": "pyproject.toml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ee55ac96484e4747126717a113111da9db8a00b4"
+  },
+  {
+    "path": "requirements.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b5dbd90d78ea183d28bf062766e9d88456ad5b32"
+  },
+  {
+    "path": "targets/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "targets/_common.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "651729c3313aaacaa6364e1d0dbee826c777bae2"
+  },
+  {
+    "path": "targets/secure_ats.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0019e95d015510c0e0f7860d942e44d4b596ec6d"
+  },
+  {
+    "path": "targets/vulnerable_ats.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6ef81569ac3a94f2eea2ef8e345daeb3b49fbaab"
+  },
+  {
+    "path": "tests/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "tests/conftest.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "660201339ea3d640def91b67b7d1e053fb9b51f4"
+  },
+  {
+    "path": "tests/test_cli.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4350f22f182d018c216c785e9eb5a2030084fbbf"
+  },
+  {
+    "path": "tests/test_probes_unit.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "87a1edf1fc8e19c80c32af00c3e740fe4c230636"
+  },
+  {
+    "path": "tests/test_scan_secure.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "399e36360084068c4529ecf23837012118edd178"
+  },
+  {
+    "path": "tests/test_scan_vulnerable.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "dd9e6ca668bb97542115c7d808cbfe9641c5f59b"
+  },
+  {
+    "path": "tests/test_spec_detect.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3e4a7abe26f2fd56bb8b1d1867c93e29564313cf"
+  }
+]

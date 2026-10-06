@@ -1,0 +1,14 @@
+[
+  {
+    "sha": "3ca21660f425593167484f55f98f11562d94b81b",
+    "filename": "apps/threat-detection/src/main/resources/os-command-injection.data",
+    "status": "modified",
+    "additions": 0,
+    "deletions": 4,
+    "changes": 4,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/81a258919fc2f5034b61761c4db53e620623287b/apps%2Fthreat-detection%2Fsrc%2Fmain%2Fresources%2Fos-command-injection.data",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/81a258919fc2f5034b61761c4db53e620623287b/apps%2Fthreat-detection%2Fsrc%2Fmain%2Fresources%2Fos-command-injection.data",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fthreat-detection%2Fsrc%2Fmain%2Fresources%2Fos-command-injection.data?ref=81a258919fc2f5034b61761c4db53e620623287b",
+    "patch": "@@ -680,12 +680,8 @@ sbin/start-stop-daemon\n |id\n |ping\n |cat\n-&id\n &ping\n &cat\n-`id`\n-`ping`\n-`cat`\n $(id)\n $(ping)\n | id"
+  }
+]

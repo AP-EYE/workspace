@@ -1,0 +1,49 @@
+[
+  {
+    "url": "https://api.github.com/repos/akto-api-security/akto/issues/comments/1754582933",
+    "html_url": "https://github.com/akto-api-security/akto/issues/315#issuecomment-1754582933",
+    "issue_url": "https://api.github.com/repos/akto-api-security/akto/issues/315",
+    "id": 1754582933,
+    "node_id": "IC_kwDOI38B3s5olM-V",
+    "user": {
+      "login": "Ankita28g",
+      "id": 91306853,
+      "node_id": "MDQ6VXNlcjkxMzA2ODUz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/91306853?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Ankita28g",
+      "html_url": "https://github.com/Ankita28g",
+      "followers_url": "https://api.github.com/users/Ankita28g/followers",
+      "following_url": "https://api.github.com/users/Ankita28g/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Ankita28g/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Ankita28g/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Ankita28g/subscriptions",
+      "organizations_url": "https://api.github.com/users/Ankita28g/orgs",
+      "repos_url": "https://api.github.com/users/Ankita28g/repos",
+      "events_url": "https://api.github.com/users/Ankita28g/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Ankita28g/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "created_at": "2023-10-10T07:32:28Z",
+    "updated_at": "2023-10-10T07:32:28Z",
+    "body": "hi @irboi746 we now support mTLS. So closing this issue. if you are interested, let us know and we can enable it for you. ",
+    "author_association": "CONTRIBUTOR",
+    "pin": null,
+    "reactions": {
+      "url": "https://api.github.com/repos/akto-api-security/akto/issues/comments/1754582933/reactions",
+      "total_count": 0,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "performed_via_github_app": null,
+    "minimized": null
+  }
+]

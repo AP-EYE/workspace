@@ -1,0 +1,65 @@
+{
+  "utc": "2026-10-06T00:15:56.599405+00:00",
+  "sources": [
+    {
+      "name": "SPY_2025.naacl-srw.23.pdf",
+      "url": "https://aclanthology.org/2025.naacl-srw.23.pdf",
+      "bytes": 209361,
+      "sha256": "b6d7171b9919025fd872fad222a385dc38c2844376aafee794c94a78a4bafb68"
+    },
+    {
+      "name": "GLiNER2_PII_2605.09973.pdf",
+      "url": "https://arxiv.org/pdf/2605.09973",
+      "bytes": 481841,
+      "sha256": "1d30c9bbcf4ea5337aa49d5b1c9381aaffe4fccc776099c389b58af76e059c28"
+    },
+    {
+      "name": "CrossLingual_2608.02616.pdf",
+      "url": "https://arxiv.org/pdf/2608.02616",
+      "bytes": 222579,
+      "sha256": "bbd949a3d5f93cdb273756f65ce2f8c537e9c37357ecab33f835257abdf17fed"
+    },
+    {
+      "name": "k_pii_bench_README.md",
+      "url": "https://huggingface.co/datasets/woohyun212/k-pii-bench/raw/main/README.md",
+      "bytes": 2214,
+      "sha256": "980cc23d7ddb6b31ab01f8d66ff3218d654fd30d3ed4692c1b8505bc12574221"
+    },
+    {
+      "name": "akto_redact.md",
+      "url": "https://docs.akto.io/api-inventory/how-to/redact-sensitive-data",
+      "bytes": 682791,
+      "sha256": "ef12f926dfa729ded235e484ef5ee49842ae48f4b06aa8440fc2aa102276e9bf"
+    },
+    {
+      "name": "akto_custom_type.md",
+      "url": "https://docs.akto.io/api-inventory/how-to/create-a-custom-data-type",
+      "bytes": 688998,
+      "sha256": "d9714dc10b96a1affd18072af655d1d7813427ce75841a9cb44c304220951f00"
+    },
+    {
+      "name": "akto_datatypes.md",
+      "url": "https://docs.akto.io/api-inventory/concepts/data-types",
+      "bytes": 653025,
+      "sha256": "5f8ae18f720f49508e048f8e2507362afc112e54764215725261516d84862654"
+    },
+    {
+      "name": "google_infotypes.html",
+      "url": "https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference",
+      "bytes": 425507,
+      "sha256": "592c5ae913a8ccd02ed89a66c0d93cd99c05cbe312e82ef5ab66495fedcbf445"
+    },
+    {
+      "name": "azure_languages.html",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/language-service/personally-identifiable-information/language-support",
+      "bytes": 60494,
+      "sha256": "69f3b08d64073b67ba6e665583e86e65d0816099f3184aecc9dbce48d378b1d6"
+    },
+    {
+      "name": "aws_pii.html",
+      "url": "https://docs.aws.amazon.com/comprehend/latest/dg/how-pii.html",
+      "bytes": 27093,
+      "sha256": "0ac728632444f43e09b9079c709558c8237d732e7bcb3c8199c4dd3443f9c6a0"
+    }
+  ]
+}

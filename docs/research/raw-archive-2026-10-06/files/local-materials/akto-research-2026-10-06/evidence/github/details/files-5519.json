@@ -1,0 +1,38 @@
+[
+  {
+    "sha": "8f4fd4af5bfd56310f0ccad26d272f2ff4a86ba5",
+    "filename": "apps/dashboard/web/polaris_web/web/src/apps/dashboard/components/shared/SampleData.js",
+    "status": "modified",
+    "additions": 13,
+    "deletions": 0,
+    "changes": 13,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/04a1237b361ff8a0865d3390a82acfea7eea52d0/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fcomponents%2Fshared%2FSampleData.js",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/04a1237b361ff8a0865d3390a82acfea7eea52d0/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fcomponents%2Fshared%2FSampleData.js",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fcomponents%2Fshared%2FSampleData.js?ref=04a1237b361ff8a0865d3390a82acfea7eea52d0",
+    "patch": "@@ -8,6 +8,18 @@ import yamlEditorSetup from \"../../pages/test_editor/components/editor_config/ed\n import keywords from \"../../pages/test_editor/components/editor_config/keywords\"\n import authTypesApi from \"@/apps/dashboard/pages/settings/auth_types/api\";\n import { locateSegment } from \"./vulnerabilityEvidence\";\n+import { COOKIE_REDACT_PLACEHOLDER } from './customDiffEditor';\n+\n+function highlightRedactedCookies(ref) {\n+  if (!func.isCookieRedactAccount()) return\n+  const matches = ref.getModel().findMatches(COOKIE_REDACT_PLACEHOLDER, false, false, true, null, true)\n+  matches.forEach((match) => {\n+    ref.createDecorationsCollection([{\n+      range: match.range,\n+      options: { inlineClassName: \"highlightOther\" }\n+    }])\n+  })\n+}\n \n function highlightPaths(highlightPathMap, ref){\n   highlightPathMap && Object.keys(highlightPathMap).forEach((key) => {\n@@ -395,6 +407,7 @@ function SampleData(props) {\n         let message = data.original ? data.original : data?.message \n         instance.setValue(message)\n         highlightPaths(data?.highlightPaths, instance);\n+        highlightRedactedCookies(instance);\n         if(data.headersMap){\n           highlightHeaders(data, instance,getLineNumbers)\n         }"
+  },
+  {
+    "sha": "988a2bc6f5677bd3b5dbb0fa8959f86a110044d7",
+    "filename": "apps/dashboard/web/polaris_web/web/src/apps/dashboard/components/shared/customDiffEditor.js",
+    "status": "modified",
+    "additions": 15,
+    "deletions": 1,
+    "changes": 16,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/04a1237b361ff8a0865d3390a82acfea7eea52d0/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fcomponents%2Fshared%2FcustomDiffEditor.js",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/04a1237b361ff8a0865d3390a82acfea7eea52d0/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fcomponents%2Fshared%2FcustomDiffEditor.js",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fcomponents%2Fshared%2FcustomDiffEditor.js?ref=04a1237b361ff8a0865d3390a82acfea7eea52d0",
+    "patch": "@@ -1,5 +1,16 @@\n import func from \"@/util/func\";\n \n+const COOKIE_REDACT_PATTERNS = [/acornsweb_\\w*token/i]\n+export const COOKIE_REDACT_PLACEHOLDER = \"AaaaAAAAAAAaaaaaaAAAAAA\"\n+\n+function redactCookieValues(cookieString) {\n+    return cookieString.replace(/([^;=\\s]+)=([^;]*)/g, (match, cookieKey) => {\n+        return COOKIE_REDACT_PATTERNS.some(p => p.test(cookieKey))\n+            ? `${cookieKey}=${COOKIE_REDACT_PLACEHOLDER}`\n+            : match\n+    })\n+}\n+\n const transform = {\n     formatJson(data){\n         let allKeys = [];\n@@ -332,7 +343,10 @@ const transform = {\n                     if(element.includes(\"Header\")){\n                         if(data.json[element]){\n                             Object.keys(data?.json[element]).forEach((key) => {\n-                                const value = redactSet.has(key.toLowerCase()) ? '******' : data.json[element][key]\n+                                let value = redactSet.has(key.toLowerCase()) ? '******' : data.json[element][key]\n+                                if (key.toLowerCase() === 'cookie' && func.isCookieRedactAccount()) {\n+                                    value = redactCookieValues(value)\n+                                }\n                                 finalData = finalData + key + ': ' + value + \"\\n\"\n                             })\n                         }"
+  },
+  {
+    "sha": "fe51e6c140106759c54316507effbbcf6443f848",
+    "filename": "apps/dashboard/web/polaris_web/web/src/util/func.js",
+    "status": "modified",
+    "additions": 5,
+    "deletions": 0,
+    "changes": 5,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/04a1237b361ff8a0865d3390a82acfea7eea52d0/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Futil%2Ffunc.js",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/04a1237b361ff8a0865d3390a82acfea7eea52d0/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Futil%2Ffunc.js",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Futil%2Ffunc.js?ref=04a1237b361ff8a0865d3390a82acfea7eea52d0",
+    "patch": "@@ -2435,6 +2435,11 @@ showConfirmationModal(modalContent, primaryActionContent, primaryAction) {\n      return window.ACTIVE_ACCOUNT === 1669322524\n   },\n \n+  isCookieRedactAccount(){\n+    const cookieRedactAccounts = [1758787662, 1662680463]\n+    return cookieRedactAccounts.includes(window.ACTIVE_ACCOUNT)\n+  },\n+\n   shouldShowIpReputation() {\n     return this.isDemoAccount() || window.ACTIVE_ACCOUNT === 1767812031 || window.ACTIVE_ACCOUNT === 1767814409 || window.ACTIVE_ACCOUNT === 1745303931 || window.ACTIVE_ACCOUNT === 1758787662\n   },"
+  }
+]

@@ -1,0 +1,110 @@
+[
+  {
+    "sha": "3c69ebee96bed12f0cc1497fdbff17228d18ce44",
+    "filename": "Broken-User-Authentication/UserEnumerationAccountLock.yml",
+    "status": "modified",
+    "additions": 5,
+    "deletions": 3,
+    "changes": 8,
+    "blob_url": "https://github.com/akto-api-security/tests-library/blob/cb86538edb81e3e264aaa27b6029e95bed2d6292/Broken-User-Authentication%2FUserEnumerationAccountLock.yml",
+    "raw_url": "https://github.com/akto-api-security/tests-library/raw/cb86538edb81e3e264aaa27b6029e95bed2d6292/Broken-User-Authentication%2FUserEnumerationAccountLock.yml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/tests-library/contents/Broken-User-Authentication%2FUserEnumerationAccountLock.yml?ref=cb86538edb81e3e264aaa27b6029e95bed2d6292",
+    "patch": "@@ -32,7 +32,7 @@ info:\n     shortName: Broken Authentication\n     displayName: Broken User Authentication (BUA)\n   subCategory: USER_ENUM_ACCOUNT_LOCK\n-  severity: HIGH\n+  severity: MEDIUM\n   tags:\n     - Business logic\n     - OWASP top 10\n@@ -89,12 +89,14 @@ api_selection_filters:\n       key:\n         regex: \"^username$|^user$|^userid$|^user_id$|^login$|^login_id$|^email$|^account$|^account_id$|^member$|^member_id$|^id$|^user_name$|^uname$|^identifier$|^user_identifier$|^admin$|^nick$|^nickname$|^handle$|^alias$|^principal$|^profile$|^profile_id$|^name$|^signin$|^auth$|^credential$|^user_login$|^user_account$|^user_email$|^employee$|^employee_id$|^operator$|^customer_id$|^client_id$|^subscriber$|^subscriber_id$|^participant$|^participant_id$|^client_id$|^userLoginID$|^client-name$\"\n         extract: userKey\n+      value:\n+        regex: \"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\\\.[a-zA-Z]{2,}$\"        \n execute:\n   type: multiple\n   requests:\n     - req:\n         - modify_body_param:\n-            userKey: dummyUser\n+            userKey: dummyUser@dummy.com\n         - validate:\n             response_code:\n               gte: 400\n@@ -111,7 +113,7 @@ execute:\n         - failure: exit\n     - req:\n         - modify_body_param:\n-            userKey: dummyUser\n+            userKey: dummyUser@dummy.com\n         - modify_header:\n             ${roles_access_context.LOCKED_ACCOUNT_SYSTEM_ROLE}: 1\n         - validate:"
+  },
+  {
+    "sha": "c4fc87ef7c4ad5e097a4c86a0f351ecdabb9343b",
+    "filename": "Broken-User-Authentication/UserEnumerationFolderAccess.yml",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 1,
+    "changes": 2,
+    "blob_url": "https://github.com/akto-api-security/tests-library/blob/cb86538edb81e3e264aaa27b6029e95bed2d6292/Broken-User-Authentication%2FUserEnumerationFolderAccess.yml",
+    "raw_url": "https://github.com/akto-api-security/tests-library/raw/cb86538edb81e3e264aaa27b6029e95bed2d6292/Broken-User-Authentication%2FUserEnumerationFolderAccess.yml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/tests-library/contents/Broken-User-Authentication%2FUserEnumerationFolderAccess.yml?ref=cb86538edb81e3e264aaa27b6029e95bed2d6292",
+    "patch": "@@ -28,7 +28,7 @@ info:\n     shortName: Broken Authentication\n     displayName: Broken User Authentication (BUA)\n   subCategory: USER_ENUM_FOLDER_ACCESS\n-  severity: HIGH\n+  severity: MEDIUM\n   tags:\n     - Business logic\n     - OWASP top 10"
+  },
+  {
+    "sha": "9498312dd1f42961d347557e38cfb3032822e495",
+    "filename": "Broken-User-Authentication/UserEnumerationPasswordReset.yml",
+    "status": "modified",
+    "additions": 4,
+    "deletions": 6,
+    "changes": 10,
+    "blob_url": "https://github.com/akto-api-security/tests-library/blob/cb86538edb81e3e264aaa27b6029e95bed2d6292/Broken-User-Authentication%2FUserEnumerationPasswordReset.yml",
+    "raw_url": "https://github.com/akto-api-security/tests-library/raw/cb86538edb81e3e264aaa27b6029e95bed2d6292/Broken-User-Authentication%2FUserEnumerationPasswordReset.yml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/tests-library/contents/Broken-User-Authentication%2FUserEnumerationPasswordReset.yml?ref=cb86538edb81e3e264aaa27b6029e95bed2d6292",
+    "patch": "@@ -24,7 +24,7 @@ info:\n     shortName: Broken Authentication\n     displayName: Broken User Authentication (BUA)\n   subCategory: USER_ENUM_PASSWORD_RESET\n-  severity: HIGH\n+  severity: MEDIUM\n   tags:\n     - Business logic\n     - OWASP top 10\n@@ -93,15 +93,13 @@ api_selection_filters:\n           key:\n             regex: \"^username$|^user$|^userid$|^user_id$|^login$|^login_id$|^email$|^account$|^account_id$|^member$|^member_id$|^id$|^user_name$|^uname$|^identifier$|^user_identifier$|^admin$|^nick$|^nickname$|^handle$|^alias$|^principal$|^profile$|^profile_id$|^name$|^signin$|^auth$|^credential$|^user_login$|^user_account$|^user_email$|^employee$|^employee_id$|^operator$|^customer_id$|^client_id$|^subscriber$|^subscriber_id$|^participant$|^participant_id$|^client_id$|^userLoginID$|^client-name$\"\n             extract: userKey\n+          value:\n+            regex: \"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\\\.[a-zA-Z]{2,}$\"\n     - request_payload:\n         for_one:\n           key:\n             regex: \"^password$|^pass$|^pwd$|^user_password$|^userpass$|^passwd$|^user_pwd$|^password1$|^userPass$|^login_password$|^loginpassword$|^user_pass$|^access_password$|^secret$|^user_secret$\"\n             extract: passKey\n-wordLists:\n-  dummyUsernames:\n-    - dummy\n-    - \"dummymail@dummy.com\"\n execute:\n   type: multiple\n   requests:\n@@ -124,7 +122,7 @@ execute:\n     - failure: exit\n   - req:\n     - modify_body_param:\n-        userKey: ${dummyUsernames}\n+        userKey: dummymail@dummy.com\n     - modify_body_param:\n         passKey: Default1!\n     - validate:"
+  },
+  {
+    "sha": "2d455c0dbd14517f00def789698c17943072e8aa",
+    "filename": "Broken-User-Authentication/UserEnumerationRegistrationProcess.yml",
+    "status": "modified",
+    "additions": 4,
+    "deletions": 6,
+    "changes": 10,
+    "blob_url": "https://github.com/akto-api-security/tests-library/blob/cb86538edb81e3e264aaa27b6029e95bed2d6292/Broken-User-Authentication%2FUserEnumerationRegistrationProcess.yml",
+    "raw_url": "https://github.com/akto-api-security/tests-library/raw/cb86538edb81e3e264aaa27b6029e95bed2d6292/Broken-User-Authentication%2FUserEnumerationRegistrationProcess.yml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/tests-library/contents/Broken-User-Authentication%2FUserEnumerationRegistrationProcess.yml?ref=cb86538edb81e3e264aaa27b6029e95bed2d6292",
+    "patch": "@@ -24,7 +24,7 @@ info:\n     shortName: Broken Authentication\n     displayName: Broken User Authentication (BUA)\n   subCategory: USER_ENUM_REGISTER\n-  severity: HIGH\n+  severity: MEDIUM\n   tags:\n     - Business logic\n     - OWASP top 10\n@@ -89,15 +89,13 @@ api_selection_filters:\n           key:\n             regex: \"^username$|^user$|^userid$|^user_id$|^login$|^login_id$|^email$|^account$|^account_id$|^member$|^member_id$|^user_name$|^uname$|^identifier$|^user_identifier$|^admin$|^nick$|^nickname$|^handle$|^alias$|^principal$|^profile$|^profile_id$|^name$|^signin$|^auth$|^credential$|^user_login$|^user_account$|^user_email$|^employee$|^employee_id$|^operator$|^customer_id$|^client_id$|^subscriber$|^subscriber_id$|^participant$|^participant_id$|^client_id$|^userLoginID$|^client-name$\"\n             extract: userKey\n+          value:\n+            regex: \"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\\\.[a-zA-Z]{2,}$\"\n     - request_payload:\n         for_one:\n           key:\n             regex: \"^password$|^pass$|^pwd$|^user_password$|^userpass$|^passwd$|^user_pwd$|^password1$|^userPass$|^login_password$|^loginpassword$|^user_pass$|^access_password$|^secret$|^user_secret$\"\n             extract: passKey\n-wordLists:\n-  dummyUsernames:\n-    - dummy\n-    - \"dummymail@dummy.com\"\n execute:\n   type: multiple\n   requests:\n@@ -120,7 +118,7 @@ execute:\n     - failure: exit\n   - req:\n     - modify_body_param:\n-        userKey: ${dummyUsernames}\n+        userKey: dummymail@dummy.com\n     - modify_body_param:\n         passKey: Default1!\n     - validate:"
+  },
+  {
+    "sha": "23078dfcf985c7b239c06312598ec0cb98529f86",
+    "filename": "Broken-User-Authentication/UserEnumerationResponseTime.yml",
+    "status": "modified",
+    "additions": 3,
+    "deletions": 1,
+    "changes": 4,
+    "blob_url": "https://github.com/akto-api-security/tests-library/blob/cb86538edb81e3e264aaa27b6029e95bed2d6292/Broken-User-Authentication%2FUserEnumerationResponseTime.yml",
+    "raw_url": "https://github.com/akto-api-security/tests-library/raw/cb86538edb81e3e264aaa27b6029e95bed2d6292/Broken-User-Authentication%2FUserEnumerationResponseTime.yml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/tests-library/contents/Broken-User-Authentication%2FUserEnumerationResponseTime.yml?ref=cb86538edb81e3e264aaa27b6029e95bed2d6292",
+    "patch": "@@ -26,7 +26,7 @@ info:\n     shortName: Broken Authentication\n     displayName: Broken User Authentication (BUA)\n   subCategory: USER_ENUM_RESPONSE_TIME\n-  severity: HIGH\n+  severity: MEDIUM\n   tags:\n     - Business logic\n     - OWASP top 10\n@@ -90,6 +90,8 @@ api_selection_filters:\n           key:\n             regex: \"^username$|^user$|^userid$|^user_id$|^login$|^login_id$|^email$|^account$|^account_id$|^member$|^member_id$|^id$|^user_name$|^uname$|^identifier$|^user_identifier$|^admin$|^nick$|^nickname$|^handle$|^alias$|^principal$|^profile$|^profile_id$|^name$|^signin$|^auth$|^credential$|^user_login$|^user_account$|^user_email$|^employee$|^employee_id$|^operator$|^customer_id$|^client_id$|^subscriber$|^subscriber_id$|^participant$|^participant_id$|^client_id$|^userLoginID$|^client-name$\"\n             extract: userKey\n+          value:\n+            regex: \"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\\\.[a-zA-Z]{2,}$\"\n     - request_payload:\n         for_one:\n           key:"
+  },
+  {
+    "sha": "8d18fb51ff258fae5e9819da925502b8a67e61d2",
+    "filename": "Broken-User-Authentication/UserEnumerationViaResponseCode.yml",
+    "status": "modified",
+    "additions": 4,
+    "deletions": 6,
+    "changes": 10,
+    "blob_url": "https://github.com/akto-api-security/tests-library/blob/cb86538edb81e3e264aaa27b6029e95bed2d6292/Broken-User-Authentication%2FUserEnumerationViaResponseCode.yml",
+    "raw_url": "https://github.com/akto-api-security/tests-library/raw/cb86538edb81e3e264aaa27b6029e95bed2d6292/Broken-User-Authentication%2FUserEnumerationViaResponseCode.yml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/tests-library/contents/Broken-User-Authentication%2FUserEnumerationViaResponseCode.yml?ref=cb86538edb81e3e264aaa27b6029e95bed2d6292",
+    "patch": "@@ -26,7 +26,7 @@ info:\n     shortName: Broken Authentication\n     displayName: Broken User Authentication (BUA)\n   subCategory: USER_ENUM_HTTP_CODES\n-  severity: HIGH\n+  severity: MEDIUM\n   tags:\n     - Business logic\n     - OWASP top 10\n@@ -89,15 +89,13 @@ api_selection_filters:\n           key:\n             regex: \"^username$|^user$|^userid$|^user_id$|^login$|^login_id$|^email$|^account$|^account_id$|^member$|^member_id$|^id$|^user_name$|^uname$|^identifier$|^user_identifier$|^admin$|^nick$|^nickname$|^handle$|^alias$|^principal$|^profile$|^profile_id$|^name$|^signin$|^auth$|^credential$|^user_login$|^user_account$|^user_email$|^employee$|^employee_id$|^operator$|^customer_id$|^client_id$|^subscriber$|^subscriber_id$|^participant$|^participant_id$|^client_id$|^userLoginID$|^client-name$\"\n             extract: userKey\n+          value:\n+            regex: \"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\\\.[a-zA-Z]{2,}$\"\n     - request_payload:\n         for_one:\n           key:\n             regex: \"^password$|^pass$|^pwd$|^user_password$|^userpass$|^passwd$|^user_pwd$|^password1$|^userPass$|^login_password$|^loginpassword$|^user_pass$|^access_password$|^secret$|^user_secret$\"\n             extract: passKey\n-wordLists:\n-  dummyUsernames:\n-    - dummy\n-    - \"dummymail@dummy.com\"\n execute:\n   type: multiple\n   requests:\n@@ -120,7 +118,7 @@ execute:\n     - failure: exit\n   - req:\n     - modify_body_param:\n-        email: ${dummyUsernames}\n+        email: dummymail@dummy.com\n         password: Default1!\n     - validate:\n         response_code:"
+  },
+  {
+    "sha": "25dab6a3fadd44915462f642070d094c2db33c7c",
+    "filename": "Broken-User-Authentication/UserEnumerationViaResponseContent.yml",
+    "status": "modified",
+    "additions": 4,
+    "deletions": 6,
+    "changes": 10,
+    "blob_url": "https://github.com/akto-api-security/tests-library/blob/cb86538edb81e3e264aaa27b6029e95bed2d6292/Broken-User-Authentication%2FUserEnumerationViaResponseContent.yml",
+    "raw_url": "https://github.com/akto-api-security/tests-library/raw/cb86538edb81e3e264aaa27b6029e95bed2d6292/Broken-User-Authentication%2FUserEnumerationViaResponseContent.yml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/tests-library/contents/Broken-User-Authentication%2FUserEnumerationViaResponseContent.yml?ref=cb86538edb81e3e264aaa27b6029e95bed2d6292",
+    "patch": "@@ -27,7 +27,7 @@ info:\n     shortName: Broken Authentication\n     displayName: Broken User Authentication (BUA)\n   subCategory: USER_ENUM_RESPONSE_CONTENT\n-  severity: HIGH\n+  severity: MEDIUM\n   tags:\n     - Business logic\n     - OWASP top 10\n@@ -90,15 +90,13 @@ api_selection_filters:\n           key:\n             regex: \"^username$|^user$|^userid$|^user_id$|^login$|^login_id$|^email$|^account$|^account_id$|^member$|^member_id$|^id$|^user_name$|^uname$|^identifier$|^user_identifier$|^admin$|^nick$|^nickname$|^handle$|^alias$|^principal$|^profile$|^profile_id$|^name$|^signin$|^auth$|^credential$|^user_login$|^user_account$|^user_email$|^employee$|^employee_id$|^operator$|^customer_id$|^client_id$|^subscriber$|^subscriber_id$|^participant$|^participant_id$|^client_id$|^userLoginID$|^client-name$\"\n             extract: userKey\n+          value:\n+            regex: \"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\\\.[a-zA-Z]{2,}$\"\n     - request_payload:\n         for_one:\n           key:\n             regex: \"^password$|^pass$|^pwd$|^user_password$|^userpass$|^passwd$|^user_pwd$|^password1$|^userPass$|^login_password$|^loginpassword$|^user_pass$|^access_password$|^secret$|^user_secret$\"\n             extract: passKey\n-wordLists:\n-  dummyUsernames:\n-    - dummy\n-    - \"dummymail@dummy.com\"\n execute:\n   type: multiple\n   requests:\n@@ -127,7 +125,7 @@ execute:\n     - failure: exit\n   - req:\n     - modify_body_param:\n-        userKey: ${dummyUsernames}\n+        userKey: \"dummymail@dummy.com\"\n     - modify_body_param:\n         passKey: Default1!\n     - validate:"
+  },
+  {
+    "sha": "9ea5158f9b2fef2a100701580b5af2bdc78653e1",
+    "filename": "Broken-User-Authentication/UsernameEnumerationCaptchaEndpoint.yml",
+    "status": "modified",
+    "additions": 4,
+    "deletions": 6,
+    "changes": 10,
+    "blob_url": "https://github.com/akto-api-security/tests-library/blob/cb86538edb81e3e264aaa27b6029e95bed2d6292/Broken-User-Authentication%2FUsernameEnumerationCaptchaEndpoint.yml",
+    "raw_url": "https://github.com/akto-api-security/tests-library/raw/cb86538edb81e3e264aaa27b6029e95bed2d6292/Broken-User-Authentication%2FUsernameEnumerationCaptchaEndpoint.yml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/tests-library/contents/Broken-User-Authentication%2FUsernameEnumerationCaptchaEndpoint.yml?ref=cb86538edb81e3e264aaa27b6029e95bed2d6292",
+    "patch": "@@ -26,7 +26,7 @@ info:\n     shortName: Broken Authentication\n     displayName: Broken User Authentication (BUA)\n   subCategory: USER_ENUM_INVALID_CAPTCHA\n-  severity: HIGH\n+  severity: MEDIUM\n   tags:\n     - Business logic\n     - OWASP top 10\n@@ -90,15 +90,13 @@ api_selection_filters:\n           key:\n             regex: \"^username$|^user$|^userid$|^user_id$|^login$|^login_id$|^email$|^account$|^account_id$|^member$|^member_id$|^id$|^user_name$|^uname$|^identifier$|^user_identifier$|^admin$|^nick$|^nickname$|^handle$|^alias$|^principal$|^profile$|^profile_id$|^name$|^signin$|^auth$|^credential$|^user_login$|^user_account$|^user_email$|^employee$|^employee_id$|^operator$|^customer_id$|^client_id$|^subscriber$|^subscriber_id$|^participant$|^participant_id$|^client_id$|^userLoginID$|^client-name$|^UserId$\"\n             extract: userKey\n+          value:\n+            regex: \"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\\\.[a-zA-Z]{2,}$\"\n     - request_payload:\n         for_one:\n           key:\n             regex: \"captcha\"\n             extract: captchaKey\n-wordLists:\n-  dummyUsernames:\n-    - dummy\n-    - \"dummymail@dummy.com\"\n execute:\n   type: multiple\n   requests:\n@@ -121,7 +119,7 @@ execute:\n     - failure: exit\n   - req:\n     - modify_body_param:\n-        userKey: ${dummyUsernames}\n+        userKey: dummymail@dummy.com\n         captchaKey: \"0000\"\n     - validate:\n         response_payload:"
+  },
+  {
+    "sha": "a32e3c372f32519201cfcaf209c543f12196090b",
+    "filename": "Broken-User-Authentication/UsernameEnumerationRedirectPageAnalysis.yml",
+    "status": "modified",
+    "additions": 4,
+    "deletions": 6,
+    "changes": 10,
+    "blob_url": "https://github.com/akto-api-security/tests-library/blob/cb86538edb81e3e264aaa27b6029e95bed2d6292/Broken-User-Authentication%2FUsernameEnumerationRedirectPageAnalysis.yml",
+    "raw_url": "https://github.com/akto-api-security/tests-library/raw/cb86538edb81e3e264aaa27b6029e95bed2d6292/Broken-User-Authentication%2FUsernameEnumerationRedirectPageAnalysis.yml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/tests-library/contents/Broken-User-Authentication%2FUsernameEnumerationRedirectPageAnalysis.yml?ref=cb86538edb81e3e264aaa27b6029e95bed2d6292",
+    "patch": "@@ -29,7 +29,7 @@ info:\n     shortName: Broken Authentication\n     displayName: Broken User Authentication (BUA)\n   subCategory: USER_ENUM_REDIRECT_PAGE\n-  severity: HIGH\n+  severity: MEDIUM\n   tags:\n     - Business logic\n     - OWASP top 10\n@@ -92,15 +92,13 @@ api_selection_filters:\n           key:\n             regex: \"^username$|^user$|^userid$|^user_id$|^login$|^login_id$|^email$|^account$|^account_id$|^member$|^member_id$|^id$|^user_name$|^uname$|^identifier$|^user_identifier$|^admin$|^nick$|^nickname$|^handle$|^alias$|^principal$|^profile$|^profile_id$|^name$|^signin$|^auth$|^credential$|^user_login$|^user_account$|^user_email$|^employee$|^employee_id$|^operator$|^customer_id$|^client_id$|^subscriber$|^subscriber_id$|^participant$|^participant_id$|^client_id$|^userLoginID$|^client-name$\"\n             extract: userKey\n+          value:\n+            regex: \"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\\\.[a-zA-Z]{2,}$\"  \n     - request_payload:\n         for_one:\n           key:\n             regex: \"^password$|^pass$|^pwd$|^user_password$|^userpass$|^passwd$|^user_pwd$|^password1$|^userPass$|^login_password$|^loginpassword$|^user_pass$|^access_password$|^secret$|^user_secret$\"\n             extract: passKey\n-wordLists:\n-  dummyUsernames:\n-    - dummy\n-    - \"dummymail@dummy.com\"\n execute:\n   type: multiple\n   requests:\n@@ -128,7 +126,7 @@ execute:\n     - failure: exit\n   - req:\n     - modify_body_param:\n-        userKey: ${dummyUsernames}\n+        userKey: dummymail@dummy.com\n     - modify_body_param:\n         passKey: Default1!\n     - modify_url:"
+  }
+]

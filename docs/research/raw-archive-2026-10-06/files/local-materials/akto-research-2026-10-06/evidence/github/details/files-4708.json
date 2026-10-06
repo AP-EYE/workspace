@@ -1,0 +1,14 @@
+[
+  {
+    "sha": "c503e7a194eda4b66a465864eb46cdc0acc267ba",
+    "filename": "apps/threat-detection-backend/src/main/java/com/akto/threat/backend/service/MaliciousEventService.java",
+    "status": "modified",
+    "additions": 4,
+    "deletions": 3,
+    "changes": 7,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/bdcede0aef194ccff9ce5b5ff5fcc05476dc2b32/apps%2Fthreat-detection-backend%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fthreat%2Fbackend%2Fservice%2FMaliciousEventService.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/bdcede0aef194ccff9ce5b5ff5fcc05476dc2b32/apps%2Fthreat-detection-backend%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fthreat%2Fbackend%2Fservice%2FMaliciousEventService.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fthreat-detection-backend%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fthreat%2Fbackend%2Fservice%2FMaliciousEventService.java?ref=bdcede0aef194ccff9ce5b5ff5fcc05476dc2b32",
+    "patch": "@@ -48,7 +48,7 @@ public class MaliciousEventService {\n   private static final LoggerMaker logger = new LoggerMaker(MaliciousEventService.class);\n \n   private static final HashMap<String, Boolean> shouldNotCreateIndexes = new HashMap<>();\n-  private static final List<String> IGNORED_POLICIES_FOR_ACCOUNT = Arrays.asList(\"WeakOrMissingAuth\", \"PIIDataLeak\");\n+  private static final List<String> IGNORED_POLICIES_FOR_ACCOUNT = Arrays.asList(\"SQLInjection\");\n \n   private static final boolean USE_ACTOR_INFO_TABLE = Boolean.parseBoolean(\n       System.getenv().getOrDefault(\"USE_ACTOR_INFO_TABLE\", \"false\")\n@@ -125,8 +125,9 @@ public void recordMaliciousEvent(String accountId, RecordMaliciousEventRequest r\n \n     MaliciousEventDto.Builder builder = MaliciousEventDto.newBuilder();\n     String severity = evt.getSeverity();\n-    // Skip recording for specific policies on specific account\n-    if(\"1763355072\".equals(accountId)){\n+    // Skip recording for specific policies on specific account.\n+    // TODO: Remove once policy is fixed.\n+    if(\"1758787662\".equals(accountId)){\n       if (IGNORED_POLICIES_FOR_ACCOUNT.contains(filterId)) {\n         return;\n       }"
+  }
+]

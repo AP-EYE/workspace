@@ -1,0 +1,14 @@
+[
+  {
+    "sha": "7ac88634c760d781907e98677be72715685d0d87",
+    "filename": "apps/api-runtime/src/main/java/com/akto/utils/RedactSampleData.java",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 1,
+    "changes": 2,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/09e53319a18c224fc431c4b0b46e7156a43590fa/apps%2Fapi-runtime%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Futils%2FRedactSampleData.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/09e53319a18c224fc431c4b0b46e7156a43590fa/apps%2Fapi-runtime%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Futils%2FRedactSampleData.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fapi-runtime%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Futils%2FRedactSampleData.java?ref=09e53319a18c224fc431c4b0b46e7156a43590fa",
+    "patch": "@@ -41,7 +41,7 @@ public static String redactIfRequired(String sample, boolean accountLevelRedact,\n         HttpResponseParams httpResponseParams = HttpCallParser.parseKafkaMessage(sample);\n         HttpResponseParams.Source source = httpResponseParams.getSource();\n         if(source.equals(HttpResponseParams.Source.PCAP)) return sample;\n-        return redact(httpResponseParams, (accountLevelRedact && !source.equals(HttpResponseParams.Source.HAR)) || apiCollectionLevelRedact);\n+        return redact(httpResponseParams, (accountLevelRedact && !source.equals(HttpResponseParams.Source.HAR) && !source.equals(HttpResponseParams.Source.BURP)) || apiCollectionLevelRedact);\n     }\n \n     public static String redactDataTypes(String sample) throws Exception{"
+  }
+]

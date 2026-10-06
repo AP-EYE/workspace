@@ -1,0 +1,21 @@
+{
+  "splits": [
+    {
+      "dataset": "woohyun212/k-pii-bench",
+      "config": "default",
+      "split": "train"
+    },
+    {
+      "dataset": "woohyun212/k-pii-bench",
+      "config": "default",
+      "split": "dev"
+    },
+    {
+      "dataset": "woohyun212/k-pii-bench",
+      "config": "default",
+      "split": "test_track_a"
+    }
+  ],
+  "pending": [],
+  "failed": []
+}

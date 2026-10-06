@@ -1,0 +1,14 @@
+[
+  {
+    "sha": "973617191095ef5e39a34cdbb7515ecd458adf9b",
+    "filename": "pii-types/fintech.json",
+    "status": "modified",
+    "additions": 2,
+    "deletions": 1,
+    "changes": 3,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/a0759b5187f11be4c5020987f51aa20e3a347312/pii-types%2Ffintech.json",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/a0759b5187f11be4c5020987f51aa20e3a347312/pii-types%2Ffintech.json",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/pii-types%2Ffintech.json?ref=a0759b5187f11be4c5020987f51aa20e3a347312",
+    "patch": "@@ -1,5 +1,6 @@\n {\n     \"types\": [\n-        {\"name\": \"PAN CARD\", \"regexPattern\" : \"[A-Z]{5}[0-9]{4}[A-Z]{1}\", \"sensitive\":false, \"onKey\": false, \"active\" : false}\n+        {\"name\": \"PAN CARD\", \"regexPattern\" : \"[A-Z]{5}[0-9]{4}[A-Z]{1}\", \"sensitive\":false, \"onKey\": false, \"active\" : false},\n+        {\"name\": \"Google Ad Cookie\", \"regexPattern\": \"^_{1,}g[a-z]{2,}_{0,2}[a-z]{0,2}\", \"sensitive\":false, \"onKey\": false, \"active\": false},        \n     ]\n }"
+  }
+]

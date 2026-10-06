@@ -1,0 +1,26 @@
+[
+  {
+    "sha": "a7fd1990867a3bec35557b02ea3775a60340a505",
+    "filename": "apps/dashboard/src/main/java/com/akto/action/AktoJaxAction.java",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 1,
+    "changes": 2,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/2ad751f46e366d925b77287b1976d00308fe3e16/apps%2Fdashboard%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Faction%2FAktoJaxAction.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/2ad751f46e366d925b77287b1976d00308fe3e16/apps%2Fdashboard%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Faction%2FAktoJaxAction.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Faction%2FAktoJaxAction.java?ref=2ad751f46e366d925b77287b1976d00308fe3e16",
+    "patch": "@@ -300,7 +300,7 @@ public String initiateCrawler() {\n \n     private void initiateInternalCrawl(String crawlId, String hostname, String username,\n                                      String password, String apiKey, String dashboardUrl,\n-                                     int collectionId, Object cookies, int crawlingTime,\n+                                     int collectionId, String cookies, int crawlingTime,\n                                      String outscopeUrls, boolean runTestAfterCrawling,\n                                      String urlTemplatePatterns, String applicationPages) throws Exception {\n         String url = System.getenv(\"AKTOJAX_SERVICE_URL\") + \"/triggerCrawler\";"
+  },
+  {
+    "sha": "4a5f266eff460920f7e1ee2085641d8998bd84f9",
+    "filename": "libs/dao/src/main/java/com/akto/dto/CrawlerRun.java",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 1,
+    "changes": 2,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/2ad751f46e366d925b77287b1976d00308fe3e16/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2FCrawlerRun.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/2ad751f46e366d925b77287b1976d00308fe3e16/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2FCrawlerRun.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2FCrawlerRun.java?ref=2ad751f46e366d925b77287b1976d00308fe3e16",
+    "patch": "@@ -61,7 +61,7 @@ public class CrawlerRun {\n     private String errorMessage;\n \n     public static final String COOKIES = \"cookies\";\n-    private Object cookies;\n+    private String cookies;\n \n     public static final String CRAWLING_TIME = \"crawlingTime\";\n     private Integer crawlingTime;"
+  }
+]

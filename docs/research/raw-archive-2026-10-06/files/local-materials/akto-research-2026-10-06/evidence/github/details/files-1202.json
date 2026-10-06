@@ -1,0 +1,62 @@
+[
+  {
+    "sha": "6e2b6ed7f24c9391773ccece47e8e2198421f87e",
+    "filename": ".github/workflows/prod.yml",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 0,
+    "changes": 1,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/132be3382bfb98f8667d71659c28309b5f7b42f9/.github%2Fworkflows%2Fprod.yml",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/132be3382bfb98f8667d71659c28309b5f7b42f9/.github%2Fworkflows%2Fprod.yml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/.github%2Fworkflows%2Fprod.yml?ref=132be3382bfb98f8667d71659c28309b5f7b42f9",
+    "patch": "@@ -34,6 +34,7 @@ jobs:\n           wget -O general.json https://raw.githubusercontent.com/akto-api-security/pii-types/master/general.json\n           wget -O fintech.json https://raw.githubusercontent.com/akto-api-security/akto/master/pii-types/fintech.json\n           wget -O filetypes.json https://raw.githubusercontent.com/akto-api-security/akto/master/pii-types/filetypes.json\n+          wget -O automated_api_groups.csv https://raw.githubusercontent.com/akto-api-security/akto/master/automated-api-groups/automated-api-groups.csv\n \n       - name: Prepare Dashboard polaris UI\n         working-directory: ./apps/dashboard/web/polaris_web"
+  },
+  {
+    "sha": "62c82f2d96defefde27ecfbe08d4fc2bf36b8d8c",
+    "filename": "apps/dashboard/src/main/java/com/akto/listener/InitializerListener.java",
+    "status": "modified",
+    "additions": 3,
+    "deletions": 3,
+    "changes": 6,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/132be3382bfb98f8667d71659c28309b5f7b42f9/apps%2Fdashboard%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Flistener%2FInitializerListener.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/132be3382bfb98f8667d71659c28309b5f7b42f9/apps%2Fdashboard%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Flistener%2FInitializerListener.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Flistener%2FInitializerListener.java?ref=132be3382bfb98f8667d71659c28309b5f7b42f9",
+    "patch": "@@ -1227,7 +1227,7 @@ public static void setApiCollectionAutomatedField(BackwardCompatibility backward\n     public static void createAutomatedAPIGroups(BackwardCompatibility backwardCompatibility) {\n         if (backwardCompatibility.getAutomatedApiGroups() == 0) {\n             // Fetch automated API groups csv records\n-            List<CSVRecord> apiGroupRecords = AutomatedApiGroupsUtils.fetchGroups(false);\n+            List<CSVRecord> apiGroupRecords = AutomatedApiGroupsUtils.fetchGroups();\n \n             if (apiGroupRecords != null) {\n                 AutomatedApiGroupsUtils.processAutomatedGroups(apiGroupRecords);\n@@ -2483,7 +2483,7 @@ private static List<String> convertStreamToListString(InputStream in) throws Exc\n         return files;\n     }\n \n-    private static String convertStreamToString(InputStream in) throws Exception {\n+    public static String convertStreamToString(InputStream in) throws Exception {\n \n         BufferedReader reader = new BufferedReader(new InputStreamReader(in));\n         StringBuilder stringbuilder = new StringBuilder();\n@@ -2596,7 +2596,7 @@ public void run() {\n                 loggerMaker.infoAndAddToDb(\"Cron for updating automated API groups picked up.\", LogDb.DASHBOARD);\n \n                 // Fetch automated API groups csv records\n-                List<CSVRecord> apiGroupRecords = AutomatedApiGroupsUtils.fetchGroups(true);\n+                List<CSVRecord> apiGroupRecords = AutomatedApiGroupsUtils.fetchGroups();\n \n                 if (apiGroupRecords == null) {\n                     return;"
+  },
+  {
+    "sha": "6ba161704a89eb166df94184d1937ed1017db00d",
+    "filename": "apps/dashboard/src/main/java/com/akto/utils/AutomatedApiGroupsUtils.java",
+    "status": "modified",
+    "additions": 8,
+    "deletions": 11,
+    "changes": 19,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/132be3382bfb98f8667d71659c28309b5f7b42f9/apps%2Fdashboard%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Futils%2FAutomatedApiGroupsUtils.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/132be3382bfb98f8667d71659c28309b5f7b42f9/apps%2Fdashboard%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Futils%2FAutomatedApiGroupsUtils.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Futils%2FAutomatedApiGroupsUtils.java?ref=132be3382bfb98f8667d71659c28309b5f7b42f9",
+    "patch": "@@ -14,6 +14,7 @@\n import java.util.concurrent.ExecutorService;\n import java.util.concurrent.Executors;\n \n+import com.akto.listener.InitializerListener;\n import org.apache.commons.csv.CSVFormat;\n import org.apache.commons.csv.CSVParser;\n import org.apache.commons.csv.CSVRecord;\n@@ -49,22 +50,18 @@ public class AutomatedApiGroupsUtils {\n     public static final int UPDATE_BATCH_SIZE = 100;\n     public static final int DELETE_BATCH_SIZE = 100;\n \n-    public static List<CSVRecord> fetchGroups(Boolean updateGroups) {\n+    public static List<CSVRecord> fetchGroups() {\n         GithubSync githubSync = new GithubSync();\n         GithubFile githubFile = githubSync.syncFile(\"akto-api-security/akto\",\"automated-api-groups/automated-api-groups.csv\", null, null);\n         String groupsCsvContent = null;\n \n         if (githubFile == null) {\n-            if (!updateGroups) {\n-                // Use the local file as a fallback only for the initial creation of the automated groups\n-                try {\n-                    String resourceName = \"automated-api-groups/automated-api-groups.csv\";\n-                    byte[] fileBytes = Files.readAllBytes(Paths.get(resourceName));\n-                    String fileContent = new String(fileBytes, StandardCharsets.UTF_8);\n-                    groupsCsvContent = fileContent;\n-                } catch (Exception ex) {\n-                    loggerMaker.errorAndAddToDb(ex, String.format(\"Error while loading automated groups csv file. Error: %s\", ex.getMessage()), LogDb.DASHBOARD);\n-                }\n+            // Use the local file as a fallback only for the initial creation of the automated groups\n+            try {\n+                String resourceName = \"automated-api-groups.csv\";\n+                groupsCsvContent = InitializerListener.convertStreamToString(InitializerListener.class.getResourceAsStream(\"/\" + resourceName));\n+            } catch (Exception ex) {\n+                loggerMaker.errorAndAddToDb(ex, String.format(\"Error while loading automated groups csv file. Error: %s\", ex.getMessage()), LogDb.DASHBOARD);\n             }\n         } else {\n             groupsCsvContent = githubFile.getContent();"
+  },
+  {
+    "sha": "803ebd4e98e6946d0620db0899425217194709ac",
+    "filename": "apps/dashboard/web/polaris_web/web/src/apps/dashboard/components/CollectionComponent.jsx",
+    "status": "modified",
+    "additions": 21,
+    "deletions": 2,
+    "changes": 23,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/132be3382bfb98f8667d71659c28309b5f7b42f9/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fcomponents%2FCollectionComponent.jsx",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/132be3382bfb98f8667d71659c28309b5f7b42f9/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fcomponents%2FCollectionComponent.jsx",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fcomponents%2FCollectionComponent.jsx?ref=132be3382bfb98f8667d71659c28309b5f7b42f9",
+    "patch": "@@ -1,4 +1,4 @@\n-import { Button } from '@shopify/polaris';\n+import { Button, TextField } from '@shopify/polaris';\n import { DeleteMinor } from \"@shopify/polaris-icons\"\n import React, { useState, useEffect } from 'react'\n import DropdownSearch from './shared/DropdownSearch';\n@@ -24,6 +24,7 @@ function CollectionComponent(props) {\n \n     const { condition, index, dispatch, operatorComponent } = props\n     const [apiEndpoints, setApiEndpoints] = useState({})\n+    const [regexText, setRegexText] = useState('')\n \n     useEffect(() => {\n         fetchApiEndpoints(condition.data)\n@@ -141,6 +142,10 @@ function CollectionComponent(props) {\n                 return {}\n             case \"METHOD\":\n                 return {method:\"GET\"}\n+            case \"REGEX\":\n+                return {}\n+            default:\n+                return {}\n         }\n     }\n \n@@ -154,14 +159,24 @@ function CollectionComponent(props) {\n             {\n                 label: 'Method',\n                 value: 'METHOD'\n-            }]}\n+            },\n+            {\n+                label: 'Matches regex',\n+                value: 'REGEX'\n+            },\n+        ]}\n             initial={condition.type}\n             selected={(value) => {\n                 dispatch({ type: \"overwrite\", index: index, key: \"data\", obj: getDefaultValues(value) })\n                 dispatch({ type: \"updateKey\", index: index, key: \"type\", obj: value })\n             }} />\n     )\n \n+    const handleRegexText = (val) => {\n+        setRegexText(val)\n+        dispatch({ type: \"overwrite\", index: index, key: \"data\", obj: {\"regex\":val } })\n+    }\n+\n     const component = (condition, index) => {\n         switch (condition.type) {\n             case \"CUSTOM\":\n@@ -178,6 +193,10 @@ function CollectionComponent(props) {\n                             dispatch({ type: \"update\", index: index, key: \"data\", obj: { \"method\": value } })\n                         }} />\n                 </>;\n+            case \"REGEX\":\n+                return(\n+                    <TextField onChange={(val) => handleRegexText(val)} value={regexText} />\n+                )\n             default: break;\n         }\n     }"
+  },
+  {
+    "sha": "f5527084d1d5fd823a7268b8c3511acc9b5fa633",
+    "filename": "libs/dao/src/main/java/com/akto/dto/testing/TestingEndpoints.java",
+    "status": "modified",
+    "additions": 2,
+    "deletions": 0,
+    "changes": 2,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/132be3382bfb98f8667d71659c28309b5f7b42f9/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2Ftesting%2FTestingEndpoints.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/132be3382bfb98f8667d71659c28309b5f7b42f9/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2Ftesting%2FTestingEndpoints.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2Ftesting%2FTestingEndpoints.java?ref=132be3382bfb98f8667d71659c28309b5f7b42f9",
+    "patch": "@@ -76,6 +76,8 @@ public static TestingEndpoints generateCondition(Type type, Operator operator, B\n                 case METHOD:\n                     condition = new MethodCondition(operator, Method.valueOf(data.getString(\"method\")));\n                     break;\n+                case REGEX:\n+                    condition = new RegexTestingEndpoints(operator, data.getString(\"regex\"));\n                 default:\n                     break;\n             }"
+  }
+]

@@ -1,0 +1,278 @@
+=== TITLE + ABSTRACT ===
+BACFuzz: Exposing the Silence on Broken Access Control
+Vulnerabilities in Web Applications
+I Putu Arya Dharmaadi
+University of Groningen
+Groningen, Netherlands
+arya.dharmaadi@rug.nl
+Mohannad Alhanahnah
+Chalmers University
+Gothenburg, Sweden
+mohannad.alhanahnah@chalmers.se
+Van-Thuan Pham
+The University of Melbourne
+Melbourne, Australia
+thuan.pham@unimelb.edu.au
+Fadi Mohsen
+University of Groningen
+Groningen, Netherlands
+f.f.m.mohsen@rug.nl
+Fatih Turkmen
+University of Groningen
+Groningen, Netherlands
+f.turkmen@rug.nl
+Abstract
+Broken Access Control (BAC) remains one of the most critical and
+widespread vulnerabilities in web applications, allowing attackers
+to access unauthorized resources or perform privileged actions.
+Despite its severity, BAC is underexplored in automated testing due
+to key challenges: the lack of reliable oracles and the difficulty of
+generating semantically valid attack requests. We introduce BAC-
+Fuzz, the first gray-box fuzzing framework specifically designed to
+uncover BAC vulnerabilities, including Broken Object-Level Autho-
+rization (BOLA) and Broken Function-Level Authorization (BFLA)
+in PHP-based web applications. BACFuzz combines LLM-guided
+parameter selection with runtime feedback and SQL-based oracle
+checking to detect silent authorization flaws. It employs lightweight
+instrumentation to capture runtime information that guides test
+generation, and analyzes backend SQL queries to verify whether
+unauthorized inputs flow into protected operations. Evaluated on 20
+real-world web applications, including 15 CVE cases and 2 known
+benchmarks, BACFuzz detects 16 of 17 known issues and uncovers
+26 previously unknown BAC vulnerabilities with low false positive
+rates. All identified issues have been responsibly disclosed, and
+artifacts will be publicly released.
+CCS Concepts
+• Security and privacy→ Access control; • Software and its
+engineering→ Software testing and debugging .
+Keywords
+Broken Access Control, Web, Grey-box Fuzzing, LLM, SQL, PHP
+ACM Reference Format:
+I Putu Arya Dharmaadi, Mohannad Alhanahnah, Van-Thuan Pham, Fadi
+Mohsen, and Fatih Turkmen. 2025. BACFuzz: Exposing the Silence on
+Broken Access Control Vulnerabilities in Web Applications. In Proceedings
+Permission to make digital or hard copies of all or part of this work for personal or
+classroom use is granted without fee provided that copies are not made or distributed
+for profit or commercial advantage and that copies bear this notice and the full citation
+on the first page. Copyrights for components of this work owned by others than the
+author(s) must be honored. Abstracting with credit is permitted. To copy otherwise, or
+republish, to post on servers or to redistribute to lists, requires prior specific permission
+and/or a fee. Request permissions from permissions@acm.org.
+Under peer-review, US
+© 2025 Copyright held by the owner/author(s). Publication rights licensed to ACM.
+ACM ISBN 978-x-xxxx-xxxx-x/YYYY/MM
+https://doi.org/XXXXXXX.XXXXXXX
+of XXX (Under peer-review). ACM, New York, NY, USA, 12 pages. https:
+//doi.org/XXXXXXX.XXXXXXX
+
+=== INTRODUCTION ===
+
+1 Introduction
+The widespread adoption of web applications has brought associ-
+ated security risks to the forefront, drawing significant attention
+from both academia and industry. To address these risks, OWASP
+has published two influential guides: the OWASP Top 10 Web Ap-
+plication Security Risks [29] and the OWASP API Security Top 10
+[28]. Last updated in 2023, both documents identify Broken Access
+Control (BAC) as the most prevalent and critical security flaw.
+BAC enables attackers to access unauthorized functionality or
+data—often resulting in vertical privilege escalation [ 35]. For ex-
+ample, a regular user might overwrite an administrator’s email
+address or invoke privileged actions such as deleting user accounts.
+Several recent high-impact incidents involving BAC vulnerabilities
+(see Section 2.2) underscore the urgency of robust access control
+testing.
+While OWASP provides guidelines for testing access control [30],
+automated tools capable of doing so with minimal human effort
+remain lacking. Manual analysis is labor-intensive and difficult to
+scale for complex applications [19], and most existing fuzzers pri-
+marily target crash-inducing bugs [3, 50]. Recent surveys [9, 11, 48]
+confirm that fuzzing research rarely addresses logical vulnerabilities
+such as BAC.
+Our analysis of BAC characteristics (see Section 3) identifies two
+main challenges that hinder fuzzing for BAC. First, designing a
+test oracle—i.e., determining whether a request triggers a vulner-
+ability—is difficult because BAC violations typically do not cause
+crashes or produce explicit error messages. Detecting such silent
+flaws often requires deep domain knowledge, as seen in recent
+research on SQL injection [44], excessive data exposure [33], and
+DNS resolver bugs [49]. Heuristics based on HTTP response codes
+or messages are often unreliable due to ambiguous or generic server
+feedback. Second, API requests often include many parameters with
+diverse data types and dependencies, resulting in a vast search space.
+Generating inputs that are both valid and semantically meaningful
+is non-trivial, as malformed requests are usually rejected.
+To address the oracle challenge, we draw inspiration from prior
+work on injection flaws [44]. Once a request is accepted, the database-
+backed web application typically parses it, performs validation and
+authorization checks, and then constructs backend SQL queries. If
+arXiv:2507.15984v1  [cs.CR]  21 Jul 2025
+Under peer-review, June xx–xx, 2025, US Dharmaadi et al.
+a mutated input value appears in a resulting query, it suggests that
+some validation—potentially an authorization check—was bypassed.
+While this is a necessary condition for BAC, sufficiency depends on
+the context; for example, in Broken Function Level Authorization
+(BFLA) cases, the operation may not even be visible in the current
+user’s interface. Based on this insight, we define a set of rules to
+reliably detect BAC violations (see Section 4.3).
+To address the input generation challenge, we focus on the
+two most common BAC types: Broken Object Level Authorization
+(BOLA) and Broken Function Level Authorization (BFLA). Rather
+than mutating all parameters equally, we target those referencing
+protected objects or functionalities—i.e., those likely to reveal privi-
+lege differences between users. We collect traffic from users with
+different roles, label the requests, and leverage Large Language Mod-
+els (LLMs) to identify semantically important parameters. LLMs
+are well-suited to this task due to their reasoning capabilities and
+ability to understand structured data. This significantly reduces the
+mutation space while preserving request validity.
+Building on these ideas, we present BACFuzz, the first auto-
+mated fuzzing tool specifically designed to detect BAC vulnera-
+bilities in PHP-based web applications. BACFuzz uses a grey-box
+fuzzing approach, leveraging runtime feedback collected via light-
+weight code instrumentation—a method widely regarded as effec-
+tive and scalable in modern fuzzing [20]. Our instrumentation uses
+function hooking techniques to monitor original PHP functions
+related to SQL queries, enabling precise feedback and oracle valida-
+tion.
+We evaluate BACFuzz on 20 PHP-based Web Under Test (WUT)
+applications. It successfully reproduces 16 of 17 known BAC issues
+and uncovers 26 previously unknown vulnerabilities, all of which
+have been responsibly disclosed. While instrumentation introduces
+minimal overhead, it enables the generation of semantically valid,
+high-coverage test cases—frequently bypassing 4xx response rejec-
+tions. Our results demonstrate that BACFuzz is effective, scalable,
+and practical for uncovering BAC vulnerabilities in real-world ap-
+plications.
+In summary, this paper makes the following contributions:
+(1) Novel Approach: We propose the first grey-box fuzzing method
+specifically designed to automatically detect object- and function-
+level BAC vulnerabilities in web applications.
+(2) New Exploitation Strategy: We introduce an active checker
+module that applies advanced grey-box fuzzing techniques, in-
+cluding LLM-guided parameter analysis and reference mutation,
+to exploit captured HTTP requests.
+(3) Novel Oracle Verification: We develop a verification module
+that inspects SQL queries issued by the application. If mutated
+inputs appear in these queries and vulnerability type-specific
+conditions are met, we confirm that the target object or function
+is vulnerable.
+(4) New BAC Vulnerability Dataset : We curate and release a
+dataset of web applications with known CVE-reported BAC
+vulnerabilities, addressing the lack of existing benchmarks for
+BAC detection tools.
+POST /wp-admin/admin-ajax.php HTTP/1.1
+Host: example.com
+Content-Type: application/x-www-form-urlencoded
+action=wcfm_ajax_controller&controller=wcfm-customers-
+manage&..............................................customer_id=1......................................
+Figure 1: An HTTP Request exploiting CVE-2024-8290. Nor-
+mally, the script on the web client sets the customer_id pa-
+rameter to have a default value of 0, meaning the creation
+of a new customer. Arbitrarily changing the value to 1 leads
+the submitted data to replace the original data of a user with
+the ID of 1.
+
+=== CONCLUSION / DISCUSSION / LIMITATIONS ===
+
+7 Threats to Validity
+While this study demonstrates the effectiveness of BACFuzz in
+revealing BAC vulnerabilities, some threats to validity must be
+considered when interpreting the results.
+Internal Validity. The internal threat arises from how large
+WUTs, such as SMF, WordPress, and PrestaShop, handle logging, as
+they store extensive runtime events in dedicated log tables. These
+log tables commonly record errors and unauthorized access at-
+tempts, making SQL queries mostly match the submitted requests.
+Therefore, it is suggested to exclude this kind of table that always
+stores all submitted requests. To make the fuzzer only report valid
+vulnerabilities, the fuzzer user should put these ignored tables in the
+BACFuzz configuration. These ignored tables are crucial to main-
+taining the report’s precision. In our experiment, we exclude tables
+of smf_log (CVE-2024-7437 and CVE-2024-7438) and ps_connections
+(CVE-2023-43663) from the fuzzer observation. While this filtering
+step improves the precision of our results, it also introduces a slight
+dependency on user knowledge of the WUT.
+Construct Validity. The construct validity threat comes from
+our BAC dataset. While additional related CVEs may exist beyond
+our collection, we believe the selected cases are sufficiently di-
+verse to support the design of our fuzzer. The dataset covers a
+wide range of BAC patterns and application behaviours, making
+it a representative basis for guiding and evaluating our design.
+Nonetheless, our collection methodology may introduce bias to-
+ward well-documented or easily reproducible vulnerabilities, which
+may not capture all real-world scenarios.
+8 Related Work
+We identified some prior works related to BACFuzz, especially in
+the web fuzzing domain and the access control testing domain.
+First, there are some state-of-the-art web fuzzers, such asEvoMas-
+ter [1], Restler [2], RestTestGen [46], bBOXRT [17], and RESTest [22],
+which work effectively in triggering web crashes. However, they
+cannot reveal BAC problems because the characteristics between
+crash and BAC are very different. There are also vulnerability-
+driven fuzzers which focus more on non-crash vulnerabilities, like
+Witcher [44], EDEFuzz [33], ResolverFuzz [49], and Atropos [12];
+however, they are not revealing BAC.
+Second, there are some recent works on access control testing.
+Rennhard et al. [38] and Kushnir et al. [16] developed practical solu-
+tions to automatically detect BAC on web applications. Since their
+works are limited by manipulating GET requests only, performed
+in a black-box setup, and comparing web responses for vulnerabil-
+ity verification, these are different from our work. Our proposed
+fuzzer manipulates more attack vectors, works in a grey-box setting
+with more advanced techniques, and uses SQL queries to verify the
+vulnerability. The work of Sun et al. [43] used static analysis for vul-
+nerability detection; however, it only works well for traditional web
+applications that are not AJAX-heavy. Our work uses a dynamic
+testing setup that catches HTTP requests, rather than observing
+HTML links, thus it can handle modern web applications. As men-
+tioned in Section 6.2, existing work based on static analysis [ 13]
+requires manual creation of test files, making it less practical than
+our work. Lastly, the work of Kim et al. [15] investigates parameter
+tampering on the web; however, they highly rely on human inter-
+vention to decide whether tampering is successful in altering the
+business process. Our fuzzer uses automatic verification through
+query checking, making much less human involvement.
+In the domain of vulnerability scanners, there are two widely
+used tools: OWASP ZAP [32] and Burp Suite [36], which operate in
+a black-box setting to detect various security issues, including BAC.
+However, their access control testing is not fully automated. Users
+are required to manually configure an access control list (ACL)
+defining which functions should be allowed/denied for specific
+users. This setup process is both time-consuming and challenging.
+Furthermore, those tools do not support object-level access control
+testing and rely solely on web responses to verify ACL violations.
+As discussed in Section 3.2, this verification method is often insuf-
+ficient for accurately identifying authorization flaws. To address
+these limitations, our work introduces automated approaches that
+eliminate the need for predefined ACLs and accurately verify BAC.
+9 Conclusion and Future Work
+Broken Access Control (BAC) vulnerabilities remain pervasive in
+web applications, yet pose unique challenges for automated detec-
+tion due to the lack of reliable oracles and the difficulty of gener-
+ating semantically valid attack inputs. In this paper, we presented
+BACFuzz, a grey-box fuzzing framework specifically designed to
+uncover BAC vulnerabilities—including BOLA and BFLA—by com-
+bining hierarchical role analysis, reference mutation, and SQL-based
+oracle checking. Empirical evaluation across 20 real-world PHP ap-
+plications demonstrates that BACFuzz effectively detects 16 of 17
+known issues and uncovers 26 previously unknown vulnerabilities,
+all with low false positive rates. By releasing the source code and
+curated evaluation dataset, we aim to foster further research on
+BAC vulnerabilities and support the development of more secure
+web applications.
+BACFuzz: Exposing the Silence on Broken Access Control Vulnerabilities in Web Applications Under peer-review, June xx–xx, 2025, US
+As acknowledged in Section 3.3, there are some types of BAC
+that fall outside the scope of this work and represent directions
+for future exploration. First, we identified context-dependent BAC,
+which refers to vulnerabilities that only manifest after a user per-
+forms specific actions, causing a WUT to enter a certain state. These
+cases require preconditions (e.g., resource creation or feature acti-
+vation) before unauthorized access becomes observable. Second, we
+identified passive or view-type BAC, which allows unauthorized
+users to gain access to sensitive information without modifying
+any data in the DBMS. Since BACFuzz relies on data manipulation
+(DML) queries to infer unexpected actions, it is difficult to verify the
+violation of restricted information displayed on user pages that only
+involve SELECT statements. As a result, both context-dependent
+and passive BAC remain open challenges for future work.

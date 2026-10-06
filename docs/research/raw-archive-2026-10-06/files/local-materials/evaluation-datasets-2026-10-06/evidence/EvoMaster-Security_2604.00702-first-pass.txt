@@ -1,0 +1,162 @@
+=== TITLE + ABSTRACT ===
+Enhancing REST API Fuzzing with Access Policy Violation Checks
+and Injection Attacks
+Omur Sahin 1,2, Man Zhang 3, and Andrea Arcuri 2,4
+1Erciyes University, T¨ urkiye
+2Kristiania University College, Norway
+3Beihang University, China
+4Oslo Metropolitan University, Norway
+Abstract
+Due to their widespread use in industry, several techniques have been proposed in the literature to fuzz
+REST APIs. Existing fuzzers for REST APIs have been focusing on detecting crashes (e.g., 500 HTTP server
+error status code). However, security vulnerabilities can have major drastic consequences on existing cloud
+infrastructures.
+In this paper, we propose a series of novel automated oracles aimed at detecting violations of access
+policies in REST APIs, as well as executing traditional attacks such as SQL Injection and XSS. These novel
+automated oracles can be integrated into existing fuzzers, in which, once the fuzzing session is completed,
+a ‘‘security testing’’ phase is executed to verify these oracles. When a security fault is detected, as output
+our technique is able to general executable test cases in different formats, like Java, Kotlin, Python and
+JavaScript test suites.
+Our novel techniques are integrated as an extension ofEvoMaster, a state-of-the-art open-source fuzzer
+for REST APIs. Experiments are carried out on 9 artificial examples, 8 vulnerable-by-design REST APIs
+withblack-boxtesting, and 36 REST APIs from the WFD corpus withwhite-boxtesting, for a total of 52
+distinct APIs. Results show that our novel oracles and their automated integration in a fuzzing process can
+lead to detect security issues in several of these APIs.
+Keywords: REST, API, fuzzing, security, BOLA, BFLA
+
+=== INTRODUCTION ===
+
+1 Introduction
+The Open Worldwide Application Security Project (OWASP) keeps track of the most common security
+vulnerabilities in web applications.1 In their 2023-report targeted at web APIs,2 the most common vulnerability is
+Broken Object Level Authorization(BOLA). A similar vulnerability, calledBroken Function Level Authorization
+(BFLA), ranks fifth. Wrong authorization checks in the APIs can lead users to access resources they are not
+supposed to access (BOLA), or do operations they do not have rights to (BFLA).
+Based on the ‘‘State of API Security 2026’’ made by42crunch, 3 which is based on 200 real-world API
+vulnerabilities and exploits discussed in theAPISecurity.ionewsletter coverage between 2024 and 2025, ‘‘the
+most frequent API vulnerability across all categories in 2025 wasMissing Authentication. This occurs when
+an API fails to enforce authentication for sensitive operations, allowing anonymous users to access data or
+perform actions that should be restricted to authenticated users’’. 3
+As of 2024, it is estimated 4 that 94% of companies worldwide use cloud computing, with costs measured in
+the hundreds of billions of euros. As such, reliability and correctness of these systems is of paramount importance
+in modern society.
+Currently, REST APIs are the most common type of APIs on the web. As testing the functionalities of
+APIs can be expensive and time consuming, a lot of research has been carried out to automatically generate
+test cases for them [ 22]. However, to deal with authorization-related faults, a fuzzer should be able to handle
+the authentication of different users with different roles and access rights. Unfortunately, many fuzzers in the
+literature are unable to handle authentication information during the fuzzing process [ 41]. For the few fuzzers
+that can handle authentication of different users, they are unable to automatically detect BOLA and BFLA
+related vulnerabilities.
+1https://owasp.org/www-project-top-ten/
+2https://owasp.org/www-project-api-security/
+3https://42crunch.com/state-of-api-security-2026-report/
+4https://edgedelta.com/company/blog/how-many-companies-use-cloud-computing
+1
+arXiv:2604.00702v1  [cs.SE]  1 Apr 2026
+To fill this gap in the literature, in this paper we define seven novel automated oracles aimed at detecting
+faults related to misconfigured authorization checks. Furthermore, as the verification of authorization checks is
+only one aspect of security testing, we also integrated in our approach the evaluation of SQL Injection and XSS
+attacks.
+We integrated our novel oracles in a state-of-the-art fuzzer for REST APIs, namelyEvoMaster[ 10].
+Experiments on eight artificial APIs widely used in security research, as well as on 36 APIs from the WFD
+corpus [41], show that our novel automated oracles can be used to automatically detect several new security
+vulnerabilities that cannot be detected with other current approaches in the literature.
+Our approach is integrated and evaluated inEvoMaster, but any other state-of-the-art fuzzer that supports
+authentication of users (e.g., via authorization headers, or dynamic login tokens) could had been used for our
+study. We chose to useEvoMasteras starting point for our implementation, as developing a robust fuzzer
+from scratch is a major engineering effort [ 7]. We choseEvoMasterbecause it is among the oldest [ 2] and
+mature fuzzer still in active development [ 10], giving among the best results in large tool comparisons [ 29, 48, 43].
+AlthoughEvoMasteris focused onwhite-boxtesting, itsblack-boxmode was able to achieve second position
+in the SBFT’26 black-box fuzzer competition [ 11]. As it is a mature tool with extensive documentation, it is
+used in several enterprises worldwide, such as Meituan in China [ 49, 51] and Volkswagen in Germany [ 39, 5].
+EvoMasterhas been downloaded thousands of times [10].
+This paper is an extension of conference paper [ 6]. Compared with the conference version, we introduced six
+additional novel oracles (9vs.3) and conducted empirical studies on a larger set of APIs (52vs.13). Besides the
+novel security oracles presented in this paper,EvoMasteris also able to detect Server-Side Request Forgery
+(SSRF) vulnerabilities [ 44]. However, the details of how it is done have been presented and analyzed in a
+different previous publication [44], and they are not going to be discussed here.
+The paper is organized as follows. Section 2 discusses related work. Our novel security oracles are presented
+in Section 3. How the use of these oracles can be integrated into a fuzzer is discussed in Section 4. Section 5
+shows our empirical study. Threats to validity follows in Section 6. Finally, Section 7 concludes the paper.
+
+=== CONCLUSION / DISCUSSION / LIMITATIONS ===
+
+6 Threats to Validity
+Our experiments rely on randomized algorithms. To take their randomness into account, experiments were
+repeated 10 times.
+In our empirical study, 52 distinct APIs were used (9 toy examples, 8 examples for security research, and 36
+from the WFD corpus). Considering the use of 52 APIs, although this study might be currently the largest study
+in literature so far on open-source REST APIs, a larger case study would be needed to be able to generalize our
+results, especially for APIs developed in industry.
+Our novel oracles are not specific nor tailored to any fuzzer. In our experiments, we usedEvoMaster, but
+in theory any other state-of-the-art fuzzer could had been used. How easy or difficult would it be for our novel
+techniques to be integrated in other fuzzers is a matter that would require further investigation.
+27
+Table 5: For the 36 APIs in WFD, we report the obtained 2xx coverage of their endpoints, and the overhead in
+seconds of our new security phase.
+SUT #Endpoints % 2xx Coverage Overhead
+bibliothek8 20.0 1.2
+blogapi52 30.4 123.7
+catwatch14 49.3 110.2
+cwa-verification5 0.0 0.0
+erc20-rest-service13 7.7 0.4
+familie-ba-sak183 49.5 818.2
+features-service18 21.1 5.4
+genome-nexus23 72.9 37.1
+gestaohospital20 58.3 12.4
+http-patch-spring6 73.3 8.2
+languagetool2 92.9 49.7
+market13 43.1 58.3
+microcks88 46.3 81.9
+ocvn258 84.0 1986.5
+ohsome-api134 2.8 14.8
+pay-publicapi10 57.5 5.1
+person-controller12 43.5 3.0
+proxyprint74 67.7 2325.6
+quartz-manager11 36.4 7.3
+reservations-api7 57.1 91.5
+rest-ncs6 100.0 1.0
+rest-news7 91.4 9.2
+rest-scs11 100.0 1.0
+restcountries22 100.0 6.4
+scout-api49 34.1 21.8
+session-service8 65.3 10.1
+spring-actuator-demo2 100.0 21.7
+spring-batch-rest5 100.0 1.0
+spring-ecommerce27 47.7 156.9
+spring-rest-example9 92.6 35.0
+swagger-petstore19 69.0 2.4
+tiltaksgjennomforing79 8.9 8.7
+tracking-system67 38.7 142.8
+user-management21 66.7 61.2
+webgoat204 16.7 54.3
+youtube-mock1 22.2 0.0
+Average 54.6 174.3
+Median 53.3 13.6
+7 Conclusion
+In this paper, we have presented nine novel oracles aimed at detecting authorization-related faults and common
+injection vulnerabilities in REST APIs. These techniques were used to detect hundreds of new faults in an
+empirical study consisting of 52 REST APIs.
+Our novel techniques were implemented as an extension ofEvoMaster, a state-of-the-art open-source fuzzer.
+Once our novel techniques detect new faults, executable test cases (e.g., in JUnit format) are automatically
+generated to help practitioners in industry to reproduce the faults and debug them.
+Future work will aim at designing new automated oracles to identify other kinds of security faults in REST
+APIs, and carry out empirical studies in industry (for example at Fortune 500 enterprises that useEvoMaster,
+like Volkswagen [5] and Meituan [50]).
+Our extension toEvoMasteris released as open-source at www.evomaster.org . The novel techniques
+presented in this paper are now activated by default inEvoMasterlatest’s releases. The hundreds/thousands of
+practitioners in industry that useEvoMasterare already directly benefitting from the research work presented
+in this paper.
+28
+Data Availability
+All the techniques presented in this paper are implemented as part ofEvoMaster. The fuzzerEvoMasteris
+open-source on GitHub, 15 where each new release is automatically published on Zenodo for long-term storage
+(e.g., [9]).
+WFD is open-source on GitHub, 16 with as well each new release automatically uploaded to Zenodo for
+long-term storage (e.g., [12]).
+The vulnerable APIs used forRQ2are all open-source on GitHub, with IDs as specified in Table 1.
+Acknowledgment
+This work is funded by the European Research Council (ERC) under the European Union’s Horizon 2020
+research and innovation programme (EAST project, grant agreement No. 864972). Omur Sahin is supported by
+the T ¨UB˙ITAK 2219 International Postdoctoral Research Fellowship Program (Project ID: 1059B192300060).
+Man Zhang is supported by the National Science Foundation of China (grant agreement No. 62502022).

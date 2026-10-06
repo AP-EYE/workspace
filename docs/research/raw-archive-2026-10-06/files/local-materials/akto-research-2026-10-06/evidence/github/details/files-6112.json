@@ -1,0 +1,14 @@
+[
+  {
+    "sha": "1ed5cd41a238ba6b462fecee8d93883cf8a6ceb6",
+    "filename": "apps/dashboard/web/polaris_web/web/src/apps/main/index.js",
+    "status": "modified",
+    "additions": 8,
+    "deletions": 2,
+    "changes": 10,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/60f4a080e1f73aca6b2caa5d4417874dcbcd9f98/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fmain%2Findex.js",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/60f4a080e1f73aca6b2caa5d4417874dcbcd9f98/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fmain%2Findex.js",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fmain%2Findex.js?ref=60f4a080e1f73aca6b2caa5d4417874dcbcd9f98",
+    "patch": "@@ -37,9 +37,15 @@ const currentPath = window.location.pathname;\n const isSignupPage = signupPages.some(page => currentPath.startsWith(page));\n const isWhitelisted = func.isWhiteListedOrganization();\n \n+// Open-source self-hosted (local_deploy) deployments have no billing service, so\n+// PLAN_TYPE resolves empty and the plan gate below would wrongly block the user.\n+// These installs are not SaaS and should never be paywalled.\n+const isLocalDeploy = (window.DASHBOARD_MODE || '').toUpperCase() === 'LOCAL_DEPLOY'\n+  || window.IS_SAAS === 'false' || window.IS_SAAS === false;\n+\n let free = false\n-if(isWhitelisted || isSignupPage) {\n-  free = false; // Whitelisted users & Signup pages should not block user\n+if(isWhitelisted || isSignupPage || isLocalDeploy) {\n+  free = false; // Whitelisted users, signup pages & self-hosted local deploys should not block user\n } else {\n   // For non-whitelisted, non-signup users, check plan type\n   if(window.PLAN_TYPE && ALLOWED_PLANS.includes(window.PLAN_TYPE.toLowerCase())) {"
+  }
+]

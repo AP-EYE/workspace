@@ -1,0 +1,341 @@
+=== TITLE + ABSTRACT ===
+BACScan: Automatic Black-Box Detection of
+Broken-Access-Control Vulnerabilities in Web Applications
+Fengyu Liu
+Fudan University
+Shanghai, China
+fengyuliu23@m.fudan.edu.cn
+Yuan Zhang
+Fudan University
+Shanghai, China
+yuanxzhang@fudan.edu.cn
+Enhao Li
+Fudan University
+Shanghai, China
+ehli23@m.fudan.edu.cn
+Wei Meng
+The Chinese University of Hong Kong
+Hong Kong SAR, China
+wei@cse.cuhk.edu.hk
+Youkun Shi
+Fudan University
+Shanghai, China
+21110240048@m.fudan.edu.cn
+Qianheng Wang
+Fudan University
+Shanghai, China
+21307130075@m.fudan.edu.cn
+Chenlin Wang
+The Chinese University of Hong Kong
+Hong Kong SAR, China
+clwang23@cse.cuhk.edu.hk
+Zihan Lin
+Fudan University
+Shanghai, China
+zhlin22@m.fudan.edu.cn
+Min Yang
+Fudan University
+Shanghai, China
+m_yang@fudan.edu.cn
+Abstract
+Broken-Access-Control (BAC) vulnerabilities have consistently been
+ranked among the most critical security risks in web applications,
+occupying the top positions in the OWASP Top 10 over the past
+several years. These vulnerabilities allow attackers to bypass access
+control mechanisms and perform unauthorized operations, posing
+security and privacy threats to sensitive business and user data.
+Despite substantial attention given to BAC vulnerabilities, effective
+and reliable approaches to detecting these issues remain limited.
+In this work, we present BACScan, a novel black-box approach
+to detect BAC vulnerabilities in web applications. Unlike existing
+response similarity-based oracles that check only unauthorized
+read accesses, BACScan introduces an innovative feedback-driven
+oracle, which determines whether unauthorized read or modifica-
+tion operations have occurred by inferring operationally-dependent
+web pages and analyzing the operational feedback. We evaluated
+BACScan on 20 real-world applications and successfully identified
+89 vulnerabilities, including 54 previously unreported ones, out-
+performing state-of-the-art tools. We reported all newly identified
+vulnerabilities to the affected vendors. To date, 35 new CVE IDs
+have been assigned.
+CCS Concepts
+•Security and privacy→Web application security.
+Keywords
+Broken Access Control; Web Security
+Permission to make digital or hard copies of all or part of this work for personal or
+classroom use is granted without fee provided that copies are not made or distributed
+for profit or commercial advantage and that copies bear this notice and the full citation
+on the first page. Copyrights for components of this work owned by others than the
+author(s) must be honored. Abstracting with credit is permitted. To copy otherwise, or
+republish, to post on servers or to redistribute to lists, requires prior specific permission
+and/or a fee. Request permissions from permissions@acm.org.
+CCS ’25, Taipei
+©2025 Copyright held by the owner/author(s). Publication rights licensed to ACM.
+ACM ISBN 979-8-4007-1525-9/2025/10
+https://doi.org/10.1145/3719027.3744825
+ACM Reference Format:
+Fengyu Liu, Yuan Zhang, Enhao Li, Wei Meng, Youkun Shi, Qianheng
+Wang, Chenlin Wang, Zihan Lin, and Min Yang. 2025. BACScan: Automatic
+Black-Box Detection of Broken-Access-Control Vulnerabilities in Web Ap-
+plications. InProceedings of the 2025 ACM SIGSAC Conf. on Computer and
+Communications Security (CCS ’25), October 13–17, 2025, Taipei.ACM, New
+York, NY, USA, 14 pages. https://doi.org/10.1145/3719027.3744825
+
+=== INTRODUCTION ===
+
+1 Introduction
+Broken-Access-Control moves up to the category with the most serious
+web application security risk.
+— The OW ASP Top 10 [19].
+With the rapid advancement of web applications, numerous
+commercial platforms (e.g., Amazon [1], PayPal [9]) now store sub-
+stantial volumes of critical privacy-sensitive user data, including
+identity and payment information, thereby making them attractive
+targets for web attackers. To protect this sensitive data, developers
+implement and deploy access control mechanisms to prevent unau-
+thorized operations. However, inadequate or improperly configured
+access control mechanisms can give rise to serious vulnerabilities,
+known asB roken-Access-Control(BAC) vulnerabilities.
+In recent years, BAC vulnerabilities have become increasingly
+severe. According to the OWASP Top 10, BAC vulnerabilities have
+consistently ranked among the most critical issues over the past
+five years [18, 19, 21]. In OWASP 2023, BAC vulnerabilities even
+accounted for four out of the five most severe vulnerabilities [21].
+Furthermore, numerous widely-used applications, including PayPal,
+Twitter, and TikTok, have been reported to exhibit BAC vulnerabil-
+ities, as documented in HackerOne [15, 16]. Attackers may exploit
+these vulnerabilities to perform unauthorized operations, includ-
+ing arbitrary read, modification, or even deletion of sensitive data,
+thereby posing significant threats to the availability and integrity
+of the vulnerable applications [20, 22].
+Although BAC vulnerability detection is a well-explored research
+topic, the increasing severity of BAC vulnerabilities highlights the
+long-lasting lack of highly effective detection techniques. Recent de-
+tection approaches can generally be categorized into white-box and
+CCS ’25, October 13–17, 2025, Taipei Fengyu Liu et al.
+black-box methods. White-box approaches exhibit significant limi-
+tations, including high false positive rates, the inability to generate
+proof-of-concept (PoC), and scalability issues associated with static
+analysis techniques [45]. To address these limitations, researchers
+have explored dynamic black-box scanning techniques (i.e., scan-
+ners), which are widely used methods for penetration testing and
+are particularly effective in detecting security flaws in real-world
+scenarios [24, 30]. Given these advantages, we adopted a black-
+box approach for detecting BAC vulnerabilities and conducted a
+thorough study of existing black-box techniques. Specifically, these
+techniques [28, 35, 37, 49, 50, 62] rely on aresponse similarity-based
+oracle(shortened to response-based oracle) for detecting BAC vul-
+nerabilities. In particular, the security analysts set up an attacker
+and a victim user accounts with the scanners. The scanner uses the
+attacker’s credentials to send HTTP requests to access the victim’s
+personal data. If the response received by the attacker is similar to
+the victim’s, a BAC vulnerability is reported.
+However, the design of this oracle exhibits significant inherent
+flaws. Oracle is a crucial and fundamental component of black-box
+scanners, playing a pivotal role in determining the effectiveness of
+black-box vulnerability detection [32]. Unfortunately, the response-
+based oracle is based on a flawed assumption: thedirect responseto
+a BAC attack request always provides evidence indicating whether
+the exploit is successful or not. This assumption holds true in scenar-
+ios like unauthorized data leakage via Read-based Broken Access
+Control (RBAC) vulnerabilities, where the leaked data is directly
+returned to the attacker via the HTTP response. However, in other
+scenarios such as unauthorized data deletion viaModification-based
+Broken Access Control (MBAC) vulnerabilities, this assumption
+fails as the direct HTTP response to the attack request does not nec-
+essarily indicate whether the unauthorized operation is successful.
+This erroneous oracle leads to a significant rate of false negatives
+and false positives in the detection of MBAC vulnerabilities (70.97%
+and 86.96% in our evaluation, respectively).
+In this paper, we propose BACScan, a novel black-box approach
+to detecting BAC vulnerabilities in web applications. Specifically,
+BACScan employs the state-of-the-art (SoTA) response-based oracle
+for detecting RBAC vulnerabilities where the direct HTTP response
+provides feedback. We design a novel feedback-driven oracle for
+MBAC vulnerabilities where the direct HTTP response cannot re-
+flect the modification status. It determines whether unauthorized
+modifications have succeeded by observing the feedback from other
+operationally-dependent pages that indicate the modification sta-
+tus. While the idea is intuitively simple, effectively implementing
+and applying this feedback-driven oracle for MBAC vulnerability
+detection presents significant challenges. To achieve this, two main
+challenges must be carefully addressed:
+• C1: How to accurately and efficiently identify status pages that
+provide feedback in a black-box context?Accurately identifying
+the corresponding status pages that provide feedback for modi-
+fication pages is critical for vulnerability detection. However,
+in a black-box scenario, only HTTP requests and responses are
+available. Given the vast number of requests and responses in
+modern web applications, accurately and efficiently pinpointing
+these operationally-dependent status pages is non-trivial.
+• C2: How to navigate the application into the correct state to collect
+effective feedback for MBAC vulnerability detection?Once the
+status page providing feedback is identified, the next step is
+to replay modification requests using an attacker’s session and
+verify if unauthorized changes to data occur. However, the target
+application may not be in the right state, and issues like attempts
+to delete non-existent data may cause operations to fail, resulting
+in failed request replays and affecting detection accuracy.
+Inspired by Black Widow [32], we observe that the data access
+and operational dependency between web pages can help us identify
+the corresponding status pages of the modification page. The status
+pages could provide feedback for detecting unauthorized modifi-
+cations. Therefore, BACScan introduces a novel data structure to
+represent the data dependency relationship, called the Inter-page
+Data Dependency Graph (IDDG). Specifically, it utilizes SoTA crawl-
+ing techniques with the victim user’s credentials to construct the
+IDDG based on the navigation graph. The process involves inter-
+cepting requests to modification pages, generating and inserting
+unique tokens, and leveraging the hierarchical strategy to efficiently
+traverse the navigation graph to establish data dependencies be-
+tween modification and status pages. Then, BACScan leverages the
+constructed IDDG to apply the novel feedback-driven oracle to
+detect MBAC vulnerabilities. Specifically, it follows the navigation
+edge to replay modification requests with the attacker’s credentials
+and follows the data dependency edge to revisit corresponding
+status pages to obtain feedback. It then detects potential MBAC
+vulnerabilities based on the presence or absence of unique tokens.
+We evaluate the effectiveness and performance of BACScan on 6
+open-source web applications with 44 known BAC vulnerabilities
+and 14 applications with no known vulnerabilities. These applica-
+tions have been widely evaluated in previous studies [ 26, 34, 48,
+56, 58] and each has at least 100 stars on GitHub, demonstrating
+their representativeness and popularity. Moreover, they are imple-
+mented in various languages, including Java, PHP, and Go, further
+demonstrating the language-independent advantage ofBACScan. As
+a result, BACScan successfully discovered 89 vulnerabilities, includ-
+ing 54 (verified) high-risk 0-day and 35 known BAC vulnerabilities.
+Besides, we compare BACScan to state-of-the-art techniques (i.e.,
+BurpSuite [12] and EvoCrawl [35]). BACScan performs significantly
+better, detecting up to 49 additional vulnerabilities. These newly
+discovered BAC vulnerabilities have the potential to leak sensi-
+tive user information, delete or modify critical operational data and
+records (e.g., changing a patient’s prescription), posing serious secu-
+rity and privacy threats to individual users and business operations.
+Given their significant security impact, we responsibly reported all
+the newly detected vulnerabilities to the relevant developers. At
+the time of writing, 39 vulnerabilities have been confirmed by the
+developers, and 35 have been assigned new CVE IDs.
+In summary, our paper makes the following contributions:
+• We design a new feedback-driven oracle that leverages inter-page
+data dependency for black-box detection of BAC vulnerabilities.
+• We propose a novel black-box detection approach—BACScan—to
+effectively detect BAC vulnerabilities in web applications. We
+will open-source our prototype upon publication.
+• Our evaluation with 20 real-world popular web applications
+demonstrates the effectiveness of BACScan, with the discovery
+of 54 (verified) 0-day BAC vulnerabilities and the assignment of
+35 new CVE IDs.
+BACScan: Automatic Black-Box Detection of Broken-Access-Control Vulnerabilities in Web Applications CCS ’25, October 13–17, 2025, Taipei
+http://website/user-a.php?op=delete
+User A's info
+• Name: Alice
+• Addr: US
+User B's info
+• Name: Bob
+• Addr: UK
+http://website/user-b.php?op=delete
+Web Application
+User A (Victim)
+User B (Attacker)
+Figure 1: Threat Model of BAC Vulnerability.
+
+=== CONCLUSION / DISCUSSION / LIMITATIONS ===
+
+6 Discussion
+Limitations and Future works.While BACScan worked well in
+the evaluations, we see several potential improvements.
+• Web Crawler.For a long time, the question of how to enable
+crawlers to fully explore web applications has been a popular
+research topic. In practice, we have observed that state-of-the-art
+crawlers (e.g., Black Widow [32]) are indeed capable of effectively
+exploring the majority of web pages. However, there are still some
+web pages that remain insufficiently explored, which leads to
+false negatives inBACScan. In the future, as crawling technologies
+continue to advance, we believe that the performance ofBACScan
+will be further improved.
+• Performance Trade-off.As described in §4.1.2, BACScan assumes
+that tokens are only inserted into POST requests triggered dur-
+ing the page exploration process. It is important to note that
+excluding token insertion for GET requests is primarily a perfor-
+mance trade-off. While intercepting GET requests and inserting
+tokens would be effective, it would also significantly increase the
+analysis time required by BACScan. Hooking database operations
+to determine which database actions are triggered by HTTP re-
+quests is a highly effective approach. However, in the context of
+black-box testing, we do not have access to the database. There-
+fore, we can only make every effort to infer the triggered database
+actions from the evidence in HTTP requests and responses.
+Ethics Consideration.This study has not presented any legal
+or ethical issues. We obtained the source code for local analysis
+and responsibly reported all detected vulnerabilities in open-source
+applications to the CVE Numbering Authority (CNA) [ 2]. Addi-
+tionally, we have contacted all the developers regarding the BAC
+vulnerabilities found in §5.2, and will continue to communicate
+with them throughout the vulnerability disclosure process.
+7 Related Work
+BAC Vulnerability Detection.There are numerous studies [ 28,
+35, 37, 40–44, 46, 49, 50, 52–55, 58, 60–62] that have employed var-
+ious techniques to detect BAC vulnerabilities. These studies are
+commonly categorized into two main types: dynamic approaches
+and static approaches. The dynamic approaches [ 28, 35, 37, 40–
+42, 49, 50, 62] typically simulate multiple users through login ses-
+sions and use cross-user forced browsing combined with response-
+based oracles to detect vulnerabilities. However, these oracles are
+inadequate for detecting MBAC vulnerabilities due to their inability
+to capture data dependencies, affecting precision and recall. Static
+approaches [43, 44, 46, 52–55, 58, 60, 61] model user credentials (e.g.,
+$_SESSION in PHP) and use predefined rules to identify permission
+checks. While effective in some cases, they still present notable lim-
+itations. On one hand, they suffer from high false positives due to
+the lack of runtime context to validate vulnerability reports. On the
+other hand, they require static analysis of the source code, limiting
+their applicability to programs developed in specific programming
+languages. Unlike these previous efforts, BACScan eliminates the
+need for additional input and leverages a novel IDDG-based ap-
+proach to accurately detect BAC vulnerabilities, addressing the
+limitations of both static and dynamic methods.
+Web Vulnerability Detection.In recent years, the techniques
+for automatically detecting vulnerabilities within web applications
+have been extensively studied. These techniques also can be catego-
+rized into static and dynamic approaches. The static approaches [25,
+27, 36, 38, 45, 57] identify user inputs as sources and predefined
+security-sensitive operations as sinks. They then analyze whether a
+data flow path exists from the source to the sink, indicating a poten-
+tial vulnerability. The dynamic approaches [23, 29, 32, 34, 47, 51, 56]
+design oracles specifically tailored to the security-sensitive oper-
+ations relevant to different types of vulnerabilities. For example,
+an exception thrown by an SQL execution function may serve as
+an oracle to detect SQL injection vulnerabilities. These approaches
+detect vulnerabilities by monitoring runtime behavior and deter-
+mining whether the corresponding oracle is triggered during the
+execution of the application. However, these approaches mainly
+focus on taint-style vulnerabilities, which rely on well-defined se-
+curity operations for modeling. In contrast, BAC vulnerabilities
+are tied to business logic and cannot be effectively modeled. This
+fundamental difference leads to false positives and false negatives
+when these methods are applied to BAC vulnerability detection.
+8 Conclusion
+In this paper, we propose BACScan, a novel black-box approach
+for detecting Broken-Access-Control (BAC) vulnerabilities in web
+applications. By introducing a feedback-driven oracle based on
+inter-page data dependency, BACScan addresses the limitations of
+existing detection methods, particularly for modification-based
+BAC vulnerabilities. We evaluate BACScan on 20 open-source web
+applications, discovering 89 BAC vulnerabilities, including 54 previ-
+ously unknown high-risk 0-day vulnerabilities and the assignment
+of 35 new CVE IDs. These findings demonstrate the practical utility
+of BACScan in BAC vulnerability detection. We hope our work can
+assist the community in addressing the growing threats posed by
+BAC vulnerabilities.
+Acknowledgement
+We would like to thank the anonymous reviewers for their insightful
+comments that helped improve the quality of the paper. This work
+was supported in part by the National Natural Science Foundation
+of China (U2436207, 62172105). Yuan Zhang and Min Yang are
+the corresponding authors. Yuan Zhang was supported in part by
+the Shanghai Pilot Program for Basic Research - FuDan University
+21TQ1400100 (21TQ012). Min Yang is a faculty of Shanghai Institute
+of Intelligent Electronics & Systems, and Engineering Research
+Center of Cyber Security Auditing and Monitoring, Ministry of
+Education, China.

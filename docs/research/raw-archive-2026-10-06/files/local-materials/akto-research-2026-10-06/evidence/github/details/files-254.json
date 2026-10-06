@@ -1,0 +1,26 @@
+[
+  {
+    "sha": "3d2b56f2aa8e79a6acd36ab22c4be8526cf65cfd",
+    "filename": "apps/dashboard/src/test/java/com/akto/listener/TestFintechTypes.java",
+    "status": "modified",
+    "additions": 4,
+    "deletions": 0,
+    "changes": 4,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/cfcef4d1d45e3f14b6a1cd44c86acf3956f49f87/apps%2Fdashboard%2Fsrc%2Ftest%2Fjava%2Fcom%2Fakto%2Flistener%2FTestFintechTypes.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/cfcef4d1d45e3f14b6a1cd44c86acf3956f49f87/apps%2Fdashboard%2Fsrc%2Ftest%2Fjava%2Fcom%2Fakto%2Flistener%2FTestFintechTypes.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fsrc%2Ftest%2Fjava%2Fcom%2Fakto%2Flistener%2FTestFintechTypes.java?ref=cfcef4d1d45e3f14b6a1cd44c86acf3956f49f87",
+    "patch": "@@ -33,6 +33,10 @@ public void testTypes() {\n                     assertTrue(cdt.validate(\"ABCDE9458J\", \"foo\"));\n                     assertFalse(cdt.validate(\"ACDE9458J\", \"foo\"));\n                     break;\n+                case \"IBAN EUROPE\":\n+                    assertTrue(cdt.validate(\"AB 12 3456 7890 1234 5678\", \"foo\"));\n+                    assertFalse(cdt.validate(\"AB 12 3456 7890 1234 56789\", \"foo\"));\n+                    break;\n                 \n                 case \"US ADDRESS\":\n                     assertTrue(cdt.validate(\"123 MAIN ST, SAN JOSE, CA 11111\", \"foo\"));"
+  },
+  {
+    "sha": "1aec9a2693571a7d68089d3a933da470cd2914b0",
+    "filename": "pii-types/fintech.json",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 0,
+    "changes": 1,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/cfcef4d1d45e3f14b6a1cd44c86acf3956f49f87/pii-types%2Ffintech.json",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/cfcef4d1d45e3f14b6a1cd44c86acf3956f49f87/pii-types%2Ffintech.json",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/pii-types%2Ffintech.json?ref=cfcef4d1d45e3f14b6a1cd44c86acf3956f49f87",
+    "patch": "@@ -1,6 +1,7 @@\n {\n     \"types\": [\n         {\"name\": \"PAN CARD\", \"regexPattern\" : \"[A-Z]{5}[0-9]{4}[A-Z]{1}\", \"sensitive\":false, \"onKey\": false, \"active\" : false},\n+        {\"name\": \"IBAN EUROPE\", \"regexPattern\" : \"[A-Z]{2}?[ ]?[0-9]{2}[]?[0-9]{4}[ ]?[0-9]{4}[ ]?[0-9]{4}[ ]?[0-9]{4}[ ]?[0-9]{4}\", \"sensitive\":false, \"onKey\": false, \"active\" : false},\n         {\"name\": \"US ADDRESS\", \"regexPattern\" : \"\\\\d{1,5}(\\\\s[\\\\w-.,]*){1,6},\\\\s[A-Z]{2}\\\\s\\\\d{5}\\\\b\", \"sensitive\":false, \"onKey\": false, \"active\" : false}\n     ]\n }"
+  }
+]

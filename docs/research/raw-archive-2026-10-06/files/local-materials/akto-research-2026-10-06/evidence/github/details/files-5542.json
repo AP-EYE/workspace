@@ -1,0 +1,14 @@
+[
+  {
+    "sha": "d70efed2181eb13b0950f3078d738c19aa11c646",
+    "filename": "apps/database-abstractor/src/main/java/com/akto/action/SkillValidationAction.java",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 1,
+    "changes": 2,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/3e1015cbb876ab4a51d07fb25e2d55a54be7b4dd/apps%2Fdatabase-abstractor%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Faction%2FSkillValidationAction.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/3e1015cbb876ab4a51d07fb25e2d55a54be7b4dd/apps%2Fdatabase-abstractor%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Faction%2FSkillValidationAction.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdatabase-abstractor%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Faction%2FSkillValidationAction.java?ref=3e1015cbb876ab4a51d07fb25e2d55a54be7b4dd",
+    "patch": "@@ -476,7 +476,7 @@ private void reportThreat(double maliciousScore, double matchScore, String reaso\n                 .url(THREAT_DETECTION_API_URL)\n                 .method(Method.POST.name(), rb)\n                 .addHeader(\"Content-Type\", \"application/json\")\n-                .addHeader(\"Authorization\", token)\n+                .addHeader(\"Authorization\", \"Bearer \" + token)\n                 .build();\n \n         try (Response resp = httpClient.newCall(req).execute()) {"
+  }
+]

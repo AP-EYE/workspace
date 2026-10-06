@@ -1,0 +1,14 @@
+[
+  {
+    "sha": "5d51d7f9219957172c04aa6d9c52f09a02e96f42",
+    "filename": "libs/utils/src/main/java/com/akto/stigg/StiggReporterClient.java",
+    "status": "modified",
+    "additions": 8,
+    "deletions": 2,
+    "changes": 10,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/0e557d076230a0695dfde9f7d5d0cbed78c5b1d0/libs%2Futils%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fstigg%2FStiggReporterClient.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/0e557d076230a0695dfde9f7d5d0cbed78c5b1d0/libs%2Futils%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fstigg%2FStiggReporterClient.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/libs%2Futils%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fstigg%2FStiggReporterClient.java?ref=0e557d076230a0695dfde9f7d5d0cbed78c5b1d0",
+    "patch": "@@ -68,8 +68,14 @@ private String executeGraphQL(String query, String vars) throws IllegalStateExce\n \n         // Execute the request and get the response\n         try (Response response = client.newCall(request).execute()) {\n-            String[] queryTypes = query.split(\"(\");\n-            String queryString = queryTypes[0];\n+            String queryString = \"\";\n+            try {\n+                String[] queryTypes = query.split(\"\\\\(\");\n+                queryString = queryTypes[0];\n+            } catch (Exception e) {\n+                loggerMaker.logger.info(\"Error in splitting regex\");\n+            }\n+            \n \n             if (!response.isSuccessful()) {\n                 throw new IOException(\"Unexpected response code: \" + response);"
+  }
+]

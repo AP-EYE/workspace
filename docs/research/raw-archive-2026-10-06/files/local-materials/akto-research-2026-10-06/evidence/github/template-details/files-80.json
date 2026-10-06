@@ -1,0 +1,14 @@
+[
+  {
+    "sha": "daf08ecb03e25d4c8a502101de2617aa9f53d83e",
+    "filename": "Broken-Object-Level-Authorization/BOLAByChangingAuthToken.yaml",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 1,
+    "changes": 2,
+    "blob_url": "https://github.com/akto-api-security/tests-library/blob/f152e2b18309b1c6fa6c42e69cfa038f3e212820/Broken-Object-Level-Authorization%2FBOLAByChangingAuthToken.yaml",
+    "raw_url": "https://github.com/akto-api-security/tests-library/raw/f152e2b18309b1c6fa6c42e69cfa038f3e212820/Broken-Object-Level-Authorization%2FBOLAByChangingAuthToken.yaml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/tests-library/contents/Broken-Object-Level-Authorization%2FBOLAByChangingAuthToken.yaml?ref=f152e2b18309b1c6fa6c42e69cfa038f3e212820",
+    "patch": "@@ -56,4 +56,4 @@ validate:\n     length:\n       gt: 0\n     percentage_match:\n-      gte: 90\n+      gte: 80"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "sha": "317575605adb954c899ca2d4087db2813f75f5f3",
+    "filename": "apps/dashboard/src/main/java/com/akto/utils/Utils.java",
+    "status": "modified",
+    "additions": 23,
+    "deletions": 0,
+    "changes": 23,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/fd69045642f1f264c53adf7db3b444d3317aa450/apps%2Fdashboard%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Futils%2FUtils.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/fd69045642f1f264c53adf7db3b444d3317aa450/apps%2Fdashboard%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Futils%2FUtils.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Futils%2FUtils.java?ref=fd69045642f1f264c53adf7db3b444d3317aa450",
+    "patch": "@@ -714,4 +714,27 @@ public static TestResult getTestResultFromTestingRunResult(TestingRunResult test\n \n         return testResult;\n     }\n+\n+    /**\n+     * Escapes a string for safe use in JavaScript context.\n+     * This method handles quotes, backslashes, and other special characters\n+     * that could lead to XSS vulnerabilities when embedded in JavaScript strings.\n+     * \n+     * @param input the string to escape\n+     * @return the escaped string safe for JavaScript embedding, or empty string if input is null\n+     */\n+    public static String escapeForJavaScript(String input) {\n+        if (input == null) {\n+            return \"\";\n+        }\n+        return input.replace(\"\\\\\", \"\\\\\\\\\")\n+                   .replace(\"'\", \"\\\\'\")\n+                   .replace(\"\\\"\", \"\\\\\\\"\")\n+                   .replace(\"\\n\", \"\\\\n\")\n+                   .replace(\"\\r\", \"\\\\r\")\n+                   .replace(\"\\t\", \"\\\\t\")\n+                   .replace(\"\\b\", \"\\\\b\")\n+                   .replace(\"\\f\", \"\\\\f\")\n+                   .replace(\"</\", \"<\\\\/\");  // Prevent </script> tag injection\n+    }\n }"
+  },
+  {
+    "sha": "a7f466d30d3f08ac22ec1d4370eaf8b6f578f0c0",
+    "filename": "apps/dashboard/web/pages/login.jsp",
+    "status": "modified",
+    "additions": 2,
+    "deletions": 1,
+    "changes": 3,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/fd69045642f1f264c53adf7db3b444d3317aa450/apps%2Fdashboard%2Fweb%2Fpages%2Flogin.jsp",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/fd69045642f1f264c53adf7db3b444d3317aa450/apps%2Fdashboard%2Fweb%2Fpages%2Flogin.jsp",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fweb%2Fpages%2Flogin.jsp?ref=fd69045642f1f264c53adf7db3b444d3317aa450",
+    "patch": "@@ -1,4 +1,5 @@\n <%@ page language=\"java\" contentType=\"text/html; charset=UTF-8\" pageEncoding=\"UTF-8\" %>\n+<%@ page import=\"com.akto.utils.Utils\" %>\n     <!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n     <%-- Using Struts2 Tags in JSP --%>\n         <%@ taglib uri=\"/struts-tags\" prefix=\"s\" %>\n@@ -72,7 +73,7 @@\n                     window.AZURE_BOARDS_INTEGRATED ='${requestScope.azureBoardsIntegrated}'\n                     window.USER_ROLE ='${requestScope.userRole}'\n                     window.TIME_ZONE = '${requestScope.currentTimeZone}'\n-                    window.USER_FULL_NAME = '${requestScope.userFullName}'\n+                    window.USER_FULL_NAME = '<%= Utils.escapeForJavaScript((String)request.getAttribute(\"userFullName\")) %>'\n                     window.ORGANIZATION_NAME = '${requestScope.organizationName}'\n                     window.GOOGLE_SAML_AUTH_URL=atob('${requestScope.googleSamlAuthUrl}')\n                     window.OKTA_AUTH_URL = '${requestScope.oktaAuthUrl}'"
+  }
+]

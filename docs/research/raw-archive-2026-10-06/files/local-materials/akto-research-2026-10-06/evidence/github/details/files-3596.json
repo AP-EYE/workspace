@@ -1,0 +1,74 @@
+[
+  {
+    "sha": "bc40fbfdcbecf8d2aff1746b5976fd1628b14322",
+    "filename": "apps/dashboard/src/main/java/com/akto/listener/InitializerListener.java",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 0,
+    "changes": 1,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/a449ec897f84e9bf18f0aa20ca68e47b89863d23/apps%2Fdashboard%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Flistener%2FInitializerListener.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/a449ec897f84e9bf18f0aa20ca68e47b89863d23/apps%2Fdashboard%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Flistener%2FInitializerListener.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Flistener%2FInitializerListener.java?ref=a449ec897f84e9bf18f0aa20ca68e47b89863d23",
+    "patch": "@@ -2011,6 +2011,7 @@ public static void addAktoDataTypes(BackwardCompatibility backwardCompatibility)\n             aktoDataTypes.add(new AktoDataType(\"JWT\", false, Arrays.asList(SingleTypeInfo.Position.RESPONSE_PAYLOAD, SingleTypeInfo.Position.RESPONSE_HEADER), now, ignoreData, false, true, Arrays.asList(\"AUTHENTICATION\",\"TOKEN\"), Severity.HIGH));\n             aktoDataTypes.add(new AktoDataType(\"EMAIL\", true, Collections.emptyList(), now, ignoreData, false, true,  Arrays.asList(\"PII\"), Severity.MEDIUM));\n             aktoDataTypes.add(new AktoDataType(\"CREDIT_CARD\", true, Collections.emptyList(), now, ignoreData, false, true, Arrays.asList(\"FINANCIAL\",\"PII\"), Severity.MEDIUM));\n+            aktoDataTypes.add(new AktoDataType(\"VIN\", true, Collections.emptyList(), now, ignoreData, false, true, Arrays.asList(\"PII\"), Severity.MEDIUM));\n             aktoDataTypes.add(new AktoDataType(\"SSN\", true, Collections.emptyList(), now, ignoreData, false, true,  Arrays.asList(\"PII\"), Severity.HIGH ));\n             aktoDataTypes.add(new AktoDataType(\"ADDRESS\", true, Collections.emptyList(), now, ignoreData, false, true,  Arrays.asList(\"PII\"), Severity.LOW));\n             aktoDataTypes.add(new AktoDataType(\"IP_ADDRESS\", false, Arrays.asList(SingleTypeInfo.Position.RESPONSE_PAYLOAD, SingleTypeInfo.Position.RESPONSE_HEADER), now, ignoreData, false, true, Arrays.asList(\"DEVICE IDENTIFIER\"), Severity.HIGH));"
+  },
+  {
+    "sha": "05597d7a85ac2880ca210fcb430bab9a6b3582a4",
+    "filename": "apps/dashboard/web/polaris_web/web/src/apps/dashboard/components/icons.js",
+    "status": "modified",
+    "additions": 3,
+    "deletions": 1,
+    "changes": 4,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/a449ec897f84e9bf18f0aa20ca68e47b89863d23/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fcomponents%2Ficons.js",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/a449ec897f84e9bf18f0aa20ca68e47b89863d23/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fcomponents%2Ficons.js",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fcomponents%2Ficons.js?ref=a449ec897f84e9bf18f0aa20ca68e47b89863d23",
+    "patch": "@@ -3,4 +3,6 @@ const circle_tick_minor = \"<svg viewBox='0 0 20 20' xmlns='http://www.w3.org/200\n \n const circle_cancel = \"<svg viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'><path id='Primary fill' fill-rule='evenodd' clip-rule='evenodd' d='M10 2C5.582 2 2 5.582 2 10C2 14.419 5.582 18 10 18C14.418 18 18 14.419 18 10C18 5.582 14.418 2 10 2ZM7.70711 6.29329C7.31658 5.90277 6.68342 5.90277 6.29289 6.29329C5.90237 6.68381 5.90237 7.31698 6.29289 7.7075L8.58579 10.0004L6.29289 12.2933C5.90237 12.6838 5.90237 13.317 6.29289 13.7075C6.68342 14.098 7.31658 14.098 7.70711 13.7075L10 11.4146L12.2929 13.7075C12.6834 14.098 13.3166 14.098 13.7071 13.7075C14.0976 13.317 14.0976 12.6838 13.7071 12.2933L11.4142 10.0004L13.7071 7.7075C14.0976 7.31698 14.0976 6.68381 13.7071 6.29329C13.3166 5.90277 12.6834 5.90277 12.2929 6.29329L10 8.58618L7.70711 6.29329Z' fill='rgb(215,44,13)'/></svg>\"\n \n-export { circle_tick_minor, circle_cancel } \n\\ No newline at end of file\n+const car_icon = \"<svg viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'><path d='M18.75,8.9H16.47L13.12,5.55a1.09,1.09,0,0,0-.77-.32H3.46a1.09,1.09,0,0,0-.91.49L.23,9.11a.47.47,0,0,0-.08.26v3.75a1.09,1.09,0,0,0,1.09,1.09H2.7a2.34,2.34,0,0,0,4.6,0h5.4a2.34,2.34,0,0,0,4.6,0h1.45A1.09,1.09,0,0,0,20,13.12V10A1.09,1.09,0,0,0,18.75,8.9ZM3.33,6.16a.16.16,0,0,1,.13-.07h8.89a.16.16,0,0,1,.11.05l2.73,2.73H1.5ZM5,15.16a1.41,1.41,0,1,1,1.41-1.41A1.41,1.41,0,0,1,5,15.16Zm10,0a1.41,1.41,0,1,1,1.41-1.41A1.41,1.41,0,0,1,15,15.16Zm3.91-2a.16.16,0,0,1-.16.16H17.3a2.34,2.34,0,0,0-4.6,0H7.3a2.34,2.34,0,0,0-4.6,0H1.25a.16.16,0,0,1-.16-.16V9.84H18.75a.16.16,0,0,1,.16.16Z'></path></svg>\"\n+\n+export { circle_tick_minor, circle_cancel, car_icon } \n\\ No newline at end of file"
+  },
+  {
+    "sha": "1ae3fec088413f2f1ffa8c744f4a0c4f03879ca7",
+    "filename": "apps/dashboard/web/polaris_web/web/src/util/func.js",
+    "status": "modified",
+    "additions": 4,
+    "deletions": 2,
+    "changes": 6,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/a449ec897f84e9bf18f0aa20ca68e47b89863d23/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Futil%2Ffunc.js",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/a449ec897f84e9bf18f0aa20ca68e47b89863d23/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Futil%2Ffunc.js",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Futil%2Ffunc.js?ref=a449ec897f84e9bf18f0aa20ca68e47b89863d23",
+    "patch": "@@ -12,7 +12,7 @@ import homeFunctions from '../apps/dashboard/pages/home/module';\n import { tokens } from \"@shopify/polaris-tokens\" \n import PersistStore from '../apps/main/PersistStore';\n \n-import { circle_cancel, circle_tick_minor } from \"@/apps/dashboard/components/icons\";\n+import { circle_cancel, circle_tick_minor, car_icon } from \"@/apps/dashboard/components/icons\";\n import quickStartFunc from '../apps/dashboard/pages/quick_start/transform';\n import { Box } from '@shopify/polaris';\n import TooltipText from '../apps/dashboard/components/shared/TooltipText';\n@@ -1761,7 +1761,9 @@ joinWordsWithUnderscores(input) {\n           return CalendarMinor;\n         case \"BIRTH\":\n           return CalendarTimeMinor;\n-        default: \n+        case \"VIN\":\n+          return car_icon;\n+        default:\n           return KeyMajor;\n     }\n   },"
+  },
+  {
+    "sha": "7beb9d94fc50d22fd351b42be9631148209c0497",
+    "filename": "libs/dao/src/main/java/com/akto/dto/type/KeyTypes.java",
+    "status": "modified",
+    "additions": 8,
+    "deletions": 0,
+    "changes": 8,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/a449ec897f84e9bf18f0aa20ca68e47b89863d23/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2Ftype%2FKeyTypes.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/a449ec897f84e9bf18f0aa20ca68e47b89863d23/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2Ftype%2FKeyTypes.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2Ftype%2FKeyTypes.java?ref=a449ec897f84e9bf18f0aa20ca68e47b89863d23",
+    "patch": "@@ -10,6 +10,7 @@\n import com.akto.dto.SensitiveParamInfo;\n import com.akto.dto.type.SingleTypeInfo.ParamId;\n import com.akto.dto.type.SingleTypeInfo.SubType;\n+import com.akto.dto.type.standard.VinValidator;\n \n import com.akto.types.CappedSet;\n import com.google.i18n.phonenumbers.PhoneNumberUtil;\n@@ -144,6 +145,9 @@ private static SubType matchesSubType(SingleTypeInfo.SubType subType, Object key\n                 case \"PHONE_NUMBER\":\n                     if (isPhoneNumber(val.toString())) return subType;\n                     break;\n+                case \"VIN\":\n+                    if (VinValidator.isValid(val.toString())) return subType;    \n+                    break; \n                 default:\n                     return null;\n             }\n@@ -231,6 +235,10 @@ private static SubType getSubtype(Object o,String key, boolean checkForSubtypes)\n             if (checkForSubtypes && matchesSubType(SingleTypeInfo.IP_ADDRESS, key, oString) != null) {\n                 return SingleTypeInfo.IP_ADDRESS;\n             }\n+            \n+            if (checkForSubtypes  && matchesSubType(SingleTypeInfo.VIN, key, oString) != null) {\n+                return SingleTypeInfo.VIN;\n+            }\n \n             return SingleTypeInfo.GENERIC;\n         }"
+  },
+  {
+    "sha": "beaab3717cee9a39a945a2432cd72e02b52cd60b",
+    "filename": "libs/dao/src/main/java/com/akto/dto/type/SingleTypeInfo.java",
+    "status": "modified",
+    "additions": 3,
+    "deletions": 0,
+    "changes": 3,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/a449ec897f84e9bf18f0aa20ca68e47b89863d23/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2Ftype%2FSingleTypeInfo.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/a449ec897f84e9bf18f0aa20ca68e47b89863d23/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2Ftype%2FSingleTypeInfo.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2Ftype%2FSingleTypeInfo.java?ref=a449ec897f84e9bf18f0aa20ca68e47b89863d23",
+    "patch": "@@ -247,6 +247,8 @@ public enum Position {\n             Collections.emptyList());\n     public static SubType CREDIT_CARD = new SubType(\"CREDIT_CARD\", true, SuperType.STRING, StringSchema.class,\n             Collections.emptyList());\n+    public static SubType VIN = new SubType(\"VIN\", true, SuperType.STRING, StringSchema.class,\n+            Collections.emptyList());\n     public static SubType PHONE_NUMBER = new SubType(\"PHONE_NUMBER\", true, SuperType.STRING, StringSchema.class,\n             Collections.emptyList());\n     public static SubType UUID = new SubType(\"UUID\", false, SuperType.STRING, StringSchema.class,\n@@ -607,6 +609,7 @@ public enum Domain {\n         subTypeMap.put(\"ADDRESS\", ADDRESS);\n         subTypeMap.put(\"SSN\", SSN);\n         subTypeMap.put(\"CREDIT_CARD\", CREDIT_CARD);\n+        subTypeMap.put(\"VIN\", VIN);\n         subTypeMap.put(\"PHONE_NUMBER\", PHONE_NUMBER);\n         subTypeMap.put(\"UUID\", UUID);\n         subTypeMap.put(\"GENERIC\", GENERIC);"
+  },
+  {
+    "sha": "03d3b777f22f7935120801c0bfab16adeb000bb8",
+    "filename": "libs/dao/src/main/java/com/akto/dto/type/VinValidator.java",
+    "status": "added",
+    "additions": 74,
+    "deletions": 0,
+    "changes": 74,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/a449ec897f84e9bf18f0aa20ca68e47b89863d23/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2Ftype%2FVinValidator.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/a449ec897f84e9bf18f0aa20ca68e47b89863d23/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2Ftype%2FVinValidator.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2Ftype%2FVinValidator.java?ref=a449ec897f84e9bf18f0aa20ca68e47b89863d23",
+    "patch": "@@ -0,0 +1,74 @@\n+package com.akto.dto.type.standard;\n+\n+import java.util.regex.Pattern;\n+\n+public class VinValidator {\n+\n+    private static final Pattern VIN_PATTERN = Pattern.compile(\"^[A-HJ-NPR-Z0-9]{17}$\");\n+    \n+    // Weights for each position (1–17)\n+    private static final int[] WEIGHTS = {\n+            8, 7, 6, 5, 4, 3, 2, 10, 0, 9, 8, 7, 6, 5, 4, 3, 2\n+    };\n+\n+    /**\n+     * Validates a VIN: format + checksum (9th character).\n+     */\n+    public static boolean isValid(String vin) {\n+        if (vin == null) {\n+            return false;\n+        }\n+\n+        vin = vin.trim().toUpperCase();\n+\n+        if (!VIN_PATTERN.matcher(vin).matches()) {\n+            return false;\n+        }\n+\n+        // 2. Compute checksum\n+        int sum = 0;\n+        for (int i = 0; i < 17; i++) {\n+            char c = vin.charAt(i);\n+            int value = transliterate(c);\n+            if (value == -1) {\n+                return false; // invalid character just in case\n+            }\n+            sum += value * WEIGHTS[i];\n+        }\n+\n+        int checksum = sum % 11;\n+        char expectedCheckDigit = (checksum == 10) ? 'X' : (char) ('0' + checksum);\n+\n+        // 9th character (index 8) is the check digit\n+        char actualCheckDigit = vin.charAt(8);\n+\n+        return actualCheckDigit == expectedCheckDigit;\n+    }\n+\n+    /**\n+     * Transliterates a VIN character to its numeric value for checksum.\n+     * Digits 0–9 → 0–9\n+     * Letters mapped per ISO 3779.\n+     */\n+    private static int transliterate(char c) {\n+        if (c >= '0' && c <= '9') {\n+            return c - '0';\n+        }\n+\n+        switch (c) {\n+            case 'A': case 'J':             return 1;\n+            case 'B': case 'K': case 'S':   return 2;\n+            case 'C': case 'L': case 'T':   return 3;\n+            case 'D': case 'M': case 'U':   return 4;\n+            case 'E': case 'N': case 'V':   return 5;\n+            case 'F': case 'W':             return 6;\n+            case 'G': case 'P': case 'X':   return 7;\n+            case 'H': case 'Y':             return 8;\n+            case 'R': case 'Z':             return 9;\n+            default:\n+                // Should not happen if regex is correct (I, O, Q excluded),\n+                // but we keep this for safety.\n+                return -1;\n+        }\n+    }\n+}\n\\ No newline at end of file"
+  }
+]

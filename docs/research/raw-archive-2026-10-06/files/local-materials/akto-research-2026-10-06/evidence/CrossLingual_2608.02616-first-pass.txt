@@ -1,0 +1,230 @@
+=== TITLE + ABSTRACT ===
+OpenAI Privacy Filter: A Cross-Lingual, Cross-Domain PII Evaluation
+Across 32 Benchmarks
+Rohith Uppala
+Florida State University
+USA
+rohithuppala@gmail.com
+Abstract
+We present what is, to our knowledge, the first
+systematic evaluation of OpenAI’s Privacy Fil-
+ter (OPF), a 1.5B-parameter model that con-
+verts an autoregressive language model into
+a bidirectional PII detector, across 32 bench-
+marks spanning 14 languages and 5 domains.
+Our most practically actionable finding is a
+domain-dependent labeled-data crossover:
+fine-tuned XLM-RoBERTa surpasses OPF’s
+zero-shot performance with only∼500 labeled
+exampleson English synthetic PII (∼100 on
+non-English Kiji), and ∼1000 on synthetic
+medical PII. Crucially,per-class fine-tuning
+(17 PII entity types present in AI4Privacy,
+a subset of OPF’s 33) is less data-efficient
+than binary labelsat small n — at n = 100,
+binary F1 = 0.634 vs. per-class 0.360 — be-
+cause binary labels concentrate the learning
+signal when per-class examples are scarce.
+Zero-shot, OPF achieves F1 = 0.464 on the
+SPY medical benchmark (synthetic clinical
+PII) and F1 = 0.855 on AI4Privacy (synthetic
+PII), substantially outperforming both Mi-
+crosoft Presidio (F1 = 0.273 on SPY , 0.431 on
+AI4Privacy) and XLM-RoBERTa-large-NER
+(F1 = 0.111 on SPY), both applied without
+dataset-specific fine-tuning (XLM-RoBERTa
+is domain-transferred from NER supervision,
+not a true zero-shot model). However, OPF de-
+grades sharply outside its PII training distribu-
+tion: performance drops to F1 = 0.04–0.40 on
+general NER benchmarks (MultiCoNER), and
+collapses for non-Latin scripts (Arabic: 0.04,
+Cyrillic: 0.03). Error analysis reveals that OPF
+excels on structurally regular PII (email: 0.78,
+phone: 0.76) but struggles with culturally vari-
+able entities (person names: 0.40, addresses:
+0.49), and is recall-biased across most PII do-
+mains (precision 0.31–0.54, recall 0.70–0.85;
+exception: financial text is precision-biased,
+gretel en P=0.64, R=0.49) — behavior that
+is desirable for privacy-critical deployments
+where missing PII is worse than over-redacting.
+Tokenizer fertility is falsified as a general ex-
+planation for script failure: Arabic collapses at
+near-Latin fertility (1.65×) while Devanagari
+achieves the best non-Latin F1 despite above-
+Latin fertility (1.94×); Bengali has the highest
+fertility (2.42×) yet achieves only intermedi-
+ate non-Latin F1 (0.198), implicating training
+data coverage rather than fragmentation alone.
+We provide a decision heuristic synthesizing
+when to use OPF zero-shot, when to fine-tune
+XLM-RoBERTa, and which language families
+to avoid.
+
+=== INTRODUCTION ===
+
+1 Introduction
+Privacy-preserving NLP has become a critical con-
+cern as language models are deployed across sen-
+sitive domains including healthcare, legal services,
+and enterprise customer support. A central chal-
+lenge isPII detection— identifying spans of text
+that correspond to personally identifiable informa-
+tion such as names, email addresses, phone num-
+bers, and financial account identifiers.
+OpenAI recently released thePrivacy Filter
+(OPF)(OpenAI, 2026), a 1.5B-parameter model
+that re-purposes an autoregressive language model
+as a bidirectional sequence labeler using a Mixture-
+of-Experts (MoE) architecture and a Viterbi CRF
+decoder over 33 BIOES output classes spanning 8
+privacy categories. Despite its public release, no
+systematic cross-lingual or cross-domain evalua-
+tion of OPF exists. Practitioners deploying OPF in
+multilingual pipelines — for example, SaaS compa-
+nies processing support tickets in French, German,
+or Spanish — have no principled guidance on ex-
+pected performance.
+We address this gap with a comprehensive zero-
+shot evaluation across32 datasets,14 languages,
+and5 domains: true PII (AI4Privacy, Nemotron),
+financial documents (Gretel), customer support
+(Kiji), medical and legal text (SPY), and general
+NER (CoNLL-2002/2003, MultiCoNER v2). We
+compare against Microsoft Presidio (Microsoft,
+2023), a widely used open-source PII framework,
+arXiv:2608.02616v2  [cs.CL]  6 Aug 2026
+and XLM-RoBERTa-large (Conneau et al., 2020)
+as a zero-shot and fine-tuned NER baseline, and
+conduct learning curve experiments to identify the
+labeled-data crossover point. Our key contributions
+are:
+• Domain-dependent labeled-data crossover
+(our most novel result): fine-tuned XLM-
+RoBERTa surpasses OPF at ∼500 exam-
+ples on English synthetic PII (∼100 on non-
+English Kiji) and∼1000 on synthetic medical
+PII; per-class fine-tuning (17 labels) isless
+data-efficient than binary labels at small n,
+validating binary labeling as the practical low-
+resource choice (Section 4.3).
+• To our knowledge, the first cross-lingual and
+cross-domain benchmark of OPF across 32
+datasets (Section 4).
+• A five-way zero-shot comparison including
+GLiNER (Zaratiana et al., 2024) and GPT-
+4o as a frontier ceiling (n=2000 per dataset):
+GPT-4o leads on medical/legal/financial PII
+(SPY medical: 0.702, SPY legal: 0.587, Gre-
+tel: 0.576); OPF leads on structured synthetic
+PII (AI4Privacy: 0.855, Kiji: 0.596, Nemotron:
+0.559) (Section 4).
+• A PII-type error analysis revealing that
+structural regularity predicts detectability:
+email ¿ phone ¿ account ¿ address ¿ person
+(Section 4.4).
+• Quantification of script-family degradation:
+Latin avg F1 = 0.212 vs. Cyrillic 0.027 and
+Arabic 0.038, based on PER-only Multi-
+CoNER spans (Section 4.2).
+• Exploratory non-English learning curves
+(fr/de/es, Kiji, binary labels) suggesting ear-
+lier crossover (∼100 examples) than English;
+single-domain preliminary observation requir-
+ing broader confirmation (Section 4.3).
+
+=== CONCLUSION / DISCUSSION / LIMITATIONS ===
+
+6 Conclusion
+We presented a comprehensive evaluation of Ope-
+nAI’s Privacy Filter across 32 datasets, 14 lan-
+guages, and 5 domains. OPF achieves strong zero-
+shot PII detection performance — F1 = 0.46 on
+synthetic medical/legal text (SPY), 0.60 on cus-
+tomer support (Kiji), and 0.86 on synthetic PII
+(AI4Privacy) — substantially exceeding both Mi-
+crosoft Presidio (zero-shot) and XLM-RoBERTa-
+large-NER (domain-transferred, not fine-tuned on
+target datasets) across all PII domains. However,
+performance degrades sharply outside OPF’s train-
+ing distribution: on general NER benchmarks and
+especially for non-Latin scripts. Learning curve
+experiments reveal a domain-dependent crossover:
+∼500 labeled examples on English synthetic PII
+(∼100 on non-English Kiji),∼1000 on synthetic
+medical PII; per-class fine-tuning is less data-
+efficient than binary at small n, validating binary
+labels as the more practical low-resource choice.
+Error analysis reveals that structural regularity of
+PII type is the primary predictor of detection per-
+formance.
+We release all evaluation code, dataset convert-
+ers, and results at: anonymous code repository.
+Limitations
+OPF fine-tuning.We evaluate OPF exclusively
+in zero-shot mode. OPF supports fine-tuning via its
+documented training interface (OpenAI, 2026). We
+evaluate exclusively in zero-shot mode to assess
+out-of-the-box performance. The decision heuristic
+(Figure 3) therefore reflects zero-shot OPF: if OPF
+is fine-tuned on the target domain, the crossover
+point (∼500 examples for English synthetic PII,
+∼1000 for medical) would likely shift, and XLM-
+RoBERTa may not be the optimal choice above that
+threshold. Evaluating fine-tuned OPF is a natural
+extension of this work.
+Learning curve generalization.The English
+crossover is established on three datasets:
+AI4Privacy and Gretel Financial (synthetic) and
+SPY medical (synthetic). Non-English curves are
+established on Kiji customer-support PII only
+(fr/de/es, binary labels); whether per-class fine-
+tuning behaves similarly to the English finding
+(binary more efficient at small n) is untested for
+non-English and is a natural next step. Learning
+curves for SPY legal, Nemotron, and non-Latin-
+script datasets remain future work. The domain-
+dependent crossover pattern (English synthetic:
+∼500 examples; non-English Kiji:∼100 examples;
+medical:∼1000 examples) should be treated as
+dataset-specific, not universally valid.
+Script-family confounding.The non-Latin
+script analysis uses MultiCoNER PER-only spans
+evaluated against OPF’sprivate person class,
+so entity-type mismatch is not a confound. How-
+ever, script effects and OPF training data coverage
+cannot be disentangled: low Arabic/Cyrillic F1
+may reflect insufficient training examples in those
+scripts rather than tokenizer fragmentation alone.
+We report the gap as a descriptive finding; the
+fertility–F1 correlation is suggestive but not causal.
+A clean test requires a multilingual PII dataset with
+Arabic and Cyrillic annotations, which does not
+currently exist at scale.
+XLM-RoBERTa label scheme.Most experi-
+ments use binary B-PII/I-PII/O labels for cross-
+dataset comparability. Per-class fine-tuning (Sec-
+tion 4.3) shows binary labels are more data-efficient
+at small n, validating this choice. Per-class fine-
+tuning against OPF’s full 33-class output schema
+remains future work.
+Presidio multilingual coverage.Presidio’s mul-
+tilingual support is limited to languages with avail-
+able spaCy NER models; in our experiments, direct
+language-matched evaluation is available for En-
+glish, French, German, and Spanish only (Table 3).
+For Danish, Dutch, and non-Latin scripts, Presidio
+falls back to English models or lacks coverage
+entirely. This understates Presidio’s performance
+for languages it does support natively and over-
+states it for languages it does not; the OPF vs. Pre-
+sidio comparison should be interpreted language-
+by-language rather than as a global claim.
+Ethics Statement
+All datasets used are publicly available and contain
+either synthetic PII or fully anonymized text. No
+real personal data was collected or processed in
+this work. Our evaluation reveals failure modes of
+OPF that practitioners should be aware of before
+deployment in production PII-processing pipelines.

@@ -1,0 +1,115 @@
+=== TITLE + ABSTRACT ===
+Rethinking Broken Object Level Authorization Attacks Under Zero Trust
+Principle
+ANBIN WU and ZHIYONG FENG, The College of Intelligence and Computing, Tianjin University, CHINA
+RUITAO FENG∗, Southern Cross University, Australia
+ZHENCHANG XING, CSIRO’s Data61, Australia
+YANG LIU, School of Computer Science and Engineering, Nanyang Technological University, Singapore
+RESTful APIs facilitate data exchange between applications, but they also expose sensitive resources to potential exploitation. Broken
+Object Level Authorization (BOLA) is the top vulnerability in the OWASP API Security Top 10, exemplifies a critical access control flaw
+where attackers manipulate API parameters to gain unauthorized access. To address this, we propose BolaZ, a defense framework
+grounded in zero trust principles. BolaZ analyzes the data flow of resource IDs, pinpointing BOLA attack injection points and
+determining the associated authorization intervals to prevent horizontal privilege escalation. Our approach leverages static taint
+tracking to categorize APIs into producers and consumers based on how they handle resource IDs. By mapping the propagation paths
+of resource IDs, BolaZ captures the context in which these IDs are produced and consumed, allowing for precise identification of
+authorization boundaries. Unlike defense methods based on common authorization models, BolaZ is the first authorization-guided
+method that adapts defense rules based on the system’s best-practice authorization logic. We validate BolaZ through empirical
+research on 10 GitHub projects. The results demonstrate BolaZ’s effectiveness in defending against vulnerabilities collected from CVE
+and discovering 35 new BOLA vulnerabilities in the wild, demonstrating its practicality in real-world deployments.
+CCS Concepts: • Security and privacy→ Web application security.
+Additional Key Words and Phrases: API security, BOLA attack, RESTful APIs, Access control.
+ACM Reference Format:
+Anbin Wu, Zhiyong Feng, Ruitao Feng, Zhenchang Xing, and Yang Liu. 2025. Rethinking Broken Object Level Authorization Attacks
+Under Zero Trust Principle. In Proceedings of ACM Transactions on Software Engineering and Methodology. ACM, New York, NY, USA,
+27 pages. https://doi.org/XXXXXXX.XXXXXXX
+
+=== INTRODUCTION ===
+
+1 Introduction
+RESTful APIs have become the standard for accessing web-oriented resources, enabling users to initiate operational
+requests through HTTP methods, paths, and parameters. However, the parameters of RESTful APIs are user-controlled,
+hence, inherently untrusted. Attackers can exploit this by tampering with the resource ID parameter to access sensitive
+data of other users without authorization, leading to a Broken Object Level Authorization (BOLA) attack [19].
+Resource ID is the unique identifier of resources in REST API that are used to operate (INSERT, DELETE, UPDATE, READ)
+∗Corresponding author
+Authors’ Contact Information: Anbin Wu, wuanbin@tju.edu.cn; Zhiyong Feng, zyfeng@tju.edu.cn, The College of Intelligence and Computing, Tianjin
+University, CHINA; Ruitao Feng, Southern Cross University, Australia, ruitao.feng@scu.edu.au; Zhenchang Xing, CSIRO’s Data61, Australia, zhenchang.
+xing@anu.edu.au; Yang Liu, School of Computer Science and Engineering, Nanyang Technological University, Singapore, yangliu@ntu.edu.sg.
+Permission to make digital or hard copies of all or part of this work for personal or classroom use is granted without fee provided that copies are not
+made or distributed for profit or commercial advantage and that copies bear this notice and the full citation on the first page. Copyrights for components
+of this work owned by others than the author(s) must be honored. Abstracting with credit is permitted. To copy otherwise, or republish, to post on
+servers or to redistribute to lists, requires prior specific permission and/or a fee. Request permissions from permissions@acm.org.
+© 2025 Copyright held by the owner/author(s). Publication rights licensed to ACM.
+Manuscript submitted to ACM
+Manuscript submitted to ACM 1
+arXiv:2507.02309v2  [cs.CR]  15 Jul 2025
+
+=== CONCLUSION / DISCUSSION / LIMITATIONS ===
+
+7 Discussion and Future Work
+7.1 Threat to Validity.
+Through our experiments, we identified certain limitations in BolaZ’s data flow analysis when the scenarios are
+relatively specific. First, as systems grow more complex in functionality and logic, it becomes challenging to interpret
+client-side control conditions using static code analysis. BolaZ sometimes was unable to determine which resource
+IDs produced by P-APIs are passed to C-APIs solely by analyzing condition code, particularly in scenarios involving
+client-controlled deletion and modification operations.
+Manuscript submitted to ACM
+Rethinking Broken Object Level Authorization Attacks Under Zero Trust Principle 25
+Second, due to varying levels of developer expertise and coding practices, the same logic can be implemented in
+numerous ways. CodeQL cannot accommodate all coding patterns, leading to interruptions in some data flow analysis
+processes. As a result, API identification and association may fail, leaving some BOLA vulnerabilities unaddressed. In
+these cases, BolaZ will not restrict such APIs, and the vulnerabilities may persist.
+Third, BolaZ is currently implemented on the SpringBoot framework. A fact is that the propagation logic and
+behavior of resource IDs remains consistent in varied languages or frameworks. Hence, BolaZ is a generic approach at
+the methodological level.
+7.2 Future Work.
+First, BolaZ currently only supports databases. In the future, we plan to investigate the potential of the MSG concept
+in other types of storage systems. Second, improvements are needed in BolaZ’s front-end code analysis. We aim to
+integrate dynamic application security testing to better capture the logical relationships between P-APIs and C-APIs.
+Additionally, to address data flow interruptions in taint tracking, we will offer open programming interfaces, allowing
+users to adapt BolaZ to their system’s coding patterns through customized rules.
+8 Related Work
+8.1 API Automated Testing
+Most automated tests for RESTful APIs focus on functional tests and are not used to detect BOLA vulnerabilities.
+However, we can draw ideas from API automated testing methods.
+RestTestGen [45] analyzed the producers and consumers of resources in the API based on OAS. RESTler [3] deduces
+producer-consumer dependencies of resources and resource IDs based on OAS. EvoMaster [2] generates test cases for
+RESTful APIs by analyzing the source code. However, EvoMaster believes that users can only operate on the resources
+they create, which does not apply to all application scenarios. Atlidakis et al. [4] used automated API testing to verify
+whether the API violated the user-namespace rule. The rule holds that the resources produced by user A cannot be
+accessed by user B, and does not apply to all resource relationships. Corradini et al. [ 10] Detect Mass Assignment
+Vulnerabilities in RESTful APIs using automated black-box testing. The method using common naming practices to
+identify the Resource ID is inaccurate. RESTest [28] is an automated black-box testing tool for RESTful APIs, which
+supports inference of dependencies between parameters.
+8.2 Static Anlaysis-based BOLA Vulnerability Detection
+Application source code contains resource access patterns, so many tools use static analysis techniques to infer resource’s
+authorization rules from the source code.
+SPACE [32] requires developers to provide a mapping of application resources to the basic types that occur in SPACE
+catalog. SPACE uses symbolic execution to extract the data exposures from source code. Then SPACE checks whether
+each data exposure is allowed. Cancheck [ 5] also requires developers to provide authorization rules for resources.
+RoleCast [37] common software engineering patterns to determine resource authorization patterns, but RoleCast’s
+patterns do not apply to all web applications. MACE [29] analyzes INSERT statements to determine relationships between
+users and resources, but MACE only supports the ownership model [18] and cannot detect the BOLA vulnerability of
+SELECT statements. BOLARAY [18] combines SQL and static analysis to automatically identify BOLA vulnerabilities in
+database-backed applications. However, BOLARAY also requires developers to mark DAL specifications, and does not
+Manuscript submitted to ACM
+26 Anbin Wu et al.
+support the detection of BOLA vulnerabilities in SELECT statements. The principle of MOCGuard [26] and BOLARAY
+to detect BOLA vulnerabilities is highly similar. They are based on human-summarized authorization models and use
+the relationship between the database tables corresponding to the resources to infer whether the user has permission to
+access the corresponding resources. The four authorization models summarized by BOLARAY are more comprehensive
+than MOCGuard and cover more scenarios. Similarly, MOCGuard also cannot handle the dynamic authorization logic
+of unknown systems due to the static nature of the artificially summarized authorization model.
+8.3 Runtime Monitoring
+There are also some works to enforce access control at system runtime. Nemesis [14] ensures that only authenticated
+users can access resources under the manual authorization policy. FlowWatcher [31] found that the access control
+pattern of resources in most web applications is similar. Therefore, FlowWatcher requires developers to provide an
+access policy to detect whether the policy is violated during system runtime.
+9 Conclusions
+This paper proposes a defense framework for BOLA attacks, BolaZ, based on zero trust. The framework uses static
+taint tracking technology to obtain propagation data flows of resource IDs and determines APIs’ role according to the
+production and consumption of resource IDs. To capture the context semantic relationship between P-APIs and C-APIs,
+BolaZ also tracks the propagation path of resource IDs between APIs. Experiments show that BolaZ can effectively
+identify and correlate APIs, low-performance overhead, and high security in multi-API vulnerability scenarios.
+Acknowledgments
+This work is supported by the National Natural Science Foundation of China under Grant 62372323.

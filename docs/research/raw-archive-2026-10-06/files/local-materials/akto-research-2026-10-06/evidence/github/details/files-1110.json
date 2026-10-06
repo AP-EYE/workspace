@@ -1,0 +1,14 @@
+[
+  {
+    "sha": "4b54d01800b2c77e64009a65832fa36258df011a",
+    "filename": "apps/testing/src/main/java/com/akto/test_editor/execution/Executor.java",
+    "status": "modified",
+    "additions": 6,
+    "deletions": 3,
+    "changes": 9,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/b20740624bad12c5f164e01a704c5e1e70319e30/apps%2Ftesting%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Ftest_editor%2Fexecution%2FExecutor.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/b20740624bad12c5f164e01a704c5e1e70319e30/apps%2Ftesting%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Ftest_editor%2Fexecution%2FExecutor.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Ftesting%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Ftest_editor%2Fexecution%2FExecutor.java?ref=b20740624bad12c5f164e01a704c5e1e70319e30",
+    "patch": "@@ -740,9 +740,12 @@ public ExecutorSingleOperationResp runOperation(String operationType, RawApi raw\n                     if (authMechanism == null || authMechanism.getAuthParams() == null || authMechanism.getAuthParams().size() == 0) {\n                         return new ExecutorSingleOperationResp(false, \"auth headers missing\");\n                     }\n-                    authVal = authMechanism.getAuthParams().get(0).getValue();\n-                    ExecutorSingleOperationResp result = Operations.modifyHeader(rawApi, authHeader, authVal);\n-                    modifiedAtLeastOne = modifiedAtLeastOne || result.getSuccess();\n+\n+                    for (AuthParam authParam: authMechanism.getAuthParams()) {\n+                        authVal = authParam.getValue();\n+                        ExecutorSingleOperationResp result = Operations.modifyHeader(rawApi, authParam.getKey(), authVal);\n+                        modifiedAtLeastOne = modifiedAtLeastOne || result.getSuccess();\n+                    }\n                 }\n \n                 // once all the replacement has been done.. .remove all the auth keys that were not impacted by the change by comparing it with initial request"
+  }
+]

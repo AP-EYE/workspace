@@ -1,0 +1,14 @@
+[
+  {
+    "sha": "4a5f266eff460920f7e1ee2085641d8998bd84f9",
+    "filename": "libs/dao/src/main/java/com/akto/dto/CrawlerRun.java",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 1,
+    "changes": 2,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/1344f432e591f77fa02743e2b2f60415778ead67/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2FCrawlerRun.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/1344f432e591f77fa02743e2b2f60415778ead67/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2FCrawlerRun.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2FCrawlerRun.java?ref=1344f432e591f77fa02743e2b2f60415778ead67",
+    "patch": "@@ -61,7 +61,7 @@ public class CrawlerRun {\n     private String errorMessage;\n \n     public static final String COOKIES = \"cookies\";\n-    private Object cookies;\n+    private String cookies;\n \n     public static final String CRAWLING_TIME = \"crawlingTime\";\n     private Integer crawlingTime;"
+  }
+]

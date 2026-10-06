@@ -1,0 +1,62 @@
+[
+  {
+    "sha": "f751bf842fb5425d1de30133a20de9b2cf622241",
+    "filename": "apps/dashboard/src/main/java/com/akto/action/CustomDataTypeAction.java",
+    "status": "modified",
+    "additions": 18,
+    "deletions": 0,
+    "changes": 18,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/b7d4870d88b3ac04ef4b7106c7de7696c639d9c6/apps%2Fdashboard%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Faction%2FCustomDataTypeAction.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/b7d4870d88b3ac04ef4b7106c7de7696c639d9c6/apps%2Fdashboard%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Faction%2FCustomDataTypeAction.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Faction%2FCustomDataTypeAction.java?ref=b7d4870d88b3ac04ef4b7106c7de7696c639d9c6",
+    "patch": "@@ -10,6 +10,7 @@\n import com.akto.dto.traffic.Key;\n import com.akto.dto.traffic.SampleData;\n import com.akto.dto.type.SingleTypeInfo;\n+import com.akto.listener.InitializerListener;\n import com.akto.listener.RuntimeListener;\n import com.akto.log.LoggerMaker;\n import com.akto.log.LoggerMaker.LogDb;\n@@ -124,6 +125,23 @@ public String fetchDataTypesForSettings() {\n         return Action.SUCCESS.toUpperCase();\n     }\n \n+    public String fillSensitiveDataTypes() {\n+        try {\n+            InitializerListener.insertPiiSources();\n+        } catch (Exception e) {\n+            e.printStackTrace();\n+            loggerMaker.errorAndAddToDb(\"error in insertPiiSources \" + e.getMessage());\n+        }\n+        try {\n+            InitializerListener.executePIISourceFetch();\n+        } catch (Exception e) {\n+            e.printStackTrace();\n+            loggerMaker.errorAndAddToDb(\"error in executePIISourceFetch \" + e.getMessage());\n+        }\n+\n+        return Action.SUCCESS.toUpperCase();\n+    }\n+\n     List<String> allDataTypes;\n     public String fetchDataTypeNames() {\n         this.allDataTypes = new ArrayList<>();"
+  },
+  {
+    "sha": "f59e7dc0db8d9ec5c304d938cab829c54d6a959b",
+    "filename": "apps/dashboard/src/main/java/com/akto/listener/InitializerListener.java",
+    "status": "modified",
+    "additions": 7,
+    "deletions": 0,
+    "changes": 7,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/b7d4870d88b3ac04ef4b7106c7de7696c639d9c6/apps%2Fdashboard%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Flistener%2FInitializerListener.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/b7d4870d88b3ac04ef4b7106c7de7696c639d9c6/apps%2Fdashboard%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Flistener%2FInitializerListener.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Flistener%2FInitializerListener.java?ref=b7d4870d88b3ac04ef4b7106c7de7696c639d9c6",
+    "patch": "@@ -554,6 +554,7 @@ private static String fetchPIIFile(PIISource piiSource){\n             }\n             return FileUtils.readFileToString(new File(fileUrl), StandardCharsets.UTF_8);\n         } catch (Exception e){\n+            e.printStackTrace();\n             loggerMaker.errorAndAddToDb(e, String.format(\"failed to fetch PII file %s from github, trying locally\", piiSource.getFileUrl()), LogDb.DASHBOARD);\n             return loadPIIFileFromResources(piiSource.getFileUrl());\n         }\n@@ -562,8 +563,10 @@ private static String fetchPIIFile(PIISource piiSource){\n     public static void executePIISourceFetch() {\n         List<PIISource> piiSources = PIISourceDao.instance.findAll(\"active\", true);\n         Map<String, CustomDataType> customDataTypesMap = new HashMap<>();\n+        loggerMaker.infoAndAddToDb(\"logging pii source size \" + piiSources.size());\n         for (PIISource piiSource : piiSources) {\n             String id = piiSource.getId();\n+            loggerMaker.infoAndAddToDb(\"pii source id \" + id);\n             Map<String, PIIType> currTypes = piiSource.getMapNameToPIIType();\n             if (currTypes == null) {\n                 currTypes = new HashMap<>();\n@@ -584,6 +587,7 @@ public static void executePIISourceFetch() {\n                     customDataTypesMap.put(customDataType.getName(), customDataType);\n                 }\n             }\n+            loggerMaker.infoAndAddToDb(\"customDataTypesMap size \" + customDataTypesMap.size());\n \n             List<Bson> piiUpdates = new ArrayList<>();\n \n@@ -615,6 +619,7 @@ public static void executePIISourceFetch() {\n                 if (userHasChangedCondition || hasNotChangedCondition) {\n                     continue;\n                 } else {\n+                    loggerMaker.infoAndAddToDb(\"found different \" + piiType.getName());\n                     Severity dtSeverity = null;\n                     List<String> categoriesList = null;\n                     categoriesList = (List<String>) dt.get(AktoDataType.TAGS_LIST);\n@@ -644,8 +649,10 @@ public static void executePIISourceFetch() {\n                     }\n \n                     if (existingCDT == null) {\n+                        loggerMaker.infoAndAddToDb(\"inserting different \" + piiType.getName());\n                         CustomDataTypeDao.instance.insertOne(newCDT);\n                     } else {\n+                        loggerMaker.infoAndAddToDb(\"updating different \" + piiType.getName());\n                         List<Bson> updates = getCustomDataTypeUpdates(existingCDT, newCDT);\n                         if (!updates.isEmpty()) {\n                             CustomDataTypeDao.instance.updateOne("
+  },
+  {
+    "sha": "1bc7467baddb509c2b4386d6a34c6274506d97ae",
+    "filename": "apps/dashboard/src/main/resources/struts.xml",
+    "status": "modified",
+    "additions": 29,
+    "deletions": 0,
+    "changes": 29,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/b7d4870d88b3ac04ef4b7106c7de7696c639d9c6/apps%2Fdashboard%2Fsrc%2Fmain%2Fresources%2Fstruts.xml",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/b7d4870d88b3ac04ef4b7106c7de7696c639d9c6/apps%2Fdashboard%2Fsrc%2Fmain%2Fresources%2Fstruts.xml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fsrc%2Fmain%2Fresources%2Fstruts.xml?ref=b7d4870d88b3ac04ef4b7106c7de7696c639d9c6",
+    "patch": "@@ -2814,6 +2814,35 @@\n             </result>\n         </action>\n \n+        <action name=\"api/fillSensitiveDataTypes\" class=\"com.akto.action.CustomDataTypeAction\" method=\"fillSensitiveDataTypes\">\n+            <interceptor-ref name=\"json\"/>\n+            <interceptor-ref name=\"defaultStack\" />\n+            <interceptor-ref name=\"roleAccessInterceptor\">\n+                <param name=\"featureLabel\">SENSITIVE_DATA</param>\n+                <param name=\"accessType\">READ_WRITE</param>\n+                <param name=\"actionDescription\">User added/updated a sensitive data type</param>\n+            </interceptor-ref>\n+            <result name=\"FORBIDDEN\" type=\"json\">\n+                <param name=\"statusCode\">403</param>\n+                <param name=\"ignoreHierarchy\">false</param>\n+                <param name=\"includeProperties\">^actionErrors.*</param>\n+            </result>\n+            <interceptor-ref name=\"usageInterceptor\">\n+                <param name=\"featureLabel\">CUSTOM_DATA_TYPES</param>\n+            </interceptor-ref>\n+            <result name=\"SUCCESS\"  type=\"json\"/>\n+            <result name=\"ERROR\" type=\"json\">\n+                <param name=\"statusCode\">422</param>\n+                <param name=\"ignoreHierarchy\">false</param>\n+                <param name=\"includeProperties\">^actionErrors.*</param>\n+            </result>\n+            <result name=\"UNAUTHORIZED\" type=\"json\">\n+                 <param name=\"statusCode\">403</param>\n+                 <param name=\"ignoreHierarchy\">false</param>\n+                 <param name=\"includeProperties\">^actionErrors.*</param>\n+            </result>\n+        </action>\n+\n         <action name=\"api/fetchCountMapOfApis\" class=\"com.akto.action.CustomDataTypeAction\" method=\"getCountOfApiVsDataType\">\n             <interceptor-ref name=\"json\"/>\n             <interceptor-ref name=\"defaultStack\" />"
+  },
+  {
+    "sha": "328635c595f3a7e4f797021f125675c263ec322a",
+    "filename": "apps/dashboard/web/polaris_web/web/src/apps/dashboard/pages/observe/AllSensitiveData/AllSensitiveData.jsx",
+    "status": "modified",
+    "additions": 5,
+    "deletions": 0,
+    "changes": 5,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/b7d4870d88b3ac04ef4b7106c7de7696c639d9c6/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Fobserve%2FAllSensitiveData%2FAllSensitiveData.jsx",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/b7d4870d88b3ac04ef4b7106c7de7696c639d9c6/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Fobserve%2FAllSensitiveData%2FAllSensitiveData.jsx",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Fobserve%2FAllSensitiveData%2FAllSensitiveData.jsx?ref=b7d4870d88b3ac04ef4b7106c7de7696c639d9c6",
+    "patch": "@@ -309,10 +309,15 @@ function AllSensitiveData() {\n         api.resetSampleData();\n     }\n \n+    function fillSensitiveDataTypes(){\n+        api.fillSensitiveDataTypes();\n+    }\n+\n     const secondaryActionsComp = (\n         <HorizontalStack gap={\"2\"}>\n             { (func.checkOnPrem() && window?.USER_NAME !== undefined && window.USER_NAME.includes(\"razorpay\")) ? <Button onClick={resetSampleData}>Reset Sample Data</Button> : <></>}\n             <Button onClick={displayGPT}>Ask AktoGPT</Button>\n+            <Button onClick={fillSensitiveDataTypes}>Fill Data Types</Button>\n         </HorizontalStack>\n     )\n "
+  },
+  {
+    "sha": "c862e51f055b7d3977efa5c3257d757b6a0f7935",
+    "filename": "apps/dashboard/web/polaris_web/web/src/apps/dashboard/pages/observe/api.js",
+    "status": "modified",
+    "additions": 7,
+    "deletions": 0,
+    "changes": 7,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/b7d4870d88b3ac04ef4b7106c7de7696c639d9c6/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Fobserve%2Fapi.js",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/b7d4870d88b3ac04ef4b7106c7de7696c639d9c6/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Fobserve%2Fapi.js",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Fobserve%2Fapi.js?ref=b7d4870d88b3ac04ef4b7106c7de7696c639d9c6",
+    "patch": "@@ -60,6 +60,13 @@ export default {\n             data: {}\n         })\n     },\n+    fillSensitiveDataTypes() {\n+        return request({\n+            url: '/api/fillSensitiveDataTypes',\n+            method: 'post',\n+            data: {}\n+        })\n+    },\n     async fetchSampleData(url, apiCollectionId, method) {\n         const resp = await request({\n             url: '/api/fetchSampleData',"
+  }
+]

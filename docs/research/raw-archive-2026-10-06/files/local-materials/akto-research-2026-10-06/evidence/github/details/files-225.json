@@ -1,0 +1,26 @@
+[
+  {
+    "sha": "248a763beb6e74542da463a9fd16d5117c70992d",
+    "filename": "apps/dashboard/src/test/java/com/akto/listener/TestFintechTypes.java",
+    "status": "modified",
+    "additions": 5,
+    "deletions": 0,
+    "changes": 5,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/2b25c087ef1b038ce5fb14cba1356de7f74fecba/apps%2Fdashboard%2Fsrc%2Ftest%2Fjava%2Fcom%2Fakto%2Flistener%2FTestFintechTypes.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/2b25c087ef1b038ce5fb14cba1356de7f74fecba/apps%2Fdashboard%2Fsrc%2Ftest%2Fjava%2Fcom%2Fakto%2Flistener%2FTestFintechTypes.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fsrc%2Ftest%2Fjava%2Fcom%2Fakto%2Flistener%2FTestFintechTypes.java?ref=2b25c087ef1b038ce5fb14cba1356de7f74fecba",
+    "patch": "@@ -34,6 +34,11 @@ public void testTypes() {\n                     assertFalse(cdt.validate(\"ACDE9458J\", \"foo\"));\n                     break;\n                 \n+                case \"US ADDRESS\":\n+                    assertTrue(cdt.validate(\"123 MAIN ST, SAN JOSE, CA 11111\", \"foo\"));\n+                    assertFalse(cdt.validate(\"PO BOX 123, SAN JOSE, CA 11111\", \"foo\"));\n+                    break;\n+                \n                 default:\n                     break;\n             }"
+  },
+  {
+    "sha": "438ce6de50fd31805558548e610a155e55d9658b",
+    "filename": "pii-types/fintech.json",
+    "status": "modified",
+    "additions": 2,
+    "deletions": 1,
+    "changes": 3,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/2b25c087ef1b038ce5fb14cba1356de7f74fecba/pii-types%2Ffintech.json",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/2b25c087ef1b038ce5fb14cba1356de7f74fecba/pii-types%2Ffintech.json",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/pii-types%2Ffintech.json?ref=2b25c087ef1b038ce5fb14cba1356de7f74fecba",
+    "patch": "@@ -1,5 +1,6 @@\n {\n     \"types\": [\n-        {\"name\": \"PAN CARD\", \"regexPattern\" : \"[A-Z]{5}[0-9]{4}[A-Z]{1}\", \"sensitive\":false, \"onKey\": false, \"active\" : false}\n+        {\"name\": \"PAN CARD\", \"regexPattern\" : \"[A-Z]{5}[0-9]{4}[A-Z]{1}\", \"sensitive\":false, \"onKey\": false, \"active\" : false},\n+        {\"name\": \"US ADDRESS\", \"regexPattern\" : \"\\\\d{1,5}(\\\\s[\\\\w-.,]*){1,6},\\\\s[A-Z]{2}\\\\s\\\\d{5}\\\\b\", \"sensitive\":false, \"onKey\": false, \"active\" : false}\n     ]\n }"
+  }
+]

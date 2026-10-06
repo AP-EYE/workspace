@@ -1,0 +1,450 @@
+=== TITLE + ABSTRACT ===
+AuthScope: Towards Automatic Discovery of Vulnerable
+Authorizations in Online Services
+Chaoshun Zuo
+he University of Texas at Dallas
+800 W Campbell Rd
+Richardson, Texas 75080
+chaoshun.zuo@utdallas.edu
+Qingchuan Zhao
+he University of Texas at Dallas
+800 W Campbell Rd
+Richardson, Texas 75080
+qingchuan.zhao@utdallas.edu
+Zhiqiang Lin
+he University of Texas at Dallas
+800 W Campbell Rd
+Richardson, Texas 75080
+zhiqiang.lin@utdallas.edu
+ABSTRACT
+Whenaccessingonlineprivateresources(e.g.,userproiles,photos,
+shopping carts) from a client (e.g., a desktop web-browser or a
+mobile app), the service providers must implement proper access
+control, which typically involves both authentication and autho-
+rization. However, not all of the service providers follow the best
+practice, resulting in various access control vulnerabilities. To un-
+derstand such a threat in a large scale, and identify the vulnerable
+access control implementations in online services, this paper in-
+troduces AuthScope, a tool that is able to automatically execute a
+mobile app and pinpoint the vulnerable access control implemen-
+tations, particularly the vulnerable authorizations, in the corre-
+sponding online service. he key idea is to use diferential traic
+analysis to recognize the protocol ields and then automatically
+substitute the ields and observe the server response. One of the
+keychallengesforalargescalestudyliesinhowtoobtainthepost-
+authenticationrequest-and-responsemessagesforagivenapp. We
+have thus developed a targeted dynamic activity explorer to per-
+form an in-context analysis and drive the app execution to au-
+tomatically log in the service. We have tested AuthScope with
+4,838 popular mobile apps from Google Play, and identiied597
+0-day vulnerable authorizations that map to306 apps.
+CCS CONCEPTS
+•Security and privacy →Access control; Authorization; Web
+application security;
+KEYWORDS
+Access control; authorization; vulnerability discovery
+1 INTRODUCTION
+For any multi-user computing systems (e.g., online shopping and
+social networking), there is a need to regulate who can view or
+use a resource. A particular security mechanism to achieve this
+is to use access control, in which a user needs to be irst authenti-
+cated (i.e., telling the system who the user is) and then the access
+is granted if the authenticated user has the permission to do so.
+he use of access control can be dated back to Multics Operating
+Permission to make digital or hard copies of all or part of this work for personal or
+classr
+oom use is granted without fee provided that copies are not made or distributed
+forproitorcommercialadvantageandthatcopiesbearthisnoticeandthefullcitation
+on the irst page. Copyrights for components of this work owned by others than
+ACM must be honored. Abstracting with credit is permited. To copy otherwise,
+or republish, to post on servers or to redistribute to lists, requires prior speciic
+permission and/or a fee. Request permissions from permissions@acm.org.
+CCS’17, Oct. 30–Nov. 3, 201
+
+=== INTRODUCTION ===
+AuthScope: Towards Automatic Discovery of Vulnerable
+Authorizations in Online Services
+Chaoshun Zuo
+he University of Texas at Dallas
+800 W Campbell Rd
+Richardson, Texas 75080
+chaoshun.zuo@utdallas.edu
+Qingchuan Zhao
+he University of Texas at Dallas
+800 W Campbell Rd
+Richardson, Texas 75080
+qingchuan.zhao@utdallas.edu
+Zhiqiang Lin
+he University of Texas at Dallas
+800 W Campbell Rd
+Richardson, Texas 75080
+zhiqiang.lin@utdallas.edu
+ABSTRACT
+Whenaccessingonlineprivateresources(e.g.,userproiles,photos,
+shopping carts) from a client (e.g., a desktop web-browser or a
+mobile app), the service providers must implement proper access
+control, which typically involves both authentication and autho-
+rization. However, not all of the service providers follow the best
+practice, resulting in various access control vulnerabilities. To un-
+derstand such a threat in a large scale, and identify the vulnerable
+access control implementations in online services, this paper in-
+troduces AuthScope, a tool that is able to automatically execute a
+mobile app and pinpoint the vulnerable access control implemen-
+tations, particularly the vulnerable authorizations, in the corre-
+sponding online service. he key idea is to use diferential traic
+analysis to recognize the protocol ields and then automatically
+substitute the ields and observe the server response. One of the
+keychallengesforalargescalestudyliesinhowtoobtainthepost-
+authenticationrequest-and-responsemessagesforagivenapp. We
+have thus developed a targeted dynamic activity explorer to per-
+form an in-context analysis and drive the app execution to au-
+tomatically log in the service. We have tested AuthScope with
+4,838 popular mobile apps from Google Play, and identiied597
+0-day vulnerable authorizations that map to306 apps.
+CCS CONCEPTS
+•Security and privacy →Access control; Authorization; Web
+application security;
+KEYWORDS
+Access control; authorization; vulnerability discovery
+1 INTRODUCTION
+For any multi-user computing systems (e.g., online shopping and
+social networking), there is a need to regulate who can view or
+use a resource. A particular security mechanism to achieve this
+is to use access control, in which a user needs to be irst authenti-
+cated (i.e., telling the system who the user is) and then the access
+is granted if the authenticated user has the permission to do so.
+he use of access control can be dated back to Multics Operating
+Permission to make digital or hard copies of all or part of this work for personal or
+classr
+oom use is granted without fee provided that copies are not made or distributed
+forproitorcommercialadvantageandthatcopiesbearthisnoticeandthefullcitation
+on the irst page. Copyrights for components of this work owned by others than
+ACM must be honored. Abstracting with credit is permited. To copy otherwise,
+or republish, to post on servers or to redistribute to lists, requires prior speciic
+permission and/or a fee. Request permissions from permissions@acm.org.
+CCS’17, Oct. 30–Nov. 3, 2017, Dallas, TX, USA.
+© 2017 ACM. ISBN 978-1-4503-4946-8/17/10…$15.00
+DOI: http://dx.doi.org/10.1145/3133956.3134089
+Systems [32], where a user irst logs in the system to acquire a
+user
+ID (UID) via a password-based authentication, and then the
+kernelcheckstheUIDwhentheuserrequestsaccesstoaprotected
+resource based on the corresponding permissions. Nearly all of
+the later multi-user operating systems (e.g., UNIX/Linux) have fol-
+lowed such an approach when implementing their access control
+mechanisms.
+When moving to the online services, designing and implement-
+ing a secure access control mechanism becomes a challenging task
+for several reasons. First, an online service can have up to hun-
+dreds of millions (even billions) of users, and handling such a large
+scale of users oten needs to use eicient database technologies.
+Second, managing the user credential correctly for authentication
+is another challenge (e.g., many online service today still mistak-
+enly store plaintext password [3, 12]). hird, the client side (e.g., a
+br
+owser, amobileapp)canbecompletelycontrolledbyanatacker
+and cannot be trusted at all. hat is, a request message generated
+by a client can be untrusted, and the eicient security check is
+needed at the server side [47].
+While
+the use of single-sign-on (e.g., with Facebook Login) [38]
+has
+made the authentication management much easier for online
+services, it does not solve the authorization problem automatically
+in that the online service provider (e.g., shopping sites such as
+Amazon)stillhastoregulatethattheauthenticateduseronlyviews
+and updates her own resources (e.g., her user proile or shopping
+cart). Over the past many years, an eicient approach of using
+security tokens to handle authorization was developed [20], and
+p
+opularized especially in web applications. In particular, in tradi-
+tional desktop web applications, a browser cookie or a session ID
+(these are oten called security tokens) is used for the authoriza-
+tion.
+Consequently,thesecurityoftheauthorizationdependsonhow
+strong the token is (and also whether the server enforces it). Any
+disclosure, capture, prediction, brute force, or ixation of the se-
+curity tokens will lead to severe atacks such as account hijack-
+ing, where an atacker is able to fully impersonate a victim to
+get all of her personal data. Unfortunately, not all of the online
+service providers follow the best practice when using the security
+tokens for the authorization. For instance, we have observed weak
+security tokens (e.g., just a very small integer) passing through
+mobile apps. Meanwhile, we have also observed that even though
+a service provider may have used strong security tokens (e.g., a
+256-bit cryptographic hash), the server actually does not enforce
+whether this token belongs to a particular user (i.e., the token) or
+it is just a token. Given the fact that so many mobile apps used
+in our daily lives, it is imperative to systematically identify these
+Session D2:  Vulnerable Mobile Apps
+CCS’17, October 30-November 3, 2017, Dallas, TX, USA
+799
+vulnerable access control servers, otherwise users’ personal data
+can
+be thus leaked.
+To this end, this paper introduces AuthScope, a tool to auto-
+matically identify the vulnerable access control servers, especially
+the vulnerable authorizations, when given just mobile apps. Since
+we do not have any source code of the sever side implementations,
+we can only perform a blackbox analysis of the remote server by
+generating and analyzing various network request and response
+messages between the client and the server. To pinpoint the vul-
+nerable access control implementations, our key insight is to use
+diferential traic analysis, a widely used network protocol anal-
+ysis technique (e.g., [13, 16, 17, 40, 47]), to recognize the network
+pr
+otocol ields and then automatically substitute the ields of in-
+terest and observe the server response to identify the vulnerable
+services. One of the key challenges for a large scale study lies in
+how to obtain the post-authentication request-and-response mes-
+sage pairs for a given app. We have thus developed an adaptive
+dynamic app activity explorer to perform an in-context analysis
+and drive the app execution to automatically log in the service.
+WehaveimplementedAuthScopeandtesteditwith 4,838very
+popular mobile apps from Google Play. Note that these apps all
+contain Facebook login and they belong to the top 10% of the mo-
+bile apps in terms of the accumulated downloads in Google Play.
+To our surprise, AuthScope has identiied597 0-day vulnerable
+access control implementations in the server side of306 mobile
+apps (with an upper bound of total install of 61 million). he
+root cause of these vulnerabilities comes from the mistaken use of
+either predictable IDs, or user’s email address, or user’s Facebook
+IDfortheauthorizationwithout(orenforcing)anysecuritytokens.
+Consequently, these online services can all be completely broken
+by an adversary, and privacy sensitiveor evensecretdata for up to
+61 million mobile users can be leaked due to these vulnerabilities.
+In short, we make the following contributions in this paper.
+- Novel System. We present AuthScope, a novel tool to
+automaticallyidentifythevulnerableaccesscontrolonthe
+server side. It does not require any code access of server’s
+implementation, other than just the traic between an au-
+thenticated user and the server.
+- Eicient Techniques. We apply diferential traic anal-
+ysis to automatically reverse engineer protocol ields of
+interest, such as security tokens, and also we develop an
+adaptive app activity exploration scheme to execute a mo-
+bile app in a targeted way and apply it to trigger post-
+authentication request messages.
+- Practical Results. WehavetestedAuthScopewith 4,838
+popular Android apps. Our tool has identiied597 0-day
+vulnerable access control implementations among the re-
+mote servers of306 mobile apps. We have made responsi-
+ble disclosure to all of the vulnerable service providers.
+2 BACKGROUND
+Inthissection,wepresentnecessarybackgroundinordertounder-
+stand the common mistakes and root causes of vulnerable access
+control implementations in online services. We begin with the
+basic concepts of authentication and authorization in §2.1, and
+then
+examine why the authorization in UNIX/Linux is secure in
+§2.2. Finally, we discuss how a typical secure authorization in an
+1
+2
+3
+4
+User Credential
+A
+ccess Token
+Access Token, Resource
+Response
+Figure 1: A Simpliied Authentication and Authoriza-
+tion
+Protocol in Online Services.
+online service is implemented and its practical security issues in
+§2.3.
+2.1
+Authentication and Authorization
+When providing private resources to multiple users, it oten re-
+quires two security services: authentication and authorization.
+- Authentication. he process of verifying a user’s iden-
+tity is called authentication. In a multi-user system, it is
+crucial to accurately identify who makes the request. A
+widely used approach to perform authentication is to use
+a password system in which a user’s identity is veriied by
+checking with a hashed password typed during the login.
+Also, authentication typically only needs to be performed
+once; otherwise it will be annoying to the user.
+- Authorization. heprocessofgrantingtheaccessofspe-
+ciic resources based on user’s privileges or permissions is
+called authorization. Not that authentication provides the
+proof of identity, but it does not describe the resources
+that are allowed to be accessed by the authenticated user.
+For instance, a user is authenticated before accessing a
+database, but this does not tell the database system which
+data the user is entitled to access. For this, it requires the
+authorization service.
+2.2 Authorization Security in UNIX/Linux
+For a multi-user operating system such as UNIX/Linux, right ater
+an authenticated user logs in, the system will automatically assign
+a UID (which is just an integer) based on the proile in the system
+(e.g., /etc/password) and create a shell process to serve the user’s
+request. his shell process will interact with the system on behalf
+oftheuserwiththeassignedUIDthatismaintainedbytheprocess
+descriptor in the kernel. To change the UID of a process or a user,
+it must invoke system calls.
+More speciically, to ensure the security, any access to a re-
+source needs to invoke system calls, in which access control is
+enforced based on the UID and permissions. An adversary cannot
+forge his or her UID to someone else’s even though the UID is
+known, because the kernel remembers the UID and tracks it at
+the corresponding process descriptor. For an adversary to really
+change the UID, he or she must exploit sotware vulnerabilities in
+the system such as bufer overlows in a daemon process. When
+theuserlogsout, theshellprocessalsoterminatesandtheuserhas
+to be authenticated again in order to use the system.
+Session D2:  Vulnerable Mobile Apps
+CCS’17, October 30-November 3, 2017, Dallas, TX, USA
+800
+
+=== CONCLUSION / DISCUSSION / LIMITATIONS ===
+
+Limitations and Future Works. While AuthScope has made
+a irst step towards automatic discovery of authorization vulnera-
+bilities in online service, it still has a number of limitations. First,
+clearly AuthScope has false negatives. For instance, we only fo-
+cused on the apps that use Facebook login (essentially using Face-
+book login to bypass the authentication step), but not all the apps
+have been using this social login. In our experiment, we iltered
+morethan 25,000mobileappsthatdonotcontainFacebooklogins.
+How to handle other social login schemes (e.g., Google login), or
+in general how to automatically login a remote service is still an
+unsolved problem. his may require solving the challenges of au-
+tomated service sign up, more intelligent Android UI recognition
+and test case generation, etc.
+Second, AuthScope only discovers the authorization vulnera-
+bility that leads to the information leakage and account hijacking
+atacks. Basically, these are atacks that lead tounauthorized read.
+However, there are also many other interesting atacks such as
+the unauthorized write. For instance, a user should not modify any
+itemsthatbelongtootherusers. Currently, AuthScopeisnotable
+to infer theunauthorized write automatically.
+Finally, the vulnerable authorization is a general problem in
+online services and is not just limited to Android app’s server side
+implementation. Currently, we only developed the prototype that
+performsdynamicAndroidappanalysisandprotocolreverseengi-
+neering to infer the vulnerability, and webelieveour methodology
+can also be applied to other platforms such as iOS and Windows.
+Also, AuthScope currently only handles the network communica-
+tions with HTTP/HTTPS protocols. We will study how to enable
+AuthScope to analyze the vulnerabilities for other platforms and
+other protocols, as well as addressing the irst two limitations in
+our future work.
+Practicality of the Attack and Countermeasures. It is abso-
+lutely incorrect to use predictable numbers without further autho-
+rization checks to allow access of a user’s private resource. How-
+ever, service developers may feel it is secure to just use email ad-
+dress or other sophisticated numbers such as Facebook ID for the
+authorization. However, we have to note that recently there are
+massivedataleakagesandhugevolumeofInternetuser’semailad-
+dresses have been leaked. We have to consider that email address
+is a public information now. Also, Facebook ID can be crawled
+and it can also be considered public. herefore, the atacks we
+discovered are quite practical. To really ix these vulnerabilities,
+we urge service developers to follow the best practices (as we have
+discussed in §2.3) such as using random token in each session,
+enfor
+cing the security checks with the token and particular user,
+and never assuming that a client is always trusted.
+Ethics and Responsible Disclosure. When developing Auth-
+Scope for vulnerability discovery, we do take ethics in the highest
+standard. First, weonlytestedtheserviceswiththetwolegitimate
+usersweregistered(namelyAliceandBob),andweneverstealany
+other user’s private information. Second, we never sent a large
+volume of traic to a remote service (to perform any denial of
+service atack), and all the traic is generated at the speed as how
+Session D2:  Vulnerable Mobile Apps
+CCS’17, October 30-November 3, 2017, Dallas, TX, USA
+811
+a normal user interacts with the remote system. Finally, we have
+made
+responsible disclosures when we discover a vulnerability.
+Inparticular,wehaveimmediatelynotiiedthedevelopersbased
+on the corresponding contact information on Google Play. As
+a result, some app developers contacted us to discuss the details
+of their server vulnerabilities and we have worked together with
+them to patch the vulnerabilities. For those apps whose vulnera-
+bilities have not been ixed yet at the time of this writing, we do
+not reveal their concrete app names and instead just masked their
+names with symbol ‘***’ as shown inTable 3. We will continue to
+pr
+ovide our best eforts to help ix their vulnerabilities.
+8 RELATED WORK
+Vulnerability Discovery in Online Services. It is challenging
+to develop vulnerability free sotware, and many online services
+contain various vulnerabilities ranging from SQL injection [21],
+cr
+oss-site-scripting [37], cross-site-forgery [11], to broken authen-
+tication
+[19], and even application logic vulnerabilities (e.g., [33,
+39, 40, 43]). Correspondingly, signiicant amount of eforts have
+b
+een focusing on identifying these vulnerabilities through either
+white-box analysis with server code, or black-box analysis with
+just network traic.
+here are also eforts to particularly study the access control
+issues in the online services. Most of them focused on the au-
+thenticationrelated problems, suchas security with single-sign on
+(e.g., [38, 45]), oauth (e.g., [15,36]), authentication vulnerability
+scanning
+(e.g., [10]), and password brute-force atacks with on-
+line
+services (e.g., [47]). Compared to these works, AuthScope is
+among
+the irst few to look into the post-authentication issues in
+onlineservicesandisabletoautomaticallydiscoverthevulnerable
+authorizations when given mobile apps enabled with social login.
+Dynamic Analysis of Mobile Apps. AuthScope leverages dy-
+namic analysis of Android apps to generate server request mes-
+sages. Inthepastseveralyears,therearealargebodyofresearchin
+dynamic analysis of Android apps (e.g,. Monkey [7], Robotium [4],
+AppsP
+layground [34], and DynoDroid [26]). Recently, there are
+also
+efortsofusingsymbolicexecution(e.g.,[ 8,29,42,46]formore
+systematic
+dynamic analysis of mobile apps.
+Compared to these works, AuthScope is partially inspired by
+AppsPlaygroundandwehaveextendedittosupportmoreaccurate
+anddeeperUIelementexploration. Whilewecanalsoleveragethe
+symbolicexecutiontohavebetercoverage,werealizethatwemay
+not need symbolic execution as identifying vulnerable authoriza-
+tion may not need large volume of request messages. Certainly,
+symbolic execution will help though.
+Protocol Reverse Engineering. AuthScope needs to reverse
+engineer the application protocol ields of interest and then per-
+form ields substitution to identify security vulnerabilities. Over
+the past decade, there are signiicant amount of eforts of analyz-
+ing both network messages (e.g., [13, 16, 17, 25]) and instructions
+traces
+(e.g., [14, 18, 22, 23, 28, 41]) to discover protocol formats
+and
+use them for security applications. AuthScope is particularly
+inspired by the protocol informatics project [13], and uses a cus-
+tomize
+d Needleman-Wunsch algorithm [30] to align and dif the
+pr
+otocol messages and infer only the ields of our interest.
+9 CONCLUSION
+We have presented the design, implementation, and evaluation of
+AuthScope, a tool that is able to automatically execute a mobile
+app, generate post-authentication messages, and pinpoint the vul-
+nerable access control implementations, particularly the vulnera-
+ble authorizations, on the server side. We have tested AuthScope
+with 4,838 popular mobile apps from Google Play, and identiied
+597vulnerable authorization implementations in306mobile apps.
+hese are very serious security vulnerabilities, very easy to atack,
+and can cause severe damages to end users such as personal infor-
+mation leakage and account hijacking. We have made responsible
+disclosure to all of the vulnerable service providers, and many of
+themhaveacknowledgedusandpatched(orstartedtopatch)their
+vulnerabilities. Finally, given the capability of such an automated
+analysis, wewouldliketoraisetheawarenessofthevulnerableau-
+thorization implementation issues in online services and hope the
+restvulnerableserviceproviderscouldpatchtheirservicesshortly.
+ACKNOWLEDGMENT
+We would like to thank the anonymous reviewers for their very
+helpful feedbacks. his research was supported in part by AFOSR
+under grants FA9550-14-1-0119 and FA9550-14-1-0173, and NSF
+awards 1453011 and 1516425. Any opinions, indings, conclusions,
+or recommendations expressed are those of the authors and not
+necessarily of the AFOSR and NSF.

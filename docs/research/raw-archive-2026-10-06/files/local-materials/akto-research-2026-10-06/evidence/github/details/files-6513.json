@@ -1,0 +1,26 @@
+[
+  {
+    "sha": "bddd04d36009b0a949801f41de18d133e875c018",
+    "filename": "apps/agent-guard/python-service/worker-py/src/llm_scanner.py",
+    "status": "modified",
+    "additions": 0,
+    "deletions": 1,
+    "changes": 1,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/0f4b43634f468c14863976cd3823822ca6e6f668/apps%2Fagent-guard%2Fpython-service%2Fworker-py%2Fsrc%2Fllm_scanner.py",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/0f4b43634f468c14863976cd3823822ca6e6f668/apps%2Fagent-guard%2Fpython-service%2Fworker-py%2Fsrc%2Fllm_scanner.py",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fagent-guard%2Fpython-service%2Fworker-py%2Fsrc%2Fllm_scanner.py?ref=0f4b43634f468c14863976cd3823822ca6e6f668",
+    "patch": "@@ -83,7 +83,6 @@ def parse_abcd_result(scanner_name: str, raw: str) -> dict[str, Any]:\n     raise ValueError(f\"expected one of A/B/C/D for {scanner_name}, got {(raw or '').strip()[:60]!r}\")\n \n \n-\n def parse_values_result(scanner_name: str, raw: str) -> dict[str, Any]:\n     \"\"\"Read the values-only contract: the secret substrings and nothing else.\n "
+  },
+  {
+    "sha": "41999b56b1d7a4ce847c31a3c1e9676a4f121c88",
+    "filename": "apps/agent-guard/python-service/worker-py/src/prompts/__init__.py",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 0,
+    "changes": 1,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/0f4b43634f468c14863976cd3823822ca6e6f668/apps%2Fagent-guard%2Fpython-service%2Fworker-py%2Fsrc%2Fprompts%2F__init__.py",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/0f4b43634f468c14863976cd3823822ca6e6f668/apps%2Fagent-guard%2Fpython-service%2Fworker-py%2Fsrc%2Fprompts%2F__init__.py",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fagent-guard%2Fpython-service%2Fworker-py%2Fsrc%2Fprompts%2F__init__.py?ref=0f4b43634f468c14863976cd3823822ca6e6f668",
+    "patch": "@@ -84,6 +84,7 @@ def build_scan_prompt(\n %s\n \n In one or two sentences, explain specifically what in the text matches this attack type. Describe the actual trigger, don't just restate the attack type name.\n+Refer to any PII, secret or personal data by kind and count only (e.g. \"an email address\", \"2 API keys\"); never quote the values themselves.\n \n Respond ONLY with valid JSON in exactly this shape, nothing else:\n {\"reason\": \"your explanation here\"}\"\"\""
+  }
+]

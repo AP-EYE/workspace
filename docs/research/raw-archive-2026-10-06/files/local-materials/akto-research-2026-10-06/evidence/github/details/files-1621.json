@@ -1,0 +1,14 @@
+[
+  {
+    "sha": "a678e2f785556dd1587c19893d384af5ac734185",
+    "filename": "apps/mini-runtime/Dockerfile",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 1,
+    "changes": 2,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/c869556191fc1d8d6e3392558a2d772d75b769e5/apps%2Fmini-runtime%2FDockerfile",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/c869556191fc1d8d6e3392558a2d772d75b769e5/apps%2Fmini-runtime%2FDockerfile",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fmini-runtime%2FDockerfile?ref=c869556191fc1d8d6e3392558a2d772d75b769e5",
+    "patch": "@@ -1,4 +1,4 @@\n-FROM openjdk\n+FROM amazoncorretto:8\n WORKDIR /app\n COPY ./target/mini-runtime-1.0-SNAPSHOT-jar-with-dependencies.jar /app/mini-runtime-1.0-SNAPSHOT-jar-with-dependencies.jar\n CMD \"java\" \"-XX:+ExitOnOutOfMemoryError\" \"-jar\" \"/app/mini-runtime-1.0-SNAPSHOT-jar-with-dependencies.jar\"\n\\ No newline at end of file"
+  }
+]

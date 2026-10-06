@@ -1,0 +1,38 @@
+[
+  {
+    "sha": "3954603773c3a01d033fea309aa5e3d41a662adb",
+    "filename": "libs/dao/src/main/java/com/akto/dto/type/KeyTypes.java",
+    "status": "modified",
+    "additions": 8,
+    "deletions": 1,
+    "changes": 9,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/596891598a55a7238264bcfc5930fe62b69abe1e/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2Ftype%2FKeyTypes.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/596891598a55a7238264bcfc5930fe62b69abe1e/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2Ftype%2FKeyTypes.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2Ftype%2FKeyTypes.java?ref=596891598a55a7238264bcfc5930fe62b69abe1e",
+    "patch": "@@ -10,7 +10,7 @@\n import com.akto.dto.SensitiveParamInfo;\n import com.akto.dto.type.SingleTypeInfo.ParamId;\n import com.akto.dto.type.SingleTypeInfo.SubType;\n-\n+import com.akto.dto.type.standard.VinValidator;\n import com.akto.types.CappedSet;\n import com.google.i18n.phonenumbers.PhoneNumberUtil;\n import com.google.i18n.phonenumbers.Phonenumber;\n@@ -144,6 +144,9 @@ private static SubType matchesSubType(SingleTypeInfo.SubType subType, Object key\n                 case \"PHONE_NUMBER\":\n                     if (isPhoneNumber(val.toString())) return subType;\n                     break;\n+                case \"VIN\":\n+                    if (VinValidator.isValid(val.toString())) return subType;    \n+                    break;\n                 default:\n                     return null;\n             }\n@@ -175,6 +178,10 @@ private static SubType getSubtype(Object o,String key, boolean checkForSubtypes,\n             return SingleTypeInfo.CREDIT_CARD;\n         }\n \n+        if (checkForSubtypes && !isHeader  && matchesSubType(SingleTypeInfo.VIN, key, oString) != null) {\n+            return SingleTypeInfo.VIN;\n+        }\n+\n         if (NumberUtils.isDigits(o.toString())) {\n             if (o.toString().length() < 19) {\n                 o = Long.parseLong(o.toString());"
+  },
+  {
+    "sha": "8fe34ab2e32626c6d82a8d757031abde291a700f",
+    "filename": "libs/dao/src/main/java/com/akto/dto/type/SingleTypeInfo.java",
+    "status": "modified",
+    "additions": 3,
+    "deletions": 0,
+    "changes": 3,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/596891598a55a7238264bcfc5930fe62b69abe1e/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2Ftype%2FSingleTypeInfo.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/596891598a55a7238264bcfc5930fe62b69abe1e/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2Ftype%2FSingleTypeInfo.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2Ftype%2FSingleTypeInfo.java?ref=596891598a55a7238264bcfc5930fe62b69abe1e",
+    "patch": "@@ -227,6 +227,8 @@ public enum Position {\n             Collections.emptyList());\n     public static SubType CREDIT_CARD = new SubType(\"CREDIT_CARD\", true, SuperType.STRING, StringSchema.class,\n             Collections.emptyList());\n+    public static SubType VIN = new SubType(\"VIN\", true, SuperType.STRING, StringSchema.class,\n+            Collections.emptyList());\n     public static SubType PHONE_NUMBER = new SubType(\"PHONE_NUMBER\", true, SuperType.STRING, StringSchema.class,\n             Collections.emptyList());\n     public static SubType UUID = new SubType(\"UUID\", false, SuperType.STRING, StringSchema.class,\n@@ -569,6 +571,7 @@ public enum Domain {\n         subTypeMap.put(\"ADDRESS\", ADDRESS);\n         subTypeMap.put(\"SSN\", SSN);\n         subTypeMap.put(\"CREDIT_CARD\", CREDIT_CARD);\n+        subTypeMap.put(\"VIN\", VIN);\n         subTypeMap.put(\"PHONE_NUMBER\", PHONE_NUMBER);\n         subTypeMap.put(\"UUID\", UUID);\n         subTypeMap.put(\"GENERIC\", GENERIC);"
+  },
+  {
+    "sha": "00441065a5f708ae3073dda84a7b8f2185e9874b",
+    "filename": "libs/dao/src/main/java/com/akto/dto/type/standard/VinValidator.java",
+    "status": "added",
+    "additions": 74,
+    "deletions": 0,
+    "changes": 74,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/596891598a55a7238264bcfc5930fe62b69abe1e/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2Ftype%2Fstandard%2FVinValidator.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/596891598a55a7238264bcfc5930fe62b69abe1e/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2Ftype%2Fstandard%2FVinValidator.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdto%2Ftype%2Fstandard%2FVinValidator.java?ref=596891598a55a7238264bcfc5930fe62b69abe1e",
+    "patch": "@@ -0,0 +1,74 @@\n+package com.akto.dto.type.standard;\n+\n+import java.util.regex.Pattern;\n+\n+public class VinValidator {\n+\n+    private static final Pattern VIN_PATTERN = Pattern.compile(\"^[A-HJ-NPR-Z0-9]{17}$\");\n+    \n+    // Weights for each position (1–17)\n+    private static final int[] WEIGHTS = {\n+            8, 7, 6, 5, 4, 3, 2, 10, 0, 9, 8, 7, 6, 5, 4, 3, 2\n+    };\n+\n+    /**\n+     * Validates a VIN: format + checksum (9th character).\n+     */\n+    public static boolean isValid(String vin) {\n+        if (vin == null) {\n+            return false;\n+        }\n+\n+        vin = vin.trim().toUpperCase();\n+\n+        if (!VIN_PATTERN.matcher(vin).matches()) {\n+            return false;\n+        }\n+\n+        // 2. Compute checksum\n+        int sum = 0;\n+        for (int i = 0; i < 17; i++) {\n+            char c = vin.charAt(i);\n+            int value = transliterate(c);\n+            if (value == -1) {\n+                return false; // invalid character just in case\n+            }\n+            sum += value * WEIGHTS[i];\n+        }\n+\n+        int checksum = sum % 11;\n+        char expectedCheckDigit = (checksum == 10) ? 'X' : (char) ('0' + checksum);\n+\n+        // 9th character (index 8) is the check digit\n+        char actualCheckDigit = vin.charAt(8);\n+\n+        return actualCheckDigit == expectedCheckDigit;\n+    }\n+\n+    /**\n+     * Transliterates a VIN character to its numeric value for checksum.\n+     * Digits 0–9 → 0–9\n+     * Letters mapped per ISO 3779.\n+     */\n+    private static int transliterate(char c) {\n+        if (c >= '0' && c <= '9') {\n+            return c - '0';\n+        }\n+\n+        switch (c) {\n+            case 'A': case 'J':             return 1;\n+            case 'B': case 'K': case 'S':   return 2;\n+            case 'C': case 'L': case 'T':   return 3;\n+            case 'D': case 'M': case 'U':   return 4;\n+            case 'E': case 'N': case 'V':   return 5;\n+            case 'F': case 'W':             return 6;\n+            case 'G': case 'P': case 'X':   return 7;\n+            case 'H': case 'Y':             return 8;\n+            case 'R': case 'Z':             return 9;\n+            default:\n+                // Should not happen if regex is correct (I, O, Q excluded),\n+                // but we keep this for safety.\n+                return -1;\n+        }\n+    }\n+}"
+  }
+]

@@ -1,0 +1,5510 @@
+[
+  {
+    "path": ".devcontainer/presidio-analyzer-transformers/devcontainer.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0f5e9ea23932995c1f70caf961e624f60272cbd3"
+  },
+  {
+    "path": ".devcontainer/presidio-analyzer/devcontainer.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "76656b084379707781ada012120c79bc00d7e8a2"
+  },
+  {
+    "path": ".devcontainer/presidio-anonymizer/devcontainer.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ba3fd30eb9ed9aeb891b5e094acc39aba9088bdc"
+  },
+  {
+    "path": ".devcontainer/presidio-image-redactor/devcontainer.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8144d4e23db764484b1a323e4370bf58be00b321"
+  },
+  {
+    "path": ".env",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e3ce75363432b90109c8b4f829b8661577ea0f96"
+  },
+  {
+    "path": ".gitattributes",
+    "mode": "100644",
+    "type": "blob",
+    "object": "00247642a0880fb99ad5908d943eee7780ae5be2"
+  },
+  {
+    "path": ".github/CODEOWNERS",
+    "mode": "100644",
+    "type": "blob",
+    "object": "46832de2c27c3fa5920b319128bf24680ba93aaf"
+  },
+  {
+    "path": ".github/ISSUE_TEMPLATE/bug_report.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "891c61775486e471e1b455eae087a70c1db71567"
+  },
+  {
+    "path": ".github/ISSUE_TEMPLATE/feature-request.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "bbcbbe7d61558adde3cbfd0c7a63a67c27ed6d30"
+  },
+  {
+    "path": ".github/ISSUE_TEMPLATE/general-questions.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "70ee173c9558722a23d9209d90d8703c5429c624"
+  },
+  {
+    "path": ".github/PULL_REQUEST_TEMPLATE.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "960c2ffac2696241008d74c0d15238948f44dbd8"
+  },
+  {
+    "path": ".github/copilot-instructions.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "34e3a054d3a4993419e71da51f992be5a66f8cc3"
+  },
+  {
+    "path": ".github/dependabot.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ebd18e875809548d20897451071d2175f7b06b30"
+  },
+  {
+    "path": ".github/github-repo-stats.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4b1718b2cb55ddeaa4d29d8f61bc057351c71e30"
+  },
+  {
+    "path": ".github/instructions/recognizers.instructions.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "889c65adb7172f24afa375881ec3c75a51e46bf0"
+  },
+  {
+    "path": ".github/instructions/yaml-config.instructions.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2602a742a52d8b39a94eaaaec34bd5eb28a9c68e"
+  },
+  {
+    "path": ".github/labeler.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a9141e03993c314df849eb94ec0938a60df2159b"
+  },
+  {
+    "path": ".github/pipelines/requirements-build.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "85238c0f01cf5b19926900f0e10db5bb7f33d566"
+  },
+  {
+    "path": ".github/pipelines/requirements-ruff.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c6253838c1f90320bd1f2ec323ff7616ec31a943"
+  },
+  {
+    "path": ".github/workflows/ci.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "85024ed73b28c1bbe5b8c9837f018e7ad9ec4f47"
+  },
+  {
+    "path": ".github/workflows/codeql-analysis.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "31b69c0a61b40dc38a5ab3c5104eda2dfbbadce3"
+  },
+  {
+    "path": ".github/workflows/defender-for-devops.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b9b5425872757ec0d9e051d1a0f27dce8ff9a97f"
+  },
+  {
+    "path": ".github/workflows/label-areas.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "873576bd9e5adee499f44b035c78d72e1b33961d"
+  },
+  {
+    "path": ".github/workflows/label-external.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "096cb1a658cf3f4224e50b52c55d17a0082a5dc2"
+  },
+  {
+    "path": ".github/workflows/release-docs.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "aa2b7365299d115669e23564f4cecf425648fbed"
+  },
+  {
+    "path": ".github/workflows/release.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "708f273f6c478685aab0bfcf8ddaea6eb639bc19"
+  },
+  {
+    "path": ".gitignore",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6640e593b3a21b05cfdfcbdd40994071e5b913d7"
+  },
+  {
+    "path": ".pre-commit-config.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "93729503f8fa95a01915d2096ce9e7209ca9f077"
+  },
+  {
+    "path": "AGENTS.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4d78224478c32cdab0f33ce9f2fb8b3fb096990d"
+  },
+  {
+    "path": "CHANGELOG.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d6d08119c79da7b41cf7bec48bf174dcc4dec358"
+  },
+  {
+    "path": "CLAUDE.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "08f04451c7879dcab209543e4d7c2ca480ee77ec"
+  },
+  {
+    "path": "CODE_OF_CONDUCT.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "068f8b4f61f7f786e373ce78fb7b3fa6335591df"
+  },
+  {
+    "path": "CONTRIBUTING.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "34aa18b29891cfc06bf8dc77878b418dab2555b8"
+  },
+  {
+    "path": "LICENSE",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9afc65b563ea7064fb04f68e3bbe31a15080f666"
+  },
+  {
+    "path": "NOTICE",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1b0d73e59a3bfa07ea007469bca01f939ae45428"
+  },
+  {
+    "path": "README.MD",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a877d23deed3d2245b8b4afda308deeb10f5b534"
+  },
+  {
+    "path": "SECURITY.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5290ac4edd0a056feded7f03fa6db6584b90dfcb"
+  },
+  {
+    "path": "SUPPORT.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1239f760a37dbe452364fd73b77cba3141dc544c"
+  },
+  {
+    "path": "docker-compose.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e0af4c8b7ef8c661090b9db3c0f8282118129a57"
+  },
+  {
+    "path": "docs/NOTICE",
+    "mode": "100644",
+    "type": "blob",
+    "object": "107baea2a43b15e44bc82f4042db7dcb44410ea9"
+  },
+  {
+    "path": "docs/ahds_integration.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ec44aec52a7e15e7f7883543cd221f00e28ad957"
+  },
+  {
+    "path": "docs/analyzer/adding_recognizers.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "aa574dd46a55ad7bbf542ecc16be5f6f1c1331dc"
+  },
+  {
+    "path": "docs/analyzer/analyzer_engine_provider.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5dd9c40d22ee6cdb7cc00327773e3597f244aaa5"
+  },
+  {
+    "path": "docs/analyzer/customizing_nlp_models.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8713f98645328765cefbd5b73baa61f4959504a7"
+  },
+  {
+    "path": "docs/analyzer/decision_process.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e6d25d70b8ceddb715ce871a0cedc3cbe9dd1b0e"
+  },
+  {
+    "path": "docs/analyzer/developing_recognizers.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "94474fa4aac9985c08052cfd72a9f7d4030aa3d2"
+  },
+  {
+    "path": "docs/analyzer/filtering_by_country.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "af2af40c4964c39aeee40364f9c343f8be455ae1"
+  },
+  {
+    "path": "docs/analyzer/index.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1ebd34443f1b05cd06961cc0d98a20f0e4037ea2"
+  },
+  {
+    "path": "docs/analyzer/languages-config.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ff5fa2e15fc85236ef5945783f753f504bcbfb21"
+  },
+  {
+    "path": "docs/analyzer/languages.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4316c112ceeaf6601e2d69d7c4cdf7ff31a43a85"
+  },
+  {
+    "path": "docs/analyzer/nlp_engines/gpu_usage.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "52f6021485a034d4aa4accd3610ed1390982e64c"
+  },
+  {
+    "path": "docs/analyzer/nlp_engines/spacy_stanza.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c7467a3f1c138faebfa6e413a657f365fb2105a5"
+  },
+  {
+    "path": "docs/analyzer/nlp_engines/transformers.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "fa98e5b7564592e991b3b41f42af796dff7b7183"
+  },
+  {
+    "path": "docs/analyzer/recognizer_registry_provider.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8b0b2b5ddf61a03313021d5ef223cb44f41f1423"
+  },
+  {
+    "path": "docs/anonymizer/adding_operators.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6407ce2093200cefca088384aefcbdb8c56575d8"
+  },
+  {
+    "path": "docs/anonymizer/index.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ffce8364c44554d7fd58b7d28334edba9a1cb730"
+  },
+  {
+    "path": "docs/api-docs/api-docs.html",
+    "mode": "100644",
+    "type": "blob",
+    "object": "60ded3c87d63e4b2a472ef4cf8a85f61bd695fa9"
+  },
+  {
+    "path": "docs/api-docs/api-docs.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "16b91920f73685254d16d29444631b5af0919633"
+  },
+  {
+    "path": "docs/api-docs/logo.svg",
+    "mode": "100644",
+    "type": "blob",
+    "object": "168ccdb261a19270977e25149524487e7ad7ca65"
+  },
+  {
+    "path": "docs/api.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "86002a37d1143b513cb3824eed086d7da3cd75dc"
+  },
+  {
+    "path": "docs/api/analyzer_python.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "fa06441cc1fdf03437ad417e001dc354c4b36a8c"
+  },
+  {
+    "path": "docs/api/anonymizer_python.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "93ecce6bf34c89e9f66445708eb9bd65d24aed52"
+  },
+  {
+    "path": "docs/api/image_redactor_python.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "33aa583adaa03364f56544e503950f80404ac868"
+  },
+  {
+    "path": "docs/api/structured_python.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "70ed02454962eb211752ed52e4139f329f84778b"
+  },
+  {
+    "path": "docs/assets/analyze-anonymize.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e69e1bf5dd7c643d29cc4a58d6b65c43f8db33da"
+  },
+  {
+    "path": "docs/assets/analyzer-design.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2aca7ec9b6b74ce0602e458341e9378cdeeec96f"
+  },
+  {
+    "path": "docs/assets/anonymizer-design.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c0c0a3666516bca9776eb6ab4abf6acdfa49de1d"
+  },
+  {
+    "path": "docs/assets/before-after.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "fdb4a5e35ea18b4c19787140da21d79cd60ac716"
+  },
+  {
+    "path": "docs/assets/changing_text.gif",
+    "mode": "100644",
+    "type": "blob",
+    "object": "77f9fee71e042dc6c8c29fec27b4ddbea86273e5"
+  },
+  {
+    "path": "docs/assets/demo.gif",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6ce05608c7d2f43fc4feb8a3dc238e06532c7cf3"
+  },
+  {
+    "path": "docs/assets/detection_flow.gif",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1f5b1c9a447c2fefd18a1aea1b47ff417ca15589"
+  },
+  {
+    "path": "docs/assets/dicom-image-redactor-design.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f5b188f1e38c98325022291c375a9fe04d762571"
+  },
+  {
+    "path": "docs/assets/dps-icon.svg",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5e43e4c1d2f834ee9b857fb74e725344bfc22ac3"
+  },
+  {
+    "path": "docs/assets/findings.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "15f4c306ba5da4e4a55564185423277b80e7a787"
+  },
+  {
+    "path": "docs/assets/image-redactor-design.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "cd2a4b97de38a3bd1280265ddba8b64fffb47d2d"
+  },
+  {
+    "path": "docs/assets/inkey.svg",
+    "mode": "100644",
+    "type": "blob",
+    "object": "168ccdb261a19270977e25149524487e7ad7ca65"
+  },
+  {
+    "path": "docs/assets/ms_icon.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "dbfd434fc7cb6307acab0095cd97beb4f9491bdb"
+  },
+  {
+    "path": "docs/assets/ocr-example.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "83f06d6c0cf2db092b5d888392345dbb362a145c"
+  },
+  {
+    "path": "docs/assets/presidio_gif.gif",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a978e496947c0f6c446804b6edebb3bbfb9fe101"
+  },
+  {
+    "path": "docs/assets/recognizers_class_diagram.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "86c284de42ff6d0633119207b62bee7686987204"
+  },
+  {
+    "path": "docs/assets/spacy-transformers-ner.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "79ddd67497711645f82c776740942d4228ffb748"
+  },
+  {
+    "path": "docs/build_release.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "14ce9ac82977c4f72a91b03e5060b618c3841c75"
+  },
+  {
+    "path": "docs/community.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a32471897867dc21311fd25ccf1f7f8c0822643c"
+  },
+  {
+    "path": "docs/design.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "490e92a4a8f2fc7d22c934d2b8835b47ef97a4e4"
+  },
+  {
+    "path": "docs/development.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b00e2af117dc421a616f32452efd8817f208c766"
+  },
+  {
+    "path": "docs/evaluation/index.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9a3094609946191a854bb72866a54b8257593aff"
+  },
+  {
+    "path": "docs/faq.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ce7937e814bb055a83a46eb08e94a4d2ec65270d"
+  },
+  {
+    "path": "docs/getting_started.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "73e94f1d94b5e40e8eca760d32ac7faab2229ac9"
+  },
+  {
+    "path": "docs/getting_started/getting_started_images.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d7bea530eaab40ef687e3c2163a824216c5ec00f"
+  },
+  {
+    "path": "docs/getting_started/getting_started_structured.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b023413900a6e2da4a1f87e878cbef3e23392304"
+  },
+  {
+    "path": "docs/getting_started/getting_started_text.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e0117675f958ff66b20426fcfdebfcd5d207b9db"
+  },
+  {
+    "path": "docs/image-redactor/evaluating_dicom_redaction.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6d2ba079e018da1a81e0c2a46fc54f4ace60bb09"
+  },
+  {
+    "path": "docs/image-redactor/index.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5c7a0e1648901cc41d2b039ae8f5e3ef9ac54057"
+  },
+  {
+    "path": "docs/image-redactor/ocr_text.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "61ae833953bb10dae294d6c9dcec3041d6bcf262"
+  },
+  {
+    "path": "docs/index.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "48f48ad398fc063551e597f458e7a8af5536006c"
+  },
+  {
+    "path": "docs/installation.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "24ca307db3e78bf14735c45d2fbe11764a8ce23a"
+  },
+  {
+    "path": "docs/learn_presidio/concepts.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4c99673e39fed1da763987d1ffaf41632b453889"
+  },
+  {
+    "path": "docs/learn_presidio/index.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9402ff055185d9de720783feeea0f122ba586e0e"
+  },
+  {
+    "path": "docs/presidio_V2.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "13346afc82cb2a7f510eb8e4cbbd01a7b9d2a2ce"
+  },
+  {
+    "path": "docs/project_transition.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "244cf6738ff1aa1111a170b4c34f6e1dc134c899"
+  },
+  {
+    "path": "docs/recipes/CONTRIBUTING.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f9e65a347bbb790753b8b05a437babaf2971c050"
+  },
+  {
+    "path": "docs/recipes/german-language-support/README.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "348464924005e64fe8bd2b434c9c15be788446ba"
+  },
+  {
+    "path": "docs/recipes/german-language-support/spacy_en_de.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2b4f66ec5794d0d9a075405fcc7c90ec6b4a65eb"
+  },
+  {
+    "path": "docs/recipes/index.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a0106a1344364ed469fb058451384f730fc0c29c"
+  },
+  {
+    "path": "docs/recipes/template.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4f06bd49cbf11a8618797f8e6f1b567c59b52acd"
+  },
+  {
+    "path": "docs/requirements-docs.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "88221070e5076dad1076e668b9199df3bcc634de"
+  },
+  {
+    "path": "docs/samples/deployments/app-service/index.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "183627587782f71eb0dea313cf324cf3dbc36d64"
+  },
+  {
+    "path": "docs/samples/deployments/app-service/presidio-app-service.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7a72fc92981568905ec538ca3798b89ea74d6c49"
+  },
+  {
+    "path": "docs/samples/deployments/app-service/presidio-services.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "aa433c51113976b8361e32ce728013c13f0f194c"
+  },
+  {
+    "path": "docs/samples/deployments/app-service/values.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3edc27d213da867f4492bf4de4f6c6078495c199"
+  },
+  {
+    "path": "docs/samples/deployments/data-factory/arm-templates/azure-deploy-adf-app-service.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b66aaa6782e4154efe845152f0f9e2d75f931176"
+  },
+  {
+    "path": "docs/samples/deployments/data-factory/arm-templates/azure-deploy-adf-databricks.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4d7c0e1eb81e29fd150bd339f2913f35055f8916"
+  },
+  {
+    "path": "docs/samples/deployments/data-factory/arm-templates/azure-deploy-adf-template-gallery-http.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e0a8d29e5c13120b9c9063612d0ac3ae6a1df701"
+  },
+  {
+    "path": "docs/samples/deployments/data-factory/images/adf-app-service-screenshot.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e14f85cb5abce84adc52e44b2a93eb90359cfe51"
+  },
+  {
+    "path": "docs/samples/deployments/data-factory/images/adf-databricks-screenshot.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f8787868dbf257882cd5cd2fcdfbc1ed0f58f4e9"
+  },
+  {
+    "path": "docs/samples/deployments/data-factory/images/data-anonymization-databricks-01.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "53e9cabde145db46ae7e42ea35fbe9da2576501f"
+  },
+  {
+    "path": "docs/samples/deployments/data-factory/images/data-anonymization-databricks-02.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "cb5c6e02705c58c895a5febd3276873760ec05b0"
+  },
+  {
+    "path": "docs/samples/deployments/data-factory/images/data-anonymization-databricks-03.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "288a5d710b11022cc2860445a9e1fbbc50bc5186"
+  },
+  {
+    "path": "docs/samples/deployments/data-factory/images/data-anonymization-databricks-04.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d35be958c9a01bc0744d755aa0b70e3bec4e73a8"
+  },
+  {
+    "path": "docs/samples/deployments/data-factory/images/data-anonymization-databricks-05.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "229fcfb1c973b02c97439dcf7ee724343ebf0fce"
+  },
+  {
+    "path": "docs/samples/deployments/data-factory/images/data-anonymization-databricks-06.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "16c386fa06fe2b2fd41c1027e0ce8aba6259c6b0"
+  },
+  {
+    "path": "docs/samples/deployments/data-factory/images/data-anonymization-databricks-07.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f20f5f824ccf266be8bd700c72c8912f621b6477"
+  },
+  {
+    "path": "docs/samples/deployments/data-factory/images/data-anonymization-http-01.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e2e8a3c814977277f4bbc4991461ef5bdc7b1a87"
+  },
+  {
+    "path": "docs/samples/deployments/data-factory/images/data-anonymization-http-02.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "927c435f7842a6acd123505be464d9a641ab441e"
+  },
+  {
+    "path": "docs/samples/deployments/data-factory/images/data-anonymization-http-03.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "074797e4e75fc69e675b51a5762fa82972bf03ac"
+  },
+  {
+    "path": "docs/samples/deployments/data-factory/images/data-anonymization-http-04.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "89f2431653aeab160a9bbe053c456f568d4dfe00"
+  },
+  {
+    "path": "docs/samples/deployments/data-factory/index.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b8b0afa449346b17fd1fdd2525a17bde0f83c2dd"
+  },
+  {
+    "path": "docs/samples/deployments/data-factory/presidio-data-factory-template-gallery-databricks.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ebf43b1d09678f03233bd7a8c565ed1fa6cf0b9e"
+  },
+  {
+    "path": "docs/samples/deployments/data-factory/presidio-data-factory-template-gallery-http.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1e4ed5c876dc4a549b9e87e56917916249497219"
+  },
+  {
+    "path": "docs/samples/deployments/data-factory/presidio-data-factory.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "bb4d6374ab765c8b7f78a6a54bd13142d1dc0e68"
+  },
+  {
+    "path": "docs/samples/deployments/index.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "29db911ad4db2329c195809efe0839b191797482"
+  },
+  {
+    "path": "docs/samples/deployments/k8s/charts/presidio/.helmignore",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f0c13194444163d1cba5c67d9e79231a62bc8f44"
+  },
+  {
+    "path": "docs/samples/deployments/k8s/charts/presidio/Chart.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "74162a7d9a8630bb380e8cbc239a44a7557ebd0d"
+  },
+  {
+    "path": "docs/samples/deployments/k8s/charts/presidio/templates/NOTES.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8465db4cbbc00912ac5bc3430107bc0eabe5a373"
+  },
+  {
+    "path": "docs/samples/deployments/k8s/charts/presidio/templates/_helpers.tpl",
+    "mode": "100644",
+    "type": "blob",
+    "object": "935b0ad14adc0877d77a1c2ea5181a30bb612bd0"
+  },
+  {
+    "path": "docs/samples/deployments/k8s/charts/presidio/templates/analyzer-deployment.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1e693d8c4b716792bb9dc361750d09de5ba7ff0e"
+  },
+  {
+    "path": "docs/samples/deployments/k8s/charts/presidio/templates/analyzer-service.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5a2f6935ef4dc3554054ee618d835e0d01394d8f"
+  },
+  {
+    "path": "docs/samples/deployments/k8s/charts/presidio/templates/anonymizer-deployment.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f211ca0ce10b43695d788cdb422d11617c3ee3b2"
+  },
+  {
+    "path": "docs/samples/deployments/k8s/charts/presidio/templates/anonymizer-image-deployment.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f4f3307b97b087e692d81f76a0424a7ab763c48d"
+  },
+  {
+    "path": "docs/samples/deployments/k8s/charts/presidio/templates/anonymizer-image-service.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e9b045cf2f5d0f14d60fac2f3081063ffd35ee88"
+  },
+  {
+    "path": "docs/samples/deployments/k8s/charts/presidio/templates/anonymizer-service.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1cd466820358c59923cf6e558648c7ca357821bb"
+  },
+  {
+    "path": "docs/samples/deployments/k8s/charts/presidio/templates/ingress.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "32976d71402654570278e21fda7894cd5166edd1"
+  },
+  {
+    "path": "docs/samples/deployments/k8s/charts/presidio/values.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "650f6f1fd98966cbfd0b829054a04bd753d68709"
+  },
+  {
+    "path": "docs/samples/deployments/k8s/deployment/deploy-presidio.sh",
+    "mode": "100755",
+    "type": "blob",
+    "object": "a8983acead05d7d3695d3f314d931de691b12112"
+  },
+  {
+    "path": "docs/samples/deployments/k8s/deployment/run-with-kind.sh",
+    "mode": "100755",
+    "type": "blob",
+    "object": "3a9a64b5cd6587ac403f2c4ed28ea526c3d51729"
+  },
+  {
+    "path": "docs/samples/deployments/k8s/index.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ddc84b259006a4fe41082ea015fe29fc2694bdaa"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/.devcontainer/devcontainer.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b61d489401607300152933d7f1c6c324f3798bd1"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/.devcontainer/post-create.sh",
+    "mode": "100755",
+    "type": "blob",
+    "object": "97eb1c2fbdece73f214a70ff020ce4f7feb66fdf"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/.gitignore",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6676aa89d2fa794fcbb954dec0825c893b94f039"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/deployments/api/configmap.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "19a94ef9649e168bfe054896a8f7bddbf077639b"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/deployments/api/deployment.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "511e1377fa0992b8c01e797eeb26ee23eb36a282"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/deployments/api/service.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4e42b62915f0f81c9a1be82425b4519ecc40e526"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/deployments/client/configmap.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d76ed4bfa68f859262936963a56fc55c855f87a9"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/deployments/client/deployment.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "767e722ab79c97cb00b07e36605c6aebbfdf7285"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/deployments/client/loadbalancer.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6430a6e1007c2e5273f7f6044035524ad3ec432a"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/deployments/client/service.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "52114b1c6c0f9e03bef0ce07cb2c15d50ddb61c6"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/deployments/redis/deployment.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "41cf3eb27c7c593cebe1eb525a76e9e065630272"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/deployments/redis/service.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "73578d107652ed3dfc6728d63b80eeda6b0de4a9"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/docs/.attachments/architecture.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "dd9506547f5ad24fed6dabd387ea079cd6856734"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/docs/.attachments/llm_chat.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d09c9247b2e2c933910bea8d0c829a6c7efe94f2"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/docs/.diagrams/architecture.mermaid",
+    "mode": "100644",
+    "type": "blob",
+    "object": "244e652bf3d4d130914315cc2c7b771d3f79ea2f"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/docs/sample_for_presidio_pr/anonymization_toolkit_sample.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ad5688fab8034352c6602b1ac3ed9fcc3de57d71"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/index.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "46d6d5514b380b40b2f1408b883cc75161f740e6"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/infrastructure/deploy.sh",
+    "mode": "100755",
+    "type": "blob",
+    "object": "769973c88aa6e81bf14a46877f900e0f216e5903"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/infrastructure/main.bicep",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0f19c6f2bea296c3c76d1c6511e95248e6e4874d"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/infrastructure/modules/acr.bicep",
+    "mode": "100644",
+    "type": "blob",
+    "object": "03f5f8f3287c3b186c4e3fbb6d161722f364878a"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/infrastructure/modules/aks.bicep",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b4bb55803739cc084f9a5fd4b02c7a6c38461a7a"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/infrastructure/modules/redis.bicep",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5592bdbcd32d86c92a106abfb645f642114a77d2"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/infrastructure/modules/roles.bicep",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0297d2545a6e4ab1f9d5d5f1a01ec92b37604641"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/src/.gitignore",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3919868aff66d28857f7a79a41ce845de8b4ff3b"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/src/api/.env.sample",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1e018df5b755d70d65b2ac1a8a23879674e0fdb2"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/src/api/Dockerfile",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f7164ac0b4e13e40c22cc527c49284ea48e422a0"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/src/api/README.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d169358746b0347178d2fb8a56f6e5ec45c7b36b"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/src/api/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/src/api/config/config.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "61b18d18dc1fd3da8e128be9906d038b4c229a3a"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/src/api/main.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7a522bc04a93f63f7eaec8c972d8d44f6103c021"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/src/api/requirements.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4e5d5607c0b5014882955e247de60411648911f9"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/src/api/services/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/src/api/services/anonymizers/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/src/api/services/anonymizers/instance_counter_anonymizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c748f508d32699aee7c48823ce347aeded79f9ea"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/src/api/services/anonymizers/instance_counter_deanonymizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "dad800cfda42dbe38c63416adbcd84443bfc2d86"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/src/api/services/presidio/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/src/api/services/presidio/http_presidio_service.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "433fdd28f97af9ec8e6d9f92a5c0d8536b694471"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/src/api/services/presidio/hybrid_presidio_service.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8a6351c82f8ee2d426db4079d8178094d6ad12d0"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/src/api/services/presidio/presidio_service.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "863fb52262bc312ef99fca6ee5410035ea45d0fd"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/src/api/services/presidio/python_presidio_service.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7da34e01a45e0ba6c59596fd62edc704ae3c2248"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/src/api/services/state/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/src/api/services/state/inmemory_state_service.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ceda186ef41327ce5f5b2deb4d461bdc2146c4df"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/src/api/services/state/redis_state_service.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "305479ceb44a059e2b5fab0a06c9b12258b55a11"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/src/api/services/state/state_service.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9f92fdf90c0c6d7b57ceaff2b2cbb883390a01a3"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/src/api/services/toolkit_service.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1b56aa492f2e795b409a78deace1a23f66ee0310"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/src/client_app/.attachments/client_ui.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "02877d5c84d361ef4dc2376d2d80d04f6df6d79b"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/src/client_app/.dockerignore",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0a53e44f006bf1433adfd3561a08314e16194761"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/src/client_app/.env.sample",
+    "mode": "100644",
+    "type": "blob",
+    "object": "45b1cdafe8a4cd4062c8db315d07446e8841cd65"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/src/client_app/Dockerfile",
+    "mode": "100644",
+    "type": "blob",
+    "object": "30cad79efb105724811e738f866da26f6b8c0d12"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/src/client_app/README.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f83500dfd3f0f6354d2ea3ab70b698a2b8d11538"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/src/client_app/client.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2629bb09f11592b6683622f39240c7fe9ac842bb"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/src/client_app/requirements.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "26aaa339844c893dc62c797f427de2969d75851c"
+  },
+  {
+    "path": "docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/src/client_app/serve.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "299659eae1905845431edc9488b4073d33efbf7a"
+  },
+  {
+    "path": "docs/samples/deployments/redacting-telemetry/app/Dockerfile",
+    "mode": "100644",
+    "type": "blob",
+    "object": "60e24639a02bc79fb1d007d180c7e639fe757f29"
+  },
+  {
+    "path": "docs/samples/deployments/redacting-telemetry/app/main.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0984999e7b15b5ff1b049af93ac0fa8f5715465b"
+  },
+  {
+    "path": "docs/samples/deployments/redacting-telemetry/app/presidio_client.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9d449b63d9a06d3cfc2c6036c7054c7a772cf64b"
+  },
+  {
+    "path": "docs/samples/deployments/redacting-telemetry/app/requirements.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "09678016941cb8def0b89e229f282c7291af983e"
+  },
+  {
+    "path": "docs/samples/deployments/redacting-telemetry/docker-compose.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e6b6ddca7737ad5d436a79d47c3ac869ffb4c1ce"
+  },
+  {
+    "path": "docs/samples/deployments/redacting-telemetry/grafana/provisioning/dashboards/dashboards.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "06525c8aa7fb5abb21fe5eafe365885eafab16b2"
+  },
+  {
+    "path": "docs/samples/deployments/redacting-telemetry/grafana/provisioning/dashboards/pii-dashboard.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8bf7f858633abbf1d647c32fb52d6a428d8dfe40"
+  },
+  {
+    "path": "docs/samples/deployments/redacting-telemetry/grafana/provisioning/datasources/datasources.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "29073e91d30e0cc3411a311c047ce03e0fb6a967"
+  },
+  {
+    "path": "docs/samples/deployments/redacting-telemetry/index.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "db49678f00e1dfc2f03f8e2ca92904efdcd0be3d"
+  },
+  {
+    "path": "docs/samples/deployments/redacting-telemetry/otel-collector-config.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5447e73f13a2e7e550f67a844bcf25ae6f04bab8"
+  },
+  {
+    "path": "docs/samples/deployments/redacting-telemetry/tempo-config.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "78b0b1006c62c3786e839af5f94381a5319b80f2"
+  },
+  {
+    "path": "docs/samples/deployments/spark/arm-template/databricks.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "04609af22c65d3d32b4ef76bdc73379e83ef9479"
+  },
+  {
+    "path": "docs/samples/deployments/spark/arm-template/databricks.parameters.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e68db0caa29c5dccb46e86b6d8b46f9b34c84fc7"
+  },
+  {
+    "path": "docs/samples/deployments/spark/config/cluster.config.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5bfa82840f742fdde6f167985f35770e2ac3442b"
+  },
+  {
+    "path": "docs/samples/deployments/spark/config/run.setup.config.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7c97f6f0c492382129359b9a2b398be02e4f9755"
+  },
+  {
+    "path": "docs/samples/deployments/spark/index.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d0844327f8c5ad8a5a534535e542b4539937b95a"
+  },
+  {
+    "path": "docs/samples/deployments/spark/notebooks/00_setup.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "54c34d3834c9ea9dcc309e3723a9886f8a3d6428"
+  },
+  {
+    "path": "docs/samples/deployments/spark/notebooks/01_transform_presidio.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "623b6b4d49e3ce03b7ee7bc496267f859c267622"
+  },
+  {
+    "path": "docs/samples/deployments/spark/scripts/configure_databricks.sh",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2d03532ffa8f94c1053e9bbbba3cd07e2ee2a871"
+  },
+  {
+    "path": "docs/samples/deployments/spark/setup/startup.sh",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1bed9e5dc2c1abe1a978074775116bb4c09a889a"
+  },
+  {
+    "path": "docs/samples/docker/PresidioAnalyzer.postman_collection.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2fccc6120d16aa15237190da14f52b795e1c089b"
+  },
+  {
+    "path": "docs/samples/docker/PresidioAnonymizer.postman_collection.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f624fe97de9561c287ead22dc30255eba257940e"
+  },
+  {
+    "path": "docs/samples/docker/aisix.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e0a6f478a5ec4717dcc0e8a022cc7b9c0a98a273"
+  },
+  {
+    "path": "docs/samples/docker/index.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ac55d395b442488046e7233a376737d167cca058"
+  },
+  {
+    "path": "docs/samples/docker/litellm.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e9bf5cf6b85f5b8b1c98695e0e6e97aa3c607763"
+  },
+  {
+    "path": "docs/samples/fabric/artifacts/presidio_and_spark.ipynb",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6599e6e33e52117e688203f35988c99d86113d22"
+  },
+  {
+    "path": "docs/samples/fabric/data/fabric_sample_data.csv",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c6431ce63aa1a9c6dde5080a80da1243aa0e6172"
+  },
+  {
+    "path": "docs/samples/fabric/env_setup.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a6c2cd3074d2c397d52ddbb8c6de37dc0f56f38f"
+  },
+  {
+    "path": "docs/samples/fabric/images/anon_results.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1c2ffe1534e300fb4317eeb9a398467d7336c197"
+  },
+  {
+    "path": "docs/samples/fabric/images/custom_env_1.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "858db94aa4393def98415d69862c7dc98cbcaa8d"
+  },
+  {
+    "path": "docs/samples/fabric/images/custom_env_2.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4786717c597108708af2a4548485ce4b66a517ef"
+  },
+  {
+    "path": "docs/samples/fabric/images/custom_env_4.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "39b3ee8210a931b448265ac1be343e1e702caff3"
+  },
+  {
+    "path": "docs/samples/fabric/images/delta_table.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d5ed49aad8c4dec6cddc6524dd794c947239ba4b"
+  },
+  {
+    "path": "docs/samples/fabric/images/env_to_notebook.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7f442b163c09eb275842ef80ea0f7da76289c963"
+  },
+  {
+    "path": "docs/samples/fabric/images/large_model.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6e778c9da76ecb78407a35bc170a2b5f848e0d6c"
+  },
+  {
+    "path": "docs/samples/fabric/images/pii_summary.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "519f3b074a6780e8cd6c973d9cc02c377dec5bb0"
+  },
+  {
+    "path": "docs/samples/fabric/images/scale_results.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4774fd67539ff05a292ef9ba82c764cf6f2b2d0d"
+  },
+  {
+    "path": "docs/samples/fabric/images/spark_pool.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "543accaac26f9ff15aa14d53186fbce6c090bb3e"
+  },
+  {
+    "path": "docs/samples/fabric/index.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "db3c4eebe395f08f5853566e1cdc736eb5802456"
+  },
+  {
+    "path": "docs/samples/index.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "77e46971da43e4e14f9b167aa02a7e40b079d08d"
+  },
+  {
+    "path": "docs/samples/python/Anonymizing known values.ipynb",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ae22b20008466bc35514db2aba3938503b760fc2"
+  },
+  {
+    "path": "docs/samples/python/ahds/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "abf7ba20b537da1195cb135590d4e09819ab4709"
+  },
+  {
+    "path": "docs/samples/python/ahds/example_ahds_surrogate.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2f71b1dda82fb11af25b40b40f1c93c5c458393d"
+  },
+  {
+    "path": "docs/samples/python/ahds/index.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8bad344c7ecd873dac945d9320f97c5bad733b33"
+  },
+  {
+    "path": "docs/samples/python/batch_processing.ipynb",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3a8c49f5db614cf550cdd1c17ffc96ba4f7e7f5c"
+  },
+  {
+    "path": "docs/samples/python/csv_sample_data/sample_data.csv",
+    "mode": "100644",
+    "type": "blob",
+    "object": "89ac0c113ba6963d8dbdd536abfe01810eaf53ef"
+  },
+  {
+    "path": "docs/samples/python/csv_sample_data/test_structured.csv",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a116c141f4f161df49a76cf3abab8ec782103c50"
+  },
+  {
+    "path": "docs/samples/python/custom_presidio.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a106b201a12a85e718ef0c06f7fc31435ce002e2"
+  },
+  {
+    "path": "docs/samples/python/customizing_presidio_analyzer.ipynb",
+    "mode": "100644",
+    "type": "blob",
+    "object": "06767a9d53b327a0b12fc93c26c42ae2ad40a12a"
+  },
+  {
+    "path": "docs/samples/python/encrypt_decrypt.ipynb",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a270e6fed0cd5dea9c0b524a5b58e5667312c251"
+  },
+  {
+    "path": "docs/samples/python/example_custom_lambda_anonymizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d8fd86dafa2af53112e90549dcd95ca43e234747"
+  },
+  {
+    "path": "docs/samples/python/example_dicom_image_redactor.ipynb",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e866ad834b835b4a4b65cb540e7c1f21e98de589"
+  },
+  {
+    "path": "docs/samples/python/example_dicom_redactor_evaluation.ipynb",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c92a790e504bce3fd4b59807de964a58941f1e68"
+  },
+  {
+    "path": "docs/samples/python/example_pdf_annotation.ipynb",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4459600c414fa23835c6da0ece0397dcb657c5ab"
+  },
+  {
+    "path": "docs/samples/python/example_remote_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "160967294fa4ad9aaa9346b558406a27155ae902"
+  },
+  {
+    "path": "docs/samples/python/example_structured.ipynb",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8fd73d922b1b3a646664c3f3bf769d71aa9c61ae"
+  },
+  {
+    "path": "docs/samples/python/flair_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3fac4a05a0fbd848dcf1ea42e9d17bcf81d22dc3"
+  },
+  {
+    "path": "docs/samples/python/getting_entity_values.ipynb",
+    "mode": "100644",
+    "type": "blob",
+    "object": "10a682e8b429e68f4a6d9630d3fd708e1d3127aa"
+  },
+  {
+    "path": "docs/samples/python/gliner.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9d11d684bd3a13be1718a2c1adfed4d937e0a62d"
+  },
+  {
+    "path": "docs/samples/python/image_redaction_allow_list_approach.ipynb",
+    "mode": "100644",
+    "type": "blob",
+    "object": "bf1f6340e8abb9606f7b97313631de9c05c73af1"
+  },
+  {
+    "path": "docs/samples/python/integrating_with_external_services.ipynb",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f77bf608ea49ecb2c9852b1c47b95f7cf3180e6f"
+  },
+  {
+    "path": "docs/samples/python/keep_entities.ipynb",
+    "mode": "100644",
+    "type": "blob",
+    "object": "993fbb9aa6803fba4e866b59acce3ba5cbdc1592"
+  },
+  {
+    "path": "docs/samples/python/langextract/index.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "fd4d7a5ef0afd0fb0495072fe8ac3047686a0d8e"
+  },
+  {
+    "path": "docs/samples/python/ner_model_configuration.ipynb",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0f1ba9c872d521f992b40044ee5d379010d0147e"
+  },
+  {
+    "path": "docs/samples/python/no_code_config.ipynb",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0c3c25fd022905dfd4f84ccab2ab25570305af81"
+  },
+  {
+    "path": "docs/samples/python/plot_custom_bboxes.ipynb",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b84772795c1c20e0e03623c7805f81f9330e74b7"
+  },
+  {
+    "path": "docs/samples/python/presidio_notebook.ipynb",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7c315f38d1952f4ac3102d84c8f89ac933089fc9"
+  },
+  {
+    "path": "docs/samples/python/process_csv_file.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3c10bd834f0a9e8eb6dde2c01d7799b247ef47fc"
+  },
+  {
+    "path": "docs/samples/python/pseudonymization.ipynb",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6784cca436a3445ac9fbe2bd07820b258e1f12dc"
+  },
+  {
+    "path": "docs/samples/python/sample_data/0_ORIGINAL.dcm",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d58c6d08d5702350c7a4ed3e2a030760b5d5e8d5"
+  },
+  {
+    "path": "docs/samples/python/sample_data/1_ORIGINAL.dcm",
+    "mode": "100644",
+    "type": "blob",
+    "object": "fd6f5c6bdad284837eaec9f8402aa7bb9f34a0a1"
+  },
+  {
+    "path": "docs/samples/python/sample_data/2_ORIGINAL.dcm",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2f99786bfd9d9956dce1e633f0fe4921c511f11a"
+  },
+  {
+    "path": "docs/samples/python/sample_data/3_ORIGINAL.dcm",
+    "mode": "100644",
+    "type": "blob",
+    "object": "136c30b66afb3beab06d87b52a48dbedd414d86a"
+  },
+  {
+    "path": "docs/samples/python/sample_data/ground_truth.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "fe8a9abbfeb211fbad4b3f6ffd7e99d48e2f978a"
+  },
+  {
+    "path": "docs/samples/python/sample_data/sample.pdf",
+    "mode": "100644",
+    "type": "blob",
+    "object": "00f20ba1c1b17c4e83f3d001db4b7b95606c19f0"
+  },
+  {
+    "path": "docs/samples/python/sample_data/test_structured.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "286e4504a049bf50e3cd16af86e8f0b980778e3b"
+  },
+  {
+    "path": "docs/samples/python/sample_data/test_structured_complex.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9468997cffed487673e1a430ec1f6642fff3d429"
+  },
+  {
+    "path": "docs/samples/python/simple_anonymization_example.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a6f3adb039619ff444ce64e3cc6b4cc20802511c"
+  },
+  {
+    "path": "docs/samples/python/span_marker_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b80944c4f83651b86377b448cc18511acd87b44e"
+  },
+  {
+    "path": "docs/samples/python/streamlit/Dockerfile",
+    "mode": "100644",
+    "type": "blob",
+    "object": "982bebc435b1282152b9b75cf2f686c42de482fc"
+  },
+  {
+    "path": "docs/samples/python/streamlit/azure_ai_language_wrapper.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "36d43f4e92424167abca0500277c9f7020f98edd"
+  },
+  {
+    "path": "docs/samples/python/streamlit/demo_text.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "abeb092c5704f92cb355fde376ef4179772db8d9"
+  },
+  {
+    "path": "docs/samples/python/streamlit/flair_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "435e907b1913d9c7ef91336a510d3b7b441f64b9"
+  },
+  {
+    "path": "docs/samples/python/streamlit/index.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8e892cf6f090383df71578127adc3c9ca3e7014d"
+  },
+  {
+    "path": "docs/samples/python/streamlit/openai_fake_data_generator.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1c10c830752ef948f2efabb11ec25ab70ca1db26"
+  },
+  {
+    "path": "docs/samples/python/streamlit/presidio_helpers.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3cf53c3d4903fb8cd46bc447635abfaef28c1e9b"
+  },
+  {
+    "path": "docs/samples/python/streamlit/presidio_nlp_engine_config.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6f2655e1a7cc1e1deeb6db05994319fd5558b031"
+  },
+  {
+    "path": "docs/samples/python/streamlit/presidio_streamlit.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f675b8795834168ca22bf28379d1349f40fabfcb"
+  },
+  {
+    "path": "docs/samples/python/streamlit/requirements.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f385c883707afdd5f2bc30a9f74406b085c9dee9"
+  },
+  {
+    "path": "docs/samples/python/streamlit/test_streamlit.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8c3f15c5c4785b2c21ddfadeccba8244f564102d"
+  },
+  {
+    "path": "docs/samples/python/synth_data_with_openai.ipynb",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4bdf31372c64734a3536fe88d28d96a28d3c25f7"
+  },
+  {
+    "path": "docs/samples/python/text_analytics/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ff7853bf21d0acefe5f7b49f96095cf572d487ff"
+  },
+  {
+    "path": "docs/samples/python/text_analytics/index.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "eb4e1fd07acd21fbeba4dc6f2657c340de59fe10"
+  },
+  {
+    "path": "docs/samples/python/transformers_recognizer/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "docs/samples/python/transformers_recognizer/configuration.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b3ee0fd8e8331323230e4de2d49a9d1394ad4e80"
+  },
+  {
+    "path": "docs/samples/python/transformers_recognizer/index.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "326023be2b3868b3474d5547a8faffdc8df14bad"
+  },
+  {
+    "path": "docs/samples/python/transformers_recognizer/transformer_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e888a3b99f2d0d3a5ec9f25a7f489d4f90f054b8"
+  },
+  {
+    "path": "docs/structured/index.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "060fbc14e5b3b69662e320df9153499dcafa9955"
+  },
+  {
+    "path": "docs/stylesheets/extra.css",
+    "mode": "100644",
+    "type": "blob",
+    "object": "948039e396188fcbb68e229c7b7951dc836bf097"
+  },
+  {
+    "path": "docs/supported_entities.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "209fbc06ea9e3603e8945dbd3d3e8dff4677fe9c"
+  },
+  {
+    "path": "docs/text_anonymization.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1f989b2b0d3a928acc40a4bc0eea4eb78df1321d"
+  },
+  {
+    "path": "docs/tutorial/00_getting_started.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2738aaab28c30fdf6e30355b0a9acdeb6fbcfe2b"
+  },
+  {
+    "path": "docs/tutorial/01_deny_list.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c0552adb2024d80e9673f822762514e0ca48e980"
+  },
+  {
+    "path": "docs/tutorial/02_regex.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f993e9232bc38c965e46f71f2c19eaf204ed680e"
+  },
+  {
+    "path": "docs/tutorial/03_rule_based.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d4b5eb761b652dadef6e941ad41043e95a7b1bfe"
+  },
+  {
+    "path": "docs/tutorial/04_external_services.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b89cb1c6016b23144abe9da15c5259926560bcea"
+  },
+  {
+    "path": "docs/tutorial/05_languages.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6fee83a4ee85e92b58673ee9b5e447e02d64c598"
+  },
+  {
+    "path": "docs/tutorial/06_context.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "035a8f2ad08d252324ce6be6c4f43dde3160432e"
+  },
+  {
+    "path": "docs/tutorial/07_decision_process.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1919789c370088ef78ed6442a5004fd8bae0fbc6"
+  },
+  {
+    "path": "docs/tutorial/08_no_code.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d717761b7537b1881bcf28567aec47d59fbd5e13"
+  },
+  {
+    "path": "docs/tutorial/09_ad_hoc.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2dc9d41c8c604849aef38db452088cebc414676f"
+  },
+  {
+    "path": "docs/tutorial/10_simple_anonymization.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8131755c81bb5354dc24b6096f949ee33f23d2b1"
+  },
+  {
+    "path": "docs/tutorial/11_custom_anonymization.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b54e7bea39ec056ca283e3c8112f60602e14b2b1"
+  },
+  {
+    "path": "docs/tutorial/12_encryption.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0dc64e75ab16ab6a23913bc51499daaf7b1f904d"
+  },
+  {
+    "path": "docs/tutorial/13_allow_list.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "253a673d3d6a9fdea08c135904ce08bb37971078"
+  },
+  {
+    "path": "docs/tutorial/index.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a5c3acbb10cf4b116b628918766c4a8e1ca3db64"
+  },
+  {
+    "path": "e2e-tests/README.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "af3dba77a14f1608245b198778bebe577fc588a3"
+  },
+  {
+    "path": "e2e-tests/common/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "e2e-tests/common/assertions.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "fe6ab487a1571b9a9648b2b48b1ec80b2db11425"
+  },
+  {
+    "path": "e2e-tests/common/constants.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "62d1f468a45b3accc6fd65500b8bb5ecc93b3b40"
+  },
+  {
+    "path": "e2e-tests/common/methods.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "352ab08bdc0dde2cb8a246d0640cf617f83436fc"
+  },
+  {
+    "path": "e2e-tests/pytest.ini",
+    "mode": "100644",
+    "type": "blob",
+    "object": "217945ae19efb9430155cbd0fc05ca6fdeae4f37"
+  },
+  {
+    "path": "e2e-tests/requirements.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6ce13cfc7fcdc39583164dcda766ccccac7c2672"
+  },
+  {
+    "path": "e2e-tests/resources/demo.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "137c84b9762c95cb9f5f3ecdf85aee3fbd54e020"
+  },
+  {
+    "path": "e2e-tests/resources/demo_anonymized.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3ef81ab44dba2ab8ec7dd9edf86ae57d0432c908"
+  },
+  {
+    "path": "e2e-tests/resources/ollama_test_config.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5d64b006945de9497661bf64efa5fcfd372b0665"
+  },
+  {
+    "path": "e2e-tests/resources/original_image.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "61ae833953bb10dae294d6c9dcec3041d6bcf262"
+  },
+  {
+    "path": "e2e-tests/resources/purple_redact.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7a5b6ea9c29a9af2817422e59212b8e006cbc2c7"
+  },
+  {
+    "path": "e2e-tests/resources/test_ollama_enabled_recognizers.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ff412d0af7de36b0eaf2cfa6163df36f8c452af4"
+  },
+  {
+    "path": "e2e-tests/tests/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "e2e-tests/tests/test_api_analyzer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "fdb0506acfd46b8cf0dfe5c32a4e8c4e8437b174"
+  },
+  {
+    "path": "e2e-tests/tests/test_api_anonymizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "94f5d651f8e1284d4d217b9128ff1b5f07a3b392"
+  },
+  {
+    "path": "e2e-tests/tests/test_api_e2e_integration_flows.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5e5fd0dc6cacb2484d08e583f2e29f38f8cd44fe"
+  },
+  {
+    "path": "e2e-tests/tests/test_api_image_redactor.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "44ee9ffaa5ea02dba09627d284c09702fd36dec0"
+  },
+  {
+    "path": "e2e-tests/tests/test_package_e2e_integration_flows.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "10d29d518f9bc88cb5e60eb58d04f8dfe4071b2f"
+  },
+  {
+    "path": "mkdocs.yml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7d7ef71fbf5dd74d261cc29dcc781ef649331e5a"
+  },
+  {
+    "path": "overrides/main.html",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c03e7dc4fb68e5df5a0bd04f0e02b54065b1fe45"
+  },
+  {
+    "path": "presidio-analyzer/.dockerignore",
+    "mode": "100644",
+    "type": "blob",
+    "object": "06a12408dea7a0651bc14b7b8410f76b5cd775f4"
+  },
+  {
+    "path": "presidio-analyzer/Dockerfile",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7a6f055162c3d9195f32acbc9655b65f5c504ecd"
+  },
+  {
+    "path": "presidio-analyzer/Dockerfile.dev",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ef48689f7278b7f70e169a5ac57e19a53bd04034"
+  },
+  {
+    "path": "presidio-analyzer/Dockerfile.stanza",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d2200377bfcf09ed923f0ec4c070aceaf14ed193"
+  },
+  {
+    "path": "presidio-analyzer/Dockerfile.transformers",
+    "mode": "100644",
+    "type": "blob",
+    "object": "de9ba3b67e4155c856141ad9929cf32fe476943f"
+  },
+  {
+    "path": "presidio-analyzer/Dockerfile.windows",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7dee23e11ed3f2a297a6a5424084487616ceaa37"
+  },
+  {
+    "path": "presidio-analyzer/Pipfile",
+    "mode": "100644",
+    "type": "blob",
+    "object": "645a67eae7756b542ed9f1aa4a24ec9759f884c9"
+  },
+  {
+    "path": "presidio-analyzer/README.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e81c645ee36473e73da0c5bf6ab8d156d29df2c5"
+  },
+  {
+    "path": "presidio-analyzer/app.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "567a796cd016da2b7e4dd961483087906515c5ec"
+  },
+  {
+    "path": "presidio-analyzer/deploytoazure.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2796a886e386e54ee1ccc68d7dd0d4a811c1f2d9"
+  },
+  {
+    "path": "presidio-analyzer/entrypoint.sh",
+    "mode": "100755",
+    "type": "blob",
+    "object": "8a90e902a1cd5273983ff778cdaebb8510c5624d"
+  },
+  {
+    "path": "presidio-analyzer/install_dependencies.sh",
+    "mode": "100755",
+    "type": "blob",
+    "object": "f16e60e226609648bc7923d42f4a167d561fe8e6"
+  },
+  {
+    "path": "presidio-analyzer/install_nlp_models.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "767f5a8b8ec7c046545b62b680467da6106e4c05"
+  },
+  {
+    "path": "presidio-analyzer/logging.ini",
+    "mode": "100644",
+    "type": "blob",
+    "object": "246e0e23681690eef7d87a211a141ad0f2c673f3"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "61de87790e103ec0735ad263681a37f7ff72d57e"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/analysis_explanation.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4248f3dc6cefe7a85002aed66c474598ec0c7e49"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/analyzer_engine.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3ff835d1d15aaad3595fc9e249201b269fa65050"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/analyzer_engine_provider.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d03430a1f9d3a2e2bfd8e117e51f85ec3151c796"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/analyzer_request.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "669d8bb822aff1e842f9c116371b52d976f9766d"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/app_tracer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7aaa04a2e34d260eaca5b8dd3b239cdc72c394c9"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/batch_analyzer_engine.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "805d2a7a4c447cf70f397c0a06c871388c7122c6"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/chunkers/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0f42fcc5950144ba851e3de882d30943b2ac749b"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/chunkers/base_chunker.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5547b878819019f1ab52a8cbfbdcc86fa3fece79"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/chunkers/character_based_text_chunker.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7c6a6e85f4f007c4c120e89ba934152363a0ce3d"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/chunkers/text_chunker_provider.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "eb989730cc7fea55ba91c7fa9b6225548d0c7549"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/chunkers/tokenizer_based_text_chunker.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "21c08dba1ad2c9c9fae2ae6553cc6165a631111b"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/conf/default.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "68c90c5c743f32086e9f65ca04185f4a1d712160"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/conf/default_analyzer.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7fa18153f88489d3d2865bc197669b13fdb5a654"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/conf/default_analyzer_full.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a3788b4015d03391aeee08c808bccb092f44f043"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/conf/default_recognizers.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f03fe228a0af71fabdcd3292073466334b1b4bd3"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/conf/example_recognizers.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5cc21fadd31d9ba52ac75b448c645fb07abc191f"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/conf/langextract_config_azureopenai.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "59b0be70317474916e0d6e7e34499f9c22f33484"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/conf/langextract_config_basic.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "13719bc54076c609db8536fdaf432cd2e974891d"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/conf/langextract_prompts/default_pii_phi_examples.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4565261f3153ca5dbea2377ab727fd6b98f80cbe"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/conf/langextract_prompts/default_pii_phi_prompt.j2",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f5edbffd55ea07a7cc99d2d9cee4d2ef28e0722c"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/conf/no_op.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0b2a6c7adf0a967e92765898f42e307dc2b79355"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/conf/slim.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a0bd2d09c9725aa8d334b8d0472838de3143d4ed"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/conf/slim_nlp.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d88086aabcf5cc58f8b648b461172b54626b93d2"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/conf/spacy.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f315d304cccaf16048ae8614a9581106b5eac161"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/conf/spacy_multilingual.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0fc85bb5685d51e26fa0cfc7dbee3c4efa00ea72"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/conf/stanza.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b8b58d2d53505283ad40a9c1a531a905ecae0028"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/conf/stanza_multilingual.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3694d9f45fd61c1c62be011ae2cc7ccb1c6f8621"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/conf/transformers.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9bb0626f57d0436d81ae485a4217b72845d6e8bd"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/context_aware_enhancers/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "fbcfdf91bcebad22fb412ef812799a4ea1a6fc14"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/context_aware_enhancers/context_aware_enhancer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "eef52a98200e02bee896b3e5a913e0b66d081174"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/context_aware_enhancers/lemma_context_aware_enhancer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "aac1e4ed8c92206e18327801541b163b068f77f8"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/dict_analyzer_result.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c6eabd68033e8b5d09dc54bdf806f590892d6ea5"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/entity_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1b81e1431fe83689c32337038370bbe9c1e3f3e3"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/input_validation/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8a89b25d5e8e36dc18c43caab582fd3a575e6312"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/input_validation/language_validation.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c5f01716244a51f4203d3dcccff3778166328e30"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/input_validation/schemas.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "cf9887a8ac8960caadbe22215fb63b36771c0d5a"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/input_validation/yaml_recognizer_models.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "cab80d12f613757e2d76b8d93bb67250086b7257"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/llm_utils/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6f148f262509e18c8e0b5eb02f581e1c4450e425"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/llm_utils/azure_auth_helper.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e226854e94a624815304444e06395199cfbe9f14"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/llm_utils/config_loader.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5bd46f08fafd6c608ed5f10d70bfe1b2d7627760"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/llm_utils/entity_mapper.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b599073e818ec0474936769215d0515407bbc417"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/llm_utils/examples_loader.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "72aa318c31b699e193a57069dcbbc48e6f00166e"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/llm_utils/langextract_helper.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "25a517f1ebf0aa660ba520a3fcbd1ee93b62a327"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/llm_utils/prompt_loader.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "83fb3e07414bc79f0e45ae77b9bf15e94664b4a1"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/lm_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b4a4a086808a2635f33fed79be5a8f94e0a4b289"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/local_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1c5153e0c135ea6fa38123bf1837637206913652"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/nlp_engine/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "bafb380b65465c890d319f5b84675250d008ba82"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/nlp_engine/device_detector.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d1424865cacb5551ef7c081cd157dd58e1fb55a6"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/nlp_engine/ner_model_configuration.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3f813f015ee4cec4a746ba24400faa9f8f9791e6"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/nlp_engine/nlp_artifacts.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c38c06264b1fdae291cd77ff565a2245c44a92bf"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/nlp_engine/nlp_engine.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0e9c6d9f87aaa18064e8427452139d5f3a759775"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/nlp_engine/nlp_engine_provider.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1848794c411610f640e1462be5f4a567f211b576"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/nlp_engine/no_op_nlp_engine.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "cfb016143acdb7ca809e571d8af894d85132d5f2"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/nlp_engine/slim_spacy_nlp_engine.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "075bb4902e2f7de7be35cab41dbe9f8c79b3ce61"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/nlp_engine/spacy_nlp_engine.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8ec293be751552b14c575547d2c7b69186634175"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/nlp_engine/stanza_nlp_engine.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7a4f306c35c9475f42d0b97b07256ebc731bd7d9"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/nlp_engine/transformers_nlp_engine.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f3a12198bf255fcb8c719d59e0120f0593bcba17"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/pattern.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a4a3909bb4f7b6def7a87d9212ff83d705fb5634"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/pattern_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "eee0ee07a606fa0fe5212deeb03691ffd643819e"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "285a5a21d2964cd1ed2d4c124fc6933ffdcc8907"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "cb1ffd3acc532b6622d33b1bf5f50080885c0f5b"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/australia/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3821c180d3b893a113e9695cf5b8c1605b65342b"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/australia/au_abn_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "413bb50aff997e16b76ef745c632e30d82e656be"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/australia/au_acn_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5c8dd680a2cb5a4e094d6eb5ed64b4d7d9c09a28"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/australia/au_medicare_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ee7e881f6e0af052528855526e515f3814ef06ff"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/australia/au_tfn_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "de0c887c1f233954e42baba3d90a0d457b818785"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/canada/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ead2a24f7df3d4845c58dec840691b708245bfa4"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/canada/ca_postal_code_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3f1871fb72f0b9f1d112f8f8bd2f1c06a8ff3910"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/canada/ca_sin_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4e0892c77519b1ff2271742b1b1525059eaf66ab"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/finland/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a1ace0736ed1c5c9d132098fb3d5fac68e8a6963"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/finland/fi_personal_identity_code_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1e0bdae0f2cad1a95e632d081ab4f32f779ad1fe"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/germany/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d5c1a6c1c39d91841f30a0870a1d0148721e60ac"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/germany/de_bsnr_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "42b5358e38b82b817947d814bb814a05fc6056ae"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/germany/de_fuehrerschein_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1d65f8a4745b0e323549df9ef1f11f018889a882"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/germany/de_handelsregister_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a13501e8bad40eddae6b70db456604b009c5bcbe"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/germany/de_health_insurance_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7ca16a0e3f576e3599434cf4b8613cfccad4da95"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/germany/de_id_card_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6fc185332e756c6d7ede60759c0fb70e040c57df"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/germany/de_kfz_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b58e3906c30125e09bf531dda3abcdd1daa9b7d9"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/germany/de_lanr_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d77568311f87317f9dfe9dd3578593dc466721af"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/germany/de_passport_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0c8d6fedaee24bec26aea41edcebc02cba297831"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/germany/de_plz_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2bcc14307fd7519acd78d91fbbca16c5890ac01b"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/germany/de_social_security_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0e01dc8e4348d8ef5a8b8080b0c724fc12ba292f"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/germany/de_tax_id_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1966bcc31fa7c8d273fa4ec75833c76939be27d1"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/germany/de_tax_number_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c17b9901ffa56447476ec63da5763b6c75b1e27e"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/germany/de_vat_id_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8d29ef37406176cad197771d4ca507b77b4b85ca"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/india/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7cec47f7e4fecad1c8665004e6b6de75b7a894d6"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/india/in_aadhaar_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e74ed342a47244e7a3b30e68a90dc8b4cbcddc3b"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/india/in_gstin_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ef965c9322c1edc4e3d3904b61974e9f6bbe549a"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/india/in_pan_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "700b0bd1ed25e0e85d0bfc3dc1e0fcc049f9df4b"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/india/in_passport_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ef543facd20dd69eb87e8a8e4fa785d5e844c052"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/india/in_vehicle_registration_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d4e584c6225faa62b7d4583ab9f78c8d9371e6b9"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/india/in_voter_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "368f2045e795790e093f9df6989658f332391381"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/italy/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "377ea19fe3c0aacbeb5bbf0060576b936e36181b"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/italy/it_driver_license_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "00b7724135b4f4a02d8cef7c8bee55837f98a495"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/italy/it_fiscal_code_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d02cac813c65d3b1e2b8718f05b7726de95715e4"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/italy/it_identity_card_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e59743164a41197a90cce1cdf3341f445cd6d3c6"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/italy/it_passport_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d7cd99f5732a1371334326bcb016624ee1f2b4e0"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/italy/it_vat_code.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "96d0fd9f76036807c760790b6ffb412d9741b395"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/korea/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9b1e8433485ee2e1a5fee8379ca0a3bb98dc9a7e"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/korea/kr_brn_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5a7f40f02ab2bfc69f31864642a5064edf39f52d"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/korea/kr_driver_license_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7ba14d222702cb7464efe9304639816e0e309169"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/korea/kr_frn_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "96744834ed3cbe23b8084d841cc56a472ab847a9"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/korea/kr_passport_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f8c6db16101c7bc6e0ff7b18cc85d4bc177084d8"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/korea/kr_rrn_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "77ebab08d16bd6314a72cc49caeb88eb492c70f5"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/nigeria/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "711e94eff736441ddaea9c3fcb5e1090504e6bea"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/nigeria/ng_nin_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9176d2a4dc2a4d9afb8d521b6dc08a069edc8193"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/nigeria/ng_vehicle_registration_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "bb867940b615d7fef0ad3655eb615a610318fb33"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/philippines/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "481c2acddcb764f5345e83153d87909d30faef9d"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/philippines/ph_passport_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "47d7ab25b161bd123220080647fece6b7617e144"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/philippines/ph_tin_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e85869295e1e41fb16daa2402bc6ce66d34dee3d"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/philippines/ph_umid_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "381b2875fcb5cb25b979513535397b12fd246552"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/poland/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ef571c0396c15ac71840144798616e1863ee5fd1"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/poland/pl_pesel_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ec2928bab5105117bb6c39220f5f10de947ff9c1"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/singapore/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "564995714a31144012d3c16c5c1489dff72a2420"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/singapore/sg_fin_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f8e030fcddb911cbd0cb4f233339c79cf3a51a79"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/singapore/sg_uen_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b4a3710541943aa44389e2475e739a292de5bad0"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/south_africa/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f88ebd4d4dba680e4f942094eb7bbac79d3da250"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/south_africa/za_company_registration_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a81eab5d3517ddf4ee79fcca93db7565cf903a8b"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/south_africa/za_driver_license_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "015574cb79c63e965ac04130282e41de5f40b038"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/south_africa/za_id_number_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "324febc6555eb9d7695f494c01b6c3b9d3ca13a1"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/south_africa/za_income_tax_number_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1015a9c161df68dcec37cd30a08e44bca54fece0"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/south_africa/za_license_plate_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1ce30be3e2d4ef2661cc01d52b344e9bd6804d95"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/south_africa/za_passport_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6151423273808c14df3a09ba1162321da224b328"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/south_africa/za_phone_number_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "bdc16f158d81d0cf745a91907857cd8359781811"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/south_africa/za_traffic_register_number_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4a5e8f271693ef453df5090daabed3a4d930ceb7"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/south_africa/za_vat_number_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "98ff9af3fb72f274a09734fbc2ce8b698f8b3876"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/spain/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "973fa06ec1fab0f1e9dd4c41ca44e209bbba85c7"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/spain/es_nie_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a88cb15ea0440e579e771218599e8709262e0fde"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/spain/es_nif_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ce364bb35b2005782e34d9fe77fd845135d50340"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/spain/es_passport_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "29eb929e0d0f7250a4deae07d4d574e8ac23c2ca"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/sweden/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "10c202673b59098fd1322898118a836687d3258c"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/sweden/se_organisationsnummer_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "36a26e2ef40672e2170d2a8b4b4933ba86c7499d"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/sweden/se_personnummer_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a8e207309611da661a1fe513fee565b6a9bc4850"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/thai/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "dab6f25610df5dab904bf9fd59381c37158b1beb"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/thai/th_tnin_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "368632cc5e60691b98c60f6bdd3157ca3aaaacd9"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/turkey/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "47327d3a6ad896a42e9fbadcd64723aaf149dffb"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/turkey/tr_license_plate_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0eafdcf2a01556482ddebfe5c94a229a32ba27c9"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/turkey/tr_national_id_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7e229bc12d9d3fb4ba5c31f58d245b2813b480ee"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/uk/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9e8439ffded06f750789f39bf7dfdc112adcd205"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/uk/uk_driving_licence_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "37827ca0eec4690788d36c81a40d60ff2fc66773"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/uk/uk_nhs_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "80b81e9470bafc0198fbfc18667d205fdc649fdc"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/uk/uk_nino_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "aa0ccbdfe26823586dc3bd881b48f58474021a05"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/uk/uk_passport_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "60b1ccf645048346b53cc82dc574150c813c021b"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/uk/uk_postcode_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "80d0192896b6d1dee026136a06ebfe06e476522f"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/uk/uk_vehicle_registration_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5f63852ec7ce1d7d56cd07ca817919df7d8ec7ac"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/us/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "df013a80d0c40a2a219ff549184e627ca9728506"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/us/aba_routing_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "bf4164ee5e01350a85ad93e96be821d7fb3fc959"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/us/medical_license_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "92abf6ae0ecb07387d23bd095aa5a752bcbf94ab"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/us/us_bank_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5efc648ccf16a9aadad3363dd060fa83baebf4fc"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/us/us_driver_license_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "62c98a5ad575e4bfbbad3d3d2d449e98c68e33d8"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/us/us_health_insurance_member_id_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "081424b3b1750cb097631c8ba8d51ad229db53ca"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/us/us_healthcare_admin_recognizers.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d1f67e05682ef85f0ac1fc1a7fd67c8e01509bf9"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/us/us_itin_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "429d6091e52de1323db36b602542a41a8e6a58ad"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/us/us_mbi_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "718a2f89f7d508efc20d0fd4b77995d51f05144f"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/us/us_npi_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "73af6c269d7bfd6df512e7d5b94a5a74aedfe673"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/us/us_passport_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "320eacd8adb415494ca5698fe6b7de8b35b07b15"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/us/us_ssn_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c3e60f76c4c7d92c468f5bd899db74b1ef37d1e9"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/generic/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a8b23a3606fa9079340d5bbc951b4559ee39aced"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/generic/credit_card_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "912bf8d197ac2ff600f4018dc7a8a08817122315"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/generic/crypto_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b6c3eeece3254b72eb69b47f324f68d4c61c5bcb"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/generic/date_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8f9cba4b2d069475787570a73baaa654a448e5ec"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/generic/email_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f893e7fcfc77ff1292675266308f6a2fcdfc76eb"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/generic/iban_patterns.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "956ef3e29ef76fcf2d49e034f76861836b23a60a"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/generic/iban_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ec831114b3d983793a1c90b015d4a9050b0e1c4a"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/generic/ip_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "279e94e43a0f7e1d2adc71da99b135e358d19bed"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/generic/mac_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "de8e422740e34b8ec6acf60d54004c817770dc4f"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/generic/phone_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1df82a8e0e66a3213b44c6e453b4ed952f8339f1"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/generic/url_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "310fa78d9017ce4a20162f3e0962a29a89d29455"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/generic/uuid_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "00b48f9b4e6082e3fcb209b96ec88115cf4b1ca6"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/ner/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0d38338ce1a9bc9ce5e438f3fe5b31c5e57e5b7f"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/ner/gliner_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "21d46ac68880ccffc9a8092786e1a07edbb17c25"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/ner/huggingface_ner_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f91fcb6473c4efbfa5f4d6ec2a55bd6bc372ebe5"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/ner/medical_ner_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "240d39fe50f838fc6cf80dbcd382c11ef826cc82"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/nlp_engine_recognizers/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "42b395e74e7a221636425f0755590a0e0fde3644"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/nlp_engine_recognizers/spacy_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "772bb43f06b1769b029d50e4884a02d9d17d189d"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/nlp_engine_recognizers/stanza_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "889df4541ce7288a9eac13016995e13d83fae6ca"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/nlp_engine_recognizers/transformers_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "643d7b4ad64e42ff6c032be3bfa0717936146af3"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/third_party/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e6a93c3296b58482c4fb87c9c8063ab637137889"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/third_party/ahds_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "88477610aa8a7d5a54faa4cf57494d47e7ddde6e"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/third_party/azure_ai_language.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "616c685cea780fc2a36ad173abf06064ed0d9ca0"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/third_party/azure_openai_langextract_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "223b8172dad30136f4547e2637d91936a55cff10"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/third_party/azure_openai_provider.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9f9bd30bc863a40bf65e18f20244a5584fda69e3"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/third_party/basic_langextract_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3e652e8deb68bf1d830dc5af51f45b7a6c9672b6"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/predefined_recognizers/third_party/langextract_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "cfaa08c1f44d94db46362872434efd68fe266ec2"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/py.typed",
+    "mode": "100644",
+    "type": "blob",
+    "object": "58e42dd2535228b6e3db84f37849c5aecff35a39"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/recognizer_registry/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "110fd18681b3c587eb6f7a1cf3f3320d6f36750e"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/recognizer_registry/recognizer_registry.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a126026046de41dfaa122a56ce712c0b3535a23b"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/recognizer_registry/recognizer_registry_provider.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "cfebe00deffb6c333b4a9d546fc6ebb8ae59177b"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/recognizer_registry/recognizers_loader_utils.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "524b1546eac3cf5697184e09f31b0a3d5fda7577"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/recognizer_result.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "cff5783e0f4e6fe4a12b0c401e6d2cf705e486da"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/remote_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0350e2f5ae5a2e1c1398c908d928bc54c254d7b4"
+  },
+  {
+    "path": "presidio-analyzer/presidio_analyzer/score_thresholds.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b41c14d7dcfe4d04960fde0c04e2336d5dbfc3a5"
+  },
+  {
+    "path": "presidio-analyzer/pyproject.toml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "116203466cca51281f47870736f24aa8eafadf45"
+  },
+  {
+    "path": "presidio-analyzer/tests/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "26fe605e4075734af24b251412a526509d4f905c"
+  },
+  {
+    "path": "presidio-analyzer/tests/assertions.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7194a6cdced58570b38ec07e5203714cca2a8966"
+  },
+  {
+    "path": "presidio-analyzer/tests/conf/custom_recognizer_yaml.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d75abe5359a85107d36c19151281317211541730"
+  },
+  {
+    "path": "presidio-analyzer/tests/conf/default.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f6d2f619bdfe1323e1963b453affd7369dd5eeec"
+  },
+  {
+    "path": "presidio-analyzer/tests/conf/missing_global_regex_flags.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3b7c618fbd17606044ee432472936dc9b7a13714"
+  },
+  {
+    "path": "presidio-analyzer/tests/conf/missing_recognizers.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d2543c58962ca0610e72ff448a011b13c328e4ec"
+  },
+  {
+    "path": "presidio-analyzer/tests/conf/recognizer_configuration_missing_keys.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f97c4f43f0ed1d1eee128b6579db98b443dcc634"
+  },
+  {
+    "path": "presidio-analyzer/tests/conf/recognizers.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "683858a7cfc49da002543d786b8b25d8a0013dc2"
+  },
+  {
+    "path": "presidio-analyzer/tests/conf/recognizers_error.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d800886d9c86731ae5c4a62b0b77c437015e00d2"
+  },
+  {
+    "path": "presidio-analyzer/tests/conf/simple_analyzer_engine.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f467dd75556499e3dcb198df29747123617814ee"
+  },
+  {
+    "path": "presidio-analyzer/tests/conf/test.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e22e15e88dabcc9ff908c452850c2363f76897e0"
+  },
+  {
+    "path": "presidio-analyzer/tests/conf/test_ahds_reco.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0c71fffba5d6170909e3d3870f5e1adc88b4a43a"
+  },
+  {
+    "path": "presidio-analyzer/tests/conf/test_analyzer_engine.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e13b08113fc7b9b6d20cf8e4f6f1391872dfc927"
+  },
+  {
+    "path": "presidio-analyzer/tests/conf/test_azure_ai_language_reco.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "167866e084255ef38ace04694a10df3f8ff37ba6"
+  },
+  {
+    "path": "presidio-analyzer/tests/conf/test_hf_recognizer_with_chunker.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7ad2e2043c84c565e386d28b35198836fccaf32d"
+  },
+  {
+    "path": "presidio-analyzer/tests/conf/test_minimal_registry_conf.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6cfd0c38986487eb069cdf58f11bceb8d0620117"
+  },
+  {
+    "path": "presidio-analyzer/tests/conf/test_multiple_nlp_recognizers.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f2960b56be4439df85ad0883b7e3eb50675b5f5d"
+  },
+  {
+    "path": "presidio-analyzer/tests/conf/test_nlp_reco_disabled_conf.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "12e5cb56045ce121c8e0ece830654d8f6c37f0be"
+  },
+  {
+    "path": "presidio-analyzer/tests/conf/test_nlp_reco_does_not_match_engine.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "167c8379f78e80d3e9bca77a1ef0b8f9641f37c7"
+  },
+  {
+    "path": "presidio-analyzer/tests/conf/test_nlp_recognizer_only_conf.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1eb5aa4318ea3a1b0542a40c8502b70c7c3980d5"
+  },
+  {
+    "path": "presidio-analyzer/tests/conf/test_no_nlp_engine.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1995e25a24bd96676f9039417c4b20268406dc5b"
+  },
+  {
+    "path": "presidio-analyzer/tests/conf/test_no_nlp_reco_conf.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "10dc9e45aa3baf68fb84e6a6b5406418e20af076"
+  },
+  {
+    "path": "presidio-analyzer/tests/conf/test_no_nlp_reco_conf_multilingual.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "639070f313e16f8d3368a24a2986eea6e1949d92"
+  },
+  {
+    "path": "presidio-analyzer/tests/conf/test_recognizer_registry.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2ca7f895e9690244622edfcd400c76a6e09fa2e5"
+  },
+  {
+    "path": "presidio-analyzer/tests/conf/test_recognizers.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f71a47b3e94b5ca615699ef2166b236934d7bc1b"
+  },
+  {
+    "path": "presidio-analyzer/tests/conf/test_stanza.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f4d358ae1cdf7d69d456cc9be57efdd593fe2bcb"
+  },
+  {
+    "path": "presidio-analyzer/tests/conf/test_stanza_without_recognizer.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a731b8a2a7de498928f50514824e3580c8592b5a"
+  },
+  {
+    "path": "presidio-analyzer/tests/conf/test_transformers.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5fca7be77dfb265d54d2df2557accd2ff8c87320"
+  },
+  {
+    "path": "presidio-analyzer/tests/conftest.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b2d1d3d521bf3a14643aa284331ae1165258f3ec"
+  },
+  {
+    "path": "presidio-analyzer/tests/data/context_sentences_tests.txt",
+    "mode": "100644",
+    "type": "blob",
+    "object": "51549711d36ca8bd815cf775f12c5bcd7597c519"
+  },
+  {
+    "path": "presidio-analyzer/tests/mocks/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "842044247687d95e78f4dc36792ebf4fd0bf2888"
+  },
+  {
+    "path": "presidio-analyzer/tests/mocks/app_tracer_mock.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "36ff76a526092947645f376d9a633a943cd9bfe6"
+  },
+  {
+    "path": "presidio-analyzer/tests/mocks/nlp_engine_mock.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "bf11f0e0a549d1e6095c29243e0c9e5f2cea7901"
+  },
+  {
+    "path": "presidio-analyzer/tests/mocks/recognizer_registry_mock.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a132796287ee97e4b45866622dc86dbf86ca66e1"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_aba_routing_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4fd50eee4f9e9cd2f154bc946bda825f661c9850"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_ahds_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "231d3806804cb8e76a1abace1ce08999d282620a"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_ahds_recognizer_credential_selection.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9d120f45aee916a98ecadc5f2bcb1ca668021417"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_analyzer_engine.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "bae95e1bf832f2d4d3017f60b5551d72dc4bcf5f"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_analyzer_engine_provider.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "efe6ebe35bc1af228845784ba3be57ee29b6f4b6"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_analyzer_request.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c704ac9d57495c15c0e570a2e3bd827b196ee052"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_app.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ebc9277455a00e6d45d1bf97a57bab238680d73d"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_assertions.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c6393d8f010709e2cb91ca72d9d110350c23904c"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_au_abn_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b4fb20713158efdbc3a68d810e3475c59b6a9ee1"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_au_acn_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0e9b18765e3de1db4f56aec6b30b1272fa3fa157"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_au_medicare_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0f9a28f0874128a6e7af6c04cba20905e82b6233"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_au_tfn_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "aa2613e9119bc35365ea49e6f5f36ddc9e51cffb"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_azure_ai_language_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "330b0c271609139944acc20d8dc773632f7bb4bd"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_azure_auth_helper.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4a4d8e2cbf8f56a992408227f409cb0e587448a4"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "04a3d6fbe4cac4da56c0bd1280dd8c366d70407f"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_base_chunker.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "189fff1134ab980b6b71212a9f4986d1ab70a16a"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_basic_langextract_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d75d846a59969a501f0ead0549927650b64ff1b6"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_batch_analyzer_engine.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "07acdaf9430eb6f69921a8bba4172ff85b5a1bb2"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_ca_postal_code_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4be2650f23de0173e915da7080f813f13951db1d"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_ca_sin_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8beede5a45e69748246efd5afb1fbe1a01207727"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_certificate_number_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "59186936ec57f0d21b0e306bf6b90558165692af"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_character_based_text_chunker.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d222669625b2bf1b7f440bdb04b894830c0f4ada"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_config_loader.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f9a30a3ad80dad8952b4c65b68ed6a986686484c"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_configuration_validator.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "73d5172b6fac2cc3ab41ad55ea3869ab9d108298"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_context_support.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f3f94307e465332ff31a5cbf399e7c829569add2"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_credit_card_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "acdf27a7b50c1b5079e8849f7ab4619c2b6fdc19"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_crypto_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "08d4bdfb41515c96e342eab59b458c4742602bd9"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_date_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "087b0ff5cb555329b7fc3ec18e172474b642e708"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_de_bsnr_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "804df45bd997b9405a362474327a0049c2dc4679"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_de_fuehrerschein_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "04e9daa61866e1b921eeab150350718ad6978a79"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_de_handelsregister_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "aef31012440fc02afd7fc54e5129f8fb0ae3d559"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_de_health_insurance_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9a724cbca4050520bcdac3e06c2294ca1b0edad3"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_de_id_card_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ebb704e524008a23ec9c9f4000529e0bf1f40e94"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_de_kfz_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ce5b4b08f1f2fe784d4c3848b06620908b0d5656"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_de_lanr_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9bab43974197a620de3e06ec63ce27f5cb61c14e"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_de_passport_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "be0375387d1d070c924bd6feeaf973a8a0858712"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_de_plz_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9ef0c93de1eee12c4a7e3e68c098509a05a75646"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_de_social_security_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "95e68253a09facaf8303c5f4944ee632acbdd141"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_de_tax_id_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "94946a7e08409e75304f7c7c8de324eef98a19e7"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_de_tax_number_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "51ebeaacb9905242f14eacb0628f2b21e92e7b20"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_de_vat_id_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "36a96cc66cf009e7ddd533a42fe220aebb2c38b0"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_device_detector.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9341334834179554c6831ca48ccdb56eac7ca679"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_email_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ffb0336aea58e39e48d9cc5e9308853dc3f011ed"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_entity_mapper.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "60f1875d440f5154978db990126f207467864d0a"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_entity_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1e0158decce00364c6222218ecc67c310e29bad0"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_es_nie_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "070d83fbebe0aedd00adc83db1b24848b54463fc"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_es_nif_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a32db15125a396adc81462c7dddad0b5d629a7f5"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_es_passport_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "cf06c38d5c62dd7a0a5ff9e29099476581ff1a8c"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_examples_loader.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2f218891639135d8177db0df42189554872fab29"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_fi_personal_identity_code_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f1f4d55b5a947f84a1319cdab784aa448cff3dcd"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_gliner_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "69a75263c111586e87318edd55ab2dc37d6c1408"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_huggingface_ner_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "40368d93cc97e0b3f97936dd94e6ea6e3481fdfb"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_iban_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9c97d41446e0cd60cd3827e9c310a2b36d18e634"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_in_aadhaar_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "682749061086080808d96d63ae8e02a79942e0ec"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_in_gstin_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5a32a36eee7f91df9325d94282372ee1b1b4129a"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_in_pan_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2c7b136255cfd7163a61bbe5d2ab42f432a94e47"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_in_passport_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "327aa78d784b038fd504d07a264db3f6cf245347"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_in_vehicle_registration_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c97832e6ef49f37b12bce47b6db527dd608ccc41"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_in_voter_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ad4857c45ed79f64526a28e0ed173f1fc4da4851"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_ip_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a1dfea9b662a45edfb06896f75c657f9ad5fc09e"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_it_driver_license_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "00127f6b4d869e7d93359ff9d279eec3785a270b"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_it_fiscal_code_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a705eb8e09f94cf41d0532f665a0edb92252b71c"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_it_identity_card_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c151f3b0351d3a30a02687b5f25ac2576549a930"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_it_passport_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "13b351862243b9de308562e8a153118bf725ae81"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_it_vat_code_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "47f8dfd78aa47a3d1646082fc6ce145297e08775"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_kr_brn_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4711832135967183d09a471480d6dc0dc07b536a"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_kr_driver_license_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "936573de28294c2fc1485e0065358bb5a3ff999c"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_kr_frn_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "05bd40fde414e4a61c46da4d7034cd24a7d624a3"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_kr_passport_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a9042c1368afb4c77e75a4a1f3cc4e23835ea831"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_kr_rrn_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3a1719e0793275553fd2e84fd4c34041af92d423"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_langextract_helper.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c04901f1c7ced39c94dd6dda42e856802965cd43"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_language_validation.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7cc22909ff78e58bdb2ed6006f4ad6f35e858abb"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_lemma_context_aware_enhancer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "74df0e8e8597579392966321c349cb8a528528cf"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_lm_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e6d4c39823d8847816e962ffcc0fe5cd37b49f50"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_mac_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f937869b9ec0689e88230dbabcf71868aa9783e7"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_medical_ner_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "bf2505f7a1094f9149e3bc8d1423d32d959841ab"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_ner_model_configuration.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "56d12070e3cfae2d9066f6a8dca945a8af336bd0"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_ng_nin_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1182f7ad73762c044c2121d7421a6c846ee00715"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_ng_vehicle_registration_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9e45f04edf94356fe09f87727dcdfbd5432c61f3"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_nlp_engine_provider.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f10517c3eda90e59142f5b080114d6a37718895c"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_no_op_nlp_engine.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c6a979bbdc80a3b6b94198a018ccc8f8a091d90d"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_pattern.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "255aa9e7b61f53c7b7e72cd8cbefb7666f735733"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_pattern_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "61eebb6f4cba14c5c8e0ccfbb4a07c1549f02213"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_ph_mobile_number_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f1b2736e476766012dff3820f2313530a79bbb9c"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_ph_passport_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e4cfd8957a039c682a132c36cb2bf33654e76d1a"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_ph_tin_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b1764046182545d518dedc2138259a4709e43496"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_ph_umid_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5d5619d2de56c1ac1149601ae8472fedae28079b"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_phone_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "fbbe3ffe6e3c382a249c93ec715085217e307c27"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_pl_pesel_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7757566a2670bc6fe3a3eb0873aa14d1669391ff"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_prompt_loader.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7ff21324189ac6ab966eb06aeef2bcdec7e562f3"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_recognizer_registry.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "dccec77b48cd25c3b58fafa4da7f53b72ef791da"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_recognizer_registry_provider.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f18f89b87589a891e977cf002786144c1b122a76"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_recognizer_result.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "08987aefcc4772a3cb404e94e4c4ae9ae2c8c098"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_recognizers_loader_utils.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "987b5c04d3bcac5a3a9599ef112ef01818b3e3cc"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_se_organisationsnummer_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d34a70bc7e98a27c8c7d2f9ce974cfad12d9ac89"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_se_personnummer_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "db81c6f57fc6f7548516bd3b27d602efd66e9683"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_sg_fin_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e18720abefbaf3851c9c31d1017877cf51bcfd4d"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_sg_uen_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4ee767cd93985d22b154cbd9de14552d616e29df"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_slim_spacy_nlp_engine.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3ce2e08e23f9c53e92caedbacff446c0a2b1f464"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_spacy_nlp_engine.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "152032c1c1d2504184078b1d81cf7462ad444513"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_spacy_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c77969cf410a27ad98c793ff29ea2dbe58a18ec0"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_stanza_batch_processing.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "cffb5342864c78b0e8352961ec0735520b8daeb0"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_stanza_nlp_engine.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "766dbaed43f0ad0d782357a8708fad6256f992d0"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_stanza_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2e2a6295ffff1a948d6ddad8d0718c14745223fe"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_text_chunker_provider.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "fcb1b6464c40d2ef11f4fd73e2615c18db59e4cc"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_th_tnin_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f697dc5eca2ccb9861f32df799e87bb158dbbb26"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_tokenizer_based_text_chunker.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0d7837a0e0dcf0f40cefba3e86e758ab12d79da2"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_tr_license_plate_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "99377c2ea87869418f56a802dcf564de69032a05"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_tr_national_id_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b6c20e9e9127abd9aed5fb1069f0747409713b6b"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_tr_phone_number_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8ab0470f9c5b47a0bd88f21ece96c7a9ba732a9a"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_transformers_nlp_engine.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "cd0274e0def0cf9d20c6b9ad02f99dc0ac44ced9"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_transformers_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "744d1a1abebd2c89aaa31a113a896c152ba2569e"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_uk_driving_licence_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "24c98334dd587ef563b0f7ecf7d8d1b39c2b6c65"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_uk_nhs_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "714ffa24af99a66ff3ce755aca7ea78711ce4e7f"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_uk_nino_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "45bbe0622ff87c7021224682e86e7663788cdc96"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_uk_passport_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "365a140cbe7040c2a8b6c0a2e6d70e323ab8315b"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_uk_postcode_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4d9a79d7d5ca50b7d9a358682a6895e0ed9b6a42"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_uk_vehicle_registration_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a9589fc8e185cf4fa7d08c17bacebd470daf762c"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_url_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "80c4cb68fce43a05f389ff49853c66fbcfbdea18"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_us_bank_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "20332dcbb87ad374c1d4d3bdb9c0f7c110f04d3f"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_us_driver_license_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ded0185df8040e4baac022e378c8d5a5c91270bf"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_us_health_insurance_member_id_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a6d79813960979ff7769deb165b161bb122abc8a"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_us_healthcare_admin_recognizers.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "bd986952aaa0111cf6a463f7482a2b6054dd9682"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_us_itin_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9f43266464412a18df4b409737138728c8ed0c0f"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_us_mbi_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0863ba62cee1b3fa5cc1f3fa35b57be64c37e007"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_us_npi_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "643b56c8936ad28e9c6cc3766c2d1deba98f6b41"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_us_passport_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4c72ea4bbe99aa500192bfa16ec479e8c0c47e7d"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_us_ssn_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c0900b4753b60baf4de0fead491623855bcc2a76"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_uuid_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b7cbe36cbbf3cd9c15d918ca1508e382c6ab10ff"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_yaml_recognizer_models.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8add06b5de02020f3bb7bd569ce20a862a571774"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_za_company_registration_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a173e2c31684aa94c6a0c4c095a4c7d30fee352f"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_za_driver_license_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ee4a10773352b28f35685b98e2273663e6372f12"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_za_id_number_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e1c5ad2be1c4b0a03adf1f70ad86aeccf2439bea"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_za_income_tax_number_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6d82f02fb6d0ad7c996d40bb3b0b96cb69295a2b"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_za_license_plate_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d99d38b8f2f17d6571574856349226e9ee4dc1f9"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_za_mobile_number_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "aef23eae4f80003830e69910400d9563f35c28a5"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_za_passport_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0e7dfe4a2161502ca80c997148d44b91992b4b34"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_za_telephone_number_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f5c892e3b8ca5ce5f8e6f3b6aa289a6d980eb3f2"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_za_traffic_register_number_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "51fb14c5f721f4f32acaade64e2dfcf8afeb8851"
+  },
+  {
+    "path": "presidio-analyzer/tests/test_za_vat_number_recognizer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d61946839ab25d053b5bc06434354859a99d65e7"
+  },
+  {
+    "path": "presidio-analyzer/uv.lock",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b70035312a3629c6c1f72345933f435f01d879e5"
+  },
+  {
+    "path": "presidio-anonymizer/.dockerignore",
+    "mode": "100644",
+    "type": "blob",
+    "object": "23dd2ed83741b28eacceb04549602f806e0ce2e9"
+  },
+  {
+    "path": "presidio-anonymizer/Dockerfile",
+    "mode": "100644",
+    "type": "blob",
+    "object": "06157ea01167d957f1b395f367281e10d1fac71c"
+  },
+  {
+    "path": "presidio-anonymizer/Dockerfile.dev",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e2fa9e9c7a557eef15d051497984f1ba32e2410c"
+  },
+  {
+    "path": "presidio-anonymizer/Dockerfile.windows",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8b2a1b587ba1742f52547accdda9b5a68995610a"
+  },
+  {
+    "path": "presidio-anonymizer/README.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "56b979fbdd9a7d661cea796063167b4488f0e563"
+  },
+  {
+    "path": "presidio-anonymizer/app.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "52f75f41a00c51da448fa2db7283ee3b57084f35"
+  },
+  {
+    "path": "presidio-anonymizer/deploytoazure.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "34d057724570b6f9331a78f14567379b15fa773a"
+  },
+  {
+    "path": "presidio-anonymizer/entrypoint.sh",
+    "mode": "100755",
+    "type": "blob",
+    "object": "8a90e902a1cd5273983ff778cdaebb8510c5624d"
+  },
+  {
+    "path": "presidio-anonymizer/logging.ini",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9df967299fa74d1b7fabccc0253dcf6e9d0009aa"
+  },
+  {
+    "path": "presidio-anonymizer/presidio_anonymizer/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d2529938b318d0e45a33284a66d00615af9cc62a"
+  },
+  {
+    "path": "presidio-anonymizer/presidio_anonymizer/anonymizer_engine.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f697f54423a64f92dd9bde78844f3c58159c76f7"
+  },
+  {
+    "path": "presidio-anonymizer/presidio_anonymizer/batch_anonymizer_engine.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6745dc119137260650f64c304fd2557c5edbf226"
+  },
+  {
+    "path": "presidio-anonymizer/presidio_anonymizer/batch_deanonymize_engine.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "01bb4ab806d33585d6881d8550985185312fca98"
+  },
+  {
+    "path": "presidio-anonymizer/presidio_anonymizer/core/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ec57496272caf29e7d579a45fa3c649782406ed2"
+  },
+  {
+    "path": "presidio-anonymizer/presidio_anonymizer/core/engine_base.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7561b0e8845c62904d6ca9d0265ad99206c1bcb1"
+  },
+  {
+    "path": "presidio-anonymizer/presidio_anonymizer/core/text_replace_builder.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "739a220a803f580c99ebe3da46f085c6a59f4712"
+  },
+  {
+    "path": "presidio-anonymizer/presidio_anonymizer/deanonymize_engine.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c349afaf04b64f40e354e0de8253214982641f97"
+  },
+  {
+    "path": "presidio-anonymizer/presidio_anonymizer/entities/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6538c6e7bdd4c44860a1b25fcacfdbf562eab179"
+  },
+  {
+    "path": "presidio-anonymizer/presidio_anonymizer/entities/conflict_resolution_strategy.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3b4a0764587b7db091a380b66ca59f3289236756"
+  },
+  {
+    "path": "presidio-anonymizer/presidio_anonymizer/entities/engine/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c5444553136fb7fd13b2a0d1c485f623810b7496"
+  },
+  {
+    "path": "presidio-anonymizer/presidio_anonymizer/entities/engine/dict_recognizer_result.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "03beef8468056196b7cd8b1b85ffca8cc0f8b7e0"
+  },
+  {
+    "path": "presidio-anonymizer/presidio_anonymizer/entities/engine/operator_config.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "fdf0d9dde6c65f1a6fefdf42e198ff685debd664"
+  },
+  {
+    "path": "presidio-anonymizer/presidio_anonymizer/entities/engine/pii_entity.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c2d39412e1527c5c312bce0d649430a6e78a4090"
+  },
+  {
+    "path": "presidio-anonymizer/presidio_anonymizer/entities/engine/recognizer_result.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b155de569e6b7cc4d7e920fb13146afccc594099"
+  },
+  {
+    "path": "presidio-anonymizer/presidio_anonymizer/entities/engine/result/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b0ab487ddddd76d47992f95d0ca226632ecc8abd"
+  },
+  {
+    "path": "presidio-anonymizer/presidio_anonymizer/entities/engine/result/engine_result.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f60d372d2a5ba6d324899f739bef856846aa3404"
+  },
+  {
+    "path": "presidio-anonymizer/presidio_anonymizer/entities/engine/result/operator_result.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0850d19dc6782a12b69ede1b5a788658a9742a0f"
+  },
+  {
+    "path": "presidio-anonymizer/presidio_anonymizer/entities/invalid_exception.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8c39b0fabf262c1b8724718c212a5c0d48552e35"
+  },
+  {
+    "path": "presidio-anonymizer/presidio_anonymizer/operators/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9b2b4da37d51cbbd02dc049de13195a650bbd427"
+  },
+  {
+    "path": "presidio-anonymizer/presidio_anonymizer/operators/aes_cipher.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3ccab0d0044abb571c15c6102f7a093d69a5e358"
+  },
+  {
+    "path": "presidio-anonymizer/presidio_anonymizer/operators/ahds_surrogate.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "948aa0ec7afc357b79d3237e35b0deee656b72ee"
+  },
+  {
+    "path": "presidio-anonymizer/presidio_anonymizer/operators/custom.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ecb1b28fa0a88d7fc78cb5ec42ca472a1bdffdc1"
+  },
+  {
+    "path": "presidio-anonymizer/presidio_anonymizer/operators/deanonymize_keep.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "312649a0783a7e6100ca42b786a8c7b29f47fbb8"
+  },
+  {
+    "path": "presidio-anonymizer/presidio_anonymizer/operators/decrypt.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0b2f6d7a62578cb64e3fd73f2f9f3b258808bfe7"
+  },
+  {
+    "path": "presidio-anonymizer/presidio_anonymizer/operators/encrypt.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9bbd481cc23b146c9d2a4d977fb8caa21196639c"
+  },
+  {
+    "path": "presidio-anonymizer/presidio_anonymizer/operators/hash.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7133b1f3ef4c845900357f6e0f8a90d4deb60240"
+  },
+  {
+    "path": "presidio-anonymizer/presidio_anonymizer/operators/keep.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "cf1b50cd8a74928c79e45553f74b3debdc3dac95"
+  },
+  {
+    "path": "presidio-anonymizer/presidio_anonymizer/operators/mask.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "70773d2f7f5738689ea89094f89f525c6de70e21"
+  },
+  {
+    "path": "presidio-anonymizer/presidio_anonymizer/operators/operator.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f5abfc3e3c9626cadc93b59bdf6e7c63f800a4ef"
+  },
+  {
+    "path": "presidio-anonymizer/presidio_anonymizer/operators/operators_factory.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "eee2a3b273e1a29d09217c2ccb82674449061991"
+  },
+  {
+    "path": "presidio-anonymizer/presidio_anonymizer/operators/redact.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b10d8f133f9c8b66fc1b14c814e9f7f647319fe2"
+  },
+  {
+    "path": "presidio-anonymizer/presidio_anonymizer/operators/replace.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9e2a11fc076a153d926d6d1eaef11d83e2082e77"
+  },
+  {
+    "path": "presidio-anonymizer/presidio_anonymizer/py.typed",
+    "mode": "100644",
+    "type": "blob",
+    "object": "58e42dd2535228b6e3db84f37849c5aecff35a39"
+  },
+  {
+    "path": "presidio-anonymizer/presidio_anonymizer/services/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4d6fd6d564d8bf9fffdccdff23fc31032c4d4f3a"
+  },
+  {
+    "path": "presidio-anonymizer/presidio_anonymizer/services/app_entities_convertor.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a2a7e3ceaf4eea68822636d52176d7d6b9f8b844"
+  },
+  {
+    "path": "presidio-anonymizer/presidio_anonymizer/services/validators.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "57c050f2edb936b16194f1b717e5633eba687c8b"
+  },
+  {
+    "path": "presidio-anonymizer/pyproject.toml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4371fbc27f6071a2ead0c32c95eb66cefbf75ec8"
+  },
+  {
+    "path": "presidio-anonymizer/tests/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "72db32861b1154f53c7470c3327e3224c4ed2869"
+  },
+  {
+    "path": "presidio-anonymizer/tests/conftest.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9f29db11b020e2fdd2d61cea7f8110a8766e62ae"
+  },
+  {
+    "path": "presidio-anonymizer/tests/integration/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "72db32861b1154f53c7470c3327e3224c4ed2869"
+  },
+  {
+    "path": "presidio-anonymizer/tests/integration/test_anonymize_engine.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c87a90f9cb9c302ec18da18077cd5d27c2cfa5a3"
+  },
+  {
+    "path": "presidio-anonymizer/tests/integration/test_deanonymize_engine.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "92d78f779f9e8ea260a96ce493dd2c34c2f64e8e"
+  },
+  {
+    "path": "presidio-anonymizer/tests/mock_operators.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a44cbe7c8a0f094cac27da339641155431d8af94"
+  },
+  {
+    "path": "presidio-anonymizer/tests/operators/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "presidio-anonymizer/tests/operators/test_custom.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e0ef46e76906d8c811a4756f4954708eca76d73a"
+  },
+  {
+    "path": "presidio-anonymizer/tests/operators/test_decrypt.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0b0213ec222a469fe1430f21bc540e40ccc10f59"
+  },
+  {
+    "path": "presidio-anonymizer/tests/operators/test_encrypt.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "04704b511095f97c7f4a331aac50ea08c5c62b16"
+  },
+  {
+    "path": "presidio-anonymizer/tests/operators/test_hash.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c0786321e697365513bb5380f0c14048c209baac"
+  },
+  {
+    "path": "presidio-anonymizer/tests/operators/test_keep.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1eb0b008c6643224dd04bb3694150041f54f2d06"
+  },
+  {
+    "path": "presidio-anonymizer/tests/operators/test_mask.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d2d83c468bf0e28ef858f71883a1c87503d864bb"
+  },
+  {
+    "path": "presidio-anonymizer/tests/operators/test_operators_factory.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f76510d9263b6822b950082c267cacf629176db1"
+  },
+  {
+    "path": "presidio-anonymizer/tests/operators/test_redact.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "66eb7417d64b4eb3915f86a3231fd5259c5d94a2"
+  },
+  {
+    "path": "presidio-anonymizer/tests/operators/test_replace.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "bfe1f155ddac9b0740c09cb78fff591605c7ddc6"
+  },
+  {
+    "path": "presidio-anonymizer/tests/services/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "72db32861b1154f53c7470c3327e3224c4ed2869"
+  },
+  {
+    "path": "presidio-anonymizer/tests/services/test_aes_cypher.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f6949f4b31a3b75eaf6a7ec45e5806bc4e4e48ed"
+  },
+  {
+    "path": "presidio-anonymizer/tests/services/test_validators.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "febbba68dbf3966780ce141d65ae91fa796e9035"
+  },
+  {
+    "path": "presidio-anonymizer/tests/test_ahds_surrogate.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "bde7cc1be8a3d9000ed5aceeae4ad0021aebacae"
+  },
+  {
+    "path": "presidio-anonymizer/tests/test_ahds_surrogate_credential_selection.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "94a56546241b24b0d74f576fc0e9660baa010cad"
+  },
+  {
+    "path": "presidio-anonymizer/tests/test_anonymizer_engine.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f29c6d95172a14ec0c5d7e7bc001090e49028a51"
+  },
+  {
+    "path": "presidio-anonymizer/tests/test_app_entities_convertor.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5f1e2b41edaaeecf84bf4820d50084008df3c077"
+  },
+  {
+    "path": "presidio-anonymizer/tests/test_batch_anonymizer_engine.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6f0f7decf29774744fb30c13184a2986c25d4997"
+  },
+  {
+    "path": "presidio-anonymizer/tests/test_batch_deanonymize_engine.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "692e383c0981cd8c90e8cea58b110bcab85b0a12"
+  },
+  {
+    "path": "presidio-anonymizer/tests/test_conflict_resolution_strategy.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "09c5264ca018ce7e3d5aa7b6b075da0582a63a23"
+  },
+  {
+    "path": "presidio-anonymizer/tests/test_engine_result.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3ee1a9b3f75d6dbdef7aabbb85e9447ae3097a98"
+  },
+  {
+    "path": "presidio-anonymizer/tests/test_operator_config.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6cd49770b555e00539ccdd45f8c2dd0c6c639219"
+  },
+  {
+    "path": "presidio-anonymizer/tests/test_operator_result.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "911d10cd79efde8e99243843e0956823d7aba83c"
+  },
+  {
+    "path": "presidio-anonymizer/tests/test_pii_entity.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ec4cf10e9e017ecbb901dfe2e59634d3156b04ff"
+  },
+  {
+    "path": "presidio-anonymizer/tests/test_readme.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b66a6c820ac4323c6f7d81401cb86038589a64b4"
+  },
+  {
+    "path": "presidio-anonymizer/tests/test_recognizer_result.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "bbdcfbae92020c4c6af27d31ca10d9b6c32e1bfa"
+  },
+  {
+    "path": "presidio-anonymizer/tests/test_text_replace_builder.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "08ca17de43feaf39427f611d0e8ba6fd05ffa573"
+  },
+  {
+    "path": "presidio-anonymizer/uv.lock",
+    "mode": "100644",
+    "type": "blob",
+    "object": "25ec86a38b43783f80dbb899e2952ded80d16383"
+  },
+  {
+    "path": "presidio-cli/.presidiocli",
+    "mode": "100644",
+    "type": "blob",
+    "object": "06b96beb71365403a91b755e0435248ed464f497"
+  },
+  {
+    "path": "presidio-cli/Pipfile",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2a620ad560890aee5371268f47cb40b67184105d"
+  },
+  {
+    "path": "presidio-cli/README.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5b1f54821aa8673eee5d4c08df5bae5cc0d66524"
+  },
+  {
+    "path": "presidio-cli/presidio_cli/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f2e8621abdfc2658f425dcc2373c0987a7cdb089"
+  },
+  {
+    "path": "presidio-cli/presidio_cli/__main__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e9836693f572e5b3a085cb5bb371156d10731ef2"
+  },
+  {
+    "path": "presidio-cli/presidio_cli/analyzer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "47eb28e89be3c82b088191b057e94e133acb7164"
+  },
+  {
+    "path": "presidio-cli/presidio_cli/cli.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "aea1e2c72df5c575a7d305835fa0d8c3996218ba"
+  },
+  {
+    "path": "presidio-cli/presidio_cli/conf/default.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1abdaa28131c99ae59a17b194808ddc846f2f6af"
+  },
+  {
+    "path": "presidio-cli/presidio_cli/conf/limited.yaml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8ef3c78a8bb215fffa9403ac55f05108b0eba886"
+  },
+  {
+    "path": "presidio-cli/presidio_cli/config.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9b3d60a861fc6d0d2224daf138bad239364963f3"
+  },
+  {
+    "path": "presidio-cli/pyproject.toml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9374c3764690743980bbd4d866152954c060eeba"
+  },
+  {
+    "path": "presidio-cli/tests/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "presidio-cli/tests/conftest.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0841093ad00f0a9a4716bd9f75d1078582eb0851"
+  },
+  {
+    "path": "presidio-cli/tests/test_analyzer.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5fa2d9acba5972fc90af45ffda11b720983cfd24"
+  },
+  {
+    "path": "presidio-cli/tests/test_cli.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5adafa4de2bd76455bdae2a2898d3aa95e92e6f1"
+  },
+  {
+    "path": "presidio-cli/tests/test_config.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f5d2f7bae298c05899f638f1b6d059610331d9de"
+  },
+  {
+    "path": "presidio-cli/uv.lock",
+    "mode": "100644",
+    "type": "blob",
+    "object": "44329a1a2fe6fe5945f93bd7dd5afd28575c30ee"
+  },
+  {
+    "path": "presidio-image-redactor/.dockerignore",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9ffa5a2641a086f3192c16eb227dde2b4aa1f892"
+  },
+  {
+    "path": "presidio-image-redactor/Dockerfile",
+    "mode": "100644",
+    "type": "blob",
+    "object": "517e99074c17ce4ed4ab832a3bfd0449e201c8c1"
+  },
+  {
+    "path": "presidio-image-redactor/Dockerfile.dev",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4bc2b6466eb645fde5a35722f887be04158ca2a4"
+  },
+  {
+    "path": "presidio-image-redactor/Evaluation_Approach.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "cd57eb57f949b4e76bc8ae9f5edb01f310885193"
+  },
+  {
+    "path": "presidio-image-redactor/README.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "00257b65e62071bb3cb78037284ee13e85973cf5"
+  },
+  {
+    "path": "presidio-image-redactor/app.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "fdcc31e957044e9b575b974d6bb06a9dc244f72d"
+  },
+  {
+    "path": "presidio-image-redactor/deploytoazure.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0d1ff0e575073df2f3ad832be046a93a585e46ac"
+  },
+  {
+    "path": "presidio-image-redactor/entrypoint.sh",
+    "mode": "100755",
+    "type": "blob",
+    "object": "8a90e902a1cd5273983ff778cdaebb8510c5624d"
+  },
+  {
+    "path": "presidio-image-redactor/img.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "de763fe2a81aace9616c02de8fba9036a25785ea"
+  },
+  {
+    "path": "presidio-image-redactor/presidio_image_redactor/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "20d5249de807844b5bff90cba496aedccc92c106"
+  },
+  {
+    "path": "presidio-image-redactor/presidio_image_redactor/bbox.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f33e8c7e54045f152d31e37197cfb38bf3a670e1"
+  },
+  {
+    "path": "presidio-image-redactor/presidio_image_redactor/dicom_image_pii_verify_engine.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "62cd2672d8a010ff6e9cf712834cdca2786908e1"
+  },
+  {
+    "path": "presidio-image-redactor/presidio_image_redactor/dicom_image_redactor_engine.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "aa974b8b999d09aed353affc5e9f652c541e6e94"
+  },
+  {
+    "path": "presidio-image-redactor/presidio_image_redactor/document_intelligence_ocr.py",
+    "mode": "100755",
+    "type": "blob",
+    "object": "58c24f64778cac2d0be0424d9ba05483f25579bd"
+  },
+  {
+    "path": "presidio-image-redactor/presidio_image_redactor/entities/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b22924b715d5bc0d9f0980708d3ca6c73198cfd6"
+  },
+  {
+    "path": "presidio-image-redactor/presidio_image_redactor/entities/api_request_convertor.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5054e2a3344ec4037dcc0d728e109840ac781e03"
+  },
+  {
+    "path": "presidio-image-redactor/presidio_image_redactor/entities/image_recognizer_result.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "94cbd5c6054191d5afb8837974ca3214f4bd722f"
+  },
+  {
+    "path": "presidio-image-redactor/presidio_image_redactor/entities/invalid_exception.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f9ab630aab805c80c1744d4e4daa703640439a15"
+  },
+  {
+    "path": "presidio-image-redactor/presidio_image_redactor/image_analyzer_engine.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ad514fc606fb322417252d53949fca45bd29465a"
+  },
+  {
+    "path": "presidio-image-redactor/presidio_image_redactor/image_pii_verify_engine.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "83488940d45b05680c13af5c9747e27817fa04a1"
+  },
+  {
+    "path": "presidio-image-redactor/presidio_image_redactor/image_processing_engine.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ab73ecf4e7b82632ee3dbd2571c3a9db75e90023"
+  },
+  {
+    "path": "presidio-image-redactor/presidio_image_redactor/image_redactor_engine.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "bd663a793fd2a331c90b1c2398dd3450c3910014"
+  },
+  {
+    "path": "presidio-image-redactor/presidio_image_redactor/ocr.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "479424a6e75a57647b2646142637329cf265fd35"
+  },
+  {
+    "path": "presidio-image-redactor/presidio_image_redactor/py.typed",
+    "mode": "100644",
+    "type": "blob",
+    "object": "58e42dd2535228b6e3db84f37849c5aecff35a39"
+  },
+  {
+    "path": "presidio-image-redactor/presidio_image_redactor/tesseract_ocr.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "917dec9f22a13772acc0eeb3fe06fade1044e6ac"
+  },
+  {
+    "path": "presidio-image-redactor/pyproject.toml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "62001b1f866fd5fd433e7ff1dc3253422c72d76f"
+  },
+  {
+    "path": "presidio-image-redactor/tests/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "presidio-image-redactor/tests/conftest.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1026b11492895026862e64ee2ddcfcbd407a1578"
+  },
+  {
+    "path": "presidio-image-redactor/tests/engine_test_utils.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a5dbfa8de8daee98bae9ea8be05c5bc230730b3a"
+  },
+  {
+    "path": "presidio-image-redactor/tests/integration/methods.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "39f95b8f330fed11e9d5acaa8fdbbc7966929aa9"
+  },
+  {
+    "path": "presidio-image-redactor/tests/integration/resources/0_ORIGINAL.dcm",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d58c6d08d5702350c7a4ed3e2a030760b5d5e8d5"
+  },
+  {
+    "path": "presidio-image-redactor/tests/integration/resources/0_ORIGINAL_redacted.dcm",
+    "mode": "100644",
+    "type": "blob",
+    "object": "769549139aad597a6ca176caba3254b85724bf96"
+  },
+  {
+    "path": "presidio-image-redactor/tests/integration/resources/dicom_pii_verify_integration.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0e4d6fdde2791de4ee21022a096791237b676c08"
+  },
+  {
+    "path": "presidio-image-redactor/tests/integration/resources/dir1/dir2/1_ORIGINAL.dcm",
+    "mode": "100644",
+    "type": "blob",
+    "object": "fd6f5c6bdad284837eaec9f8402aa7bb9f34a0a1"
+  },
+  {
+    "path": "presidio-image-redactor/tests/integration/resources/dir1/dir2/2_ORIGINAL.dcm",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2f99786bfd9d9956dce1e633f0fe4921c511f11a"
+  },
+  {
+    "path": "presidio-image-redactor/tests/integration/resources/kwargs_test.jpg",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1346c7c0ffabc73b6ca2571ec3977bcd37dba501"
+  },
+  {
+    "path": "presidio-image-redactor/tests/integration/resources/no_ocr.jpg",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0e1a838451b618b7bda0614cf4ff7ab5a7182383"
+  },
+  {
+    "path": "presidio-image-redactor/tests/integration/resources/no_ocr.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ee8bf1a95497f480d2e7e09e480e551a6cf91ca0"
+  },
+  {
+    "path": "presidio-image-redactor/tests/integration/resources/ocr_bounding_box.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "38e599a7afce59de1dbd8e4f52b29ce6f57ba8fc"
+  },
+  {
+    "path": "presidio-image-redactor/tests/integration/resources/ocr_bounding_box_redacted.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7f70b59c6d8868dda8274a40be8ea24b5bcf66f3"
+  },
+  {
+    "path": "presidio-image-redactor/tests/integration/resources/ocr_test.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "61ae833953bb10dae294d6c9dcec3041d6bcf262"
+  },
+  {
+    "path": "presidio-image-redactor/tests/integration/resources/ocr_test_redacted.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "521082e752eb19f75b429d2898f31791e9a62b60"
+  },
+  {
+    "path": "presidio-image-redactor/tests/integration/resources/ocr_test_redacted_matrix.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ccb2c817bbd855bd27a3b1d6178f98845256e9d7"
+  },
+  {
+    "path": "presidio-image-redactor/tests/integration/resources/pii_verify.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4c24ba84b0c26eff7553824c10cd2d94006d0009"
+  },
+  {
+    "path": "presidio-image-redactor/tests/integration/test_dicom_image_pii_verify_engine_integration.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "bc72042d92faa9a85fb16a142cb60885931c69b3"
+  },
+  {
+    "path": "presidio-image-redactor/tests/integration/test_dicom_image_redactor_engine_integration.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a8bc081c03ec110beaab530e13392b2e52967eed"
+  },
+  {
+    "path": "presidio-image-redactor/tests/integration/test_image_analyzer_engine_integration.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5c831724c596041bd16fb505444e6af30caf1caf"
+  },
+  {
+    "path": "presidio-image-redactor/tests/integration/test_image_pii_verify_engine.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "244c56a76fae2f35c795ac966b90c845b66dfe00"
+  },
+  {
+    "path": "presidio-image-redactor/tests/integration/test_image_processing_engine.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8d281016a58b6c21a6b4ab2044ceecd172fdaeca"
+  },
+  {
+    "path": "presidio-image-redactor/tests/integration/test_image_redactor_engine.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3fadb02ef86d3105c3a9ecf8848505103ca9ba63"
+  },
+  {
+    "path": "presidio-image-redactor/tests/test_api_request_convertor.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2a5edbce3813b92760c4da33fa967e23e16a3db0"
+  },
+  {
+    "path": "presidio-image-redactor/tests/test_bbox.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5b0856310256bf892e61b7e9a4b72b6f6bfe8af6"
+  },
+  {
+    "path": "presidio-image-redactor/tests/test_data/0_ORIGINAL.dcm",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d58c6d08d5702350c7a4ed3e2a030760b5d5e8d5"
+  },
+  {
+    "path": "presidio-image-redactor/tests/test_data/0_ORIGINAL_compressed.dcm",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c776b7f1a5b915e96310407900694fcc3aa48d45"
+  },
+  {
+    "path": "presidio-image-redactor/tests/test_data/0_ORIGINAL_icon_image_sequence.dcm",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b4d1613c4d01dea99a25fb38e16b575513279ae7"
+  },
+  {
+    "path": "presidio-image-redactor/tests/test_data/0_ORIGINAL_no_pixels.dcm",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a1ae4d0a537b229946c4cef1a8d96b59742ca022"
+  },
+  {
+    "path": "presidio-image-redactor/tests/test_data/RGB_ORIGINAL.dcm",
+    "mode": "100644",
+    "type": "blob",
+    "object": "cd9ff264a2d74990326218682cdaaefcf6b267a8"
+  },
+  {
+    "path": "presidio-image-redactor/tests/test_data/dicom_dir_1/dicom_dir_2/1_ORIGINAL.DCM",
+    "mode": "100644",
+    "type": "blob",
+    "object": "fd6f5c6bdad284837eaec9f8402aa7bb9f34a0a1"
+  },
+  {
+    "path": "presidio-image-redactor/tests/test_data/dicom_dir_1/dicom_dir_2/2_ORIGINAL.dicom",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2f99786bfd9d9956dce1e633f0fe4921c511f11a"
+  },
+  {
+    "path": "presidio-image-redactor/tests/test_data/dicom_dir_1/dicom_dir_3/3_ORIGINAL.DICOM",
+    "mode": "100644",
+    "type": "blob",
+    "object": "136c30b66afb3beab06d87b52a48dbedd414d86a"
+  },
+  {
+    "path": "presidio-image-redactor/tests/test_data/numpy_arrays/0_ORIGINAL.npy",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9fce4fbc1be49ebb9462c6c4cad739074ea94a4a"
+  },
+  {
+    "path": "presidio-image-redactor/tests/test_data/numpy_arrays/1_ORIGINAL.npy",
+    "mode": "100644",
+    "type": "blob",
+    "object": "76bc0b6d13577d7bfbac276ab32107224c0b9cac"
+  },
+  {
+    "path": "presidio-image-redactor/tests/test_data/numpy_arrays/2_ORIGINAL.npy",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8d5a3d55b02d207d034130ecccbb52c51348b18c"
+  },
+  {
+    "path": "presidio-image-redactor/tests/test_data/numpy_arrays/3_ORIGINAL.npy",
+    "mode": "100644",
+    "type": "blob",
+    "object": "15a4d16224162d5ff01f30923fb30def9a99647d"
+  },
+  {
+    "path": "presidio-image-redactor/tests/test_data/numpy_arrays/RGB_ORIGINAL.npy",
+    "mode": "100644",
+    "type": "blob",
+    "object": "cbc8b424bc3a55bb2e1c34a95265ec9e2f19d68a"
+  },
+  {
+    "path": "presidio-image-redactor/tests/test_data/png_images/0_ORIGINAL.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6b470e122e6a5b4895afa55167fd86f7cb4cf1f0"
+  },
+  {
+    "path": "presidio-image-redactor/tests/test_data/png_images/1_ORIGINAL.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0884d0d52169132ee0204b2b0816ed1985bd78a0"
+  },
+  {
+    "path": "presidio-image-redactor/tests/test_data/png_images/2_ORIGINAL.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "827d0563225f2a234e55b2931dfadcc50774706f"
+  },
+  {
+    "path": "presidio-image-redactor/tests/test_data/png_images/3_ORIGINAL.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7587eb34b66ac42dff920319eda344bf84150ec5"
+  },
+  {
+    "path": "presidio-image-redactor/tests/test_data/png_images/RGB_ORIGINAL.png",
+    "mode": "100644",
+    "type": "blob",
+    "object": "cf80695ab2bf6700cb8607c4bb6f653fcba3125a"
+  },
+  {
+    "path": "presidio-image-redactor/tests/test_dicom_image_pii_verify_engine.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b8250640f8ddba128b49109929bb54abd14a36cf"
+  },
+  {
+    "path": "presidio-image-redactor/tests/test_dicom_image_redactor_engine.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b334013a13369c2c28fdd50f6d9b41d7d380cc49"
+  },
+  {
+    "path": "presidio-image-redactor/tests/test_document_intelligence_ocr.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "684dc532a8129c61c7b26459254d2faf9cdada4e"
+  },
+  {
+    "path": "presidio-image-redactor/tests/test_image_analyzer_engine.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "bbc0ed54160aa646719a4e65e9046b8727fd922c"
+  },
+  {
+    "path": "presidio-image-redactor/tests/test_phi_list.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "89ac91019d0f4a198188ea85c468286868642509"
+  },
+  {
+    "path": "presidio-image-redactor/tests/test_tesseract_ocr.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6c49b0d26e9032a997e27b00d3497404b73db7d2"
+  },
+  {
+    "path": "presidio-image-redactor/uv.lock",
+    "mode": "100644",
+    "type": "blob",
+    "object": "705ac2d533e211e3e08492d8eee963bf04de6a31"
+  },
+  {
+    "path": "presidio-structured/README.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d3d9584e5dd638d692ab4f75c94e06be9506c188"
+  },
+  {
+    "path": "presidio-structured/logging.ini",
+    "mode": "100644",
+    "type": "blob",
+    "object": "62c58c1f84baff3d56eb0171e3f384be9c2e5fbe"
+  },
+  {
+    "path": "presidio-structured/presidio_structured/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5dffda70ac42570e7ed3931a8c2425c1371a0cfc"
+  },
+  {
+    "path": "presidio-structured/presidio_structured/analysis_builder.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9fe3d0749f1d5414557922004716c06d9835373d"
+  },
+  {
+    "path": "presidio-structured/presidio_structured/config/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a09782709c2281011a861f13e68ce5034d3dd1bd"
+  },
+  {
+    "path": "presidio-structured/presidio_structured/config/structured_analysis.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "261d1e7134d637047443416ad9f2b5ba63db2d96"
+  },
+  {
+    "path": "presidio-structured/presidio_structured/data/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4be05ee325208e9a4a6f70ea755a10229a156a58"
+  },
+  {
+    "path": "presidio-structured/presidio_structured/data/data_processors.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "57205321d5f384cac705b1a9c4688534efa6ece2"
+  },
+  {
+    "path": "presidio-structured/presidio_structured/data/data_reader.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "354a5e11ce06ee716e905d49ae599f8b9dd57369"
+  },
+  {
+    "path": "presidio-structured/presidio_structured/py.typed",
+    "mode": "100644",
+    "type": "blob",
+    "object": "58e42dd2535228b6e3db84f37849c5aecff35a39"
+  },
+  {
+    "path": "presidio-structured/presidio_structured/structured_engine.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e80d4c8083314be1b911c4b3c4c7549ba68255a6"
+  },
+  {
+    "path": "presidio-structured/pyproject.toml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "3002857db16c1e3c19d6f7c40495e0e5ad7fb4b9"
+  },
+  {
+    "path": "presidio-structured/tests/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8b137891791fe96927ad78e64b0aad7bded08bdc"
+  },
+  {
+    "path": "presidio-structured/tests/conftest.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "bbe6baa19f75e49173e74dcea7cf187f22de6fce"
+  },
+  {
+    "path": "presidio-structured/tests/data/test_data_transformers.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6b8ac6cd26722f12049ae509b8bcb492ba20dbc0"
+  },
+  {
+    "path": "presidio-structured/tests/test_analysis_builder.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1b97ebe32460385ed915649ee27074c546b81661"
+  },
+  {
+    "path": "presidio-structured/tests/test_data_reader.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b4c276ca6439dd436762fe78c44e289fb1cc08b7"
+  },
+  {
+    "path": "presidio-structured/tests/test_tabular_engine.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "87a9dd2878eacabed685dfd3129af924efe79799"
+  },
+  {
+    "path": "presidio-structured/uv.lock",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a43884d5928fdb1f37e702a2e79f3f94f11e6181"
+  },
+  {
+    "path": "presidio/README.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "85b5e20edc4f30884020535a5b78701365ca7c4c"
+  },
+  {
+    "path": "presidio/presidio/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c99384e60c087852b19e795418299c078bda7e9c"
+  },
+  {
+    "path": "presidio/pyproject.toml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8a786eeca296db47da7c7aafb28b3526db77c881"
+  },
+  {
+    "path": "pyproject.toml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "66b760e3a8db5ba5c2a8156265c6f2527e7efb5a"
+  },
+  {
+    "path": "scripts/zensical_build.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8bcac0f81f2ee3df317da1c556495e880691b97b"
+  }
+]

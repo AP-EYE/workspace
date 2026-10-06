@@ -1,0 +1,86 @@
+[
+  {
+    "sha": "654517e98ca9df9d187266cd382cf3161aeb7629",
+    "filename": "apps/dashboard/src/main/java/com/akto/action/threat_detection/SuspectSampleDataAction.java",
+    "status": "modified",
+    "additions": 9,
+    "deletions": 2,
+    "changes": 11,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/070a04fc976a28e59d7c8b8a959a611533447e5d/apps%2Fdashboard%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Faction%2Fthreat_detection%2FSuspectSampleDataAction.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/070a04fc976a28e59d7c8b8a959a611533447e5d/apps%2Fdashboard%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Faction%2Fthreat_detection%2FSuspectSampleDataAction.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Faction%2Fthreat_detection%2FSuspectSampleDataAction.java?ref=070a04fc976a28e59d7c8b8a959a611533447e5d",
+    "patch": "@@ -7,8 +7,6 @@\n import com.akto.dto.type.URLMethods;\n import com.akto.proto.generated.threat_detection.service.dashboard_service.v1.FetchAlertFiltersResponse;\n import com.akto.proto.generated.threat_detection.service.dashboard_service.v1.ListMaliciousRequestsResponse;\n-import com.akto.proto.generated.threat_detection.service.dashboard_service.v1.UpdateMaliciousEventStatusRequest;\n-import com.akto.proto.generated.threat_detection.service.dashboard_service.v1.UpdateMaliciousEventStatusResponse;\n import com.akto.proto.generated.threat_detection.service.dashboard_service.v1.DeleteMaliciousEventsRequest;\n import com.akto.proto.generated.threat_detection.service.dashboard_service.v1.DeleteMaliciousEventsResponse;\n import com.akto.proto.generated.threat_detection.service.dashboard_service.v1.ListMaliciousRequestsRequest.Filter;\n@@ -67,6 +65,7 @@ public class SuspectSampleDataAction extends AbstractThreatDetectionAction {\n   @Getter @Setter String deleteMessage;\n   @Getter @Setter int deletedCount;\n   @Getter @Setter List<String> hosts;\n+  @Getter @Setter String latestApiOrigRegex;\n \n   // TODO: remove this, use API Executor.\n   private final CloseableHttpClient httpClient;\n@@ -117,6 +116,10 @@ public String fetchSampleData() {\n       filter.put(\"hosts\", this.hosts);\n     }\n \n+    if (this.latestApiOrigRegex != null && !this.latestApiOrigRegex.isEmpty()) {\n+      filter.put(\"latestApiOrigRegex\", this.latestApiOrigRegex);\n+    }\n+\n     List<String> templates = getTemplates(latestAttack);\n     filter.put(\"latestAttack\", templates);\n \n@@ -268,6 +271,10 @@ private Filter.Builder buildFilterFromParams() {\n       filterBuilder.setLabel(this.label);\n     }\n \n+    if (this.latestApiOrigRegex != null && !this.latestApiOrigRegex.isEmpty()) {\n+      filterBuilder.setLatestApiOrigRegex(this.latestApiOrigRegex);\n+    }\n+\n     if (this.startTimestamp > 0 || this.endTimestamp > 0) {\n       TimeRangeFilter.Builder timeRangeBuilder = TimeRangeFilter.newBuilder();\n       if (this.startTimestamp > 0) {"
+  },
+  {
+    "sha": "49a0ab22305b0b513ca24e410cf08fe6f7b4e548",
+    "filename": "apps/dashboard/web/polaris_web/web/src/apps/dashboard/components/tables/GithubServerTable.js",
+    "status": "modified",
+    "additions": 32,
+    "deletions": 4,
+    "changes": 36,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/070a04fc976a28e59d7c8b8a959a611533447e5d/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fcomponents%2Ftables%2FGithubServerTable.js",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/070a04fc976a28e59d7c8b8a959a611533447e5d/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fcomponents%2Ftables%2FGithubServerTable.js",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fcomponents%2Ftables%2FGithubServerTable.js?ref=070a04fc976a28e59d7c8b8a959a611533447e5d",
+    "patch": "@@ -11,7 +11,8 @@ import {\n   ChoiceList,\n   Tabs,\n   Text,\n-  Link} from '@shopify/polaris';\n+  Link,\n+  TextField} from '@shopify/polaris';\n import { GithubRow} from './rows/GithubRow';\n import { useState, useCallback, useEffect, useMemo, useRef, useReducer } from 'react';\n import \"./style.css\"\n@@ -275,11 +276,38 @@ function GithubServerTable(props) {\n   function formatFilters(filters) {\n     let formattedFilters = filters\n       .map((filter) => {\n+        const existingFilter = appliedFilters.find((localFilter) => localFilter.key === filter.key);\n+\n+        if (filter.type === 'text') {\n+          const textValue = existingFilter\n+            ? (Array.isArray(existingFilter.value) ? (existingFilter.value[0] || '') : existingFilter.value || '')\n+            : '';\n+\n+          return {\n+            key: filter.key,\n+            label: filter.label,\n+            filter: (\n+              <TextField\n+                label={filter.title}\n+                labelHidden\n+                placeholder={filter.placeholder || ''}\n+                value={textValue}\n+                autoComplete=\"off\"\n+                onChange={(value) => {\n+                  const newValue = value ? [value] : [];\n+                  handleFilterStatusChange(filter.key, newValue);\n+                }}\n+              />\n+            ),\n+            pinned: true\n+          }\n+        }\n+\n         return {\n           key: filter.key,\n           label: filter.label,\n           filter: (\n-              filter.choices.length < 10 ?       \n+              filter.choices.length < 10 ?\n               <ChoiceList\n                 title={filter.title}\n                 titleHidden\n@@ -292,8 +320,8 @@ function GithubServerTable(props) {\n                 {...(filter.singleSelect ? {} : { allowMultiple: true })}\n               />\n               :\n-              <DropdownSearch \n-                placeHoder={\"Apply filters\"} \n+              <DropdownSearch\n+                placeHoder={\"Apply filters\"}\n                 optionsList={getSortedChoices(filter.choices)}\n                 setSelected={(value) => handleFilterStatusChange(filter.key,value)}\n                 {...(filter.singleSelect ? {} : { allowMultiple: true })}"
+  },
+  {
+    "sha": "a3eeba60e4a2ac991adc97cf6f7f1d7d098460d1",
+    "filename": "apps/dashboard/web/polaris_web/web/src/apps/dashboard/pages/threat_detection/api.js",
+    "status": "modified",
+    "additions": 3,
+    "deletions": 2,
+    "changes": 5,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/070a04fc976a28e59d7c8b8a959a611533447e5d/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Fthreat_detection%2Fapi.js",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/070a04fc976a28e59d7c8b8a959a611533447e5d/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Fthreat_detection%2Fapi.js",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Fthreat_detection%2Fapi.js?ref=070a04fc976a28e59d7c8b8a959a611533447e5d",
+    "patch": "@@ -24,7 +24,7 @@ const threatDetectionRequests = {\n         })\n     },\n \n-    fetchSuspectSampleData(skip, ips, apiCollectionIds, urls, types, sort, startTimestamp, endTimestamp, latestAttack, limit, statusFilter, successfulExploit, label, hosts) {\n+    fetchSuspectSampleData(skip, ips, apiCollectionIds, urls, types, sort, startTimestamp, endTimestamp, latestAttack, limit, statusFilter, successfulExploit, label, hosts, latestApiOrigRegex) {\n         return request({\n             url: '/api/fetchSuspectSampleData',\n             method: 'post',\n@@ -42,7 +42,8 @@ const threatDetectionRequests = {\n                 statusFilter: statusFilter,\n                 ...(typeof successfulExploit === 'boolean' ? { successfulExploit } : {}),\n                 ...(label ? { label } : {}),\n-                ...(hosts && hosts.length > 0 ? { hosts } : {})\n+                ...(hosts && hosts.length > 0 ? { hosts } : {}),\n+                ...(latestApiOrigRegex ? { latestApiOrigRegex } : {})\n             }\n         })\n     },"
+  },
+  {
+    "sha": "36a7ea2228a5d1e69947b00d097d125c037a2836",
+    "filename": "apps/dashboard/web/polaris_web/web/src/apps/dashboard/pages/threat_detection/components/SusDataTable.jsx",
+    "status": "modified",
+    "additions": 20,
+    "deletions": 2,
+    "changes": 22,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/070a04fc976a28e59d7c8b8a959a611533447e5d/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Fthreat_detection%2Fcomponents%2FSusDataTable.jsx",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/070a04fc976a28e59d7c8b8a959a611533447e5d/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Fthreat_detection%2Fcomponents%2FSusDataTable.jsx",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Fthreat_detection%2Fcomponents%2FSusDataTable.jsx?ref=070a04fc976a28e59d7c8b8a959a611533447e5d",
+    "patch": "@@ -145,7 +145,8 @@ function SusDataTable({ currDateRange, rowClicked, triggerRefresh, label = LABEL\n     // Check if any other filters are applied (only URL and attack category are allowed)\n     const hasOtherFilters = (currentFilters.actor && currentFilters.actor.length > 0) ||\n                            (currentFilters.type && currentFilters.type.length > 0) ||\n-                           (currentFilters.apiCollectionId && currentFilters.apiCollectionId.length > 0);\n+                           (currentFilters.apiCollectionId && currentFilters.apiCollectionId.length > 0) ||\n+                           (currentFilters.latestApiOrigRegex && currentFilters.latestApiOrigRegex !== '');\n     \n     if (hasOtherFilters) {\n       const message = 'Only URL and Attack Category filters are allowed for bulk operations. Please remove other filters (Actor, Type, Collection) and try again.';\n@@ -395,9 +396,14 @@ function SusDataTable({ currDateRange, rowClicked, triggerRefresh, label = LABEL\n       typeFilter = [],\n       latestAttack = [],\n       hostFilter = [];\n+    let latestApiOrigRegex;\n     if (filters?.actor) {\n       sourceIpsFilter = filters?.actor;\n     }\n+    if (filters?.latestApiOrigRegex) {\n+      const regexFilter = filters?.latestApiOrigRegex;\n+      latestApiOrigRegex = Array.isArray(regexFilter) ? regexFilter[0] : regexFilter;\n+    }\n     if (filters?.apiCollectionId) {\n       apiCollectionIdsFilter = filters?.apiCollectionId;\n     }\n@@ -422,6 +428,7 @@ function SusDataTable({ currDateRange, rowClicked, triggerRefresh, label = LABEL\n       type: typeFilter,\n       latestAttack: latestAttack,\n       host: hostFilter,\n+      latestApiOrigRegex: latestApiOrigRegex || '',\n       sortKey: sortKey,\n       sortOrder: sortOrder\n     });\n@@ -445,7 +452,8 @@ function SusDataTable({ currDateRange, rowClicked, triggerRefresh, label = LABEL\n       currentTab.toUpperCase(),\n       successfulBool,\n       label, // Use the label prop (THREAT or GUARDRAIL)\n-      hostFilter\n+      hostFilter,\n+      latestApiOrigRegex\n     );\n \n     // Store the total count for filtered results\n@@ -510,6 +518,8 @@ function SusDataTable({ currDateRange, rowClicked, triggerRefresh, label = LABEL\n       }\n     })\n \n+    const isRegexFilterEnabled = typeof window !== 'undefined' && Number(window.ACTIVE_ACCOUNT) === 1758858035;\n+\n     filters = [\n       {\n         key: \"actor\",\n@@ -529,6 +539,14 @@ function SusDataTable({ currDateRange, rowClicked, triggerRefresh, label = LABEL\n         title: \"Host\",\n         choices: hostChoices,\n       },\n+      ...(isRegexFilterEnabled ? [{\n+        key: 'latestApiOrigRegex',\n+        label: \"Latest API orig regex\",\n+        title: \"Latest API orig regex\",\n+        type: 'text',\n+        placeholder: 'Enter regex',\n+        choices: []\n+      }] : []),\n       {\n         key: 'type',\n         label: \"Type\","
+  },
+  {
+    "sha": "f5db08f59e25a70d661ec09b926d7e9efe4323e7",
+    "filename": "apps/threat-detection-backend/src/main/java/com/akto/threat/backend/router/DashboardRouter.java",
+    "status": "modified",
+    "additions": 4,
+    "deletions": 0,
+    "changes": 4,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/070a04fc976a28e59d7c8b8a959a611533447e5d/apps%2Fthreat-detection-backend%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fthreat%2Fbackend%2Frouter%2FDashboardRouter.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/070a04fc976a28e59d7c8b8a959a611533447e5d/apps%2Fthreat-detection-backend%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fthreat%2Fbackend%2Frouter%2FDashboardRouter.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fthreat-detection-backend%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fthreat%2Fbackend%2Frouter%2FDashboardRouter.java?ref=070a04fc976a28e59d7c8b8a959a611533447e5d",
+    "patch": "@@ -79,6 +79,10 @@ private Map<String, Object> convertProtoFilterToMap(ListMaliciousRequestsRequest\n             filterMap.put(\"detected_at_time_range\", timeRange);\n         }\n \n+        if (protoFilter.hasLatestApiOrigRegex() && !protoFilter.getLatestApiOrigRegex().isEmpty()) {\n+            filterMap.put(\"latestApiOrigRegex\", protoFilter.getLatestApiOrigRegex());\n+        }\n+\n         return filterMap;\n     }\n "
+  },
+  {
+    "sha": "08cd8c0c175fa469e3c0d0c5794b34ed01a53192",
+    "filename": "apps/threat-detection-backend/src/main/java/com/akto/threat/backend/service/MaliciousEventService.java",
+    "status": "modified",
+    "additions": 9,
+    "deletions": 0,
+    "changes": 9,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/070a04fc976a28e59d7c8b8a959a611533447e5d/apps%2Fthreat-detection-backend%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fthreat%2Fbackend%2Fservice%2FMaliciousEventService.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/070a04fc976a28e59d7c8b8a959a611533447e5d/apps%2Fthreat-detection-backend%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fthreat%2Fbackend%2Fservice%2FMaliciousEventService.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fthreat-detection-backend%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fthreat%2Fbackend%2Fservice%2FMaliciousEventService.java?ref=070a04fc976a28e59d7c8b8a959a611533447e5d",
+    "patch": "@@ -241,6 +241,10 @@ public ListMaliciousRequestsResponse listMaliciousRequests(\n       query.append(\"host\", new Document(\"$in\", filter.getHostsList()));\n     }\n \n+    if (filter.hasLatestApiOrigRegex() && !filter.getLatestApiOrigRegex().isEmpty()) {\n+      query.append(\"latestApiOrig\", new Document(\"$regex\", filter.getLatestApiOrigRegex()));\n+    }\n+\n \n     if (!filter.getLatestAttackList().isEmpty()) {\n       query.append(\"filterId\", new Document(\"$in\", filter.getLatestAttackList()));\n@@ -481,6 +485,11 @@ private Document buildQueryFromFilter(Map<String, Object> filter) {\n       applyLabelFilter(query, labelEnum);\n     }\n \n+    String latestApiOrigRegex = (String) filter.get(\"latestApiOrigRegex\");\n+    if (latestApiOrigRegex != null && !latestApiOrigRegex.isEmpty()) {\n+      query.append(\"latestApiOrig\", new Document(\"$regex\", latestApiOrigRegex));\n+    }\n+\n     return query;\n   }\n }"
+  },
+  {
+    "sha": "91382e5e3f83d02e6ca89b6e0d1e1208f6cd7786",
+    "filename": "protobuf/threat_detection/service/dashboard_service/v1/service.proto",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 0,
+    "changes": 1,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/070a04fc976a28e59d7c8b8a959a611533447e5d/protobuf%2Fthreat_detection%2Fservice%2Fdashboard_service%2Fv1%2Fservice.proto",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/070a04fc976a28e59d7c8b8a959a611533447e5d/protobuf%2Fthreat_detection%2Fservice%2Fdashboard_service%2Fv1%2Fservice.proto",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/protobuf%2Fthreat_detection%2Fservice%2Fdashboard_service%2Fv1%2Fservice.proto?ref=070a04fc976a28e59d7c8b8a959a611533447e5d",
+    "patch": "@@ -55,6 +55,7 @@ message ListMaliciousRequestsRequest {\n       optional bool successful_exploit = 9;\n       optional string label = 10;  // Common values: \"threat\", \"guardrail\"\n       repeated string hosts = 11;  // Host header values for filtering\n+      optional string latest_api_orig_regex = 12 [json_name = \"latestApiOrigRegex\"];\n     }\n \n     // The number of alerts to return"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "sha": "53fecfd17b06e53e2a619e3bc03271813ca0c8a8",
+    "filename": "apps/dashboard/src/main/java/com/akto/listener/InitializerListener.java",
+    "status": "modified",
+    "additions": 15,
+    "deletions": 1,
+    "changes": 16,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/ad8e9b4e3c91204e922499d6eec86cc640dd116d/apps%2Fdashboard%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Flistener%2FInitializerListener.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/ad8e9b4e3c91204e922499d6eec86cc640dd116d/apps%2Fdashboard%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Flistener%2FInitializerListener.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Flistener%2FInitializerListener.java?ref=ad8e9b4e3c91204e922499d6eec86cc640dd116d",
+    "patch": "@@ -211,7 +211,13 @@ static void executePIISourceFetch() {\n \n                     if (!dt.getBoolean(\"active\", true)) {\n                         PIISourceDao.instance.updateOne(findQ, Updates.unset(\"mapNameToPIIType.\" + piiKey));\n-                        CustomDataTypeDao.instance.updateOne(\"name\", piiKey, Updates.set(\"active\", false));\n+                        CustomDataType existingCDT = CustomDataTypeDao.instance.findOne(\"name\", piiKey);\n+                        if (existingCDT == null) {\n+                            CustomDataTypeDao.instance.insertOne(getCustomDataTypeFromPiiType(piiSource, piiType, false));\n+                            continue;\n+                        } else {\n+                            CustomDataTypeDao.instance.updateOne(\"name\", piiKey, Updates.set(\"active\", false));\n+                        }\n                     }\n \n                     if (currTypes.containsKey(piiKey) && currTypes.get(piiKey).equals(piiType)) {\n@@ -747,6 +753,14 @@ public void runInitializerFunctions() {\n                 PIISourceDao.instance.insertOne(piiSource);\n             }\n \n+            if (PIISourceDao.instance.findOne(\"_id\", \"Fin\") == null) {\n+                String fileUrl = \"https://raw.githubusercontent.com/akto-api-security/akto/master/pii-types/fintech.json\";\n+                PIISource piiSource = new PIISource(fileUrl, 0, 1638571050, 0, new HashMap<>(), true);\n+                piiSource.setId(\"Fin\");\n+                PIISourceDao.instance.insertOne(piiSource);\n+            }\n+\n+\n             setUpDailyScheduler();\n             setUpWebhookScheduler();\n             setUpPiiAndTestSourcesScheduler();"
+  },
+  {
+    "sha": "11bfb8bebbdab5e3395843506ba3973e35f8d3cf",
+    "filename": "apps/dashboard/src/test/java/com/akto/listener/TestFintechTypes.java",
+    "status": "added",
+    "additions": 44,
+    "deletions": 0,
+    "changes": 44,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/ad8e9b4e3c91204e922499d6eec86cc640dd116d/apps%2Fdashboard%2Fsrc%2Ftest%2Fjava%2Fcom%2Fakto%2Flistener%2FTestFintechTypes.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/ad8e9b4e3c91204e922499d6eec86cc640dd116d/apps%2Fdashboard%2Fsrc%2Ftest%2Fjava%2Fcom%2Fakto%2Flistener%2FTestFintechTypes.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fsrc%2Ftest%2Fjava%2Fcom%2Fakto%2Flistener%2FTestFintechTypes.java?ref=ad8e9b4e3c91204e922499d6eec86cc640dd116d",
+    "patch": "@@ -0,0 +1,44 @@\n+package com.akto.listener;\n+\n+import static org.junit.Assert.assertEquals;\n+import static org.junit.Assert.assertFalse;\n+import static org.junit.Assert.assertTrue;\n+\n+import java.util.HashMap;\n+\n+import com.akto.MongoBasedTest;\n+import com.akto.dao.CustomDataTypeDao;\n+import com.akto.dao.context.Context;\n+import com.akto.dao.pii.PIISourceDao;\n+import com.akto.dto.CustomDataType;\n+import com.akto.dto.pii.PIISource;\n+import com.mongodb.BasicDBObject;\n+\n+import org.junit.Test;\n+\n+public class TestFintechTypes extends MongoBasedTest {\n+\n+\n+    @Test\n+    public void testTypes() {\n+        String fileUrl = \"https://raw.githubusercontent.com/akto-api-security/akto/master/pii-types/fintech.json\";\n+        PIISource piiSource = new PIISource(fileUrl, 0, 1638571050, 0, new HashMap<>(), true);\n+        piiSource.setId(\"Fin\");\n+        PIISourceDao.instance.insertOne(piiSource);\n+        InitializerListener.executePIISourceFetch();\n+        Context.accountId.set(ACCOUNT_ID);\n+        for(CustomDataType cdt: CustomDataTypeDao.instance.findAll(new BasicDBObject())) {\n+            switch (cdt.getName().toUpperCase()) {\n+                case \"PAN CARD\":\n+                    assertTrue(cdt.validate(\"ABCDE9458J\", \"foo\"));\n+                    assertFalse(cdt.validate(\"ACDE9458J\", \"foo\"));\n+                    break;\n+                \n+                default:\n+                    break;\n+            }\n+            \n+        }\n+    }\n+\n+}"
+  }
+]

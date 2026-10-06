@@ -1,0 +1,26 @@
+[
+  {
+    "sha": "5a59d9053d406791b4aa67f01f92922303349c9e",
+    "filename": "apps/guardrails-service/container/src/go.mod",
+    "status": "modified",
+    "additions": 2,
+    "deletions": 2,
+    "changes": 4,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/d86a6da8d42ead5a7ab9f02ef7d52921ad8bd7cf/apps%2Fguardrails-service%2Fcontainer%2Fsrc%2Fgo.mod",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/d86a6da8d42ead5a7ab9f02ef7d52921ad8bd7cf/apps%2Fguardrails-service%2Fcontainer%2Fsrc%2Fgo.mod",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fguardrails-service%2Fcontainer%2Fsrc%2Fgo.mod?ref=d86a6da8d42ead5a7ab9f02ef7d52921ad8bd7cf",
+    "patch": "@@ -3,7 +3,7 @@ module github.com/akto-api-security/guardrails-service\n go 1.25.0\n \n require (\n-\tgithub.com/akto-api-security/akto-endpoint-shield v0.0.0-20260819101139-e01ef7349c30\n+\tgithub.com/akto-api-security/akto-endpoint-shield v0.0.0-20260819125157-7d40b99901f6\n \tgithub.com/gin-gonic/gin v1.12.0\n \tgithub.com/golang-jwt/jwt/v5 v5.3.0\n \tgithub.com/redis/go-redis/v9 v9.20.0\n@@ -131,4 +131,4 @@ require (\n \tmodernc.org/sqlite v1.40.1 // indirect\n )\n \n-replace github.com/akto-api-security/akto-endpoint-shield => github.com/akto-api-security/akto-gateway/mcp-endpoint-shield v0.0.0-20260819101139-e01ef7349c30\n+replace github.com/akto-api-security/akto-endpoint-shield => github.com/akto-api-security/akto-gateway/mcp-endpoint-shield v0.0.0-20260819125157-7d40b99901f6"
+  },
+  {
+    "sha": "b61a4209b967ad6a08851e742f36ed6a5fc78ee1",
+    "filename": "apps/guardrails-service/container/src/go.sum",
+    "status": "modified",
+    "additions": 2,
+    "deletions": 2,
+    "changes": 4,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/d86a6da8d42ead5a7ab9f02ef7d52921ad8bd7cf/apps%2Fguardrails-service%2Fcontainer%2Fsrc%2Fgo.sum",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/d86a6da8d42ead5a7ab9f02ef7d52921ad8bd7cf/apps%2Fguardrails-service%2Fcontainer%2Fsrc%2Fgo.sum",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fguardrails-service%2Fcontainer%2Fsrc%2Fgo.sum?ref=d86a6da8d42ead5a7ab9f02ef7d52921ad8bd7cf",
+    "patch": "@@ -29,8 +29,8 @@ github.com/Masterminds/sprig/v3 v3.3.0 h1:mQh0Yrg1XPo6vjYXgtf5OtijNAKJRNcTdOOGZe\n github.com/Masterminds/sprig/v3 v3.3.0/go.mod h1:Zy1iXRYNqNLUolqCpL4uhk6SHUMAOSCzdgBfDb35Lz0=\n github.com/STARRY-S/zip v0.2.1 h1:pWBd4tuSGm3wtpoqRZZ2EAwOmcHK6XFf7bU9qcJXyFg=\n github.com/STARRY-S/zip v0.2.1/go.mod h1:xNvshLODWtC4EJ702g7cTYn13G53o1+X9BWnPFpcWV4=\n-github.com/akto-api-security/akto-gateway/mcp-endpoint-shield v0.0.0-20260819101139-e01ef7349c30 h1:p3r6EMYjyBKzhWtKi+CuIyr4CecgJRKdxRMeVyLBJ2s=\n-github.com/akto-api-security/akto-gateway/mcp-endpoint-shield v0.0.0-20260819101139-e01ef7349c30/go.mod h1:xygh4yYStZhELBqnSAgC/eflshcDFacvKQz2ZF5bFwY=\n+github.com/akto-api-security/akto-gateway/mcp-endpoint-shield v0.0.0-20260819125157-7d40b99901f6 h1:J8Go5L1/cMWxt4Sli/wd0G4GAoSpOEPSRY4Mx9Sw2KI=\n+github.com/akto-api-security/akto-gateway/mcp-endpoint-shield v0.0.0-20260819125157-7d40b99901f6/go.mod h1:xygh4yYStZhELBqnSAgC/eflshcDFacvKQz2ZF5bFwY=\n github.com/andybalholm/brotli v1.2.0 h1:ukwgCxwYrmACq68yiUqwIWnGY0cTPox/M94sVwToPjQ=\n github.com/andybalholm/brotli v1.2.0/go.mod h1:rzTDkvFWvIrjDXZHkuS16NPggd91W3kUSvPlQ1pLaKY=\n github.com/aymanbagabas/go-osc52/v2 v2.0.1 h1:HwpRHbFMcZLEVr42D4p7XBqjyuxQH5SMiErDT4WkJ2k="
+  }
+]

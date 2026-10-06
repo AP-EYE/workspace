@@ -1,0 +1,74 @@
+[
+  {
+    "sha": "b240d907af9255c1e135bab02f4f597ef66c42f4",
+    "filename": "apps/dashboard/web/polaris_web/web/src/apps/dashboard/pages/observe/api_collections/ApiChanges.jsx",
+    "status": "modified",
+    "additions": 0,
+    "deletions": 1,
+    "changes": 1,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/40a4510ab4bcf1e71f76b3a12086637c3f3ccb77/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Fobserve%2Fapi_collections%2FApiChanges.jsx",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/40a4510ab4bcf1e71f76b3a12086637c3f3ccb77/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Fobserve%2Fapi_collections%2FApiChanges.jsx",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Fobserve%2Fapi_collections%2FApiChanges.jsx?ref=40a4510ab4bcf1e71f76b3a12086637c3f3ccb77",
+    "patch": "@@ -146,7 +146,6 @@ function ApiChanges() {\n             setShowDetails={setShowDetails}\n             apiDetail={apiDetail}\n             headers={tableHeaders}\n-            getStatus={() => { return \"warning\" }}\n         />\n     )\n "
+  },
+  {
+    "sha": "8949d233f6d99b9440851d2b479e3861dbed8adc",
+    "filename": "apps/dashboard/web/polaris_web/web/src/apps/dashboard/pages/observe/api_collections/ApiDetails.jsx",
+    "status": "modified",
+    "additions": 34,
+    "deletions": 2,
+    "changes": 36,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/40a4510ab4bcf1e71f76b3a12086637c3f3ccb77/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Fobserve%2Fapi_collections%2FApiDetails.jsx",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/40a4510ab4bcf1e71f76b3a12086637c3f3ccb77/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Fobserve%2Fapi_collections%2FApiDetails.jsx",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Fobserve%2Fapi_collections%2FApiDetails.jsx?ref=40a4510ab4bcf1e71f76b3a12086637c3f3ccb77",
+    "patch": "@@ -13,6 +13,7 @@ import transform from \"../transform\";\n import ApiDependency from \"./ApiDependency\";\n import RunTest from \"./RunTest\";\n import PersistStore from \"../../../../main/PersistStore\";\n+import values from \"@/util/values\";\n \n import { HorizontalDotsMinor, FileMinor } from \"@shopify/polaris-icons\"\n \n@@ -30,6 +31,18 @@ function ApiDetails(props) {\n     const [showMoreActions, setShowMoreActions] = useState(false)\n     const setSelectedSampleApi = PersistStore(state => state.setSelectedSampleApi)\n \n+    const statusFunc = getStatus ? getStatus : (x) => {\n+        try {\n+            if (paramList && paramList.length > 0 &&\n+                paramList.filter(x => x?.nonSensitiveDataType).map(x => x.subTypeString).includes(x)) {\n+                return \"info\"\n+            }\n+        } catch (e) {\n+\n+        }\n+        return \"warning\"\n+    }\n+\n     const fetchData = async () => {\n         if (showDetails) {\n             setLoading(true)\n@@ -77,8 +90,16 @@ function ApiDetails(props) {\n                                 resp.data.params[index].subType = JSON.parse(JSON.stringify(resp.data.params[index].subType))\n                             }\n                         }\n-\n                     })\n+\n+                    try {\n+                        resp.data.params?.forEach(x => {\n+                            if (!values?.skipList.includes(x.subTypeString) && !x?.savedAsSensitive && !x?.sensitive) {\n+                                x.nonSensitiveDataType = true\n+                            }\n+                        })\n+                    } catch (e){\n+                    }\n                     setParamList(resp.data.params)\n                 })\n             })\n@@ -190,14 +211,25 @@ function ApiDetails(props) {\n         method: apiDetail.method,\n         endpoint: apiDetail.endpoint\n     }\n+\n+    try {\n+        newData['nonSensitiveTags'] = [...new Set(paramList.filter(x => x?.nonSensitiveDataType).map(x => x.subTypeString))]\n+    } catch (e){\n+    }\n+    try {\n+        newData['sensitiveTags'] = apiDetail?.sensitiveTags && apiDetail?.sensitiveTags.length > 0 ? apiDetail?.sensitiveTags : \n+        [...new Set(paramList.filter(x => x?.savedAsSensitive || x?.sensitive).map(x => x.subTypeString))]\n+    } catch (e){\n+    }\n+\n     const headingComp = (\n         <div style={{ display: \"flex\", justifyContent: \"space-between\" }} key=\"heading\">\n             <div style={{ display: \"flex\", gap: '8px' }}>\n                 <GithubCell\n                     width=\"32vw\"\n                     data={newData}\n                     headers={headers}\n-                    getStatus={getStatus}\n+                    getStatus={statusFunc}\n                     isBadgeClickable={true}\n                     badgeClicked={badgeClicked}\n                 />"
+  },
+  {
+    "sha": "deb2912e86f366f721df12f3b41d71cd891f5a55",
+    "filename": "apps/dashboard/web/polaris_web/web/src/apps/dashboard/pages/observe/api_collections/ApiEndpoints.jsx",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 3,
+    "changes": 4,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/40a4510ab4bcf1e71f76b3a12086637c3f3ccb77/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Fobserve%2Fapi_collections%2FApiEndpoints.jsx",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/40a4510ab4bcf1e71f76b3a12086637c3f3ccb77/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Fobserve%2Fapi_collections%2FApiEndpoints.jsx",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Fobserve%2Fapi_collections%2FApiEndpoints.jsx?ref=40a4510ab4bcf1e71f76b3a12086637c3f3ccb77",
+    "patch": "@@ -407,7 +407,7 @@ function ApiEndpoints(props) {\n         })\n     }\n \n-\n+    \n \n     function handleRefresh() {\n         fetchData()\n@@ -860,7 +860,6 @@ function ApiEndpoints(props) {\n         setShowDetails={setShowDetails}\n         apiDetail={apiDetail}\n         headers={transform.getDetailsHeaders()}\n-        getStatus={() => { return \"warning\" }}\n         isGptActive={isGptActive}\n     />,\n     ]\n@@ -899,7 +898,6 @@ function ApiEndpoints(props) {\n                       setShowDetails={setShowDetails}\n                       apiDetail={apiDetail}\n                       headers={transform.getDetailsHeaders()}\n-                      getStatus={() => { return \"warning\" }}\n                       isGptActive={isGptActive}\n                   />,\n                   <ApiGroupModal"
+  },
+  {
+    "sha": "261bc916604d6eb05dbbc9d678c6c12d4c380daf",
+    "filename": "apps/dashboard/web/polaris_web/web/src/apps/dashboard/pages/observe/api_collections/ApiSchema.jsx",
+    "status": "modified",
+    "additions": 8,
+    "deletions": 1,
+    "changes": 9,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/40a4510ab4bcf1e71f76b3a12086637c3f3ccb77/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Fobserve%2Fapi_collections%2FApiSchema.jsx",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/40a4510ab4bcf1e71f76b3a12086637c3f3ccb77/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Fobserve%2Fapi_collections%2FApiSchema.jsx",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Fobserve%2Fapi_collections%2FApiSchema.jsx?ref=40a4510ab4bcf1e71f76b3a12086637c3f3ccb77",
+    "patch": "@@ -18,6 +18,7 @@ function prepareTableData (data, handleBadgeClick) {\n     data.forEach((element,index) => {\n         let paramText = element.param.replaceAll(\"#\", \".\").replaceAll(\".$\", \"\")\n         let isSensitive = func.isSubTypeSensitive(element)\n+        let nonSensitiveDataType = element?.nonSensitiveDataType\n         let comp = [(<HorizontalStack gap={\"2\"} key={index}>\n             <Text fontWeight=\"regular\" variant=\"bodyMd\">\n                 {paramText}\n@@ -28,7 +29,13 @@ function prepareTableData (data, handleBadgeClick) {\n                         <Badge status=\"warning\">\n                             {element.subType.name}\n                         </Badge>\n-                    </Button> : null\n+                    </Button> : (nonSensitiveDataType ?\n+                        <Button plain monochrome onClick={() => { handleBadgeClick(element.subType.name, \"\") }}>\n+                            <Badge status=\"info\">\n+                                {element.subType.name}\n+                            </Badge>\n+                        </Button> : null)\n+\n             }\n             </HorizontalStack>), <Text variant=\"bodySm\" fontWeight=\"regular\" color=\"subdued\">{func.prepareValuesTooltip(element)}</Text>\n         ]"
+  },
+  {
+    "sha": "5fca9eefa39d1fc01a324864e4d85a79fbce7e66",
+    "filename": "apps/dashboard/web/polaris_web/web/src/apps/dashboard/pages/observe/transform.js",
+    "status": "modified",
+    "additions": 5,
+    "deletions": 0,
+    "changes": 5,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/40a4510ab4bcf1e71f76b3a12086637c3f3ccb77/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Fobserve%2Ftransform.js",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/40a4510ab4bcf1e71f76b3a12086637c3f3ccb77/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Fobserve%2Ftransform.js",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Fapps%2Fdashboard%2Fpages%2Fobserve%2Ftransform.js?ref=40a4510ab4bcf1e71f76b3a12086637c3f3ccb77",
+    "patch": "@@ -112,6 +112,11 @@ const apiDetailsHeaders = [\n         value: \"parameterisedEndpoint\",\n         itemOrder: 1,\n         component: (data) => CopyEndpoint(data)\n+    },\n+    {\n+        text: 'Non-Sensitive Params',\n+        value: 'nonSensitiveTags',\n+        itemOrder: 4,\n     }\n ]\n "
+  },
+  {
+    "sha": "fbd204e7a2a0893a81a27f38bf4aabbfe281f1bd",
+    "filename": "apps/dashboard/web/polaris_web/web/src/util/values.js",
+    "status": "modified",
+    "additions": 3,
+    "deletions": 1,
+    "changes": 4,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/40a4510ab4bcf1e71f76b3a12086637c3f3ccb77/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Futil%2Fvalues.js",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/40a4510ab4bcf1e71f76b3a12086637c3f3ccb77/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Futil%2Fvalues.js",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fweb%2Fpolaris_web%2Fweb%2Fsrc%2Futil%2Fvalues.js?ref=40a4510ab4bcf1e71f76b3a12086637c3f3ccb77",
+    "patch": "@@ -71,4 +71,6 @@ const ranges = [\n     }\n ];\n \n-export default { today, yesterday, ranges, yesterdayDayEnd, todayDayEnd };\n\\ No newline at end of file\n+const skipList = [\"GENERIC\", \"TRUE\", \"FALSE\",\"INTEGER_32\", \"INTEGER_64\", \"NULL\", \"OTHER\", \"DICT\", \"FLOAT\"]\n+\n+export default { today, yesterday, ranges, yesterdayDayEnd, todayDayEnd , skipList};\n\\ No newline at end of file"
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "generated_utc": "2026-10-06T00:38:14.116430+00:00",
+  "report_reference_links": 63,
+  "all_used_reference_definitions_exist": true,
+  "pinned_github_blob_paths_exist": true,
+  "index_rows": 6928,
+  "core_PR_details": 164,
+  "template_PR_details": 24,
+  "PII_component_inputs": 63,
+  "BOLA_component_inputs": 6,
+  "all_snapshot_tracked_files_clean": true,
+  "scope": "Artifact consistency; not deployed Akto, not PII population benchmark"
+}

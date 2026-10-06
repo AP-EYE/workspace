@@ -1,0 +1,38 @@
+{
+  "time": "2026-10-06T00:36:10.160Z",
+  "results": [
+    {
+      "file": "AKTO-DEEP-RESEARCH.html",
+      "heading_count": 16,
+      "viewport_overflow": false
+    },
+    {
+      "file": "HISTORY-REVIEW.html",
+      "heading_count": 7,
+      "viewport_overflow": false
+    },
+    {
+      "file": "PAPER-NOTES.html",
+      "heading_count": 6,
+      "viewport_overflow": false
+    },
+    {
+      "file": "ISSUE-EXPLORER.html",
+      "checks": [
+        "initial_count",
+        "core_PR_filter",
+        "template_PR_base",
+        "PII_filter",
+        "pagination",
+        "empty_state"
+      ],
+      "passed": true
+    },
+    {
+      "file": "AKTO-DEEP-RESEARCH.html",
+      "mobile_width": 390,
+      "viewport_overflow": false
+    }
+  ],
+  "page_errors": []
+}

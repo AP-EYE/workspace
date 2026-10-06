@@ -1,0 +1,5 @@
+/home/wger/src/settings/main.py:83: UserWarning: SECRET_KEY is not set or uses the default value so a random key was generated, sessions will not persist across restarts. Set SECRET_KEY in your environment for production use.
+  warnings.warn(
+/home/wger/src/settings/main.py:234: UserWarning: SIGNING_KEY is not set or uses the default value so a random key was generated, sessions will not persist across restarts. Set SIGNING_KEY in your environment for production use.
+  warnings.warn(
+level=INFO ts=2026-10-06 05:16:51,258 module=apps path=/home/wger/.local/lib/python3.12/site-packages/axes/apps.py line=53 message=AXES: BEGIN version 8.3.1, blocking by ip_address

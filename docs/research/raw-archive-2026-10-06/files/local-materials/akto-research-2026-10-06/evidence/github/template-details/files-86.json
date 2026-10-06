@@ -1,0 +1,14 @@
+[
+  {
+    "sha": "f97af484694ac546865ff8a7fa39d800305e7a2f",
+    "filename": "Broken-Object-Level-Authorization/BOLAJSONBodyParamArray.yml",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 0,
+    "changes": 1,
+    "blob_url": "https://github.com/akto-api-security/tests-library/blob/4586420f38cff7ecd8f77f59eac8babd63a33b93/Broken-Object-Level-Authorization%2FBOLAJSONBodyParamArray.yml",
+    "raw_url": "https://github.com/akto-api-security/tests-library/raw/4586420f38cff7ecd8f77f59eac8babd63a33b93/Broken-Object-Level-Authorization%2FBOLAJSONBodyParamArray.yml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/tests-library/contents/Broken-Object-Level-Authorization%2FBOLAJSONBodyParamArray.yml?ref=4586420f38cff7ecd8f77f59eac8babd63a33b93",
+    "patch": "@@ -52,6 +52,7 @@ api_selection_filters:\n     lt: 300\n   response_payload:\n     length:\n+      gt: 0\n     not_contains_either:\n       - Error\n       - Internal Server "
+  }
+]

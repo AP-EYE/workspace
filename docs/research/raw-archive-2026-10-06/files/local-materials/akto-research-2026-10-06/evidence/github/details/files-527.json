@@ -1,0 +1,14 @@
+[
+  {
+    "sha": "dd9ec9516cdea40cd73bdf4f68a9a257f8a75320",
+    "filename": "apps/dashboard/src/main/java/com/akto/listener/InitializerListener.java",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 1,
+    "changes": 2,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/a6c9f374af72d1edd8e07c055b11a14c58133473/apps%2Fdashboard%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Flistener%2FInitializerListener.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/a6c9f374af72d1edd8e07c055b11a14c58133473/apps%2Fdashboard%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Flistener%2FInitializerListener.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fdashboard%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Flistener%2FInitializerListener.java?ref=a6c9f374af72d1edd8e07c055b11a14c58133473",
+    "patch": "@@ -388,7 +388,7 @@ private static CustomDataType getCustomDataTypeFromPiiType(PIISource piiSource,\n                 Collections.emptyList(),\n                 piiSource.getAddedByUser(),\n                 active,\n-                conditions,\n+                (piiType.getOnKey() ? conditions : null),\n                 (piiType.getOnKey() ? null : conditions),\n                 Operator.OR,\n                 ignoreData"
+  }
+]

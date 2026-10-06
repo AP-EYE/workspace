@@ -1,0 +1,49 @@
+[
+  {
+    "url": "https://api.github.com/repos/akto-api-security/akto/issues/comments/1518018258",
+    "html_url": "https://github.com/akto-api-security/akto/issues/291#issuecomment-1518018258",
+    "issue_url": "https://api.github.com/repos/akto-api-security/akto/issues/291",
+    "id": 1518018258,
+    "node_id": "IC_kwDOI38B3s5aex7S",
+    "user": {
+      "login": "avneesh-akto",
+      "id": 91518451,
+      "node_id": "U_kgDOBXR18w",
+      "avatar_url": "https://avatars.githubusercontent.com/u/91518451?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/avneesh-akto",
+      "html_url": "https://github.com/avneesh-akto",
+      "followers_url": "https://api.github.com/users/avneesh-akto/followers",
+      "following_url": "https://api.github.com/users/avneesh-akto/following{/other_user}",
+      "gists_url": "https://api.github.com/users/avneesh-akto/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/avneesh-akto/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/avneesh-akto/subscriptions",
+      "organizations_url": "https://api.github.com/users/avneesh-akto/orgs",
+      "repos_url": "https://api.github.com/users/avneesh-akto/repos",
+      "events_url": "https://api.github.com/users/avneesh-akto/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/avneesh-akto/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "created_at": "2023-04-21T15:43:23Z",
+    "updated_at": "2023-04-21T15:43:23Z",
+    "body": "Hello @B1gM8c . Thank you for trying out Akto.\r\n\r\nThis is because when you downloaded the burp plugin first time, it came with it's own API key. Since you reinstalled Akto the older API key got deleted. \r\n\r\nYou have 2 ways to fix this:\r\n\r\n1. a. Re-download the Burp plugin\r\n    b. Remove the old plugin and load the current one.\r\n \r\n2. a. Open akto. Go to Settings > Integrations > Burp Suite\r\n    b. Generate a new API key.\r\n    c. Open akto plugin in burp. Click on \"Options\".\r\n    d. Paste the API key in \"Akto token\" field (image below)\r\n    \r\n    \r\n<img width=\"784\" alt=\"image\" src=\"https://user-images.githubusercontent.com/91518451/233678175-1e9701a0-226b-49e6-b212-1081b55cbd02.png\">\r\n\r\nThis should fix your issue. But if issue persists or you have further questions. Feel free to join our [discord](https://discord.com/invite/Wpc6xVME4s)",
+    "author_association": "CONTRIBUTOR",
+    "pin": null,
+    "reactions": {
+      "url": "https://api.github.com/repos/akto-api-security/akto/issues/comments/1518018258/reactions",
+      "total_count": 0,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "performed_via_github_app": null,
+    "minimized": null
+  }
+]

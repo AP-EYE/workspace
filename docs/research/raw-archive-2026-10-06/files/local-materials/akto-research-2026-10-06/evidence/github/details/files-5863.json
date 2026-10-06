@@ -1,0 +1,14 @@
+[
+  {
+    "sha": "5d8328b8144f8aecff3ac62617a6b109ce45d77c",
+    "filename": "apps/agent-guard/python-service/anonymizer-container/src/anonymizer_service.py",
+    "status": "modified",
+    "additions": 6,
+    "deletions": 0,
+    "changes": 6,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/8438919de89c984509da5ab087e8690eb1b4252e/apps%2Fagent-guard%2Fpython-service%2Fanonymizer-container%2Fsrc%2Fanonymizer_service.py",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/8438919de89c984509da5ab087e8690eb1b4252e/apps%2Fagent-guard%2Fpython-service%2Fanonymizer-container%2Fsrc%2Fanonymizer_service.py",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fagent-guard%2Fpython-service%2Fanonymizer-container%2Fsrc%2Fanonymizer_service.py?ref=8438919de89c984509da5ab087e8690eb1b4252e",
+    "patch": "@@ -24,6 +24,9 @@\n \n REDACTION_PLACEHOLDER = \"[REDACTED]\"\n \n+# Noisy spaCy/keyword recognizers (no format validation) that misfire on ordinary text.\n+EXCLUDED_ENTITY_TYPES = {\"DATE_TIME\", \"NRP\", \"LOCATION\"}\n+\n \n def _build_analyzer() -> AnalyzerEngine:\n     if not spacy.util.is_package(SPACY_MODEL):\n@@ -105,6 +108,9 @@ def anonymize(req: AnonymizeRequest, request: Request):\n         language=req.language,\n         entities=req.entities,\n     )\n+    # Drop noisy types unless the caller explicitly asked for specific entities.\n+    if not req.entities:\n+        results = [r for r in results if r.entity_type not in EXCLUDED_ENTITY_TYPES]\n     analyze_ms = (time.perf_counter() - analyze_start) * 1000\n \n     anonymize_start = time.perf_counter()"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "sha": "04e7e01f59d4b632a5f9ac57e30d33032d26ff6b",
+    "filename": ".github/workflows/prod.yml",
+    "status": "modified",
+    "additions": 4,
+    "deletions": 4,
+    "changes": 8,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/9d5d5f49db153a938a8c2c40537cf0e9c34933a4/.github%2Fworkflows%2Fprod.yml",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/9d5d5f49db153a938a8c2c40537cf0e9c34933a4/.github%2Fworkflows%2Fprod.yml",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/.github%2Fworkflows%2Fprod.yml?ref=9d5d5f49db153a938a8c2c40537cf0e9c34933a4",
+    "patch": "@@ -12,19 +12,19 @@ on:\n         required: true\n       mini-runtime:\n         type: boolean\n-        default: true\n+        default: false\n         description: Mini-Runtime\n       mini-testing:\n         type: boolean\n-        default: true\n+        default: false\n         description: Mini-Testing\n       testing-db-layer:\n         type: boolean\n-        default: true\n+        default: false\n         description: Testing-Db-Layer\n       mini-runtime-service:\n         type: boolean\n-        default: true\n+        default: false\n         description: Mini-Runtime-Service\n \n # A workflow run is made up of one or more jobs that can run sequentially or in parallel"
+  },
+  {
+    "sha": "b40a7d70d3063d5607357025cd0e26166d16d13f",
+    "filename": "libs/dao/src/main/java/com/akto/dao/test_editor/TestEditorEnums.java",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 0,
+    "changes": 1,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/9d5d5f49db153a938a8c2c40537cf0e9c34933a4/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdao%2Ftest_editor%2FTestEditorEnums.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/9d5d5f49db153a938a8c2c40537cf0e9c34933a4/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdao%2Ftest_editor%2FTestEditorEnums.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/libs%2Fdao%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fdao%2Ftest_editor%2FTestEditorEnums.java?ref=9d5d5f49db153a938a8c2c40537cf0e9c34933a4",
+    "patch": "@@ -8,6 +8,7 @@ public enum DataOperands {\n         NOT_CONTAINS,\n         NOT_CONTAINS_EITHER,\n         REGEX,\n+        REGEX_EXTRACT,\n         EQ,\n         EQ_OBJ,\n         GTE,"
+  },
+  {
+    "sha": "de6ef8610703c371749e60a6112f6793f736cb05",
+    "filename": "libs/utils/src/main/java/com/akto/test_editor/Utils.java",
+    "status": "modified",
+    "additions": 42,
+    "deletions": 0,
+    "changes": 42,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/9d5d5f49db153a938a8c2c40537cf0e9c34933a4/libs%2Futils%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Ftest_editor%2FUtils.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/9d5d5f49db153a938a8c2c40537cf0e9c34933a4/libs%2Futils%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Ftest_editor%2FUtils.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/libs%2Futils%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Ftest_editor%2FUtils.java?ref=9d5d5f49db153a938a8c2c40537cf0e9c34933a4",
+    "patch": "@@ -81,6 +81,48 @@ public static Boolean checkIfContainsMatch(String text, String keyword) {\n         return match != null;\n     }\n \n+    // Converts an Object to a list of strings, handling common cases of List or array inputs.\n+    public static List<String> convertObjectToListOfString(Object obj) {\n+        List<String> stringList = new ArrayList<>();\n+        if (obj == null) {\n+            return stringList;\n+        }\n+        try {\n+            if (obj instanceof List) {\n+                for (Object item : (List<?>) obj) {\n+                    stringList.add(item != null ? item.toString() : null);\n+                }\n+            } else if (obj.getClass().isArray()) {\n+                int len = java.lang.reflect.Array.getLength(obj);\n+                for (int i = 0; i < len; i++) {\n+                    Object item = java.lang.reflect.Array.get(obj, i);\n+                    stringList.add(item != null ? item.toString() : null);\n+                }\n+            } else {\n+                // fallback: treat the object as a single element\n+                stringList.add(obj.toString());\n+            }\n+        } catch (Exception e) {\n+            return stringList;\n+        }\n+        return stringList;\n+    }\n+\n+    public static List<String> extractRegex(String payload, String regex) {\n+        List<String> matches = new ArrayList<>();\n+        Pattern pattern = Pattern.compile(regex);\n+        Matcher matcher = pattern.matcher(payload);\n+        while (matcher.find()) {\n+            // If the regex has groups, add the first group; otherwise add the whole match\n+            if (matcher.groupCount() >= 1) {\n+                matches.add(matcher.group(1));\n+            } else {\n+                matches.add(matcher.group());\n+            }\n+        }\n+        return matches;\n+    }\n+\n     public static boolean deleteKeyFromPayload(Object obj, String parentKey, String queryKey) {\n         boolean res = false;\n         if (obj instanceof BasicDBObject) {"
+  },
+  {
+    "sha": "3ffd187d36d1e62f3c740c5057176659aa229643",
+    "filename": "libs/utils/src/main/java/com/akto/test_editor/filter/FilterAction.java",
+    "status": "modified",
+    "additions": 25,
+    "deletions": 6,
+    "changes": 31,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/9d5d5f49db153a938a8c2c40537cf0e9c34933a4/libs%2Futils%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Ftest_editor%2Ffilter%2FFilterAction.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/9d5d5f49db153a938a8c2c40537cf0e9c34933a4/libs%2Futils%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Ftest_editor%2Ffilter%2FFilterAction.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/libs%2Futils%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Ftest_editor%2Ffilter%2FFilterAction.java?ref=9d5d5f49db153a938a8c2c40537cf0e9c34933a4",
+    "patch": "@@ -11,7 +11,6 @@\n import com.akto.data_actor.DataActorFactory;\n import com.akto.dto.OriginalHttpResponse;\n import com.akto.dto.testing.AccessMatrixUrlToRole;\n-import com.akto.dao.ApiCollectionsDao;\n import com.akto.dao.test_editor.TestEditorEnums;\n import com.akto.dao.test_editor.TestEditorEnums.BodyOperator;\n import com.akto.dao.test_editor.TestEditorEnums.CollectionOperands;\n@@ -30,7 +29,6 @@\n import com.akto.dto.type.SingleTypeInfo;\n import com.akto.dto.type.URLMethods;\n import com.akto.dto.type.URLTemplate;\n-import com.akto.mcp.McpRequestResponseUtils;\n import com.akto.test_editor.Utils;\n import com.akto.test_editor.execution.VariableResolver;\n import com.akto.test_editor.filter.data_operands_impl.*;\n@@ -377,14 +375,22 @@ public DataOperandsFilterResponse applyFilterOnPayload(FilterActionRequest filte\n                 double percentageMatch = Utils.structureMatch(filterActionRequest.getRawApi(), filterActionRequest.fetchRawApiBasedOnContext());\n                 val = (int) percentageMatch;\n             }\n+\n+            if (filterActionRequest.getOperand().equalsIgnoreCase(TestEditorEnums.DataOperands.REGEX_EXTRACT.toString())) {\n+                List<String> querySet = Utils.convertObjectToListOfString(filterActionRequest.getQuerySet());\n+                List<String> matches = new ArrayList<>();\n+                for (String query : querySet) {\n+                    matches.addAll(Utils.extractRegex(payload, query));\n+                }\n+                if (matches.size() > 0) {\n+                    return new DataOperandsFilterResponse(true, matches, null, null);\n+                }\n+                return new DataOperandsFilterResponse(false, null, null, null);\n+            }\n             \n             DataOperandFilterRequest dataOperandFilterRequest = new DataOperandFilterRequest(val, filterActionRequest.getQuerySet(), filterActionRequest.getOperand());\n             res = invokeFilter(dataOperandFilterRequest);\n             return new DataOperandsFilterResponse(res, null, null, null);\n-        } else if (filterActionRequest.getConcernedSubProperty() == null) {\n-            DataOperandFilterRequest dataOperandFilterRequest = new DataOperandFilterRequest(payload, filterActionRequest.getQuerySet(), filterActionRequest.getOperand());\n-            res = invokeFilter(dataOperandFilterRequest);\n-            return new DataOperandsFilterResponse(res, null, null, null);\n         }\n \n         return new DataOperandsFilterResponse(false, null, null, null);\n@@ -452,6 +458,19 @@ public void extractPayload(FilterActionRequest filterActionRequest, Map<String,\n                 double percentageMatch = compareWithOriginalResponse(payload, sampleRawApi.getResponse().getBody(), new HashMap<>());\n                 val = (int) percentageMatch;\n             }\n+            /*\n+             * no concerned sub property means that\n+             * the operation was directly applied on the payload\n+             * so we need to extract the matching key set, if any\n+             */\n+        } else if (filterActionRequest.getConcernedSubProperty() == null &&\n+                filterActionRequest.getMatchingKeySet() != null &&\n+                filterActionRequest.getMatchingKeySet().size() > 0) {\n+            if (extractMultiple) {\n+                val = filterActionRequest.getMatchingKeySet();\n+            } else {\n+                val = filterActionRequest.getMatchingKeySet().get(0);\n+            }\n         } else {\n             val = payload;\n         }"
+  }
+]

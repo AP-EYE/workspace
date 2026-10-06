@@ -1,0 +1,14 @@
+[
+  {
+    "sha": "0f8098aa580918b0aa143d6331fbf39a1871d960",
+    "filename": "libs/utils/src/main/java/com/akto/test_editor/Utils.java",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 1,
+    "changes": 2,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/28b23cc5865dc0c69a4a66b1b5f9b2a5a6d0462c/libs%2Futils%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Ftest_editor%2FUtils.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/28b23cc5865dc0c69a4a66b1b5f9b2a5a6d0462c/libs%2Futils%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Ftest_editor%2FUtils.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/libs%2Futils%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Ftest_editor%2FUtils.java?ref=28b23cc5865dc0c69a4a66b1b5f9b2a5a6d0462c",
+    "patch": "@@ -60,7 +60,7 @@ private static OkHttpClient createHttpClient() {\n \n     public static Boolean checkIfContainsMatch(String text, String keyword) {\n         Pattern pattern = Pattern.compile(keyword);\n-        return pattern.matcher(text).matches();\n+        return pattern.matcher(text).find();\n     }\n \n     public static boolean deleteKeyFromPayload(Object obj, String parentKey, String queryKey) {"
+  }
+]

@@ -1,0 +1,410 @@
+[
+  {
+    "path": ".gitignore",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5bb4a5e19ccfafc0bd2237e30ca9962c018ebc51"
+  },
+  {
+    "path": ".python-version",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2c0733315e415bfb5e5b353f9996ecd964d395b2"
+  },
+  {
+    "path": "BACScan_start.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ed7abe0d45636ca6d02e4698cea475bc3087b987"
+  },
+  {
+    "path": "README.md",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d824fcf97c6b690550481e2b7e1540a11485b253"
+  },
+  {
+    "path": "add_node.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "25b49e3c23582a19406ee7ce0c5fffe73380b461"
+  },
+  {
+    "path": "auth/memos/admin_nav.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "985bca6bca2aa8ddd7ce2dff92641657dcc39298"
+  },
+  {
+    "path": "auth/memos/user_det.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ea54aa21bb52df6aa98eac4ae15e40270080abcd"
+  },
+  {
+    "path": "auth/memos/user_nav.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "71966aa1f9fa127cdc8af01018fa05fd92aab984"
+  },
+  {
+    "path": "build_dependence.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "51493c94139a33b4b98c848a342639bd90d264f1"
+  },
+  {
+    "path": "config/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "853722dec51d5508206a7518526cee7f7467b9ae"
+  },
+  {
+    "path": "config/config.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f4b5f4a2299b13d91bfec613137d9ec70e7c2a49"
+  },
+  {
+    "path": "config/crawl_config.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "71cab818f2c1e9858c60e12cf19f01d104a66147"
+  },
+  {
+    "path": "crawler/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "crawler/browser/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "035a54c53fac36be95357ff5255da9af16c63ac4"
+  },
+  {
+    "path": "crawler/browser/browser.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "bf4d3c818f023e59bc52531ff9a95e40cdc20fcd"
+  },
+  {
+    "path": "crawler/browser/js/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "85edd5d3152c52015201655d014607b0bb640be4"
+  },
+  {
+    "path": "crawler/browser/js/js_crawlergo.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "21b3660f05745728a73db9460dfd716e52b109c7"
+  },
+  {
+    "path": "crawler/browser/page.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8efe39aa277887599180a90899aa6dedaac79e2f"
+  },
+  {
+    "path": "crawler/conf.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d3ca95c52467e4c4be1b0b53cf13169e6a5e6d66"
+  },
+  {
+    "path": "crawler/crawl/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "0289a7ed96d48c5d1cc90dd2fce7104d7c42c3ab"
+  },
+  {
+    "path": "crawler/crawl/crawl.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "5066cadd5ab9919c0da16ca8d3c5970edb86d0bd"
+  },
+  {
+    "path": "crawler/crawl/modules/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "fb03811ca0285bb572ad3a4e86683a347b2952f2"
+  },
+  {
+    "path": "crawler/crawl/modules/console.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "92f55e3f42cd3ca8638005522dc455bec38d15bc"
+  },
+  {
+    "path": "crawler/crawl/modules/event.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "a070993d6aa76affac7ec363990f8f96e70e69d3"
+  },
+  {
+    "path": "crawler/crawl/modules/form.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "be14e72b60a9c3ba927c7a9eab20768c8f06834d"
+  },
+  {
+    "path": "crawler/crawl/modules/link.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "18e76eadbb771819aeb6e3491b247728514f0301"
+  },
+  {
+    "path": "crawler/crawl/modules/route.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "99ec2e3b4c417599bb29b0de9fb8d1cdec77051f"
+  },
+  {
+    "path": "crawler/filters/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "2a1a284518339b1b87e34d0cfa90a836aa099a8d"
+  },
+  {
+    "path": "crawler/filters/filter.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "7ed576b320c38c08bdd3449eae7a76d1ef742013"
+  },
+  {
+    "path": "crawler/filters/libfilters/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1dd4a1a72100840b577cd13d9a1970e88463409e"
+  },
+  {
+    "path": "crawler/filters/libfilters/dom.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b1682ceadc70c7e77674ee559ce33dd9cc146967"
+  },
+  {
+    "path": "crawler/filters/libfilters/filter.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "f4385516bc027a2c7661331bb21f8cc3373c52f9"
+  },
+  {
+    "path": "crawler/filters/libfilters/simple.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "105139c1bd90b0c79e8308c95011b6b9c57d6991"
+  },
+  {
+    "path": "crawler/filters/libfilters/smart.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "736096257e4ff7a65c04cced89437e189bf1d1eb"
+  },
+  {
+    "path": "crawler/models/__init__.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1de74586c60a5d4100ee5be84fb3a27a0a013f6b"
+  },
+  {
+    "path": "crawler/models/nav_graph.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ca4be19440ccb52cb13413d77ba11a3c58f0fd42"
+  },
+  {
+    "path": "crawler/models/request.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "1a38bb8e3031bd7bd815ce5b0991fa0349b3852d"
+  },
+  {
+    "path": "crawler/models/url.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "aa34a99d597fed9da9c51ec22ef985807ddaa429"
+  },
+  {
+    "path": "crawler/task.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "966478d22559038eb83ef1fec3047e0f70af76f9"
+  },
+  {
+    "path": "crawler/utils.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "fa7e104eb2629d56400884ec9b4f7859010a809c"
+  },
+  {
+    "path": "crawler_run.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "264ee8451e82df27479708bf3bd3681d4e844d89"
+  },
+  {
+    "path": "package-lock.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "fb7e3e1fe93b332c1729ae331522f3ae7e74f2bd"
+  },
+  {
+    "path": "package.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "355681559581c3b950139438f3ef643a60078f37"
+  },
+  {
+    "path": "pyproject.toml",
+    "mode": "100644",
+    "type": "blob",
+    "object": "624777917bb6fe1398241252216b29da5633ae0c"
+  },
+  {
+    "path": "target.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d056b376d69d870a7fd172e5db38c973610cdbde"
+  },
+  {
+    "path": "uv.lock",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4870924ba932ee352eb7f90b975138b886dff0e4"
+  },
+  {
+    "path": "vuln_detection/core/failure.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "83e43648d5cb07aa8c24b577fe02ab11fb0d2453"
+  },
+  {
+    "path": "vuln_detection/core/http_client.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8ce57d7e7ee71926ad50e165f61b09c3c0ab7c6a"
+  },
+  {
+    "path": "vuln_detection/core/param_variants.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "dfafee1df26e386a5a385d7e6a074f1cb82fcaff"
+  },
+  {
+    "path": "vuln_detection/core/replay.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b2ef23ebf494851de1fa7a2c0d1b1ea978ab0860"
+  },
+  {
+    "path": "vuln_detection/core/response_store.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "00eb24b47a597f47cfc5cf9c6468b7437b044506"
+  },
+  {
+    "path": "vuln_detection/input/XPath_cluster/memos.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d976d4b581d1a96167d17c0fc4d4d9e642da59c4"
+  },
+  {
+    "path": "vuln_detection/input/controllable_id/memos_params.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "ff3d3a9903db6ba7a6e494b003314e8d771b8d43"
+  },
+  {
+    "path": "vuln_detection/input/data_dependence/memos.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "b8a167abe3bb8726af1b14a10901e3911e47621f"
+  },
+  {
+    "path": "vuln_detection/input/merged_navigraph/memos.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "d208e4419b96a549a0afbae5866fc482593b2303"
+  },
+  {
+    "path": "vuln_detection/input/nav_graphs/memos/admin_navigraph.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "04505f5c4683295bc857acbfbb5c8dea2587877d"
+  },
+  {
+    "path": "vuln_detection/input/nav_graphs/memos/user_navigraph.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "e3eeda9545c89455b120a32084650f3c705036a7"
+  },
+  {
+    "path": "vuln_detection/input/nav_graphs/memos/visitor_navigraph.json",
+    "mode": "100644",
+    "type": "blob",
+    "object": "80713c4482d6b1373f2fb01844c7d9a32ec5f1e2"
+  },
+  {
+    "path": "vuln_detection/similarity/dom_similarity.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "02ef991381ac211807668a0a6c6c034e2df02c52"
+  },
+  {
+    "path": "vuln_detection/similarity/json_similarity.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "9a525067af92f3fba1ebd68f993d6d8c983d096d"
+  },
+  {
+    "path": "vuln_detection/utils/data_dependence_util.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "01e37684ecf195356c83342574bf45539a352fae"
+  },
+  {
+    "path": "vuln_detection/utils/data_dependence_util_bak.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6b9e0176ef9d984af663ad38a30390ae1790c638"
+  },
+  {
+    "path": "vuln_detection/utils/dom_converter_util.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "59418fc9bd854d8a3ade2df11a3079d7c1123dab"
+  },
+  {
+    "path": "vuln_detection/utils/es_util.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "6a2bbf18748a2c37fd7bcbb202997538634b8f98"
+  },
+  {
+    "path": "vuln_detection/utils/graph_util.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "c23c46bf13a0a3313bd0f7d301f5a5abbede9150"
+  },
+  {
+    "path": "vuln_detection/utils/pipeline_context.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "23f008456b323e84710b016dbf21323f5633aebe"
+  },
+  {
+    "path": "vuln_detection/vuln_scan.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "8dd613d4d400aefad0aa209b31aafc48af921da6"
+  },
+  {
+    "path": "vuln_scan.py",
+    "mode": "100644",
+    "type": "blob",
+    "object": "4848fd532d422148fc8da7a9750cb3038b9a6436"
+  }
+]

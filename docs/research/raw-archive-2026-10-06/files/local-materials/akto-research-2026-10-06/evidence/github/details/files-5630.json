@@ -1,0 +1,14 @@
+[
+  {
+    "sha": "699f9388cd8d2dd18cd96f86876bc9a464f748b9",
+    "filename": "apps/api-runtime/src/main/java/com/akto/runtime/policies/AuthPolicy.java",
+    "status": "modified",
+    "additions": 6,
+    "deletions": 4,
+    "changes": 10,
+    "blob_url": "https://github.com/akto-api-security/akto/blob/911b345404df011de91ddf978c877fc1240438f2/apps%2Fapi-runtime%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fruntime%2Fpolicies%2FAuthPolicy.java",
+    "raw_url": "https://github.com/akto-api-security/akto/raw/911b345404df011de91ddf978c877fc1240438f2/apps%2Fapi-runtime%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fruntime%2Fpolicies%2FAuthPolicy.java",
+    "contents_url": "https://api.github.com/repos/akto-api-security/akto/contents/apps%2Fapi-runtime%2Fsrc%2Fmain%2Fjava%2Fcom%2Fakto%2Fruntime%2Fpolicies%2FAuthPolicy.java?ref=911b345404df011de91ddf978c877fc1240438f2",
+    "patch": "@@ -23,12 +23,14 @@ public class AuthPolicy {\n     public static final String COOKIE_NAME = \"cookie\";\n     private static final Logger logger = LoggerFactory.getLogger(AuthPolicy.class);\n \n-    private static final Pattern API_KEY_PATTERN = Pattern.compile(\".*(apikey|passkey).*\");\n-\n     private static boolean isApiKeyHeader(String headerName) {\n+        if (headerName == null || headerName.isEmpty()) {\n+            return false;\n+        }\n+\n         // Matches variations: x-api-key, x_api_key, api_key, api-key, apiKey, x-pass-key\n-        String normalized = headerName.toLowerCase().replaceAll(\"[_-]\", \"\");\n-        return API_KEY_PATTERN.matcher(normalized).matches();\n+        String normalized = headerName.toLowerCase().replace(\"_\", \"\").replace(\"-\", \"\");\n+        return normalized.contains(\"apikey\") || normalized.contains(\"passkey\");\n     }\n \n     private static List<String> findBearerBasicAuth(String header, String value){"
+  }
+]
