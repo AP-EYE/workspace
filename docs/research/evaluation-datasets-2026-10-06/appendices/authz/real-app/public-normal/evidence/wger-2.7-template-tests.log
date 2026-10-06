@@ -1,0 +1,17 @@
+level=INFO ts=2026-10-06 05:27:14,116 module=apps path=/home/wger/.local/lib/python3.12/site-packages/axes/apps.py line=53 message=AXES: BEGIN version 8.3.1, blocking by ip_address
+Creating test database for alias 'default'...
+Found 8 test(s).
+System check identified some issues:
+
+WARNINGS:
+?: (axes.W001) You are using the django-axes cache handler for login attempt tracking. Your cache configuration is however invalid and will not work correctly with django-axes. This can leave security holes in your login systems as attempts are not tracked correctly. Reconfigure settings.AXES_CACHE and settings.CACHES per django-axes configuration documentation.
+
+System check identified 1 issue (0 silenced).
+.level=WARNING ts=2026-10-06 05:27:58,399 module=log path=/home/wger/.local/lib/python3.12/site-packages/django/utils/log.py line=249 message=Method Not Allowed: /api/v2/public-templates/
+.level=WARNING ts=2026-10-06 05:27:58,420 module=log path=/home/wger/.local/lib/python3.12/site-packages/django/utils/log.py line=249 message=Method Not Allowed: /api/v2/templates/
+......
+----------------------------------------------------------------------
+Ran 8 tests in 1.021s
+
+OK
+Destroying test database for alias 'default'...

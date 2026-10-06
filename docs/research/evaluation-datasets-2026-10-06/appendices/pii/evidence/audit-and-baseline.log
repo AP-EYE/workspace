@@ -1,0 +1,26 @@
+{
+  "kpii_docs": 126,
+  "kpii_entities": 541,
+  "kpii_errors": [],
+  "kpii_negatives": 0,
+  "ko_docs": 540,
+  "ko_gold": 3635,
+  "ko_canonical": {
+    "tp": 2832,
+    "fp": 733,
+    "fn": 771,
+    "precision": 0.794389901823282,
+    "recall": 0.7860116569525396,
+    "f1": 0.7901785714285715
+  },
+  "ko_exact_surface": {
+    "tp": 2382,
+    "fp": 1183,
+    "fn": 1219,
+    "precision": 0.6681626928471248,
+    "recall": 0.6614829214107193,
+    "f1": 0.6648060284677645
+  },
+  "ko_negative_docs_flagged": 15,
+  "ko_negative_docs_flagged_core_labels": 12
+}

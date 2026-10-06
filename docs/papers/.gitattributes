@@ -1,0 +1,2 @@
+# Converted paper text retains its source extraction and line endings.
+* -text whitespace=-trailing-space,-blank-at-eof

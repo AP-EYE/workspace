@@ -1,0 +1,1459 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>HISTORY-REVIEW · AP-EYE</title><style>:root{--ink:#182735;--muted:#556675;--accent:#145d83;--line:#dce5e9;--pale:#edf5f7}*{box-sizing:border-box}body{margin:0;background:#f4f7f8;color:var(--ink);font-family:'Malgun Gothic','Segoe UI',sans-serif;font-size:15px;line-height:1.8}a{color:var(--accent);text-underline-offset:3px;overflow-wrap:anywhere}header{background:#142f41;color:#fff;padding:25px max(24px,calc((100vw - 1420px)/2));border-bottom:5px solid #50b7b0}header .eyebrow{color:#a9d7dc;font-size:12px;font-weight:700;letter-spacing:1.5px}header h1{font-size:27px;margin:4px 0}header p{margin:0;color:#d7e3e9}nav.top{display:flex;gap:20px;flex-wrap:wrap;margin:14px 0 0}nav.top a{color:white;font-size:13px}.layout{max-width:1480px;display:grid;grid-template-columns:235px minmax(0,1fr);gap:35px;margin:34px auto;padding:0 25px}aside{align-self:start;position:sticky;top:20px;font-size:12px;max-height:92vh;overflow:auto}aside a{display:block;margin:0 0 10px;text-decoration:none;color:#425e70}aside strong{display:block;margin-bottom:15px;font-size:13px}main{background:white;min-width:0;padding:32px 46px 64px;border:1px solid var(--line);border-radius:10px;box-shadow:0 5px 18px #18384d08}main>h1{font-size:29px;line-height:1.45;margin-top:0}h2{font-size:22px;margin:46px 0 18px;padding-top:15px;border-top:2px solid var(--line);scroll-margin-top:25px}h3{font-size:18px;margin:30px 0 12px}p{margin:15px 0}li{margin:8px 0}strong{color:#103e59}.table-wrap{overflow-x:auto;margin:20px 0;border:1px solid var(--line);border-radius:7px}table{border-collapse:collapse;width:100%;font-size:13px;line-height:1.65}th{background:#eaf3f6;color:#203f50;text-align:left;font-weight:700}td,th{padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top;min-width:90px;overflow-wrap:anywhere}tr:last-child td{border-bottom:0}tbody tr:nth-child(even){background:#f8fafb}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#142f41;color:#e5f1f5;padding:22px;border-radius:7px;font-size:13px;line-height:1.65}code{font-family:Consolas,'Malgun Gothic',monospace;font-size:.92em}p code,li code,td code{background:#edf3f5;border-radius:3px;padding:1px 4px}footer{font-size:12px;color:var(--muted);padding-top:30px}.wide{max-width:1450px;margin:30px auto;padding:25px}.metrics{display:flex;gap:18px;flex-wrap:wrap;margin:20px 0}.metric{background:var(--pale);padding:15px 23px;border-radius:8px;min-width:160px}.metric b{font-size:25px;display:block;color:#145d83}.metric span{font-size:12px}.filters{display:flex;gap:12px;flex-wrap:wrap;align-items:end;padding:20px;background:#f3f6f7;border:1px solid var(--line);border-radius:8px}.filters label{font-size:12px;font-weight:700;display:grid;gap:5px}input,select,button{font:inherit;border:1px solid #acbdc7;border-radius:5px;background:white;padding:8px 10px;color:var(--ink)}input{min-width:230px}button{cursor:pointer}button:disabled{opacity:.45;cursor:default}.pager{display:flex;gap:20px;align-items:center;justify-content:space-between;margin:15px 0}.subtle{font-size:12px;color:var(--muted)}.badge{display:inline-block;padding:1px 7px;border-radius:4px;background:#e6eff3;font-size:11px;white-space:nowrap}.note{border-left:4px solid #51a7a6;padding:12px 17px;background:#f0f7f7}.index-table td:nth-child(3){min-width:230px;max-width:500px}.index-table td:nth-child(1){white-space:nowrap}.index-table td{font-size:12px}@media(max-width:850px){.layout{display:block;padding:0 12px;margin:18px auto}aside{position:static;max-height:none;columns:2;margin-bottom:20px}main{padding:22px 20px}.wide{margin:15px 10px;padding:15px}header{padding:23px}header h1{font-size:23px}main>h1{font-size:24px}table{min-width:650px}pre{font-size:11px}}@media print{header,aside,nav,.filters,.pager{display:none}.layout{display:block;margin:0;padding:0}main{border:0;box-shadow:none;padding:0}body{background:white;font-size:11px}h2{break-after:avoid}tr{break-inside:avoid}a{color:#222;text-decoration:none}.table-wrap{overflow:visible}table{font-size:9px;min-width:0}pre{color:#222;background:#f2f2f2}}</style></head><body><header><div class="eyebrow">AP-EYE · RESEARCH DOSSIER · 2026-10-06</div><h1>Akto와 한국어 PII 탐지</h1><p>공개 소스 · 수정 이력 · 국가별 비교 · 컴포넌트 실행 증거</p><nav class="top"><a href="AKTO-DEEP-RESEARCH.html">전체 조사</a><a href="HISTORY-REVIEW.html">수정 이력</a><a href="PAPER-NOTES.html">문헌 검토</a><a href="ISSUE-EXPLORER.html">이슈·PR 검색</a><a href="ISSUE-PR-INDEX.csv">CSV 목록</a></nav></header><div class="layout"><aside><strong>이 문서의 내용</strong><a href="#section-1">읽는 방법</a><a href="#section-2">1. 본체 핵심 변경</a><a href="#section-3">2. 이슈의 해결 상태를 보수적으로 읽기</a><a href="#section-4">3. 검사 템플릿 저장소의 변경</a><a href="#section-5">4. 이번에 확인한 원인 패턴</a><a href="#section-6">5. 확보한 본체 PR 상세 전체 목록</a><a href="#section-7">6. 확보한 tests-library PR 상세 전체 목록</a></aside><main><h1>Akto 수정 이력 검토표</h1>
+<p>기준: 2026-10-06 KST. 공개 GitHub API 수집본을 사용한다. 이 문서는 보안 감사의 완료 증명서가 아니다.</p>
+<h2 id="section-1">읽는 방법</h2>
+<ul>
+<li><strong>핵심 patch 검토</strong>: 본문·관련 변경 부분을 읽고 의미를 요약한 항목이다. 모든 호출 경로를 동적으로 검증한 것은 아니다.</li>
+<li><strong>상세 확보</strong>: 본문·파일 목록·GitHub가 제공한 patch를 확보했으나 개별 수정 의미를 충분히 검증하지 않은 항목이다.</li>
+<li><strong>목록 분류</strong>: 제목·본문 키워드에 따른 자동 분류다. 보안 취약점 판정이 아니다.</li>
+<li>merged는 특정 base branch에 병합됐다는 의미다. master·상용 배포·실제 사용 이미지 적용과 구별한다.</li>
+<li>원시 이슈에는 외부 사용자의 주장·스팸이 섞인다. 사실의 근거는 코드·재현·관리자 설명과 함께 판단한다.</li>
+</ul>
+<p>본체 목록은 이슈 179 + PR 6,402 = 6,581건이다. 본체 PR 상세 164건, tests-library 관련 PR 상세 24건을 확보했다. 번호는 저장소마다 독립적이다. 공개 advisory API 0건은 취약점 부재를 의미하지 않는다.</p>
+<h2 id="section-2">1. 본체 핵심 변경</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>PR·종류</th>
+<th>상태·병합일(UTC)·대상</th>
+<th>실제 변경과 남는 한계</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/527">#527</a> · 분류</td>
+<td>병합 2023-09-04 · <code>develop</code></td>
+<td>key 조건에 value 규칙을 잘못 넣던 매핑 수정. key/value 의미를 구분해야 한다.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/883">#883</a> · 검사 오탐</td>
+<td>병합 2024-02-17 · <code>develop</code></td>
+<td>cookie MaxAge 대소문자·날짜 처리, URL 정규식 escaping·wordlist 처리 등의 patch. 모든 BOLA 오탐이 해결됐다는 뜻은 아니다.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1121">#1121</a> · 분류</td>
+<td>병합 2024-05-18 · <code>master</code></td>
+<td>AWS secret custom type을 비활성화하고 일반 타입으로 재분류하는 처리. 변경 이유나 전후 정확도는 이 patch만으로 확정하지 않는다.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1231">#1231</a> · 마스킹</td>
+<td>병합 2024-07-05 · <code>develop</code></td>
+<td>cookie와 GraphQL의 redaction 처리 확대. 적용되는 입력 경로·설정 조건은 별도 확인해야 한다.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1248">#1248</a> · 마스킹</td>
+<td>병합 2024-07-05 · <code>develop</code></td>
+<td>mini-runtime query parameter redaction 보완. redactAll 조건이 있으므로 무조건 적용으로 해석하지 않는다.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1249">#1249</a> · 마스킹</td>
+<td>병합 2024-07-05 · <code>develop</code></td>
+<td>api-runtime query parameter redaction 보완. mini-runtime의 동명 변경과 대상 모듈을 구분한다.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1359">#1359</a> · BOLA</td>
+<td>병합 2024-08-15 · <code>master</code></td>
+<td>인증 헤더 변경 경로에서 upsert를 사용하도록 수정. 없는 헤더의 추가도 다룬다.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1363">#1363</a> · BOLA</td>
+<td>병합 2024-08-17 · <code>master</code></td>
+<td>private_variable_context의 설명 작성용 StringBuilder 초기화로 null 오류 방지. 의미 판정의 정확도 개선과는 구별한다.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1491">#1491</a> · 마스킹</td>
+<td>병합 2024-09-14 · <code>feature/mini-runtime-release</code></td>
+<td>민감 key 샘플의 redaction 및 타입 mapper의 redacted 설정 전달 보완. mini-runtime-release 대상.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1492">#1492</a> · 마스킹</td>
+<td>병합 2024-09-14 · <code>feature/cyborg-release</code></td>
+<td>cyborg 타입 mapper에 redacted 상태 반영. master 병합으로 표기하지 않는다.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1619">#1619</a> · 의존성</td>
+<td>병합 2024-10-15 · <code>feature_data_ingestion_service</code></td>
+<td>Struts 및 Spring 관련 의존성 버전 변경. CVE 영향은 사용 경로·배포 버전을 따로 분석해야 한다.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1965">#1965</a> · 의존성</td>
+<td>병합 2025-01-11 · <code>feature/mini-runtime-release</code></td>
+<td>오래된 Jetty·SnakeYAML 직접 의존성 제거. shaded/transitive dependency까지 모두 제거됐다는 증거는 아니다.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/2418">#2418</a> · 정규식</td>
+<td>병합 2025-04-24 · <code>master</code></td>
+<td>test-editor helper의 전체 일치 matches를 부분 일치 find로 변경. 현재 PII RegexPredicate의 matches와 다른 코드다.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/2674">#2674</a> · 플랫폼 보안 제보</td>
+<td>open·미병합 · <code>master</code></td>
+<td>로그인 JSP에 사용자 이름을 JavaScript 문자열로 직접 삽입하는 XSS 제보의 수정안. open·미병합이며 현재 코드 형태와 일치. 전체 입력/실행 경로 재현은 NOT_RUN.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/2908">#2908</a> · 마스킹 예외</td>
+<td>병합 2025-08-01 · <code>master</code></td>
+<td>BURP 수집 소스를 global redaction 처리에서 제외하는 변경. 예외의 존재와 실제 계정별 redaction 결과를 구분한다.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/3055">#3055</a> · 마스킹 예외</td>
+<td>병합 2025-08-28 · <code>master</code></td>
+<td>global redaction을 MIRRORING 소스에 적용하는 조건 변경. 제품의 모든 입력 경로가 같은 정책을 쓰지 않는다.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/3497">#3497</a> · 마스킹</td>
+<td>병합 2025-11-07 · <code>master</code></td>
+<td>sample data redaction 및 기존 데이터/타입 갱신 경로의 보완. 과거 저장된 모든 원문이 제거됐다는 운영 검증은 하지 않았다.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/5498">#5498</a> · 검사 근거</td>
+<td>병합 2026-06-24 · <code>master</code></td>
+<td>검출 근거가 원문에 있는지 검증하고 호출자 credential을 누출 근거에서 제외하며 결정적 검출 결과와 LLM 결과를 결합. 문자열 존재가 권한 위반 증거를 대신하지는 않는다.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/5519">#5519</a> · 마스킹 UI</td>
+<td>병합 2026-06-24 · <code>master</code></td>
+<td>cookie/샘플 표시에서 마스킹 placeholder 처리를 개선. UI가 가려졌다는 사실만으로 DB 원문 제거를 주장할 수 없다.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/5682">#5682</a> · 성능 제안</td>
+<td>open·미병합 · <code>master</code></td>
+<td>Hyperscan을 다루는 미병합 제안. 현재 기본 Akto의 엔진이나 속도로 소개하지 않는다. 제목·구성 수준 확인.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/5863">#5863</a> · 문장 PII</td>
+<td>병합 2026-07-22 · <code>master</code></td>
+<td>기본 Presidio 결과에서 DATE_TIME·NRP·LOCATION 제외. entities를 지정한 경우와 다르며 오탐 감소와 탐지 범위 감소가 함께 있다.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/5881">#5881</a> · 인증정보 취급</td>
+<td>병합 2026-07-23 · <code>master</code></td>
+<td>session identifier 후보에서 Authorization header를 제거. 실제 외부 유출 사건을 입증한 자료는 아니다.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/5902">#5902</a> · 문장 PII</td>
+<td>병합 2026-07-27 · <code>master</code></td>
+<td>anonymizer score threshold 0.4와 목록 marker·이메일 등의 회귀 테스트 추가. threshold는 정확도 백분율이 아니다. 테스트 코드는 확인했으나 서비스 테스트 실행은 NOT_RUN.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/5915">#5915</a> · 의존성</td>
+<td>병합 2026-07-28 · <code>master</code></td>
+<td>Go 의존성 버전 보완. 프로젝트 전체 CVE 제거 또는 악용 가능성의 확정을 뜻하지 않는다.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/6112">#6112</a> · OSS 사용성 제보</td>
+<td>open·미병합 · <code>master</code></td>
+<td>local_deploy의 plan gate 때문에 Access Restricted가 나타나는 문제를 다루는 미병합 수정안. 현재 UI 분기 확인, 실제 Docker 배포 NOT_RUN.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/6121">#6121</a> · LLM 마스킹</td>
+<td>병합 2026-08-19 · <code>master</code></td>
+<td>redaction 설정 UI·DTO·Go 모듈 연결 추가. 내부 모델의 한국어 성능은 이 변경으로 확인할 수 없다.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/6150">#6150</a> · 외부 검사 모듈</td>
+<td>병합 2026-08-19 · <code>master</code></td>
+<td>PII block 우선순위라는 제목이나 본체의 핵심 patch는 모듈 버전 변경. 실제 내부 알고리즘의 수정 내용을 확보한 것으로 간주하지 않는다.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/6240">#6240</a> · 외부 검사 모듈</td>
+<td>병합 2026-08-27 · <code>master</code></td>
+<td>이메일 PII 탐지 수정이라는 제목이나 본체에서 확인되는 것은 주로 모듈 버전 변경. 전후 precision/recall 수치는 없다.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/6278">#6278</a> · 분류 확장</td>
+<td>병합 2026-09-01 · <code>feature/cyborg-release</code></td>
+<td>cyborg의 외부 datatype corrector 관련 HTTP·후보·캐시 등의 확장. 조사한 master에 동일 구현이 있다는 주장은 하지 않는다.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/6279">#6279</a> · 분류 확장</td>
+<td>병합 2026-09-01 · <code>feature/mini-runtime-release</code></td>
+<td>mini-runtime-release의 외부 datatype corrector 연계. branch-specific 구현이며 배포 이미지 채택 여부는 별도 확인.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/6309">#6309</a> · 플랫폼 접근통제</td>
+<td>병합 2026-09-10 · <code>master</code></td>
+<td>RBAC 요금제 검사 전에 product-level NO_ACCESS를 처리하도록 이동. 기존 early return이 접근 제한을 건너뛸 수 있다는 문제. master 현재 순서도 확인.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/6402">#6402</a> · 데이터 최소화</td>
+<td>병합 2026-09-15 · <code>master</code></td>
+<td>사용자명 lookup map을 브라우저 payload로 보내던 구조를 서버 조회로 이동. 모든 PII 전송·저장 경로 제거를 의미하지 않는다.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/6487">#6487</a> · LLM 출력</td>
+<td>병합 2026-09-22 · <code>master</code></td>
+<td>탐지 이유에 PII/비밀값을 다시 인용하지 않도록 prompt 보완. 별도의 출력 검증 없이 완전한 누출 방지를 증명할 수 없다.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/6513">#6513</a> · LLM 출력</td>
+<td>병합 2026-09-24 · <code>feat/async-reason</code></td>
+<td>추가 설명 경로도 값 대신 종류·개수로 설명하도록 보완. feat/async-reason 병합이며 관련 문구는 조사한 master에서도 확인.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/6569">#6569</a> · 플랫폼 보안 제보</td>
+<td>open·미병합 · <code>master</code></td>
+<td>역할 변경·비밀번호 초기화 대상의 account 범위와 호출자 권한 확인을 보완하는 미병합 수정안. 다른 interceptor를 포함한 실제 공격 가능성은 NOT_RUN.</td>
+</tr>
+</tbody></table></div>
+<h2 id="section-3">2. 이슈의 해결 상태를 보수적으로 읽기</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>이슈</th>
+<th>확인한 근거</th>
+<th>조사 결론</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://github.com/akto-api-security/akto/issues/2673">#2673</a></td>
+<td>사용자 이름의 로그인 JSP 삽입 및 #2674 수정안</td>
+<td>소스와 일치하는 open 제보. 실제 공격 재현은 미실행</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/issues/5512">#5512</a> / <a href="https://github.com/akto-api-security/akto/issues/4235">#4235</a></td>
+<td>OSS 로컬 설치의 접근 제한 관련 글</td>
+<td>로컬 사용 가능 범위를 직접 검증해야 함. 댓글의 우회를 공식 정책으로 간주하지 않음</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/issues/6043">#6043</a></td>
+<td>shaded dependency와 SBOM 사각지대 제보</td>
+<td>패키지 탐지와 악용 가능성을 구분. 제보도 exploitability는 조사하지 않았다고 명시</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/issues/5473">#5473</a></td>
+<td>Mongo 버전/driver 호환성 관련 closed 글</td>
+<td>현재 Compose는 7.0.4. 과거 제보의 환경과 현재 코드를 섞지 않음</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/issues/5480">#5480</a></td>
+<td>OpenAPI 3.1에서 endpoint 0건이라는 제보와 해결 댓글</td>
+<td>closed·해결 주장 존재. 원인 patch 연결과 여러 3.1 schema에 대한 검증은 미확인</td>
+</tr>
+</tbody></table></div>
+<h2 id="section-4">3. 검사 템플릿 저장소의 변경</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>tests-library PR</th>
+<th>상태·병합일(UTC)·대상</th>
+<th>검토 결과</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://github.com/akto-api-security/tests-library/pull/80">#80</a></td>
+<td>closed·미병합 · <code>master</code></td>
+<td>응답 일치 threshold를 90에서 80으로 낮추는 수정안. closed지만 merged_at이 없으므로 적용됐다고 기록하지 않는다.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/tests-library/pull/81">#81</a></td>
+<td>병합 2024-05-09 · <code>master</code></td>
+<td>28개 BOLA 템플릿에 오류 문구 제외를 추가. HTTP 200 업무 오류의 오탐을 줄이려는 변경이며 영어 문자열 목록에 의존한다.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/tests-library/pull/85">#85</a></td>
+<td>병합 2024-05-10 · <code>master</code></td>
+<td>잠긴/차단된 계정과 반복 실패 문구, 비어 있지 않은 응답 조건을 보완. 여전히 언어·문구 변형과 정상 본문의 단어 충돌 평가가 필요하다.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/tests-library/pull/86">#86</a></td>
+<td>병합 2024-05-10 · <code>master</code></td>
+<td>BOLAJSONBodyParamArray의 length 아래 gt: 0 누락으로 생긴 parsing 문제 보완. 탐지 의미보다 템플릿 유효성 문제다.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/tests-library/pull/167">#167</a></td>
+<td>병합 2024-12-02 · <code>master</code></td>
+<td>12개 BOLA 파일에 HTML tag 제외를 추가. 로그인/오류 HTML 응답의 오탐을 줄이는 휴리스틱; HTML 응답 전체의 의미 판정은 아니다.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/tests-library/pull/208">#208</a></td>
+<td>병합 2025-07-27 · <code>master</code></td>
+<td>응답 정규식으로 카드·SSN·인도 번호 후보를 찾는 PIIDataLeak threat 템플릿 추가. 권한/소유권을 직접 판단하는 규칙은 아니다.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/tests-library/pull/214">#214</a></td>
+<td>병합 2025-07-30 · <code>master</code></td>
+<td>앞서 추가한 PIIDataLeak.yml 삭제. 이유는 빈 본문에서 확인되지 않으므로 오탐 때문에 삭제됐다고 단정하지 않는다.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/tests-library/pull/216">#216</a></td>
+<td>병합 2025-08-04 · <code>master</code></td>
+<td>제목은 PII threat 제거지만 실제 diff는 SecurityMisconfig의 host 조건 제거와 stack trace regex 조정. #214의 삭제와 구별한다.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/tests-library/pull/227">#227</a></td>
+<td>closed·미병합 · <code>master</code></td>
+<td>closed·미병합. API가 887개 파일 변경을 반환한 큰 제안이며 제목만으로 범위를 알 수 없다. 파일 목록·상태만 확인, 전체 patch 감사는 하지 않았다.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/tests-library/pull/228">#228</a></td>
+<td>병합 2025-09-12 · <code>pro</code></td>
+<td>pro 브랜치에 병합. 28개 BOLA 템플릿의 duration FAST→SLOW 메타데이터 변경. 탐지 정확도 향상 PR로 소개하면 부정확하다.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/tests-library/pull/297">#297</a></td>
+<td>open·미병합 · <code>master</code></td>
+<td>agentic BOLA 테스트 추가안, open·미병합. 367개 파일 변경의 목록/대표 patch만 확인. 현재 기본 템플릿으로 평가하지 않는다.</td>
+</tr>
+</tbody></table></div>
+<p>검사 템플릿에 달린 CVE는 보통 검사 대상 취약점의 참고 자료다. 그 번호를 Akto 자체의 CVE 목록으로 옮기면 안 된다. 일부 템플릿은 INTRUSIVE로 표시돼 있으므로 실습 서버와 명시적인 검사 범위가 필요하다.</p>
+<h2 id="section-5">4. 이번에 확인한 원인 패턴</h2>
+<ol>
+<li>데이터 취급의 누락: body뿐 아니라 query, cookie, GraphQL, 로그·설명문·export까지 관리해야 한다.</li>
+<li>분류의 단순화: key와 value, 전체 일치와 부분 일치, locale, checksum, 관측 부족을 별개로 다뤄야 한다.</li>
+<li>휴리스틱의 한계: 같은 2xx 응답·유사한 payload·영어 오류 제외는 객체 소유권의 정답이 아니다.</li>
+<li>제품 접근통제: 결제/라이선스 분기와 보안 권한 분기를 섞으면 의도한 제한을 건너뛸 수 있다.</li>
+<li>의존성 가시성: 직접 의존성만 갱신해서 shaded·transitive dependency까지 모두 해결했다고 할 수 없다.</li>
+<li>운영과 소스의 차이: feature/release branch의 fix, master, Docker image, 외부 검사 모듈은 서로 다른 증거다.</li>
+</ol>
+<p>AP-EYE 회귀 사례로는 여러 수집 소스의 PII 잔존 여부, 한국어 200 오류, 다른 소유자의 배열 객체, 인증 헤더의 유무, NO_ACCESS와 요금제 조합을 우선한다. 이 목록은 구현·배포 성공을 주장하는 것이 아니라 조사에서 도출한 시험 제안이다.</p>
+<h2 id="section-6">5. 확보한 본체 PR 상세 전체 목록</h2>
+<p>아래 표는 상세 확보 범위를 공개하기 위한 것이다. 164건 전체를 완전한 보안 감사로 표시하지 않는다. GitHub patch 필드가 없거나 잘릴 수 있고 PR 본문의 전후 성능 주장도 독립 재현하지 않았다.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>PR</th>
+<th>제목</th>
+<th>상태 / base</th>
+<th>검토 수준</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/42">#42</a></td>
+<td>Add prompt for user to go to user config, when auth token is not set</td>
+<td>merged / <code>develop</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/61">#61</a></td>
+<td>replace auth token in cookie</td>
+<td>merged / <code>develop</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/180">#180</a></td>
+<td>add fintech types source</td>
+<td>merged / <code>develop</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/225">#225</a></td>
+<td>Add sensitive data types US addresses #97</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/238">#238</a></td>
+<td>Added Regex for Insurance</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/251">#251</a></td>
+<td>Update fintech.json</td>
+<td>closed / unmerged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/252">#252</a></td>
+<td>Update TestFintechTypes.java</td>
+<td>closed / unmerged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/254">#254</a></td>
+<td>Added sensitive data types - Europe specific</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/275">#275</a></td>
+<td>BFLA Matrix</td>
+<td>closed / unmerged / <code>develop</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/278">#278</a></td>
+<td>BFLA matrix</td>
+<td>closed / unmerged / <code>develop</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/350">#350</a></td>
+<td>dry run to invalidate sensitive data</td>
+<td>merged / <code>develop</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/352">#352</a></td>
+<td>Hotfix/match sensitive data</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/353">#353</a></td>
+<td>added 4 new xss tests</td>
+<td>merged / <code>develop</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/382">#382</a></td>
+<td>added whitelist to pii cleaner</td>
+<td>merged / <code>develop</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/384">#384</a></td>
+<td>remove custom auth in replace auth header test and remove all custom auth instead of removing only one</td>
+<td>merged / <code>develop</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/441">#441</a></td>
+<td>Polaris/data types</td>
+<td>merged / <code>polaris_develop</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/502">#502</a></td>
+<td>Sensitive Data fixes done</td>
+<td>merged / <code>polaris_develop</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/526">#526</a></td>
+<td>fix key condition in custom data types</td>
+<td>closed / unmerged / <code>feature/auth0_integration</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/527">#527</a></td>
+<td>fix key condition in custom data types</td>
+<td>merged / <code>develop</code></td>
+<td>핵심 patch 검토</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/529">#529</a></td>
+<td>fix redundant data type updates</td>
+<td>merged / <code>develop</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/546">#546</a></td>
+<td>fix(fintech.json): trailing comma</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/593">#593</a></td>
+<td>reset sensitive data</td>
+<td>merged / <code>develop</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/681">#681</a></td>
+<td>Feature/tag CVE</td>
+<td>merged / <code>develop</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/682">#682</a></td>
+<td>Add sensitive data Cookie types</td>
+<td>merged / <code>hacktoberfest</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/683">#683</a></td>
+<td>Adds sensitive data types for Database URL patterns</td>
+<td>merged / <code>hacktoberfest</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/798">#798</a></td>
+<td>Support for redacting api collections and data types</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/883">#883</a></td>
+<td>False positive fixes</td>
+<td>merged / <code>develop</code></td>
+<td>핵심 patch 검토</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/997">#997</a></td>
+<td>show request headers only on vulnerableapis collection and add remove_auth_headers tests</td>
+<td>merged / <code>feature_req_header_vuln_col</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1110">#1110</a></td>
+<td>modify multiple auth tokens</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1121">#1121</a></td>
+<td>disable aws secret pii</td>
+<td>merged / <code>master</code></td>
+<td>핵심 patch 검토</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1163">#1163</a></td>
+<td>Hotfix/sample data regex and cidr</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1202">#1202</a></td>
+<td>Added changes to create api groups using regex</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1229">#1229</a></td>
+<td>Update Automated API groups regex</td>
+<td>merged / <code>develop</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1231">#1231</a></td>
+<td>Support redact for cookies and graphql</td>
+<td>merged / <code>develop</code></td>
+<td>핵심 patch 검토</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1248">#1248</a></td>
+<td>redact query params</td>
+<td>merged / <code>develop</code></td>
+<td>핵심 patch 검토</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1249">#1249</a></td>
+<td>query redact in runtime</td>
+<td>merged / <code>develop</code></td>
+<td>핵심 patch 검토</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1254">#1254</a></td>
+<td>fix filter for sensitive data</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1358">#1358</a></td>
+<td>Custom auth header auth check</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1359">#1359</a></td>
+<td>always upsert auth header in case of bola</td>
+<td>merged / <code>master</code></td>
+<td>핵심 patch 검토</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1363">#1363</a></td>
+<td>handling npe while skipping-reason-stringbuilder for private_variable_context/regex</td>
+<td>merged / <code>master</code></td>
+<td>핵심 patch 검토</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1378">#1378</a></td>
+<td>remove api collection check redact</td>
+<td>merged / <code>feature/cyborg-release</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1382">#1382</a></td>
+<td>support custom auth header check</td>
+<td>merged / <code>feature/mini-runtime-release</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1491">#1491</a></td>
+<td>Sensitive key redaction</td>
+<td>merged / <code>feature/mini-runtime-release</code></td>
+<td>핵심 patch 검토</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1492">#1492</a></td>
+<td>Handle redacted field</td>
+<td>merged / <code>feature/cyborg-release</code></td>
+<td>핵심 patch 검토</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1565">#1565</a></td>
+<td>show non-sensitive data</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1572">#1572</a></td>
+<td>add reset job for data types</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1579">#1579</a></td>
+<td>pii-types</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1583">#1583</a></td>
+<td>Feature/datatype to test</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1600">#1600</a></td>
+<td>sensitive data count fix</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1610">#1610</a></td>
+<td>modify data type</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1611">#1611</a></td>
+<td>Initial regex text fixed</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1619">#1619</a></td>
+<td>update versions for CVE fixes in data ingestion service</td>
+<td>merged / <code>feature_data_ingestion_service</code></td>
+<td>핵심 patch 검토</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1620">#1620</a></td>
+<td>upgrade versions to fix CVEs in database abstractor service</td>
+<td>merged / <code>feature/cyborg-release</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1621">#1621</a></td>
+<td>use corretto instead of openjdk to fix cve</td>
+<td>merged / <code>feature/mini-runtime-release</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1628">#1628</a></td>
+<td>Feature/remove false positive from testing</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1639">#1639</a></td>
+<td>Fixing host regex condition</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1722">#1722</a></td>
+<td>fixing regex error</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1752">#1752</a></td>
+<td>allow users to modify akto data types</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1760">#1760</a></td>
+<td>Feature/edit akto data type cyborg</td>
+<td>closed / unmerged / <code>feature/cyborg-release</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1761">#1761</a></td>
+<td>Feature/edit akto data type mini runtime</td>
+<td>merged / <code>feature/mini-runtime-release</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1762">#1762</a></td>
+<td>Feature/edit akto data type cyborg</td>
+<td>merged / <code>feature/cyborg-release</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1764">#1764</a></td>
+<td>allow users to edit akto custom data type</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1771">#1771</a></td>
+<td>fixing regex split check</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1879">#1879</a></td>
+<td>add inactive field to akto data types</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1949">#1949</a></td>
+<td>cve version upgrades for modules</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1955">#1955</a></td>
+<td>update cve versions</td>
+<td>merged / <code>feature/mini-runtime-release</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1965">#1965</a></td>
+<td>fix cve packages</td>
+<td>merged / <code>feature/mini-runtime-release</code></td>
+<td>핵심 patch 검토</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1966">#1966</a></td>
+<td>Feature/CVE fixes</td>
+<td>open / unmerged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/1992">#1992</a></td>
+<td>handle regex replace for wordlist</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/2068">#2068</a></td>
+<td>Fixing token datatype operator</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/2069">#2069</a></td>
+<td>Hotfix/fix reset data types</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/2083">#2083</a></td>
+<td>add fill data type button</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/2197">#2197</a></td>
+<td>working e2e for sensitive data type</td>
+<td>merged / <code>temp/temp_ai_agents_backend</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/2267">#2267</a></td>
+<td>Refactor search filters and update ID generation in Sensitive Data Ex…</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/2316">#2316</a></td>
+<td>New detect tab in sensitive data page</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/2418">#2418</a></td>
+<td>Use find for regex validation</td>
+<td>merged / <code>master</code></td>
+<td>핵심 patch 검토</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/2630">#2630</a></td>
+<td>redact pii data in postgres sample</td>
+<td>merged / <code>feature/mini-runtime-release</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/2674">#2674</a></td>
+<td>Fix XSS vulnerability in login.jsp by escaping JavaScript strings</td>
+<td>open / unmerged / <code>master</code></td>
+<td>핵심 patch 검토</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/2908">#2908</a></td>
+<td>Not redacting apis from source BURP</td>
+<td>merged / <code>master</code></td>
+<td>핵심 patch 검토</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/2914">#2914</a></td>
+<td>remove false positive prone payloads</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/2958">#2958</a></td>
+<td>fixed query param and auth headers missing in sse request</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/3030">#3030</a></td>
+<td>fix cves</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/3042">#3042</a></td>
+<td>remove cves</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/3045">#3045</a></td>
+<td>Hotfix/fix cves dbabs</td>
+<td>merged / <code>feature/cyborg-release</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/3055">#3055</a></td>
+<td>redact only on mirroring source</td>
+<td>merged / <code>master</code></td>
+<td>핵심 patch 검토</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/3131">#3131</a></td>
+<td>Feature/testing visibility updated regex</td>
+<td>merged / <code>feature/testing_visibility</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/3136">#3136</a></td>
+<td>updated regex to pass unit tests</td>
+<td>merged / <code>feature/testing_visibility</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/3178">#3178</a></td>
+<td>updated regex</td>
+<td>merged / <code>feature/testing_visibility</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/3194">#3194</a></td>
+<td>updated regex with response.body flagging</td>
+<td>merged / <code>feature/testing_visibility</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/3497">#3497</a></td>
+<td>Feature/keep sample data redaction</td>
+<td>merged / <code>master</code></td>
+<td>핵심 patch 검토</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/3528">#3528</a></td>
+<td>added regex feature in threat-activity page</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/3574">#3574</a></td>
+<td>add VIN data type</td>
+<td>merged / <code>feature/mini-runtime-release</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/3596">#3596</a></td>
+<td>Feature/vin data type support</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/3614">#3614</a></td>
+<td>added support for vin support data type</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/3630">#3630</a></td>
+<td>Adding support for akto data type in reset retro</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/3649">#3649</a></td>
+<td>Feature/regex extract</td>
+<td>merged / <code>feature/mini-runtime-release</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/3652">#3652</a></td>
+<td>regex extract</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/3711">#3711</a></td>
+<td>add support for regex extract in url</td>
+<td>open / unmerged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/3808">#3808</a></td>
+<td>fix reset data types w.r.t. query params</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/3832">#3832</a></td>
+<td>fix: handle regex errors in API collection creation and updates</td>
+<td>merged / <code>hotfix/regex_errors</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/3843">#3843</a></td>
+<td>Hotfix/regex errors</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/4090">#4090</a></td>
+<td>Update learn more links and add fallback logic for sensitive data types</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/4095">#4095</a></td>
+<td>fixed cookies data type</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/4097">#4097</a></td>
+<td>fixed cookies data type</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/4098">#4098</a></td>
+<td>fixed cookies datatype for dast</td>
+<td>merged / <code>feature/cyborg-release</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/4134">#4134</a></td>
+<td>fix: update regex to allow negative numbers in inventory id</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/4252">#4252</a></td>
+<td>add support for url regex in test auth conditions</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/4256">#4256</a></td>
+<td>add url regex support</td>
+<td>merged / <code>feature/cyborg-release</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/4270">#4270</a></td>
+<td>url regex support for roles in mini-testing</td>
+<td>merged / <code>feature/mini-runtime-release</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/4607">#4607</a></td>
+<td>added screenshot support in automated auth token</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/4708">#4708</a></td>
+<td>False Positive Stop Ingestion At Backend</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/4774">#4774</a></td>
+<td>Adding fallbacks to remove false positives of blocking user</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/4784">#4784</a></td>
+<td>fix: add database url fintech patterns (#90)</td>
+<td>open / unmerged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/4823">#4823</a></td>
+<td>Redact auth headers</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/4877">#4877</a></td>
+<td>Feature/pii data count guardrail</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/4878">#4878</a></td>
+<td>update pii data type in guardrails</td>
+<td>merged / <code>feature/cyborg-release</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/4951">#4951</a></td>
+<td>update claude hooks for masking tool input</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/5317">#5317</a></td>
+<td>add auth token to scripts and code</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/5330">#5330</a></td>
+<td>added passing of auth token from data ingestion service to guardrails service</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/5394">#5394</a></td>
+<td>remove false positive</td>
+<td>open / unmerged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/5415">#5415</a></td>
+<td>support regex_replace in mdoify header operation</td>
+<td>merged / <code>feature/mini-runtime-release</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/5487">#5487</a></td>
+<td>Make RAG detection robust to reduce false positives</td>
+<td>merged / <code>feature/mini-runtime-release</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/5498">#5498</a></td>
+<td>Add accurate, verified vulnerability evidence for test results</td>
+<td>merged / <code>master</code></td>
+<td>핵심 patch 검토</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/5510">#5510</a></td>
+<td>Add cookie redact support</td>
+<td>open / unmerged / <code>feature/mini-runtime-release</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/5519">#5519</a></td>
+<td>add cookie redact</td>
+<td>merged / <code>master</code></td>
+<td>핵심 patch 검토</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/5542">#5542</a></td>
+<td>added bearer for auth token</td>
+<td>merged / <code>feature/cyborg-release</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/5630">#5630</a></td>
+<td>remove regex for api key header detection</td>
+<td>merged / <code>temp/new_activate_traffic_jobs</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/5682">#5682</a></td>
+<td>hyperscan for PII redaction</td>
+<td>open / unmerged / <code>master</code></td>
+<td>제안 구성 확인</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/5718">#5718</a></td>
+<td>refactor: simplify ignore phrase redaction logic by removing placehol…</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/5720">#5720</a></td>
+<td>test: enhance ignore phrase matcher tests for redaction logic, JSON v…</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/5769">#5769</a></td>
+<td>change prompt to have context of regex prefilter</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/5801">#5801</a></td>
+<td>remove sensitive data and audit data from argus product</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/5833">#5833</a></td>
+<td>update system prompt to fix the false positives</td>
+<td>merged / <code>feature/cyborg-release</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/5836">#5836</a></td>
+<td>update system prompt to fix the false positives</td>
+<td>merged / <code>feature/cyborg-release</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/5841">#5841</a></td>
+<td>update system prompt to fix the false positives</td>
+<td>merged / <code>feature/cyborg-release</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/5863">#5863</a></td>
+<td>prevent redaction of common types like datetime, location</td>
+<td>merged / <code>master</code></td>
+<td>핵심 patch 검토</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/5881">#5881</a></td>
+<td>chore: remove auth header as session id</td>
+<td>merged / <code>master</code></td>
+<td>핵심 patch 검토</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/5902">#5902</a></td>
+<td>fix the redaction bug of agent-guard</td>
+<td>merged / <code>master</code></td>
+<td>핵심 patch 검토</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/5909">#5909</a></td>
+<td>point the pii password to call azure foundry</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/5910">#5910</a></td>
+<td>Hotfix/sensitive data fix mini runtime</td>
+<td>closed / unmerged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/5915">#5915</a></td>
+<td>fix : patch vulnerabilities</td>
+<td>merged / <code>master</code></td>
+<td>핵심 patch 검토</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/5961">#5961</a></td>
+<td>added regex handling</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/5983">#5983</a></td>
+<td>updated prompts to reduce false positives and improved message logging</td>
+<td>merged / <code>feature/cyborg-release</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/6112">#6112</a></td>
+<td>Fix &quot;Access Restricted&quot; gate blocking open-source local_deploy dashboards</td>
+<td>open / unmerged / <code>master</code></td>
+<td>핵심 patch 검토</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/6121">#6121</a></td>
+<td>feat: add support for llm based redaction</td>
+<td>merged / <code>master</code></td>
+<td>핵심 patch 검토</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/6122">#6122</a></td>
+<td>feat: add custom redaction support in cyborg</td>
+<td>merged / <code>feature/cyborg-release</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/6149">#6149</a></td>
+<td>fix: PII block precedence over policy precedence</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/6150">#6150</a></td>
+<td>fix: PII block precedence over policy precedence</td>
+<td>merged / <code>master</code></td>
+<td>핵심 patch 검토</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/6153">#6153</a></td>
+<td>chore: add banner for custom redaction support</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/6183">#6183</a></td>
+<td>update llm redaction based banner</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/6205">#6205</a></td>
+<td>fix: redaction payload threat reporting</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/6240">#6240</a></td>
+<td>fix: PII email detection logic</td>
+<td>merged / <code>master</code></td>
+<td>핵심 patch 검토</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/6278">#6278</a></td>
+<td>Feature/external data type resolver cyborg</td>
+<td>merged / <code>feature/cyborg-release</code></td>
+<td>핵심 patch 검토</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/6279">#6279</a></td>
+<td>Feature/external data type resolver</td>
+<td>merged / <code>feature/mini-runtime-release</code></td>
+<td>핵심 patch 검토</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/6309">#6309</a></td>
+<td>fix: enforce product-scope NO_ACCESS check regardless of RBAC billing tier</td>
+<td>merged / <code>master</code></td>
+<td>핵심 patch 검토</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/6359">#6359</a></td>
+<td>added a hard black list for hooks field (handling false positives)</td>
+<td>merged / <code>feature/cyborg-release</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/6402">#6402</a></td>
+<td>fix pii data being sent in the api request payload</td>
+<td>merged / <code>master</code></td>
+<td>핵심 patch 검토</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/6406">#6406</a></td>
+<td>Feature/guardrail violations redaction</td>
+<td>open / unmerged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/6463">#6463</a></td>
+<td>Feature/guardail claude org id with pii llm</td>
+<td>open / unmerged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/6487">#6487</a></td>
+<td>fix: update reason field in prompts to prevent quoting PII and sensit…</td>
+<td>merged / <code>master</code></td>
+<td>핵심 patch 검토</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/6513">#6513</a></td>
+<td>fix: stop reason-enrichment prompt from quoting PII</td>
+<td>merged / <code>feat/async-reason</code></td>
+<td>핵심 patch 검토</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/6530">#6530</a></td>
+<td>add response regex extract</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/6569">#6569</a></td>
+<td>Fix role escalation in updateUserScopeRoleMapping and cross-account p…</td>
+<td>open / unmerged / <code>master</code></td>
+<td>핵심 patch 검토</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/akto/pull/6571">#6571</a></td>
+<td>Extract login-flow values from non-JSON responses via step regex</td>
+<td>merged / <code>feature/mini-runtime-release</code></td>
+<td>상세 확보</td>
+</tr>
+</tbody></table></div>
+<h2 id="section-7">6. 확보한 tests-library PR 상세 전체 목록</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>PR</th>
+<th>제목</th>
+<th>상태 / base</th>
+<th>검토 수준</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://github.com/akto-api-security/tests-library/pull/13">#13</a></td>
+<td>Nuclei templates for port scanning and fetch sensitive files via SSRF</td>
+<td>closed / unmerged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/tests-library/pull/43">#43</a></td>
+<td>BOLA and BUA templates added (10)</td>
+<td>closed / unmerged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/tests-library/pull/44">#44</a></td>
+<td>false positives modifications</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/tests-library/pull/45">#45</a></td>
+<td>BOLA new templates</td>
+<td>closed / unmerged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/tests-library/pull/47">#47</a></td>
+<td>BOLA templates x 4 [Prod Ready]</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/tests-library/pull/48">#48</a></td>
+<td>7 BOLA templates</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/tests-library/pull/62">#62</a></td>
+<td>7 BFLA templates added</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/tests-library/pull/80">#80</a></td>
+<td>Update BOLAByChangingAuthToken.yaml</td>
+<td>closed / unmerged / <code>master</code></td>
+<td>관련 patch 검토</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/tests-library/pull/81">#81</a></td>
+<td>API Error Handling &lt;-&gt; BOLA</td>
+<td>merged / <code>master</code></td>
+<td>관련 patch 검토</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/tests-library/pull/85">#85</a></td>
+<td>BOLA fix v2</td>
+<td>merged / <code>master</code></td>
+<td>관련 patch 검토</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/tests-library/pull/86">#86</a></td>
+<td>BOLA hot fix</td>
+<td>merged / <code>master</code></td>
+<td>관련 patch 검토</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/tests-library/pull/104">#104</a></td>
+<td>false positive fix</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/tests-library/pull/121">#121</a></td>
+<td>Command Injection False positives</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/tests-library/pull/162">#162</a></td>
+<td>BOLA</td>
+<td>closed / unmerged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/tests-library/pull/167">#167</a></td>
+<td>html fix for bola</td>
+<td>merged / <code>master</code></td>
+<td>관련 patch 검토</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/tests-library/pull/203">#203</a></td>
+<td>fix false positives</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/tests-library/pull/208">#208</a></td>
+<td>PII Data Leak and security config</td>
+<td>merged / <code>master</code></td>
+<td>관련 patch 검토</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/tests-library/pull/214">#214</a></td>
+<td>remove pii data leak template</td>
+<td>merged / <code>master</code></td>
+<td>관련 patch 검토</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/tests-library/pull/216">#216</a></td>
+<td>Remove pii data threat template</td>
+<td>merged / <code>master</code></td>
+<td>관련 patch 검토</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/tests-library/pull/227">#227</a></td>
+<td>Bola templates updated</td>
+<td>closed / unmerged / <code>master</code></td>
+<td>목록/대표 변경 확인</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/tests-library/pull/228">#228</a></td>
+<td>Bola templates updated</td>
+<td>merged / <code>pro</code></td>
+<td>관련 patch 검토</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/tests-library/pull/284">#284</a></td>
+<td>updated regex to handle CMD false positive</td>
+<td>merged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/tests-library/pull/296">#296</a></td>
+<td>add: new agentic tests for Broken Object Level Authorization (BOLA) v…</td>
+<td>open / unmerged / <code>master</code></td>
+<td>상세 확보</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akto-api-security/tests-library/pull/297">#297</a></td>
+<td>add: new agentic tests for Broken Object Level Authorization (BOLA) v…</td>
+<td>open / unmerged / <code>master</code></td>
+<td>목록/대표 변경 확인</td>
+</tr>
+</tbody></table></div>
+<footer>로컬 조사 자료. 원문 Markdown 및 hash manifest를 같은 폴더에 보존했습니다. 배포·제품 전체 평가의 완료 증거가 아닙니다.</footer></main></div></body></html>

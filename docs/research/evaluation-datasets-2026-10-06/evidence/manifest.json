@@ -1,0 +1,110 @@
+{
+  "date": "2026-10-06",
+  "captured_at_utc": "2026-10-06T01:49:48.127242+00:00",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.12.10",
+  "repository_base_commit": "66e55cd12a537ac5631dc4966feedda2aca368ed",
+  "repositories": {
+    "AuthProbe": {
+      "commit": "d9cb4bdd7fabbf56d91935034a245ac8092d0fe6",
+      "remote": "https://github.com/jbarach2012/AuthProbe.git"
+    },
+    "BACScan": {
+      "commit": "456cb5195b77d9e52c57c6f1d17abfc7dc13ff74",
+      "remote": "https://github.com/LFYSec/BACScan.git"
+    },
+    "BolaRay": {
+      "commit": "6b4e7150e1504bd7a28795c577c01997ce53edeb",
+      "remote": "https://github.com/BolaRay-d/BolaRay.git"
+    },
+    "k-pii-bench": {
+      "commit": "1b480c515cc8425ea5c5675079bd7cf17b951554",
+      "remote": "https://github.com/woohyun212/k-pii-bench.git"
+    },
+    "VAmPI": {
+      "commit": "f16052dce83f05847133ec98f01c5193a41de7d8",
+      "remote": "https://github.com/erev0s/VAmPI.git"
+    }
+  },
+  "papers": [
+    {
+      "file": "docs/papers/AuthProbe_2607.20574.pdf",
+      "url": "https://arxiv.org/pdf/2607.20574",
+      "sha256": "d3d89080fc51f40d7819ab86d1a6db9b8d4b85cdd475091f5334a09161a9b699",
+      "size_bytes": 207982,
+      "reading_level": 2
+    },
+    {
+      "file": "docs/papers/BACScan_CCS25.pdf",
+      "url": "https://yuanxzhang.github.io/paper/bacscan-ccs25.pdf",
+      "sha256": "c951d6840623bcb7b9afe8e09520cb6366a2227a990589696ecf02263f8b0c5d",
+      "size_bytes": 899483,
+      "reading_level": 2
+    },
+    {
+      "file": "docs/papers/BolaRay_CCS24.pdf",
+      "url": "https://leehaofeng.github.io/papers/2024-BolaRay.pdf",
+      "sha256": "2b112ed1721b1205a75716a77f0a9bdb757e93b8c5b48f3663100051361b0e11",
+      "size_bytes": 2028057,
+      "reading_level": 1
+    },
+    {
+      "file": "docs/papers/EvoMaster-Security_2604.00702.pdf",
+      "url": "https://arxiv.org/pdf/2604.00702",
+      "sha256": "d6e3e4e6857b840149aa6064eec86f8826675eaa011baf71f7123d4ab1067978",
+      "size_bytes": 609886,
+      "reading_level": 2
+    },
+    {
+      "file": "docs/papers/K-LegalDeID_2026.pdf",
+      "url": "https://aclanthology.org/2026.eacl-long.103.pdf",
+      "sha256": "153130c48485e56ef702d4b85908f00defa2eafbda29f02556420f209ab1b10d",
+      "size_bytes": 2054407,
+      "reading_level": 2
+    },
+    {
+      "file": "docs/papers/SPY_2025.naacl-srw.23.pdf",
+      "url": "https://aclanthology.org/2025.naacl-srw.23.pdf",
+      "sha256": "b6d7171b9919025fd872fad222a385dc38c2844376aafee794c94a78a4bafb68",
+      "size_bytes": 209361,
+      "reading_level": 2
+    },
+    {
+      "file": "docs/papers/Thunder-DeID_2506.15266v3.pdf",
+      "url": "https://arxiv.org/pdf/2506.15266v3",
+      "sha256": "2e06e847add4700fc0056f2197135a18c91e331a95f681ccc349177bb93e689a",
+      "size_bytes": 4464999,
+      "reading_level": 2
+    }
+  ],
+  "evidence_files": [
+    {
+      "file": "authprobe-environment.txt",
+      "sha256": "a4f9be8f9e834e21a21a2438da219950533f13521a885d1b1079e16de07ef123"
+    },
+    {
+      "file": "authprobe-pytest.log",
+      "sha256": "fa12b7964cd3cee35a2b43e553fcb868551cf86e5686b8cb9750b9850606648f"
+    },
+    {
+      "file": "authprobe-reproduction.json",
+      "sha256": "ae3fc113018771f845bfa5f5421d4a9bc5e4874aa78d0d2ac1d1f14a300d7047"
+    },
+    {
+      "file": "k-pii-sample-audit.json",
+      "sha256": "3adec7fbe73e1ab9e47ee15ac02a6314073cd17f333f0e13a0a929230ebb1507"
+    },
+    {
+      "file": "source-commits.json",
+      "sha256": "efc87988353670479996964ab0db019258b3560302278aa91c6db2743fb1fc08"
+    },
+    {
+      "file": "vampi-environment.txt",
+      "sha256": "5d0707e64b5c6044e8f89e6536b81e428b4268f2547cbd80a5cb7b324c0da4f4"
+    },
+    {
+      "file": "vampi-reproduction.json",
+      "sha256": "ca8fa34f336e7b932fa9c26e1a1251a8b35ca34f257f80b39b5bc84a7b3eba03"
+    }
+  ]
+}

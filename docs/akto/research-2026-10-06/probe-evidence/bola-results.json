@@ -1,0 +1,140 @@
+{
+  "scope": "isolated exact comparator and extraction methods, NOT BOLA end-to-end",
+  "dependencies": [
+    {
+      "url": "https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.16.1/jackson-core-2.16.1.jar",
+      "path": "C:\\Users\\andyw\\Desktop\\AP-EYE\\local-materials\\akto-research-2026-10-06\\evidence\\probes\\jackson-core-2.16.1.jar",
+      "sha256": "f5f8ef90609e64fec82eb908e497dc7d81b2eb983fe509b870292a193cde4dfb"
+    },
+    {
+      "url": "https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.16.1/jackson-databind-2.16.1.jar",
+      "path": "C:\\Users\\andyw\\Desktop\\AP-EYE\\local-materials\\akto-research-2026-10-06\\evidence\\probes\\jackson-databind-2.16.1.jar",
+      "sha256": "baf8a8ebee8f45ef68cdd5e2dd3923b3e296c0937b96ec0b4806aa3a31bccd1d"
+    },
+    {
+      "url": "https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.16.1/jackson-annotations-2.16.1.jar",
+      "path": "C:\\Users\\andyw\\Desktop\\AP-EYE\\local-materials\\akto-research-2026-10-06\\evidence\\probes\\jackson-annotations-2.16.1.jar",
+      "sha256": "a4730771e6a495dd3793a42cdb8ce6bddb96c77e15f40c98fd8d9a7ae09e7286"
+    }
+  ],
+  "results": [
+    {
+      "case": "same_object",
+      "original": {
+        "id": 1,
+        "label": "alpha"
+      },
+      "current": {
+        "id": 1,
+        "label": "alpha"
+      },
+      "expected_component_score": 100,
+      "actual_score": 100.0,
+      "pass_observed_semantics": true
+    },
+    {
+      "case": "different_private_value",
+      "original": {
+        "id": 1,
+        "label": "alpha"
+      },
+      "current": {
+        "id": 2,
+        "label": "alpha"
+      },
+      "expected_component_score": 50,
+      "actual_score": 50.0,
+      "pass_observed_semantics": true
+    },
+    {
+      "case": "array_association_lost",
+      "original": [
+        {
+          "id": 1,
+          "label": "alpha"
+        },
+        {
+          "id": 2,
+          "label": "beta"
+        }
+      ],
+      "current": [
+        {
+          "id": 1,
+          "label": "beta"
+        },
+        {
+          "id": 2,
+          "label": "alpha"
+        }
+      ],
+      "expected_component_score": 100,
+      "actual_score": 100.0,
+      "pass_observed_semantics": true
+    },
+    {
+      "case": "extra_object_preserves_original_leak",
+      "original": [
+        {
+          "id": 1,
+          "label": "alpha"
+        }
+      ],
+      "current": [
+        {
+          "id": 1,
+          "label": "alpha"
+        },
+        {
+          "id": 2,
+          "label": "beta"
+        }
+      ],
+      "expected_component_score": 0,
+      "actual_score": 0.0,
+      "pass_observed_semantics": true
+    },
+    {
+      "case": "number_vs_string",
+      "original": {
+        "id": 1
+      },
+      "current": {
+        "id": "1"
+      },
+      "expected_component_score": 100,
+      "actual_score": 100.0,
+      "pass_observed_semantics": true
+    },
+    {
+      "case": "90pct_common_metadata",
+      "original": {
+        "id": 1,
+        "m0": "shared",
+        "m1": "shared",
+        "m2": "shared",
+        "m3": "shared",
+        "m4": "shared",
+        "m5": "shared",
+        "m6": "shared",
+        "m7": "shared",
+        "m8": "shared"
+      },
+      "current": {
+        "id": 2,
+        "m0": "shared",
+        "m1": "shared",
+        "m2": "shared",
+        "m3": "shared",
+        "m4": "shared",
+        "m5": "shared",
+        "m6": "shared",
+        "m7": "shared",
+        "m8": "shared"
+      },
+      "expected_component_score": 90,
+      "actual_score": 90.0,
+      "pass_observed_semantics": true
+    }
+  ]
+}

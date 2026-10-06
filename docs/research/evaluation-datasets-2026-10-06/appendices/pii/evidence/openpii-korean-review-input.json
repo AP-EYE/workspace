@@ -1,0 +1,695 @@
+[
+  {
+    "split": "train",
+    "row_idx": 0,
+    "uid": 24780382,
+    "text": "제목: 협상 피드백 – 22/07/1979\n안녕하세요, 군 정린 운님.\n지난주에 진행된 서울특별시 프로젝트 협상 회의에 대해 몇 가지 중요한 의견을 공유하고자 합니다. 먼저, 제시된 가격 조건이 시장 평균보다 다소 높게 설정되어 있어 추가적인 데이터가 필요함을 느꼈습니다. 또한, 양측의 기대치 차이가 명확히 드러난 부분에 대해 더 구체적인 설명을 요청드립니다.\n추가로, 협상 과정 중에 제시된 DY00HBSKXU와 같은 서류가 아직 검토되지 않았으니, 가능한 빨리 회신해 주시면 감사하겠습니다. 마지막으로, 회의록 초안을 첨부하였으며, 수정 사항이 있으면 동궁@yahoo.com로 알려주시기 바랍니다.\n감사합니다.\n양 종욱 경표 변",
+    "annotations": [
+      {
+        "label": "DATE",
+        "value": "22/07/1979",
+        "context": "제목: 협상 피드백 – 22/07/1979\n안녕하세요, 군 정린 운님"
+      },
+      {
+        "label": "TITLE",
+        "value": "군",
+        "context": "07/1979\n안녕하세요, 군 정린 운님.\n지난주에 진행"
+      },
+      {
+        "label": "GIVENNAME",
+        "value": "정린",
+        "context": "/1979\n안녕하세요, 군 정린 운님.\n지난주에 진행된 서"
+      },
+      {
+        "label": "SURNAME",
+        "value": "운",
+        "context": "79\n안녕하세요, 군 정린 운님.\n지난주에 진행된 서울특"
+      },
+      {
+        "label": "CITY",
+        "value": "서울특별시",
+        "context": "린 운님.\n지난주에 진행된 서울특별시 프로젝트 협상 회의에 대해"
+      },
+      {
+        "label": "DRIVERLICENSENUM",
+        "value": "DY00HBSKXU",
+        "context": ", 협상 과정 중에 제시된 DY00HBSKXU와 같은 서류가 아직 검토되"
+      },
+      {
+        "label": "EMAIL",
+        "value": "동궁@yahoo.com",
+        "context": "으며, 수정 사항이 있으면 동궁@yahoo.com로 알려주시기 바랍니다.\n감"
+      },
+      {
+        "label": "TITLE",
+        "value": "양",
+        "context": "기 바랍니다.\n감사합니다.\n양 종욱 경표 변"
+      },
+      {
+        "label": "GIVENNAME",
+        "value": "종욱 경표",
+        "context": "바랍니다.\n감사합니다.\n양 종욱 경표 변"
+      },
+      {
+        "label": "SURNAME",
+        "value": "변",
+        "context": "감사합니다.\n양 종욱 경표 변"
+      }
+    ]
+  },
+  {
+    "split": "train",
+    "row_idx": 38,
+    "uid": 24796233,
+    "text": "양 Camille는 최근에 03/06/2007에 발표된 연구를 검토했습니다. 연구에서는 기타 인구 비율과 69대 그룹에 대한 차이를 분석했으며, 결과에 따라 9DSTROQX4W과 같은 고유 식별자를 사용해 지역별 자원을 매핑합니다. 또한, 데이터 정확성을 확보하기 위해 추가적인 검증 절차를 도입했습니다. 자세한 내용은 성정@protonmail.com로 문의해 주세요.",
+    "annotations": [
+      {
+        "label": "TITLE",
+        "value": "양",
+        "context": "양 Camille는 최근에 0"
+      },
+      {
+        "label": "GIVENNAME",
+        "value": "Camille",
+        "context": "양 Camille는 최근에 03/06/200"
+      },
+      {
+        "label": "DATE",
+        "value": "03/06/2007",
+        "context": "양 Camille는 최근에 03/06/2007에 발표된 연구를 검토했습니"
+      },
+      {
+        "label": "GENDER",
+        "value": "기타",
+        "context": " 검토했습니다. 연구에서는 기타 인구 비율과 69대 그룹에"
+      },
+      {
+        "label": "AGE",
+        "value": "69",
+        "context": "구에서는 기타 인구 비율과 69대 그룹에 대한 차이를 분석"
+      },
+      {
+        "label": "DRIVERLICENSENUM",
+        "value": "9DSTROQX4W",
+        "context": " 분석했으며, 결과에 따라 9DSTROQX4W과 같은 고유 식별자를 사용"
+      },
+      {
+        "label": "EMAIL",
+        "value": "성정@protonmail.com",
+        "context": "입했습니다. 자세한 내용은 성정@protonmail.com로 문의해 주세요."
+      }
+    ]
+  },
+  {
+    "split": "train",
+    "row_idx": 40,
+    "uid": 24676044,
+    "text": "회의록 (2024년 10월 7, 1964 오후 3시, 본사 회의실) \n참석자: 군 나균 황보, 군 Yikaalo 송 제, 양 다미 장 김\n주제: 인플레이션 대응을 위한 결제 시스템 개선 방안\n1. 현재 현금 결제 비중이 78% 로 감소하고 있으며, 향후 12개월 내에 75% 로 감소할 전망이다.\n2. 새로운 결제 모듈은 5087815055645951 과 같이 마스킹된 카드 정보를 사전 저장하고, 트랜잭션 시 실시간 인증을 수행한다.\n3. 직원 복지 포인트와 연계한 보너스 결제 옵션을 도입하기 위해 8865312572 기반 신원 확인 절차를 추가한다.\n4. 다음 회의에서는 15/09/1979 까지 시범 운영 결과를 공유하고, 전사 적용 시나리오를 최종 확정한다.\n회의 종료 후, 모든 참석자는 회의록을 검토하고 수정 사항이 있을 경우 2001김@aol.com 로 회신해 주시기 바랍니다.",
+    "annotations": [
+      {
+        "label": "DATE",
+        "value": "10월 7, 1964",
+        "context": "회의록 (2024년 10월 7, 1964 오후 3시, 본사 회의실)"
+      },
+      {
+        "label": "TITLE",
+        "value": "군",
+        "context": " 본사 회의실) \n참석자: 군 나균 황보, 군 Yikaa"
+      },
+      {
+        "label": "GIVENNAME",
+        "value": "나균",
+        "context": "사 회의실) \n참석자: 군 나균 황보, 군 Yikaalo "
+      },
+      {
+        "label": "SURNAME",
+        "value": "황보",
+        "context": "의실) \n참석자: 군 나균 황보, 군 Yikaalo 송 제"
+      },
+      {
+        "label": "TITLE",
+        "value": "군",
+        "context": "\n참석자: 군 나균 황보, 군 Yikaalo 송 제, 양"
+      },
+      {
+        "label": "GIVENNAME",
+        "value": "Yikaalo",
+        "context": "석자: 군 나균 황보, 군 Yikaalo 송 제, 양 다미 장 김\n"
+      },
+      {
+        "label": "SURNAME",
+        "value": "송 제",
+        "context": " 황보, 군 Yikaalo 송 제, 양 다미 장 김\n주제: "
+      },
+      {
+        "label": "TITLE",
+        "value": "양",
+        "context": "군 Yikaalo 송 제, 양 다미 장 김\n주제: 인플레"
+      },
+      {
+        "label": "GIVENNAME",
+        "value": "다미",
+        "context": "Yikaalo 송 제, 양 다미 장 김\n주제: 인플레이션 "
+      },
+      {
+        "label": "SURNAME",
+        "value": "장 김",
+        "context": "aalo 송 제, 양 다미 장 김\n주제: 인플레이션 대응을 "
+      },
+      {
+        "label": "AGE",
+        "value": "78",
+        "context": ". 현재 현금 결제 비중이 78% 로 감소하고 있으며, 향"
+      },
+      {
+        "label": "AGE",
+        "value": "75",
+        "context": "으며, 향후 12개월 내에 75% 로 감소할 전망이다.\n2"
+      },
+      {
+        "label": "CREDITCARDNUMBER",
+        "value": "5087815055645951",
+        "context": "\n2. 새로운 결제 모듈은 5087815055645951 과 같이 마스킹된 카드 정"
+      },
+      {
+        "label": "SOCIALNUM",
+        "value": "8865312572",
+        "context": "결제 옵션을 도입하기 위해 8865312572 기반 신원 확인 절차를 추"
+      },
+      {
+        "label": "DATE",
+        "value": "15/09/1979",
+        "context": "다.\n4. 다음 회의에서는 15/09/1979 까지 시범 운영 결과를 공"
+      },
+      {
+        "label": "EMAIL",
+        "value": "2001김@aol.com",
+        "context": "고 수정 사항이 있을 경우 2001김@aol.com 로 회신해 주시기 바랍니다"
+      }
+    ]
+  },
+  {
+    "split": "train",
+    "row_idx": 47,
+    "uid": 24700356,
+    "text": "영수증: 구매자 Dijellza Ornella 우, 주소 아봉로 117, 04317 수원시, 결제 카드 5426801166555871, 거래일자 2월 9, 1990.",
+    "annotations": [
+      {
+        "label": "GIVENNAME",
+        "value": "Dijellza Ornella",
+        "context": "영수증: 구매자 Dijellza Ornella 우, 주소 아봉로 117,"
+      },
+      {
+        "label": "SURNAME",
+        "value": "우",
+        "context": "jellza Ornella 우, 주소 아봉로 117, 0"
+      },
+      {
+        "label": "STREET",
+        "value": "아봉로",
+        "context": " Ornella 우, 주소 아봉로 117, 04317 수원시"
+      },
+      {
+        "label": "BUILDINGNUM",
+        "value": "117",
+        "context": "ella 우, 주소 아봉로 117, 04317 수원시, 결제"
+      },
+      {
+        "label": "ZIPCODE",
+        "value": "04317",
+        "context": "우, 주소 아봉로 117, 04317 수원시, 결제 카드 542"
+      },
+      {
+        "label": "CITY",
+        "value": "수원시",
+        "context": "아봉로 117, 04317 수원시, 결제 카드 5426801"
+      },
+      {
+        "label": "CREDITCARDNUMBER",
+        "value": "5426801166555871",
+        "context": "317 수원시, 결제 카드 5426801166555871, 거래일자 2월 9, 19"
+      },
+      {
+        "label": "DATE",
+        "value": "2월 9, 1990",
+        "context": "66555871, 거래일자 2월 9, 1990."
+      }
+    ]
+  },
+  {
+    "split": "train",
+    "row_idx": 55,
+    "uid": 24824836,
+    "text": "1월 16, 1967에, 양 가연 을 애님께서는 광주광역시 본사 주방(214층, 효신로)의 깊은 청소를 수행하고, 23/08/1971에 따라 위생 점검표를 확인해야 합니다.",
+    "annotations": [
+      {
+        "label": "DATE",
+        "value": "1월 16, 1967",
+        "context": "1월 16, 1967에, 양 가연 을 애님께서는"
+      },
+      {
+        "label": "TITLE",
+        "value": "양",
+        "context": "1월 16, 1967에, 양 가연 을 애님께서는 광주광"
+      },
+      {
+        "label": "GIVENNAME",
+        "value": "가연",
+        "context": "월 16, 1967에, 양 가연 을 애님께서는 광주광역시 "
+      },
+      {
+        "label": "SURNAME",
+        "value": "을 애",
+        "context": "6, 1967에, 양 가연 을 애님께서는 광주광역시 본사 주"
+      },
+      {
+        "label": "CITY",
+        "value": "광주광역시",
+        "context": ", 양 가연 을 애님께서는 광주광역시 본사 주방(214층, 효신"
+      },
+      {
+        "label": "BUILDINGNUM",
+        "value": "214",
+        "context": "서는 광주광역시 본사 주방(214층, 효신로)의 깊은 청소를"
+      },
+      {
+        "label": "STREET",
+        "value": "효신로",
+        "context": "역시 본사 주방(214층, 효신로)의 깊은 청소를 수행하고,"
+      },
+      {
+        "label": "DATE",
+        "value": "23/08/1971",
+        "context": "의 깊은 청소를 수행하고, 23/08/1971에 따라 위생 점검표를 확인"
+      }
+    ]
+  },
+  {
+    "split": "train",
+    "row_idx": 58,
+    "uid": 24738148,
+    "text": "군 안 은(는) 수원시에 위치한 비영리 단체와 협력하여, 보령관@gmail.com을(를) 통해 실시간 기부 흐름을 시각화합니다.",
+    "annotations": [
+      {
+        "label": "TITLE",
+        "value": "군",
+        "context": "군 안 은(는) 수원시에 위치"
+      },
+      {
+        "label": "SURNAME",
+        "value": "안",
+        "context": "군 안 은(는) 수원시에 위치한 "
+      },
+      {
+        "label": "CITY",
+        "value": "수원시",
+        "context": "군 안 은(는) 수원시에 위치한 비영리 단체와 협"
+      },
+      {
+        "label": "EMAIL",
+        "value": "보령관@gmail.com",
+        "context": " 비영리 단체와 협력하여, 보령관@gmail.com을(를) 통해 실시간 기부 "
+      }
+    ]
+  },
+  {
+    "split": "validation",
+    "row_idx": 14,
+    "uid": 24755192,
+    "text": "만  26세 이상(여성 포함) 방문객은 5VXH1JXSC9을 제시해야 하며, 예약 번호는 FRFUQQQX49이며 결제는 378311803411311 로 진행해 주세요.",
+    "annotations": [
+      {
+        "label": "AGE",
+        "value": "26",
+        "context": "만  26세 이상(여성 포함) 방문객"
+      },
+      {
+        "label": "GENDER",
+        "value": "여성",
+        "context": "만  26세 이상(여성 포함) 방문객은 5VXH1"
+      },
+      {
+        "label": "IDCARDNUM",
+        "value": "5VXH1JXSC9",
+        "context": "이상(여성 포함) 방문객은 5VXH1JXSC9을 제시해야 하며, 예약 번"
+      },
+      {
+        "label": "DRIVERLICENSENUM",
+        "value": "FRFUQQQX49",
+        "context": "시해야 하며, 예약 번호는 FRFUQQQX49이며 결제는 37831180"
+      },
+      {
+        "label": "CREDITCARDNUMBER",
+        "value": "378311803411311",
+        "context": "FUQQQX49이며 결제는 378311803411311 로 진행해 주세요."
+      }
+    ]
+  },
+  {
+    "split": "validation",
+    "row_idx": 23,
+    "uid": 24760001,
+    "text": "우리 사무실은 338번 매봉로60번길에 위치한 서울특별시에서, 양 양자 묵 랑씨가 제안한 고전 31/12/1959 건축 양식을 현대적 오피스 공간으로 변형했습니다. 새로운 디자인에 대한 자세한 안내는 2002석형@aol.com로 문의하시고, 관련 서류는 03659 우편번호를 사용해 보내주시기 바랍니다.",
+    "annotations": [
+      {
+        "label": "BUILDINGNUM",
+        "value": "338",
+        "context": "우리 사무실은 338번 매봉로60번길에 위치한 "
+      },
+      {
+        "label": "STREET",
+        "value": "매봉로60번길",
+        "context": "우리 사무실은 338번 매봉로60번길에 위치한 서울특별시에서, "
+      },
+      {
+        "label": "CITY",
+        "value": "서울특별시",
+        "context": "번 매봉로60번길에 위치한 서울특별시에서, 양 양자 묵 랑씨가 "
+      },
+      {
+        "label": "TITLE",
+        "value": "양",
+        "context": "에 위치한 서울특별시에서, 양 양자 묵 랑씨가 제안한 고"
+      },
+      {
+        "label": "GIVENNAME",
+        "value": "양자",
+        "context": "위치한 서울특별시에서, 양 양자 묵 랑씨가 제안한 고전 3"
+      },
+      {
+        "label": "SURNAME",
+        "value": "묵 랑",
+        "context": " 서울특별시에서, 양 양자 묵 랑씨가 제안한 고전 31/12"
+      },
+      {
+        "label": "DATE",
+        "value": "31/12/1959",
+        "context": "자 묵 랑씨가 제안한 고전 31/12/1959 건축 양식을 현대적 오피스"
+      },
+      {
+        "label": "EMAIL",
+        "value": "2002석형@aol.com",
+        "context": "자인에 대한 자세한 안내는 2002석형@aol.com로 문의하시고, 관련 서류는"
+      },
+      {
+        "label": "ZIPCODE",
+        "value": "03659",
+        "context": " 문의하시고, 관련 서류는 03659 우편번호를 사용해 보내주시"
+      }
+    ]
+  },
+  {
+    "split": "validation",
+    "row_idx": 24,
+    "uid": 24852802,
+    "text": "그는 3월 21, 2023에 태어나 1RHKSB8YSN 번호를 가지고 있습니다.",
+    "annotations": [
+      {
+        "label": "DATE",
+        "value": "3월 21, 2023",
+        "context": "그는 3월 21, 2023에 태어나 1RHKSB8YS"
+      },
+      {
+        "label": "IDCARDNUM",
+        "value": "1RHKSB8YSN",
+        "context": " 21, 2023에 태어나 1RHKSB8YSN 번호를 가지고 있습니다."
+      }
+    ]
+  },
+  {
+    "split": "validation",
+    "row_idx": 30,
+    "uid": 24750173,
+    "text": "첨부된 보고서(C0DS19UYH0)에는 모델 정확도, 변수 중요도 및 향후 투자 전략 제안이 포함되어 있으며, 추가 검토를 위해 13 가정로, 44470 로 방문해 주시면 됩니다.",
+    "annotations": [
+      {
+        "label": "IDCARDNUM",
+        "value": "C0DS19UYH0",
+        "context": "첨부된 보고서(C0DS19UYH0)에는 모델 정확도, 변수 "
+      },
+      {
+        "label": "BUILDINGNUM",
+        "value": "13",
+        "context": "있으며, 추가 검토를 위해 13 가정로, 44470 로 방"
+      },
+      {
+        "label": "STREET",
+        "value": "가정로",
+        "context": ", 추가 검토를 위해 13 가정로, 44470 로 방문해 주"
+      },
+      {
+        "label": "ZIPCODE",
+        "value": "44470",
+        "context": "검토를 위해 13 가정로, 44470 로 방문해 주시면 됩니다."
+      }
+    ]
+  },
+  {
+    "split": "validation",
+    "row_idx": 34,
+    "uid": 24698256,
+    "text": "귀하의 현재 연령인 39세와 성별인 논바이너리에 따라, 수원시에 위치한 지점에서 직접 수령하거나, 모바일 번호 0000.340 119-4367로 자동 입금 받을 수 있습니다.",
+    "annotations": [
+      {
+        "label": "AGE",
+        "value": "39",
+        "context": "귀하의 현재 연령인 39세와 성별인 논바이너리에 따"
+      },
+      {
+        "label": "GENDER",
+        "value": "논바이너리",
+        "context": "재 연령인 39세와 성별인 논바이너리에 따라, 수원시에 위치한 "
+      },
+      {
+        "label": "CITY",
+        "value": "수원시",
+        "context": "성별인 논바이너리에 따라, 수원시에 위치한 지점에서 직접 수"
+      },
+      {
+        "label": "TELEPHONENUM",
+        "value": "0000.340 119-4367",
+        "context": " 수령하거나, 모바일 번호 0000.340 119-4367로 자동 입금 받을 수 있습"
+      }
+    ]
+  },
+  {
+    "split": "validation",
+    "row_idx": 42,
+    "uid": 24725084,
+    "text": "예약 확인을 위해 누09@tutanota.com 로 회신 부탁드리며, 급한 문의는 +823-716.159 5181 로 연락 주세요. 결제는 6218102589985851 로 진행해 주시고, 체류 기간 동안 22228 우편번호 지역에 있는 숙소에서 편안히 머무르시길 바랍니다.",
+    "annotations": [
+      {
+        "label": "EMAIL",
+        "value": "누09@tutanota.com",
+        "context": "예약 확인을 위해 누09@tutanota.com 로 회신 부탁드리며, 급한"
+      },
+      {
+        "label": "TELEPHONENUM",
+        "value": "+823-716.159 5181",
+        "context": " 부탁드리며, 급한 문의는 +823-716.159 5181 로 연락 주세요. 결제는 "
+      },
+      {
+        "label": "CREDITCARDNUMBER",
+        "value": "6218102589985851",
+        "context": " 로 연락 주세요. 결제는 6218102589985851 로 진행해 주시고, 체류 "
+      },
+      {
+        "label": "ZIPCODE",
+        "value": "22228",
+        "context": " 주시고, 체류 기간 동안 22228 우편번호 지역에 있는 숙소"
+      }
+    ]
+  },
+  {
+    "split": "validation",
+    "row_idx": 57,
+    "uid": 24829515,
+    "text": "13 4월 1954에 발송된 이메일(성린박@tutanota.com)에서는, 정혜 나영씨가 거주하는 울산광역시 소재 사무실에서 소매 펀드에 대한 비용 비율 안내 자료를 배포했으며, 해당 자료는 03057 지역의 투자자들에게도 공유되었습니다.",
+    "annotations": [
+      {
+        "label": "DATE",
+        "value": "13 4월 1954",
+        "context": "13 4월 1954에 발송된 이메일(성린박@t"
+      },
+      {
+        "label": "EMAIL",
+        "value": "성린박@tutanota.com",
+        "context": " 1954에 발송된 이메일(성린박@tutanota.com)에서는, 정혜 나영씨가 거"
+      },
+      {
+        "label": "GIVENNAME",
+        "value": "정혜 나영",
+        "context": "anota.com)에서는, 정혜 나영씨가 거주하는 울산광역시 소"
+      },
+      {
+        "label": "CITY",
+        "value": "울산광역시",
+        "context": ", 정혜 나영씨가 거주하는 울산광역시 소재 사무실에서 소매 펀드"
+      },
+      {
+        "label": "ZIPCODE",
+        "value": "03057",
+        "context": " 배포했으며, 해당 자료는 03057 지역의 투자자들에게도 공유"
+      }
+    ]
+  },
+  {
+    "split": "validation",
+    "row_idx": 58,
+    "uid": 24751141,
+    "text": "신청서:\n- 성명: Melodie Carène 길 기\n- 주소: 41501 울산광역시 반구1동\n- 연락처: +826-30.971 6397\n- 퇴비통 종류: RNYRZDZHJH (예: 가정용, 상업용)\n- 사용 시작일: 07/12/1942\n- 비고: 3596859605764829 (보증금 결제 정보)",
+    "annotations": [
+      {
+        "label": "GIVENNAME",
+        "value": "Melodie Carène",
+        "context": "신청서:\n- 성명: Melodie Carène 길 기\n- 주소: 4150"
+      },
+      {
+        "label": "SURNAME",
+        "value": "길 기",
+        "context": "Melodie Carène 길 기\n- 주소: 41501 울산"
+      },
+      {
+        "label": "ZIPCODE",
+        "value": "41501",
+        "context": "rène 길 기\n- 주소: 41501 울산광역시 반구1동\n- 연"
+      },
+      {
+        "label": "CITY",
+        "value": "울산광역시 반구1동",
+        "context": " 기\n- 주소: 41501 울산광역시 반구1동\n- 연락처: +826-30"
+      },
+      {
+        "label": "TELEPHONENUM",
+        "value": "+826-30.971 6397",
+        "context": "역시 반구1동\n- 연락처: +826-30.971 6397\n- 퇴비통 종류: RNYR"
+      },
+      {
+        "label": "DRIVERLICENSENUM",
+        "value": "RNYRZDZHJH",
+        "context": "6397\n- 퇴비통 종류: RNYRZDZHJH (예: 가정용, 상업용)\n"
+      },
+      {
+        "label": "DATE",
+        "value": "07/12/1942",
+        "context": "상업용)\n- 사용 시작일: 07/12/1942\n- 비고: 35968596"
+      },
+      {
+        "label": "CREDITCARDNUMBER",
+        "value": "3596859605764829",
+        "context": "/12/1942\n- 비고: 3596859605764829 (보증금 결제 정보)"
+      }
+    ]
+  },
+  {
+    "split": "validation",
+    "row_idx": 61,
+    "uid": 24749878,
+    "text": "이번 투자 라운드의 최소 투자 금액은 36331417187041이며, 투자자님의 나이는 30세, 성별은 기타입니다.",
+    "annotations": [
+      {
+        "label": "CREDITCARDNUMBER",
+        "value": "36331417187041",
+        "context": "라운드의 최소 투자 금액은 36331417187041이며, 투자자님의 나이는 3"
+      },
+      {
+        "label": "AGE",
+        "value": "30",
+        "context": "1이며, 투자자님의 나이는 30세, 성별은 기타입니다."
+      },
+      {
+        "label": "GENDER",
+        "value": "기타",
+        "context": "의 나이는 30세, 성별은 기타입니다."
+      }
+    ]
+  },
+  {
+    "split": "validation",
+    "row_idx": 65,
+    "uid": 24803086,
+    "text": "이 계약서에 따라 논바이너리 당사자는 계약 이행에 필요한 모든 자료를 1988-02-18T00:00:00까지 제출해야 하며, 제출 자료에는 만영 뢰 마의 최신 KS1673008와 FYVTLAGNQF이 포함됩니다. 계약에 명시된 보상 조건은 월간 59회 지급되며, 지급 계좌는 규@aol.com으로 사전 통보된 계좌로만 이루어집니다. 계약 기간 동안 발생 가능한 모든 위험은 F에 따라 차등 적용되며, 특히 울산광역시 내에서 발생하는 사고에 대한 책임은 양 병욱 두이 전액 부담합니다. 이와 더불어, 계약서에 명시된 비밀 유지 조항을 위반할 경우, 위반자는 즉시 502043650463800270을(를) 통해 벌금을 납부해야 하며, 해당 벌금은 계약서에 명시된 42464에 따라 차등 부과됩니다. 계약 종료 시점에는 모든 미지급 금액을 정산하고, 양측은 서로에 대한 모든 청구권을 포기한다는 서면 확인서를 서명(1998-11-17T00:00:00)해야 합니다.",
+    "annotations": [
+      {
+        "label": "GENDER",
+        "value": "논바이너리",
+        "context": "이 계약서에 따라 논바이너리 당사자는 계약 이행에 필요"
+      },
+      {
+        "label": "DATE",
+        "value": "1988-02-18T00:00:00",
+        "context": "이행에 필요한 모든 자료를 1988-02-18T00:00:00까지 제출해야 하며, 제출 "
+      },
+      {
+        "label": "GIVENNAME",
+        "value": "만영",
+        "context": "해야 하며, 제출 자료에는 만영 뢰 마의 최신 KS1673"
+      },
+      {
+        "label": "SURNAME",
+        "value": "뢰 마",
+        "context": "하며, 제출 자료에는 만영 뢰 마의 최신 KS1673008와"
+      },
+      {
+        "label": "PASSPORTNUM",
+        "value": "KS1673008",
+        "context": "료에는 만영 뢰 마의 최신 KS1673008와 FYVTLAGNQF이 포"
+      },
+      {
+        "label": "IDCARDNUM",
+        "value": "FYVTLAGNQF",
+        "context": " 최신 KS1673008와 FYVTLAGNQF이 포함됩니다. 계약에 명시"
+      },
+      {
+        "label": "AGE",
+        "value": "59",
+        "context": " 명시된 보상 조건은 월간 59회 지급되며, 지급 계좌는 "
+      },
+      {
+        "label": "EMAIL",
+        "value": "규@aol.com",
+        "context": "회 지급되며, 지급 계좌는 규@aol.com으로 사전 통보된 계좌로만 "
+      },
+      {
+        "label": "SEX",
+        "value": "F",
+        "context": " 발생 가능한 모든 위험은 F에 따라 차등 적용되며, 특"
+      },
+      {
+        "label": "CITY",
+        "value": "울산광역시",
+        "context": "따라 차등 적용되며, 특히 울산광역시 내에서 발생하는 사고에 대"
+      },
+      {
+        "label": "TITLE",
+        "value": "양",
+        "context": "생하는 사고에 대한 책임은 양 병욱 두이 전액 부담합니다"
+      },
+      {
+        "label": "GIVENNAME",
+        "value": "병욱",
+        "context": "는 사고에 대한 책임은 양 병욱 두이 전액 부담합니다. 이"
+      },
+      {
+        "label": "SURNAME",
+        "value": "두",
+        "context": "고에 대한 책임은 양 병욱 두이 전액 부담합니다. 이와 "
+      },
+      {
+        "label": "CREDITCARDNUMBER",
+        "value": "502043650463800270",
+        "context": "반할 경우, 위반자는 즉시 502043650463800270을(를) 통해 벌금을 납부해"
+      },
+      {
+        "label": "ZIPCODE",
+        "value": "42464",
+        "context": "당 벌금은 계약서에 명시된 42464에 따라 차등 부과됩니다. "
+      },
+      {
+        "label": "DATE",
+        "value": "1998-11-17T00:00:00",
+        "context": "한다는 서면 확인서를 서명(1998-11-17T00:00:00)해야 합니다."
+      }
+    ]
+  }
+]

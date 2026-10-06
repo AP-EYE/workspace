@@ -1,0 +1,43 @@
+{
+  "scope": "126 existing first-rows convenience samples; not full dataset",
+  "rows": 126,
+  "entities": 541,
+  "labels": {
+    "ORGANIZATION": 31,
+    "PERSON": 178,
+    "KR_RRN": 56,
+    "KR_PHONE_NUMBER": 46,
+    "URL": 22,
+    "IP_ADDRESS": 28,
+    "KR_BANK_ACCOUNT": 20,
+    "NRP": 14,
+    "EMAIL_ADDRESS": 45,
+    "KR_PASSPORT": 9,
+    "CREDIT_CARD": 17,
+    "DATE_OF_BIRTH": 16,
+    "KR_NHIS": 11,
+    "KR_LOCATION": 26,
+    "KR_VEHICLE_PLATE": 9,
+    "KR_DRIVER_LICENSE": 8,
+    "USERNAME": 5
+  },
+  "domains": {
+    "legal": 7,
+    "support_ticket": 11,
+    "education": 13,
+    "telecommunications": 16,
+    "chat": 10,
+    "government": 9,
+    "financial": 8,
+    "email_thread": 13,
+    "employment": 13,
+    "document": 8,
+    "insurance": 8,
+    "medical": 10
+  },
+  "negative_docs": 0,
+  "errors": [],
+  "cross_split_exact_normalized_templates": [],
+  "cross_split_near_templates_ratio_ge_0_90": [],
+  "duplicate_texts": 0
+}

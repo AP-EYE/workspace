@@ -1,0 +1,49 @@
+{
+  "test_type": "official_image_django_api_client",
+  "rows": [
+    {
+      "requester": "alice",
+      "endpoint": "repetitions-config",
+      "status": 200,
+      "expected_own_id": 1,
+      "other_user_id": 2,
+      "returned_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "requester": "alice",
+      "endpoint": "max-repetitions-config",
+      "status": 200,
+      "expected_own_id": 1,
+      "other_user_id": 2,
+      "returned_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "requester": "bob",
+      "endpoint": "repetitions-config",
+      "status": 200,
+      "expected_own_id": 2,
+      "other_user_id": 1,
+      "returned_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "requester": "bob",
+      "endpoint": "max-repetitions-config",
+      "status": 200,
+      "expected_own_id": 2,
+      "other_user_id": 1,
+      "returned_ids": [
+        1,
+        2
+      ]
+    }
+  ]
+}

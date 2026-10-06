@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-06",
+  "scope": "Official wger images, isolated Docker network none, original Django GET routes via DRF APIClient.force_authenticate, synthetic SQLite fixtures",
+  "images": [
+    {
+      "tag": "wger/server:2.4",
+      "repo_digest": "wger/server@sha256:fd2302524d6fd7c2ddd647d1aa90d6848b98fe1e712906d49feab5ec88f3aaa9",
+      "source_revision": "9f76bde20c69b686242f81f49a958603c382cdc9",
+      "created": "2026-01-18T12:06:38.723Z"
+    },
+    {
+      "tag": "wger/server:2.5",
+      "repo_digest": "wger/server@sha256:1cac2c62b8d85b54dab16291df802a1cdbf66828201b8df6104db0400320f0df",
+      "source_revision": "f270e5781e912de52cf008fdfa8be89b7de8149e",
+      "created": "2026-04-15T20:06:15.206Z"
+    }
+  ],
+  "files": [
+    {
+      "file": "evidence/wger-2.4-list.json",
+      "sha256": "f8ac765024adc44c9d37024f70ec6c6720fdb450575be28afa57ed6afb2b4e4e"
+    },
+    {
+      "file": "evidence/wger-2.4-nutrition.json",
+      "sha256": "24664f39aab319681706db88243ca8885cf19cf642152e8b156012f3d5d50b0f"
+    },
+    {
+      "file": "evidence/wger-2.5-list.json",
+      "sha256": "fa02e6d09234b3dea1aebcdac98a1497c47cc1a0e065e1ca89448db52208b3b3"
+    },
+    {
+      "file": "evidence/wger-2.5-nutrition.json",
+      "sha256": "9777d7b1e15cfd90bd38a239e2859ddfcaec6067e4725e9d132fb7523e802b9a"
+    },
+    {
+      "file": "scripts/verify_wger_results.py",
+      "sha256": "3955ff8ea36fe1723870e04ba682fc926bf3f0a53b35458cbf79e2f6d9f49e33"
+    },
+    {
+      "file": "scripts/wger_list_probe.py",
+      "sha256": "05ef6cffef59ab3c0d0c584a55ae40ee62a123805b2fc29ed43b5ab2da657bd0"
+    },
+    {
+      "file": "scripts/wger_nutrition_probe.py",
+      "sha256": "6d2c949bc6b153d04f062dc394812015aed4f10e14c2538a9b78395aec7b488d"
+    }
+  ],
+  "note": "Source revisions are OCI image labels; they are not the exact advisory parent/fix commits. No Akto or RESTler scanner was run."
+}

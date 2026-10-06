@@ -1,0 +1,46 @@
+{
+  "scope": "convenience first-rows sample; NOT model evaluation, semantic label validation, or full split audit",
+  "dataset": "woohyun212/k-pii-bench",
+  "api_config": "default",
+  "captured_date": "2026-10-06",
+  "download_note": "/rows offset=0 length=100 returned HTTP 500; used /first-rows instead",
+  "sample_count": 126,
+  "entity_count": 541,
+  "results": [
+    {
+      "split": "train",
+      "rows_checked": 41,
+      "entities_checked": 177,
+      "bad_span_documents": [],
+      "bad_token_label_length_documents": [],
+      "no_pii_documents_in_sample": 0,
+      "truncated_rows": 0,
+      "raw_sha256": "1bc7de140747e053a8689d769abbb23599db347bbb9ba9ec49ff1a2e2474adf1"
+    },
+    {
+      "split": "dev",
+      "rows_checked": 41,
+      "entities_checked": 168,
+      "bad_span_documents": [],
+      "bad_token_label_length_documents": [],
+      "no_pii_documents_in_sample": 0,
+      "truncated_rows": 0,
+      "raw_sha256": "ff831582d7a6453c5434f1db09204b0dc9af49bf7e508dabe3a63c3505baba08"
+    },
+    {
+      "split": "test_track_a",
+      "rows_checked": 44,
+      "entities_checked": 196,
+      "bad_span_documents": [],
+      "bad_token_label_length_documents": [],
+      "no_pii_documents_in_sample": 0,
+      "truncated_rows": 0,
+      "raw_sha256": "9fa53c3e4c5f82dda9920283470233c23b828708e62120c3287655814bbb1573"
+    }
+  ],
+  "template_id_overlap_in_sample": {
+    "train vs dev": [],
+    "train vs test_track_a": [],
+    "dev vs test_track_a": []
+  }
+}

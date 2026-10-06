@@ -1,0 +1,24 @@
+{
+  "executed_at_date": "2026-10-06",
+  "source_commit_added_tests": "3515e61d8a246c7dccaf5453da3efd1d0d4937f9",
+  "image": "wger/server:2.7",
+  "image_digest": "sha256:1c5789b93bfe5eed0b7287255782d9177027b255de2b22b59f511a693a48db04",
+  "oci_source_revision": "83005f7d487c814833f3943784370bb0149fbaa8",
+  "source_revision_after_test_commit_by_commits": 36,
+  "network": "none",
+  "database": "django_test_runner_in_memory_sqlite",
+  "test_module": "wger.manager.tests.test_templates",
+  "tests_found": 8,
+  "tests_passed": 8,
+  "test_names_for_gold": [
+    "test_public_template_detail_api",
+    "test_private_template_detail_api"
+  ],
+  "sha256": {
+    "image_wger_manager_tests_test_templates_py": "2b50eb399550a3fd24c377a6a0a35721bc37bd9c8c1af1209ce31c76101f39a4",
+    "image_wger_manager_api_views_py": "f762d3458fe7f040fa802bc9853ce20002bbdbbe9c218ec1f263b972e2946734",
+    "image_wger_urls_py": "28d6637579572df5aae7638b621c08b2c00f133c1a0d60464386fbad925edd62",
+    "evidence_wger_2_7_template_tests_log": "4caa9d5097fc50c4f5e76663fc7c2723e4cac4b57152509affcc483125e01b37",
+    "scripts_run_public_template_test_ps1": "b57a9be3d5a43ebe41cf81fd5ba6fa39d8922dd97bc0af7f747ad39baff7c59d"
+  }
+}

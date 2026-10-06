@@ -1,0 +1,55 @@
+{
+  "test_type": "official_image_django_api_client",
+  "rows": [
+    {
+      "requester": "alice",
+      "owner": "alice",
+      "target_id": 1,
+      "status": 200,
+      "response": {
+        "energy": 111.0,
+        "protein": 11.1,
+        "carbohydrates": 11.1,
+        "carbohydrates_sugar": null,
+        "fat": 11.1,
+        "fat_saturated": null,
+        "fiber": null,
+        "sodium": null
+      }
+    },
+    {
+      "requester": "alice",
+      "owner": "bob",
+      "target_id": 2,
+      "status": 404,
+      "response": {
+        "detail": "No NutritionPlan matches the given query."
+      }
+    },
+    {
+      "requester": "bob",
+      "owner": "alice",
+      "target_id": 1,
+      "status": 404,
+      "response": {
+        "detail": "No NutritionPlan matches the given query."
+      }
+    },
+    {
+      "requester": "bob",
+      "owner": "bob",
+      "target_id": 2,
+      "status": 200,
+      "response": {
+        "energy": 222.0,
+        "protein": 22.2,
+        "carbohydrates": 22.2,
+        "carbohydrates_sugar": null,
+        "fat": 22.2,
+        "fat_saturated": null,
+        "fiber": null,
+        "sodium": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+[
+  {
+    "file": "openpii-splits.json",
+    "url": "https://datasets-server.huggingface.co/splits?dataset=ai4privacy%2Fpii-masking-openpii-1.5m",
+    "status": 200,
+    "bytes": 212,
+    "sha256": "73c4993dde9dbe8757e121d5cae7239b047d35de0313aaad74eac4e05190ffdc"
+  },
+  {
+    "file": "openpii-meta.json",
+    "url": "https://huggingface.co/api/datasets/ai4privacy/pii-masking-openpii-1.5m",
+    "status": 200,
+    "bytes": 2920,
+    "sha256": "a4704eba5312c5d6fda461394f0e8d6cbfc6ea7d87c186dfd8bcded61c91dbdf"
+  },
+  {
+    "file": "gretel-splits.json",
+    "url": "https://datasets-server.huggingface.co/splits?dataset=gretelai%2Fsynthetic_pii_finance_multilingual",
+    "status": 200,
+    "bytes": 222,
+    "sha256": "670d65bc435d79448174a66033bee958392775447ae8811e782c55315af5d74c"
+  },
+  {
+    "file": "gretel-meta.json",
+    "url": "https://huggingface.co/api/datasets/gretelai/synthetic_pii_finance_multilingual",
+    "status": 200,
+    "bytes": 3786,
+    "sha256": "a4a072e68f6fc06c07e55d8a3d142798c2aae102893a6f1550dbd5f4f8f55b01"
+  },
+  {
+    "file": "openpii-card.md",
+    "url": "https://huggingface.co/datasets/ai4privacy/pii-masking-openpii-1.5m/raw/main/README.md",
+    "status": 200,
+    "bytes": 9208,
+    "sha256": "09718505013ce52cbdcfdb8e61eba5705314b3931e43fdfba1aaeafae9c0ca38"
+  },
+  {
+    "file": "gretel-card.md",
+    "url": "https://huggingface.co/datasets/gretelai/synthetic_pii_finance_multilingual/raw/main/README.md",
+    "status": 200,
+    "bytes": 14735,
+    "sha256": "1818d7f7cd27101ee9f8c932baf5183482e49e54e4b108a1ba9138db60a3e8c8"
+  },
+  {
+    "file": "PIIBench_2604.15776.pdf",
+    "url": "https://arxiv.org/pdf/2604.15776",
+    "status": 200,
+    "bytes": 704897,
+    "sha256": "4ec4b4c9c99d06e49a3c548021cfab0ac629f4861d4229b051aae4707f739279"
+  }
+]

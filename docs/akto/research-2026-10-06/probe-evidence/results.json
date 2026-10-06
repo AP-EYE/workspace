@@ -1,0 +1,419 @@
+{
+  "scope": "isolated original phone method and original Java regexes; not runtime or accuracy benchmark",
+  "akto_commit": "42e88a247fb2a0532ec8d7a8ba6261b794ee3f8d",
+  "java_version": "openjdk version \"21.0.11\" 2026-04-21 LTS\nOpenJDK Runtime Environment Temurin-21.0.11+10 (build 21.0.11+10-LTS)\nOpenJDK 64-Bit Server VM Temurin-21.0.11+10 (build 21.0.11+10-LTS, mixed mode, sharing)",
+  "dependency": {
+    "url": "https://repo.maven.apache.org/maven2/com/googlecode/libphonenumber/libphonenumber/8.12.41/libphonenumber-8.12.41.jar",
+    "sha256": "0c016f10d0445e5d9098165e290b5a202a3c9114aa9f83478f0ba5d5d7d999c7"
+  },
+  "phone_results": [
+    {
+      "region": "US",
+      "format": "E164",
+      "matched": true,
+      "synthetic_example": "+12015550123"
+    },
+    {
+      "region": "US",
+      "format": "NATIONAL",
+      "matched": false,
+      "synthetic_example": "(201) 555-0123"
+    },
+    {
+      "region": "US",
+      "format": "INTERNATIONAL",
+      "matched": true,
+      "synthetic_example": "+1 201-555-0123"
+    },
+    {
+      "region": "US",
+      "format": "DIGITS",
+      "matched": false,
+      "synthetic_example": "2015550123"
+    },
+    {
+      "region": "GB",
+      "format": "E164",
+      "matched": true,
+      "synthetic_example": "+447400123456"
+    },
+    {
+      "region": "GB",
+      "format": "NATIONAL",
+      "matched": false,
+      "synthetic_example": "07400 123456"
+    },
+    {
+      "region": "GB",
+      "format": "INTERNATIONAL",
+      "matched": true,
+      "synthetic_example": "+44 7400 123456"
+    },
+    {
+      "region": "GB",
+      "format": "DIGITS",
+      "matched": false,
+      "synthetic_example": "07400123456"
+    },
+    {
+      "region": "FR",
+      "format": "E164",
+      "matched": true,
+      "synthetic_example": "+33612345678"
+    },
+    {
+      "region": "FR",
+      "format": "NATIONAL",
+      "matched": false,
+      "synthetic_example": "06 12 34 56 78"
+    },
+    {
+      "region": "FR",
+      "format": "INTERNATIONAL",
+      "matched": false,
+      "synthetic_example": "+33 6 12 34 56 78"
+    },
+    {
+      "region": "FR",
+      "format": "DIGITS",
+      "matched": false,
+      "synthetic_example": "0612345678"
+    },
+    {
+      "region": "DE",
+      "format": "E164",
+      "matched": true,
+      "synthetic_example": "+4915123456789"
+    },
+    {
+      "region": "DE",
+      "format": "NATIONAL",
+      "matched": false,
+      "synthetic_example": "01512 3456789"
+    },
+    {
+      "region": "DE",
+      "format": "INTERNATIONAL",
+      "matched": true,
+      "synthetic_example": "+49 1512 3456789"
+    },
+    {
+      "region": "DE",
+      "format": "DIGITS",
+      "matched": false,
+      "synthetic_example": "015123456789"
+    },
+    {
+      "region": "FI",
+      "format": "E164",
+      "matched": true,
+      "synthetic_example": "+358412345678"
+    },
+    {
+      "region": "FI",
+      "format": "NATIONAL",
+      "matched": false,
+      "synthetic_example": "041 2345678"
+    },
+    {
+      "region": "FI",
+      "format": "INTERNATIONAL",
+      "matched": true,
+      "synthetic_example": "+358 41 2345678"
+    },
+    {
+      "region": "FI",
+      "format": "DIGITS",
+      "matched": false,
+      "synthetic_example": "0412345678"
+    },
+    {
+      "region": "IN",
+      "format": "E164",
+      "matched": true,
+      "synthetic_example": "+918123456789"
+    },
+    {
+      "region": "IN",
+      "format": "NATIONAL",
+      "matched": false,
+      "synthetic_example": "081234 56789"
+    },
+    {
+      "region": "IN",
+      "format": "INTERNATIONAL",
+      "matched": true,
+      "synthetic_example": "+91 81234 56789"
+    },
+    {
+      "region": "IN",
+      "format": "DIGITS",
+      "matched": false,
+      "synthetic_example": "08123456789"
+    },
+    {
+      "region": "JP",
+      "format": "E164",
+      "matched": true,
+      "synthetic_example": "+819012345678"
+    },
+    {
+      "region": "JP",
+      "format": "NATIONAL",
+      "matched": false,
+      "synthetic_example": "090-1234-5678"
+    },
+    {
+      "region": "JP",
+      "format": "INTERNATIONAL",
+      "matched": true,
+      "synthetic_example": "+81 90-1234-5678"
+    },
+    {
+      "region": "JP",
+      "format": "DIGITS",
+      "matched": false,
+      "synthetic_example": "09012345678"
+    },
+    {
+      "region": "CA",
+      "format": "E164",
+      "matched": true,
+      "synthetic_example": "+15062345678"
+    },
+    {
+      "region": "CA",
+      "format": "NATIONAL",
+      "matched": false,
+      "synthetic_example": "(506) 234-5678"
+    },
+    {
+      "region": "CA",
+      "format": "INTERNATIONAL",
+      "matched": true,
+      "synthetic_example": "+1 506-234-5678"
+    },
+    {
+      "region": "CA",
+      "format": "DIGITS",
+      "matched": false,
+      "synthetic_example": "5062345678"
+    },
+    {
+      "region": "KR",
+      "format": "E164",
+      "matched": true,
+      "synthetic_example": "+821020000000"
+    },
+    {
+      "region": "KR",
+      "format": "NATIONAL",
+      "matched": false,
+      "synthetic_example": "010-2000-0000"
+    },
+    {
+      "region": "KR",
+      "format": "INTERNATIONAL",
+      "matched": true,
+      "synthetic_example": "+82 10-2000-0000"
+    },
+    {
+      "region": "KR",
+      "format": "DIGITS",
+      "matched": false,
+      "synthetic_example": "01020000000"
+    }
+  ],
+  "regex_results": [
+    {
+      "detector": "PAN CARD",
+      "value": "ABCDE1234F",
+      "note": "shape example; issuance not asserted",
+      "regex": "[A-Z]{5}[0-9]{4}[A-Z]{1}",
+      "matched": true
+    },
+    {
+      "detector": "PAN CARD",
+      "value": "PAN: ABCDE1234F",
+      "note": "same shape inside sentence",
+      "regex": "[A-Z]{5}[0-9]{4}[A-Z]{1}",
+      "matched": false
+    },
+    {
+      "detector": "US Medicare Health Insurance Claim Number",
+      "value": "123456789A",
+      "note": "legacy HICN shape",
+      "regex": "[0-9]{9}[A-Za-z]{1}[0-9a-zA-Z]?",
+      "matched": true
+    },
+    {
+      "detector": "US Medicare Health Insurance Claim Number",
+      "value": "1EG4TE5MK73",
+      "note": "CMS example of newer MBI; different identifier",
+      "regex": "[0-9]{9}[A-Za-z]{1}[0-9a-zA-Z]?",
+      "matched": false
+    },
+    {
+      "detector": "Indian Unique Health Identification",
+      "value": "00000000000000",
+      "note": "all-zero number; no validity evidence",
+      "regex": "[0-9]{14}",
+      "matched": true
+    },
+    {
+      "detector": "United Kingdom National Insurance Number",
+      "value": "QQ123456C",
+      "note": "forbidden Q prefix",
+      "regex": "(?!BG)(?!GB)(?!NK)(?!KN)(?!NT)(?!TN)(?!ZZ)(?! ?.O)[A-CE-EG-HJ-PR-TW-Za-ce-eg-hj-pr-tw-z]{2}[0-9]{6}[A-Da-d]{1}",
+      "matched": false
+    },
+    {
+      "detector": "United Kingdom National Insurance Number",
+      "value": "AB123456C",
+      "note": "shape example",
+      "regex": "(?!BG)(?!GB)(?!NK)(?!KN)(?!NT)(?!TN)(?!ZZ)(?! ?.O)[A-CE-EG-HJ-PR-TW-Za-ce-eg-hj-pr-tw-z]{2}[0-9]{6}[A-Da-d]{1}",
+      "matched": true
+    },
+    {
+      "detector": "United Kingdom National Insurance Number",
+      "value": "AB 12 34 56 C",
+      "note": "formatted variant",
+      "regex": "(?!BG)(?!GB)(?!NK)(?!KN)(?!NT)(?!TN)(?!ZZ)(?! ?.O)[A-CE-EG-HJ-PR-TW-Za-ce-eg-hj-pr-tw-z]{2}[0-9]{6}[A-Da-d]{1}",
+      "matched": false
+    },
+    {
+      "detector": "Finnish Personal Identity Number",
+      "value": "310299-123A",
+      "note": "impossible February day; shape only",
+      "regex": "([0-2][0-9]|[3-3][0-1])([0-0][1-9]|[1-1][0-2])[0-9]{2}[Aa\\+\\-]{1}([0-8][0-9][2-8]|[1-8][0-9][0-9])[0-9A-Ya-y]",
+      "matched": true
+    },
+    {
+      "detector": "Finnish Personal Identity Number",
+      "value": "010101B123A",
+      "note": "new century separator B; checksum not asserted",
+      "regex": "([0-2][0-9]|[3-3][0-1])([0-0][1-9]|[1-1][0-2])[0-9]{2}[Aa\\+\\-]{1}([0-8][0-9][2-8]|[1-8][0-9][0-9])[0-9A-Ya-y]",
+      "matched": false
+    },
+    {
+      "detector": "Canadian Social Insurance Number",
+      "value": "000000000",
+      "note": "invalid reserved all-zero shape",
+      "regex": "[0-9]{9}",
+      "matched": true
+    },
+    {
+      "detector": "Canadian Social Insurance Number",
+      "value": "123456789",
+      "note": "Luhn-invalid synthetic shape",
+      "regex": "[0-9]{9}",
+      "matched": true
+    },
+    {
+      "detector": "Canadian Social Insurance Number",
+      "value": "123 456 789",
+      "note": "spaced variant",
+      "regex": "[0-9]{9}",
+      "matched": false
+    },
+    {
+      "detector": "German Insurance Identity Number",
+      "value": "12310299A123",
+      "note": "impossible February day; shape only",
+      "regex": "[0-9]{2}([0-2][0-9]|[3-3][0-1])([0-0][1-9]|[1-1][0-2])[0-9]{2}[A-Za-z][0-9]{3}",
+      "matched": true
+    },
+    {
+      "detector": "Japanese Social Insurance Number",
+      "value": "000000000000",
+      "note": "all-zero shape; not proof of assigned number",
+      "regex": "[0-9]{12}",
+      "matched": true
+    },
+    {
+      "detector": "Japanese Social Insurance Number",
+      "value": "1234-5678-9012",
+      "note": "hyphenated variant",
+      "regex": "[0-9]{12}",
+      "matched": false
+    },
+    {
+      "detector": "IBAN EUROPE",
+      "value": "GB82WEST12345698765432",
+      "note": "public IBAN example with alpha bank code",
+      "regex": "[A-Z]{2}?[ ]?[0-9]{2}[ ]?\\s*(\\d{4}\\s*){4,10}(\\d{1,2}\\s*)?",
+      "matched": false
+    },
+    {
+      "detector": "IBAN EUROPE",
+      "value": "DE89370400440532013000",
+      "note": "public IBAN example",
+      "regex": "[A-Z]{2}?[ ]?[0-9]{2}[ ]?\\s*(\\d{4}\\s*){4,10}(\\d{1,2}\\s*)?",
+      "matched": true
+    },
+    {
+      "detector": "IBAN EUROPE",
+      "value": "DE00370400440532013000",
+      "note": "same example with invalid check digits",
+      "regex": "[A-Z]{2}?[ ]?[0-9]{2}[ ]?\\s*(\\d{4}\\s*){4,10}(\\d{1,2}\\s*)?",
+      "matched": true
+    },
+    {
+      "detector": "US ADDRESS",
+      "value": "123 Example St, CA 90210",
+      "note": "synthetic shape",
+      "regex": "\\d{1,5}(\\s[\\w-.,]*){1,6},\\s[A-Z]{2}\\s\\d{5}\\b",
+      "matched": true
+    },
+    {
+      "detector": "US ADDRESS",
+      "value": "서울특별시 종로구 예시로 123",
+      "note": "Korean synthetic address",
+      "regex": "\\d{1,5}(\\s[\\w-.,]*){1,6},\\s[A-Z]{2}\\s\\d{5}\\b",
+      "matched": false
+    },
+    {
+      "detector": "EMAIL",
+      "value": "alice@example.com",
+      "note": "reserved-domain example",
+      "regex": "EXTRACTED_JAVA_LITERAL",
+      "matched": true
+    },
+    {
+      "detector": "EMAIL",
+      "value": "alice@example.technology",
+      "note": "long ASCII TLD",
+      "regex": "EXTRACTED_JAVA_LITERAL",
+      "matched": false
+    },
+    {
+      "detector": "EMAIL",
+      "value": "문의: alice@example.com",
+      "note": "embedded email",
+      "regex": "EXTRACTED_JAVA_LITERAL",
+      "matched": false
+    },
+    {
+      "detector": "EMAIL",
+      "value": "이름@example.com",
+      "note": "Korean local part; EAI policy needed",
+      "regex": "EXTRACTED_JAVA_LITERAL",
+      "matched": false
+    },
+    {
+      "detector": "SSN",
+      "value": "000-00-0000",
+      "note": "invalid SSN all zero",
+      "regex": "EXTRACTED_JAVA_LITERAL",
+      "matched": true
+    },
+    {
+      "detector": "SSN",
+      "value": "123456789",
+      "note": "no-hyphen variant",
+      "regex": "EXTRACTED_JAVA_LITERAL",
+      "matched": false
+    }
+  ],
+  "source_sha256": "ace4634ca1c34eef53c5922b3c01a7dd5a5e68240814153e0916042765e994bf"
+}

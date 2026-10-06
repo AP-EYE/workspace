@@ -1,0 +1,22 @@
+{
+  "AuthProbe": {
+    "commit": "d9cb4bdd7fabbf56d91935034a245ac8092d0fe6",
+    "remote": "https://github.com/jbarach2012/AuthProbe.git"
+  },
+  "BACScan": {
+    "commit": "456cb5195b77d9e52c57c6f1d17abfc7dc13ff74",
+    "remote": "https://github.com/LFYSec/BACScan.git"
+  },
+  "BolaRay": {
+    "commit": "6b4e7150e1504bd7a28795c577c01997ce53edeb",
+    "remote": "https://github.com/BolaRay-d/BolaRay.git"
+  },
+  "k-pii-bench": {
+    "commit": "1b480c515cc8425ea5c5675079bd7cf17b951554",
+    "remote": "https://github.com/woohyun212/k-pii-bench.git"
+  },
+  "VAmPI": {
+    "commit": "f16052dce83f05847133ec98f01c5193a41de7d8",
+    "remote": "https://github.com/erev0s/VAmPI.git"
+  }
+}

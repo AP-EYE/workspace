@@ -1,0 +1,97 @@
+{
+  "scope": "Flask/Connexion in-process test client; no listening service or scanner",
+  "source_commit": "f16052dce83f05847133ec98f01c5193a41de7d8",
+  "mode_switch": "api_views.books.vuln: upstream existing flag",
+  "cases": [
+    {
+      "mode": 1,
+      "requester": "alice",
+      "owner": "alice",
+      "operation": "GET /books/v1/{book}",
+      "http_status": 200,
+      "gold_bola": false,
+      "exposes_private_field": true
+    },
+    {
+      "mode": 1,
+      "requester": "alice",
+      "owner": "bob",
+      "operation": "GET /books/v1/{book}",
+      "http_status": 200,
+      "gold_bola": true,
+      "exposes_private_field": true
+    },
+    {
+      "mode": 1,
+      "requester": "bob",
+      "owner": "alice",
+      "operation": "GET /books/v1/{book}",
+      "http_status": 200,
+      "gold_bola": true,
+      "exposes_private_field": true
+    },
+    {
+      "mode": 1,
+      "requester": "bob",
+      "owner": "bob",
+      "operation": "GET /books/v1/{book}",
+      "http_status": 200,
+      "gold_bola": false,
+      "exposes_private_field": true
+    },
+    {
+      "mode": 1,
+      "requester": "anonymous",
+      "operation": "GET /books/v1",
+      "http_status": 200,
+      "gold_bola": false,
+      "case_kind": "public projection"
+    },
+    {
+      "mode": 0,
+      "requester": "alice",
+      "owner": "alice",
+      "operation": "GET /books/v1/{book}",
+      "http_status": 200,
+      "gold_bola": false,
+      "exposes_private_field": true
+    },
+    {
+      "mode": 0,
+      "requester": "alice",
+      "owner": "bob",
+      "operation": "GET /books/v1/{book}",
+      "http_status": 404,
+      "gold_bola": false,
+      "exposes_private_field": false
+    },
+    {
+      "mode": 0,
+      "requester": "bob",
+      "owner": "alice",
+      "operation": "GET /books/v1/{book}",
+      "http_status": 404,
+      "gold_bola": false,
+      "exposes_private_field": false
+    },
+    {
+      "mode": 0,
+      "requester": "bob",
+      "owner": "bob",
+      "operation": "GET /books/v1/{book}",
+      "http_status": 200,
+      "gold_bola": false,
+      "exposes_private_field": true
+    },
+    {
+      "mode": 0,
+      "requester": "anonymous",
+      "operation": "GET /books/v1",
+      "http_status": 200,
+      "gold_bola": false,
+      "case_kind": "public projection"
+    }
+  ],
+  "case_count": 10,
+  "gold_bola_count": 2
+}

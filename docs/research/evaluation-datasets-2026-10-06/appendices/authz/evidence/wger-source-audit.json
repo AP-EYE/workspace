@@ -1,0 +1,62 @@
+{
+  "scope": "Static source audit, NOT service execution",
+  "nutrition": [
+    {
+      "class": "NutritionPlanViewSet",
+      "before": {
+        "start_line": 296,
+        "end_line": 303,
+        "source": "@action(detail=True)\ndef nutritional_values(self, request, pk):\n    \"\"\"\n        Return an overview of the nutritional plan's values\n        \"\"\"\n    serializer = NutritionalValuesSerializer(NutritionPlan.objects.get(pk=pk).get_nutritional_values()['total'])\n    return Response(serializer.data)"
+      },
+      "after": {
+        "start_line": 296,
+        "end_line": 303,
+        "source": "@action(detail=True)\ndef nutritional_values(self, request, pk):\n    \"\"\"\n        Return an overview of the nutritional plan's values\n        \"\"\"\n    serializer = NutritionalValuesSerializer(self.get_object().get_nutritional_values()['total'])\n    return Response(serializer.data)"
+      }
+    },
+    {
+      "class": "MealViewSet",
+      "before": {
+        "start_line": 352,
+        "end_line": 357,
+        "source": "@action(detail=True)\ndef nutritional_values(self, request, pk):\n    \"\"\"\n        Return an overview of the nutritional plan's values\n        \"\"\"\n    serializer = NutritionalValuesSerializer(Meal.objects.get(pk=pk).get_nutritional_values())\n    return Response(serializer.data)"
+      },
+      "after": {
+        "start_line": 352,
+        "end_line": 357,
+        "source": "@action(detail=True)\ndef nutritional_values(self, request, pk):\n    \"\"\"\n        Return an overview of the nutritional plan's values\n        \"\"\"\n    serializer = NutritionalValuesSerializer(self.get_object().get_nutritional_values())\n    return Response(serializer.data)"
+      }
+    },
+    {
+      "class": "MealItemViewSet",
+      "before": {
+        "start_line": 399,
+        "end_line": 403,
+        "source": "@action(detail=True)\ndef nutritional_values(self, request, pk):\n    \"\"\"\n        Return an overview of the nutritional plan's values\n        \"\"\"\n    return Response(MealItem.objects.get(pk=pk).get_nutritional_values())"
+      },
+      "after": {
+        "start_line": 399,
+        "end_line": 403,
+        "source": "@action(detail=True)\ndef nutritional_values(self, request, pk):\n    \"\"\"\n        Return an overview of the nutritional plan's values\n        \"\"\"\n    return Response(self.get_object().get_nutritional_values())"
+      }
+    }
+  ],
+  "repetition_at_idor_guard_pin": [
+    {
+      "class": "RepetitionsConfigViewSet",
+      "method": {
+        "start_line": 485,
+        "end_line": 495,
+        "source": "def get_queryset(self):\n    \"\"\"\n        Only allow access to appropriate objects\n        \"\"\"\n    if getattr(self, 'swagger_fake_view', False):\n        return RepetitionsConfig.objects.none()\n    return RepetitionsConfig.objects.filter(slot_entry__slot__day__routine__user=self.request.user)"
+      }
+    },
+    {
+      "class": "MaxRepetitionsConfigViewSet",
+      "method": {
+        "start_line": 506,
+        "end_line": 516,
+        "source": "def get_queryset(self):\n    \"\"\"\n        Only allow access to appropriate objects\n        \"\"\"\n    if getattr(self, 'swagger_fake_view', False):\n        return MaxRepetitionsConfig.objects.none()\n    return MaxRepetitionsConfig.objects.filter(slot_entry__slot__day__routine__user=self.request.user)"
+      }
+    }
+  ]
+}

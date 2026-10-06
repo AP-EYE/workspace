@@ -1,0 +1,23 @@
+[
+  {
+    "file": "sources\\PIIBench_2604.15776.pdf",
+    "url": "https://arxiv.org/pdf/2604.15776",
+    "bytes": 704897,
+    "pages": 13,
+    "sha256": "4ec4b4c9c99d06e49a3c548021cfab0ac629f4861d4229b051aae4707f739279"
+  },
+  {
+    "file": "sources\\PII_Bench_ACL26.pdf",
+    "url": "https://aclanthology.org/2026.acl-long.227.pdf",
+    "bytes": 2476648,
+    "pages": 36,
+    "sha256": "9f22813ccb39f989d197f799d200d935f23cec85c5c1b3024d80ce1f7e5aa26c"
+  },
+  {
+    "file": "sources\\SPIA_ACL26.pdf",
+    "url": "https://aclanthology.org/2026.acl-long.778.pdf",
+    "bytes": 1378988,
+    "pages": 36,
+    "sha256": "de4b1cb6b719c7cea9e6d6b026839932dcc27987225b04e41bcaa3e8dd495fe2"
+  }
+]

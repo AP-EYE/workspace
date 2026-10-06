@@ -1,0 +1,418 @@
+{
+  "scope": "localhost HTTP, author targets, two identities, three objects each",
+  "oracle_revision": "v2-exact-object-and-fixture-content",
+  "independent_vulnerability_families": 1,
+  "source_commit": "d9cb4bdd7fabbf56d91935034a245ac8092d0fe6",
+  "targets": [
+    {
+      "target": "vulnerable",
+      "cases": [
+        {
+          "requester": "alice",
+          "owner": "alice",
+          "object_alias": "object-1",
+          "operation": "GET item",
+          "policy_allows": true,
+          "http_status": 200,
+          "returned_target_object": true,
+          "fixture_content_matches": true,
+          "gold_bola": false,
+          "case_kind": "own"
+        },
+        {
+          "requester": "alice",
+          "owner": "alice",
+          "object_alias": "object-2",
+          "operation": "GET item",
+          "policy_allows": true,
+          "http_status": 200,
+          "returned_target_object": true,
+          "fixture_content_matches": true,
+          "gold_bola": false,
+          "case_kind": "own"
+        },
+        {
+          "requester": "alice",
+          "owner": "alice",
+          "object_alias": "object-3",
+          "operation": "GET item",
+          "policy_allows": true,
+          "http_status": 200,
+          "returned_target_object": true,
+          "fixture_content_matches": true,
+          "gold_bola": false,
+          "case_kind": "own"
+        },
+        {
+          "requester": "alice",
+          "owner": "bob",
+          "object_alias": "object-4",
+          "operation": "GET item",
+          "policy_allows": false,
+          "http_status": 200,
+          "returned_target_object": true,
+          "fixture_content_matches": true,
+          "gold_bola": true,
+          "case_kind": "cross"
+        },
+        {
+          "requester": "alice",
+          "owner": "bob",
+          "object_alias": "object-5",
+          "operation": "GET item",
+          "policy_allows": false,
+          "http_status": 200,
+          "returned_target_object": true,
+          "fixture_content_matches": true,
+          "gold_bola": true,
+          "case_kind": "cross"
+        },
+        {
+          "requester": "alice",
+          "owner": "bob",
+          "object_alias": "object-6",
+          "operation": "GET item",
+          "policy_allows": false,
+          "http_status": 200,
+          "returned_target_object": true,
+          "fixture_content_matches": true,
+          "gold_bola": true,
+          "case_kind": "cross"
+        },
+        {
+          "requester": "alice",
+          "operation": "GET collection",
+          "http_status": 200,
+          "exact_owned_fixture_set_matches": true,
+          "gold_bola": false,
+          "case_kind": "scoped collection"
+        },
+        {
+          "requester": "bob",
+          "owner": "alice",
+          "object_alias": "object-1",
+          "operation": "GET item",
+          "policy_allows": false,
+          "http_status": 200,
+          "returned_target_object": true,
+          "fixture_content_matches": true,
+          "gold_bola": true,
+          "case_kind": "cross"
+        },
+        {
+          "requester": "bob",
+          "owner": "alice",
+          "object_alias": "object-2",
+          "operation": "GET item",
+          "policy_allows": false,
+          "http_status": 200,
+          "returned_target_object": true,
+          "fixture_content_matches": true,
+          "gold_bola": true,
+          "case_kind": "cross"
+        },
+        {
+          "requester": "bob",
+          "owner": "alice",
+          "object_alias": "object-3",
+          "operation": "GET item",
+          "policy_allows": false,
+          "http_status": 200,
+          "returned_target_object": true,
+          "fixture_content_matches": true,
+          "gold_bola": true,
+          "case_kind": "cross"
+        },
+        {
+          "requester": "bob",
+          "owner": "bob",
+          "object_alias": "object-4",
+          "operation": "GET item",
+          "policy_allows": true,
+          "http_status": 200,
+          "returned_target_object": true,
+          "fixture_content_matches": true,
+          "gold_bola": false,
+          "case_kind": "own"
+        },
+        {
+          "requester": "bob",
+          "owner": "bob",
+          "object_alias": "object-5",
+          "operation": "GET item",
+          "policy_allows": true,
+          "http_status": 200,
+          "returned_target_object": true,
+          "fixture_content_matches": true,
+          "gold_bola": false,
+          "case_kind": "own"
+        },
+        {
+          "requester": "bob",
+          "owner": "bob",
+          "object_alias": "object-6",
+          "operation": "GET item",
+          "policy_allows": true,
+          "http_status": 200,
+          "returned_target_object": true,
+          "fixture_content_matches": true,
+          "gold_bola": false,
+          "case_kind": "own"
+        },
+        {
+          "requester": "bob",
+          "operation": "GET collection",
+          "http_status": 200,
+          "exact_owned_fixture_set_matches": true,
+          "gold_bola": false,
+          "case_kind": "scoped collection"
+        }
+      ],
+      "bola_finding_case_join_verified": true,
+      "findings_by_probe": {
+        "bola": 6,
+        "enumerable_id": 1,
+        "idor": 1
+      },
+      "findings_by_severity": {
+        "high": 7,
+        "medium": 1
+      },
+      "findings": [
+        {
+          "probe": "bola",
+          "severity": "high",
+          "title": "Broken Object Level Authorization (BOLA)",
+          "requester": "alice",
+          "owner": "bob",
+          "object_alias": "object-4"
+        },
+        {
+          "probe": "bola",
+          "severity": "high",
+          "title": "Broken Object Level Authorization (BOLA)",
+          "requester": "alice",
+          "owner": "bob",
+          "object_alias": "object-5"
+        },
+        {
+          "probe": "bola",
+          "severity": "high",
+          "title": "Broken Object Level Authorization (BOLA)",
+          "requester": "alice",
+          "owner": "bob",
+          "object_alias": "object-6"
+        },
+        {
+          "probe": "bola",
+          "severity": "high",
+          "title": "Broken Object Level Authorization (BOLA)",
+          "requester": "bob",
+          "owner": "alice",
+          "object_alias": "object-1"
+        },
+        {
+          "probe": "bola",
+          "severity": "high",
+          "title": "Broken Object Level Authorization (BOLA)",
+          "requester": "bob",
+          "owner": "alice",
+          "object_alias": "object-2"
+        },
+        {
+          "probe": "bola",
+          "severity": "high",
+          "title": "Broken Object Level Authorization (BOLA)",
+          "requester": "bob",
+          "owner": "alice",
+          "object_alias": "object-3"
+        },
+        {
+          "probe": "enumerable_id",
+          "severity": "medium",
+          "title": "Enumerable (sequential/numeric) object identifiers",
+          "requester": null,
+          "owner": null,
+          "object_alias": null
+        },
+        {
+          "probe": "idor",
+          "severity": "high",
+          "title": "IDOR via sequential-ID enumeration",
+          "requester": null,
+          "owner": null,
+          "object_alias": null
+        }
+      ]
+    },
+    {
+      "target": "secure",
+      "cases": [
+        {
+          "requester": "alice",
+          "owner": "alice",
+          "object_alias": "object-1",
+          "operation": "GET item",
+          "policy_allows": true,
+          "http_status": 200,
+          "returned_target_object": true,
+          "fixture_content_matches": true,
+          "gold_bola": false,
+          "case_kind": "own"
+        },
+        {
+          "requester": "alice",
+          "owner": "alice",
+          "object_alias": "object-2",
+          "operation": "GET item",
+          "policy_allows": true,
+          "http_status": 200,
+          "returned_target_object": true,
+          "fixture_content_matches": true,
+          "gold_bola": false,
+          "case_kind": "own"
+        },
+        {
+          "requester": "alice",
+          "owner": "alice",
+          "object_alias": "object-3",
+          "operation": "GET item",
+          "policy_allows": true,
+          "http_status": 200,
+          "returned_target_object": true,
+          "fixture_content_matches": true,
+          "gold_bola": false,
+          "case_kind": "own"
+        },
+        {
+          "requester": "alice",
+          "owner": "bob",
+          "object_alias": "object-4",
+          "operation": "GET item",
+          "policy_allows": false,
+          "http_status": 404,
+          "returned_target_object": false,
+          "fixture_content_matches": false,
+          "gold_bola": false,
+          "case_kind": "cross"
+        },
+        {
+          "requester": "alice",
+          "owner": "bob",
+          "object_alias": "object-5",
+          "operation": "GET item",
+          "policy_allows": false,
+          "http_status": 404,
+          "returned_target_object": false,
+          "fixture_content_matches": false,
+          "gold_bola": false,
+          "case_kind": "cross"
+        },
+        {
+          "requester": "alice",
+          "owner": "bob",
+          "object_alias": "object-6",
+          "operation": "GET item",
+          "policy_allows": false,
+          "http_status": 404,
+          "returned_target_object": false,
+          "fixture_content_matches": false,
+          "gold_bola": false,
+          "case_kind": "cross"
+        },
+        {
+          "requester": "alice",
+          "operation": "GET collection",
+          "http_status": 200,
+          "exact_owned_fixture_set_matches": true,
+          "gold_bola": false,
+          "case_kind": "scoped collection"
+        },
+        {
+          "requester": "bob",
+          "owner": "alice",
+          "object_alias": "object-1",
+          "operation": "GET item",
+          "policy_allows": false,
+          "http_status": 404,
+          "returned_target_object": false,
+          "fixture_content_matches": false,
+          "gold_bola": false,
+          "case_kind": "cross"
+        },
+        {
+          "requester": "bob",
+          "owner": "alice",
+          "object_alias": "object-2",
+          "operation": "GET item",
+          "policy_allows": false,
+          "http_status": 404,
+          "returned_target_object": false,
+          "fixture_content_matches": false,
+          "gold_bola": false,
+          "case_kind": "cross"
+        },
+        {
+          "requester": "bob",
+          "owner": "alice",
+          "object_alias": "object-3",
+          "operation": "GET item",
+          "policy_allows": false,
+          "http_status": 404,
+          "returned_target_object": false,
+          "fixture_content_matches": false,
+          "gold_bola": false,
+          "case_kind": "cross"
+        },
+        {
+          "requester": "bob",
+          "owner": "bob",
+          "object_alias": "object-4",
+          "operation": "GET item",
+          "policy_allows": true,
+          "http_status": 200,
+          "returned_target_object": true,
+          "fixture_content_matches": true,
+          "gold_bola": false,
+          "case_kind": "own"
+        },
+        {
+          "requester": "bob",
+          "owner": "bob",
+          "object_alias": "object-5",
+          "operation": "GET item",
+          "policy_allows": true,
+          "http_status": 200,
+          "returned_target_object": true,
+          "fixture_content_matches": true,
+          "gold_bola": false,
+          "case_kind": "own"
+        },
+        {
+          "requester": "bob",
+          "owner": "bob",
+          "object_alias": "object-6",
+          "operation": "GET item",
+          "policy_allows": true,
+          "http_status": 200,
+          "returned_target_object": true,
+          "fixture_content_matches": true,
+          "gold_bola": false,
+          "case_kind": "own"
+        },
+        {
+          "requester": "bob",
+          "operation": "GET collection",
+          "http_status": 200,
+          "exact_owned_fixture_set_matches": true,
+          "gold_bola": false,
+          "case_kind": "scoped collection"
+        }
+      ],
+      "bola_finding_case_join_verified": true,
+      "findings_by_probe": {},
+      "findings_by_severity": {},
+      "findings": []
+    }
+  ]
+}

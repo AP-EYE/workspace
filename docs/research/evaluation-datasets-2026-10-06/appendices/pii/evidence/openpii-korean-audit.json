@@ -1,0 +1,49 @@
+{
+  "source_revision": "a785eb528e28be2693c3718a27e066970de5dadb",
+  "sampling": "first-rows cached API convenience samples; rows/filter API returned HTTP 500; no population inference",
+  "by_split": {
+    "train": {
+      "all_rows": 60,
+      "korean_rows": 6
+    },
+    "validation": {
+      "all_rows": 66,
+      "korean_rows": 10
+    }
+  },
+  "all_sample_language_counts": {
+    "ko": 16,
+    "vi": 21,
+    "ja": 16,
+    "tl": 15,
+    "en": 14,
+    "zh": 16,
+    "id": 17,
+    "ms": 11
+  },
+  "korean_docs": 16,
+  "korean_entities": 113,
+  "korean_label_counts": {
+    "DATE": 13,
+    "TITLE": 10,
+    "GIVENNAME": 13,
+    "SURNAME": 12,
+    "CITY": 9,
+    "DRIVERLICENSENUM": 4,
+    "EMAIL": 8,
+    "GENDER": 5,
+    "AGE": 7,
+    "CREDITCARDNUMBER": 7,
+    "SOCIALNUM": 1,
+    "STREET": 4,
+    "BUILDINGNUM": 4,
+    "ZIPCODE": 7,
+    "IDCARDNUM": 4,
+    "TELEPHONENUM": 3,
+    "PASSPORTNUM": 1,
+    "SEX": 1
+  },
+  "offset_errors": [],
+  "negative_korean_docs": 0,
+  "total_korean_population_NOT_VERIFIED": true
+}

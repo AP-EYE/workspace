@@ -1,0 +1,81 @@
+{
+  "date": "2026-10-06",
+  "scope": "Files included in the current team_hub Git share only; original raw-source manifest is historical",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 125,
+      "sha256": "d6799ee72b42674ce1e85546215a4acca1bd17442fd14bbdf0955131641e7b1e"
+    },
+    {
+      "path": "AKTO-DEEP-RESEARCH.html",
+      "bytes": 59897,
+      "sha256": "1d29522d4d92ddf549a93b636043f22f87c0ab1a1ea05ec6bf5f0817f52bfcf1"
+    },
+    {
+      "path": "AKTO-DEEP-RESEARCH.ko.md",
+      "bytes": 46697,
+      "sha256": "48648996e58d1e05f36e174b911c677a16b7c9fd86a6c6675a956de14cf5e8ba"
+    },
+    {
+      "path": "EVIDENCE-MANIFEST.json",
+      "bytes": 96198,
+      "sha256": "c2675798f3ff9137fd03145a12de55cb9d5f92d9e2c5e356c990a0893fe85d87"
+    },
+    {
+      "path": "HISTORY-REVIEW.html",
+      "bytes": 64673,
+      "sha256": "acf5e7e456cf23500098d8e9c35980f71ceb5b014637840df17c1468776886f1"
+    },
+    {
+      "path": "HISTORY-REVIEW.ko.md",
+      "bytes": 45103,
+      "sha256": "caf0f9e4f110f2ee013b85a54d58759615197454aca3f7fe8287cefb6ca39de1"
+    },
+    {
+      "path": "ISSUE-EXPLORER.html",
+      "bytes": 2069007,
+      "sha256": "3125d7dc8bec1d9e4b7fde391f751752e1db772c52b29676634293566f657f23"
+    },
+    {
+      "path": "ISSUE-PR-INDEX.csv",
+      "bytes": 1153252,
+      "sha256": "eb73674d75a381c952620a82dc5cfd501377f19f33755c71c99420cfa86017df"
+    },
+    {
+      "path": "PAPER-NOTES.html",
+      "bytes": 13975,
+      "sha256": "a7837e8dccc72e42e66fe1f23a73c9133fedd97fdc9dce7877239e7747f8c489"
+    },
+    {
+      "path": "PAPER-NOTES.ko.md",
+      "bytes": 7844,
+      "sha256": "4a00db4f8f1e8e53a45ed4e1a7b120e82577d73858940d96d992f4bc826acf62"
+    },
+    {
+      "path": "probe-evidence/bola-results.json",
+      "bytes": 3785,
+      "sha256": "5cd9d50b368f8dba425993f3d20679586b96ed46be79b0bda585916c53bebd1c"
+    },
+    {
+      "path": "probe-evidence/BolaProbe.java",
+      "bytes": 5578,
+      "sha256": "61b90243f5ac450bdcde1b49a30acc490779e2fff5e126ad1bfd7659d932b2b8"
+    },
+    {
+      "path": "probe-evidence/Probe.java",
+      "bytes": 5981,
+      "sha256": "ace4634ca1c34eef53c5922b3c01a7dd5a5e68240814153e0916042765e994bf"
+    },
+    {
+      "path": "probe-evidence/results.json",
+      "bytes": 11833,
+      "sha256": "d5ef51e525d96df3b1fe816cad853647e14201055c710514513378ea082707e7"
+    },
+    {
+      "path": "README.ko.md",
+      "bytes": 2560,
+      "sha256": "4728954850c444b74ab9b0a0a64114583050805582c66fcdc8ea4e2fe836b1e7"
+    }
+  ]
+}

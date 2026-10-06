@@ -1,0 +1,2 @@
+# Keep research artifacts byte-identical across Windows and Unix checkouts.
+* -text whitespace=-trailing-space,-blank-at-eof

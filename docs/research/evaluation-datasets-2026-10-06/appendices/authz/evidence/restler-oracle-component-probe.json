@@ -1,0 +1,76 @@
+{
+  "scope": "Component probe of two unmodified source methods; synthetic responses; NOT end-to-end RESTler execution and NOT a dataset accuracy estimate",
+  "commit": "6d984deedbc54aad957fa3da0c7e9e5df23a2aee",
+  "cases": [
+    {
+      "case_id": "bare_empty",
+      "status": 200,
+      "response_body": "[]",
+      "fixture_truth": "NORMAL",
+      "upstream_rule_reports_violation": false
+    },
+    {
+      "case_id": "spaced_empty",
+      "status": 200,
+      "response_body": "[ ]",
+      "fixture_truth": "NORMAL",
+      "upstream_rule_reports_violation": true
+    },
+    {
+      "case_id": "newline_empty",
+      "status": 200,
+      "response_body": "[\n]",
+      "fixture_truth": "NORMAL",
+      "upstream_rule_reports_violation": true
+    },
+    {
+      "case_id": "wrapped_empty",
+      "status": 200,
+      "response_body": "{\"results\": [], \"count\": 0}",
+      "fixture_truth": "NORMAL",
+      "upstream_rule_reports_violation": true
+    },
+    {
+      "case_id": "own_only_list",
+      "status": 200,
+      "response_body": "{\"items\":[{\"id\":\"own_1\"}]}",
+      "fixture_truth": "NORMAL",
+      "upstream_rule_reports_violation": true
+    },
+    {
+      "case_id": "public_list",
+      "status": 200,
+      "response_body": "{\"items\":[{\"id\":\"public_1\"}]}",
+      "fixture_truth": "NORMAL",
+      "upstream_rule_reports_violation": true
+    },
+    {
+      "case_id": "foreign_private_list",
+      "status": 200,
+      "response_body": "{\"items\":[{\"id\":\"foreign_private_1\"}]}",
+      "fixture_truth": "BOLA",
+      "upstream_rule_reports_violation": true
+    },
+    {
+      "case_id": "forbidden",
+      "status": 403,
+      "response_body": "{\"error\":\"forbidden\"}",
+      "fixture_truth": "NORMAL",
+      "upstream_rule_reports_violation": false
+    },
+    {
+      "case_id": "missing",
+      "status": 404,
+      "response_body": "{}",
+      "fixture_truth": "NORMAL",
+      "upstream_rule_reports_violation": false
+    },
+    {
+      "case_id": "server_error",
+      "status": 500,
+      "response_body": "{}",
+      "fixture_truth": "INDETERMINATE",
+      "upstream_rule_reports_violation": true
+    }
+  ]
+}

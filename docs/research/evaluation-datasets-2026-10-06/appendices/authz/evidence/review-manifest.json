@@ -1,0 +1,130 @@
+{
+  "investigation_date": "2026-10-06",
+  "repos": [
+    {
+      "name": "bolaz",
+      "commit": "f89fe0d86f10b3d353efad26822bd3a04bebe8c7",
+      "remote": "https://github.com/wuanbin/bolaz.git"
+    },
+    {
+      "name": "IDOR-GUARD",
+      "commit": "b1fbe699e56b930cca0c75e4558354bcd66db553",
+      "remote": "https://github.com/GuanhangShiFDU/IDOR-GUARD.git"
+    },
+    {
+      "name": "restler-fuzzer",
+      "commit": "6d984deedbc54aad957fa3da0c7e9e5df23a2aee",
+      "remote": "https://github.com/microsoft/restler-fuzzer.git"
+    }
+  ],
+  "papers": [
+    {
+      "name": "IDORacle_2609.12426",
+      "sha256": "2182c372ddb14bd1327b7eb3b6c9155eb359c956016eb0e7a9b503055a94b4ce",
+      "page_count": 16
+    },
+    {
+      "name": "BolaZ_2507.02309",
+      "sha256": "17f7112aac9651da753632fa8e940c5ec6cc055dc6ba29f3a47e5c1a06e5d1df",
+      "page_count": 27
+    },
+    {
+      "name": "BACFuzz_2507.15984",
+      "sha256": "ab655c537059dddb7df0b940c974a8fbeb617c981c2edbf34968f6a07bff5c26",
+      "page_count": 12
+    },
+    {
+      "name": "ICST2020_REST-API-security-rules",
+      "sha256": "d68c6bf8d6295c114b2473a62d2f8f7d3dfbbcf3ffd32af58e2fdca71ef35d78",
+      "page_count": 11
+    },
+    {
+      "name": "AuthScope_CCS17",
+      "sha256": "a5304e8816551432a54dbfe6ef0c2eeab6425d09de512996280c26ad37e656aa",
+      "page_count": 15
+    },
+    {
+      "name": "TrafficAuthzRisk_2607.16754",
+      "sha256": "0785cc1d70bb217e680f51dc7fd22d8c5d5515dc5588133780a30f4c194de6b5",
+      "page_count": 25
+    }
+  ],
+  "local_outputs": [
+    {
+      "path": "evidence\\AuthScope_CCS17-pages.json",
+      "sha256": "f4e7c0c6ded9621836e71dccbfbe516688a194d1c8efbfc33d2cd7bd50a0a5e9"
+    },
+    {
+      "path": "evidence\\BACFuzz_2507.15984-pages.json",
+      "sha256": "e5404728bf911adcfd704552bd2d951a77ffa77a482f074ec9e4a7453d659d7e"
+    },
+    {
+      "path": "evidence\\BolaZ_2507.02309-pages.json",
+      "sha256": "a9c0e57653b9488df075f8ab8fb44fe534c98b642fdb7c5a726df9e4533dc1f2"
+    },
+    {
+      "path": "evidence\\ICST2020_REST-API-security-rules-pages.json",
+      "sha256": "de0801bfb4dbd7a03a95dd93c6fc6a495102e96b32570d013b337370db7a27ee"
+    },
+    {
+      "path": "evidence\\IDORacle_2609.12426-pages.json",
+      "sha256": "f834185b2fa0cb844719239a02c21b4c6bfd188b5cf69c6b6abf925feff122e3"
+    },
+    {
+      "path": "evidence\\restler-oracle-component-probe.json",
+      "sha256": "416d06277be6f66664e5b8e45946e242bb78550e70f8c13abb7d955bb7f76a81"
+    },
+    {
+      "path": "evidence\\TrafficAuthzRisk_2607.16754-pages.json",
+      "sha256": "445a26f8ac42a51071ac389187e269a7bf9d07d32643ce47c398d9ad633bdfdd"
+    },
+    {
+      "path": "evidence\\wger-27835-actual-fix.json",
+      "sha256": "a956cc3625e9fca76c7aa71d1de61f40a7693309cc8c79dfbba9a3cf0a67acab"
+    },
+    {
+      "path": "evidence\\wger-27835-advisory.json",
+      "sha256": "3e580d8b21206d4070d8d88127c37f5333af766c2884d4d7562b7fdfdaca62a6"
+    },
+    {
+      "path": "evidence\\wger-27835-fix.json",
+      "sha256": "bf8216c537b28b7b678b8ec59fc550272c64987b6669fbe9f6b997a09a05ddcd"
+    },
+    {
+      "path": "evidence\\wger-27839-advisory.json",
+      "sha256": "ef4053df03940adc92db3211881bc2e8e214f43c19af109e5e8fe129c37f6819"
+    },
+    {
+      "path": "evidence\\wger-27839-fix.json",
+      "sha256": "d0ff3ef48377177a8dd5ba2a5583d25e35c517d3680f7009b11fe953954ba134"
+    },
+    {
+      "path": "evidence\\wger-fixed-manager-views.py",
+      "sha256": "27dc28425c52231f93261ab3d8cf35183caa1b4f1f68101eb1b487abc205138e"
+    },
+    {
+      "path": "evidence\\wger-fixed-nutrition-views.py",
+      "sha256": "32091342dd6375315d61b5c437c2566e8d5c406083e4519fe6f701b1ce676412"
+    },
+    {
+      "path": "evidence\\wger-manager-history.json",
+      "sha256": "1c6f01c936a9eb02db7e13c8d7de6c90772a4162c160ef5555a80b72796c9a05"
+    },
+    {
+      "path": "evidence\\wger-public-template-normal.json",
+      "sha256": "e666874a5a35c7339b3ae98b52d1c0ec4c9fe4eaf7a731d1ee01858f802c3410"
+    },
+    {
+      "path": "evidence\\wger-source-audit.json",
+      "sha256": "a184f00940ff1908bcd92c3b557773138479127075f357f418d3cb57152e2043"
+    },
+    {
+      "path": "evidence\\wger-vulnerable-manager-views.py",
+      "sha256": "27dc28425c52231f93261ab3d8cf35183caa1b4f1f68101eb1b487abc205138e"
+    },
+    {
+      "path": "evidence\\wger-vulnerable-nutrition-views.py",
+      "sha256": "ef830a0afa0bf38c9b1da64d363c7a8cbdde0175f46620d7c211c4073d956904"
+    }
+  ]
+}

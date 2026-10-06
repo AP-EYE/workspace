@@ -1,0 +1,2 @@
+# Evidence manifests use SHA-256 of the original file bytes.
+* -text whitespace=-trailing-space,-blank-at-eof

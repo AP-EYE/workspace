@@ -1,0 +1,52 @@
+[
+  {
+    "file": "openpii-train-rows-0.json",
+    "url": "https://datasets-server.huggingface.co/rows?dataset=ai4privacy%2Fpii-masking-openpii-1.5m&config=default&split=train&offset=0&length=100",
+    "error": "HTTP Error 500: Internal Server Error"
+  },
+  {
+    "file": "openpii-train-rows-100.json",
+    "url": "https://datasets-server.huggingface.co/rows?dataset=ai4privacy%2Fpii-masking-openpii-1.5m&config=default&split=train&offset=100&length=100",
+    "error": "HTTP Error 500: Internal Server Error"
+  },
+  {
+    "file": "openpii-train-rows-200.json",
+    "url": "https://datasets-server.huggingface.co/rows?dataset=ai4privacy%2Fpii-masking-openpii-1.5m&config=default&split=train&offset=200&length=100",
+    "error": "HTTP Error 500: Internal Server Error"
+  },
+  {
+    "file": "openpii-train-rows-300.json",
+    "url": "https://datasets-server.huggingface.co/rows?dataset=ai4privacy%2Fpii-masking-openpii-1.5m&config=default&split=train&offset=300&length=100",
+    "error": "HTTP Error 500: Internal Server Error"
+  },
+  {
+    "file": "openpii-train-rows-400.json",
+    "url": "https://datasets-server.huggingface.co/rows?dataset=ai4privacy%2Fpii-masking-openpii-1.5m&config=default&split=train&offset=400&length=100",
+    "error": "HTTP Error 500: Internal Server Error"
+  },
+  {
+    "file": "openpii-validation-rows-0.json",
+    "url": "https://datasets-server.huggingface.co/rows?dataset=ai4privacy%2Fpii-masking-openpii-1.5m&config=default&split=validation&offset=0&length=100",
+    "error": "HTTP Error 500: Internal Server Error"
+  },
+  {
+    "file": "openpii-validation-rows-100.json",
+    "url": "https://datasets-server.huggingface.co/rows?dataset=ai4privacy%2Fpii-masking-openpii-1.5m&config=default&split=validation&offset=100&length=100",
+    "error": "HTTP Error 500: Internal Server Error"
+  },
+  {
+    "file": "openpii-validation-rows-200.json",
+    "url": "https://datasets-server.huggingface.co/rows?dataset=ai4privacy%2Fpii-masking-openpii-1.5m&config=default&split=validation&offset=200&length=100",
+    "error": "HTTP Error 500: Internal Server Error"
+  },
+  {
+    "file": "openpii-validation-rows-300.json",
+    "url": "https://datasets-server.huggingface.co/rows?dataset=ai4privacy%2Fpii-masking-openpii-1.5m&config=default&split=validation&offset=300&length=100",
+    "error": "HTTP Error 500: Internal Server Error"
+  },
+  {
+    "file": "openpii-validation-rows-400.json",
+    "url": "https://datasets-server.huggingface.co/rows?dataset=ai4privacy%2Fpii-masking-openpii-1.5m&config=default&split=validation&offset=400&length=100",
+    "error": "HTTP Error 500: Internal Server Error"
+  }
+]
