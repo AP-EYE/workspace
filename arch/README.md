@@ -2,7 +2,8 @@
 
 아키텍처 설계 문서와 다이어그램(archify HTML, drawio, PNG)을 둔다.
 
-- [`architecture.md`](architecture.md): 현재 설계 (10-02 피드백으로 재구성 중)
+- [`architecture.md`](architecture.md): 현재 설계 (10-02 피드백으로 재구성, 내부 관점)
+- [`BOLA 판정 구조 제안.md`](BOLA%20판정%20구조%20제안.md): gateway 수집 + 별도 판정 구조 제안 (#7, 검토 전 초안)
 - [`2026-09-29 게이트웨이 아키텍처.md`](2026-09-29%20게이트웨이%20아키텍처.md): 재구성 전 게이트웨이 설계
 - [`평가 설계.md`](평가%20설계.md): 평가 방법
 - `bola-judgement-architecture.html`, `BOLA 판정 실험 아키텍처.drawio/.png`: BOLA 판정 실험 구조
