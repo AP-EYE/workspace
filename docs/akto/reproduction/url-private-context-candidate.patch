@@ -1,0 +1,24 @@
+--- a/libs/utils/src/main/java/com/akto/test_editor/filter/FilterAction.java
++++ b/libs/utils/src/main/java/com/akto/test_editor/filter/FilterAction.java
+@@ -1480,7 +1480,9 @@
+                 if (tokens[i] == null) {
+                     SingleTypeInfo singleTypeInfo = querySti(i+"", true,apiInfoKey, false, -1);
+                     BasicDBObject obj = new BasicDBObject();
+-                    singleTypeInfo = new SingleTypeInfo();
++                    if (singleTypeInfo != null && !singleTypeInfo.getIsPrivate()) {
++                        continue;
++                    }
+                     if (singleTypeInfo != null && singleTypeInfo.getIsPrivate()) {
+                         privateCnt++;
+                     }
+@@ -1491,7 +1493,9 @@
+                             if (privateValues.size() < 5 && obj.get("value") != null) {
+                                 privateValues.add(obj);
+                             }
+-                            privateCnt++;
++                            if (singleTypeInfo == null) {
++                                privateCnt++;
++                            }
+                         }
+                         continue;
+                     }
