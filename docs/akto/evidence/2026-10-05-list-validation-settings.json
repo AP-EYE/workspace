@@ -1,0 +1,55 @@
+[ {
+  "case" : "empty_array",
+  "original" : "[]",
+  "current" : "[]",
+  "template_validate" : false,
+  "existing_contains_all_setting" : false
+}, {
+  "case" : "empty_object",
+  "original" : "{}",
+  "current" : "{}",
+  "template_validate" : false,
+  "existing_contains_all_setting" : false
+}, {
+  "case" : "empty_wrapper",
+  "original" : "{\"data\":[]}",
+  "current" : "{\"data\":[]}",
+  "template_validate" : true,
+  "existing_contains_all_setting" : false
+}, {
+  "case" : "shared",
+  "original" : "[{\"id\":\"shared-a\",\"text\":\"allowed\"}]",
+  "current" : "[{\"id\":\"shared-a\",\"text\":\"allowed\"}]",
+  "template_validate" : true,
+  "existing_contains_all_setting" : false
+}, {
+  "case" : "forbidden",
+  "original" : "[{\"id\":\"private-a\",\"text\":\"protected-marker\"}]",
+  "current" : "[{\"id\":\"private-a\",\"text\":\"protected-marker\"}]",
+  "template_validate" : true,
+  "existing_contains_all_setting" : true
+}, {
+  "case" : "filtered",
+  "original" : "[{\"id\":\"private-a\",\"text\":\"protected-marker\"}]",
+  "current" : "[]",
+  "template_validate" : false,
+  "existing_contains_all_setting" : false
+}, {
+  "case" : "different_allowed",
+  "original" : "[{\"id\":\"private-a\",\"text\":\"protected-marker\"}]",
+  "current" : "[{\"id\":\"public-b\",\"text\":\"allowed\"}]",
+  "template_validate" : false,
+  "existing_contains_all_setting" : false
+}, {
+  "case" : "mixed",
+  "original" : "[{\"id\":\"private-a\",\"text\":\"protected-marker\"}]",
+  "current" : "[{\"id\":\"public-b\",\"text\":\"allowed\"},{\"id\":\"private-a\",\"text\":\"protected-marker\"}]",
+  "template_validate" : false,
+  "existing_contains_all_setting" : true
+}, {
+  "case" : "association_swapped",
+  "original" : "[{\"id\":\"a\",\"text\":\"x\"},{\"id\":\"b\",\"text\":\"y\"}]",
+  "current" : "[{\"id\":\"a\",\"text\":\"y\"},{\"id\":\"b\",\"text\":\"x\"}]",
+  "template_validate" : true,
+  "existing_contains_all_setting" : false
+} ]

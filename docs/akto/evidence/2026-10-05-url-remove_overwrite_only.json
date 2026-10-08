@@ -1,0 +1,93 @@
+{
+  "variant" : "remove_overwrite_only",
+  "scope" : "real FilterAction, querySti, DAO and MongoDB; not dashboard or complete YAML test",
+  "cases" : [ {
+    "case" : "public_values",
+    "sti_found" : true,
+    "observed_private" : false,
+    "result" : {
+      "privateCount" : 1,
+      "values" : [ {
+        "key" : "4",
+        "value" : "request-value"
+      } ]
+    }
+  }, {
+    "case" : "private_values",
+    "sti_found" : true,
+    "observed_private" : true,
+    "result" : {
+      "privateCount" : 1,
+      "values" : [ {
+        "key" : "4",
+        "value" : "observed-value"
+      } ]
+    }
+  }, {
+    "case" : "private_empty",
+    "sti_found" : true,
+    "observed_private" : true,
+    "result" : {
+      "privateCount" : 2,
+      "values" : [ {
+        "key" : "4",
+        "value" : "request-value"
+      } ]
+    }
+  }, {
+    "case" : "private_null_values",
+    "sti_found" : true,
+    "observed_private" : true,
+    "result" : {
+      "privateCount" : 2,
+      "values" : [ {
+        "key" : "4",
+        "value" : "request-value"
+      } ]
+    }
+  }, {
+    "case" : "zero_observations",
+    "sti_found" : true,
+    "observed_private" : true,
+    "result" : {
+      "privateCount" : 2,
+      "values" : [ {
+        "key" : "4",
+        "value" : "request-value"
+      } ]
+    }
+  }, {
+    "case" : "missing",
+    "sti_found" : false,
+    "observed_private" : null,
+    "result" : {
+      "privateCount" : 1,
+      "values" : [ {
+        "key" : "4",
+        "value" : "request-value"
+      } ]
+    }
+  }, {
+    "case" : "two_variables",
+    "sti_found" : true,
+    "observed_private" : false,
+    "result" : {
+      "privateCount" : 2,
+      "values" : [ {
+        "key" : "4",
+        "value" : "request-value"
+      }, {
+        "key" : "6",
+        "value" : "second-observed"
+      } ]
+    }
+  }, {
+    "case" : "static_url",
+    "sti_found" : false,
+    "observed_private" : null,
+    "result" : {
+      "privateCount" : 0,
+      "values" : [ ]
+    }
+  } ]
+}

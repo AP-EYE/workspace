@@ -1,0 +1,69 @@
+[ {
+  "case" : "rrn_hyphen",
+  "key" : "주민등록번호",
+  "synthetic_value" : "000000-0000000",
+  "before" : "GENERIC",
+  "after" : "AUDIT_KR_RRN_FORMAT"
+}, {
+  "case" : "rrn_digits",
+  "key" : "rrn",
+  "synthetic_value" : "0000000000000",
+  "before" : "INTEGER_32",
+  "after" : "AUDIT_KR_RRN_FORMAT"
+}, {
+  "case" : "order_digits",
+  "key" : "order_id",
+  "synthetic_value" : "0000000000000",
+  "before" : "INTEGER_32",
+  "after" : "INTEGER_32"
+}, {
+  "case" : "masked_rrn",
+  "key" : "주민등록번호",
+  "synthetic_value" : "[REDACTED]",
+  "before" : "GENERIC",
+  "after" : "GENERIC"
+}, {
+  "case" : "domestic_phone",
+  "key" : "휴대전화",
+  "synthetic_value" : "010-1234-5678",
+  "before" : "GENERIC",
+  "after" : "AUDIT_KR_PHONE"
+}, {
+  "case" : "digits_phone",
+  "key" : "phone",
+  "synthetic_value" : "01012345678",
+  "before" : "INTEGER_32",
+  "after" : "AUDIT_KR_PHONE"
+}, {
+  "case" : "order_phone",
+  "key" : "order_id",
+  "synthetic_value" : "01012345678",
+  "before" : "INTEGER_32",
+  "after" : "INTEGER_32"
+}, {
+  "case" : "international_phone",
+  "key" : "phone",
+  "synthetic_value" : "+821012345678",
+  "before" : "PHONE_NUMBER",
+  "after" : "PHONE_NUMBER"
+}, {
+  "case" : "short_phone",
+  "key" : "phone",
+  "synthetic_value" : "010-123-4567",
+  "before" : "GENERIC",
+  "after" : "GENERIC"
+}, {
+  "case" : "rrn_in_sentence",
+  "key" : "주민등록번호",
+  "synthetic_value" : "번호는 000000-0000000입니다.",
+  "before" : "GENERIC",
+  "after" : "GENERIC"
+}, {
+  "case" : "raw_message_length",
+  "length" : 2,
+  "runtime_type" : "AUDIT_KR_PHONE"
+}, {
+  "case" : "raw_message_length",
+  "length" : 8193,
+  "runtime_type" : "GENERIC"
+} ]

@@ -1,0 +1,24 @@
+{
+  "akto_commit": "302dad92e1549b7a84ce73eded447ad5d18124f0",
+  "runs": [
+    {
+      "variant": "baseline",
+      "source_sha256": "3ca5e5f644679e880a89bdf41a2ec41716312137689fa39d80ec8bca19d5a896",
+      "cases": 8,
+      "checks": "count expectations, public values exclusion, private observed value preservation"
+    },
+    {
+      "variant": "remove_overwrite_only",
+      "source_sha256": "e9dfcf5131e64fdf0f33cdaa11f6fc7e147aa5fc5c4f7e6e818f02db29447c3c",
+      "cases": 8,
+      "checks": "count expectations, public values exclusion, private observed value preservation"
+    },
+    {
+      "variant": "candidate",
+      "source_sha256": "b45a32b7ad943209c2ce7c6ff732e955742179c2b79964bc4b8461fea8466b68",
+      "cases": 8,
+      "checks": "count expectations, public values exclusion, private observed value preservation"
+    }
+  ],
+  "scope": "Full original FilterAction and MongoDB DAO; shadow classes for variants; no product UI or HTTP replay"
+}

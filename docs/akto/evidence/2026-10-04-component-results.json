@@ -1,0 +1,230 @@
+{
+  "date": "2026-10-04",
+  "scope": "isolated upstream Java methods, not end-to-end Akto",
+  "akto_commit": "302dad92e1549b7a84ce73eded447ad5d18124f0",
+  "template_commit": "ce2267da7e28927876b41d944e63bdde10e41e00",
+  "java_version": "openjdk version \"1.8.0_442\"\nOpenJDK Runtime Environment (Temurin)(build 1.8.0_442-b06)\nOpenJDK 64-Bit Server VM (Temurin)(build 25.442-b06, mixed mode)",
+  "template_sha256": "cb98e6bdde68644bfca0b9f35779b6cf244fa3992a9893a0d9b7e515f3e7976e",
+  "method_provenance": [
+    {
+      "path": "libs/utils/src/main/java/com/akto/testing/Utils.java",
+      "line": 381,
+      "signature": "public static double compareWithOriginalResponse(",
+      "file_sha256": "662ed73ec03698c781abf330a5b3b9faab852d0e344aa295f57d1d3dc1fac400",
+      "method_sha256": "294ef5909737c31d31c41b324a32df0dcae09f1764e97490a93200500dacf16e"
+    },
+    {
+      "path": "libs/utils/src/main/java/com/akto/runtime/RuntimeUtil.java",
+      "line": 113,
+      "signature": "public static void extractAllValuesFromPayload(String",
+      "file_sha256": "7245f99f5f877e1678dcb2788708d352a198f54fba2165034fb6516da22d03b7",
+      "method_sha256": "f84a2477e3ef58458dfa97e5a33bd807168a8f6c8d8d2d6e7c9ac2c5ed240c10"
+    },
+    {
+      "path": "libs/utils/src/main/java/com/akto/runtime/RuntimeUtil.java",
+      "line": 119,
+      "signature": "public static void extractAllValuesFromPayload(JsonNode",
+      "file_sha256": "7245f99f5f877e1678dcb2788708d352a198f54fba2165034fb6516da22d03b7",
+      "method_sha256": "f138752097838c767c9bb18ceb47474ccf013c5fb654521e37d1d3a2ec7b9fc0"
+    },
+    {
+      "path": "libs/dao/src/main/java/com/akto/dto/type/KeyTypes.java",
+      "line": 393,
+      "signature": "public static boolean isPhoneNumber(",
+      "file_sha256": "0e612a61a7f1be0f8f6ee6388d45b2397bd1243a5258fabc13ae163beadc0e9f",
+      "method_sha256": "318f0deec988b24c6bdc636266fdd57ee51a323386ea6db140ce14a09e03ce7c"
+    },
+    {
+      "path": "libs/dao/src/main/java/com/akto/dto/type/SingleTypeInfo.java",
+      "line": 956,
+      "signature": "public boolean getIsPrivate(",
+      "file_sha256": "1d75124f5e48abd5e132acd7895dbff0d12aec12b9ed5532b4ef1dd354ed5b21",
+      "method_sha256": "3da5aaada89ca8bb1561003d7ca8b524b55761de6383481a84ddf7bd66d7e01a"
+    },
+    {
+      "path": "libs/dao/src/main/java/com/akto/dto/data_types/RegexPredicate.java",
+      "line": 18,
+      "signature": "public boolean validate(",
+      "file_sha256": "14a25e4c09d8f9e22d2f5010d7983e0f2278789659e305419988a5b29c9c8fd5",
+      "method_sha256": "c77e6c21edb2f93b083e369ade2db1b4bffc1215144dd336a96ccdaf10cfb819"
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "jackson-core-2.16.1.jar",
+      "url": "https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.16.1/jackson-core-2.16.1.jar",
+      "sha256": "f5f8ef90609e64fec82eb908e497dc7d81b2eb983fe509b870292a193cde4dfb"
+    },
+    {
+      "name": "jackson-databind-2.16.1.jar",
+      "url": "https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.16.1/jackson-databind-2.16.1.jar",
+      "sha256": "baf8a8ebee8f45ef68cdd5e2dd3923b3e296c0937b96ec0b4806aa3a31bccd1d"
+    },
+    {
+      "name": "jackson-annotations-2.16.1.jar",
+      "url": "https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.16.1/jackson-annotations-2.16.1.jar",
+      "sha256": "a4730771e6a495dd3793a42cdb8ce6bddb96c77e15f40c98fd8d9a7ae09e7286"
+    },
+    {
+      "name": "libphonenumber-8.12.41.jar",
+      "url": "https://repo.maven.apache.org/maven2/com/googlecode/libphonenumber/libphonenumber/8.12.41/libphonenumber-8.12.41.jar",
+      "sha256": "0c016f10d0445e5d9098165e290b5a202a3c9114aa9f83478f0ba5d5d7d999c7"
+    }
+  ],
+  "cases": [
+    {
+      "id": "empty_array",
+      "original": "[]",
+      "current": "[]",
+      "percentage_match": 100.0,
+      "length_operand": 0,
+      "validation_gate_if_selected": false,
+      "scope": "upstream comparator; reconstructed length/90-percent gate; assumes selection and 200; YAML engine not executed"
+    },
+    {
+      "id": "empty_object",
+      "original": "{}",
+      "current": "{}",
+      "percentage_match": 100.0,
+      "length_operand": 0,
+      "validation_gate_if_selected": false,
+      "scope": "upstream comparator; reconstructed length/90-percent gate; assumes selection and 200; YAML engine not executed"
+    },
+    {
+      "id": "empty_wrapped_array",
+      "original": "{\"data\":[]}",
+      "current": "{\"data\":[]}",
+      "percentage_match": 100.0,
+      "length_operand": 9,
+      "validation_gate_if_selected": true,
+      "scope": "upstream comparator; reconstructed length/90-percent gate; assumes selection and 200; YAML engine not executed"
+    },
+    {
+      "id": "identical_shared",
+      "original": "[{\"id\":\"shared-a\",\"text\":\"permitted\"}]",
+      "current": "[{\"id\":\"shared-a\",\"text\":\"permitted\"}]",
+      "percentage_match": 100.0,
+      "length_operand": 36,
+      "validation_gate_if_selected": true,
+      "scope": "upstream comparator; reconstructed length/90-percent gate; assumes selection and 200; YAML engine not executed"
+    },
+    {
+      "id": "identical_forbidden",
+      "original": "[{\"id\":\"private-a\",\"text\":\"protected-marker\"}]",
+      "current": "[{\"id\":\"private-a\",\"text\":\"protected-marker\"}]",
+      "percentage_match": 100.0,
+      "length_operand": 44,
+      "validation_gate_if_selected": true,
+      "scope": "upstream comparator; reconstructed length/90-percent gate; assumes selection and 200; YAML engine not executed"
+    },
+    {
+      "id": "foreign_private_to_empty",
+      "original": "[{\"id\":\"private-a\",\"text\":\"protected-marker\"}]",
+      "current": "[]",
+      "percentage_match": 0.0,
+      "length_operand": 0,
+      "validation_gate_if_selected": false,
+      "scope": "upstream comparator; reconstructed length/90-percent gate; assumes selection and 200; YAML engine not executed"
+    },
+    {
+      "id": "different_allowed_object",
+      "original": "[{\"id\":\"private-a\",\"text\":\"protected-marker\"}]",
+      "current": "[{\"id\":\"public-b\",\"text\":\"allowed\"}]",
+      "percentage_match": 0.0,
+      "length_operand": 34,
+      "validation_gate_if_selected": false,
+      "scope": "upstream comparator; reconstructed length/90-percent gate; assumes selection and 200; YAML engine not executed"
+    },
+    {
+      "id": "mixed_forbidden_and_allowed",
+      "original": "[{\"id\":\"private-a\",\"text\":\"protected-marker\"}]",
+      "current": "[{\"id\":\"public-b\",\"text\":\"allowed\"},{\"id\":\"private-a\",\"text\":\"protected-marker\"}]",
+      "percentage_match": 0.0,
+      "length_operand": 79,
+      "validation_gate_if_selected": false,
+      "scope": "upstream comparator; reconstructed length/90-percent gate; assumes selection and 200; YAML engine not executed"
+    },
+    {
+      "id": "same_values_reordered_between_objects",
+      "original": "[{\"id\":\"a\",\"text\":\"x\"},{\"id\":\"b\",\"text\":\"y\"}]",
+      "current": "[{\"id\":\"a\",\"text\":\"y\"},{\"id\":\"b\",\"text\":\"x\"}]",
+      "percentage_match": 100.0,
+      "length_operand": 43,
+      "validation_gate_if_selected": true,
+      "scope": "upstream comparator; reconstructed length/90-percent gate; assumes selection and 200; YAML engine not executed"
+    },
+    {
+      "id": "phone",
+      "input": "+821012345678",
+      "builtin_phone": true
+    },
+    {
+      "id": "phone",
+      "input": "010-1234-5678",
+      "builtin_phone": false
+    },
+    {
+      "id": "phone",
+      "input": "01012345678",
+      "builtin_phone": false
+    },
+    {
+      "id": "phone",
+      "input": "+82 10 1234 5678",
+      "builtin_phone": true
+    },
+    {
+      "id": "custom_korean_pattern",
+      "key": "주민등록번호",
+      "value": "000000-0000000",
+      "key_match": true,
+      "value_match": true,
+      "and_match": true,
+      "notice": "synthetic format only; validity and legal classification not established"
+    },
+    {
+      "id": "custom_korean_pattern",
+      "key": "rrn",
+      "value": "0000000000000",
+      "key_match": true,
+      "value_match": true,
+      "and_match": true,
+      "notice": "synthetic format only; validity and legal classification not established"
+    },
+    {
+      "id": "custom_korean_pattern",
+      "key": "order_id",
+      "value": "0000000000000",
+      "key_match": false,
+      "value_match": true,
+      "and_match": false,
+      "notice": "synthetic format only; validity and legal classification not established"
+    },
+    {
+      "id": "custom_korean_pattern",
+      "key": "주민등록번호",
+      "value": "[REDACTED]",
+      "key_match": true,
+      "value_match": false,
+      "and_match": false,
+      "notice": "synthetic format only; validity and legal classification not established"
+    },
+    {
+      "id": "health_keyword",
+      "input": "우울증 진단을 받았습니다.",
+      "keyword_match": true
+    },
+    {
+      "id": "health_keyword",
+      "input": "진단 서비스 운영시간 안내입니다.",
+      "keyword_match": true
+    },
+    {
+      "id": "url_sti_overwrite",
+      "before_private": false,
+      "after_private": true,
+      "scope": "original getIsPrivate method plus the same new-object assignment; DB/URL branch not executed"
+    }
+  ],
+  "assertions_passed": 8
+}

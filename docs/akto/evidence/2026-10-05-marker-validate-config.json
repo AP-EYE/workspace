@@ -1,0 +1,9 @@
+{
+  "response_code" : {
+    "gte" : 200,
+    "lt" : 300
+  },
+  "response_payload" : {
+    "contains_all" : [ "protected-marker" ]
+  }
+}

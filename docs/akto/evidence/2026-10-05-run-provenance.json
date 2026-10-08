@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-05",
+  "akto_commit": "302dad92e1549b7a84ce73eded447ad5d18124f0",
+  "template_commit": "ce2267da7e28927876b41d944e63bdde10e41e00",
+  "targeted_junit": {
+    "name": "com.akto.test_editor.filter.UrlPrivateContextAuditTest",
+    "tests": "1",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0"
+  },
+  "tools": {
+    "java": "Temurin 1.8.0_442",
+    "maven": "3.9.11",
+    "buf": "1.73.0",
+    "protoc": "3.25.5",
+    "mongo_image": "mongo:7.0.4",
+    "mongo_digest": "sha256:d14158139a0bbc1741136d3eded7bef018a5980760a57f0014a1d4ac7677e4b1"
+  },
+  "source_sha256": {
+    "libs/utils/src/main/java/com/akto/test_editor/filter/FilterAction.java": "4042ef56fa2729d4635de1c11217ddbef1c6bf9d244b105f6a8529694d47cb40",
+    "libs/dao/src/main/java/com/akto/dto/type/SingleTypeInfo.java": "1d75124f5e48abd5e132acd7895dbff0d12aec12b9ed5532b4ef1dd354ed5b21",
+    "libs/dao/src/main/java/com/akto/dto/type/KeyTypes.java": "0e612a61a7f1be0f8f6ee6388d45b2397bd1243a5258fabc13ae163beadc0e9f",
+    "libs/dao/src/main/java/com/akto/dto/CustomDataType.java": "4fd559f3c534625cf536119fe91fc915bd000db988d80cd47e3dc55243542097"
+  },
+  "settings_test_sha256": "d96ddaa9990dc647cd4104852806a9e64047065ece6147dfbfc76e3136035b6d",
+  "limitations": [
+    "Not full Maven test suite",
+    "No dashboard/authenticated UI registration",
+    "No token replacement or HTTP replay",
+    "No external dataset or product performance evaluation"
+  ]
+}
